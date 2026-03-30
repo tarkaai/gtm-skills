@@ -129,16 +129,8 @@ Resources: `playbook://catalog`, `playbook://play/{slug}`, `playbook://play/{slu
 
 ## Contributing
 
-Skills are generated from the canonical plays data in [tarkaai/website-tarka](https://github.com/tarkaai/website-tarka). To regenerate:
-
-```bash
-git clone https://github.com/tarkaai/website-tarka
-cd website-tarka
-node scripts/export-skills.js --out ../gtm-skills
-```
-
-To propose a new play or fix, open a PR on website-tarka with changes to `src/data/plays/`.
+Skills are generated from the canonical plays data at [tarka.ai/playbook](https://tarka.ai/playbook). To propose a new play or fix, open an issue or PR on this repo.
 
 ---
 
-Maintained by [Tarka](https://tarka.ai)
+Maintained by [Tarka](https://tarka.ai) · [Browse all plays](https://tarka.ai/playbook) · [MIT License](LICENSE)

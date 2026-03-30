@@ -2,11 +2,8 @@
 /**
  * export.js — Generates gtm-skills skill files from Tarka's plays.json
  *
- * Usage (from website-tarka root):
- *   node scripts/export-skills.js --out ../gtm-skills
- *
- * Or from gtm-skills root:
- *   node scripts/export.js --plays ../website-tarka/src/data/plays/plays.json
+ * Usage (from gtm-skills root):
+ *   node scripts/export.js --plays <path-to-plays.json> --out .
  *
  * What it does:
  *   1. Reads plays.json
@@ -28,7 +25,7 @@ const args = Object.fromEntries(
   }, [])
 );
 
-const PLAYS_PATH = args.plays || path.resolve(__dirname, '../../website-tarka/src/data/plays/plays.json');
+const PLAYS_PATH = args.plays || path.resolve(__dirname, '../plays.json');
 const OUT_DIR = args.out || path.resolve(__dirname, '..');
 const UPDATE_JSON = args['update-json'] !== 'false';
 
