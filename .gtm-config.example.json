@@ -1,0 +1,17 @@
+{
+  "_comment": "Copy this to .gtm-config.json (project) or ~/.gtm-config.json (global) and fill in your stack.",
+  "crm": "attio",
+  "automation": "n8n",
+  "email_tool": "instantly",
+  "enrichment": "clay",
+  "linkedin_tool": "dripify",
+  "scheduling": "cal.com",
+  "analytics": "posthog",
+  "_crm_options": ["attio", "salesforce", "hubspot", "pipedrive", "clarify"],
+  "_automation_options": ["n8n", "claude-code", "make"],
+  "_email_tool_options": ["instantly", "smartlead", "lemlist", "loops", "resend"],
+  "_enrichment_options": ["clay", "apollo"],
+  "_linkedin_tool_options": ["dripify", "expandi", "waalaxy"],
+  "_scheduling_options": ["cal.com", "calendly"],
+  "_analytics_options": ["posthog", "mixpanel", "amplitude"]
+}

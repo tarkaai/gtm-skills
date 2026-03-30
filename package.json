@@ -1,0 +1,15 @@
+{
+  "name": "@tarkaai/gtm-skills",
+  "version": "1.0.0",
+  "description": "GTM skills for AI agents — 240 B2B startup plays from Tarka",
+  "repository": "https://github.com/tarkaai/gtm-skills",
+  "homepage": "https://tarka.ai/playbook",
+  "license": "MIT",
+  "bin": {
+    "gtm-skills": "./bin/gtm-skills.js"
+  },
+  "scripts": {
+    "export": "node scripts/export.js"
+  },
+  "keywords": ["gtm", "sales", "marketing", "product", "ai", "agents", "skills", "claude", "b2b", "startup"]
+}

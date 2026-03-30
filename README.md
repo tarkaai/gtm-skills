@@ -1,0 +1,144 @@
+# GTM Skills for AI Agents
+
+240 battle-tested GTM plays for B2B startups, packaged as AI agent skills.
+
+Each play covers Marketing, Sales, and Product stages — from a quick **Smoke Test** (validate in a week, free) through **Baseline**, **Scalable**, and **Durable** (agent-driven, continuous improvement). Pick the level that matches where you are.
+
+**Works with:** Claude Code · Cursor · Windsurf · n8n · Any MCP-compatible agent
+
+---
+
+## Install
+
+```bash
+npx gtm-skills install
+```
+
+This copies all skills to `~/.claude/skills/` and creates a config file for your stack.
+
+Or install selectively:
+
+```bash
+# One stage
+npx gtm-skills install --stage marketing
+
+# One play (all 4 levels)
+npx gtm-skills install --play outbound-founder-email
+
+# One specific level
+npx gtm-skills install --play outbound-founder-email --level baseline
+```
+
+---
+
+## Configure your stack
+
+On first install you'll be prompted. Or edit `~/.gtm-config.json` directly:
+
+```json
+{
+  "crm": "attio",
+  "automation": "n8n",
+  "email_tool": "instantly",
+  "enrichment": "clay",
+  "linkedin_tool": "dripify",
+  "scheduling": "cal.com",
+  "analytics": "posthog"
+}
+```
+
+**CRM options:** `attio` · `salesforce` · `hubspot` · `pipedrive` · `clarify`
+**Automation options:** `n8n` · `claude-code` · `make`
+**Email options:** `instantly` · `smartlead` · `lemlist` · `loops`
+**Enrichment options:** `clay` · `apollo`
+**LinkedIn automation:** `dripify` · `expandi` · `waalaxy`
+
+When you run a skill, it references your configured defaults so instructions are specific to your stack, not generic.
+
+---
+
+## How plays are organized
+
+```
+skills/
+  marketing/
+    unaware/          # People who don't know they have a problem
+    problem-aware/    # Know the problem, not yet looking for solutions
+    solution-aware/   # Comparing options
+    product-aware/    # Know your product, evaluating fit
+  sales/
+    qualified/        # Fits ICP, ready for outreach
+    connected/        # Initial contact made
+    aligned/          # Fit confirmed, stakeholders engaged
+    proposed/         # Proposal delivered, negotiating
+    won/              # Closed, transitioning to product
+  product/
+    onboard/          # New customer getting started
+    retain/           # Building habits, preventing churn
+    upsell/           # Expansion opportunities
+    referrals/        # Turning customers into advocates
+    winback/          # Re-engaging churned users
+```
+
+Each play folder has four skill files: `smoke.md`, `baseline.md`, `scalable.md`, `durable.md`.
+
+---
+
+## The 4 levels
+
+| Level | Goal | Time | When to use |
+|-------|------|------|-------------|
+| **Smoke** | Validate the play works | 1 week | Any time you want to test a new play |
+| **Baseline** | Prove repeatable results | 2 weeks | After smoke passes |
+| **Scalable** | Scale 5–10× with automation | 2 months | After baseline proves out |
+| **Durable** | Agent-driven continuous improvement | 6+ months | When you want this play to run itself |
+
+**Rule:** Only move to the next level when the current one passes its threshold. A Smoke that doesn't hit its outcome isn't a failure — it's signal. Iterate the ICP, offer, or channel before spending more.
+
+---
+
+## Budget philosophy
+
+Budgets in these skills show **only play-specific tool costs** — things you buy uniquely for this play. Your CRM and automation platform (n8n, Claude Code) are not included; they're part of your standard stack, paid once.
+
+Most Smoke levels cost nothing. Most Baselines cost under $300/mo. You can run a full outbound engine for under $500/mo.
+
+---
+
+## What's included
+
+- **98 Marketing plays** across Unaware → Product Aware
+- **44 Sales plays** across Qualified → Won
+- **98 Product plays** across Onboard → Winback
+- **Tool meta-skills** in `tools/` for CRM and automation-specific instructions
+
+---
+
+## MCP server
+
+The full playbook is also available as an MCP endpoint for agents that need to discover plays programmatically:
+
+```
+https://tarka.ai/api/mcp
+```
+
+Tools: `list_plays`, `get_play`, `search_plays`
+Resources: `playbook://catalog`, `playbook://play/{slug}`, `playbook://play/{slug}/level/{level}`
+
+---
+
+## Contributing
+
+Skills are generated from the canonical plays data in [tarkaai/website-tarka](https://github.com/tarkaai/website-tarka). To regenerate:
+
+```bash
+git clone https://github.com/tarkaai/website-tarka
+cd website-tarka
+node scripts/export-skills.js --out ../gtm-skills
+```
+
+To propose a new play or fix, open a PR on website-tarka with changes to `src/data/plays/`.
+
+---
+
+Maintained by [Tarka](https://tarka.ai)
