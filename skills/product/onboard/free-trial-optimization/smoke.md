@@ -1,15 +1,16 @@
 ---
 name: free-trial-optimization-smoke
 description: >
-    Trial Conversion Optimization — Smoke Test. Improve trial to paid conversion through onboarding,
-  engagement, and timely upgrade prompts.
+  Trial Conversion Optimization — Smoke Test. Run one cohort of trial users through a
+  structured onboarding flow with tracked activation milestones. Prove that a guided trial
+  experience produces measurable conversion signal.
 stage: "Product > Onboard"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥25% trial to paid"
-kpis: ["Trial conversion", "Trial engagement", "Upgrade timing"]
+outcome: ">=25% trial-to-paid conversion in a 10-50 user test cohort"
+kpis: ["Trial-to-paid conversion rate", "72-hour activation rate", "Time to first value moment"]
 slug: "free-trial-optimization"
 install: "npx gtm-skills add product/onboard/free-trial-optimization"
 drills:
@@ -17,65 +18,88 @@ drills:
   - onboarding-flow
   - threshold-engine
 ---
+
 # Trial Conversion Optimization — Smoke Test
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Product, Email
+> **Stage:** Product > Onboard | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
-## Overview
-Trial Conversion Optimization — Smoke Test. Improve trial to paid conversion through onboarding, engagement, and timely upgrade prompts.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥25% trial to paid
+A single test cohort of 10-50 trial users passes through a structured onboarding experience. At least 25% convert to paid within the trial window. You have PostHog data showing the exact funnel steps where users convert or drop off.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Trial users reach the activation milestone (first core action) within 72 hours of signup
+- Onboarding email open rates exceed 40%
+- In-app product tour completion rate exceeds 60%
+- Users who reach activation convert at 2x+ the rate of users who do not
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Define trial ICP and activation milestone
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `icp-definition` drill scoped to trial users. Define:
+- Who starts a free trial (persona, company size, use case)
+- What "activated" means for your product (the single action that best predicts conversion)
+- What the trial window is (7 days, 14 days, 30 days)
+- What the conversion action is (entering payment info, selecting a plan, completing checkout)
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Store the ICP and activation definition in Attio as a note on the play record.
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Build the trial onboarding experience
+
+Run the `onboarding-flow` drill to create the guided experience:
+
+**In-app (Intercom):**
+- Create a product tour triggered on first login that walks the user to the activation milestone in 3-5 steps. Each step should have a clear action, not just a tooltip. End the tour with the user having completed their first core action.
+- Create a contextual in-app message that fires if the user has not reached activation after 24 hours. The message should offer specific help: a link to a quick-start resource or a calendar booking link for a 15-minute onboarding call.
+
+**Email (Loops):**
+- Email 1 (immediate): Welcome email with a single CTA linking directly to the first onboarding step. Subject: "[Product] — your first [core action] in 5 minutes."
+- Email 2 (Day 1): If activation not reached, send a tutorial showing the fastest path to value. Include a screenshot or GIF.
+- Email 3 (Day 3): Social proof email. One customer quote about the specific value moment. CTA to resume where they left off.
+- Email 4 (Day 5): Personal check-in from founder. Ask if they need help. Include Cal.com booking link.
+
+Configure Loops to skip emails when the user has already reached the corresponding milestone.
+
+**Tracking (PostHog):**
+- Instrument these events: `trial_started`, `onboarding_tour_started`, `onboarding_tour_completed`, `activation_reached`, `upgrade_prompt_shown`, `upgrade_started`, `payment_completed`
+- Attach properties to each event: `user_id`, `signup_source`, `trial_day` (days since trial start), `plan_interest`
+
+### 3. Launch to test cohort
+
+**Human action required:** Enable the experience for a test cohort of 10-50 new trial signups using a PostHog feature flag. Do not launch to all traffic yet. Monitor the first 3-5 users manually to verify the tour loads correctly, emails deliver, and events fire in PostHog Live Events.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥25% trial to paid. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
----
+Run the `threshold-engine` drill after the trial window closes for the test cohort. Measure:
+- Primary: trial-to-paid conversion rate (target: >=25%)
+- Supporting: 72-hour activation rate, tour completion rate, email engagement
 
-## KPIs to track
-- Trial conversion
-- Trial engagement
-- Upgrade timing
+If PASS: document what worked, capture the funnel data, proceed to Baseline.
+If FAIL: identify the highest drop-off step in the PostHog funnel. Fix that single step and re-run with a new cohort.
 
----
+## Time Estimate
 
-## Pass threshold
-**≥25% trial to paid**
+- 1 hour: ICP definition and activation milestone selection
+- 2 hours: Building the onboarding tour, emails, and tracking
+- 0.5 hours: Launching to test cohort and verifying instrumentation
+- 1.5 hours: Monitoring, analyzing results, documenting findings
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Tools & Pricing
 
----
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, funnels, feature flags | Free tier: 1M events/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Intercom | Product tours, in-app messages | From $29/seat/mo ([intercom.com/pricing](https://www.intercom.com/pricing)) |
+| Loops | Lifecycle email sequences | Free up to 1,000 contacts ([loops.so/pricing](https://loops.so/pricing)) |
+| Attio | CRM, play record logging | Standard stack |
+| Cal.com | Booking link for onboarding calls | Free tier available ([cal.com/pricing](https://cal.com/pricing)) |
 
-## How to run this skill
+**Estimated play-specific cost:** $0 (within free tiers at this volume)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add product/onboard/free-trial-optimization`_
+- `icp-definition` — defines who the trial targets and what activation means
+- `onboarding-flow` — builds the in-app tour, email sequence, and milestone tracking
+- `threshold-engine` — evaluates trial-to-paid conversion against the 25% pass threshold
