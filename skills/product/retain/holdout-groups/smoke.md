@@ -1,81 +1,91 @@
 ---
 name: holdout-groups-smoke
 description: >
-    Holdout Group Analysis — Smoke Test. Maintain control groups to measure cumulative impact of
-  experiments over time.
+  Holdout Group Analysis — Smoke Test. Provision a persistent holdout group in PostHog,
+  establish baseline metrics for holdout vs treatment populations, and confirm the group
+  assignment is stable and uncontaminated.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Set up holdout"
-kpis: ["Holdout performance", "Cumulative lift", "Long-term impact"]
+outcome: "Holdout group provisioned with stable assignment and baseline metrics captured"
+kpis: ["Holdout group size accuracy", "Assignment stability rate", "Baseline metric parity"]
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - holdout-group-setup
   - threshold-engine
 ---
+
 # Holdout Group Analysis — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Holdout Group Analysis — Smoke Test. Maintain control groups to measure cumulative impact of experiments over time.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Set up holdout
+A `global-holdout` feature flag is live in PostHog, randomly assigning a fixed percentage of users to the holdout group. Both holdout and treatment PostHog cohorts exist. Baseline metrics for both groups are captured and stored in Attio. Every user resolves to the same group on every evaluation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Feature flag created and active in PostHog
+- Holdout cohort size within +/-2% of target percentage
+- 5 repeated flag evaluations for the same distinct_id all return the same result
+- Baseline retention and engagement metrics are within 5% parity between groups
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Determine holdout size and create the holdout group
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `holdout-group-setup` drill. This will:
+- Calculate the appropriate holdout percentage based on your active user count (default 10%)
+- Create the `global-holdout` PostHog feature flag with `ensure_experience_continuity: true`
+- Create PostHog cohorts for "Holdout Group" and "Treatment Group (Non-Holdout)"
+- Log the `holdout_group_created` event in PostHog
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+### 2. Verify assignment stability
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Using the PostHog feature flag evaluation API, test 10 distinct user IDs. For each, call the evaluation endpoint 5 times. Confirm every call returns the same group assignment. If any user flips between holdout and treatment, the `ensure_experience_continuity` setting is misconfigured — fix it before proceeding.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Set up holdout. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 3. Capture baseline metrics
 
----
+Query PostHog for the last 4 weeks of data, split by holdout vs treatment group. Capture:
+- Weekly active users per group
+- Primary retention metric (e.g., Week 1, Week 2, Week 4 retention)
+- Primary engagement metric (e.g., feature usage frequency, session count)
 
-## KPIs to track
-- Holdout performance
-- Cumulative lift
-- Long-term impact
+Store the baseline in Attio as a note on the holdout campaign record.
 
----
+### 4. Verify baseline parity
 
-## Pass threshold
-**Set up holdout**
+Confirm that holdout and treatment groups have comparable metrics at the point of holdout creation. No primary metric should differ by more than 5% between groups. If parity fails, the randomization may be biased — dissolve the holdout, wait 24 hours, and recreate with a fresh flag key.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Human action required:** Communicate the holdout policy to your team. Any future PostHog experiment MUST include the holdout exclusion filter. Review any currently active experiments and add the filter retroactively.
 
----
+### 5. Evaluate against threshold
 
-## How to run this skill
+Run the `threshold-engine` drill to measure against: holdout group provisioned with stable assignment and baseline metrics captured. Specifically:
+- Holdout flag is active and evaluating correctly
+- Holdout cohort size is within +/-2% of target
+- Assignment stability is 100% (no user flips)
+- Baseline parity is within 5% on all primary metrics
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+If PASS, proceed to Baseline. If FAIL, diagnose: is the flag misconfigured? Are users not being identified in PostHog? Is the cohort query filtering incorrectly?
 
-_Install this skill: `npx gtm-skills add product/retain/holdout-groups`_
+## Time Estimate
+
+- 1 hour: determine holdout size and create feature flag + cohorts
+- 1 hour: verify assignment stability across test users
+- 2 hours: query and analyze baseline metrics, verify parity
+- 1 hour: document baseline, communicate policy to team
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, cohorts, event tracking, baseline queries | Free up to 1M feature flag requests/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+
+## Drills Referenced
+
+- `holdout-group-setup` — provisions the holdout feature flag, creates cohorts, captures baseline
+- `threshold-engine` — evaluates pass/fail against the smoke test criteria
