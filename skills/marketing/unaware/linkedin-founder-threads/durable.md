@@ -14,6 +14,7 @@ kpis: ["Monthly leads from LinkedIn", "Lead-to-meeting conversion rate", "Conten
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
 drills:
+  - autonomous-optimization
   - founder-linkedin-content-batch
   - linkedin-lead-capture
   - dashboard-builder

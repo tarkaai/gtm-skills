@@ -13,6 +13,7 @@ kpis: ["Extension acceptance", "Conversion rate", "Extension ROI", "Experiment v
 slug: "free-trial-extension"
 install: "npx gtm-skills add product/upsell/free-trial-extension"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - nps-feedback-loop
 ---

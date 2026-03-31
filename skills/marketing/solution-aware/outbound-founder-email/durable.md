@@ -16,6 +16,7 @@ kpis: ["Meeting rate trend (flat or improving over 6 months)", "Cost per meeting
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
+  - autonomous-optimization
   - signal-detection
   - ab-test-orchestrator
   - dashboard-builder

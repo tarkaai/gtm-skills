@@ -14,6 +14,7 @@ kpis: ["Win rate trend", "Agent-generated insight quality", "Competitive intelli
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - threshold-engine
 ---

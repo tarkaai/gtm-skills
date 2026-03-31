@@ -15,6 +15,7 @@ kpis: ["Monthly lead volume trend", "CPL trend (rolling 30-day)", "Lead-to-meeti
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - ab-test-orchestrator
   - paid-social-audience-builder

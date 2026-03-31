@@ -15,6 +15,7 @@ kpis: ["Referral sessions from reddit.com (weekly)", "Signups attributed to redd
 slug: "reddit-niche-communities"
 install: "npx gtm-skills add marketing/problem-aware/reddit-niche-communities"
 drills:
+  - autonomous-optimization
   - community-monitoring-automation
   - community-response-crafting
   - community-content-posting

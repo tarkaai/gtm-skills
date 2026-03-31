@@ -14,6 +14,7 @@ kpis: ["Activation rate at day 7 (weekly trend)", "Activation rate by segment (m
 slug: "onboarding-email-sequence"
 install: "npx gtm-skills add product/onboard/onboarding-email-sequence"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - nps-feedback-loop
   - threshold-engine

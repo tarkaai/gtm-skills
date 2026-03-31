@@ -15,6 +15,7 @@ kpis: ["Expansion conversion trend", "Agent experiment win rate", "Expansion ARR
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - signal-detection
 ---

@@ -14,6 +14,7 @@ kpis: ["Trial conversion rate trend", "Agent experiment win rate", "Churn predic
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
 drills:
+  - autonomous-optimization
   - dashboard-builder
   - signal-detection
 ---
