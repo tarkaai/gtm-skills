@@ -1,80 +1,132 @@
 ---
 name: certification-program-baseline
 description: >
-    Product Certification Program — Baseline Run. Offer certification for users who complete
-  advanced training to drive deep product adoption and create advocates.
+  Product Certification Program — Baseline Run. Wire the certification into
+  always-on automation: Intercom Product Tours for module delivery, Loops sequences
+  for enrollment and stall nudges, n8n for badge issuance, and PostHog dashboards
+  for continuous measurement. First always-on run targeting 50%+ of activated users.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Content"
 level: "Baseline Run"
-time: "16 hours over 2 weeks"
-outcome: "≥25% start, ≥70% complete, ≥90% retention"
-kpis: ["Certification starts", "Completion rate", "Certified retention"]
+time: "18 hours over 2 weeks"
+outcome: "≥25% enrollment, ≥70% completion, ≥90% 30-day retention for certified users"
+kpis: ["Enrollment rate", "Completion rate", "Certified 30-day retention", "Module drop-off rate", "Stall recovery rate"]
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
 drills:
+  - certification-delivery-automation
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
+  - onboarding-sequence-design
 ---
+
 # Product Certification Program — Baseline Run
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Product, Email, Content
+> **Stage:** Product → Onboard | **Motion:** LeadCaptureSurface | **Channels:** Product, Email, Content
 
-## Overview
-Product Certification Program — Baseline Run. Offer certification for users who complete advanced training to drive deep product adoption and create advocates.
+## Outcomes
 
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ≥25% start, ≥70% complete, ≥90% retention
+The certification program runs continuously without manual intervention. Activated users are automatically prompted, enrolled users receive guided Product Tours, stalled users get nudged, and badge issuance fires on completion. Prove the program sustains enrollment and completion rates over 2 weeks with a larger population.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Enrollment rate holds ≥25% week-over-week (prompt and email sequence are converting)
+- Module completion rate does not decline after Week 1 (content is not a one-time novelty)
+- Stall nudges recover ≥30% of stalled users (automation is effective)
+- Certified users log in within 7 days post-badge at ≥90% rate (badge is not the end of engagement)
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `certification-program_impression`, `certification-program_engaged`, `certification-program_converted`, `certification-program_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Establish the certification event taxonomy
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Run the `posthog-gtm-events` drill to formalize the event naming:
+- All certification events use the `cert_` prefix
+- Define standard properties: `tier`, `module`, `assessment_type`, `passed`, `attempts`, `persona`, `cohort`
+- Build PostHog funnels: enrollment funnel, per-tier completion funnel, stall detection funnel
+- Create PostHog cohorts: "Enrolled not completed," "Stalled >7 days," "Certified," "Certified + retained"
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+### 2. Build the always-on delivery system
 
-### 4. Evaluate against threshold
-Measure against: ≥25% start, ≥70% complete, ≥90% retention. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+Run the `certification-delivery-automation` drill to wire the full automation:
 
----
+**Enrollment automation:**
+- Intercom banner targeting activated users who have not enrolled
+- Loops 3-email enrollment nudge sequence for users who see the banner but do not enroll within 14 days
+- PostHog tracking on all enrollment touchpoints
 
-## KPIs to track
-- Certification starts
-- Completion rate
-- Certified retention
+**Module delivery:**
+- Intercom Product Tours for each module — guided walkthrough of the skill, ending with "Now try it yourself"
+- Contextual in-app messages: start nudges when users enter the relevant product area, completion congratulations after each module
+- Loops email per module: "You're X% through — next up: {module name}" for users who complete a module but do not start the next within 48 hours
 
----
+**Stall detection and recovery:**
+- n8n daily workflow: detect users stalled for 7, 14, or 21+ days
+- Mild stall (7d): Intercom in-app nudge
+- Moderate stall (14d): Loops email with the specific module they need to complete
+- Hard stall (21d+): Loops email from a human offering help
 
-## Pass threshold
-**≥25% start, ≥70% complete, ≥90% retention**
+**Badge issuance:**
+- n8n webhook on `cert_tier_completed`: verify completion, update Attio contact, trigger celebration email via Loops, show in-app modal via Intercom
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+### 3. Design the certification onboarding sequence
 
----
+Run the `onboarding-sequence-design` drill adapted for the certification context:
+- The "activation" event is `cert_program_enrolled`
+- Milestones: enrolled → first module completed → half modules done → all modules done → badge earned
+- Build a 5-email behavioral sequence in Loops that guides enrolled users through the certification
+- Skip logic: skip nudge emails when milestones are already reached
+- Exit condition: badge earned
 
-## How to run this skill
+### 4. Remove the feature flag gate
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Expand the certification from the Smoke test group to all activated users:
+- Update the PostHog feature flag `cert_program_enabled` to target all users where `activation_reached = true` and `days_since_activation >= 7`
+- Monitor the first 48 hours closely: enrollment rate should be within 20% of Smoke results. If dramatically lower, the Smoke cohort may have been unusually engaged — investigate.
 
-_Install this skill: `npx gtm-skills add product/onboard/certification-program`_
+### 5. Build the Baseline dashboard
+
+Create a PostHog dashboard with:
+- Enrollment funnel: viewed → enrolled → started (weekly trend)
+- Completion funnel: started → each module → completed → badge earned
+- Stall distribution: count of users in each stall category
+- Stall recovery: % of nudged users who resumed within 7 days
+- Certified retention: 30-day retention curve for certified vs non-certified users
+- Module health: completion rate and avg attempts per module
+
+### 6. Evaluate against threshold after 2 weeks
+
+Measure:
+- **Enrollment rate:** ≥25% of prompted users enroll
+- **Completion rate:** ≥70% of enrollees earn the badge
+- **Certified retention:** ≥90% of certified users are active at Day 30
+
+If PASS: The certification works as an always-on system. Document the delivery architecture and proceed to Scalable.
+If FAIL: Diagnose by stage:
+- Low enrollment → enrollment prompt or email sequence is weak. Test different copy or timing.
+- Low completion → specific module is too hard or too long. Check module-level drop-off.
+- Low retention → certification is not teaching the right skills. Review which product actions correlate with retention and realign modules.
+
+## Time Estimate
+
+- 4 hours: Set up event taxonomy and PostHog funnels/cohorts
+- 6 hours: Build delivery automation (Intercom tours, Loops sequences, n8n workflows)
+- 3 hours: Design and implement the onboarding email sequence
+- 2 hours: Expand flag, verify end-to-end, build dashboard
+- 3 hours: Monitoring over 2 weeks (15 min/day) + final analysis
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Events, funnels, cohorts, feature flags, dashboards | Free tier: 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| Intercom | In-app banners, Product Tours, contextual messages | Essential: $29/seat/mo; Proactive Support add-on: $349/mo for tours — [intercom.com/pricing](https://www.intercom.com/pricing) |
+| Loops | Enrollment sequence, stall nudges, celebration emails | Starter: $49/mo (up to 5K contacts) — [loops.so/pricing](https://loops.so/pricing) |
+| n8n | Stall detection, badge issuance automation | Self-hosted: Free; Cloud: from $24/mo — [n8n.io/pricing](https://n8n.io/pricing) |
+
+**Estimated play-specific cost:** Intercom Proactive Support add-on ~$349/mo + Loops ~$49/mo = ~$398/mo (PostHog and n8n on free/standard tiers)
+
+## Drills Referenced
+
+- `certification-delivery-automation` — wire the full certification delivery system (enrollment, tours, stall detection, badge issuance)
+- `posthog-gtm-events` — establish the certification event taxonomy and standard funnels
+- `onboarding-sequence-design` — design the behavioral email sequence for enrolled users
