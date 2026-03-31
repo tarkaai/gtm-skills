@@ -11,6 +11,13 @@ outcome: "≥25% at 500+"
 kpis: ["Annual conversion", "Offer acceptance", "Retention lift", "Segment metrics"]
 slug: "annual-upgrade-incentive"
 install: "npx gtm-skills add product/upsell/annual-upgrade-incentive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Monthly to Annual Conversion — Scalable Automation
 

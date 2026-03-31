@@ -11,6 +11,14 @@ outcome: "Sustained community growth (≥15% QoQ members) and ≥25 qualified le
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Discord Community Management — Durable Intelligence
 

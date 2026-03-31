@@ -11,6 +11,14 @@ outcome: "Sustained backlink growth (≥15/month) over 12 months via AI-driven t
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Infographics & Visual Content — Durable Intelligence
 

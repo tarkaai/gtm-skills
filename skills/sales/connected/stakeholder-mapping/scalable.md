@@ -11,6 +11,13 @@ outcome: ">=60% of deals with >=4 stakeholders and >=30% faster close time for m
 kpis: ["Stakeholders per deal", "Multi-threading rate", "Stakeholder engagement score", "Single-threaded risk rate"]
 slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Stakeholder Mapping Framework — Scalable Automation
 

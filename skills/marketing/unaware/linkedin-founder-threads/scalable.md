@@ -11,6 +11,12 @@ outcome: "≥ 20 inbound leads over 2 months"
 kpis: ["Impressions", "Engagement rate", "Profile visits", "CTA clicks"]
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Founder LinkedIn content — Scalable Automation
 

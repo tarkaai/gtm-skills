@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥45% over 6 months via AI"
 kpis: ["Extension acceptance", "Conversion rate", "Extension ROI", "Experiment velocity", "AI lift"]
 slug: "free-trial-extension"
 install: "npx gtm-skills add product/upsell/free-trial-extension"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Strategic Trial Extensions — Durable Intelligence
 

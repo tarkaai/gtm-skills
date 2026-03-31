@@ -11,6 +11,14 @@ outcome: "Sustained answer volume and ≥15 qualified leads/quarter over 12 mont
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Stack Overflow Presence — Durable Intelligence
 

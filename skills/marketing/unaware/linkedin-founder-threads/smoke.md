@@ -11,6 +11,9 @@ outcome: "≥ 3 inbound leads in 1 week"
 kpis: ["Impressions", "Engagement rate", "Profile visits", "CTA clicks"]
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Founder LinkedIn content — Smoke Test
 

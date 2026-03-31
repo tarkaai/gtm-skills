@@ -11,6 +11,13 @@ outcome: "≥30% share at 500+"
 kpis: ["Public share rate", "Share views", "Share conversion", "Segment metrics"]
 slug: "public-sharing"
 install: "npx gtm-skills add product/referrals/public-sharing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Branded Public Sharing — Scalable Automation
 

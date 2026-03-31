@@ -11,6 +11,11 @@ outcome: "Budget objections handled on ≥80% of instances over 2 weeks"
 kpis: ["Objection resolution rate", "Budget found rate", "Business case win rate", "Payment flexibility effectiveness", "Deal size preservation"]
 slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Budget Objection Navigation — Baseline Run
 

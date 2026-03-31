@@ -11,6 +11,12 @@ outcome: "≥ 400 referral sessions or ≥ 50 signups over 2 months"
 kpis: ["Referral traffic", "Comment engagement", "Link clicks"]
 slug: "reddit-niche-communities"
 install: "npx gtm-skills add marketing/problem-aware/reddit-niche-communities"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Reddit and community participation — Scalable Automation
 

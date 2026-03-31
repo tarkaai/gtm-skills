@@ -11,6 +11,11 @@ outcome: "≥3% call-to-meeting rate from 150 calls over 2 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Account-based Cold Calling — Baseline Run
 

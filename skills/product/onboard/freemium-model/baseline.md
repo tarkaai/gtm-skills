@@ -11,6 +11,11 @@ outcome: "≥8% convert"
 kpis: ["Free signups", "Free to paid rate", "Time to upgrade"]
 slug: "freemium-model"
 install: "npx gtm-skills add product/onboard/freemium-model"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Freemium Tier Strategy — Baseline Run
 

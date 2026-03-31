@@ -11,6 +11,11 @@ outcome: "≥90% rollout success"
 kpis: ["Flag usage", "Rollout success", "Rollback rate"]
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Feature Flag System — Baseline Run
 

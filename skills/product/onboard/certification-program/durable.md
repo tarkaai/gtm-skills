@@ -11,6 +11,15 @@ outcome: "Sustained or improving certifications growing over 6 months via AI"
 kpis: ["Certification starts", "Completion rate", "Certified retention", "Experiment velocity", "AI lift"]
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Product Certification Program — Durable Intelligence
 

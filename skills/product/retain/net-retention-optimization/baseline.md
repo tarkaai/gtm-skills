@@ -11,6 +11,11 @@ outcome: "NDR ≥110%"
 kpis: ["Net dollar retention", "Churn rate", "Expansion rate"]
 slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Net Retention Focus — Baseline Run
 

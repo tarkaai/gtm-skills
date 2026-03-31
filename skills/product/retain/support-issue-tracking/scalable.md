@@ -11,6 +11,13 @@ outcome: "≥55% at 500+"
 kpis: ["Ticket correlation", "At-risk ID rate", "Intervention success", "Segment metrics"]
 slug: "support-issue-tracking"
 install: "npx gtm-skills add product/retain/support-issue-tracking"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Support Ticket Churn Signals — Scalable Automation
 

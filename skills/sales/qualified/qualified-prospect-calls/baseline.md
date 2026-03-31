@@ -11,6 +11,11 @@ outcome: "≥ 2% meeting rate over 2 weeks"
 kpis: ["Connect rate", "Dials attempted", "Time to connect"]
 slug: "qualified-prospect-calls"
 install: "npx gtm-skills add sales/qualified/qualified-prospect-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Founder calls to prospects — Baseline Run
 

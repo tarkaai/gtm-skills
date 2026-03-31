@@ -11,6 +11,9 @@ outcome: "≥ 2 meetings in 1 week"
 kpis: ["Reply rate", "Time to first reply", "Emails sent"]
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound founder-led email — Smoke Test
 

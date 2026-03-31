@@ -11,6 +11,9 @@ outcome: "ID 10 champions"
 kpis: ["Champion identification", "Champion activity", "Referrals generated"]
 slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Champion Recognition Program — Smoke Test
 

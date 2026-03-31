@@ -11,6 +11,15 @@ outcome: "Sustained or improving executive approval rates over 6 months via AI-d
 kpis: ["Executive approval rate", "Time to approval", "Business case ROI accuracy", "Enterprise win rate", "Deal size optimization"]
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Business Case Development — Durable Intelligence
 

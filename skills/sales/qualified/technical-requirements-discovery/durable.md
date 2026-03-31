@@ -11,6 +11,15 @@ outcome: "Sustained or improving technical fit accuracy and implementation succe
 kpis: ["Technical fit prediction accuracy", "Technical blocker early detection", "Implementation success rate", "Solutions engineer efficiency", "Technical win rate"]
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Technical Requirements Discovery — Durable Intelligence
 

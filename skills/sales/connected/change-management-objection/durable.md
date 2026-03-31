@@ -11,6 +11,15 @@ outcome: "Sustained or improving change objection resolution and implementation 
 kpis: ["Change objection resolution rate", "Status quo overcome rate", "Implementation success rate", "Adoption rate improvement", "Customer satisfaction"]
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Change Management Objection Handling — Durable Intelligence
 

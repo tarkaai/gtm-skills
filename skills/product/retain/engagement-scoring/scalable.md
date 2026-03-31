@@ -11,6 +11,13 @@ outcome: "≥70% at 500+"
 kpis: ["Score accuracy", "Engagement correlation", "Predictive value", "Segment metrics"]
 slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # User Engagement Scoring — Scalable Automation
 

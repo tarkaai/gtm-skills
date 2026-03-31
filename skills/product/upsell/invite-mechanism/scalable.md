@@ -11,6 +11,13 @@ outcome: "≥45% invite at 500+"
 kpis: ["Invite rate", "Acceptance rate", "Team size growth", "Segment metrics"]
 slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Team Invite System — Scalable Automation
 

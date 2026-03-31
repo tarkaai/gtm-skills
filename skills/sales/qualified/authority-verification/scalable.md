@@ -11,6 +11,13 @@ outcome: "Authority verified in ≥75% of opportunities at scale over 2 months w
 kpis: ["Authority verification rate", "Time to authority confirmation", "Deal velocity improvement", "Close rate with verified authority", "Multi-threading success rate"]
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Authority Verification Process — Scalable Automation
 

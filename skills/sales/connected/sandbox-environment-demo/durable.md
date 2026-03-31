@@ -11,6 +11,15 @@ outcome: "Sustained or improving sandbox-to-close conversion over 6 months via c
 kpis: ["Sandbox-to-close conversion", "Usage prediction accuracy", "Personalization effectiveness", "Active usage rate", "Deal velocity improvement"]
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Sandbox Environment Demo — Durable Intelligence
 

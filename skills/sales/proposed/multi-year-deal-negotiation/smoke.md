@@ -11,6 +11,9 @@ outcome: ">=1 multi-year deal closed (2+ years) within 2 weeks"
 kpis: ["Multi-year deal rate", "Average contract length", "Total contract value", "Discount accepted"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Multi-Year Deal Structuring — Smoke Test
 

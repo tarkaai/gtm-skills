@@ -11,6 +11,10 @@ outcome: "≥200 members and ≥20 DAU with ≥10 qualified leads in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Discord Community Management — Baseline Run
 

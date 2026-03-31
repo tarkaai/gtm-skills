@@ -11,6 +11,15 @@ outcome: "Sustained or improving pricing acceptance and deal profitability over 
 kpis: ["Pricing acceptance rate", "Deal profitability optimization", "Discount intelligence effectiveness", "Revenue per deal", "Win rate improvement"]
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Pricing Presentation Framework — Durable Intelligence
 

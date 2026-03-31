@@ -11,6 +11,15 @@ outcome: "Sustained or improving accuracy ≥65% over 6 months via AI"
 kpis: ["PQL identification", "Score accuracy", "Sales conversion", "Experiment velocity", "AI lift"]
 slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # PQL Scoring System — Durable Intelligence
 

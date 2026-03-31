@@ -11,6 +11,9 @@ outcome: "≥40% invite team"
 kpis: ["Invite rate", "Acceptance rate", "Team size growth"]
 slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Team Invite System — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "Technical demos on ≥75% of technical opportunities at scale over 2 m
 kpis: ["Technical demo completion rate", "POC conversion rate", "Technical validation speed", "Solutions engineer efficiency", "Technical close rate"]
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Technical Deep-Dive Demo — Scalable Automation
 

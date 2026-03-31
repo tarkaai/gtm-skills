@@ -11,6 +11,9 @@ outcome: "≥3 opportunities with verified authority in 1 week"
 kpis: ["Authority verification rate", "Decision maker connection rate", "Time to authority confirmation"]
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Authority Verification Process — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥40% engage"
 kpis: ["Gamification participation", "Streak maintenance", "Feature adoption"]
 slug: "gamification-engagement"
 install: "npx gtm-skills add product/retain/gamification-engagement"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Gamified Product Experience — Smoke Test
 

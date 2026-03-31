@@ -11,6 +11,11 @@ outcome: ">=40% win rate in competitive deals and >=70% engagement retention ove
 kpis: ["Competitive win rate", "Engagement retention", "Differentiator effectiveness by competitor", "Asset impact on outcomes"]
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Competitive Objection Handling — Baseline Run
 

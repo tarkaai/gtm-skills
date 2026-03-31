@@ -11,6 +11,11 @@ outcome: "Risks identified and mitigated on ≥80% of opportunities over 2 weeks
 kpis: ["Risk discovery rate", "Risk mitigation success rate", "Close rate impact", "Late-stage surprise reduction"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Risk & Concern Discovery — Baseline Run
 

@@ -11,6 +11,14 @@ outcome: "Sustained or improving video views and conversion rate over 6 months v
 kpis: ["Video views trend", "Watch time trend", "CTR on thumbnails", "Conversion rate", "Subscriber growth rate", "Content relevance score"]
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # YouTube Channel and SEO — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥35% at 500+"
 kpis: ["Tooltip CTR", "Feature adoption", "Dismissal rate", "Segment metrics"]
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Contextual Feature Tooltips — Scalable Automation
 

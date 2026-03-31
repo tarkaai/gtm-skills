@@ -11,6 +11,11 @@ outcome: "≥60%, ≥12pp retention"
 kpis: ["Analytics view rate", "Insight engagement", "Retention lift"]
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # User Self-Service Analytics — Baseline Run
 

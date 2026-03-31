@@ -11,6 +11,13 @@ outcome: "≥500 registrations and ≥50 qualified leads from monthly co-webinar
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Co-webinar Series — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: "≥ 2 inbound leads or ≥ 1 meeting in 1 week"
 kpis: ["Response rate", "Inbound inquiries"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Direct Mail Postcards — Smoke Test
 

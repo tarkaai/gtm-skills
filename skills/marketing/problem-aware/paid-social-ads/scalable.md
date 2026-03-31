@@ -11,6 +11,13 @@ outcome: "≥ 30 leads or ≥ 16 meetings over 2 months"
 kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Paid Social Ads — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥ 200 clicks and ≥ 15 leads over 2 months"
 kpis: ["Impressions", "Click-through rate"]
 slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Newsletter Sponsorship — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: "≥2 champion-facilitated meetings from 10 target accounts in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Champion-driven Outbound — Smoke Test
 

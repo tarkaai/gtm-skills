@@ -11,6 +11,11 @@ outcome: "≥25 testimonials"
 kpis: ["Collection rate", "Quality score", "Usage in marketing"]
 slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Systematic Testimonial Collection — Baseline Run
 

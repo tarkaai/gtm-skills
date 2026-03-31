@@ -11,6 +11,13 @@ outcome: "≥5% response rate at 500 voice messages/month over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Outbound Voice Messages — Scalable Automation
 

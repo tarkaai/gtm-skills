@@ -11,6 +11,10 @@ outcome: "≥ 5 inbound leads over 2 weeks"
 kpis: ["Impressions", "Engagement rate", "Profile visits", "CTA clicks"]
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Founder LinkedIn content — Baseline Run
 

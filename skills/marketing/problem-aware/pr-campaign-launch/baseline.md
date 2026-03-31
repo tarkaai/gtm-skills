@@ -11,6 +11,11 @@ outcome: "≥10 press mentions and ≥20 qualified leads from coordinated launch
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - threshold-engine
 ---
 # PR Campaign Launch — Baseline Run
 

@@ -11,6 +11,11 @@ outcome: "≥150,000 impressions and ≥20 qualified leads from $1,500 budget ov
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Twitter/X Ads — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥75% accuracy at 500+"
 kpis: ["Segment accuracy", "Segment value", "Personalization lift", "Segment metrics"]
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Behavior Segmentation — Scalable Automation
 

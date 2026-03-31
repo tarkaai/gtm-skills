@@ -11,6 +11,15 @@ outcome: "Sustained or improving success ≥85% over 6 months via AI"
 kpis: ["Flag usage", "Rollout success", "Rollback rate", "Experiment velocity", "AI lift"]
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Feature Flag System — Durable Intelligence
 

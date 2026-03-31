@@ -11,6 +11,11 @@ outcome: "≥10 submissions and ≥3 wins with ≥10 qualified leads from award 
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - threshold-engine
 ---
 # Industry Award Submissions — Baseline Run
 

@@ -11,6 +11,9 @@ outcome: ">=50% reduction in prep time and >=3 actionable insights per call with
 kpis: ["Prep time reduction", "Insights per call", "AI brief quality score", "Call outcome improvement"]
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # AI-Powered Meeting Preparation — Smoke Test
 

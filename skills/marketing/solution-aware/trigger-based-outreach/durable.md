@@ -11,6 +11,15 @@ outcome: "Sustained trigger conversion (≥3%) over 12 months via AI-powered int
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Trigger-based Outreach — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥2.5% account-to-meeting rate at 200 accounts/month over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "multi-threaded-account-outreach"
 install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Multi-threaded Outreach — Scalable Automation
 

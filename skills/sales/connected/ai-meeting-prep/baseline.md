@@ -11,6 +11,11 @@ outcome: ">=60% prep time reduction and >=25% higher next-step conversion for AI
 kpis: ["Prep time reduction", "Next-step conversion rate", "AI brief usefulness score", "Discovery quality improvement"]
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # AI-Powered Meeting Preparation — Baseline Run
 

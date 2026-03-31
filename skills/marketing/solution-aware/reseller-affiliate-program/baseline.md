@@ -11,6 +11,11 @@ outcome: "≥10 active partners and ≥8 partner-sourced deals in 10 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Reseller & Affiliate Program — Baseline Run
 

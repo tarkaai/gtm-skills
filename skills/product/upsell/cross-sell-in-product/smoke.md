@@ -11,6 +11,9 @@ outcome: "≥10% adopt 2nd product"
 kpis: ["Cross-sell rate", "Multi-product accounts", "Portfolio expansion"]
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Related Product Cross-Sell — Smoke Test
 

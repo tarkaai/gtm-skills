@@ -11,6 +11,9 @@ outcome: "≥8% refer"
 kpis: ["Referral rate", "Conversion rate", "Reward cost"]
 slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Referral Rewards Program — Smoke Test
 

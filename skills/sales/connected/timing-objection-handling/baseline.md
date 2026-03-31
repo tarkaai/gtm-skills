@@ -11,6 +11,11 @@ outcome: "Timing objections handled on ≥80% of instances over 2 weeks"
 kpis: ["Objection resolution rate", "Timeline acceleration success", "Cost of inaction conversion", "Bridging solution acceptance", "Eventual close rate"]
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Timing Objection Handling — Baseline Run
 

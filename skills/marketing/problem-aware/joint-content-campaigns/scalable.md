@@ -11,6 +11,13 @@ outcome: "≥10 co-created assets and ≥80 qualified leads over 6 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "joint-content-campaigns"
 install: "npx gtm-skills add marketing/problem-aware/joint-content-campaigns"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Joint Content Campaigns — Scalable Automation
 

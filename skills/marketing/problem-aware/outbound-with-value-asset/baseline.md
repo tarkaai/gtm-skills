@@ -11,6 +11,11 @@ outcome: "≥ 5 positive replies referencing asset over 2 weeks"
 kpis: ["Reply rate", "Open rate"]
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Outbound With Value Asset — Baseline Run
 

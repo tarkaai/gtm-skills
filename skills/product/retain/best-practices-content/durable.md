@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥40% over 6 months via AI"
 kpis: ["Tips engagement", "Workflow optimization", "Feature depth", "Experiment velocity", "AI lift"]
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # In-App Best Practices — Durable Intelligence
 

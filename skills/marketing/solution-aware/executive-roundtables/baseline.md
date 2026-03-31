@@ -11,6 +11,11 @@ outcome: "≥25 executives and ≥10 high-value opportunities across 3 roundtabl
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Executive Roundtables — Baseline Run
 

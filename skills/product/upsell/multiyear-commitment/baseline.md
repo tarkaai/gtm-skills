@@ -11,6 +11,11 @@ outcome: "≥20% commit"
 kpis: ["Multi-year rate", "LTV increase", "Churn reduction"]
 slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Multi-Year Deal Incentives — Baseline Run
 

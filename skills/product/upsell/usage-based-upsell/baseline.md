@@ -11,6 +11,11 @@ outcome: "≥60% accept"
 kpis: ["Auto-upgrade acceptance", "Usage growth", "ARPU lift"]
 slug: "usage-based-upsell"
 install: "npx gtm-skills add product/upsell/usage-based-upsell"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Automatic Usage Upsell — Baseline Run
 

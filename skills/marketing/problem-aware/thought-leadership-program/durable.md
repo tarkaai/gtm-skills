@@ -11,6 +11,14 @@ outcome: "Sustained thought leadership impact and ≥50 qualified leads/quarter 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Thought Leadership Program — Durable Intelligence
 

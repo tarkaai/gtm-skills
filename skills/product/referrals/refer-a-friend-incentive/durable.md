@@ -11,6 +11,15 @@ outcome: "Sustained or improving referrals ≥10% over 6 months via AI"
 kpis: ["Referral rate", "Conversion rate", "Reward cost", "Experiment velocity", "AI lift"]
 slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Referral Rewards Program — Durable Intelligence
 

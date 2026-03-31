@@ -11,6 +11,9 @@ outcome: "≥25% share publicly"
 kpis: ["Public share rate", "Share views", "Share conversion"]
 slug: "public-sharing"
 install: "npx gtm-skills add product/referrals/public-sharing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Branded Public Sharing — Smoke Test
 

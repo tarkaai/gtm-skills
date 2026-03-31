@@ -11,6 +11,9 @@ outcome: "≥20% response rate from 20 gift recipients in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/outbound-gift-campaigns"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound Gift Campaigns — Smoke Test
 

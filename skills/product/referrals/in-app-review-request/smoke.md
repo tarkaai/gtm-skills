@@ -11,6 +11,9 @@ outcome: "≥10 reviews"
 kpis: ["Review request CTR", "Review completion", "Review quality"]
 slug: "in-app-review-request"
 install: "npx gtm-skills add product/referrals/in-app-review-request"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # G2/Capterra Review Requests — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥ 1 lead in 1 week"
 kpis: ["Post reach", "Engagement rate"]
 slug: "micro-influencer-b2b-creators"
 install: "npx gtm-skills add marketing/problem-aware/micro-influencer-b2b-creators"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Micro-Influencer B2B Post — Smoke Test
 

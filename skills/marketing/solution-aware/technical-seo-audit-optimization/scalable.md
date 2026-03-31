@@ -11,6 +11,13 @@ outcome: "≥50% YoY organic traffic growth and maintain top-10 rankings for key
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "technical-seo-audit-optimization"
 install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Technical SEO Audit & Fix — Scalable Automation
 

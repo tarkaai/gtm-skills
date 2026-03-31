@@ -11,6 +11,15 @@ outcome: "Sustained call conversion (≥2.5%) over 12 months via AI-driven scrip
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Account-based Cold Calling — Durable Intelligence
 

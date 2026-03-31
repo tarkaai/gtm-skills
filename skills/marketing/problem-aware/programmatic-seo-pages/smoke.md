@@ -11,6 +11,9 @@ outcome: "≥100 organic visits and ≥1 conversion in 4 weeks"
 kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position"]
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Programmatic SEO Pages — Smoke Test
 

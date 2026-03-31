@@ -11,6 +11,13 @@ outcome: "≥80 executives and ≥30 opportunities from quarterly roundtables ov
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Executive Roundtables — Scalable Automation
 

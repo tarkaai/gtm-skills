@@ -11,6 +11,9 @@ outcome: "Open rate ≥ 30%, click rate ≥ 5% in 1 week"
 kpis: ["Open rate", "Click rate", "Time to first key action"]
 slug: "onboarding-email-sequence"
 install: "npx gtm-skills add product/onboard/onboarding-email-sequence"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Onboarding email sequence — Smoke Test
 

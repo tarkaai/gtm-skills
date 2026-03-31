@@ -11,6 +11,9 @@ outcome: "5 AI segments"
 kpis: ["Segment accuracy", "Segment value", "Personalization lift"]
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Behavior Segmentation — Smoke Test
 

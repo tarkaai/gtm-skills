@@ -11,6 +11,15 @@ outcome: "Sustained or improving book rate sustained over 6 months via continuou
 kpis: ["CTA clicks", "Calendar page views"]
 slug: "calendar-flow-support"
 install: "npx gtm-skills add marketing/solution-aware/calendar-flow-support"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Inline Calendar in CTAs — Durable Intelligence
 

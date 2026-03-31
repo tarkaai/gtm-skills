@@ -11,6 +11,9 @@ outcome: "ID top 10%"
 kpis: ["Power user ID", "Advocacy rate", "Advanced usage"]
 slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Power User Identification — Smoke Test
 

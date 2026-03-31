@@ -11,6 +11,9 @@ outcome: "≥60% see message"
 kpis: ["Milestone achievement", "Celebration engagement", "Post-milestone retention"]
 slug: "usage-milestones"
 install: "npx gtm-skills add product/retain/usage-milestones"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Usage Milestone Celebrations — Smoke Test
 

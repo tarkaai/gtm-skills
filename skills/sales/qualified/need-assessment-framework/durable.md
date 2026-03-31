@@ -11,6 +11,15 @@ outcome: "Sustained or improving close rate prediction and qualification accurac
 kpis: ["Need assessment accuracy", "Close rate prediction accuracy", "Sales cycle length", "Win rate by need profile", "Need intelligence refinement rate"]
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Need Assessment Framework — Durable Intelligence
 

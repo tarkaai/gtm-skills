@@ -11,6 +11,9 @@ outcome: "≥30% use collab"
 kpis: ["Collaboration usage", "Team size", "Retention lift"]
 slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Multiplayer Product Features — Smoke Test
 

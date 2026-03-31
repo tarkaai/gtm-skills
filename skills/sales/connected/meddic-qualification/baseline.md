@@ -11,6 +11,11 @@ outcome: ">=60% of deals with >=80% MEDDIC completeness and >=20% faster deal ve
 kpis: ["MEDDIC completeness rate", "Deal velocity", "Close rate by MEDDIC score", "Element quality score"]
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # MEDDIC Qualification System — Baseline Run
 

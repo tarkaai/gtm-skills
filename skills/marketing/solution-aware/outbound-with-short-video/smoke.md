@@ -11,6 +11,9 @@ outcome: "≥ 10% video completion and ≥ 2 meetings in 1 week"
 kpis: ["Video completion rate", "Click-through rate"]
 slug: "outbound-with-short-video"
 install: "npx gtm-skills add marketing/solution-aware/outbound-with-short-video"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound With Short Video — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥60% recover"
 kpis: ["Recovery rate", "Involuntary churn", "Time to recovery"]
 slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Payment Failure Recovery — Smoke Test
 

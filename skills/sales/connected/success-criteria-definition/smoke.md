@@ -11,6 +11,9 @@ outcome: "Success criteria defined with ≥8 opportunities in 1 week"
 kpis: ["Success criteria definition rate", "Quantifiable metric percentage", "Mutual agreement rate", "Close rate correlation"]
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Success Criteria Definition — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving intros and meetings over 6 months via continuou
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "partnerships-warm-intros"
 install: "npx gtm-skills add sales/qualified/partnerships-warm-intros"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Partnerships & Warm Intros — Durable Intelligence
 

@@ -11,6 +11,11 @@ outcome: "≥55%, ≥12pp"
 kpis: ["Activation by persona", "Completion rate", "Time to activation"]
 slug: "role-based-onboarding"
 install: "npx gtm-skills add product/onboard/role-based-onboarding"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Persona-Based Onboarding — Baseline Run
 

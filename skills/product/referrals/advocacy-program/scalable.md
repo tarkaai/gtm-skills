@@ -11,6 +11,13 @@ outcome: "≥75 advocates at 500+"
 kpis: ["Advocate recruitment", "Advocate activity", "Referrals per advocate", "Segment metrics"]
 slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Formal Advocacy Program — Scalable Automation
 

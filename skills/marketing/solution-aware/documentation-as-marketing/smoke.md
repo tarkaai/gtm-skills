@@ -11,6 +11,9 @@ outcome: "≥100 organic visits to docs in 4 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Documentation as Marketing — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "≥50% at 500+"
 kpis: ["Activation by persona", "Completion rate", "Time to activation", "Segment metrics"]
 slug: "role-based-onboarding"
 install: "npx gtm-skills add product/onboard/role-based-onboarding"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Persona-Based Onboarding — Scalable Automation
 

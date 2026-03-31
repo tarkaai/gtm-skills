@@ -11,6 +11,13 @@ outcome: "4+ webinars/mo, ≥70%"
 kpis: ["Registration rate", "Attendance", "Post-webinar activation", "Segment metrics"]
 slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Live Onboarding Webinars — Scalable Automation
 

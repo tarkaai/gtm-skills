@@ -11,6 +11,9 @@ outcome: "≥50 tool uses and ≥15 email captures in 3 weeks"
 kpis: ["Tool completion rate", "Email capture rate", "Conversion to demo/signup", "Tool shares"]
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Interactive Content Tools — Smoke Test
 

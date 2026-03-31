@@ -11,6 +11,11 @@ outcome: "≥ 50 clicks and ≥ 3 leads over 2 weeks"
 kpis: ["Impressions", "Click-through rate"]
 slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Newsletter Sponsorship — Baseline Run
 

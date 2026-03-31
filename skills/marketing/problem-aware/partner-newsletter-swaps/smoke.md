@@ -11,6 +11,9 @@ outcome: "≥2 newsletter swaps and ≥100 new subscribers in 3 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add marketing/problem-aware/partner-newsletter-swaps"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Partner Newsletter Swaps — Smoke Test
 

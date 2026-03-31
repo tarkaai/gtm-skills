@@ -11,6 +11,13 @@ outcome: "Storytelling demos on ≥75% of opportunities at scale over 2 months w
 kpis: ["Storytelling adoption rate", "Demo-to-proposal conversion", "Engagement score", "Story matching accuracy", "Close rate improvement"]
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Demo Storytelling Framework — Scalable Automation
 

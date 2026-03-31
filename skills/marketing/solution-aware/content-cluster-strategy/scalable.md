@@ -11,6 +11,13 @@ outcome: "≥12,000 page views/month and conversion rate ≥1.0%"
 kpis: ["Organic traffic to clusters", "Internal link CTR", "Conversion rate", "Average position", "Cluster coverage", "Keyword ranking distribution"]
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Content Cluster Strategy — Scalable Automation
 

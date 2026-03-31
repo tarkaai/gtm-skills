@@ -11,6 +11,15 @@ outcome: "Sustained or improving guest post acceptance rate and referral traffic
 kpis: ["Pitch acceptance rate trend", "Articles published per month", "Referral traffic trend", "Backlink acquisition rate", "Conversion rate", "Blog relationship strength"]
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # Guest Posting at Scale — Durable Intelligence
 

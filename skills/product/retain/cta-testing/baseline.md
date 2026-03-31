@@ -11,6 +11,11 @@ outcome: "≥25% CTR lift"
 kpis: ["CTA CTR", "Conversion rate", "Test velocity"]
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # CTA Optimization — Baseline Run
 

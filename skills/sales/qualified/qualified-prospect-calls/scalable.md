@@ -11,6 +11,13 @@ outcome: "Meeting rate ≥ 1.6% over 2 months"
 kpis: ["Connect rate", "Dials attempted", "Time to connect"]
 slug: "qualified-prospect-calls"
 install: "npx gtm-skills add sales/qualified/qualified-prospect-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Founder calls to prospects — Scalable Automation
 

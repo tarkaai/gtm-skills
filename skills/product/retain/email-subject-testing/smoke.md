@@ -11,6 +11,9 @@ outcome: "Test 5 emails"
 kpis: ["Open rate", "CTR", "Conversion rate"]
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Email Campaign A/B Tests — Smoke Test
 

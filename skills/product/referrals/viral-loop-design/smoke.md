@@ -11,6 +11,9 @@ outcome: "Viral coeff ≥0.3"
 kpis: ["Viral coefficient", "Invite rate", "Invite conversion"]
 slug: "viral-loop-design"
 install: "npx gtm-skills add product/referrals/viral-loop-design"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Built-In Virality — Smoke Test
 

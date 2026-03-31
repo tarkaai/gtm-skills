@@ -11,6 +11,9 @@ outcome: "≥50 social shares or ≥3 inbound leads in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "industry-reports-research"
 install: "npx gtm-skills add marketing/problem-aware/industry-reports-research"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Industry Reports & Research — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: ">=1 upsell closed from >=3 customers with expansion signals within 1 w
 kpis: ["Expansion signal detection rate", "Upsell conversion rate", "Expansion ARR", "Time from signal to close"]
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Usage-Based Upsell — Smoke Test
 

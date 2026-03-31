@@ -11,6 +11,15 @@ outcome: "Sustained or improving integration ≥60% over 6 months via AI"
 kpis: ["Integration setup", "Integration success", "Post-integration activation", "Experiment velocity", "AI lift"]
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Integration Setup Wizard — Durable Intelligence
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving rates maintained over 6 months via AI"
 kpis: ["Admin setup", "User activation", "Team invite rate", "Experiment velocity", "AI lift"]
 slug: "admin-onboarding-flow"
 install: "npx gtm-skills add product/onboard/admin-onboarding-flow"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Admin vs User Onboarding — Durable Intelligence
 

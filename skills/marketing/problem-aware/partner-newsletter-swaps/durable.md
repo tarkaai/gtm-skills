@@ -11,6 +11,15 @@ outcome: "Sustained subscriber growth and ≥45 qualified leads over 12 months v
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add marketing/problem-aware/partner-newsletter-swaps"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Partner Newsletter Swaps — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥30% click CTA"
 kpis: ["Tooltip CTR", "Feature adoption", "Dismissal rate"]
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Contextual Feature Tooltips — Smoke Test
 

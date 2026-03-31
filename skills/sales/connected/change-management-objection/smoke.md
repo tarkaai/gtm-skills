@@ -11,6 +11,9 @@ outcome: "Change objections handled on ≥5 opportunities in 1 week"
 kpis: ["Change objection resolution rate", "Status quo cost acceptance", "Change plan acceptance rate", "Deal progression rate"]
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Change Management Objection Handling — Smoke Test
 

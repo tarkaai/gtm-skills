@@ -11,6 +11,13 @@ outcome: "≥3% meeting rate at 500 trigger-based contacts/month over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Trigger-based Outreach — Scalable Automation
 

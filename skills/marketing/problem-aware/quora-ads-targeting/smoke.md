@@ -11,6 +11,9 @@ outcome: "≥10,000 impressions and ≥5 qualified leads from $200 Quora test"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add marketing/problem-aware/quora-ads-targeting"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Quora Ads — Smoke Test
 

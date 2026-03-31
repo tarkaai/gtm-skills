@@ -11,6 +11,9 @@ outcome: "≥20% start, ≥60% complete"
 kpis: ["Certification starts", "Completion rate", "Certified retention"]
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Product Certification Program — Smoke Test
 

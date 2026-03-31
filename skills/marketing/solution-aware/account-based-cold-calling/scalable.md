@@ -11,6 +11,13 @@ outcome: "≥2.5% call-to-meeting rate at 500 calls/month over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Account-based Cold Calling — Scalable Automation
 

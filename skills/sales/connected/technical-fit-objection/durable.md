@@ -11,6 +11,15 @@ outcome: "Sustained or improving technical win rates over 6 months via continuou
 kpis: ["Technical objection prediction accuracy", "Resolution rate", "Technical loss prevention", "Roadmap alignment effectiveness", "Competitive technical win rate"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Technical Fit Objection Handling — Durable Intelligence
 

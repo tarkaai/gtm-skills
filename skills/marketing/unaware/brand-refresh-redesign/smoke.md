@@ -11,6 +11,9 @@ outcome: "Complete brand audit and develop 3 positioning concepts for testing"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Brand Refresh & Redesign — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving research effectiveness (>=35% reply rate, >=2.5
 kpis: ["Reply rate trend", "Agent experiment win rate", "Signal prediction accuracy", "Research time efficiency"]
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Account Research & Intelligence — Durable Intelligence
 

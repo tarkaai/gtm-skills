@@ -11,6 +11,9 @@ outcome: "≥ 5 demos and ≥ 1 meeting in 1 week"
 kpis: ["Conversations started", "Follow-up requests"]
 slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Event Hallway Demos — Smoke Test
 

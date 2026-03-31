@@ -11,6 +11,13 @@ outcome: "≥20% lift at 500+"
 kpis: ["CTA CTR", "Conversion rate", "Test velocity", "Segment metrics"]
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # CTA Optimization — Scalable Automation
 

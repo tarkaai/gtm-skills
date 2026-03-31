@@ -11,6 +11,13 @@ outcome: "≥6% at 500+"
 kpis: ["Free to paid rate", "Feature engagement", "Upgrade timing", "Segment metrics"]
 slug: "freemium-feature-upsell"
 install: "npx gtm-skills add product/upsell/freemium-feature-upsell"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Freemium to Paid Conversion — Scalable Automation
 

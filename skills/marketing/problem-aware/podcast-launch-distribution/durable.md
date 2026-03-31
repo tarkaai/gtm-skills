@@ -11,6 +11,14 @@ outcome: "Sustained listener growth (≥15% QoQ) and ≥25 qualified leads/quart
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Branded Podcast Launch — Durable Intelligence
 

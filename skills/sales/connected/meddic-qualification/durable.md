@@ -11,6 +11,15 @@ outcome: "Sustained or improving MEDDIC-driven close rates (>=15% lift) over 6 m
 kpis: ["Close rate by MEDDIC score", "Agent experiment win rate", "Element quality trend", "Predictive accuracy"]
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # MEDDIC Qualification System — Durable Intelligence
 

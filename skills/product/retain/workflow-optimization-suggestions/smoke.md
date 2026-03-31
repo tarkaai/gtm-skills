@@ -11,6 +11,9 @@ outcome: "≥30% act"
 kpis: ["Suggestion acceptance", "Efficiency improvement", "Feature depth"]
 slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Workflow Recommendations — Smoke Test
 

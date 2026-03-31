@@ -11,6 +11,9 @@ outcome: "≥35% accept recs"
 kpis: ["Recommendation CTR", "Acceptance rate", "Feature adoption"]
 slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI-Powered Recommendations — Smoke Test
 

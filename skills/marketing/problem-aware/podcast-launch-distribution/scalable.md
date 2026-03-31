@@ -11,6 +11,12 @@ outcome: "≥2,000 downloads/episode and ≥30 qualified leads/quarter over 6 mo
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Branded Podcast Launch — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥1,200 completions/month and SQL rate ≥20%"
 kpis: ["Tool completion rate", "Email capture rate", "SQL conversion rate", "Revenue attributed to tools", "Tool virality (shares)"]
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Interactive Content Tools — Scalable Automation
 

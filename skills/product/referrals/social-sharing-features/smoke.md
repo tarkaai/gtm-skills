@@ -11,6 +11,9 @@ outcome: "≥20% share"
 kpis: ["Share rate", "Share CTR", "Viral coefficient"]
 slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Built-In Social Sharing — Smoke Test
 

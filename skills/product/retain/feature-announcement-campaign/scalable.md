@@ -11,6 +11,13 @@ outcome: "≥30% at 500+"
 kpis: ["Feature trial", "Sustained adoption", "Announcement engagement", "Segment metrics"]
 slug: "feature-announcement-campaign"
 install: "npx gtm-skills add product/retain/feature-announcement-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # New Feature Announcements — Scalable Automation
 

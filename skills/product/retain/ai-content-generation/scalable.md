@@ -11,6 +11,13 @@ outcome: "≥35% use at 500+"
 kpis: ["AI feature usage", "Content creation", "User satisfaction", "Segment metrics"]
 slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Content Assistant — Scalable Automation
 

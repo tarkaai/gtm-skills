@@ -11,6 +11,11 @@ outcome: "≥30 advocates, ≥10 referrals each"
 kpis: ["Advocate recruitment", "Advocate activity", "Referrals per advocate"]
 slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Formal Advocacy Program — Baseline Run
 

@@ -11,6 +11,9 @@ outcome: ">=3 deals with active champions and >=30% faster progression in 1 week
 kpis: ["Champions per deal", "Deal velocity (champion vs non-champion)", "Champion engagement score"]
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Champion Identification & Development — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "≥25% start, ≥70% complete, ≥90% retention"
 kpis: ["Certification starts", "Completion rate", "Certified retention"]
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Product Certification Program — Baseline Run
 

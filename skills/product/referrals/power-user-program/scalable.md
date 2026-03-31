@@ -11,6 +11,13 @@ outcome: "≥50 power users at 500+"
 kpis: ["Power user ID", "Advocacy rate", "Advanced usage", "Segment metrics"]
 slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Power User Identification — Scalable Automation
 

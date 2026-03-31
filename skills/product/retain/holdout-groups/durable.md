@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["Holdout performance", "Cumulative lift", "Long-term impact", "Experiment velocity", "AI lift"]
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Holdout Group Analysis — Durable Intelligence
 

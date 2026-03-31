@@ -11,6 +11,11 @@ outcome: "≥30% trial, ≥10% sustained"
 kpis: ["Spotlight engagement", "Feature trial", "Sustained adoption"]
 slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Weekly Feature Spotlights — Baseline Run
 

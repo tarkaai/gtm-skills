@@ -11,6 +11,9 @@ outcome: "≥3 meetings from 30 trigger-based contacts in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Trigger-based Outreach — Smoke Test
 

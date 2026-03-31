@@ -11,6 +11,15 @@ outcome: "Sustained conference growth (≥15% YoY) and ≥45 expansion opportuni
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Annual User Conference — Durable Intelligence
 

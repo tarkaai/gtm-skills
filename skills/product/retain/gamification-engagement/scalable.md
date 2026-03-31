@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Gamification participation", "Streak maintenance", "Feature adoption", "Segment metrics"]
 slug: "gamification-engagement"
 install: "npx gtm-skills add product/retain/gamification-engagement"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Gamified Product Experience — Scalable Automation
 

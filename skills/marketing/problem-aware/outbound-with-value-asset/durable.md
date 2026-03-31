@@ -11,6 +11,15 @@ outcome: "Sustained or improving positive replies referencing asset over 6 month
 kpis: ["Reply rate", "Open rate"]
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Outbound With Value Asset — Durable Intelligence
 

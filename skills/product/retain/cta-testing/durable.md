@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["CTA CTR", "Conversion rate", "Test velocity", "Experiment velocity", "AI lift"]
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # CTA Optimization — Durable Intelligence
 

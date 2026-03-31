@@ -11,6 +11,11 @@ outcome: "Success criteria defined on ≥80% of opportunities over 2 weeks"
 kpis: ["Success criteria definition rate", "Stakeholder alignment rate", "Close rate with defined criteria", "Post-sale success achievement rate"]
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Success Criteria Definition — Baseline Run
 

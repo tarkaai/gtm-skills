@@ -11,6 +11,13 @@ outcome: "≥250 attendees and ≥45 qualified leads from quarterly events over 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Co-hosted Partner Events — Scalable Automation
 

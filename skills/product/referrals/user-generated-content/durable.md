@@ -11,6 +11,15 @@ outcome: "Sustained or improving UGC growing over 6 months via AI"
 kpis: ["UGC creation rate", "UGC quality", "UGC amplification", "Experiment velocity", "AI lift"]
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # UGC Campaign — Durable Intelligence
 

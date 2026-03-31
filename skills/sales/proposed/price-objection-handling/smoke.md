@@ -11,6 +11,9 @@ outcome: "Overcome >=3 out of 5 price objections within 1 week"
 kpis: ["Objection overcome rate", "Response framework effectiveness", "Time to overcome objection"]
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Price Objection Handling — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving improvement sustained over 6 months via AI"
 kpis: ["Funnel conversion", "Drop-off reduction", "Test velocity", "Experiment velocity", "AI lift"]
 slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Conversion Funnel Optimization — Durable Intelligence
 

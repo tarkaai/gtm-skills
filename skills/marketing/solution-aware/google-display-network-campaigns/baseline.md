@@ -11,6 +11,11 @@ outcome: "≥300,000 impressions and ≥20 qualified leads from $2,000 budget ov
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Google Display Network — Baseline Run
 

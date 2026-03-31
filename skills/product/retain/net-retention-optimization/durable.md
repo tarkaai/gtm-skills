@@ -11,6 +11,15 @@ outcome: "Sustained or improving NDR ≥115% over 6 months via AI"
 kpis: ["Net dollar retention", "Churn rate", "Expansion rate", "Experiment velocity", "AI lift"]
 slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Net Retention Focus — Durable Intelligence
 

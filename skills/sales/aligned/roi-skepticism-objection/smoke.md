@@ -11,6 +11,9 @@ outcome: "ROI skepticism handled on ≥5 opportunities in 1 week"
 kpis: ["ROI objection resolution rate", "Customer proof effectiveness", "Collaborative model acceptance", "Deal progression rate"]
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # ROI Skepticism Handling — Smoke Test
 

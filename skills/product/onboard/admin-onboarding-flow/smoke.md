@@ -11,6 +11,9 @@ outcome: "≥60% admin, ≥50% user"
 kpis: ["Admin setup", "User activation", "Team invite rate"]
 slug: "admin-onboarding-flow"
 install: "npx gtm-skills add product/onboard/admin-onboarding-flow"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Admin vs User Onboarding — Smoke Test
 

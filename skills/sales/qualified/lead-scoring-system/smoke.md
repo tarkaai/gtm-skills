@@ -11,6 +11,9 @@ outcome: "Hot leads have >=2x meeting rate vs Cold leads in 1 week"
 kpis: ["Meeting rate by tier", "Score distribution", "Time to meeting by tier"]
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Lead Scoring System — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥80% over 6 months via AI"
 kpis: ["Call booking", "Call completion", "Post-call activation", "Experiment velocity", "AI lift"]
 slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # High-Touch Onboarding Calls — Durable Intelligence
 

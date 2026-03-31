@@ -11,6 +11,11 @@ outcome: "≥75%, ≥20pp"
 kpis: ["Wizard completion", "Setup time", "Config success"]
 slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Guided Setup Wizard — Baseline Run
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving CTR ≥45% over 6 months via AI"
 kpis: ["Empty state CTR", "Activation rate", "Feature adoption", "Experiment velocity", "AI lift"]
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Empty State Guidance — Durable Intelligence
 

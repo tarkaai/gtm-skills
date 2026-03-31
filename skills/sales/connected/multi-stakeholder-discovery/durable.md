@@ -11,6 +11,15 @@ outcome: "Sustained or improving consensus building and close rates on complex d
 kpis: ["Stakeholder prediction accuracy", "Consensus achievement rate", "Hidden influencer identification", "Close rate on complex deals", "Multi-threading effectiveness"]
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Multi-Stakeholder Discovery Process — Durable Intelligence
 

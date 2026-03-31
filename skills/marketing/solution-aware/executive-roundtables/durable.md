@@ -11,6 +11,15 @@ outcome: "Sustained executive engagement and ≥25 opportunities/quarter over 12
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Executive Roundtables — Durable Intelligence
 

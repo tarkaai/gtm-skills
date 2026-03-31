@@ -11,6 +11,15 @@ outcome: "Sustained or improving reviews growing over 6 months via AI"
 kpis: ["Review request CTR", "Review completion", "Review quality", "Experiment velocity", "AI lift"]
 slug: "in-app-review-request"
 install: "npx gtm-skills add product/referrals/in-app-review-request"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # G2/Capterra Review Requests — Durable Intelligence
 

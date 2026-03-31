@@ -11,6 +11,10 @@ outcome: "≥15 thought pieces, ≥2 speaking slots, and ≥20 qualified leads i
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Thought Leadership Program — Baseline Run
 

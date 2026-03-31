@@ -11,6 +11,13 @@ outcome: "≥30% at 500+"
 kpis: ["Trial conversion", "Trial engagement", "Upgrade timing", "Segment metrics"]
 slug: "free-trial-optimization"
 install: "npx gtm-skills add product/onboard/free-trial-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Trial Conversion Optimization — Scalable Automation
 

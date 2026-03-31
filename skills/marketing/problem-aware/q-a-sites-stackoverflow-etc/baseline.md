@@ -11,6 +11,10 @@ outcome: "≥ 80 profile clicks and ≥ 3 leads over 2 weeks"
 kpis: ["Profile views", "Profile click rate"]
 slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Q&A Site Authority — Baseline Run
 

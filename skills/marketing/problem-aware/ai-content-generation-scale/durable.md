@@ -11,6 +11,14 @@ outcome: "Sustained or improving organic traffic and conversion rate over 6 mont
 kpis: ["Organic traffic trend", "Conversion rate", "Content production velocity", "Time on page", "Content refresh rate", "Topic relevance score"]
 slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # AI Content Generation — Durable Intelligence
 

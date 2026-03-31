@@ -11,6 +11,11 @@ outcome: "≥6% response rate from 100 video messages over 2 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Video Prospecting at Scale — Baseline Run
 

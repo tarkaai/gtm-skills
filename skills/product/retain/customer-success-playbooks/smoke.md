@@ -11,6 +11,9 @@ outcome: "5 playbooks created"
 kpis: ["Playbook adoption", "Intervention success", "Churn reduction"]
 slug: "customer-success-playbooks"
 install: "npx gtm-skills add product/retain/customer-success-playbooks"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # CS Intervention Playbooks — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "Technical objections handled on ≥80% of instances over 2 weeks"
 kpis: ["Objection resolution rate", "Deal save rate", "Technical proof effectiveness", "Roadmap commitment accuracy"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Technical Fit Objection Handling — Baseline Run
 

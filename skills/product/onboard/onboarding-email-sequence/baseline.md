@@ -11,6 +11,11 @@ outcome: "Early retention ≥ 40% at day 7 over 2 weeks"
 kpis: ["Open rate", "Click rate", "Time to first key action"]
 slug: "onboarding-email-sequence"
 install: "npx gtm-skills add product/onboard/onboarding-email-sequence"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Onboarding email sequence — Baseline Run
 

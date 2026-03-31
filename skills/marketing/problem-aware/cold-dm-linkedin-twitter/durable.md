@@ -11,6 +11,15 @@ outcome: "Sustained or improving meeting rate over 6 months via continuous agent
 kpis: ["Reply rate", "Time to first reply", "DMs sent"]
 slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Cold DMs on LinkedIn/Twitter — Durable Intelligence
 

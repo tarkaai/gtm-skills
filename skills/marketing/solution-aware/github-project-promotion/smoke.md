@@ -11,6 +11,9 @@ outcome: "≥100 GitHub stars and ≥5 inbound developer leads in 3 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # GitHub Project Promotion — Smoke Test
 

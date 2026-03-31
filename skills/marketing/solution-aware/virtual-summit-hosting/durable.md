@@ -11,6 +11,15 @@ outcome: "Sustained summit performance and ≥140 qualified leads/event over 12 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Virtual Summit Hosting — Durable Intelligence
 

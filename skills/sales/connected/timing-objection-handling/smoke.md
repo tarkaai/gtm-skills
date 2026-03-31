@@ -11,6 +11,9 @@ outcome: "Timing objections handled on ≥5 opportunities in 1 week"
 kpis: ["Timing objection resolution rate", "Timeline acceleration rate", "Cost of inaction presentation impact", "Eventually close rate"]
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Timing Objection Handling — Smoke Test
 

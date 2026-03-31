@@ -11,6 +11,9 @@ outcome: "≥8% response rate from 30 video DMs in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "linkedin-video-dms"
 install: "npx gtm-skills add marketing/solution-aware/linkedin-video-dms"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # LinkedIn Video DMs — Smoke Test
 

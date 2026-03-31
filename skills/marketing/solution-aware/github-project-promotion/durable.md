@@ -11,6 +11,14 @@ outcome: "Sustained star growth (≥20% QoQ) and ≥40 qualified leads/quarter o
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # GitHub Project Promotion — Durable Intelligence
 

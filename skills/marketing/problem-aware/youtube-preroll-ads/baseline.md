@@ -11,6 +11,11 @@ outcome: "≥100,000 views and ≥15 qualified leads from $2,000 budget over 3 w
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # YouTube Pre-roll Ads — Baseline Run
 

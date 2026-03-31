@@ -11,6 +11,11 @@ outcome: "Technical demos on ≥80% of technical opportunities over 2 weeks"
 kpis: ["Technical demo rate", "Demo-to-POC conversion", "Technical validation speed", "Technical close rate"]
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Technical Deep-Dive Demo — Baseline Run
 

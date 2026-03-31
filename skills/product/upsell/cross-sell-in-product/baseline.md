@@ -11,6 +11,11 @@ outcome: "≥20% adopt"
 kpis: ["Cross-sell rate", "Multi-product accounts", "Portfolio expansion"]
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Related Product Cross-Sell — Baseline Run
 

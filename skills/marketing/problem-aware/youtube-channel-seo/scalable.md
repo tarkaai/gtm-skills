@@ -11,6 +11,12 @@ outcome: "≥10,000 views/month and conversion rate ≥0.8%"
 kpis: ["Video views", "Watch time", "CTR on thumbnails", "Referral traffic", "Conversion rate", "Subscriber growth", "Content production velocity"]
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # YouTube Channel and SEO — Scalable Automation
 

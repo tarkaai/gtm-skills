@@ -11,6 +11,9 @@ outcome: "Structured POCs completed on ≥5 opportunities in 2 weeks"
 kpis: ["POC completion rate", "Success criteria achievement", "POC-to-proposal conversion", "Time to decision"]
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # POC Management Framework — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving demos and meetings over 6 months via continuous
 kpis: ["Conversations started", "Follow-up requests"]
 slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Event Hallway Demos — Durable Intelligence
 

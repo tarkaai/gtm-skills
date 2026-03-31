@@ -11,6 +11,13 @@ outcome: ">=50% interview completion rate and measurable win rate improvement fr
 kpis: ["Interview completion rate", "Win rate trend", "Insight implementation rate", "Impact of changes on metrics"]
 slug: "win-loss-analysis"
 install: "npx gtm-skills add sales/won/win-loss-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Win/Loss Analysis Program — Scalable Automation
 

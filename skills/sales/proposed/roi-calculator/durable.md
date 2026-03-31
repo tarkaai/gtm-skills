@@ -11,6 +11,15 @@ outcome: "Sustained or improving ROI effectiveness (>=70% strong ROI, >=60% comp
 kpis: ["ROI projection accuracy", "Agent experiment win rate", "Business case conversion rate", "Realized vs projected ROI"]
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # ROI Calculator & Business Case — Durable Intelligence
 

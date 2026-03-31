@@ -11,6 +11,11 @@ outcome: "≥ 2% meeting rate over 2 weeks"
 kpis: ["Reply rate", "Time to first reply", "DMs sent"]
 slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Cold DMs on LinkedIn/Twitter — Baseline Run
 

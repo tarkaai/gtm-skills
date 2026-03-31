@@ -11,6 +11,15 @@ outcome: "Sustained or improving testimonials growing over 6 months via AI"
 kpis: ["Collection rate", "Quality score", "Usage in marketing", "Experiment velocity", "AI lift"]
 slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Systematic Testimonial Collection — Durable Intelligence
 

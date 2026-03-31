@@ -11,6 +11,11 @@ outcome: "≥10% response rate from 100 video DMs over 2 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "linkedin-video-dms"
 install: "npx gtm-skills add marketing/solution-aware/linkedin-video-dms"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # LinkedIn Video DMs — Baseline Run
 

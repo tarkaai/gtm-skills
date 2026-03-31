@@ -11,6 +11,11 @@ outcome: "Demo follow-up on ≥80% of demos over 2 weeks"
 kpis: ["Follow-up sequence completion", "Response rate by touch", "Next step conversion rate", "Time to next step", "Resource engagement rate"]
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Demo Follow-Up Sequence — Baseline Run
 

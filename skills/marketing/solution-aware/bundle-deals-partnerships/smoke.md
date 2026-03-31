@@ -11,6 +11,9 @@ outcome: "≥1 bundle partnership and ≥3 bundle deals in 4 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Bundle Deal Partnerships — Smoke Test
 

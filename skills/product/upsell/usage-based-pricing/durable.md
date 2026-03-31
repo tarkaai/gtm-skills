@@ -11,6 +11,15 @@ outcome: "Sustained or improving ARPU lift sustained over 6 months via AI"
 kpis: ["ARPU", "Usage growth", "Churn rate", "Experiment velocity", "AI lift"]
 slug: "usage-based-pricing"
 install: "npx gtm-skills add product/upsell/usage-based-pricing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Consumption-Based Pricing — Durable Intelligence
 

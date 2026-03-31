@@ -11,6 +11,11 @@ outcome: "≥70% accuracy, ≥15% churn reduction"
 kpis: ["Prediction accuracy", "Churn rate", "Intervention success"]
 slug: "churn-prediction-model"
 install: "npx gtm-skills add product/retain/churn-prediction-model"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI Churn Prediction — Baseline Run
 

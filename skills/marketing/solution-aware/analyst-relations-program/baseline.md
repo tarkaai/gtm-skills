@@ -11,6 +11,11 @@ outcome: "≥6 analyst briefings and ≥1 analyst mention or report inclusion in
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - threshold-engine
 ---
 # Analyst Relations Program — Baseline Run
 

@@ -11,6 +11,9 @@ outcome: "≥5% refer"
 kpis: ["Referral rate", "Referee conversion", "Referral CAC"]
 slug: "referral-program"
 install: "npx gtm-skills add product/referrals/referral-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Incentivized Referral Program — Smoke Test
 

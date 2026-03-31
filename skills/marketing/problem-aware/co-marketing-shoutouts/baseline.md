@@ -11,6 +11,11 @@ outcome: "≥ 50 clicks and ≥ 3 leads over 2 weeks"
 kpis: ["Impressions", "Click-through rate"]
 slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Partner Newsletter Shoutout — Baseline Run
 

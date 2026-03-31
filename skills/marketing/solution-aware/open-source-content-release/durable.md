@@ -11,6 +11,14 @@ outcome: "Sustained star growth (≥10% QoQ) and ≥5% OSS-to-signup conversion 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # Open Source Content Release — Durable Intelligence
 

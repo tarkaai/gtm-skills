@@ -11,6 +11,11 @@ outcome: "Launch refreshed brand identity with ≥20% improvement in key convers
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Brand Refresh & Redesign — Baseline Run
 

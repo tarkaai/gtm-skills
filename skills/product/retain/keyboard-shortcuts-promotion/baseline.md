@@ -11,6 +11,11 @@ outcome: "≥30%, ≥10pp power users"
 kpis: ["Shortcut usage", "Power user growth", "Efficiency metrics"]
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Power User Features — Baseline Run
 

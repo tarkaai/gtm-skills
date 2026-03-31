@@ -11,6 +11,9 @@ outcome: "≥5% free to paid"
 kpis: ["Free signups", "Free to paid rate", "Time to upgrade"]
 slug: "freemium-model"
 install: "npx gtm-skills add product/onboard/freemium-model"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Freemium Tier Strategy — Smoke Test
 

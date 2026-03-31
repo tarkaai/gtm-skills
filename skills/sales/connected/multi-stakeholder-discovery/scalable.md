@@ -11,6 +11,13 @@ outcome: "Multi-stakeholder discovery on ≥75% of complex deals at scale over 2
 kpis: ["Stakeholder coverage rate", "Consensus building success", "Multi-threading efficiency", "Close rate improvement", "Deal velocity"]
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Multi-Stakeholder Discovery Process — Scalable Automation
 

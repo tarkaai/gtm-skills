@@ -11,6 +11,9 @@ outcome: "≥50% accept auto-upgrade"
 kpis: ["Auto-upgrade acceptance", "Usage growth", "ARPU lift"]
 slug: "usage-based-upsell"
 install: "npx gtm-skills add product/upsell/usage-based-upsell"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Automatic Usage Upsell — Smoke Test
 

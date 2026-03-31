@@ -11,6 +11,11 @@ outcome: "≥40% use, ≥15pp engagement"
 kpis: ["AI feature usage", "Content creation", "User satisfaction"]
 slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI Content Assistant — Baseline Run
 

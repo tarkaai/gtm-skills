@@ -11,6 +11,11 @@ outcome: "≥65%, ≥15pp"
 kpis: ["Integration setup", "Integration success", "Post-integration activation"]
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Integration Setup Wizard — Baseline Run
 

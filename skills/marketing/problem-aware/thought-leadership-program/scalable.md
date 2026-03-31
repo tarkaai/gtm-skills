@@ -11,6 +11,12 @@ outcome: "≥50 thought pieces, ≥8 speaking slots, and ≥60 qualified leads o
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Thought Leadership Program — Scalable Automation
 

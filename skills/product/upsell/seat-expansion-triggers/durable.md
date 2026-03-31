@@ -11,6 +11,15 @@ outcome: "Sustained or improving expansion ≥40% over 6 months via AI"
 kpis: ["Seat expansion rate", "Team growth", "Prompt acceptance", "Experiment velocity", "AI lift"]
 slug: "seat-expansion-triggers"
 install: "npx gtm-skills add product/upsell/seat-expansion-triggers"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Team Growth Upsell — Durable Intelligence
 

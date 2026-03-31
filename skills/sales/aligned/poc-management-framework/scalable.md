@@ -11,6 +11,13 @@ outcome: "POCs on ≥75% of qualified opportunities at scale over 2 months with 
 kpis: ["POC completion rate", "Success criteria achievement", "POC-to-close conversion", "Average POC duration", "Intervention effectiveness"]
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # POC Management Framework — Scalable Automation
 

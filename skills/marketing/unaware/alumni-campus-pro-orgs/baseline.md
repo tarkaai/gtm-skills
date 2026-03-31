@@ -11,6 +11,10 @@ outcome: "≥ 2 meetings over 2 weeks"
 kpis: ["Post engagement", "Inbound inquiries"]
 slug: "alumni-campus-pro-orgs"
 install: "npx gtm-skills add marketing/unaware/alumni-campus-pro-orgs"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Alumni & Campus Outreach — Baseline Run
 

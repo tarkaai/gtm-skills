@@ -11,6 +11,11 @@ outcome: "≥25% response rate from 50 targeted gifts over 3 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/outbound-gift-campaigns"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Outbound Gift Campaigns — Baseline Run
 

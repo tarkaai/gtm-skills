@@ -11,6 +11,10 @@ outcome: "≥ 1 meeting per week over 2 weeks"
 kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Founder Social & Content — Baseline Run
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving organic traffic and topical authority over 6 mo
 kpis: ["Organic traffic trend", "Keyword ranking distribution", "Topical authority score", "Internal link CTR", "Conversion rate", "Cluster refresh velocity"]
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Content Cluster Strategy — Durable Intelligence
 

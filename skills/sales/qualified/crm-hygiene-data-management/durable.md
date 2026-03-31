@@ -11,6 +11,15 @@ outcome: "Sustained or improving data quality (>=90%) over 6 months via continuo
 kpis: ["Data quality score trend", "Error prevention rate", "Agent correction accuracy", "Manual intervention rate"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # CRM Hygiene & Data Quality — Durable Intelligence
 

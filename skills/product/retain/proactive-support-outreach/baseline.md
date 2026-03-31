@@ -11,6 +11,11 @@ outcome: "≥50% respond, ≥15pp retention"
 kpis: ["Response rate", "Issue identification", "Retention lift"]
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Proactive Success Check-ins — Baseline Run
 

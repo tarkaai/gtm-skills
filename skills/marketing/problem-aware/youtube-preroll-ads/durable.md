@@ -11,6 +11,15 @@ outcome: "Sustained video performance and ≥45 qualified leads/month over 12 mo
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # YouTube Pre-roll Ads — Durable Intelligence
 

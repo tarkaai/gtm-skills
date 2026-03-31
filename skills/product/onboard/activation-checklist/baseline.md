@@ -11,6 +11,11 @@ outcome: "≥65%, ≥15pp lift"
 kpis: ["Checklist completion", "Task completion", "Activation rate"]
 slug: "activation-checklist"
 install: "npx gtm-skills add product/onboard/activation-checklist"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Onboarding Checklist Workflow — Baseline Run
 

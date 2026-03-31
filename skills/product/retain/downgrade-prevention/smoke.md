@@ -11,6 +11,9 @@ outcome: "≥40% prevent"
 kpis: ["Downgrade prevention", "Offer acceptance", "Retention lift"]
 slug: "downgrade-prevention"
 install: "npx gtm-skills add product/retain/downgrade-prevention"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Downgrade Intervention — Smoke Test
 

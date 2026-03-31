@@ -11,6 +11,11 @@ outcome: "≥100 registrations and ≥15 qualified leads across 3 webinars in 6 
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "webinar-series-program"
 install: "npx gtm-skills add marketing/solution-aware/webinar-series-program"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Educational Webinar Series — Baseline Run
 

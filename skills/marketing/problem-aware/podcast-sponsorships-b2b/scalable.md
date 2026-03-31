@@ -11,6 +11,13 @@ outcome: "≥150,000 impressions and ≥40 qualified leads from monthly sponsors
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # B2B Podcast Sponsorships — Scalable Automation
 

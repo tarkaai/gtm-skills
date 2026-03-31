@@ -11,6 +11,9 @@ outcome: "10 cohort analyses"
 kpis: ["Retention by cohort", "Insight generation", "Action success"]
 slug: "retention-cohort-analysis"
 install: "npx gtm-skills add product/retain/retention-cohort-analysis"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Retention Cohort Analytics — Smoke Test
 

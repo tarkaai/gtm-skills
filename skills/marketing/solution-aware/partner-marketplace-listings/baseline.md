@@ -11,6 +11,11 @@ outcome: "≥3 marketplace listings and ≥20 marketplace leads in 8 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Partner Marketplace Listings — Baseline Run
 

@@ -11,6 +11,11 @@ outcome: "Competitive situation assessed on ≥80% of opportunities over 2 weeks
 kpis: ["Competitive discovery rate", "Win rate by competitor", "Competitive positioning effectiveness", "Intelligence accuracy"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Competitive Situation Assessment — Baseline Run
 

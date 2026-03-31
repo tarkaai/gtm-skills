@@ -11,6 +11,11 @@ outcome: ">=45% trial-to-paid conversion rate over 2 weeks"
 kpis: ["Trial conversion rate by segment", "Activation milestone completion rate", "Trial health score distribution", "Time to activation"]
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Trial-to-Paid Conversion — Baseline Run
 

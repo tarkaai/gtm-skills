@@ -11,6 +11,9 @@ outcome: "≥20,000 impressions and ≥5 qualified leads from $300 test budget"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "display-advertising-industry"
 install: "npx gtm-skills add marketing/problem-aware/display-advertising-industry"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Display Advertising — Smoke Test
 

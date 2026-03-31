@@ -11,6 +11,11 @@ outcome: "≥10% ARPU lift"
 kpis: ["ARPU", "Usage growth", "Churn rate"]
 slug: "usage-based-pricing"
 install: "npx gtm-skills add product/upsell/usage-based-pricing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Consumption-Based Pricing — Baseline Run
 

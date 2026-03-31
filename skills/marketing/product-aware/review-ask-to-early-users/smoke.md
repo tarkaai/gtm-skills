@@ -11,6 +11,9 @@ outcome: "≥ 3 new reviews and ≥ 1 inbound lead in 2 weeks"
 kpis: ["3 new reviews", "1 inbound"]
 slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Review Ask to Early Users — Smoke Test
 

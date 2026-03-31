@@ -11,6 +11,13 @@ outcome: "Automated sandboxes on ≥75% of qualified opportunities at scale over
 kpis: ["Sandbox provisioning automation", "Active usage rate", "Engagement score", "Sandbox-to-close conversion", "Deal velocity improvement"]
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Sandbox Environment Demo — Scalable Automation
 

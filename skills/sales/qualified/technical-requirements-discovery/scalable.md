@@ -11,6 +11,13 @@ outcome: "Technical discovery completed on ≥70% of opportunities at scale over
 kpis: ["Technical discovery completion rate", "Technical fit prediction accuracy", "Solutions engineer efficiency", "Technical-driven close rate", "Implementation success rate"]
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Technical Requirements Discovery — Scalable Automation
 

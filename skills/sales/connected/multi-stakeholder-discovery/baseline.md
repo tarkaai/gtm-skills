@@ -11,6 +11,11 @@ outcome: "Multi-stakeholder discovery on ≥80% of complex deals over 2 weeks"
 kpis: ["Stakeholder coverage completeness", "Consensus achievement rate", "Multi-threading effectiveness", "Close rate on complex deals"]
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Multi-Stakeholder Discovery Process — Baseline Run
 

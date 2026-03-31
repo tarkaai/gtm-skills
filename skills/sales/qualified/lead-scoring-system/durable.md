@@ -11,6 +11,15 @@ outcome: "Sustained or improving lead score accuracy (>=4x Hot vs Cold conversio
 kpis: ["Conversion rate by tier", "Scoring model accuracy", "Agent experiment win rate", "Predictive score vs actual close rate"]
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Lead Scoring System — Durable Intelligence
 

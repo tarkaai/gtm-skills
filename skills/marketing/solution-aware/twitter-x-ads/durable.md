@@ -11,6 +11,15 @@ outcome: "Sustained Twitter performance and ≥60 qualified leads/month over 12 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Twitter/X Ads — Durable Intelligence
 

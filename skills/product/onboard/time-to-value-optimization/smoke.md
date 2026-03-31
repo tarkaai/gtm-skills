@@ -11,6 +11,9 @@ outcome: "≥50% value <10min"
 kpis: ["Time to first value", "Activation rate", "Step completion"]
 slug: "time-to-value-optimization"
 install: "npx gtm-skills add product/onboard/time-to-value-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Time-to-Value Acceleration — Smoke Test
 

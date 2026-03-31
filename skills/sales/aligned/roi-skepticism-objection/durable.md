@@ -11,6 +11,15 @@ outcome: "Sustained or improving ROI skepticism resolution and claim accuracy ov
 kpis: ["ROI objection resolution rate", "ROI claim accuracy", "Customer proof effectiveness", "Post-sale value validation", "Win rate with ROI skeptics"]
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # ROI Skepticism Handling — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥160 attendees and ≥50 qualified leads from monthly workshops over
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Workshop Series — Scalable Automation
 

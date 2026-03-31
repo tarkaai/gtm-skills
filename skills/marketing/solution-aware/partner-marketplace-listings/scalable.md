@@ -11,6 +11,12 @@ outcome: "≥8 marketplace listings and ≥60 leads/quarter over 6 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # Partner Marketplace Listings — Scalable Automation
 

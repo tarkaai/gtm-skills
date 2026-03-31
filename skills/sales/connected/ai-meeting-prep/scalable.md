@@ -11,6 +11,13 @@ outcome: "AI prep used in >=80% of calls with >=30% better outcomes vs non-prepp
 kpis: ["AI prep adoption rate", "Call outcome improvement", "Prep time savings", "Brief quality score"]
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # AI-Powered Meeting Preparation — Scalable Automation
 

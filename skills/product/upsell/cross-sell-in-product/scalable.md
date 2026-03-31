@@ -11,6 +11,13 @@ outcome: "≥15% at 500+"
 kpis: ["Cross-sell rate", "Multi-product accounts", "Portfolio expansion", "Segment metrics"]
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Related Product Cross-Sell — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: "≥3 pieces of technical content and ≥5 qualified dev leads in 3 wee
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Developer Advocacy Program — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: ">=3 out of 5 demos yield next-step commitment via pain-based customiza
 kpis: ["Demo-to-nextstep conversion", "Demo engagement score", "Pain coverage rate", "Questions asked per demo"]
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Discovery-Based Demo — Smoke Test
 

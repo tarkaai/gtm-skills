@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥30% over 6 months via AI"
 kpis: ["Trial conversion", "Trial engagement", "Upgrade timing", "Experiment velocity", "AI lift"]
 slug: "free-trial-optimization"
 install: "npx gtm-skills add product/onboard/free-trial-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Trial Conversion Optimization — Durable Intelligence
 

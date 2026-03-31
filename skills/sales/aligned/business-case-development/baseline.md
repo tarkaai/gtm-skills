@@ -11,6 +11,11 @@ outcome: "Business cases developed on ≥80% of enterprise deals over 2 weeks"
 kpis: ["Business case completion rate", "Executive approval rate", "Deal size impact", "Win rate with business case"]
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Business Case Development — Baseline Run
 

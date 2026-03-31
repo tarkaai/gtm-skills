@@ -11,6 +11,11 @@ outcome: "≥50% sales convert"
 kpis: ["Sales-assist rate", "Sales conversion", "ACV lift"]
 slug: "plg-sales-hybrid"
 install: "npx gtm-skills add product/upsell/plg-sales-hybrid"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # PLG + Sales-Assist Model — Baseline Run
 

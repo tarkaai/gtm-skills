@@ -11,6 +11,9 @@ outcome: "≥5% response rate from 30 personalized videos in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Video Prospecting at Scale — Smoke Test
 

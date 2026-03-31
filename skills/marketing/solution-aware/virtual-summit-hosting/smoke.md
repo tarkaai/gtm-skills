@@ -11,6 +11,9 @@ outcome: "≥200 registrations and ≥20 qualified leads from first summit"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Virtual Summit Hosting — Smoke Test
 

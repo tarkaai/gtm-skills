@@ -11,6 +11,13 @@ outcome: "≥8% reduction at 500+"
 kpis: ["Churn rate", "ARPU", "Net retention", "Segment metrics"]
 slug: "usage-based-pricing-optimization"
 install: "npx gtm-skills add product/retain/usage-based-pricing-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Pricing for Retention — Scalable Automation
 

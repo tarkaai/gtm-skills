@@ -11,6 +11,15 @@ outcome: "Sustained or improving MAP impact (>=35% velocity lift, >=25% win rate
 kpis: ["MAP impact on velocity/win rate", "Agent experiment win rate", "Risk prediction accuracy", "Milestone optimization effectiveness"]
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Mutual Action Plan (MAP) — Durable Intelligence
 

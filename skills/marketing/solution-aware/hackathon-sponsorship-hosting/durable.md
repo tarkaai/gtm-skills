@@ -11,6 +11,15 @@ outcome: "Sustained developer engagement and ≥35 qualified leads/quarter over 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add marketing/solution-aware/hackathon-sponsorship-hosting"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Hackathon Sponsorship — Durable Intelligence
 

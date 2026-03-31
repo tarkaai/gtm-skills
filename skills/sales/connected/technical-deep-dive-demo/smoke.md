@@ -11,6 +11,9 @@ outcome: "Technical demos completed on ≥5 opportunities in 1 week"
 kpis: ["Technical demo completion rate", "Demo-to-POC conversion rate", "Technical stakeholder engagement", "Technical blocker identification"]
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Technical Deep-Dive Demo — Smoke Test
 

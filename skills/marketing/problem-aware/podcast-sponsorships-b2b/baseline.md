@@ -11,6 +11,11 @@ outcome: "≥30,000 impressions and ≥12 qualified leads across 3 podcast spons
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # B2B Podcast Sponsorships — Baseline Run
 

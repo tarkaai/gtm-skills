@@ -11,6 +11,15 @@ outcome: "Sustained or improving sharing ≥25% over 6 months via AI"
 kpis: ["Share rate", "Share CTR", "Viral coefficient", "Experiment velocity", "AI lift"]
 slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Built-In Social Sharing — Durable Intelligence
 

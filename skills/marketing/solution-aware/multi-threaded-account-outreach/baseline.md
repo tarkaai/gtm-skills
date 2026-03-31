@@ -11,6 +11,11 @@ outcome: "≥3% account-to-meeting rate from 50 accounts over 3 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "multi-threaded-account-outreach"
 install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Multi-threaded Outreach — Baseline Run
 

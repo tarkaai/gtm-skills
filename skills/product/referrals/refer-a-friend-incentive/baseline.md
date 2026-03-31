@@ -11,6 +11,11 @@ outcome: "≥12% refer, ≥35% convert"
 kpis: ["Referral rate", "Conversion rate", "Reward cost"]
 slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Referral Rewards Program — Baseline Run
 

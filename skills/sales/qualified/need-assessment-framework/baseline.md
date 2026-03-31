@@ -11,6 +11,11 @@ outcome: "Need assessment completed on ≥80% of opportunities over 2 weeks"
 kpis: ["Need assessment completion rate", "Need score correlation with close rate", "Disqualification rate", "Deal velocity by need tier"]
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Need Assessment Framework — Baseline Run
 

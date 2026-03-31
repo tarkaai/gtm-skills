@@ -11,6 +11,11 @@ outcome: "≥3 bundle partnerships and ≥12 bundle deals in 8 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Bundle Deal Partnerships — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥20% at 500+"
 kpis: ["Add-on adoption", "Cross-sell rate", "ARPU lift", "Segment metrics"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Module Cross-Sell — Scalable Automation
 

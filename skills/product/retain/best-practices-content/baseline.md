@@ -11,6 +11,11 @@ outcome: "≥45%, ≥10pp efficiency"
 kpis: ["Tips engagement", "Workflow optimization", "Feature depth"]
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # In-App Best Practices — Baseline Run
 

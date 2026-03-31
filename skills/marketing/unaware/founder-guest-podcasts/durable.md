@@ -11,6 +11,15 @@ outcome: "Sustained or improving inbound leads over 6 months via continuous agen
 kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # Founder Guest Podcast — Durable Intelligence
 

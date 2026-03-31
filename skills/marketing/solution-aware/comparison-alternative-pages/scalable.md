@@ -11,6 +11,13 @@ outcome: "≥5,000 page views/month and conversion rate ≥1.0%"
 kpis: ["Organic traffic to comparison pages", "Conversion rate", "Keyword ranking distribution", "CTA click rate", "Competitor keyword coverage"]
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Comparison and Alternative Pages — Scalable Automation
 

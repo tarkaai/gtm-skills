@@ -11,6 +11,15 @@ outcome: "Sustained or improving adoption ≥40% over 6 months via AI"
 kpis: ["Advanced adoption", "Discovery rate", "User progression", "Experiment velocity", "AI lift"]
 slug: "progressive-feature-reveal"
 install: "npx gtm-skills add product/onboard/progressive-feature-reveal"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Progressive Feature Discovery — Durable Intelligence
 

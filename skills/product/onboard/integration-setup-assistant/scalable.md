@@ -11,6 +11,13 @@ outcome: "≥60% at 500+"
 kpis: ["Integration setup", "Integration success", "Post-integration activation", "Segment metrics"]
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Integration Setup Wizard — Scalable Automation
 

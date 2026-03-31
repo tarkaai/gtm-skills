@@ -11,6 +11,14 @@ outcome: "Sustained or improving installs and leads over 6 months via continuous
 kpis: ["Store listing views", "Install rate"]
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # Chrome Extension Teaser — Durable Intelligence
 

@@ -11,6 +11,11 @@ outcome: "≥25% adopt"
 kpis: ["Add-on adoption", "Cross-sell rate", "ARPU lift"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Module Cross-Sell — Baseline Run
 

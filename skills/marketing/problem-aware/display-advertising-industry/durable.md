@@ -11,6 +11,15 @@ outcome: "Sustained display efficiency and ≥50 qualified leads/month over 12 m
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "display-advertising-industry"
 install: "npx gtm-skills add marketing/problem-aware/display-advertising-industry"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Display Advertising — Durable Intelligence
 

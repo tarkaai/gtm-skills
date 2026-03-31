@@ -11,6 +11,15 @@ outcome: "Sustained speaking pipeline and ≥70 qualified leads over 12 months v
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Conference Speaking — Durable Intelligence
 

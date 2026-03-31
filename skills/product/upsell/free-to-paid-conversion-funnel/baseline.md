@@ -11,6 +11,11 @@ outcome: "≥10% convert"
 kpis: ["Conversion rate", "Time to upgrade", "Upgrade triggers"]
 slug: "free-to-paid-conversion-funnel"
 install: "npx gtm-skills add product/upsell/free-to-paid-conversion-funnel"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Free to Paid Funnel — Baseline Run
 

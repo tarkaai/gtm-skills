@@ -11,6 +11,9 @@ outcome: "≥25% CTR"
 kpis: ["Push CTR", "Opt-in rate", "DAU lift"]
 slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Push Notification Strategy — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "≥65% at 500+"
 kpis: ["Milestone achievement", "Celebration engagement", "Post-milestone retention", "Segment metrics"]
 slug: "usage-milestones"
 install: "npx gtm-skills add product/retain/usage-milestones"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Usage Milestone Celebrations — Scalable Automation
 

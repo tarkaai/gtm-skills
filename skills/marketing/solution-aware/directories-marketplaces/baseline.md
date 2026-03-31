@@ -11,6 +11,11 @@ outcome: "≥ 150 views and ≥ 3 inquiries over 2 weeks"
 kpis: ["Listing views", "Inquiry rate"]
 slug: "directories-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/directories-marketplaces"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Directory & Marketplace Listings — Baseline Run
 

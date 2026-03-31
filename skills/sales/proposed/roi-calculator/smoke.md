@@ -11,6 +11,9 @@ outcome: ">=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisi
 kpis: ["ROI value distribution", "Payback period", "ROI validation rate", "ROI impact on deal velocity"]
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # ROI Calculator & Business Case — Smoke Test
 

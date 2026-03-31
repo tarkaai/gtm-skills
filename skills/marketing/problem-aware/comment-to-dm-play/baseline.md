@@ -11,6 +11,10 @@ outcome: "≥ 15 DMs and ≥ 2 meetings over 2 weeks"
 kpis: ["Comment engagement", "Profile visits"]
 slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Comment-to-DM Play — Baseline Run
 

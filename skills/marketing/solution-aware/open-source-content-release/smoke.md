@@ -11,6 +11,9 @@ outcome: "≥50 GitHub stars and ≥5 inbound inquiries in 3 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Open Source Content Release — Smoke Test
 

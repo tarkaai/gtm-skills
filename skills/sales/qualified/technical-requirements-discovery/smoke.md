@@ -11,6 +11,9 @@ outcome: "Technical discovery completed on ≥5 opportunities in 1 week"
 kpis: ["Technical discovery completion rate", "Technical fit score", "Early blocker identification rate", "Integration complexity assessment"]
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Technical Requirements Discovery — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "≥50/2mo"
 kpis: ["Collection rate", "Quality score", "Usage in marketing", "Segment metrics"]
 slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Systematic Testimonial Collection — Scalable Automation
 

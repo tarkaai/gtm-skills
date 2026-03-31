@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥65% over 6 months via AI"
 kpis: ["Milestone achievement", "Celebration engagement", "Post-milestone retention", "Experiment velocity", "AI lift"]
 slug: "usage-milestones"
 install: "npx gtm-skills add product/retain/usage-milestones"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Usage Milestone Celebrations — Durable Intelligence
 

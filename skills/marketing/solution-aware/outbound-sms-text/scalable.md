@@ -11,6 +11,13 @@ outcome: "≥3% response rate at 800 SMS/month over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # SMS Outbound Sequences — Scalable Automation
 

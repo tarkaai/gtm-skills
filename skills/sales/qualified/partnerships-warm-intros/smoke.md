@@ -11,6 +11,9 @@ outcome: "≥ 3 intros and ≥ 2 meetings in 2 weeks"
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "partnerships-warm-intros"
 install: "npx gtm-skills add sales/qualified/partnerships-warm-intros"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Partnerships & Warm Intros — Smoke Test
 

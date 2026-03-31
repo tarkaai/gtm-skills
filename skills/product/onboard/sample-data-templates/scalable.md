@@ -11,6 +11,13 @@ outcome: "≥75% at 500+"
 kpis: ["Sample engagement", "Time to first action", "Activation rate", "Segment metrics"]
 slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Sample Data Acceleration — Scalable Automation
 

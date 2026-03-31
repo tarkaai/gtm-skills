@@ -11,6 +11,13 @@ outcome: "≥35% at 500+"
 kpis: ["Signup conversion", "Form completion", "Drop-off points", "Segment metrics"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Signup Funnel Optimization — Scalable Automation
 

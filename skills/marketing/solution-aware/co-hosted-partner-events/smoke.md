@@ -11,6 +11,9 @@ outcome: "≥30 attendees and ≥5 qualified leads from first co-hosted event"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Co-hosted Partner Events — Smoke Test
 

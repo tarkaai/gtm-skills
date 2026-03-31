@@ -11,6 +11,15 @@ outcome: "Sustained or improving usage ≥55% over 6 months via AI"
 kpis: ["Chatbot usage", "Resolution rate", "Satisfaction score", "Experiment velocity", "AI lift"]
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI In-App Support — Durable Intelligence
 

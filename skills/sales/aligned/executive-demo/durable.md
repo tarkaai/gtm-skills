@@ -11,6 +11,15 @@ outcome: "Sustained or improving exec demo effectiveness (>=75% conversion, >=35
 kpis: ["Exec demo conversion trend", "Agent experiment win rate", "Personalization impact", "Deal velocity by exec engagement"]
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Executive-Focused Demo — Durable Intelligence
 

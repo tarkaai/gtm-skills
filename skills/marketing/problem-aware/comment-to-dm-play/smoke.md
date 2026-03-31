@@ -11,6 +11,9 @@ outcome: "≥ 5 DMs started and ≥ 1 meeting in 1 week"
 kpis: ["Comment engagement", "Profile visits"]
 slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Comment-to-DM Play — Smoke Test
 

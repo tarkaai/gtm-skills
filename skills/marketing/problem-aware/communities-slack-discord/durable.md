@@ -11,6 +11,14 @@ outcome: "Sustained or improving meetings over 6 months via continuous agent-dri
 kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Slack/Discord Community Rhythm — Durable Intelligence
 

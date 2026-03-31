@@ -11,6 +11,15 @@ outcome: "Sustained or improving completion and meetings over 6 months via conti
 kpis: ["Video completion rate", "Click-through rate"]
 slug: "outbound-with-short-video"
 install: "npx gtm-skills add marketing/solution-aware/outbound-with-short-video"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Outbound With Short Video — Durable Intelligence
 

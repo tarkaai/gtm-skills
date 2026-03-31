@@ -11,6 +11,13 @@ outcome: "Risks discovered and mitigated on ≥75% of opportunities at scale ove
 kpis: ["Risk discovery rate", "Early risk identification", "Mitigation success rate", "Close rate improvement", "Deal predictability score"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Risk & Concern Discovery — Scalable Automation
 

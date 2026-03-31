@@ -11,6 +11,15 @@ outcome: "Sustained or improving competitive win rate (>=45%) over 6 months via 
 kpis: ["Competitive win rate trend", "Agent experiment win rate", "Battlecard currency score", "Positioning personalization impact"]
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Competitive Objection Handling — Durable Intelligence
 

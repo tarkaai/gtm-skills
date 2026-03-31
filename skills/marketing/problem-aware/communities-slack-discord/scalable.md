@@ -11,6 +11,12 @@ outcome: "≥ 8 meetings over 2 months"
 kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Slack/Discord Community Rhythm — Scalable Automation
 

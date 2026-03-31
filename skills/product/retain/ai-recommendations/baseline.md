@@ -11,6 +11,11 @@ outcome: "≥45% accept, ≥12% feature adoption"
 kpis: ["Recommendation CTR", "Acceptance rate", "Feature adoption"]
 slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI-Powered Recommendations — Baseline Run
 

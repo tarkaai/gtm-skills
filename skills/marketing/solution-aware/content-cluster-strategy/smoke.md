@@ -11,6 +11,9 @@ outcome: "≥400 page views and ≥3 conversions in 4 weeks"
 kpis: ["Organic traffic to cluster", "Internal link CTR", "Conversion rate", "Average position"]
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Content Cluster Strategy — Smoke Test
 

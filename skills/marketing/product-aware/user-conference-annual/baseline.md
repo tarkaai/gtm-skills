@@ -11,6 +11,11 @@ outcome: "≥150 attendees and ≥20 expansion opportunities from inaugural conf
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Annual User Conference — Baseline Run
 

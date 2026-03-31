@@ -11,6 +11,9 @@ outcome: "Storytelling demos delivered to ≥5 opportunities in 1 week"
 kpis: ["Storytelling adoption rate", "Prospect engagement signals", "Demo-to-proposal conversion", "Close rate improvement"]
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Demo Storytelling Framework — Smoke Test
 

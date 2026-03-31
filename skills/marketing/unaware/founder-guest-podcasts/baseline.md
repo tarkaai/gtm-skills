@@ -11,6 +11,11 @@ outcome: "≥ 3 inbound leads over 2 weeks"
 kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - threshold-engine
 ---
 # Founder Guest Podcast — Baseline Run
 

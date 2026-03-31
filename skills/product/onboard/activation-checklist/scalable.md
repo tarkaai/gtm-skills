@@ -11,6 +11,13 @@ outcome: "≥60% at 500+"
 kpis: ["Checklist completion", "Task completion", "Activation rate", "Segment metrics"]
 slug: "activation-checklist"
 install: "npx gtm-skills add product/onboard/activation-checklist"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Onboarding Checklist Workflow — Scalable Automation
 

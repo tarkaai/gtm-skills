@@ -11,6 +11,9 @@ outcome: "≥15 advocates"
 kpis: ["Advocate recruitment", "Advocate activity", "Referrals per advocate"]
 slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Formal Advocacy Program — Smoke Test
 

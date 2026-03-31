@@ -11,6 +11,11 @@ outcome: ">=85% data quality score and <3% duplicate rate over 2 weeks"
 kpis: ["Data quality score", "Duplicate rate", "Stale record rate", "Compliance rate by rep"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # CRM Hygiene & Data Quality — Baseline Run
 

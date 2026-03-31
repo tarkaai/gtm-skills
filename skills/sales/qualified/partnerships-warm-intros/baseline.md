@@ -11,6 +11,11 @@ outcome: "≥ 6 intros and ≥ 4 meetings over 2 weeks"
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "partnerships-warm-intros"
 install: "npx gtm-skills add sales/qualified/partnerships-warm-intros"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Partnerships & Warm Intros — Baseline Run
 

@@ -11,6 +11,11 @@ outcome: "≥15% intro rate and ≥10 qualified intros from 70 requests over 4 w
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Outbound Referral Requests — Baseline Run
 

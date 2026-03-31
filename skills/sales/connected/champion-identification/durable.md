@@ -11,6 +11,15 @@ outcome: "Sustained or improving champion impact (>=40% win rate lift) over 6 mo
 kpis: ["Champion win rate lift", "Champion engagement trend", "Agent experiment win rate", "Champion prediction accuracy"]
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Champion Identification & Development — Durable Intelligence
 

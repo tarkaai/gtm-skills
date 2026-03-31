@@ -11,6 +11,15 @@ outcome: "Sustained or improving identification ≥55% over 6 months via AI"
 kpis: ["Ticket correlation", "At-risk ID rate", "Intervention success", "Experiment velocity", "AI lift"]
 slug: "support-issue-tracking"
 install: "npx gtm-skills add product/retain/support-issue-tracking"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Support Ticket Churn Signals — Durable Intelligence
 

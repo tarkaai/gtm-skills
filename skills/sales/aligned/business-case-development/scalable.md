@@ -11,6 +11,13 @@ outcome: "Business cases automated at scale over 2 months with maintained approv
 kpis: ["Automation efficiency", "Executive approval rate", "Time to approval", "Enterprise win rate", "Deal size impact"]
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Business Case Development — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥40% at 500+"
 kpis: ["Message CTR", "Conversion rate", "Message engagement", "Segment metrics"]
 slug: "in-app-messaging-campaigns"
 install: "npx gtm-skills add product/retain/in-app-messaging-campaigns"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Behavioral In-App Messages — Scalable Automation
 

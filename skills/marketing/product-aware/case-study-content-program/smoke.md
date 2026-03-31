@@ -11,6 +11,9 @@ outcome: "≥300 page views and ≥5 conversions in 4 weeks"
 kpis: ["Page views", "Time on page", "Conversion rate", "Social shares"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Case Study Content Program — Smoke Test
 

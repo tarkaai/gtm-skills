@@ -11,6 +11,15 @@ outcome: "Sustained or improving adoption ≥15% over 6 months via AI"
 kpis: ["Cross-sell rate", "Multi-product accounts", "Portfolio expansion", "Experiment velocity", "AI lift"]
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Related Product Cross-Sell — Durable Intelligence
 

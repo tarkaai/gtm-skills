@@ -11,6 +11,13 @@ outcome: "Meeting rate ≥ 1.6% over 2 months"
 kpis: ["Meetings rate within 20% of baseline"]
 slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Outbound Email/LI/Calls — Scalable Automation
 

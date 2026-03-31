@@ -11,6 +11,9 @@ outcome: "≥55% complete 1 integration"
 kpis: ["Integration setup", "Integration success", "Post-integration activation"]
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Integration Setup Wizard — Smoke Test
 

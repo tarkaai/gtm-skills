@@ -11,6 +11,9 @@ outcome: "Budget objections handled on ≥5 opportunities in 1 week"
 kpis: ["Budget objection resolution rate", "Budget found rate", "Payment flexibility acceptance", "Deal progression rate"]
 slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Budget Objection Navigation — Smoke Test
 

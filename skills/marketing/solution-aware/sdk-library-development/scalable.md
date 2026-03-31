@@ -11,6 +11,12 @@ outcome: "≥3,000 downloads/month and ≥60 developer signups/month over 6 mont
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # SDK & Library Development — Scalable Automation
 

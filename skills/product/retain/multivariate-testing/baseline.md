@@ -11,6 +11,11 @@ outcome: "≥3 MVTs, ≥1 win"
 kpis: ["MVT velocity", "Win rate", "Combination insights"]
 slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Multivariate Experiments — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥30 active partners and ≥25 partner-sourced deals/quarter over 6 m
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Reseller & Affiliate Program — Scalable Automation
 

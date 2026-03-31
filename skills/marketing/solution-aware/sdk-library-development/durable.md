@@ -11,6 +11,14 @@ outcome: "Sustained download growth (≥15% QoQ) and ≥50 developer signups/mon
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # SDK & Library Development — Durable Intelligence
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving CVR ≥35% over 6 months via AI"
 kpis: ["Signup conversion", "Form completion", "Drop-off points", "Experiment velocity", "AI lift"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Signup Funnel Optimization — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥80% migrate"
 kpis: ["Migration rate", "Churn from sunset", "Communication engagement"]
 slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Feature Sunset Communication — Smoke Test
 

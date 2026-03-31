@@ -11,6 +11,15 @@ outcome: "Sustained or improving experiments continuous over 6 months via AI"
 kpis: ["Experiment velocity", "Win rate", "Impact per experiment", "Experiment velocity", "AI lift"]
 slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Product A/B Testing — Durable Intelligence
 

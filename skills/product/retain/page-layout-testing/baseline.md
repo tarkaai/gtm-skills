@@ -11,6 +11,11 @@ outcome: "≥15% engagement lift"
 kpis: ["Engagement metrics", "Conversion rate", "User satisfaction"]
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # UI/UX Experimentation — Baseline Run
 

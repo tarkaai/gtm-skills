@@ -11,6 +11,11 @@ outcome: "≥40% upgrade"
 kpis: ["Upgrade rate", "Alert engagement", "Upgrade timing"]
 slug: "usage-threshold-alerts"
 install: "npx gtm-skills add product/upsell/usage-threshold-alerts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Plan Limit Notifications — Baseline Run
 

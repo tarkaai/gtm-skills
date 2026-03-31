@@ -11,6 +11,13 @@ outcome: ">=60% of deals with active champions and >=40% higher win rate over 2 
 kpis: ["Champion rate", "Champion engagement score", "Win rate lift", "Champion health score"]
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Champion Identification & Development — Scalable Automation
 

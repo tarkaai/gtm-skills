@@ -11,6 +11,9 @@ outcome: "≥45% use AI coach"
 kpis: ["AI coach usage", "Activation lift", "User satisfaction"]
 slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Onboarding Assistant — Smoke Test
 

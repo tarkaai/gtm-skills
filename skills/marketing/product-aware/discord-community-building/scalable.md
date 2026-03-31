@@ -11,6 +11,12 @@ outcome: "≥1,000 members and ≥100 DAU with ≥30 qualified leads/month over 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Discord Community Management — Scalable Automation
 

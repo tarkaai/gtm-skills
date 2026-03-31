@@ -11,6 +11,13 @@ outcome: "≥ 100 regs, ≥ 30% show rate, ≥ 8 meetings over 2 months"
 kpis: ["Registration rate", "Show rate"]
 slug: "micro-events-webinars"
 install: "npx gtm-skills add marketing/solution-aware/micro-events-webinars"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Micro-Event or Webinar — Scalable Automation
 

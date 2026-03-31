@@ -11,6 +11,9 @@ outcome: "≥50 booth visitors and ≥10 qualified leads from first conference"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Conference Booth & Sponsorship — Smoke Test
 

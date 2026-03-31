@@ -11,6 +11,13 @@ outcome: "Budget objections handled systematically at scale over 2 months with i
 kpis: ["Objection resolution rate", "Business case win rate", "Payment optimization effectiveness", "Deal size preservation", "Margin protection"]
 slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Budget Objection Navigation — Scalable Automation
 

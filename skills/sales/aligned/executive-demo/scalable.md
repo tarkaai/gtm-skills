@@ -11,6 +11,13 @@ outcome: ">=75% exec demo conversion and >=35% faster close time for exec-engage
 kpis: ["Exec demo conversion rate", "Exec engagement score", "Deal velocity by exec engagement", "Demo quality score"]
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Executive-Focused Demo — Scalable Automation
 

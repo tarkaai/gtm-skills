@@ -11,6 +11,12 @@ outcome: "≥2,500 stars and ≥50 qualified leads from GitHub presence over 6 m
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # GitHub Project Promotion — Scalable Automation
 

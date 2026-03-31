@@ -11,6 +11,15 @@ outcome: "Sustained or improving demo engagement and conversion over 6 months vi
 kpis: ["Demo-to-proposal conversion", "Engagement score", "Story matching accuracy", "Emotional connection rate", "Close rate improvement"]
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Demo Storytelling Framework — Durable Intelligence
 

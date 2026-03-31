@@ -11,6 +11,13 @@ outcome: "≥24 newsletter swaps and ≥2,500 subscribers with ≥50 leads over 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add marketing/problem-aware/partner-newsletter-swaps"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Partner Newsletter Swaps — Scalable Automation
 

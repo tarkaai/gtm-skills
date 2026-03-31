@@ -11,6 +11,9 @@ outcome: "≥2 meetings from 10 target accounts (2-3 contacts each) in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "multi-threaded-account-outreach"
 install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-outreach"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Multi-threaded Outreach — Smoke Test
 

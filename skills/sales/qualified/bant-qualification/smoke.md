@@ -11,6 +11,9 @@ outcome: ">=3 qualified leads in 1 week"
 kpis: ["Qualification rate", "Time to qualify", "Discovery call completion rate"]
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # BANT Qualification Framework — Smoke Test
 

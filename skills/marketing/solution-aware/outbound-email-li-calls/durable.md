@@ -11,6 +11,15 @@ outcome: "Sustained or improving meeting rate over 6 months via continuous agent
 kpis: ["Reply rate", "Time to first reply"]
 slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Outbound Email/LI/Calls — Durable Intelligence
 

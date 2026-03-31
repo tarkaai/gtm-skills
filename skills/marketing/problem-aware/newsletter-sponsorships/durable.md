@@ -11,6 +11,15 @@ outcome: "Sustained or improving clicks and leads over 6 months via continuous a
 kpis: ["Impressions", "Click-through rate"]
 slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Newsletter Sponsorship — Durable Intelligence
 

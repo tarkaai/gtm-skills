@@ -11,6 +11,15 @@ outcome: "Sustained or improving meetings over 6 months via continuous agent-dri
 kpis: ["2 meetings"]
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Local Field Prospecting — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥750,000 impressions and ≥65 qualified leads from $8,000/month ove
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Twitter/X Ads — Scalable Automation
 

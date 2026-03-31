@@ -11,6 +11,15 @@ outcome: "Sustained or improving reactivation ≥12% over 6 months via AI"
 kpis: ["Reactivation rate", "Win-back CAC", "Reactivated retention", "Experiment velocity", "AI lift"]
 slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Churned User Win-back — Durable Intelligence
 

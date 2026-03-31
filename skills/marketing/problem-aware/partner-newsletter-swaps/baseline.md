@@ -11,6 +11,11 @@ outcome: "≥6 newsletter swaps and ≥500 new subscribers with ≥15 leads in 6
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add marketing/problem-aware/partner-newsletter-swaps"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Partner Newsletter Swaps — Baseline Run
 

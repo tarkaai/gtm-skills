@@ -11,6 +11,9 @@ outcome: "≥ 1 inbound lead in 1 week"
 kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Founder Guest Podcast — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥40% activation in 7d"
 kpis: ["Activation rate", "Tour completion", "Time to activation"]
 slug: "in-app-onboarding-tour"
 install: "npx gtm-skills add product/onboard/in-app-onboarding-tour"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Interactive Product Tour — Smoke Test
 

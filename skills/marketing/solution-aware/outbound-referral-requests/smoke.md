@@ -11,6 +11,9 @@ outcome: "≥3 warm intros from 15 referral requests in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Outbound Referral Requests — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥10 high-quality answers and ≥100 profile views in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Stack Overflow Presence — Smoke Test
 

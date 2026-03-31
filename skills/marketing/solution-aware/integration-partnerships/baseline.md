@@ -11,6 +11,11 @@ outcome: "≥3 integration partnerships and ≥20 qualified leads in 8 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Integration Partnerships — Baseline Run
 

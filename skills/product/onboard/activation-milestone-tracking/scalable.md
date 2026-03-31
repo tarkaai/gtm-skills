@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Activation rate", "Event coverage", "Milestone achievement", "Segment metrics"]
 slug: "activation-milestone-tracking"
 install: "npx gtm-skills add product/onboard/activation-milestone-tracking"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Activation Event Tracking — Scalable Automation
 

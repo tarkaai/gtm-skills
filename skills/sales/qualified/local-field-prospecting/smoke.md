@@ -11,6 +11,9 @@ outcome: "≥ 1 meeting in 1 week"
 kpis: ["2 meetings"]
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Local Field Prospecting — Smoke Test
 

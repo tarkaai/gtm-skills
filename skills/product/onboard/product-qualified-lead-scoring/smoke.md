@@ -11,6 +11,9 @@ outcome: "Score top 20%"
 kpis: ["PQL identification", "Score accuracy", "Sales conversion"]
 slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # PQL Scoring System — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving POC conversion rates over 6 months via continuo
 kpis: ["POC-to-close conversion rate", "POC success prediction accuracy", "Intervention effectiveness", "Time to POC completion", "Customer satisfaction with POC"]
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # POC Management Framework — Durable Intelligence
 

@@ -11,6 +11,10 @@ outcome: "≥100 downloads and ≥8 qualified leads in 30 days"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "industry-reports-research"
 install: "npx gtm-skills add marketing/problem-aware/industry-reports-research"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Industry Reports & Research — Baseline Run
 

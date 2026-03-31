@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥35% over 6 months via AI"
 kpis: ["Video view rate", "Completion rate", "Post-video activation", "Experiment velocity", "AI lift"]
 slug: "video-tutorial-library"
 install: "npx gtm-skills add product/onboard/video-tutorial-library"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Video Tutorial System — Durable Intelligence
 

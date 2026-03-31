@@ -11,6 +11,9 @@ outcome: "≥65% complete"
 kpis: ["Wizard completion", "Setup time", "Config success"]
 slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Guided Setup Wizard — Smoke Test
 

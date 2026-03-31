@@ -11,6 +11,9 @@ outcome: "≥ 6 attendees and ≥ 2 meetings in 2 weeks"
 kpis: ["RSVPs", "Show rate"]
 slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Micro-Roundtable — Smoke Test
 

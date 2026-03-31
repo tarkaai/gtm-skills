@@ -11,6 +11,13 @@ outcome: "≥45% response at 500+"
 kpis: ["NPS response rate", "NPS score", "Promoter conversion", "Segment metrics"]
 slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # NPS Feedback System — Scalable Automation
 

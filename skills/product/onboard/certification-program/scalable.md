@@ -11,6 +11,13 @@ outcome: "≥100 certs/2mo"
 kpis: ["Certification starts", "Completion rate", "Certified retention", "Segment metrics"]
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Product Certification Program — Scalable Automation
 

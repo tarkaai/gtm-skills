@@ -11,6 +11,15 @@ outcome: "Sustained or improving usage ≥35% over 6 months via AI"
 kpis: ["AI feature usage", "Content creation", "User satisfaction", "Experiment velocity", "AI lift"]
 slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Content Assistant — Durable Intelligence
 

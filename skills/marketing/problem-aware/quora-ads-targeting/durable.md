@@ -11,6 +11,15 @@ outcome: "Sustained Quora performance and ≥50 qualified leads/month over 12 mo
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add marketing/problem-aware/quora-ads-targeting"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Quora Ads — Durable Intelligence
 

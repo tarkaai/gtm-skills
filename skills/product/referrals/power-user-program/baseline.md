@@ -11,6 +11,11 @@ outcome: "≥40% become advocates"
 kpis: ["Power user ID", "Advocacy rate", "Advanced usage"]
 slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Power User Identification — Baseline Run
 

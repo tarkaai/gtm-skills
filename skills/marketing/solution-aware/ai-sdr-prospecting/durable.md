@@ -11,6 +11,15 @@ outcome: "Sustained meeting rate (≥1.6%) over 12 months via AI-driven personal
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # AI SDR Prospecting — Durable Intelligence
 

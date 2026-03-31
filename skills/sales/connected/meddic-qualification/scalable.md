@@ -11,6 +11,13 @@ outcome: ">=50% of deals with >80% MEDDIC completeness and >=15% higher close ra
 kpis: ["MEDDIC completeness rate", "Deal health score", "Close rate by MEDDIC quartile", "Velocity by MEDDIC score"]
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # MEDDIC Qualification System — Scalable Automation
 

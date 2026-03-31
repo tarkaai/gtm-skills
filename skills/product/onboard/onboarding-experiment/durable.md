@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["Activation lift", "Test velocity", "Winning patterns", "Experiment velocity", "AI lift"]
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Onboarding A/B Tests — Durable Intelligence
 

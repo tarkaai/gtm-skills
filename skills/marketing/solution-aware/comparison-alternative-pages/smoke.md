@@ -11,6 +11,9 @@ outcome: "≥200 page views and ≥3 conversions in 4 weeks"
 kpis: ["Organic traffic", "Conversion rate", "Average position for competitor keywords", "CTA click rate"]
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Comparison and Alternative Pages — Smoke Test
 

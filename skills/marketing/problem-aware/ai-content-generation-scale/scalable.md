@@ -11,6 +11,12 @@ outcome: "≥8,000 page views/month and conversion rate ≥1.0%"
 kpis: ["Page views", "Time on page", "Conversion rate", "Content production velocity", "Organic traffic growth", "Cost per post"]
 slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # AI Content Generation — Scalable Automation
 

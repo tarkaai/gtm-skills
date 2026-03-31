@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥25% over 6 months via AI"
 kpis: ["Annual conversion", "Offer acceptance", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "annual-upgrade-incentive"
 install: "npx gtm-skills add product/upsell/annual-upgrade-incentive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Monthly to Annual Conversion — Durable Intelligence
 

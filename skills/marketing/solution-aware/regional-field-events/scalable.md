@@ -11,6 +11,13 @@ outcome: "≥200 attendees and ≥50 qualified leads from monthly events over 6 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Regional Field Events — Scalable Automation
 

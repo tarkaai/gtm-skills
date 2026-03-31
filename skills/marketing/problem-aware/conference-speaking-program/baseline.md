@@ -11,6 +11,11 @@ outcome: "≥3 speaking slots and ≥30 qualified leads in 10 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Conference Speaking — Baseline Run
 

@@ -11,6 +11,9 @@ outcome: "≥1 speaking slot and ≥10 qualified leads from first conference"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Conference Speaking — Smoke Test
 

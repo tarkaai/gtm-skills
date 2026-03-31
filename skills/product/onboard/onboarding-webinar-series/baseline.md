@@ -11,6 +11,11 @@ outcome: "≥75%, ≥18pp"
 kpis: ["Registration rate", "Attendance", "Post-webinar activation"]
 slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Live Onboarding Webinars — Baseline Run
 

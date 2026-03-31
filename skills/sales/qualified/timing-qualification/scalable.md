@@ -11,6 +11,13 @@ outcome: "Timeline qualified on ≥70% of opportunities at scale over 2 months"
 kpis: ["Timeline qualification rate", "Forecast accuracy", "Deal velocity by timeline", "Timeline slippage rate"]
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Timing Qualification Process — Scalable Automation
 

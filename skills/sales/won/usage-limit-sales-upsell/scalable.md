@@ -11,6 +11,13 @@ outcome: ">=35% upsell conversion for high-scoring accounts and expansion ARR >=
 kpis: ["Expansion conversion by score tier", "Expansion ARR growth", "Self-service vs assisted upsell mix", "Prompt engagement rate"]
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Usage-Based Upsell — Scalable Automation
 

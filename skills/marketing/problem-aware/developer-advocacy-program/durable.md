@@ -11,6 +11,14 @@ outcome: "Sustained content output and ≥50 qualified leads/quarter over 12 mon
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Developer Advocacy Program — Durable Intelligence
 

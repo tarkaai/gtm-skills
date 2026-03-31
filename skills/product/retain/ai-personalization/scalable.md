@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Personalization engagement", "Retention lift", "Satisfaction score", "Segment metrics"]
 slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Product Personalization — Scalable Automation
 

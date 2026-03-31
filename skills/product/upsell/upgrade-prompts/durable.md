@@ -11,6 +11,15 @@ outcome: "Sustained or improving CTR ≥30% over 6 months via AI"
 kpis: ["Prompt CTR", "Conversion rate", "Prompt engagement", "Experiment velocity", "AI lift"]
 slug: "upgrade-prompts"
 install: "npx gtm-skills add product/upsell/upgrade-prompts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # In-App Upgrade CTAs — Durable Intelligence
 

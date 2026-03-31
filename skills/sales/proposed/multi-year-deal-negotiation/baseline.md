@@ -11,6 +11,11 @@ outcome: ">=30% close rate on multi-year proposals and average TCV >=2x annual d
 kpis: ["Multi-year proposal rate", "Multi-year close rate", "Average contract length", "TCV vs annual ACV"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Multi-Year Deal Structuring — Baseline Run
 

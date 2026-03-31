@@ -11,6 +11,15 @@ outcome: "Sustained or improving trial conversion rate (>=50%) over 6 months via
 kpis: ["Trial conversion rate trend", "Agent experiment win rate", "Churn prediction accuracy", "Personalization impact"]
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Trial-to-Paid Conversion — Durable Intelligence
 

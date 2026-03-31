@@ -11,6 +11,9 @@ outcome: "≥5,000 impressions and ≥5 qualified leads from $200 test budget"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Thought Leader Ads — Smoke Test
 

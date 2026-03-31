@@ -11,6 +11,11 @@ outcome: "≥40%, ≥8pp"
 kpis: ["Video view rate", "Completion rate", "Post-video activation"]
 slug: "video-tutorial-library"
 install: "npx gtm-skills add product/onboard/video-tutorial-library"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Video Tutorial System — Baseline Run
 

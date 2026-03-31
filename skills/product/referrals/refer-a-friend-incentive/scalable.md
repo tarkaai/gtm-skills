@@ -11,6 +11,13 @@ outcome: "≥10% refer at 500+"
 kpis: ["Referral rate", "Conversion rate", "Reward cost", "Segment metrics"]
 slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Referral Rewards Program — Scalable Automation
 

@@ -11,6 +11,15 @@ outcome: "Sustained media presence and ≥50 qualified leads/quarter over 12 mon
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # PR Campaign Launch — Durable Intelligence
 

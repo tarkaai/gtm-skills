@@ -11,6 +11,15 @@ outcome: "Sustained or improving power user growth over 6 months via AI"
 kpis: ["Power user ID", "Advocacy rate", "Advanced usage", "Experiment velocity", "AI lift"]
 slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Power User Identification — Durable Intelligence
 

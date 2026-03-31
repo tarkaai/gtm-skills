@@ -11,6 +11,9 @@ outcome: "≥5% lift from test"
 kpis: ["Conversion rate", "Plan mix", "ARPU"]
 slug: "pricing-page-optimization"
 install: "npx gtm-skills add product/upsell/pricing-page-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Self-Serve Pricing Optimization — Smoke Test
 

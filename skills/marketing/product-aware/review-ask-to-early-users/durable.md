@@ -11,6 +11,14 @@ outcome: "Sustained or improving new reviews and inbound leads over 6 months via
 kpis: ["3 new reviews", "1 inbound"]
 slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # Review Ask to Early Users — Durable Intelligence
 

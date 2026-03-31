@@ -11,6 +11,11 @@ outcome: "≥45%, ≥10pp"
 kpis: ["Advanced adoption", "Discovery rate", "User progression"]
 slug: "progressive-feature-reveal"
 install: "npx gtm-skills add product/onboard/progressive-feature-reveal"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Progressive Feature Discovery — Baseline Run
 

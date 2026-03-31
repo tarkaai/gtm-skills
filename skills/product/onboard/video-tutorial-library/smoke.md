@@ -11,6 +11,9 @@ outcome: "≥30% watch in wk1"
 kpis: ["Video view rate", "Completion rate", "Post-video activation"]
 slug: "video-tutorial-library"
 install: "npx gtm-skills add product/onboard/video-tutorial-library"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Video Tutorial System — Smoke Test
 

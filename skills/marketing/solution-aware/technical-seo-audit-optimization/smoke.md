@@ -11,6 +11,9 @@ outcome: "Improve Core Web Vitals by 20% and reduce critical errors to zero"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "technical-seo-audit-optimization"
 install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Technical SEO Audit & Fix — Smoke Test
 

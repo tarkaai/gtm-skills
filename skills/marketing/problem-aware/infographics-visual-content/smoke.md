@@ -11,6 +11,9 @@ outcome: "≥100 impressions and ≥10 shares in 3 days"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Infographics & Visual Content — Smoke Test
 

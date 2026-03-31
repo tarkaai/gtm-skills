@@ -11,6 +11,11 @@ outcome: "≥2,500 page views and ≥25 conversions over 8 weeks"
 kpis: ["Organic traffic to clusters", "Internal link CTR", "Conversion rate", "Average position", "Cluster navigation depth"]
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Content Cluster Strategy — Baseline Run
 

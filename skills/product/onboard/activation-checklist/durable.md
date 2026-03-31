@@ -11,6 +11,15 @@ outcome: "Sustained or improving completion ≥60% over 6 months via AI"
 kpis: ["Checklist completion", "Task completion", "Activation rate", "Experiment velocity", "AI lift"]
 slug: "activation-checklist"
 install: "npx gtm-skills add product/onboard/activation-checklist"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Onboarding Checklist Workflow — Durable Intelligence
 

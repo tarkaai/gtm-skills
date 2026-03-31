@@ -11,6 +11,9 @@ outcome: "≥40% convert after extension"
 kpis: ["Extension acceptance", "Conversion rate", "Extension ROI"]
 slug: "free-trial-extension"
 install: "npx gtm-skills add product/upsell/free-trial-extension"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Strategic Trial Extensions — Smoke Test
 

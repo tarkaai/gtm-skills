@@ -11,6 +11,9 @@ outcome: "≥ 1 meeting in 1 week"
 kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Slack/Discord Community Rhythm — Smoke Test
 

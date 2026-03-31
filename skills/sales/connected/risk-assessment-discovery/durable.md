@@ -11,6 +11,15 @@ outcome: "Sustained or improving risk mitigation success and deal predictability
 kpis: ["Risk prediction accuracy", "Early risk identification rate", "Mitigation success rate", "Late-stage surprise elimination", "Close rate improvement"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Risk & Concern Discovery — Durable Intelligence
 

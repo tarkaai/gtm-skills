@@ -11,6 +11,9 @@ outcome: "≥45% activation"
 kpis: ["Activation by persona", "Completion rate", "Time to activation"]
 slug: "role-based-onboarding"
 install: "npx gtm-skills add product/onboard/role-based-onboarding"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Persona-Based Onboarding — Smoke Test
 

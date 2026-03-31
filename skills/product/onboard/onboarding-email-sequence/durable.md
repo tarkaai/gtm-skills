@@ -11,6 +11,15 @@ outcome: "Sustained or improving Early retention sustained over 6 months via con
 kpis: ["Open rate", "Click rate", "Time to first key action"]
 slug: "onboarding-email-sequence"
 install: "npx gtm-skills add product/onboard/onboarding-email-sequence"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Onboarding email sequence — Durable Intelligence
 

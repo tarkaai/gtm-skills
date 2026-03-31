@@ -11,6 +11,9 @@ outcome: "≥ 30 referral sessions or ≥ 5 signups in 1 week"
 kpis: ["Referral traffic", "Comment engagement", "Link clicks"]
 slug: "reddit-niche-communities"
 install: "npx gtm-skills add marketing/problem-aware/reddit-niche-communities"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Reddit and community participation — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "≥ 6 placements and ≥ 300 referral clicks over 2 months"
 kpis: ["Placement rate", "Referral clicks"]
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # PR & Earned Placements — Scalable Automation
 

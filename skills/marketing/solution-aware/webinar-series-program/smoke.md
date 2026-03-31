@@ -11,6 +11,9 @@ outcome: "≥25 registrations and ≥3 qualified leads from first webinar"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "webinar-series-program"
 install: "npx gtm-skills add marketing/solution-aware/webinar-series-program"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Educational Webinar Series — Smoke Test
 

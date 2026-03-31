@@ -11,6 +11,11 @@ outcome: "≥70% score accuracy"
 kpis: ["PQL identification", "Score accuracy", "Sales conversion"]
 slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # PQL Scoring System — Baseline Run
 

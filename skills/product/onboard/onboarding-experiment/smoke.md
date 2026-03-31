@@ -11,6 +11,9 @@ outcome: "Test 2 variants"
 kpis: ["Activation lift", "Test velocity", "Winning patterns"]
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Onboarding A/B Tests — Smoke Test
 

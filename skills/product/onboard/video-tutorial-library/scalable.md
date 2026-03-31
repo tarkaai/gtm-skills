@@ -11,6 +11,13 @@ outcome: "≥35% at 500+"
 kpis: ["Video view rate", "Completion rate", "Post-video activation", "Segment metrics"]
 slug: "video-tutorial-library"
 install: "npx gtm-skills add product/onboard/video-tutorial-library"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Video Tutorial System — Scalable Automation
 

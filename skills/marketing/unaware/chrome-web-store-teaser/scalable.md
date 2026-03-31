@@ -11,6 +11,12 @@ outcome: "≥ 200 installs and ≥ 15 leads over 2 months"
 kpis: ["Store listing views", "Install rate"]
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # Chrome Extension Teaser — Scalable Automation
 

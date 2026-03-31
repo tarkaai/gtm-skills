@@ -11,6 +11,15 @@ outcome: "Sustained or improving commitment ≥15% over 6 months via AI"
 kpis: ["Multi-year rate", "LTV increase", "Churn reduction", "Experiment velocity", "AI lift"]
 slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Multi-Year Deal Incentives — Durable Intelligence
 

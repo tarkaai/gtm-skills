@@ -11,6 +11,9 @@ outcome: "≥300 page views and ≥3 conversions in 3 weeks"
 kpis: ["Page views", "Time on page", "Conversion rate", "Content production velocity"]
 slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # AI Content Generation — Smoke Test
 

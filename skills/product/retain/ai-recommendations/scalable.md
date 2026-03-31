@@ -11,6 +11,13 @@ outcome: "≥40% at 500+"
 kpis: ["Recommendation CTR", "Acceptance rate", "Feature adoption", "Segment metrics"]
 slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI-Powered Recommendations — Scalable Automation
 

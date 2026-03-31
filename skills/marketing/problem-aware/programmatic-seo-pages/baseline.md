@@ -11,6 +11,11 @@ outcome: "≥1,000 organic visits and ≥15 conversions over 8 weeks"
 kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position", "Click-through rate"]
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Programmatic SEO Pages — Baseline Run
 

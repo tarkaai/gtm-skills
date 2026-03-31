@@ -11,6 +11,9 @@ outcome: "≥1 co-created asset and ≥10 qualified leads in 4 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "joint-content-campaigns"
 install: "npx gtm-skills add marketing/problem-aware/joint-content-campaigns"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Joint Content Campaigns — Smoke Test
 

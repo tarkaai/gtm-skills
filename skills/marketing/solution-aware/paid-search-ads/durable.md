@@ -11,6 +11,15 @@ outcome: "Sustained or improving leads or meetings over 6 months via continuous 
 kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-search-ads"
 install: "npx gtm-skills add marketing/solution-aware/paid-search-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Paid Search Ads — Durable Intelligence
 

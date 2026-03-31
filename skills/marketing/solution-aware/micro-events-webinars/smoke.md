@@ -11,6 +11,9 @@ outcome: "≥ 15 regs, ≥ 30% show rate, ≥ 1 meeting in 2 weeks"
 kpis: ["Registration rate", "Show rate"]
 slug: "micro-events-webinars"
 install: "npx gtm-skills add marketing/solution-aware/micro-events-webinars"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Micro-Event or Webinar — Smoke Test
 

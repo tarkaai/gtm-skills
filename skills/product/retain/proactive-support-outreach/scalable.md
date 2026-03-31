@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Response rate", "Issue identification", "Retention lift", "Segment metrics"]
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Proactive Success Check-ins — Scalable Automation
 

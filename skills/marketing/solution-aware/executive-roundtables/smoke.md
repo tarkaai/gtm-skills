@@ -11,6 +11,9 @@ outcome: "≥8 executive attendees and ≥3 high-value opportunities from first 
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Executive Roundtables — Smoke Test
 

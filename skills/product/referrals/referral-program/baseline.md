@@ -11,6 +11,11 @@ outcome: "≥10% refer, ≥30% referee convert"
 kpis: ["Referral rate", "Referee conversion", "Referral CAC"]
 slug: "referral-program"
 install: "npx gtm-skills add product/referrals/referral-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Incentivized Referral Program — Baseline Run
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving DAU ≥35% over 6 months via AI"
 kpis: ["Daily active rate", "Streak length", "Habit formation", "Experiment velocity", "AI lift"]
 slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Habit-Building Features — Durable Intelligence
 

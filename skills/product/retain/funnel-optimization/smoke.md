@@ -11,6 +11,9 @@ outcome: "≥10% funnel improvement"
 kpis: ["Funnel conversion", "Drop-off reduction", "Test velocity"]
 slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Conversion Funnel Optimization — Smoke Test
 

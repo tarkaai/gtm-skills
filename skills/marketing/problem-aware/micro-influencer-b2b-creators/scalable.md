@@ -11,6 +11,13 @@ outcome: "≥ 15 leads over 2 months"
 kpis: ["Post reach", "Engagement rate"]
 slug: "micro-influencer-b2b-creators"
 install: "npx gtm-skills add marketing/problem-aware/micro-influencer-b2b-creators"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Micro-Influencer B2B Post — Scalable Automation
 

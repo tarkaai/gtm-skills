@@ -11,6 +11,13 @@ outcome: "≥3% account conversion at 150 accounts/month over 4 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Champion-driven Outbound — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥35% at 500+"
 kpis: ["Suggestion acceptance", "Efficiency improvement", "Feature depth", "Segment metrics"]
 slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Workflow Recommendations — Scalable Automation
 

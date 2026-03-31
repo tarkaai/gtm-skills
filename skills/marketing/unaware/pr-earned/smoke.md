@@ -11,6 +11,9 @@ outcome: "≥ 1 placement and ≥ 30 referral clicks in 2 weeks"
 kpis: ["Placement rate", "Referral clicks"]
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # PR & Earned Placements — Smoke Test
 

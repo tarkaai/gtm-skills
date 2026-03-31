@@ -11,6 +11,13 @@ outcome: "≥30 pieces/2mo"
 kpis: ["UGC creation rate", "UGC quality", "UGC amplification", "Segment metrics"]
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # UGC Campaign — Scalable Automation
 

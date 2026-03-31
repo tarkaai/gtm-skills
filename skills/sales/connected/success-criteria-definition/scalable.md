@@ -11,6 +11,13 @@ outcome: "Success criteria defined on ≥75% of opportunities at scale over 2 mo
 kpis: ["Success criteria definition rate", "Close rate improvement", "Post-sale achievement rate", "Customer satisfaction correlation", "Deal velocity with defined criteria"]
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Success Criteria Definition — Scalable Automation
 

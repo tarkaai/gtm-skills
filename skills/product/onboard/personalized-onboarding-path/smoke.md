@@ -11,6 +11,9 @@ outcome: "≥50% with branching"
 kpis: ["Activation by path", "Path completion", "Personalization accuracy"]
 slug: "personalized-onboarding-path"
 install: "npx gtm-skills add product/onboard/personalized-onboarding-path"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Adaptive Onboarding Paths — Smoke Test
 

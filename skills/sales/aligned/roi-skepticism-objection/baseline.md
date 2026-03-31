@@ -11,6 +11,11 @@ outcome: "ROI skepticism handled on ≥80% of instances over 2 weeks"
 kpis: ["Objection resolution rate", "Collaborative model adoption", "Customer reference effectiveness", "ROI claim accuracy post-sale"]
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # ROI Skepticism Handling — Baseline Run
 

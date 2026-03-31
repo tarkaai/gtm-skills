@@ -11,6 +11,9 @@ outcome: "≥200 upvotes and ≥5 qualified leads from first AMA"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Reddit AMA Series — Smoke Test
 

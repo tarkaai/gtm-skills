@@ -11,6 +11,11 @@ outcome: "≥15% cumulative lift"
 kpis: ["Holdout performance", "Cumulative lift", "Long-term impact"]
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Holdout Group Analysis — Baseline Run
 

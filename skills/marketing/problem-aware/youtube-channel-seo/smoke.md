@@ -11,6 +11,9 @@ outcome: "≥500 views and ≥5 conversions in 4 weeks"
 kpis: ["Video views", "Watch time", "Click-through rate", "Referral traffic", "Conversion rate"]
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # YouTube Channel and SEO — Smoke Test
 

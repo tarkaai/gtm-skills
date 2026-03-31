@@ -11,6 +11,11 @@ outcome: "Storytelling demos on ≥80% of opportunities over 2 weeks"
 kpis: ["Storytelling adoption rate", "Demo-to-proposal improvement", "Prospect engagement score", "Story resonance rate"]
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Demo Storytelling Framework — Baseline Run
 

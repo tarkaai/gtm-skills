@@ -11,6 +11,11 @@ outcome: "≥60% use, ≥70% resolution"
 kpis: ["Chatbot usage", "Resolution rate", "Satisfaction score"]
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI In-App Support — Baseline Run
 

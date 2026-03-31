@@ -11,6 +11,15 @@ outcome: "Sustained or improving CTR ≥35% over 6 months via AI"
 kpis: ["Tooltip CTR", "Feature adoption", "Dismissal rate", "Experiment velocity", "AI lift"]
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Contextual Feature Tooltips — Durable Intelligence
 

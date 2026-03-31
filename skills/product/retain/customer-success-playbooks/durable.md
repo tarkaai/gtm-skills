@@ -11,6 +11,15 @@ outcome: "Sustained or improving success ≥55% over 6 months via AI"
 kpis: ["Playbook adoption", "Intervention success", "Churn reduction", "Experiment velocity", "AI lift"]
 slug: "customer-success-playbooks"
 install: "npx gtm-skills add product/retain/customer-success-playbooks"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # CS Intervention Playbooks — Durable Intelligence
 

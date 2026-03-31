@@ -11,6 +11,11 @@ outcome: "≥75% score accuracy"
 kpis: ["Score accuracy", "Engagement correlation", "Predictive value"]
 slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # User Engagement Scoring — Baseline Run
 

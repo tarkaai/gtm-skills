@@ -11,6 +11,12 @@ outcome: "≥ 300 profile clicks and ≥ 15 leads over 2 months"
 kpis: ["Profile views", "Profile click rate"]
 slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Q&A Site Authority — Scalable Automation
 

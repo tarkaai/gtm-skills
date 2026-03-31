@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥45% over 6 months via AI"
 kpis: ["Activation rate", "Event coverage", "Milestone achievement", "Experiment velocity", "AI lift"]
 slug: "activation-milestone-tracking"
 install: "npx gtm-skills add product/onboard/activation-milestone-tracking"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Activation Event Tracking — Durable Intelligence
 

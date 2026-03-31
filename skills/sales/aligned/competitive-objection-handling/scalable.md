@@ -11,6 +11,13 @@ outcome: ">=45% win rate in competitive deals over 2 months"
 kpis: ["Competitive win rate by competitor", "Battlecard currency", "Proactive positioning rate", "Win/loss insight quality"]
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Competitive Objection Handling — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: ">=3 exec demos with >=70% next-step commitment within 1 week"
 kpis: ["Exec demo-to-nextstep conversion", "Demo duration (target 15-20 min)", "Questions asked per demo", "Sentiment score"]
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Executive-Focused Demo — Smoke Test
 

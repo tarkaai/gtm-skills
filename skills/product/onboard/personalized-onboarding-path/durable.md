@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥55% over 6 months via AI"
 kpis: ["Activation by path", "Path completion", "Personalization accuracy", "Experiment velocity", "AI lift"]
 slug: "personalized-onboarding-path"
 install: "npx gtm-skills add product/onboard/personalized-onboarding-path"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Adaptive Onboarding Paths — Durable Intelligence
 

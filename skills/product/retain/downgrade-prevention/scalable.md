@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Downgrade prevention", "Offer acceptance", "Retention lift", "Segment metrics"]
 slug: "downgrade-prevention"
 install: "npx gtm-skills add product/retain/downgrade-prevention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Downgrade Intervention — Scalable Automation
 

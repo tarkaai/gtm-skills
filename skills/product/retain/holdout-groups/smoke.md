@@ -11,6 +11,9 @@ outcome: "Set up holdout"
 kpis: ["Holdout performance", "Cumulative lift", "Long-term impact"]
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Holdout Group Analysis — Smoke Test
 

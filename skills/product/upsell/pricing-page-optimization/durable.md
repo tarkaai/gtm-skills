@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["Conversion rate", "Plan mix", "ARPU", "Experiment velocity", "AI lift"]
 slug: "pricing-page-optimization"
 install: "npx gtm-skills add product/upsell/pricing-page-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Self-Serve Pricing Optimization — Durable Intelligence
 

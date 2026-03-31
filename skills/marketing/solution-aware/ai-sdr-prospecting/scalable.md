@@ -11,6 +11,13 @@ outcome: "≥1.6% meeting rate at 1,000 contacts/week over 3 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # AI SDR Prospecting — Scalable Automation
 

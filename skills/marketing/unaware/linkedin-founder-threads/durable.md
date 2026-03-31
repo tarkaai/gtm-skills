@@ -11,6 +11,14 @@ outcome: "Sustained or improving inbound leads over 6 months via continuous agen
 kpis: ["Impressions", "Engagement rate", "Profile visits", "CTA clicks"]
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Founder LinkedIn content — Durable Intelligence
 

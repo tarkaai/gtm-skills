@@ -11,6 +11,13 @@ outcome: "≥55% at 500+"
 kpis: ["Analytics view rate", "Insight engagement", "Retention lift", "Segment metrics"]
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # User Self-Service Analytics — Scalable Automation
 

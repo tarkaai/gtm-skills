@@ -11,6 +11,11 @@ outcome: "≥70%, ≥10pp retention"
 kpis: ["Milestone achievement", "Celebration engagement", "Post-milestone retention"]
 slug: "usage-milestones"
 install: "npx gtm-skills add product/retain/usage-milestones"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Usage Milestone Celebrations — Baseline Run
 

@@ -11,6 +11,9 @@ outcome: "≥ 2 positive replies referencing asset in 1 week"
 kpis: ["Reply rate", "Open rate"]
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound With Value Asset — Smoke Test
 

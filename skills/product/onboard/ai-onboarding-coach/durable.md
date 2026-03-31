@@ -11,6 +11,15 @@ outcome: "Sustained or improving usage ≥50% over 6 months via AI"
 kpis: ["AI coach usage", "Activation lift", "User satisfaction", "Experiment velocity", "AI lift"]
 slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Onboarding Assistant — Durable Intelligence
 

@@ -11,6 +11,12 @@ outcome: "≥1,500 total GitHub stars and ≥80 qualified leads from OSS over 6 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # Open Source Content Release — Scalable Automation
 

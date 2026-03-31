@@ -11,6 +11,11 @@ outcome: "≥3 co-created assets and ≥30 qualified leads in 8 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "joint-content-campaigns"
 install: "npx gtm-skills add marketing/problem-aware/joint-content-campaigns"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Joint Content Campaigns — Baseline Run
 

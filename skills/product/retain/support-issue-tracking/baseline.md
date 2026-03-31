@@ -11,6 +11,11 @@ outcome: "≥60% identify at-risk"
 kpis: ["Ticket correlation", "At-risk ID rate", "Intervention success"]
 slug: "support-issue-tracking"
 install: "npx gtm-skills add product/retain/support-issue-tracking"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Support Ticket Churn Signals — Baseline Run
 

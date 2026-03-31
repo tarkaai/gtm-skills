@@ -11,6 +11,13 @@ outcome: "Meeting rate ≥ 1.6% over 2 months"
 kpis: ["Reply rate", "Time to first reply", "DMs sent"]
 slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Cold DMs on LinkedIn/Twitter — Scalable Automation
 

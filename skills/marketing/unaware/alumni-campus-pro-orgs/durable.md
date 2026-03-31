@@ -11,6 +11,14 @@ outcome: "Sustained or improving meetings over 6 months via continuous agent-dri
 kpis: ["Post engagement", "Inbound inquiries"]
 slug: "alumni-campus-pro-orgs"
 install: "npx gtm-skills add marketing/unaware/alumni-campus-pro-orgs"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Alumni & Campus Outreach — Durable Intelligence
 

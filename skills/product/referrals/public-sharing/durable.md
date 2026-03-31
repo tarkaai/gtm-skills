@@ -11,6 +11,15 @@ outcome: "Sustained or improving sharing ≥30% over 6 months via AI"
 kpis: ["Public share rate", "Share views", "Share conversion", "Experiment velocity", "AI lift"]
 slug: "public-sharing"
 install: "npx gtm-skills add product/referrals/public-sharing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Branded Public Sharing — Durable Intelligence
 

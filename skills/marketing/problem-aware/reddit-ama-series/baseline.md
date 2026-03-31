@@ -11,6 +11,10 @@ outcome: "≥500 upvotes and ≥15 qualified leads across 3 AMAs in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Reddit AMA Series — Baseline Run
 

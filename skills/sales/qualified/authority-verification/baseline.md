@@ -11,6 +11,11 @@ outcome: "Authority verified in ≥80% of opportunities over 2 weeks"
 kpis: ["Authority verification rate", "Economic buyer connection rate", "Deal velocity with verified authority", "Close rate with verified authority"]
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Authority Verification Process — Baseline Run
 

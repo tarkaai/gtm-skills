@@ -11,6 +11,11 @@ outcome: "≥ 150 downloads and ≥ 3 leads over 2 weeks"
 kpis: ["Download rate", "Landing page visits"]
 slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Template or Tool Marketplace — Baseline Run
 

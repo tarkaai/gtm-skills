@@ -11,6 +11,9 @@ outcome: "≥3 press mentions and ≥5 qualified leads from first PR push"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # PR Campaign Launch — Smoke Test
 

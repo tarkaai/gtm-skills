@@ -11,6 +11,13 @@ outcome: "≥ 40 attendees and ≥ 16 meetings over 2 months"
 kpis: ["RSVPs", "Show rate"]
 slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Micro-Roundtable — Scalable Automation
 

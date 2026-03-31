@@ -11,6 +11,11 @@ outcome: "≥0.5"
 kpis: ["Viral coefficient", "Invite rate", "Invite conversion"]
 slug: "viral-loop-design"
 install: "npx gtm-skills add product/referrals/viral-loop-design"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Built-In Virality — Baseline Run
 

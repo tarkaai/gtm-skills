@@ -11,6 +11,13 @@ outcome: "≥5,000 organic visits/month and conversion rate ≥1.2%"
 kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position", "Click-through rate", "Page generation velocity"]
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Programmatic SEO Pages — Scalable Automation
 

@@ -11,6 +11,11 @@ outcome: "≥40% CTR, ≥12% adoption"
 kpis: ["Tooltip CTR", "Feature adoption", "Dismissal rate"]
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Contextual Feature Tooltips — Baseline Run
 

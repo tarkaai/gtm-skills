@@ -11,6 +11,11 @@ outcome: "Hot leads convert at >=3x rate vs Cold leads over 2 weeks"
 kpis: ["Meeting rate by tier", "Score accuracy", "False negative rate", "Time to contact by tier"]
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Lead Scoring System — Baseline Run
 

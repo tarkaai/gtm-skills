@@ -11,6 +11,11 @@ outcome: "≥ 50 installs and ≥ 3 leads over 2 weeks"
 kpis: ["Store listing views", "Install rate"]
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Chrome Extension Teaser — Baseline Run
 

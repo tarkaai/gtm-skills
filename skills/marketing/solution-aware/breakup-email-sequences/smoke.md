@@ -11,6 +11,9 @@ outcome: "≥5% response rate from 50 breakup emails in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Breakup Email Sequences — Smoke Test
 

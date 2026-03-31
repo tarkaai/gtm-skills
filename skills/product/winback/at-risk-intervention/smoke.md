@@ -11,6 +11,9 @@ outcome: "≥30% respond"
 kpis: ["Response rate", "Save rate", "Retention lift"]
 slug: "at-risk-intervention"
 install: "npx gtm-skills add product/winback/at-risk-intervention"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # At-Risk User Outreach — Smoke Test
 

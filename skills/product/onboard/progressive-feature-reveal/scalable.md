@@ -11,6 +11,13 @@ outcome: "≥40% at 500+"
 kpis: ["Advanced adoption", "Discovery rate", "User progression", "Segment metrics"]
 slug: "progressive-feature-reveal"
 install: "npx gtm-skills add product/onboard/progressive-feature-reveal"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Progressive Feature Discovery — Scalable Automation
 

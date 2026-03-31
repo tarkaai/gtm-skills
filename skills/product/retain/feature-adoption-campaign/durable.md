@@ -11,6 +11,15 @@ outcome: "Sustained or improving adoption ≥25% over 6 months via AI"
 kpis: ["Feature adoption", "Campaign engagement", "Sustained usage", "Experiment velocity", "AI lift"]
 slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Targeted Adoption Campaigns — Durable Intelligence
 

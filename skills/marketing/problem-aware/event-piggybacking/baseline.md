@@ -11,6 +11,11 @@ outcome: "≥ 20 RSVPs and ≥ 4 meetings over 2 weeks"
 kpis: ["10 RSVPs", "2 meetings"]
 slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Event Piggyback Meetup — Baseline Run
 

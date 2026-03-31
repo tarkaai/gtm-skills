@@ -11,6 +11,13 @@ outcome: "≥75% accuracy at 500+"
 kpis: ["Score accuracy", "Health correlation", "Predictive value", "Segment metrics"]
 slug: "health-score-dashboard"
 install: "npx gtm-skills add product/retain/health-score-dashboard"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Account Health Scoring — Scalable Automation
 

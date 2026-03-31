@@ -11,6 +11,15 @@ outcome: "Sustained or improving success ≥45% over 6 months via AI"
 kpis: ["Alert accuracy", "Intervention rate", "Recovery rate", "Experiment velocity", "AI lift"]
 slug: "usage-monitoring-alerts"
 install: "npx gtm-skills add product/retain/usage-monitoring-alerts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Usage Drop Alerting — Durable Intelligence
 

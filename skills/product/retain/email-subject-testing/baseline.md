@@ -11,6 +11,11 @@ outcome: "≥20% open rate lift"
 kpis: ["Open rate", "CTR", "Conversion rate"]
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Email Campaign A/B Tests — Baseline Run
 

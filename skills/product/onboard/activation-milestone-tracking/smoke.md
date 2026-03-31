@@ -11,6 +11,9 @@ outcome: "5 events, ≥40% milestone"
 kpis: ["Activation rate", "Event coverage", "Milestone achievement"]
 slug: "activation-milestone-tracking"
 install: "npx gtm-skills add product/onboard/activation-milestone-tracking"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Activation Event Tracking — Smoke Test
 

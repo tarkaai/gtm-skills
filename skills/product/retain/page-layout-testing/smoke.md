@@ -11,6 +11,9 @@ outcome: "Test 3 layouts"
 kpis: ["Engagement metrics", "Conversion rate", "User satisfaction"]
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # UI/UX Experimentation — Smoke Test
 

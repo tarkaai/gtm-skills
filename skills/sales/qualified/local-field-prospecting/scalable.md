@@ -11,6 +11,13 @@ outcome: "≥ 8 meetings over 2 months"
 kpis: ["2 meetings"]
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Local Field Prospecting — Scalable Automation
 

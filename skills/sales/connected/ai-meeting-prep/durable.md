@@ -11,6 +11,15 @@ outcome: "Sustained or improving call outcomes (>=30% lift vs non-prepped) over 
 kpis: ["Call outcome trend", "Agent experiment win rate", "Brief personalization impact", "Predictive accuracy"]
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # AI-Powered Meeting Preparation — Durable Intelligence
 

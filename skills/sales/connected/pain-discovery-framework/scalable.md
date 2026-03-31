@@ -11,6 +11,13 @@ outcome: ">=70% of prospects with quantified pains >=10x cost and >=30% faster d
 kpis: ["Pain quantification rate", "Pain-to-price ratio", "AI extraction accuracy", "Business case conversion rate"]
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Pain Discovery Framework — Scalable Automation
 

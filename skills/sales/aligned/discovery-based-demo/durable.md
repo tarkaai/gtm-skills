@@ -11,6 +11,15 @@ outcome: "Sustained or improving demo effectiveness (>=70% next-step, >=45% prop
 kpis: ["Demo conversion trends", "Agent experiment win rate", "Demo engagement score", "Predictive accuracy"]
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Discovery-Based Demo — Durable Intelligence
 

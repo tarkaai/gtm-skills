@@ -11,6 +11,13 @@ outcome: "≥ 50% book rate sustained over 2 months"
 kpis: ["CTA clicks", "Calendar page views"]
 slug: "calendar-flow-support"
 install: "npx gtm-skills add marketing/solution-aware/calendar-flow-support"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Inline Calendar in CTAs — Scalable Automation
 

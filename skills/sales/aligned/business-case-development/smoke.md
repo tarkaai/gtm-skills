@@ -11,6 +11,9 @@ outcome: "Business cases created for ≥5 opportunities in 1 week"
 kpis: ["Business case completion rate", "Executive approval rate", "Time to approval", "Deal progression"]
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Business Case Development — Smoke Test
 

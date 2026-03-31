@@ -11,6 +11,15 @@ outcome: "Sustained or improving multi-year deal performance (>=35% close rate, 
 kpis: ["Multi-year close rate trend", "LTV optimization", "Agent experiment win rate", "Churn rate (multi-year vs annual)"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Multi-Year Deal Structuring — Durable Intelligence
 

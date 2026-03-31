@@ -11,6 +11,9 @@ outcome: "≥40% engage personalized"
 kpis: ["Personalization engagement", "Retention lift", "Satisfaction score"]
 slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Product Personalization — Smoke Test
 

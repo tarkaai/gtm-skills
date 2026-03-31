@@ -11,6 +11,11 @@ outcome: "≥60 attendees and ≥18 qualified leads across 3 events in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Regional Field Events — Baseline Run
 

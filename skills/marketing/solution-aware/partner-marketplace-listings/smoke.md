@@ -11,6 +11,9 @@ outcome: "≥1 marketplace listing and ≥5 marketplace-sourced leads in 4 weeks
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Partner Marketplace Listings — Smoke Test
 

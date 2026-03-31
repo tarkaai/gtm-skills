@@ -11,6 +11,14 @@ outcome: "Sustained or improving referral sessions or signups over 6 months via 
 kpis: ["Referral traffic", "Comment engagement", "Link clicks"]
 slug: "reddit-niche-communities"
 install: "npx gtm-skills add marketing/problem-aware/reddit-niche-communities"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Reddit and community participation — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥ 30 clicks and ≥ 1 meeting in 1 week"
 kpis: ["Click-through rate", "Email open rate"]
 slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # List Swap With Partner — Smoke Test
 

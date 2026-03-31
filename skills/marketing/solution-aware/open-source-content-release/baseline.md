@@ -11,6 +11,11 @@ outcome: "≥300 GitHub stars and ≥20 qualified leads in 8 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Open Source Content Release — Baseline Run
 

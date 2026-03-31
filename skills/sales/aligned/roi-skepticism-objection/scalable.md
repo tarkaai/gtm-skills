@@ -11,6 +11,13 @@ outcome: "ROI skepticism handled systematically at scale over 2 months with impr
 kpis: ["Objection resolution rate", "ROI model acceptance", "Customer proof effectiveness", "Post-sale ROI validation accuracy", "Win rate improvement"]
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # ROI Skepticism Handling — Scalable Automation
 

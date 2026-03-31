@@ -11,6 +11,15 @@ outcome: "Sustained or improving objection overcome rate (>=65%) over 6 months v
 kpis: ["Objection overcome rate trend", "Agent experiment win rate", "Discount optimization impact", "Objection prevention rate"]
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Price Objection Handling — Durable Intelligence
 

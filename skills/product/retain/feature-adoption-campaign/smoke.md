@@ -11,6 +11,9 @@ outcome: "≥20% adopt"
 kpis: ["Feature adoption", "Campaign engagement", "Sustained usage"]
 slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Targeted Adoption Campaigns — Smoke Test
 

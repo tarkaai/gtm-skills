@@ -11,6 +11,15 @@ outcome: "Sustained or improving migration ≥85% over 6 months via AI"
 kpis: ["Migration rate", "Churn from sunset", "Communication engagement", "Experiment velocity", "AI lift"]
 slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Feature Sunset Communication — Durable Intelligence
 

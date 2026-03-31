@@ -11,6 +11,9 @@ outcome: "≥25% trial to paid"
 kpis: ["Trial conversion", "Trial engagement", "Upgrade timing"]
 slug: "free-trial-optimization"
 install: "npx gtm-skills add product/onboard/free-trial-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Trial Conversion Optimization — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["Revenue per user", "Conversion rate", "Churn rate", "Experiment velocity", "AI lift"]
 slug: "pricing-experiment"
 install: "npx gtm-skills add product/upsell/pricing-experiment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Pricing Tests — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥60% self-serve"
 kpis: ["Self-serve rate", "Upgrade completion", "Time to upgrade"]
 slug: "in-product-upgrade-flow"
 install: "npx gtm-skills add product/upsell/in-product-upgrade-flow"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Self-Serve Upgrade UX — Smoke Test
 

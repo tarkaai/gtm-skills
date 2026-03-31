@@ -11,6 +11,11 @@ outcome: "Pricing presented on ≥80% of opportunities over 2 weeks with ≥65% 
 kpis: ["Pricing acceptance rate", "Average discount percentage", "Tier mix optimization", "Deal size preservation"]
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Pricing Presentation Framework — Baseline Run
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving usage ≥35% over 6 months via AI"
 kpis: ["Collaboration usage", "Team size", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Multiplayer Product Features — Durable Intelligence
 

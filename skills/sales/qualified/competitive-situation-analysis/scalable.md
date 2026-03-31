@@ -11,6 +11,13 @@ outcome: "Competitive situation assessed on ≥75% of opportunities at scale ove
 kpis: ["Competitive discovery rate", "Win rate by competitor", "Competitive positioning speed", "Deal velocity in competitive situations", "Intelligence automation effectiveness"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Competitive Situation Assessment — Scalable Automation
 

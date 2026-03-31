@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥45% over 6 months via AI"
 kpis: ["Sales-assist rate", "Sales conversion", "ACV lift", "Experiment velocity", "AI lift"]
 slug: "plg-sales-hybrid"
 install: "npx gtm-skills add product/upsell/plg-sales-hybrid"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # PLG + Sales-Assist Model — Durable Intelligence
 

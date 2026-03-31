@@ -11,6 +11,13 @@ outcome: "≥8% lift at 500+"
 kpis: ["Revenue per user", "Conversion rate", "Churn rate", "Segment metrics"]
 slug: "pricing-experiment"
 install: "npx gtm-skills add product/upsell/pricing-experiment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Pricing Tests — Scalable Automation
 

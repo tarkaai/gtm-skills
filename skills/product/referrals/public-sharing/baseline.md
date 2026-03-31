@@ -11,6 +11,11 @@ outcome: "≥35% share, ≥5% convert"
 kpis: ["Public share rate", "Share views", "Share conversion"]
 slug: "public-sharing"
 install: "npx gtm-skills add product/referrals/public-sharing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Branded Public Sharing — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Alert accuracy", "Intervention rate", "Recovery rate", "Segment metrics"]
 slug: "usage-monitoring-alerts"
 install: "npx gtm-skills add product/retain/usage-monitoring-alerts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Usage Drop Alerting — Scalable Automation
 

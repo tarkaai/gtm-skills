@@ -11,6 +11,15 @@ outcome: "Sustained GDN performance and ≥60 qualified leads/month over 12 mont
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Google Display Network — Durable Intelligence
 

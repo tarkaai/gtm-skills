@@ -11,6 +11,9 @@ outcome: "≥ 50 downloads and ≥ 1 lead in 2 weeks"
 kpis: ["Download rate", "Landing page visits"]
 slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Template or Tool Marketplace — Smoke Test
 

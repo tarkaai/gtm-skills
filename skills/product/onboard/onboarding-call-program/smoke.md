@@ -11,6 +11,9 @@ outcome: "≥80% activation"
 kpis: ["Call booking", "Call completion", "Post-call activation"]
 slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # High-Touch Onboarding Calls — Smoke Test
 

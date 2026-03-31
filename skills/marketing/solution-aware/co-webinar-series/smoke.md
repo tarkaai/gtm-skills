@@ -11,6 +11,9 @@ outcome: "≥50 registrations and ≥5 qualified leads from first co-webinar"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Co-webinar Series — Smoke Test
 

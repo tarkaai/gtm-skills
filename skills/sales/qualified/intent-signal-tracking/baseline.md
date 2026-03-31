@@ -11,6 +11,11 @@ outcome: ">=20 high-intent accounts and >=35% reply rate over 2 weeks"
 kpis: ["High-intent accounts per week", "Reply rate by intent tier", "Signal-to-outreach time", "Meeting rate by intent"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Intent Signal Tracking — Baseline Run
 

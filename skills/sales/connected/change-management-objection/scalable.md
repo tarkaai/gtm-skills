@@ -11,6 +11,13 @@ outcome: "Change objections handled systematically at scale over 2 months with i
 kpis: ["Objection resolution rate", "Status quo overcome rate", "Deal progression rate", "Post-sale adoption rate", "Implementation success"]
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Change Management Objection Handling — Scalable Automation
 

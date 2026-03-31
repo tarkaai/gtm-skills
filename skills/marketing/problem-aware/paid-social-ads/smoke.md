@@ -11,6 +11,9 @@ outcome: "≥ 2 leads or ≥ 1 meeting in 1 week"
 kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Paid Social Ads — Smoke Test
 

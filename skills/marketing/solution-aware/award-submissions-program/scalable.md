@@ -11,6 +11,13 @@ outcome: "≥30 submissions and ≥10 wins with ≥35 qualified leads from award
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Industry Award Submissions — Scalable Automation
 

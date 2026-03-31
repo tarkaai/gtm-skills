@@ -11,6 +11,11 @@ outcome: "≥2.5% CTR and ≥20 conversions from $1,500 retargeting over 2 weeks
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Multi-platform Retargeting — Baseline Run
 

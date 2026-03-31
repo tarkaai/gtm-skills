@@ -11,6 +11,9 @@ outcome: "≥25% click CTA"
 kpis: ["Prompt CTR", "Conversion rate", "Prompt engagement"]
 slug: "upgrade-prompts"
 install: "npx gtm-skills add product/upsell/upgrade-prompts"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # In-App Upgrade CTAs — Smoke Test
 

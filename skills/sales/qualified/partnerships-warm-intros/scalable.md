@@ -11,6 +11,13 @@ outcome: "≥ 20 intros and ≥ 16 meetings over 2 months"
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "partnerships-warm-intros"
 install: "npx gtm-skills add sales/qualified/partnerships-warm-intros"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Partnerships & Warm Intros — Scalable Automation
 

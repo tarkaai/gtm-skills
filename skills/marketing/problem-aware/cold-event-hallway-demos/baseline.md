@@ -11,6 +11,11 @@ outcome: "≥ 10 demos and ≥ 2 meetings over 2 weeks"
 kpis: ["Conversations started", "Follow-up requests"]
 slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Event Hallway Demos — Baseline Run
 

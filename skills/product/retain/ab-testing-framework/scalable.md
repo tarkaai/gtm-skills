@@ -11,6 +11,13 @@ outcome: "≥10 experiments/2mo"
 kpis: ["Experiment velocity", "Win rate", "Impact per experiment", "Segment metrics"]
 slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Product A/B Testing — Scalable Automation
 

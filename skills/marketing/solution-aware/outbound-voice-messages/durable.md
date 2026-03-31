@@ -11,6 +11,15 @@ outcome: "Sustained response rate (≥5%) over 12 months via AI-driven script op
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Outbound Voice Messages — Durable Intelligence
 

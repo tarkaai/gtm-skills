@@ -11,6 +11,9 @@ outcome: "≥1 integration partnership and ≥5 leads from first partner in 4 we
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Integration Partnerships — Smoke Test
 

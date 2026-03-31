@@ -11,6 +11,15 @@ outcome: "Sustained or improving recovery ≥65% over 6 months via AI"
 kpis: ["Recovery rate", "Involuntary churn", "Time to recovery", "Experiment velocity", "AI lift"]
 slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Payment Failure Recovery — Durable Intelligence
 

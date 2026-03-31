@@ -11,6 +11,15 @@ outcome: "Sustained or improving MVTs continuous over 6 months via AI"
 kpis: ["MVT velocity", "Win rate", "Combination insights", "Experiment velocity", "AI lift"]
 slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Multivariate Experiments — Durable Intelligence
 

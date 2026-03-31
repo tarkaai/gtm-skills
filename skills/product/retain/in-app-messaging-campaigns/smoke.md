@@ -11,6 +11,9 @@ outcome: "≥35% CTR"
 kpis: ["Message CTR", "Conversion rate", "Message engagement"]
 slug: "in-app-messaging-campaigns"
 install: "npx gtm-skills add product/retain/in-app-messaging-campaigns"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Behavioral In-App Messages — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: ">=90% data quality score and >=70% reduction in manual cleanup time ov
 kpis: ["Data quality score", "Automation coverage", "Manual cleanup time reduction", "Enrichment success rate"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # CRM Hygiene & Data Quality — Scalable Automation
 

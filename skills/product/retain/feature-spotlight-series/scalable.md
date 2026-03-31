@@ -11,6 +11,13 @@ outcome: "≥25% at 500+"
 kpis: ["Spotlight engagement", "Feature trial", "Sustained adoption", "Segment metrics"]
 slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Weekly Feature Spotlights — Scalable Automation
 

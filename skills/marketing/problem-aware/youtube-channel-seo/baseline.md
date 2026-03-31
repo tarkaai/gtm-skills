@@ -11,6 +11,10 @@ outcome: "≥3,000 views and ≥25 conversions over 8 weeks"
 kpis: ["Video views", "Watch time", "CTR on thumbnails", "Referral traffic", "Conversion rate", "Subscriber growth"]
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # YouTube Channel and SEO — Baseline Run
 

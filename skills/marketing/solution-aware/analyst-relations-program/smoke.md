@@ -11,6 +11,9 @@ outcome: "≥2 analyst briefings and establish relationships with key analysts"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Analyst Relations Program — Smoke Test
 

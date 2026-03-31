@@ -11,6 +11,9 @@ outcome: "≥60% complete in 7d"
 kpis: ["Checklist completion", "Task completion", "Activation rate"]
 slug: "activation-checklist"
 install: "npx gtm-skills add product/onboard/activation-checklist"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Onboarding Checklist Workflow — Smoke Test
 

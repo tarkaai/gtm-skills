@@ -11,6 +11,15 @@ outcome: "Sustained or improving coefficient ≥0.4 over 6 months via AI"
 kpis: ["Viral coefficient", "Invite rate", "Invite conversion", "Experiment velocity", "AI lift"]
 slug: "viral-loop-design"
 install: "npx gtm-skills add product/referrals/viral-loop-design"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Built-In Virality — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥ 20 inbound leads or ≥ 8 meetings over 2 months"
 kpis: ["Response rate", "Inbound inquiries"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Direct Mail Postcards — Scalable Automation
 

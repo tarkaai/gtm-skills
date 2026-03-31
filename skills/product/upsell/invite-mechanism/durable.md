@@ -11,6 +11,15 @@ outcome: "Sustained or improving invites ≥45% over 6 months via AI"
 kpis: ["Invite rate", "Acceptance rate", "Team size growth", "Experiment velocity", "AI lift"]
 slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Team Invite System — Durable Intelligence
 

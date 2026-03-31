@@ -11,6 +11,11 @@ outcome: "≥ 10% completion and ≥ 4 meetings over 2 weeks"
 kpis: ["Video completion rate", "Click-through rate"]
 slug: "outbound-with-short-video"
 install: "npx gtm-skills add marketing/solution-aware/outbound-with-short-video"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Outbound With Short Video — Baseline Run
 

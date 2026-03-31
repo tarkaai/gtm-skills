@@ -11,6 +11,11 @@ outcome: ">=60% of price objections overcome with <=14 days to close after resol
 kpis: ["Objection overcome rate", "Time to objection resolution", "Close rate (objection vs non-objection deals)", "Asset effectiveness"]
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Price Objection Handling — Baseline Run
 

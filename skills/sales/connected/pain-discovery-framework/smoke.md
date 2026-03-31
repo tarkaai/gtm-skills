@@ -11,6 +11,9 @@ outcome: ">=3 quantified pain points per prospect for >=3 prospects with total p
 kpis: ["Pain points per prospect", "Quantification rate", "Pain-to-price ratio", "Discovery call quality"]
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Pain Discovery Framework — Smoke Test
 

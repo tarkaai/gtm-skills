@@ -11,6 +11,11 @@ outcome: "≥20% return, ≥8% reactivate"
 kpis: ["Email open rate", "Return rate", "Reactivation rate"]
 slug: "email-reengagement-inactive"
 install: "npx gtm-skills add product/winback/email-reengagement-inactive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Inactive User Re-engagement — Baseline Run
 

@@ -11,6 +11,12 @@ outcome: "≥100 answers, ≥10,000 views, and ≥20 qualified leads over 4 mont
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Stack Overflow Presence — Scalable Automation
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥45% over 6 months via AI"
 kpis: ["Personalization engagement", "Retention lift", "Satisfaction score", "Experiment velocity", "AI lift"]
 slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Product Personalization — Durable Intelligence
 

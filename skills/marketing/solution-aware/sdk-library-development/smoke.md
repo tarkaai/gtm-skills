@@ -11,6 +11,9 @@ outcome: "≥100 SDK downloads and ≥5 developer signups in 4 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # SDK & Library Development — Smoke Test
 

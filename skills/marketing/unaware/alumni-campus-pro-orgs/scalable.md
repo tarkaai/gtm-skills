@@ -11,6 +11,12 @@ outcome: "≥ 8 meetings over 2 months"
 kpis: ["Post engagement", "Inbound inquiries"]
 slug: "alumni-campus-pro-orgs"
 install: "npx gtm-skills add marketing/unaware/alumni-campus-pro-orgs"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Alumni & Campus Outreach — Scalable Automation
 

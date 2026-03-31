@@ -11,6 +11,13 @@ outcome: "≥400 attendees and ≥50 expansion opportunities from annual confere
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Annual User Conference — Scalable Automation
 

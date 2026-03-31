@@ -11,6 +11,9 @@ outcome: "≥25% try in 7d"
 kpis: ["Feature trial", "Sustained adoption", "Announcement engagement"]
 slug: "feature-announcement-campaign"
 install: "npx gtm-skills add product/retain/feature-announcement-campaign"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # New Feature Announcements — Smoke Test
 

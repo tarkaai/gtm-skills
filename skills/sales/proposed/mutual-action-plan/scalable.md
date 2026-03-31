@@ -11,6 +11,13 @@ outcome: ">=70% MAP adoption and >=35% faster close time with >=25% higher win r
 kpis: ["MAP adoption rate", "Milestone completion rate", "Deal velocity improvement", "Forecast accuracy by MAP adherence"]
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Mutual Action Plan (MAP) — Scalable Automation
 

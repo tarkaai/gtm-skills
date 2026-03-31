@@ -11,6 +11,11 @@ outcome: "≥4% meeting rate from 150 trigger-based outreach over 2 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Trigger-based Outreach — Baseline Run
 

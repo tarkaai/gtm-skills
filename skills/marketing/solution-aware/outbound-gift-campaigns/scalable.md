@@ -11,6 +11,13 @@ outcome: "≥20% response rate at 150 gifts/quarter over 6 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/outbound-gift-campaigns"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Outbound Gift Campaigns — Scalable Automation
 

@@ -11,6 +11,11 @@ outcome: "≥2,000 page views and ≥30 conversions over 8 weeks"
 kpis: ["Page views", "Time on page", "Conversion rate", "Sales usage rate", "Customer participation rate"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Case Study Content Program — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥50% use at 500+"
 kpis: ["AI coach usage", "Activation lift", "User satisfaction", "Segment metrics"]
 slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Onboarding Assistant — Scalable Automation
 

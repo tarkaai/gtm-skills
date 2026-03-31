@@ -11,6 +11,9 @@ outcome: "≥ 20 clicks and ≥ 1 lead in 1 week"
 kpis: ["Impressions", "Click-through rate"]
 slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Partner Newsletter Shoutout — Smoke Test
 

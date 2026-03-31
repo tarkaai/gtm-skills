@@ -11,6 +11,11 @@ outcome: "≥ 2% meeting rate over 2 weeks"
 kpis: ["Reply rate", "Connect rate"]
 slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Outbound Email/LI/Calls — Baseline Run
 

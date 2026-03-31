@@ -11,6 +11,15 @@ outcome: "Sustained or improving acceptance ≥55% over 6 months via AI"
 kpis: ["Auto-upgrade acceptance", "Usage growth", "ARPU lift", "Experiment velocity", "AI lift"]
 slug: "usage-based-upsell"
 install: "npx gtm-skills add product/upsell/usage-based-upsell"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Automatic Usage Upsell — Durable Intelligence
 

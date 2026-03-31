@@ -11,6 +11,9 @@ outcome: ">=3 stakeholders mapped per deal for >=3 deals in 1 week"
 kpis: ["Stakeholders per deal", "Economic Buyer identification rate", "Champion identification rate", "Deal velocity by stakeholder count"]
 slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Stakeholder Mapping Framework — Smoke Test
 

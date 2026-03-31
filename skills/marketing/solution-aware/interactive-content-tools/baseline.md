@@ -11,6 +11,11 @@ outcome: "≥300 completions and ≥100 qualified leads over 6 weeks"
 kpis: ["Tool completion rate", "Email capture rate", "SQL conversion rate", "Cost per lead", "Tool engagement time"]
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Interactive Content Tools — Baseline Run
 

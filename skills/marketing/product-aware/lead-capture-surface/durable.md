@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion rate sustained over 6 months via con
 kpis: ["Click-through rate", "Form starts"]
 slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Single CTA Lead Capture — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: ">=40% trial-to-paid conversion rate within trial period"
 kpis: ["Trial conversion rate", "Activation milestone completion rate", "Time to first value", "Engagement score"]
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Trial-to-Paid Conversion — Smoke Test
 

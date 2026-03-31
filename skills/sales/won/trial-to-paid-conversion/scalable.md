@@ -11,6 +11,13 @@ outcome: ">=50% trial-to-paid conversion rate over 2 months"
 kpis: ["Trial conversion rate trend", "Activation funnel completion", "Intervention effectiveness", "Trial length optimization"]
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Trial-to-Paid Conversion — Scalable Automation
 

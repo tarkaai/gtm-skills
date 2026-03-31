@@ -11,6 +11,11 @@ outcome: "≥35% CTR, ≥15pp DAU"
 kpis: ["Push CTR", "Opt-in rate", "DAU lift"]
 slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Push Notification Strategy — Baseline Run
 

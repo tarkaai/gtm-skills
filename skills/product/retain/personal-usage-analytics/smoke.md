@@ -11,6 +11,9 @@ outcome: "≥50% view"
 kpis: ["Analytics view rate", "Insight engagement", "Retention lift"]
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # User Self-Service Analytics — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "Sandboxes on ≥80% of qualified opportunities over 2 weeks"
 kpis: ["Sandbox provisioning rate", "Active usage rate", "Success checklist completion", "Sandbox-to-close conversion"]
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Sandbox Environment Demo — Baseline Run
 

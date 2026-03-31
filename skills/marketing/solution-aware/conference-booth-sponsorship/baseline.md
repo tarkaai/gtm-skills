@@ -11,6 +11,11 @@ outcome: "≥150 visitors and ≥30 qualified leads across 2 conferences in 8 we
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Conference Booth & Sponsorship — Baseline Run
 

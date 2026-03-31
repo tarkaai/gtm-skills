@@ -11,6 +11,9 @@ outcome: "Predict top 20% at risk"
 kpis: ["Prediction accuracy", "Churn rate", "Intervention success"]
 slug: "churn-prediction-model"
 install: "npx gtm-skills add product/retain/churn-prediction-model"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Churn Prediction — Smoke Test
 

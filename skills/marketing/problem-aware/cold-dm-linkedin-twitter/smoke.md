@@ -11,6 +11,9 @@ outcome: "≥ 2 meetings in 1 week"
 kpis: ["Reply rate", "Time to first reply", "DMs sent"]
 slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Cold DMs on LinkedIn/Twitter — Smoke Test
 

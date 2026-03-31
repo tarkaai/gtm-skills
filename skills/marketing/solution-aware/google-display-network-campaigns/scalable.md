@@ -11,6 +11,13 @@ outcome: "≥1,500,000 impressions and ≥70 qualified leads from $10,000/month 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Google Display Network — Scalable Automation
 

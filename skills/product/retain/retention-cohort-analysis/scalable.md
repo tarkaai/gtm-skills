@@ -11,6 +11,13 @@ outcome: "≥5 insights/2mo"
 kpis: ["Retention by cohort", "Insight generation", "Action success", "Segment metrics"]
 slug: "retention-cohort-analysis"
 install: "npx gtm-skills add product/retain/retention-cohort-analysis"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Retention Cohort Analytics — Scalable Automation
 

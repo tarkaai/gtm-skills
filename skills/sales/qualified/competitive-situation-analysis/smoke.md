@@ -11,6 +11,9 @@ outcome: "Competitive situation identified in ≥8 opportunities in 1 week"
 kpis: ["Competitive discovery completion rate", "Competitor identification rate", "Decision criteria clarity", "Competitive intelligence quality"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Competitive Situation Assessment — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "≥60% <8min, ≥15pp"
 kpis: ["Time to first value", "Activation rate", "Step completion"]
 slug: "time-to-value-optimization"
 install: "npx gtm-skills add product/onboard/time-to-value-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Time-to-Value Acceleration — Baseline Run
 

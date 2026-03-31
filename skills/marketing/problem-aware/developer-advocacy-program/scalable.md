@@ -11,6 +11,12 @@ outcome: "≥40 content pieces, ≥8 talks, and ≥60 qualified leads over 6 mon
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Developer Advocacy Program — Scalable Automation
 

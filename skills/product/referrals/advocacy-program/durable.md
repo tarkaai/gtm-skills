@@ -11,6 +11,15 @@ outcome: "Sustained or improving advocates growing over 6 months via AI"
 kpis: ["Advocate recruitment", "Advocate activity", "Referrals per advocate", "Experiment velocity", "AI lift"]
 slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Formal Advocacy Program — Durable Intelligence
 

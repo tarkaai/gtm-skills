@@ -11,6 +11,15 @@ outcome: "Sustained or improving inbound leads or meetings over 6 months via con
 kpis: ["Response rate", "Inbound inquiries"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Direct Mail Postcards — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: ">=3 MAPs created and >=25% faster close time for MAP deals within 2 we
 kpis: ["MAP adoption rate", "Deal velocity (MAP vs non-MAP)", "Milestone completion rate", "Stall rate"]
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Mutual Action Plan (MAP) — Smoke Test
 

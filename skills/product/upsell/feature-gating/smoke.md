@@ -11,6 +11,9 @@ outcome: "≥20% upgrade"
 kpis: ["Trial rate", "Upgrade rate", "Feature engagement"]
 slug: "feature-gating"
 install: "npx gtm-skills add product/upsell/feature-gating"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Premium Feature Gating — Smoke Test
 

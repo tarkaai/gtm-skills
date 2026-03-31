@@ -11,6 +11,11 @@ outcome: "≥4% response rate from 200 SMS outreach over 2 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # SMS Outbound Sequences — Baseline Run
 

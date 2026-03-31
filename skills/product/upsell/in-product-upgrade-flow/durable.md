@@ -11,6 +11,15 @@ outcome: "Sustained or improving self-serve ≥65% over 6 months via AI"
 kpis: ["Self-serve rate", "Upgrade completion", "Time to upgrade", "Experiment velocity", "AI lift"]
 slug: "in-product-upgrade-flow"
 install: "npx gtm-skills add product/upsell/in-product-upgrade-flow"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Self-Serve Upgrade UX — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥40% view in 3d"
 kpis: ["Guide view rate", "Guide completion", "Post-view activation"]
 slug: "quick-start-guide"
 install: "npx gtm-skills add product/onboard/quick-start-guide"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Quick Start Documentation — Smoke Test
 

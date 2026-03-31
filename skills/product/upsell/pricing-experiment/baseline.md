@@ -11,6 +11,11 @@ outcome: "≥10% revenue lift"
 kpis: ["Revenue per user", "Conversion rate", "Churn rate"]
 slug: "pricing-experiment"
 install: "npx gtm-skills add product/upsell/pricing-experiment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Pricing Tests — Baseline Run
 

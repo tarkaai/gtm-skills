@@ -11,6 +11,9 @@ outcome: "≥30% use AI"
 kpis: ["AI feature usage", "Content creation", "User satisfaction"]
 slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI Content Assistant — Smoke Test
 

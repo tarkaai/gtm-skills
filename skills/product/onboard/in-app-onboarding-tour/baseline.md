@@ -11,6 +11,11 @@ outcome: "≥50% activation, ≥10pp lift"
 kpis: ["Activation rate", "Tour completion", "Time to activation"]
 slug: "in-app-onboarding-tour"
 install: "npx gtm-skills add product/onboard/in-app-onboarding-tour"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Interactive Product Tour — Baseline Run
 

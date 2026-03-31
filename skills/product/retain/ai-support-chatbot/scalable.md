@@ -11,6 +11,13 @@ outcome: "≥55% use at 500+"
 kpis: ["Chatbot usage", "Resolution rate", "Satisfaction score", "Segment metrics"]
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI In-App Support — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: "≥40% respond"
 kpis: ["Response rate", "Issue identification", "Retention lift"]
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Proactive Success Check-ins — Smoke Test
 

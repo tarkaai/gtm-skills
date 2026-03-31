@@ -11,6 +11,9 @@ outcome: "≥20% try"
 kpis: ["Spotlight engagement", "Feature trial", "Sustained adoption"]
 slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Weekly Feature Spotlights — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥5% response rate from 40 voice messages in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound Voice Messages — Smoke Test
 

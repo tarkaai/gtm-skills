@@ -11,6 +11,15 @@ outcome: "Sustained or improving CTR ≥40% over 6 months via AI"
 kpis: ["Message CTR", "Conversion rate", "Message engagement", "Experiment velocity", "AI lift"]
 slug: "in-app-messaging-campaigns"
 install: "npx gtm-skills add product/retain/in-app-messaging-campaigns"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Behavioral In-App Messages — Durable Intelligence
 

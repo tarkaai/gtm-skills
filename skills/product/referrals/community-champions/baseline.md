@@ -11,6 +11,11 @@ outcome: "≥20 champions, ≥5 referrals each"
 kpis: ["Champion identification", "Champion activity", "Referrals generated"]
 slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Champion Recognition Program — Baseline Run
 

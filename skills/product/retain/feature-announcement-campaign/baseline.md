@@ -11,6 +11,11 @@ outcome: "≥35% trial, ≥15% sustained"
 kpis: ["Feature trial", "Sustained adoption", "Announcement engagement"]
 slug: "feature-announcement-campaign"
 install: "npx gtm-skills add product/retain/feature-announcement-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # New Feature Announcements — Baseline Run
 

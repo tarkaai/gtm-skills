@@ -11,6 +11,11 @@ outcome: ">=60% of deals with active champions and >=35% higher win rate over 2 
 kpis: ["Champion rate per deal", "Champion engagement score", "Win rate (champion vs non-champion)", "Champion recruitment rate"]
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Champion Identification & Development — Baseline Run
 

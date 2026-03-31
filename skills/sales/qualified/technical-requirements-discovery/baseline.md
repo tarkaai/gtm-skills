@@ -11,6 +11,11 @@ outcome: "Technical discovery completed on ≥80% of opportunities over 2 weeks"
 kpis: ["Technical discovery completion rate", "Technical fit accuracy", "Solutions engineer engagement rate", "Technical blocker early detection"]
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Technical Requirements Discovery — Baseline Run
 

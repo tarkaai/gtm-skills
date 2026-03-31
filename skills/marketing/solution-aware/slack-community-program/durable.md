@@ -11,6 +11,14 @@ outcome: "Sustained community growth (≥10% QoQ) and ≥20 qualified leads/mont
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Slack Community Program — Durable Intelligence
 

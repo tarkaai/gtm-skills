@@ -11,6 +11,13 @@ outcome: ">=35% close rate on multi-year proposals and LTV for multi-year custom
 kpis: ["Multi-year close rate", "Average contract length", "LTV (multi-year vs annual)", "Discount optimization"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Multi-Year Deal Structuring — Scalable Automation
 

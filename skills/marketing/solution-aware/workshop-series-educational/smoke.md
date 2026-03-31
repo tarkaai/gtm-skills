@@ -11,6 +11,9 @@ outcome: "≥15 attendees and ≥5 qualified leads from first workshop"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Workshop Series — Smoke Test
 

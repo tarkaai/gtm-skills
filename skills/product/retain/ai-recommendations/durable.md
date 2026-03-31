@@ -11,6 +11,15 @@ outcome: "Sustained or improving acceptance ≥40% over 6 months via AI"
 kpis: ["Recommendation CTR", "Acceptance rate", "Feature adoption", "Experiment velocity", "AI lift"]
 slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI-Powered Recommendations — Durable Intelligence
 

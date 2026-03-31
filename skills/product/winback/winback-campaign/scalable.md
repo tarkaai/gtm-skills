@@ -11,6 +11,13 @@ outcome: "≥12% at 500+ churned"
 kpis: ["Reactivation rate", "Win-back CAC", "Reactivated retention", "Segment metrics"]
 slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Churned User Win-back — Scalable Automation
 

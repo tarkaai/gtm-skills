@@ -11,6 +11,13 @@ outcome: ">=70% demo-to-nextstep and >=45% demo-to-proposal conversion over 2 mo
 kpis: ["Demo-to-nextstep conversion", "Demo-to-proposal conversion", "Demo personalization score", "Engagement analytics"]
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Discovery-Based Demo — Scalable Automation
 

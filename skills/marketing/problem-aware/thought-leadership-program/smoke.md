@@ -11,6 +11,9 @@ outcome: "≥5 thought leadership pieces and ≥5 qualified leads in 3 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Thought Leadership Program — Smoke Test
 

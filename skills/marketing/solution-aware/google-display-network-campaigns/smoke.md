@@ -11,6 +11,9 @@ outcome: "≥30,000 impressions and ≥5 qualified leads from $300 GDN test"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Google Display Network — Smoke Test
 

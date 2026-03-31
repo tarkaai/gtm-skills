@@ -11,6 +11,11 @@ outcome: "≥30% share, ≥5% convert"
 kpis: ["Share rate", "Share CTR", "Viral coefficient"]
 slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Built-In Social Sharing — Baseline Run
 

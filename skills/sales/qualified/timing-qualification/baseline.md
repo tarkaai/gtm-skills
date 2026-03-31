@@ -11,6 +11,11 @@ outcome: "Timeline qualified on ≥80% of opportunities over 2 weeks"
 kpis: ["Timeline qualification rate", "Timeline accuracy", "Deal velocity by timeline", "Forecast accuracy"]
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Timing Qualification Process — Baseline Run
 

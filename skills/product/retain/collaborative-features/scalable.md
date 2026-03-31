@@ -11,6 +11,13 @@ outcome: "≥35% use at 500+"
 kpis: ["Collaboration usage", "Team size", "Retention lift", "Segment metrics"]
 slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Multiplayer Product Features — Scalable Automation
 

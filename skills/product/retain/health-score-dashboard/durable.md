@@ -11,6 +11,15 @@ outcome: "Sustained or improving accuracy ≥75% over 6 months via AI"
 kpis: ["Score accuracy", "Health correlation", "Predictive value", "Experiment velocity", "AI lift"]
 slug: "health-score-dashboard"
 install: "npx gtm-skills add product/retain/health-score-dashboard"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Account Health Scoring — Durable Intelligence
 

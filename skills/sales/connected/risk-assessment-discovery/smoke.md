@@ -11,6 +11,9 @@ outcome: "Risks identified and addressed with ≥8 opportunities in 1 week"
 kpis: ["Risk discovery completion rate", "High-severity risk identification", "Mitigation plan creation rate", "Late-stage objection reduction"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Risk & Concern Discovery — Smoke Test
 

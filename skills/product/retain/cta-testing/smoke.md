@@ -11,6 +11,9 @@ outcome: "Test 5 CTAs"
 kpis: ["CTA CTR", "Conversion rate", "Test velocity"]
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # CTA Optimization — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥70% activation"
 kpis: ["Registration rate", "Attendance", "Post-webinar activation"]
 slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Live Onboarding Webinars — Smoke Test
 

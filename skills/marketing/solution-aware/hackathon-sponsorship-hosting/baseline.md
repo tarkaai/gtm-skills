@@ -11,6 +11,11 @@ outcome: "≥150 attendees and ≥15 qualified leads across 2 hackathons in 8 we
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add marketing/solution-aware/hackathon-sponsorship-hosting"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Hackathon Sponsorship — Baseline Run
 

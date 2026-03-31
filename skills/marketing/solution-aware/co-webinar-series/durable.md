@@ -11,6 +11,15 @@ outcome: "Sustained webinar performance and ≥45 qualified leads/quarter over 1
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Co-webinar Series — Durable Intelligence
 

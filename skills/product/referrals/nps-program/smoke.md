@@ -11,6 +11,9 @@ outcome: "≥40% response"
 kpis: ["NPS response rate", "NPS score", "Promoter conversion"]
 slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # NPS Feedback System — Smoke Test
 

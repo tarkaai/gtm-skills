@@ -11,6 +11,13 @@ outcome: "≥30% click at 500+"
 kpis: ["Prompt CTR", "Conversion rate", "Prompt engagement", "Segment metrics"]
 slug: "upgrade-prompts"
 install: "npx gtm-skills add product/upsell/upgrade-prompts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # In-App Upgrade CTAs — Scalable Automation
 

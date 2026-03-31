@@ -11,6 +11,9 @@ outcome: "≥2 meetings from 50 AI-researched prospects in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # AI SDR Prospecting — Smoke Test
 

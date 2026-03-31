@@ -11,6 +11,15 @@ outcome: "Sustained or improving multi-threading impact (>=30% faster close time
 kpis: ["Multi-threading rate", "Stakeholder prediction accuracy", "Deal velocity by stakeholder count", "Single-threaded risk prevention"]
 slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Stakeholder Mapping Framework — Durable Intelligence
 

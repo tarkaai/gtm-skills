@@ -11,6 +11,11 @@ outcome: ">=35% reply rate from researched outreach and >=2.5x faster progressio
 kpis: ["Reply rate by research depth", "Meeting rate (researched vs non-researched)", "Research time efficiency", "Signal-to-reply correlation"]
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Account Research & Intelligence — Baseline Run
 

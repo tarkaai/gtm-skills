@@ -11,6 +11,9 @@ outcome: "≥100 downloads and ≥2 inbound leads from first 3 episodes"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Branded Podcast Launch — Smoke Test
 

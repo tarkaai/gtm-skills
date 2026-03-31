@@ -11,6 +11,11 @@ outcome: "≥70% admin, ≥60% user, ≥12pp"
 kpis: ["Admin setup", "User activation", "Team invite rate"]
 slug: "admin-onboarding-flow"
 install: "npx gtm-skills add product/onboard/admin-onboarding-flow"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Admin vs User Onboarding — Baseline Run
 

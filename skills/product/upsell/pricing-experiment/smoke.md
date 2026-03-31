@@ -11,6 +11,9 @@ outcome: "Test 2 pricing models"
 kpis: ["Revenue per user", "Conversion rate", "Churn rate"]
 slug: "pricing-experiment"
 install: "npx gtm-skills add product/upsell/pricing-experiment"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Pricing Tests — Smoke Test
 

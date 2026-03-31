@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥45% over 6 months via AI"
 kpis: ["Activation rate", "Tour completion", "Time to activation", "Experiment velocity", "AI lift"]
 slug: "in-app-onboarding-tour"
 install: "npx gtm-skills add product/onboard/in-app-onboarding-tour"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Interactive Product Tour — Durable Intelligence
 

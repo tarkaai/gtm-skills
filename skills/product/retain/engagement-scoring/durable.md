@@ -11,6 +11,15 @@ outcome: "Sustained or improving accuracy ≥70% over 6 months via AI"
 kpis: ["Score accuracy", "Engagement correlation", "Predictive value", "Experiment velocity", "AI lift"]
 slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # User Engagement Scoring — Durable Intelligence
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥55% over 6 months via AI"
 kpis: ["Analytics view rate", "Insight engagement", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # User Self-Service Analytics — Durable Intelligence
 

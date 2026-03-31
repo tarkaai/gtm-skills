@@ -11,6 +11,15 @@ outcome: "Sustained breakup effectiveness (≥6%) over 12 months via AI-optimize
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Breakup Email Sequences — Durable Intelligence
 

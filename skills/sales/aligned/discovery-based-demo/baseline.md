@@ -11,6 +11,11 @@ outcome: ">=70% demo-to-nextstep conversion and >=40% demo-to-proposal conversio
 kpis: ["Demo-to-nextstep conversion", "Demo-to-proposal conversion", "Demo engagement score", "Recap video view rate"]
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Discovery-Based Demo — Baseline Run
 

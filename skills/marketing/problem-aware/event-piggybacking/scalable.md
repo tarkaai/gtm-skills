@@ -11,6 +11,13 @@ outcome: "≥ 80 RSVPs and ≥ 16 meetings over 2 months"
 kpis: ["10 RSVPs", "2 meetings"]
 slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Event Piggyback Meetup — Scalable Automation
 

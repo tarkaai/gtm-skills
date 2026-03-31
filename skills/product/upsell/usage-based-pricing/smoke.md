@@ -11,6 +11,9 @@ outcome: "Test usage pricing"
 kpis: ["ARPU", "Usage growth", "Churn rate"]
 slug: "usage-based-pricing"
 install: "npx gtm-skills add product/upsell/usage-based-pricing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Consumption-Based Pricing — Smoke Test
 

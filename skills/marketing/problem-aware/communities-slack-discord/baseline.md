@@ -11,6 +11,10 @@ outcome: "≥ 2 meetings over 2 weeks"
 kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Slack/Discord Community Rhythm — Baseline Run
 

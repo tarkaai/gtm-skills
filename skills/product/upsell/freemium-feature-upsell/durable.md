@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥6% over 6 months via AI"
 kpis: ["Free to paid rate", "Feature engagement", "Upgrade timing", "Experiment velocity", "AI lift"]
 slug: "freemium-feature-upsell"
 install: "npx gtm-skills add product/upsell/freemium-feature-upsell"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Freemium to Paid Conversion — Durable Intelligence
 

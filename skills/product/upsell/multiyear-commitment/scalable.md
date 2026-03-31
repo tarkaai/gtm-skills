@@ -11,6 +11,13 @@ outcome: "≥15% at 500+"
 kpis: ["Multi-year rate", "LTV increase", "Churn reduction", "Segment metrics"]
 slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Multi-Year Deal Incentives — Scalable Automation
 

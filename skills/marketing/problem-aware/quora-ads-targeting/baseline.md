@@ -11,6 +11,11 @@ outcome: "≥100,000 impressions and ≥18 qualified leads from $1,500 budget ov
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add marketing/problem-aware/quora-ads-targeting"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Quora Ads — Baseline Run
 

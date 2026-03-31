@@ -11,6 +11,9 @@ outcome: "≥50 members and ≥5 daily active users in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Discord Community Management — Smoke Test
 

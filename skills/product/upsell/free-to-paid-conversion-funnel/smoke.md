@@ -11,6 +11,9 @@ outcome: "≥6% convert"
 kpis: ["Conversion rate", "Time to upgrade", "Upgrade triggers"]
 slug: "free-to-paid-conversion-funnel"
 install: "npx gtm-skills add product/upsell/free-to-paid-conversion-funnel"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Free to Paid Funnel — Smoke Test
 

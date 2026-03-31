@@ -11,6 +11,15 @@ outcome: "Sustained or improving upgrade ≥35% over 6 months via AI"
 kpis: ["Upgrade rate", "Alert engagement", "Upgrade timing", "Experiment velocity", "AI lift"]
 slug: "usage-threshold-alerts"
 install: "npx gtm-skills add product/upsell/usage-threshold-alerts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Plan Limit Notifications — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥ 50% of interested prospects book within 48h in 1 week"
 kpis: ["CTA clicks", "Calendar page views"]
 slug: "calendar-flow-support"
 install: "npx gtm-skills add marketing/solution-aware/calendar-flow-support"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Inline Calendar in CTAs — Smoke Test
 

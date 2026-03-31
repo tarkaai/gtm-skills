@@ -11,6 +11,13 @@ outcome: "≥20 analyst interactions and ≥5 report mentions with ≥30 influen
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Analyst Relations Program — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥25% at 500+"
 kpis: ["Feature adoption", "Campaign engagement", "Sustained usage", "Segment metrics"]
 slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Targeted Adoption Campaigns — Scalable Automation
 

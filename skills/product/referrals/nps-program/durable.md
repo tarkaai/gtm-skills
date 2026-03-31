@@ -11,6 +11,15 @@ outcome: "Sustained or improving response ≥45% over 6 months via AI"
 kpis: ["NPS response rate", "NPS score", "Promoter conversion", "Experiment velocity", "AI lift"]
 slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # NPS Feedback System — Durable Intelligence
 

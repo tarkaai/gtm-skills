@@ -11,6 +11,13 @@ outcome: "≥40% at 500+"
 kpis: ["Tips engagement", "Workflow optimization", "Feature depth", "Segment metrics"]
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # In-App Best Practices — Scalable Automation
 

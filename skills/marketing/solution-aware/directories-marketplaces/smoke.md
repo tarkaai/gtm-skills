@@ -11,6 +11,9 @@ outcome: "≥ 50 views and ≥ 1 inquiry in 1 week"
 kpis: ["Listing views", "Inquiry rate"]
 slug: "directories-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/directories-marketplaces"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Directory & Marketplace Listings — Smoke Test
 

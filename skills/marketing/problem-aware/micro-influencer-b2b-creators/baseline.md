@@ -11,6 +11,11 @@ outcome: "≥ 3 leads over 2 weeks"
 kpis: ["Post reach", "Engagement rate"]
 slug: "micro-influencer-b2b-creators"
 install: "npx gtm-skills add marketing/problem-aware/micro-influencer-b2b-creators"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Micro-Influencer B2B Post — Baseline Run
 

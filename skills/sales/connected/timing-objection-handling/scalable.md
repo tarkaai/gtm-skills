@@ -11,6 +11,13 @@ outcome: "Timing objections handled systematically at scale over 2 months with i
 kpis: ["Objection detection rate", "Resolution automation efficiency", "Timeline acceleration rate", "Deal velocity improvement", "Eventually close rate"]
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Timing Objection Handling — Scalable Automation
 

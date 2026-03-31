@@ -11,6 +11,10 @@ outcome: "≥2,000 page views and ≥20 conversions over 6 weeks"
 kpis: ["Page views", "Time on page", "Conversion rate", "Content production velocity", "Social shares"]
 slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # AI Content Generation — Baseline Run
 

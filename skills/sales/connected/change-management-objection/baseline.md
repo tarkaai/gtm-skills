@@ -11,6 +11,11 @@ outcome: "Change objections handled on ≥80% of instances over 2 weeks"
 kpis: ["Objection resolution rate", "Status quo overcome rate", "Change plan acceptance", "Post-sale adoption success"]
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Change Management Objection Handling — Baseline Run
 

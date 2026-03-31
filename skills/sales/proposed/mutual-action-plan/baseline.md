@@ -11,6 +11,11 @@ outcome: ">=70% MAP adoption and >=30% faster close time with >=20% higher win r
 kpis: ["MAP adoption rate", "Deal velocity (MAP vs non-MAP)", "Win rate (MAP vs non-MAP)", "Milestone adherence rate"]
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Mutual Action Plan (MAP) — Baseline Run
 

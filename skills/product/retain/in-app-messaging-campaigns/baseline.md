@@ -11,6 +11,11 @@ outcome: "≥45% CTR, ≥12% conversion"
 kpis: ["Message CTR", "Conversion rate", "Message engagement"]
 slug: "in-app-messaging-campaigns"
 install: "npx gtm-skills add product/retain/in-app-messaging-campaigns"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Behavioral In-App Messages — Baseline Run
 

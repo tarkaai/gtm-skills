@@ -11,6 +11,9 @@ outcome: "≥2 meetings from 50 targeted calls in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Account-based Cold Calling — Smoke Test
 

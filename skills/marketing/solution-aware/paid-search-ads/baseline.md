@@ -11,6 +11,11 @@ outcome: "≤$800 cost per meeting over 2 weeks"
 kpis: ["Click-through rate", "Landing page conversion rate"]
 slug: "paid-search-ads"
 install: "npx gtm-skills add marketing/solution-aware/paid-search-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Paid Search Ads — Baseline Run
 

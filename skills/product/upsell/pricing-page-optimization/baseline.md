@@ -11,6 +11,11 @@ outcome: "≥10% lift"
 kpis: ["Conversion rate", "Plan mix", "ARPU"]
 slug: "pricing-page-optimization"
 install: "npx gtm-skills add product/upsell/pricing-page-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Self-Serve Pricing Optimization — Baseline Run
 

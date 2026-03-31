@@ -11,6 +11,13 @@ outcome: "≥55% <8min at 500+"
 kpis: ["Time to first value", "Activation rate", "Step completion", "Segment metrics"]
 slug: "time-to-value-optimization"
 install: "npx gtm-skills add product/onboard/time-to-value-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Time-to-Value Acceleration — Scalable Automation
 

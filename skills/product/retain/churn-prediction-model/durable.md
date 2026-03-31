@@ -11,6 +11,15 @@ outcome: "Sustained or improving churn reduction sustained over 6 months via AI"
 kpis: ["Prediction accuracy", "Churn rate", "Intervention success", "Experiment velocity", "AI lift"]
 slug: "churn-prediction-model"
 install: "npx gtm-skills add product/retain/churn-prediction-model"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Churn Prediction — Durable Intelligence
 

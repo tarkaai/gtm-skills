@@ -11,6 +11,9 @@ outcome: "≥15,000 impressions and ≥5 qualified leads from $200 Twitter test"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Twitter/X Ads — Smoke Test
 

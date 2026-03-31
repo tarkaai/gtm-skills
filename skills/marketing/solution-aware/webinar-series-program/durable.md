@@ -11,6 +11,15 @@ outcome: "Sustained lead generation (≥40 leads/month) over 12 months via AI-op
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "webinar-series-program"
 install: "npx gtm-skills add marketing/solution-aware/webinar-series-program"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Educational Webinar Series — Durable Intelligence
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving intent-driven conversion (>=3x vs cold) over 6 
 kpis: ["Intent conversion rate", "Agent experiment win rate", "Signal quality score", "Predictive intent accuracy"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Intent Signal Tracking — Durable Intelligence
 

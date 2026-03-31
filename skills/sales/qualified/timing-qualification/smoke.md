@@ -11,6 +11,9 @@ outcome: "Timeline identified for ≥8 opportunities in 1 week"
 kpis: ["Timeline identification rate", "Urgent opportunity percentage", "Timeline validation success"]
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Timing Qualification Process — Smoke Test
 

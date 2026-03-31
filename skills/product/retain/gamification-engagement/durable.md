@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥45% over 6 months via AI"
 kpis: ["Gamification participation", "Streak maintenance", "Feature adoption", "Experiment velocity", "AI lift"]
 slug: "gamification-engagement"
 install: "npx gtm-skills add product/retain/gamification-engagement"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Gamified Product Experience — Durable Intelligence
 

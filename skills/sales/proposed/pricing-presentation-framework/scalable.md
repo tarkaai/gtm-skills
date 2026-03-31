@@ -11,6 +11,13 @@ outcome: "Pricing presented systematically at scale over 2 months with maintaine
 kpis: ["Pricing acceptance rate", "Discount optimization", "Tier mix revenue impact", "Deal profitability"]
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Pricing Presentation Framework — Scalable Automation
 

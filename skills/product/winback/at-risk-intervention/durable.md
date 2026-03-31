@@ -11,6 +11,15 @@ outcome: "Sustained or improving response ≥35% over 6 months via AI"
 kpis: ["Response rate", "Save rate", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "at-risk-intervention"
 install: "npx gtm-skills add product/winback/at-risk-intervention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # At-Risk User Outreach — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Extension acceptance", "Conversion rate", "Extension ROI", "Segment metrics"]
 slug: "free-trial-extension"
 install: "npx gtm-skills add product/upsell/free-trial-extension"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Strategic Trial Extensions — Scalable Automation
 

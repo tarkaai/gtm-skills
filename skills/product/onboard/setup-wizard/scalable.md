@@ -11,6 +11,13 @@ outcome: "≥70% at 500+"
 kpis: ["Wizard completion", "Setup time", "Config success", "Segment metrics"]
 slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Guided Setup Wizard — Scalable Automation
 

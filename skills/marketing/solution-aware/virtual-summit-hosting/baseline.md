@@ -11,6 +11,11 @@ outcome: "≥600 registrations and ≥60 qualified leads from first major summit
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Virtual Summit Hosting — Baseline Run
 

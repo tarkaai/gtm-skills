@@ -11,6 +11,15 @@ outcome: "Sustained or improving win rates (>=10% lift in addressable categories
 kpis: ["Win rate trend", "Agent-generated insight quality", "Competitive intelligence accuracy", "Roadmap impact on win rate"]
 slug: "win-loss-analysis"
 install: "npx gtm-skills add sales/won/win-loss-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Win/Loss Analysis Program — Durable Intelligence
 

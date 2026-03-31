@@ -11,6 +11,11 @@ outcome: "≥50% convert"
 kpis: ["Extension acceptance", "Conversion rate", "Extension ROI"]
 slug: "free-trial-extension"
 install: "npx gtm-skills add product/upsell/free-trial-extension"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Strategic Trial Extensions — Baseline Run
 

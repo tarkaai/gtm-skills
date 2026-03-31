@@ -11,6 +11,10 @@ outcome: "≥500 downloads/episode and ≥10 qualified leads from first 10 episo
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Branded Podcast Launch — Baseline Run
 

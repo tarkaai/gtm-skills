@@ -11,6 +11,11 @@ outcome: "≥30% upgrade after trial"
 kpis: ["Trial rate", "Upgrade rate", "Feature engagement"]
 slug: "feature-gating"
 install: "npx gtm-skills add product/upsell/feature-gating"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Premium Feature Gating — Baseline Run
 

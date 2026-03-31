@@ -11,6 +11,15 @@ outcome: "Sustained or improving case studies growing over 6 months via AI"
 kpis: ["Recruitment rate", "Case study completion", "Content quality", "Experiment velocity", "AI lift"]
 slug: "case-study-recruitment"
 install: "npx gtm-skills add product/referrals/case-study-recruitment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Customer Story Pipeline — Durable Intelligence
 

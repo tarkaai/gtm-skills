@@ -11,6 +11,11 @@ outcome: "≥ 50 stars or ≥ 300 visitors and ≥ 3 leads over 2 weeks"
 kpis: ["Repository views", "Clone or download rate"]
 slug: "github-sample-teaser"
 install: "npx gtm-skills add marketing/problem-aware/github-sample-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # GitHub Sample or Teaser — Baseline Run
 

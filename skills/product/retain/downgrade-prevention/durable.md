@@ -11,6 +11,15 @@ outcome: "Sustained or improving prevention ≥45% over 6 months via AI"
 kpis: ["Downgrade prevention", "Offer acceptance", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "downgrade-prevention"
 install: "npx gtm-skills add product/retain/downgrade-prevention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Downgrade Intervention — Durable Intelligence
 

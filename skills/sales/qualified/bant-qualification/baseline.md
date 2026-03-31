@@ -11,6 +11,11 @@ outcome: ">=40% qualification rate over 2 weeks"
 kpis: ["Qualification rate", "Time to qualify", "Disqualification reasons", "Call-to-qualified conversion"]
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # BANT Qualification Framework — Baseline Run
 

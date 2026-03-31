@@ -11,6 +11,13 @@ outcome: "≥35% respond at 500+"
 kpis: ["Response rate", "Save rate", "Retention lift", "Segment metrics"]
 slug: "at-risk-intervention"
 install: "npx gtm-skills add product/winback/at-risk-intervention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # At-Risk User Outreach — Scalable Automation
 

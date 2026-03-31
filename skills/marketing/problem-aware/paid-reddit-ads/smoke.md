@@ -11,6 +11,9 @@ outcome: "≥ 2 leads or ≥ 1 meeting in 1 week"
 kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Paid Reddit Ads — Smoke Test
 

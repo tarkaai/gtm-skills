@@ -11,6 +11,9 @@ outcome: "5 flags deployed"
 kpis: ["Flag usage", "Rollout success", "Rollback rate"]
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Feature Flag System — Smoke Test
 

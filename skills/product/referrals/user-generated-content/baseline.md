@@ -11,6 +11,11 @@ outcome: "≥15 pieces"
 kpis: ["UGC creation rate", "UGC quality", "UGC amplification"]
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # UGC Campaign — Baseline Run
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving trial ≥25% over 6 months via AI"
 kpis: ["Spotlight engagement", "Feature trial", "Sustained adoption", "Experiment velocity", "AI lift"]
 slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Weekly Feature Spotlights — Durable Intelligence
 

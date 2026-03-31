@@ -11,6 +11,11 @@ outcome: "≥ 2 placements and ≥ 80 referral clicks over 2 weeks"
 kpis: ["Placement rate", "Referral clicks"]
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - threshold-engine
 ---
 # PR & Earned Placements — Baseline Run
 

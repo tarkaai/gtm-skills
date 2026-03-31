@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Activation rate", "Tour completion", "Time to activation", "Segment metrics"]
 slug: "in-app-onboarding-tour"
 install: "npx gtm-skills add product/onboard/in-app-onboarding-tour"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Interactive Product Tour — Scalable Automation
 

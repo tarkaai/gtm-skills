@@ -11,6 +11,9 @@ outcome: "≥50% use chatbot"
 kpis: ["Chatbot usage", "Resolution rate", "Satisfaction score"]
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # AI In-App Support — Smoke Test
 

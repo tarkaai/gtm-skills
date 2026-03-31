@@ -11,6 +11,9 @@ outcome: "≥3 active partners and ≥2 partner-sourced deals in 6 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
+drills:
+  - warm-intro-request
+  - threshold-engine
 ---
 # Reseller & Affiliate Program — Smoke Test
 

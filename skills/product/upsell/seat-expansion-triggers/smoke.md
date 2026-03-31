@@ -11,6 +11,9 @@ outcome: "≥35% add seats"
 kpis: ["Seat expansion rate", "Team growth", "Prompt acceptance"]
 slug: "seat-expansion-triggers"
 install: "npx gtm-skills add product/upsell/seat-expansion-triggers"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Team Growth Upsell — Smoke Test
 

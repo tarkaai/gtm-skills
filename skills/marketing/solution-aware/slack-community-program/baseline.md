@@ -11,6 +11,10 @@ outcome: "≥150 members and ≥40 WAU with ≥8 qualified leads in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Slack Community Program — Baseline Run
 

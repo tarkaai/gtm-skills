@@ -11,6 +11,13 @@ outcome: "≥5 MVTs/2mo"
 kpis: ["MVT velocity", "Win rate", "Combination insights", "Segment metrics"]
 slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Multivariate Experiments — Scalable Automation
 

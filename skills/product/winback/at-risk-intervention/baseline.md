@@ -11,6 +11,11 @@ outcome: "≥40% respond, ≥25% save"
 kpis: ["Response rate", "Save rate", "Retention lift"]
 slug: "at-risk-intervention"
 install: "npx gtm-skills add product/winback/at-risk-intervention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # At-Risk User Outreach — Baseline Run
 

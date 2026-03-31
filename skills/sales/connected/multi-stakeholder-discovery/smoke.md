@@ -11,6 +11,9 @@ outcome: "Multi-stakeholder discovery completed on ≥5 complex deals in 1 week"
 kpis: ["Stakeholder discovery completion rate", "Average stakeholders per deal", "Consensus building success", "Deal progression rate"]
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Multi-Stakeholder Discovery Process — Smoke Test
 

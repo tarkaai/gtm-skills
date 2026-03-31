@@ -11,6 +11,15 @@ outcome: "Sustained or improving regs, show rate, meetings over 6 months via con
 kpis: ["Registration rate", "Show rate"]
 slug: "micro-events-webinars"
 install: "npx gtm-skills add marketing/solution-aware/micro-events-webinars"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Micro-Event or Webinar — Durable Intelligence
 

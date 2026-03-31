@@ -11,6 +11,11 @@ outcome: ">=70% of prospects with >=5x ROI and >=40% faster close time for stron
 kpis: ["ROI distribution", "Deal velocity by ROI tier", "Close rate by ROI tier", "Business case conversion rate"]
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # ROI Calculator & Business Case — Baseline Run
 

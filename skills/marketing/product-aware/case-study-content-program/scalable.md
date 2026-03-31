@@ -11,6 +11,13 @@ outcome: "≥4,000 page views/month and deal close rate +15% when case studies u
 kpis: ["Page views", "Conversion rate", "Sales usage rate", "Deal close rate impact", "Production velocity", "Multi-format engagement"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Case Study Content Program — Scalable Automation
 

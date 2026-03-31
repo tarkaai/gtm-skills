@@ -11,6 +11,15 @@ outcome: "Sustained or improving adoption ≥35% over 6 months via AI"
 kpis: ["Suggestion acceptance", "Efficiency improvement", "Feature depth", "Experiment velocity", "AI lift"]
 slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Workflow Recommendations — Durable Intelligence
 

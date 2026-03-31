@@ -11,6 +11,9 @@ outcome: ">=4 win/loss interviews completed and >=3 actionable insights identifi
 kpis: ["Interview completion rate", "Insights per interview", "Actionable insight quality", "Time from close to interview"]
 slug: "win-loss-analysis"
 install: "npx gtm-skills add sales/won/win-loss-analysis"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Win/Loss Analysis Program — Smoke Test
 

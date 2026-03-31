@@ -11,6 +11,15 @@ outcome: "Sustained or improving champions growing over 6 months via AI"
 kpis: ["Champion identification", "Champion activity", "Referrals generated", "Experiment velocity", "AI lift"]
 slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Champion Recognition Program — Durable Intelligence
 

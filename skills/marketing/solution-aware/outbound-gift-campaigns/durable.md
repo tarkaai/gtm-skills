@@ -11,6 +11,15 @@ outcome: "Sustained gift conversion (≥20%) over 12 months via AI-driven gift s
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/outbound-gift-campaigns"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Outbound Gift Campaigns — Durable Intelligence
 

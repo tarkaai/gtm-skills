@@ -11,6 +11,13 @@ outcome: "≥55% at 500+ w/3+ paths"
 kpis: ["Activation by path", "Path completion", "Personalization accuracy", "Segment metrics"]
 slug: "personalized-onboarding-path"
 install: "npx gtm-skills add product/onboard/personalized-onboarding-path"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Adaptive Onboarding Paths — Scalable Automation
 

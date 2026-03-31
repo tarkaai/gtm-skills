@@ -11,6 +11,9 @@ outcome: "≥5 UGC pieces"
 kpis: ["UGC creation rate", "UGC quality", "UGC amplification"]
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # UGC Campaign — Smoke Test
 

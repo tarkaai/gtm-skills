@@ -11,6 +11,15 @@ outcome: "Sustained award recognition and ≥30 qualified leads annually over 12
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # Industry Award Submissions — Durable Intelligence
 

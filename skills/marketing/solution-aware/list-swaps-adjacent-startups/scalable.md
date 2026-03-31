@@ -11,6 +11,13 @@ outcome: "≥ 300 clicks and ≥ 8 meetings over 2 months"
 kpis: ["Click-through rate", "Email open rate"]
 slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # List Swap With Partner — Scalable Automation
 

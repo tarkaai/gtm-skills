@@ -11,6 +11,15 @@ outcome: "Sustained or improving lift sustained over 6 months via AI"
 kpis: ["Open rate", "CTR", "Conversion rate", "Experiment velocity", "AI lift"]
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Email Campaign A/B Tests — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥5% free to paid"
 kpis: ["Free to paid rate", "Feature engagement", "Upgrade timing"]
 slug: "freemium-feature-upsell"
 install: "npx gtm-skills add product/upsell/freemium-feature-upsell"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Freemium to Paid Conversion — Smoke Test
 

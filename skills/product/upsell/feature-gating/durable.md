@@ -11,6 +11,15 @@ outcome: "Sustained or improving upgrade ≥25% over 6 months via AI"
 kpis: ["Trial rate", "Upgrade rate", "Feature engagement", "Experiment velocity", "AI lift"]
 slug: "feature-gating"
 install: "npx gtm-skills add product/upsell/feature-gating"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Premium Feature Gating — Durable Intelligence
 

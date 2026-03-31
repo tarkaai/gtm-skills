@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Guide view rate", "Guide completion", "Post-view activation", "Segment metrics"]
 slug: "quick-start-guide"
 install: "npx gtm-skills add product/onboard/quick-start-guide"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Quick Start Documentation — Scalable Automation
 

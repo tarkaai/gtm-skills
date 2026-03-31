@@ -11,6 +11,11 @@ outcome: "≥20% improvement"
 kpis: ["Funnel conversion", "Drop-off reduction", "Test velocity"]
 slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Conversion Funnel Optimization — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: ">=80% research automation and >=35% reply rate maintained over 2 month
 kpis: ["Research automation rate", "Research accuracy", "Reply rate by research type", "Time savings"]
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Account Research & Intelligence — Scalable Automation
 

@@ -11,6 +11,9 @@ outcome: "≥30% signup CVR"
 kpis: ["Signup conversion", "Form completion", "Drop-off points"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Signup Funnel Optimization — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "≥50%, ≥15pp retention"
 kpis: ["Personalization engagement", "Retention lift", "Satisfaction score"]
 slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI Product Personalization — Baseline Run
 

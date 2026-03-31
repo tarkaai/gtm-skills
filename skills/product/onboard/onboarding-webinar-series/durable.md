@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥70% over 6 months via AI"
 kpis: ["Registration rate", "Attendance", "Post-webinar activation", "Experiment velocity", "AI lift"]
 slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Live Onboarding Webinars — Durable Intelligence
 

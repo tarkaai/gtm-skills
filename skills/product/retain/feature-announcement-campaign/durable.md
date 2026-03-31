@@ -11,6 +11,15 @@ outcome: "Sustained or improving trial ≥30% over 6 months via AI"
 kpis: ["Feature trial", "Sustained adoption", "Announcement engagement", "Experiment velocity", "AI lift"]
 slug: "feature-announcement-campaign"
 install: "npx gtm-skills add product/retain/feature-announcement-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # New Feature Announcements — Durable Intelligence
 

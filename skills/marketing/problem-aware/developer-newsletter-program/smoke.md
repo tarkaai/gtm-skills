@@ -11,6 +11,9 @@ outcome: "≥100 subscribers and ≥3 qualified leads from first 3 issues"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Developer Newsletter — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "≥150 registrations and ≥18 qualified leads across 3 co-webinars in
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Co-webinar Series — Baseline Run
 

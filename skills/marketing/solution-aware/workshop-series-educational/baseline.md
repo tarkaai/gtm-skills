@@ -11,6 +11,11 @@ outcome: "≥50 attendees and ≥18 qualified leads across 3 workshops in 6 week
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Workshop Series — Baseline Run
 

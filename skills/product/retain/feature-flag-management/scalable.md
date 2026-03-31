@@ -11,6 +11,13 @@ outcome: "≥85% success at 500+"
 kpis: ["Flag usage", "Rollout success", "Rollback rate", "Segment metrics"]
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Feature Flag System — Scalable Automation
 

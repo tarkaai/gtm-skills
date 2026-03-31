@@ -11,6 +11,10 @@ outcome: "≥10 content pieces, ≥2 conference talks, and ≥20 qualified leads
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Developer Advocacy Program — Baseline Run
 

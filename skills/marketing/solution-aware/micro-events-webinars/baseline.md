@@ -11,6 +11,11 @@ outcome: "≥ 30 regs, ≥ 30% show rate, ≥ 2 meetings over 2 weeks"
 kpis: ["Registration rate", "Show rate"]
 slug: "micro-events-webinars"
 install: "npx gtm-skills add marketing/solution-aware/micro-events-webinars"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Micro-Event or Webinar — Baseline Run
 

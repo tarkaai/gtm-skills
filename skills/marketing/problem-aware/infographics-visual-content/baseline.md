@@ -11,6 +11,10 @@ outcome: "≥500 total impressions and ≥5 backlinks across series in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Infographics & Visual Content — Baseline Run
 

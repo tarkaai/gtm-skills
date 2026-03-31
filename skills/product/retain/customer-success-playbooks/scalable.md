@@ -11,6 +11,13 @@ outcome: "≥55% at 500+"
 kpis: ["Playbook adoption", "Intervention success", "Churn reduction", "Segment metrics"]
 slug: "customer-success-playbooks"
 install: "npx gtm-skills add product/retain/customer-success-playbooks"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # CS Intervention Playbooks — Scalable Automation
 

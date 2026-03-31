@@ -11,6 +11,11 @@ outcome: "≥40% CVR, ≥10pp lift"
 kpis: ["Signup conversion", "Form completion", "Drop-off points"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Signup Funnel Optimization — Baseline Run
 

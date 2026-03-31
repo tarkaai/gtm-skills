@@ -11,6 +11,11 @@ outcome: "≥ 4% conversion rate over 2 weeks"
 kpis: ["Click-through rate", "Form starts"]
 slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Single CTA Lead Capture — Baseline Run
 

@@ -11,6 +11,11 @@ outcome: "≥ 5 inbound leads or ≥ 2 meetings over 2 weeks"
 kpis: ["Response rate", "Inbound inquiries"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Direct Mail Postcards — Baseline Run
 

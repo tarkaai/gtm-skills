@@ -11,6 +11,13 @@ outcome: "≥20 published articles and ≥1,500 referral visits/month"
 kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic", "Backlinks acquired", "Conversion rate", "Cost per published article"]
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Guest Posting at Scale — Scalable Automation
 

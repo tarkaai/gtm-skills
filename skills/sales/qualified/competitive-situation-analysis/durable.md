@@ -11,6 +11,15 @@ outcome: "Sustained or improving win rates against competitors over 6 months via
 kpis: ["Win rate by competitor", "Competitive intelligence freshness", "Positioning effectiveness", "Competitive discovery accuracy", "AI-driven win rate improvement"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Competitive Situation Assessment — Durable Intelligence
 

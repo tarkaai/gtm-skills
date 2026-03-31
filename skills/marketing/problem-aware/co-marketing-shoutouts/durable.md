@@ -11,6 +11,15 @@ outcome: "Sustained or improving clicks and leads over 6 months via continuous a
 kpis: ["Impressions", "Click-through rate"]
 slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Partner Newsletter Shoutout — Durable Intelligence
 

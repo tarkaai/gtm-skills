@@ -11,6 +11,11 @@ outcome: ">=10 interviews, >=5 high-priority insights, and >=2 implemented chang
 kpis: ["Interview completion rate", "Insights identified", "Changes implemented", "Win/loss reason distribution"]
 slug: "win-loss-analysis"
 install: "npx gtm-skills add sales/won/win-loss-analysis"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Win/Loss Analysis Program — Baseline Run
 

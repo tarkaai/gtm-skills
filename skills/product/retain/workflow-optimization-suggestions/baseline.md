@@ -11,6 +11,11 @@ outcome: "≥40%, ≥15% efficiency"
 kpis: ["Suggestion acceptance", "Efficiency improvement", "Feature depth"]
 slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI Workflow Recommendations — Baseline Run
 

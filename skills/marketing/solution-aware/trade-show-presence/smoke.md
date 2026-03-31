@@ -11,6 +11,9 @@ outcome: "≥80 booth visitors and ≥15 qualified leads from first trade show"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Trade Show Presence — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥40% click CTA"
 kpis: ["Empty state CTR", "Activation rate", "Feature adoption"]
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Empty State Guidance — Smoke Test
 

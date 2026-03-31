@@ -11,6 +11,13 @@ outcome: "≥45% at 500+"
 kpis: ["Empty state CTR", "Activation rate", "Feature adoption", "Segment metrics"]
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Empty State Guidance — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "Need assessment completed on ≥70% of opportunities at scale over 2 m
 kpis: ["Need assessment completion rate", "Need score accuracy", "Sales cycle reduction", "Win rate by need tier", "Pipeline quality score"]
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Need Assessment Framework — Scalable Automation
 

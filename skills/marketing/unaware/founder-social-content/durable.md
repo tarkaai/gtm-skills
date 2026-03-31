@@ -11,6 +11,14 @@ outcome: "Sustained or improving leads or meetings over 6 months via continuous 
 kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Founder Social & Content — Durable Intelligence
 

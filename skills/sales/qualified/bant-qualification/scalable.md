@@ -11,6 +11,13 @@ outcome: ">=35% qualification rate at 100+ leads/month over 2 months"
 kpis: ["Qualification rate", "Pre-score accuracy", "Time saved by automation", "False positive rate"]
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # BANT Qualification Framework — Scalable Automation
 

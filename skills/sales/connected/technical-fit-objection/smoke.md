@@ -11,6 +11,9 @@ outcome: "Technical objections handled on ≥5 opportunities in 1 week"
 kpis: ["Technical objection resolution rate", "Workaround acceptance rate", "Deal progression after resolution", "Commitment delivery rate"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Technical Fit Objection Handling — Smoke Test
 

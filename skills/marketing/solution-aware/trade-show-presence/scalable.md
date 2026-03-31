@@ -11,6 +11,13 @@ outcome: "≥800 visitors and ≥120 qualified leads from quarterly trade shows 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Trade Show Presence — Scalable Automation
 

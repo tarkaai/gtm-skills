@@ -11,6 +11,13 @@ outcome: "≥40 press mentions and ≥60 qualified leads from quarterly PR campa
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # PR Campaign Launch — Scalable Automation
 

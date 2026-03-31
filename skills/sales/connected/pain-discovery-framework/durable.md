@@ -11,6 +11,15 @@ outcome: "Sustained or improving pain discovery effectiveness (>=70% quantificat
 kpis: ["Pain quantification rate", "Pain-to-price ratio trend", "Agent experiment win rate", "Business case win rate"]
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Pain Discovery Framework — Durable Intelligence
 

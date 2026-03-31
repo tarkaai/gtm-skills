@@ -11,6 +11,15 @@ outcome: "Sustained or improving adoption ≥20% over 6 months via AI"
 kpis: ["Add-on adoption", "Cross-sell rate", "ARPU lift", "Experiment velocity", "AI lift"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Module Cross-Sell — Durable Intelligence
 

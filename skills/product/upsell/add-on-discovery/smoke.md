@@ -11,6 +11,9 @@ outcome: "≥15% adopt add-on"
 kpis: ["Add-on adoption", "Cross-sell rate", "ARPU lift"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Module Cross-Sell — Smoke Test
 

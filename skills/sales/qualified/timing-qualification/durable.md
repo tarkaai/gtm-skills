@@ -11,6 +11,15 @@ outcome: "Sustained or improving forecast accuracy over 6 months via continuous 
 kpis: ["Forecast accuracy", "Timeline slippage rate", "Deal velocity improvement", "Urgency detection accuracy"]
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Timing Qualification Process — Durable Intelligence
 

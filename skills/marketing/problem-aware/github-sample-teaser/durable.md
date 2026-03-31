@@ -11,6 +11,14 @@ outcome: "Sustained or improving stars or ,000 visitors and leads over 6 months 
 kpis: ["Repository views", "Clone or download rate"]
 slug: "github-sample-teaser"
 install: "npx gtm-skills add marketing/problem-aware/github-sample-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # GitHub Sample or Teaser — Durable Intelligence
 

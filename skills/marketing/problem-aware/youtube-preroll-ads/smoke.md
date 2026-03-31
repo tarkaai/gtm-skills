@@ -11,6 +11,9 @@ outcome: "≥10,000 views and ≥3 qualified leads from $300 test budget"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # YouTube Pre-roll Ads — Smoke Test
 

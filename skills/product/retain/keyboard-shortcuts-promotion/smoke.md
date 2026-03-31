@@ -11,6 +11,9 @@ outcome: "≥20% use"
 kpis: ["Shortcut usage", "Power user growth", "Efficiency metrics"]
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Power User Features — Smoke Test
 

@@ -11,6 +11,15 @@ outcome: "Sustained or improving demo-to-proposal conversion over 6 months via c
 kpis: ["Next step conversion rate", "Response rate", "Personalization effectiveness", "Demo-to-close rate", "Follow-up efficiency"]
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Demo Follow-Up Sequence — Durable Intelligence
 

@@ -11,6 +11,13 @@ outcome: "≥2% CTR and ≥70 conversions from $8,000/month retargeting over 4 m
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Multi-platform Retargeting — Scalable Automation
 

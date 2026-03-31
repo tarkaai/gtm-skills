@@ -11,6 +11,11 @@ outcome: "≥250 visitors and ≥45 qualified leads across 2 trade shows in 8 we
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Trade Show Presence — Baseline Run
 

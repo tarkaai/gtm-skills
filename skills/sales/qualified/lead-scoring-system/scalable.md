@@ -11,6 +11,13 @@ outcome: "Hot leads convert at >=4x rate vs Cold leads over 2 months"
 kpis: ["Conversion rate by tier", "Score decay impact", "Time to contact by tier", "Rep efficiency (pipeline per hour)"]
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Lead Scoring System — Scalable Automation
 

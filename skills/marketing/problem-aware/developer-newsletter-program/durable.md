@@ -11,6 +11,14 @@ outcome: "Sustained subscriber growth (≥10% QoQ) and ≥35 qualified leads/qua
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Developer Newsletter — Durable Intelligence
 

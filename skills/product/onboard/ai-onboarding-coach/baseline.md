@@ -11,6 +11,11 @@ outcome: "≥55% use, ≥15pp activation"
 kpis: ["AI coach usage", "Activation lift", "User satisfaction"]
 slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # AI Onboarding Assistant — Baseline Run
 

@@ -11,6 +11,13 @@ outcome: "≥200 registrations and ≥40 qualified leads per month from webinar 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "webinar-series-program"
 install: "npx gtm-skills add marketing/solution-aware/webinar-series-program"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Educational Webinar Series — Scalable Automation
 

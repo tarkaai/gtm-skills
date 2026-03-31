@@ -11,6 +11,15 @@ outcome: "Sustained or improving continuous insights over 6 months via AI"
 kpis: ["Retention by cohort", "Insight generation", "Action success", "Experiment velocity", "AI lift"]
 slug: "retention-cohort-analysis"
 install: "npx gtm-skills add product/retain/retention-cohort-analysis"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Retention Cohort Analytics — Durable Intelligence
 

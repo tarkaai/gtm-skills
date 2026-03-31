@@ -11,6 +11,14 @@ outcome: "Sustained or improving lead generation (≥40 qualified leads per repo
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "industry-reports-research"
 install: "npx gtm-skills add marketing/problem-aware/industry-reports-research"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - video-content-pipeline
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Industry Reports & Research — Durable Intelligence
 

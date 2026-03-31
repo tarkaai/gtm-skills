@@ -11,6 +11,9 @@ outcome: "≥ 3 leads or ≥ 2 meetings in 1 week"
 kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Founder Social & Content — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: ">=8 accounts researched and >=30% reply rate from personalized outreac
 kpis: ["Reply rate (researched vs non-researched)", "Research time per account", "Personalization hook effectiveness"]
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Account Research & Intelligence — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥3% CTR and ≥5 conversions from $200 retargeting test"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Multi-platform Retargeting — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥5,000 listener impressions and ≥3 qualified leads from first spon
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # B2B Podcast Sponsorships — Smoke Test
 

@@ -11,6 +11,10 @@ outcome: "≥30 answers, ≥1,000 views, and ≥5 qualified leads in 6 weeks"
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Stack Overflow Presence — Baseline Run
 

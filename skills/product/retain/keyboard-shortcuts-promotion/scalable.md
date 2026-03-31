@@ -11,6 +11,13 @@ outcome: "≥25% at 500+"
 kpis: ["Shortcut usage", "Power user growth", "Efficiency metrics", "Segment metrics"]
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Power User Features — Scalable Automation
 

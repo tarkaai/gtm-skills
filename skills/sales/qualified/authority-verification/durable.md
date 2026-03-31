@@ -11,6 +11,15 @@ outcome: "Sustained or improving deal velocity and close rate over 6 months via 
 kpis: ["Authority verification rate", "Deal velocity improvement", "Close rate with verified authority", "Multi-threading success rate", "Authority intelligence accuracy"]
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Authority Verification Process — Durable Intelligence
 

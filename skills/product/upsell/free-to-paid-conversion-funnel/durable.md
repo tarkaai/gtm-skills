@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥8% over 6 months via AI"
 kpis: ["Conversion rate", "Time to upgrade", "Upgrade triggers", "Experiment velocity", "AI lift"]
 slug: "free-to-paid-conversion-funnel"
 install: "npx gtm-skills add product/upsell/free-to-paid-conversion-funnel"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Free to Paid Funnel — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥20% convert"
 kpis: ["Annual conversion", "Offer acceptance", "Retention lift"]
 slug: "annual-upgrade-incentive"
 install: "npx gtm-skills add product/upsell/annual-upgrade-incentive"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Monthly to Annual Conversion — Smoke Test
 

@@ -11,6 +11,13 @@ outcome: "≥ 200 clicks and ≥ 15 leads over 2 months"
 kpis: ["Impressions", "Click-through rate"]
 slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Partner Newsletter Shoutout — Scalable Automation
 

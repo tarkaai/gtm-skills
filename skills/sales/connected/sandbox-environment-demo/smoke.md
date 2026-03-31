@@ -11,6 +11,9 @@ outcome: "Sandboxes provided to ≥5 opportunities in 1 week"
 kpis: ["Sandbox provisioning rate", "Active usage rate", "Feature exploration depth", "Demo-to-proposal conversion"]
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Sandbox Environment Demo — Smoke Test
 

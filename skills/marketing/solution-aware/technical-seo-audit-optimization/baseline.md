@@ -11,6 +11,11 @@ outcome: "Increase organic traffic by 20% and improve average position by 5 rank
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "technical-seo-audit-optimization"
 install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Technical SEO Audit & Fix — Baseline Run
 

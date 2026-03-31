@@ -11,6 +11,11 @@ outcome: ">=70% of prospects with >=4 quantified pains totaling >=10x product co
 kpis: ["Quantified pain per prospect", "Pain-to-price ratio", "Pain validation rate", "Business case conversion rate"]
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Pain Discovery Framework — Baseline Run
 

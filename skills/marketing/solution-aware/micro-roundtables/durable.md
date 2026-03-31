@@ -11,6 +11,15 @@ outcome: "Sustained or improving attendees and meetings over 6 months via contin
 kpis: ["RSVPs", "Show rate"]
 slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
+drills:
+  - meetup-pipeline
+  - webinar-pipeline
+  - workshop-pipeline
+  - crm-pipeline-setup
+  - follow-up-automation
+  - posthog-gtm-events
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Micro-Roundtable — Durable Intelligence
 

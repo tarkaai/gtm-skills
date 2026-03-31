@@ -11,6 +11,9 @@ outcome: "≥35% engage"
 kpis: ["Tips engagement", "Workflow optimization", "Feature depth"]
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # In-App Best Practices — Smoke Test
 

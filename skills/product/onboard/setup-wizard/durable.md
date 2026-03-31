@@ -11,6 +11,15 @@ outcome: "Sustained or improving completion ≥70% over 6 months via AI"
 kpis: ["Wizard completion", "Setup time", "Config success", "Experiment velocity", "AI lift"]
 slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Guided Setup Wizard — Durable Intelligence
 

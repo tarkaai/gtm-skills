@@ -11,6 +11,12 @@ outcome: "≥ 30 leads or ≥ 16 meetings over 2 months"
 kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Founder Social & Content — Scalable Automation
 

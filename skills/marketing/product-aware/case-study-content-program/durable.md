@@ -11,6 +11,15 @@ outcome: "Sustained or improving case study impact on deal close rate over 6 mon
 kpis: ["Deal close rate impact", "Case study engagement rate", "Sales usage rate", "Story refresh velocity", "Conversion rate trend"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Case Study Content Program — Durable Intelligence
 

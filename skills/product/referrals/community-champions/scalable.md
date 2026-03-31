@@ -11,6 +11,13 @@ outcome: "≥50 champions at 500+"
 kpis: ["Champion identification", "Champion activity", "Referrals generated", "Segment metrics"]
 slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Champion Recognition Program — Scalable Automation
 

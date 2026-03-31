@@ -11,6 +11,9 @@ outcome: ">=5 high-intent accounts and >=30% reply rate from intent-based outrea
 kpis: ["Intent signals per day", "Reply rate (intent vs non-intent)", "Time from signal to outreach"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Intent Signal Tracking — Smoke Test
 

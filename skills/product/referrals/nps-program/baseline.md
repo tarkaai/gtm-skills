@@ -11,6 +11,11 @@ outcome: "≥50% response, NPS ≥40"
 kpis: ["NPS response rate", "NPS score", "Promoter conversion"]
 slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # NPS Feedback System — Baseline Run
 

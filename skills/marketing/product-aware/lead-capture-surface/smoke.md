@@ -11,6 +11,9 @@ outcome: "≥ 3% conversion rate from warm traffic in 1 week"
 kpis: ["Click-through rate", "Form starts"]
 slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Single CTA Lead Capture — Smoke Test
 

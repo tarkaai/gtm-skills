@@ -11,6 +11,9 @@ outcome: "Pricing presented to ≥5 opportunities in 1 week with ≥60% acceptan
 kpis: ["Pricing acceptance rate", "Discount request frequency", "Value anchoring effectiveness", "Close rate"]
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Pricing Presentation Framework — Smoke Test
 

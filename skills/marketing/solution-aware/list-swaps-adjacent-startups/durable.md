@@ -11,6 +11,15 @@ outcome: "Sustained or improving clicks and meetings over 6 months via continuou
 kpis: ["Click-through rate", "Email open rate"]
 slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # List Swap With Partner — Durable Intelligence
 

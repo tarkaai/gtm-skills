@@ -11,6 +11,15 @@ outcome: "Sustained or improving churn reduction sustained over 6 months via AI"
 kpis: ["Churn rate", "ARPU", "Net retention", "Experiment velocity", "AI lift"]
 slug: "usage-based-pricing-optimization"
 install: "npx gtm-skills add product/retain/usage-based-pricing-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Pricing for Retention — Durable Intelligence
 

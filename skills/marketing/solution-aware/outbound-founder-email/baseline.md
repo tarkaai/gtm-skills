@@ -11,6 +11,11 @@ outcome: "≥ 2% meeting rate over 2 weeks"
 kpis: ["Reply rate", "Time to first reply", "Emails sent"]
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Outbound founder-led email — Baseline Run
 

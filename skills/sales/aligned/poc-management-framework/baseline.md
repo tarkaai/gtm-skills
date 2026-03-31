@@ -11,6 +11,11 @@ outcome: "POCs on ≥80% of qualified opportunities over 4 weeks"
 kpis: ["POC qualification accuracy", "Success criteria achievement rate", "POC-to-close conversion", "Time from POC to decision", "POC engagement score"]
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # POC Management Framework — Baseline Run
 

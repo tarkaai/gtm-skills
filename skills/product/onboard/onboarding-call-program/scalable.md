@@ -11,6 +11,13 @@ outcome: "50+ calls/mo, ≥80%"
 kpis: ["Call booking", "Call completion", "Post-call activation", "Segment metrics"]
 slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # High-Touch Onboarding Calls — Scalable Automation
 

@@ -11,6 +11,15 @@ outcome: "Sustained content output and ≥70 qualified leads over 12 months via 
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "joint-content-campaigns"
 install: "npx gtm-skills add marketing/problem-aware/joint-content-campaigns"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Joint Content Campaigns — Durable Intelligence
 

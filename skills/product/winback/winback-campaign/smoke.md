@@ -11,6 +11,9 @@ outcome: "≥10% reactivate"
 kpis: ["Reactivation rate", "Win-back CAC", "Reactivated retention"]
 slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Churned User Win-back — Smoke Test
 

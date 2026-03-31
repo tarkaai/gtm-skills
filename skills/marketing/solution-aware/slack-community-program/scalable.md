@@ -11,6 +11,12 @@ outcome: "≥750 members and ≥200 WAU with ≥25 qualified leads/month over 4 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Slack Community Program — Scalable Automation
 

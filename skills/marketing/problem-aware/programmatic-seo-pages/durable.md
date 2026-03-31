@@ -11,6 +11,15 @@ outcome: "Sustained or improving organic traffic and conversion rate over 6 mont
 kpis: ["Organic traffic trend", "Pages indexed", "Conversion rate", "Average position", "Click-through rate", "Content refresh velocity", "Ranking stability"]
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Programmatic SEO Pages — Durable Intelligence
 

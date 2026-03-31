@@ -11,6 +11,11 @@ outcome: "≥50% intervention success"
 kpis: ["Alert accuracy", "Intervention rate", "Recovery rate"]
 slug: "usage-monitoring-alerts"
 install: "npx gtm-skills add product/retain/usage-monitoring-alerts"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Usage Drop Alerting — Baseline Run
 

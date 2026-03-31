@@ -11,6 +11,9 @@ outcome: "≥20 attendees and ≥5 qualified leads from first event"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Regional Field Events — Smoke Test
 

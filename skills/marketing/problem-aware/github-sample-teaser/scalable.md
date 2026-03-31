@@ -11,6 +11,12 @@ outcome: "≥ 150 stars or ≥ 1,000 visitors and ≥ 15 leads over 2 months"
 kpis: ["Repository views", "Clone or download rate"]
 slug: "github-sample-teaser"
 install: "npx gtm-skills add marketing/problem-aware/github-sample-teaser"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # GitHub Sample or Teaser — Scalable Automation
 

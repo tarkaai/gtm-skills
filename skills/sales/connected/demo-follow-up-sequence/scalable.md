@@ -11,6 +11,13 @@ outcome: "Automated demo follow-up on ≥80% of demos at scale over 2 months wit
 kpis: ["Sequence completion rate", "Response rate", "Next step conversion", "Follow-up efficiency", "Demo-to-proposal rate"]
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Demo Follow-Up Sequence — Scalable Automation
 

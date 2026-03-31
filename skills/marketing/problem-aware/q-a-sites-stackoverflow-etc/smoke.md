@@ -11,6 +11,9 @@ outcome: "≥ 30 profile clicks and ≥ 1 lead in 1 week"
 kpis: ["Profile views", "Profile click rate"]
 slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Q&A Site Authority — Smoke Test
 

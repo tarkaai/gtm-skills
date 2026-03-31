@@ -11,6 +11,15 @@ outcome: "Sustained or improving time <8min over 6 months via AI"
 kpis: ["Time to first value", "Activation rate", "Step completion", "Experiment velocity", "AI lift"]
 slug: "time-to-value-optimization"
 install: "npx gtm-skills add product/onboard/time-to-value-optimization"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Time-to-Value Acceleration — Durable Intelligence
 

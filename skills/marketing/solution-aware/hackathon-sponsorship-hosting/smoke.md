@@ -11,6 +11,9 @@ outcome: "≥50 developer attendees and ≥5 qualified leads from first hackatho
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add marketing/solution-aware/hackathon-sponsorship-hosting"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Hackathon Sponsorship — Smoke Test
 

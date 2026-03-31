@@ -11,6 +11,11 @@ outcome: "≥40% DAU, ≥20pp retention"
 kpis: ["Daily active rate", "Streak length", "Habit formation"]
 slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Habit-Building Features — Baseline Run
 

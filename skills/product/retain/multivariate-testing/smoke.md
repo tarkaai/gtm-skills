@@ -11,6 +11,9 @@ outcome: "Run 2 MVTs"
 kpis: ["MVT velocity", "Win rate", "Combination insights"]
 slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Multivariate Experiments — Smoke Test
 

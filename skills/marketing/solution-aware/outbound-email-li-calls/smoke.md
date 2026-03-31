@@ -11,6 +11,9 @@ outcome: "≥ 2 meetings in 1 week"
 kpis: ["Reply rate", "Time to first reply"]
 slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Outbound Email/LI/Calls — Smoke Test
 

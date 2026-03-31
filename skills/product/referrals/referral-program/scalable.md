@@ -11,6 +11,13 @@ outcome: "≥8% refer at 500+"
 kpis: ["Referral rate", "Referee conversion", "Referral CAC", "Segment metrics"]
 slug: "referral-program"
 install: "npx gtm-skills add product/referrals/referral-program"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Incentivized Referral Program — Scalable Automation
 

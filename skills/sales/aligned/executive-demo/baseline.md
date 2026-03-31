@@ -11,6 +11,11 @@ outcome: ">=75% exec demo-to-nextstep conversion and >=30% faster close time for
 kpis: ["Exec demo conversion", "Deal velocity (exec vs non-exec)", "Close rate (exec vs non-exec)", "Exec satisfaction score"]
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Executive-Focused Demo — Baseline Run
 

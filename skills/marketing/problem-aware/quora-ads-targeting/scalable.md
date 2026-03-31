@@ -11,6 +11,13 @@ outcome: "≥500,000 impressions and ≥55 qualified leads from $8,000/month ove
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add marketing/problem-aware/quora-ads-targeting"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Quora Ads — Scalable Automation
 

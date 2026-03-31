@@ -11,6 +11,15 @@ outcome: "Sustained or improving success criteria achievement and customer satis
 kpis: ["Success criteria achievement rate", "Customer satisfaction score", "Close rate with AI-recommended criteria", "Renewal rate correlation", "Expectation alignment accuracy"]
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Success Criteria Definition — Durable Intelligence
 

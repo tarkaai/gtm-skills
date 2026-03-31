@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥45% over 6 months via AI"
 kpis: ["Guide view rate", "Guide completion", "Post-view activation", "Experiment velocity", "AI lift"]
 slug: "quick-start-guide"
 install: "npx gtm-skills add product/onboard/quick-start-guide"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Quick Start Documentation — Durable Intelligence
 

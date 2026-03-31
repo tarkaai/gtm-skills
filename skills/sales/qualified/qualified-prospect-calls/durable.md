@@ -11,6 +11,15 @@ outcome: "Sustained or improving meeting rate over 6 months via continuous agent
 kpis: ["Connect rate", "Dials attempted", "Time to connect"]
 slug: "qualified-prospect-calls"
 install: "npx gtm-skills add sales/qualified/qualified-prospect-calls"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Founder calls to prospects — Durable Intelligence
 

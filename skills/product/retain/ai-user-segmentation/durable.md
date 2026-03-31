@@ -11,6 +11,15 @@ outcome: "Sustained or improving accuracy ≥75% over 6 months via AI"
 kpis: ["Segment accuracy", "Segment value", "Personalization lift", "Experiment velocity", "AI lift"]
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # AI Behavior Segmentation — Durable Intelligence
 

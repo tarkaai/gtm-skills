@@ -11,6 +11,15 @@ outcome: "Sustained analyst relationships and ≥25 analyst-influenced deals/qua
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # Analyst Relations Program — Durable Intelligence
 

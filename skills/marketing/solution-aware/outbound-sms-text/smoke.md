@@ -11,6 +11,9 @@ outcome: "≥3% response rate from 50 SMS messages in 1 week"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # SMS Outbound Sequences — Smoke Test
 

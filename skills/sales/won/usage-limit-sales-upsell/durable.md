@@ -11,6 +11,15 @@ outcome: "Sustained or improving expansion metrics (>=35% conversion, >=15% expa
 kpis: ["Expansion conversion trend", "Agent experiment win rate", "Expansion ARR growth rate", "Predictive accuracy"]
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Usage-Based Upsell — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥2 accepted pitches and ≥50 referral visits"
 kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic", "Backlinks acquired"]
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Guest Posting at Scale — Smoke Test
 

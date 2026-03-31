@@ -11,6 +11,14 @@ outcome: "Sustained or improving profile clicks and leads over 6 months via cont
 kpis: ["Profile views", "Profile click rate"]
 slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - dashboard-builder
+  - ab-test-orchestrator
+  - newsletter-pipeline
 ---
 # Q&A Site Authority — Durable Intelligence
 

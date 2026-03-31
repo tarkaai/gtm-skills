@@ -11,6 +11,13 @@ outcome: "≥65% at 500+"
 kpis: ["Self-serve rate", "Upgrade completion", "Time to upgrade", "Segment metrics"]
 slug: "in-product-upgrade-flow"
 install: "npx gtm-skills add product/upsell/in-product-upgrade-flow"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Self-Serve Upgrade UX — Scalable Automation
 

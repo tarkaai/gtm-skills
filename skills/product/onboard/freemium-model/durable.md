@@ -11,6 +11,15 @@ outcome: "Sustained or improving conversion ≥6% over 6 months via AI"
 kpis: ["Free signups", "Free to paid rate", "Time to upgrade", "Experiment velocity", "AI lift"]
 slug: "freemium-model"
 install: "npx gtm-skills add product/onboard/freemium-model"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Freemium Tier Strategy — Durable Intelligence
 

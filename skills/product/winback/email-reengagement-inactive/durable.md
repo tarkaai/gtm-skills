@@ -11,6 +11,15 @@ outcome: "Sustained or improving return ≥18% over 6 months via AI"
 kpis: ["Email open rate", "Return rate", "Reactivation rate", "Experiment velocity", "AI lift"]
 slug: "email-reengagement-inactive"
 install: "npx gtm-skills add product/winback/email-reengagement-inactive"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Inactive User Re-engagement — Durable Intelligence
 

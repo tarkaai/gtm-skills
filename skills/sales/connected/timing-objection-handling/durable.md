@@ -11,6 +11,15 @@ outcome: "Sustained or improving timing objection resolution and deal accelerati
 kpis: ["Timeline acceleration rate", "Objection resolution effectiveness", "True objection detection accuracy", "Deal velocity improvement", "Eventually close rate"]
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Timing Objection Handling — Durable Intelligence
 

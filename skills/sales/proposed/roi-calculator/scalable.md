@@ -11,6 +11,13 @@ outcome: ">=70% of prospects with >=5x ROI and >=60% calculator completion rate 
 kpis: ["ROI distribution", "Calculator completion rate", "ROI prediction accuracy", "Self-service calculator conversion"]
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # ROI Calculator & Business Case — Scalable Automation
 

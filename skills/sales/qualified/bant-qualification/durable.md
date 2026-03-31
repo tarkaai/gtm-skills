@@ -11,6 +11,15 @@ outcome: "Sustained or improving qualification accuracy (>=35%) over 6 months vi
 kpis: ["Qualification accuracy", "Agent-driven experiment win rate", "False negative rate", "Time-to-qualification trend"]
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # BANT Qualification Framework — Durable Intelligence
 

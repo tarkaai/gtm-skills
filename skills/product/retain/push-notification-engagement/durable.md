@@ -11,6 +11,15 @@ outcome: "Sustained or improving CTR ≥30% over 6 months via AI"
 kpis: ["Push CTR", "Opt-in rate", "DAU lift", "Experiment velocity", "AI lift"]
 slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Push Notification Strategy — Durable Intelligence
 

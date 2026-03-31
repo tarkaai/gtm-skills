@@ -11,6 +11,9 @@ outcome: "≥15% return in 7d"
 kpis: ["Email open rate", "Return rate", "Reactivation rate"]
 slug: "email-reengagement-inactive"
 install: "npx gtm-skills add product/winback/email-reengagement-inactive"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Inactive User Re-engagement — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥70% interact"
 kpis: ["Sample engagement", "Time to first action", "Activation rate"]
 slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Sample Data Acceleration — Smoke Test
 

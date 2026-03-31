@@ -11,6 +11,14 @@ outcome: "Sustained or improving downloads and leads over 6 months via continuou
 kpis: ["Download rate", "Landing page visits"]
 slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # Template or Tool Marketplace — Durable Intelligence
 

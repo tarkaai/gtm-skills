@@ -11,6 +11,11 @@ outcome: "≥ 8 leads or ≥ 4 meetings over 2 weeks"
 kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Paid Social Ads — Baseline Run
 

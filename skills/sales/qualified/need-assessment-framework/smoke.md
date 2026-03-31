@@ -11,6 +11,9 @@ outcome: "≥10 need assessments completed in 1 week"
 kpis: ["Need assessment completion rate", "Average need score", "Qualification rate", "Critical need identification rate"]
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Need Assessment Framework — Smoke Test
 

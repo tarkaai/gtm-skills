@@ -11,6 +11,9 @@ outcome: ">=80% data quality score and >=50% reduction in critical errors within
 kpis: ["Data quality score", "Critical error rate", "Duplicate rate", "Stale record rate"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # CRM Hygiene & Data Quality — Smoke Test
 

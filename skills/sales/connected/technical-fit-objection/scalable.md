@@ -11,6 +11,13 @@ outcome: "Technical objections handled systematically at scale over 2 months wit
 kpis: ["Objection detection and response speed", "Resolution rate", "Technical loss prevention", "Roadmap influence effectiveness", "Win rate improvement"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Technical Fit Objection Handling — Scalable Automation
 

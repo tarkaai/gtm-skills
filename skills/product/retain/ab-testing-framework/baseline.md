@@ -11,6 +11,11 @@ outcome: "≥5 experiments, ≥2 wins"
 kpis: ["Experiment velocity", "Win rate", "Impact per experiment"]
 slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Product A/B Testing — Baseline Run
 

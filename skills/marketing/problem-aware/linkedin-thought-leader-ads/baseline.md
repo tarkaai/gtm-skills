@@ -11,6 +11,11 @@ outcome: "≥50,000 impressions and ≥20 qualified leads from $2,000 budget ove
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Thought Leader Ads — Baseline Run
 

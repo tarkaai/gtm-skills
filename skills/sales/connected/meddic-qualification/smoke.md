@@ -11,6 +11,9 @@ outcome: ">=2 deals with >=80% MEDDIC completeness in 1 week"
 kpis: ["MEDDIC completeness score", "Elements per call", "Time to complete MEDDIC"]
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # MEDDIC Qualification System — Smoke Test
 

@@ -11,6 +11,9 @@ outcome: "≥3 award submissions and ≥1 win or finalist placement"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Industry Award Submissions — Smoke Test
 

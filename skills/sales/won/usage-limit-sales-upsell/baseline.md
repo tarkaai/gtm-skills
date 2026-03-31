@@ -11,6 +11,11 @@ outcome: ">=30% upsell conversion rate and expansion ARR >=10% of base ARR over 
 kpis: ["Upsell conversion rate", "Expansion ARR", "Time from signal to close", "Proactive vs reactive upsells"]
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Usage-Based Upsell — Baseline Run
 

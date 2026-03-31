@@ -11,6 +11,9 @@ outcome: "≥30 members and ≥10 weekly active users in 2 weeks"
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Slack Community Program — Smoke Test
 

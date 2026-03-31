@@ -11,6 +11,15 @@ outcome: "Sustained or improving organic traffic and conversion rate over 6 mont
 kpis: ["Organic traffic trend", "Conversion rate", "Competitor keyword coverage", "Feature comparison accuracy", "Competitive positioning effectiveness"]
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Comparison and Alternative Pages — Durable Intelligence
 

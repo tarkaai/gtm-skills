@@ -11,6 +11,9 @@ outcome: "Maintain engagement in >=3 out of 5 competitive deals within 1 week"
 kpis: ["Competitive win rate", "Differentiator effectiveness", "Prospect engagement post-positioning"]
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Competitive Objection Handling — Smoke Test
 

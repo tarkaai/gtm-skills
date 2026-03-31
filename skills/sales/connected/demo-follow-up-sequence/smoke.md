@@ -11,6 +11,9 @@ outcome: "Demo follow-up completed on ≥8 opportunities in 2 weeks"
 kpis: ["Follow-up completion rate", "Response rate", "Next step scheduling rate", "Content engagement"]
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
+drills:
+  - icp-definition
+  - threshold-engine
 ---
 # Demo Follow-Up Sequence — Smoke Test
 

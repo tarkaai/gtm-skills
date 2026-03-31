@@ -11,6 +11,11 @@ outcome: "≥70% recover"
 kpis: ["Recovery rate", "Involuntary churn", "Time to recovery"]
 slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Payment Failure Recovery — Baseline Run
 

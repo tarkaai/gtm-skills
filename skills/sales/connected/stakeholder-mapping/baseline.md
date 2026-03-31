@@ -11,6 +11,11 @@ outcome: ">=70% of deals with >=4 stakeholders mapped and >=25% faster close tim
 kpis: ["Stakeholders per deal", "Multi-threading rate", "Deal velocity by stakeholder count", "Single-threaded deal risk"]
 slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Stakeholder Mapping Framework — Baseline Run
 

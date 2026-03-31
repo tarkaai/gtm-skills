@@ -11,6 +11,15 @@ outcome: "Sustained or improving technical validation speed and close rates over
 kpis: ["Technical validation speed", "POC conversion rate", "Technical close rate", "Demo customization effectiveness", "Technical stakeholder satisfaction"]
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Technical Deep-Dive Demo — Durable Intelligence
 

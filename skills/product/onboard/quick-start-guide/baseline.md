@@ -11,6 +11,11 @@ outcome: "≥50%, ≥8pp"
 kpis: ["Guide view rate", "Guide completion", "Post-view activation"]
 slug: "quick-start-guide"
 install: "npx gtm-skills add product/onboard/quick-start-guide"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Quick Start Documentation — Baseline Run
 

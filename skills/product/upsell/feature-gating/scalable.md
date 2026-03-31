@@ -11,6 +11,13 @@ outcome: "≥25% at 500+"
 kpis: ["Trial rate", "Upgrade rate", "Feature engagement", "Segment metrics"]
 slug: "feature-gating"
 install: "npx gtm-skills add product/upsell/feature-gating"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Premium Feature Gating — Scalable Automation
 

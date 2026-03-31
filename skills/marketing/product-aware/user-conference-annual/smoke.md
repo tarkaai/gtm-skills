@@ -11,6 +11,9 @@ outcome: "≥50 customer attendees and ≥5 expansion opportunities from first c
 kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
+drills:
+  - meetup-pipeline
+  - threshold-engine
 ---
 # Annual User Conference — Smoke Test
 

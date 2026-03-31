@@ -11,6 +11,15 @@ outcome: "Sustained retargeting efficiency and ≥60 conversions/month over 12 m
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - retargeting-setup
+  - posthog-gtm-events
+  - ab-test-orchestrator
+  - dashboard-builder
+  - tool-sync-workflow
 ---
 # Multi-platform Retargeting — Durable Intelligence
 

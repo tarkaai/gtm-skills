@@ -11,6 +11,12 @@ outcome: "≥500 downloads and ≥40 qualified leads per report over 6 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "industry-reports-research"
 install: "npx gtm-skills add marketing/problem-aware/industry-reports-research"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Industry Reports & Research — Scalable Automation
 

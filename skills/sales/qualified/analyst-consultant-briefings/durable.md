@@ -11,6 +11,15 @@ outcome: "Sustained or improving intro meetings over 6 months via continuous age
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "analyst-consultant-briefings"
 install: "npx gtm-skills add sales/qualified/analyst-consultant-briefings"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - crm-pipeline-setup
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Analyst & Consultant Briefings — Durable Intelligence
 

@@ -11,6 +11,11 @@ outcome: "≥30%, ≥10pp"
 kpis: ["Feature adoption", "Campaign engagement", "Sustained usage"]
 slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Targeted Adoption Campaigns — Baseline Run
 

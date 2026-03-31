@@ -11,6 +11,13 @@ outcome: "≥65% accuracy at 500+"
 kpis: ["Prediction accuracy", "Churn rate", "Intervention success", "Segment metrics"]
 slug: "churn-prediction-model"
 install: "npx gtm-skills add product/retain/churn-prediction-model"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # AI Churn Prediction — Scalable Automation
 

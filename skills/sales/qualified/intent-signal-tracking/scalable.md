@@ -11,6 +11,13 @@ outcome: ">=200 high-intent accounts/month and >=3x conversion rate vs cold outr
 kpis: ["Intent accounts per month", "Signal-to-outreach time", "Conversion rate by intent tier", "Intent decay impact"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Intent Signal Tracking — Scalable Automation
 

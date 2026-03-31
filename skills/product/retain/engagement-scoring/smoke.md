@@ -11,6 +11,9 @@ outcome: "Score all users"
 kpis: ["Score accuracy", "Engagement correlation", "Predictive value"]
 slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # User Engagement Scoring — Smoke Test
 

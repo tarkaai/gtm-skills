@@ -11,6 +11,15 @@ outcome: "Sustained or improving response ≥45% over 6 months via AI"
 kpis: ["Response rate", "Issue identification", "Retention lift", "Experiment velocity", "AI lift"]
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Proactive Success Check-ins — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "Test 2 pricing models"
 kpis: ["Churn rate", "ARPU", "Net retention"]
 slug: "usage-based-pricing-optimization"
 install: "npx gtm-skills add product/retain/usage-based-pricing-optimization"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Pricing for Retention — Smoke Test
 

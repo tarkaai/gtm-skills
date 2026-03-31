@@ -11,6 +11,15 @@ outcome: "Sustained or improving placements and referral clicks over 6 months vi
 kpis: ["Placement rate", "Referral clicks"]
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
+  - dashboard-builder
+  - newsletter-pipeline
 ---
 # PR & Earned Placements — Durable Intelligence
 

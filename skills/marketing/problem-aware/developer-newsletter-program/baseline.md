@@ -11,6 +11,10 @@ outcome: "≥500 subscribers and ≥12 qualified leads from first 8 issues over 
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - threshold-engine
 ---
 # Developer Newsletter — Baseline Run
 

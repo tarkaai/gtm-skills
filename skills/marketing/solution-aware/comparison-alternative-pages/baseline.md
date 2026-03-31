@@ -11,6 +11,11 @@ outcome: "≥1,500 page views and ≥20 conversions over 8 weeks"
 kpis: ["Organic traffic", "Conversion rate", "Average position for competitor keywords", "CTA click rate", "Feature table engagement"]
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Comparison and Alternative Pages — Baseline Run
 

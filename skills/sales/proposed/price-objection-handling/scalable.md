@@ -11,6 +11,13 @@ outcome: ">=65% of price objections overcome with <=10 days to close after resol
 kpis: ["Objection overcome rate", "Objection resolution time", "Objection prevention rate", "Discount rate by objection type"]
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - posthog-gtm-events
 ---
 # Price Objection Handling — Scalable Automation
 

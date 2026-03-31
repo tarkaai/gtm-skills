@@ -11,6 +11,15 @@ outcome: "Sustained or improving budget objection resolution and deal profitabil
 kpis: ["Budget objection resolution rate", "Business case win rate", "Payment structure optimization", "Deal profitability", "Win rate improvement"]
 slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Budget Objection Navigation — Durable Intelligence
 

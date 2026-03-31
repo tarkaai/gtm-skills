@@ -11,6 +11,15 @@ outcome: "Sustained or improving activation ≥50% over 6 months via AI"
 kpis: ["Activation by persona", "Completion rate", "Time to activation", "Experiment velocity", "AI lift"]
 slug: "role-based-onboarding"
 install: "npx gtm-skills add product/onboard/role-based-onboarding"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Persona-Based Onboarding — Durable Intelligence
 

@@ -11,6 +11,9 @@ outcome: "≥ 1 meeting in 1 week"
 kpis: ["Post engagement", "Inbound inquiries"]
 slug: "alumni-campus-pro-orgs"
 install: "npx gtm-skills add marketing/unaware/alumni-campus-pro-orgs"
+drills:
+  - social-content-pipeline
+  - threshold-engine
 ---
 # Alumni & Campus Outreach — Smoke Test
 

@@ -11,6 +11,11 @@ outcome: "≥40% use, ≥20pp retention"
 kpis: ["Collaboration usage", "Team size", "Retention lift"]
 slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Multiplayer Product Features — Baseline Run
 

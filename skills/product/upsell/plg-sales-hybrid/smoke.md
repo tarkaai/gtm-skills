@@ -11,6 +11,9 @@ outcome: "≥10% to sales"
 kpis: ["Sales-assist rate", "Sales conversion", "ACV lift"]
 slug: "plg-sales-hybrid"
 install: "npx gtm-skills add product/upsell/plg-sales-hybrid"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # PLG + Sales-Assist Model — Smoke Test
 

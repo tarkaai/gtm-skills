@@ -11,6 +11,12 @@ outcome: "≥ 20 new reviews and ≥ 15 inbound leads over 2 months"
 kpis: ["3 new reviews", "1 inbound"]
 slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
 ---
 # Review Ask to Early Users — Scalable Automation
 

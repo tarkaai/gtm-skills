@@ -11,6 +11,9 @@ outcome: "Score all accounts"
 kpis: ["Score accuracy", "Health correlation", "Predictive value"]
 slug: "health-score-dashboard"
 install: "npx gtm-skills add product/retain/health-score-dashboard"
+drills:
+  - onboarding-flow
+  - threshold-engine
 ---
 # Account Health Scoring — Smoke Test
 

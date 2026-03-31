@@ -11,6 +11,11 @@ outcome: "≥ 2 intro meetings over 2 weeks"
 kpis: ["Briefings scheduled", "Follow-up requests"]
 slug: "analyst-consultant-briefings"
 install: "npx gtm-skills add sales/qualified/analyst-consultant-briefings"
+drills:
+  - warm-intro-request
+  - build-prospect-list
+  - linkedin-outreach
+  - threshold-engine
 ---
 # Analyst & Consultant Briefings — Baseline Run
 

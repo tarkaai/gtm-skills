@@ -11,6 +11,11 @@ outcome: "≥6 case studies"
 kpis: ["Recruitment rate", "Case study completion", "Content quality"]
 slug: "case-study-recruitment"
 install: "npx gtm-skills add product/referrals/case-study-recruitment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Customer Story Pipeline — Baseline Run
 

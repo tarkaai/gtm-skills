@@ -11,6 +11,11 @@ outcome: "≥4% account-to-meeting rate via champion strategy in 40 accounts ove
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - cold-email-sequence
+  - threshold-engine
 ---
 # Champion-driven Outbound — Baseline Run
 

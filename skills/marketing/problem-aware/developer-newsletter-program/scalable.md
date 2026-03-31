@@ -11,6 +11,12 @@ outcome: "≥2,500 subscribers and ≥40 qualified leads over 6 months"
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - content-repurposing
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Developer Newsletter — Scalable Automation
 

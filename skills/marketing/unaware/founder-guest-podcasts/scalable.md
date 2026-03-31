@@ -11,6 +11,13 @@ outcome: "≥ 10 inbound leads over 2 months"
 kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - build-prospect-list
+  - cold-email-sequence
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Founder Guest Podcast — Scalable Automation
 

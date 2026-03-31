@@ -11,6 +11,13 @@ outcome: "≥85% at 500+"
 kpis: ["Migration rate", "Churn from sunset", "Communication engagement", "Segment metrics"]
 slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Feature Sunset Communication — Scalable Automation
 

@@ -11,6 +11,13 @@ outcome: "≥35% DAU at 500+"
 kpis: ["Daily active rate", "Streak length", "Habit formation", "Segment metrics"]
 slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
 ---
 # Habit-Building Features — Scalable Automation
 

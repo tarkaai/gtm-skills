@@ -11,6 +11,15 @@ outcome: "Sustained or improving engagement ≥75% over 6 months via AI"
 kpis: ["Sample engagement", "Time to first action", "Activation rate", "Experiment velocity", "AI lift"]
 slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Sample Data Acceleration — Durable Intelligence
 

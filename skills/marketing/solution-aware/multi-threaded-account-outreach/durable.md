@@ -11,6 +11,15 @@ outcome: "Sustained account conversion (≥2.5%) over 12 months via AI-driven st
 kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation speed", "Cost efficiency trend", "Lead quality score"]
 slug: "multi-threaded-account-outreach"
 install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-outreach"
+drills:
+  - icp-definition
+  - build-prospect-list
+  - enrich-and-score
+  - cold-email-sequence
+  - follow-up-automation
+  - multi-channel-cadence
+  - dashboard-builder
+  - ab-test-orchestrator
 ---
 # Multi-threaded Outreach — Durable Intelligence
 

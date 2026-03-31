@@ -11,6 +11,14 @@ outcome: "Sustained or improving views and inquiries over 6 months via continuou
 kpis: ["Listing views", "Inquiry rate"]
 slug: "directories-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/directories-marketplaces"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - case-study-creation
+  - posthog-gtm-events
+  - dashboard-builder
+  - nps-feedback-loop
 ---
 # Directory & Marketplace Listings — Durable Intelligence
 

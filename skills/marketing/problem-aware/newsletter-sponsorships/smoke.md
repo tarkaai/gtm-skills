@@ -11,6 +11,9 @@ outcome: "≥ 20 clicks and ≥ 1 lead in 1 week"
 kpis: ["Impressions", "Click-through rate"]
 slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
+drills:
+  - ad-campaign-setup
+  - threshold-engine
 ---
 # Newsletter Sponsorship — Smoke Test
 

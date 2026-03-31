@@ -11,6 +11,15 @@ outcome: "Sustained or improving lead generation and SQL conversion rate over 6 
 kpis: ["Tool completion rate trend", "SQL conversion rate", "Revenue per tool lead", "Tool engagement depth", "Personalization effectiveness"]
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - activation-optimization
+  - feature-announcement
+  - upgrade-prompt
+  - churn-prevention
+  - dashboard-builder
 ---
 # Interactive Content Tools — Durable Intelligence
 

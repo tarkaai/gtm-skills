@@ -11,6 +11,11 @@ outcome: "≥15% activation lift"
 kpis: ["Activation lift", "Test velocity", "Winning patterns"]
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Onboarding A/B Tests — Baseline Run
 

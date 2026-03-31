@@ -11,6 +11,12 @@ outcome: "≥1,500 upvotes and ≥40 qualified leads from quarterly AMAs over 6 
 kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
 slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
+drills:
+  - social-content-pipeline
+  - crm-pipeline-setup
+  - content-repurposing
+  - tool-sync-workflow
+  - posthog-gtm-events
 ---
 # Reddit AMA Series — Scalable Automation
 

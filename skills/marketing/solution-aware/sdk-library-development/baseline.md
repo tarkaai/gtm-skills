@@ -11,6 +11,11 @@ outcome: "≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
+drills:
+  - social-content-pipeline
+  - blog-seo-pipeline
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # SDK & Library Development — Baseline Run
 

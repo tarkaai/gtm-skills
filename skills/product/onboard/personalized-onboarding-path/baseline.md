@@ -11,6 +11,11 @@ outcome: "≥60%, ≥12pp"
 kpis: ["Activation by path", "Path completion", "Personalization accuracy"]
 slug: "personalized-onboarding-path"
 install: "npx gtm-skills add product/onboard/personalized-onboarding-path"
+drills:
+  - onboarding-flow
+  - posthog-gtm-events
+  - crm-pipeline-setup
+  - threshold-engine
 ---
 # Adaptive Onboarding Paths — Baseline Run
 

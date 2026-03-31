@@ -11,6 +11,11 @@ outcome: "≥200,000 impressions and ≥20 qualified leads from $2,000 budget ov
 kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "display-advertising-industry"
 install: "npx gtm-skills add marketing/problem-aware/display-advertising-industry"
+drills:
+  - ad-campaign-setup
+  - landing-page-pipeline
+  - budget-allocation
+  - threshold-engine
 ---
 # Display Advertising — Baseline Run
 
