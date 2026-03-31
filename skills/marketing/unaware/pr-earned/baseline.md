@@ -1,7 +1,8 @@
 ---
 name: pr-earned-baseline
 description: >
-  PR & Earned Placements — Baseline Run. Pitch micro newsletters or podcasts for one placement to test if earned coverage drives clicks and inbound interest.
+    PR & Earned Placements — Baseline Run. Pitch micro newsletters or podcasts for one placement to
+  test if earned coverage drives clicks and inbound interest.
 stage: "Marketing > Unaware"
 motion: "PR & Earned Mentions"
 channels: "Email, Content"
@@ -12,17 +13,16 @@ kpis: ["Placement rate", "Referral clicks"]
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - threshold-engine
+  - case-study-creation
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # PR & Earned Placements — Baseline Run
 
 > **Stage:** Marketing → Unaware | **Motion:** PR & Earned Mentions | **Channels:** Email, Content
 
 ## Overview
-Pitch micro newsletters or podcasts for one placement to test if earned coverage drives clicks and inbound interest.
+PR & Earned Placements — Baseline Run. Pitch micro newsletters or podcasts for one placement to test if earned coverage drives clicks and inbound interest.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 2 placements and ≥ 80 referral clicks over 2 weeks
@@ -32,40 +32,25 @@ Pitch micro newsletters or podcasts for one placement to test if earned coverage
 ## Budget
 
 **Play-specific tools & costs**
-- **Qwoted or HARO (journalist/podcast request monitoring):** Free–$50/mo
-
-_Total play-specific: Free–$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 2 placements and ≥ 80 referral clicks over 2 weeks).
+### 1. Build a PR content machine
+Run the `case-study-creation` drill to create 2-3 customer case studies that serve as PR assets. Run the `newsletter-pipeline` drill to start your own newsletter that establishes thought leadership and gives journalists a reason to follow you.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Configure PR tracking
+Run the `posthog-gtm-events` drill to track: `pr-earned_mention_published`, `pr-earned_backlink_acquired`, `pr-earned_referral_traffic`, `pr-earned_lead_from_pr`. Set up Google Alerts or a media monitoring tool for brand mentions.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Execute a 4-week PR push
+Pitch 10-20 publications. Submit 2-3 guest articles. Publish your case studies and promote them. Track all coverage and resulting traffic in PostHog.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Placement rate, Referral clicks so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 2 placements and ≥ 80 referral clicks over 2 weeks. If PASS, proceed to Scalable. If FAIL, test different story angles or target tier-2 publications first to build credibility.
 
 ---
 
@@ -78,8 +63,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 2 placements and ≥ 80 referral clicks over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

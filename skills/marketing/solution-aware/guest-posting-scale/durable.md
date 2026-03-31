@@ -1,7 +1,9 @@
 ---
 name: guest-posting-scale-durable
 description: >
-  Guest Posting at Scale — Durable Intelligence. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+    Guest Posting at Scale — Durable Intelligence. Publish guest posts on relevant industry blogs to
+  build backlinks and awareness, from manual pitching to automated outreach and AI-driven content
+  placement optimization.
 stage: "Marketing > Solution Aware"
 motion: "PR & Earned Mentions"
 channels: "Content, Email"
@@ -12,21 +14,14 @@ kpis: ["Pitch acceptance rate trend", "Articles published per month", "Referral 
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - cold-email-sequence
-  - content-repurposing
-  - posthog-gtm-events
   - dashboard-builder
-  - newsletter-pipeline
 ---
 # Guest Posting at Scale — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Content, Email
 
 ## Overview
-Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+Guest Posting at Scale — Durable Intelligence. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
 
 **Time commitment:** 90 hours over 6 months
 **Pass threshold:** Sustained or improving guest post acceptance rate and referral traffic over 6 months via continuous AI-driven outreach optimization and relationship management
@@ -36,46 +31,26 @@ Publish guest posts on relevant industry blogs to build backlinks and awareness,
 ## Budget
 
 **Play-specific tools & costs**
-- **Featured.com + Qwoted:** ~$150/mo
-- **PR Newswire (occasional press release distribution):** ~$300–1,000 per release
-
-_Total play-specific: ~$150–1000/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams that trigger n8n AI agents when: new high-DA blogs emerge in your niche, published guest posts gain traction, or backlink value changes.
+### 1. Build PR dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: media mentions over time, referral traffic from PR, backlink growth, PR-attributed leads, share of voice vs competitors. Set alerts for mention drops.
 
-2. Build n8n AI outreach strategist that analyzes pitch acceptance patterns: identifies which pitch angles, topics, and blog types yield highest acceptance rates; automatically refines pitch templates monthly.
+### 2. Autonomous PR monitoring
+Configure the agent to: monitor brand and competitor mentions, flag PR opportunities (industry trends, breaking news where you can comment), generate pitch drafts for time-sensitive opportunities, and track journalist relationship health.
 
-3. Implement continuous pitch experimentation: AI agent tests different pitch structures, subject lines, and personalization approaches; promotes winning variants and retires low-performers.
+### 3. Sustain and evolve
+Monthly: review PR impact on pipeline, identify new publications to target, update story angles based on product and market changes. The agent generates a monthly PR report.
 
-4. Create automatic blog discovery and scoring: n8n monitors new blogs via Ahrefs API and RSS feeds; AI agent scores blogs by DA, audience overlap, and historical acceptance rates; automatically adds high-potential blogs to target list.
-
-5. Build learning loop: PostHog tracks conversion journeys from each guest post; AI agent analyzes which blog tiers, topics, and backlink placements drive highest ROI; adjusts outreach prioritization accordingly.
-
-6. Deploy AI content optimization agent: analyzes top-performing published articles by engagement and referral traffic; generates content briefs for future pitches based on winning patterns.
-
-7. Implement relationship nurturing automation: for editors who accepted pitches, n8n schedules follow-up pitches quarterly; AI generates new pitch ideas based on blog's recent content themes.
-
-8. Create competitor guest post monitoring: n8n tracks where competitors publish guest posts via Ahrefs backlink analysis; AI agent generates pitches for the same blogs with differentiated angles.
-
-9. Set guardrails: if acceptance rate drops below 12% for 3+ weeks or referral traffic declines >20%, n8n alerts team and agent suggests strategy adjustments.
-
-10. Establish monthly review cycle: analyze which outreach experiments succeeded, which blog relationships to deepen, which topics to prioritize; refine AI agent prompts and outreach strategy based on acceptance and conversion data.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving guest post acceptance rate and referral traffic over 6 months via continuous AI-driven outreach optimization and relationship management. This level runs continuously. If PR consistently drives awareness and backlinks, the play is durable.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: guest-posting-scale-baseline
 description: >
-  Guest Posting at Scale — Baseline Run. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+    Guest Posting at Scale — Baseline Run. Publish guest posts on relevant industry blogs to build
+  backlinks and awareness, from manual pitching to automated outreach and AI-driven content
+  placement optimization.
 stage: "Marketing > Solution Aware"
 motion: "PR & Earned Mentions"
 channels: "Content, Email"
@@ -12,17 +14,16 @@ kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic", "Backl
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - threshold-engine
+  - case-study-creation
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # Guest Posting at Scale — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Content, Email
 
 ## Overview
-Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+Guest Posting at Scale — Baseline Run. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
 
 **Time commitment:** 25 hours over 6 weeks
 **Pass threshold:** ≥6 published articles and ≥300 referral visits
@@ -32,43 +33,25 @@ Publish guest posts on relevant industry blogs to build backlinks and awareness,
 ## Budget
 
 **Play-specific tools & costs**
-- **Qwoted or HARO (journalist/podcast request monitoring):** Free–$50/mo
-
-_Total play-specific: Free–$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Expand target list to 40-50 industry blogs and publications; categorize by tier (Tier 1: DA 50+, Tier 2: DA 30-50, Tier 3: DA 20-30).
+### 1. Build a PR content machine
+Run the `case-study-creation` drill to create 2-3 customer case studies that serve as PR assets. Run the `newsletter-pipeline` drill to start your own newsletter that establishes thought leadership and gives journalists a reason to follow you.
 
-2. Create 5-7 article templates that can be customized for different blogs: how-to guides, case studies, industry trends, tool comparisons.
+### 2. Configure PR tracking
+Run the `posthog-gtm-events` drill to track: `guest-posting-scale_mention_published`, `guest-posting-scale_backlink_acquired`, `guest-posting-scale_referral_traffic`, `guest-posting-scale_lead_from_pr`. Set up Google Alerts or a media monitoring tool for brand mentions.
 
-3. Develop 10-15 pitch templates tailored to different blog types and topics; personalize each pitch with specific article references and value propositions.
+### 3. Execute a 4-week PR push
+Pitch 10-20 publications. Submit 2-3 guest articles. Publish your case studies and promote them. Track all coverage and resulting traffic in PostHog.
 
-4. Send 30-40 pitches over 4 weeks (8-10 per week); track in Attio or spreadsheet with follow-up reminders for non-responses after 1 week.
-
-5. Set pass threshold: ≥8 pitches accepted and ≥6 articles published over 6 weeks, with combined referral traffic ≥300 visits.
-
-6. For accepted pitches, write or use AI (Claude/GPT-4) to generate first drafts; edit thoroughly for quality and include 2-3 strategic backlinks.
-
-7. Set up PostHog to track referral traffic by guest post source; measure conversion rate from guest post readers to signup or demo.
-
-8. Use Ahrefs to monitor new backlinks from published guest posts; track impact on domain authority and organic search rankings.
-
-9. After 6 weeks, calculate ROI: time invested vs. referral traffic, backlinks acquired, and conversions generated.
-
-10. If you hit the threshold and ROI is positive, document your outreach templates, target blog list, and content templates and proceed to Scalable; if not, refine pitch quality or target higher-relevance blogs.
+### 4. Evaluate against threshold
+Measure against: ≥6 published articles and ≥300 referral visits. If PASS, proceed to Scalable. If FAIL, test different story angles or target tier-2 publications first to build credibility.
 
 ---
 
@@ -84,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥6 published articles and ≥300 referral visits**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

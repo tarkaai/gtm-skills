@@ -1,7 +1,8 @@
 ---
 name: analyst-relations-program-smoke
 description: >
-  Analyst Relations Program — Smoke Test. Engage with Gartner, Forrester, and G2 analysts for mentions, placement, and credibility to influence solution-aware buyers in research phase.
+    Analyst Relations Program — Smoke Test. Engage with Gartner, Forrester, and G2 analysts for
+  mentions, placement, and credibility to influence solution-aware buyers in research phase.
 stage: "Marketing > Solution Aware"
 motion: "PR & Earned Mentions"
 channels: "Other"
@@ -12,7 +13,8 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
 drills:
-  - social-content-pipeline
+  - icp-definition
+  - blog-seo-pipeline
   - threshold-engine
 ---
 # Analyst Relations Program — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Other
 
 ## Overview
-Engage with Gartner, Forrester, and G2 analysts for mentions, placement, and credibility to influence solution-aware buyers in research phase.
+Analyst Relations Program — Smoke Test. Engage with Gartner, Forrester, and G2 analysts for mentions, placement, and credibility to influence solution-aware buyers in research phase.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥2 analyst briefings and establish relationships with key analysts
@@ -35,32 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this analyst relations program play; document hypothesis and success criteria.
+### 1. Define your PR angle
+Run the `icp-definition` drill to define your target media audience: which publications your ICP reads, which journalists cover your space, what story angles would resonate. List 10-20 target publications and journalists.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Create foundational content
+Run the `blog-seo-pipeline` drill to create 2-3 high-quality content pieces that can serve as PR assets: data-driven blog posts, original research, or expert commentary. These give journalists something to reference and link to.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Pitch journalists and publications directly. Personalize each pitch with why this is relevant to their beat. Offer exclusive data or quotes. Log all outreach in Attio.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track media outreach
+Log every pitch: publication, journalist, angle, status (pitched, responded, published, linked). Track resulting coverage: mentions, backlinks, referral traffic.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥2 analyst briefings and establish relationships with key analysts. If PASS, proceed to Baseline. If FAIL, refine your angles or target different publications.
 
 ---
 
@@ -74,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥2 analyst briefings and establish relationships with key analysts**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: pr-campaign-launch-baseline
 description: >
-  PR Campaign Launch — Baseline Run. Coordinated press outreach for product launches or milestones to generate media coverage and awareness with problem-aware audiences.
+    PR Campaign Launch — Baseline Run. Coordinated press outreach for product launches or milestones
+  to generate media coverage and awareness with problem-aware audiences.
 stage: "Marketing > Problem Aware"
 motion: "PR & Earned Mentions"
 channels: "Other, Social"
@@ -12,17 +13,16 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - threshold-engine
+  - case-study-creation
+  - newsletter-pipeline
+  - posthog-gtm-events
 ---
 # PR Campaign Launch — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** PR & Earned Mentions | **Channels:** Other, Social
 
 ## Overview
-Coordinated press outreach for product launches or milestones to generate media coverage and awareness with problem-aware audiences.
+PR Campaign Launch — Baseline Run. Coordinated press outreach for product launches or milestones to generate media coverage and awareness with problem-aware audiences.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥10 press mentions and ≥20 qualified leads from coordinated launch campaign
@@ -32,42 +32,25 @@ Coordinated press outreach for product launches or milestones to generate media 
 ## Budget
 
 **Play-specific tools & costs**
-- **Qwoted or HARO (journalist/podcast request monitoring):** Free–$50/mo
-
-_Total play-specific: Free–$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week pr campaign launch experiment; define detailed ICP criteria.
+### 1. Build a PR content machine
+Run the `case-study-creation` drill to create 2-3 customer case studies that serve as PR assets. Run the `newsletter-pipeline` drill to start your own newsletter that establishes thought leadership and gives journalists a reason to follow you.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Configure PR tracking
+Run the `posthog-gtm-events` drill to track: `pr-campaign-launch_mention_published`, `pr-campaign-launch_backlink_acquired`, `pr-campaign-launch_referral_traffic`, `pr-campaign-launch_lead_from_pr`. Set up Google Alerts or a media monitoring tool for brand mentions.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Execute a 4-week PR push
+Pitch 10-20 publications. Submit 2-3 guest articles. Publish your case studies and promote them. Track all coverage and resulting traffic in PostHog.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: ≥10 press mentions and ≥20 qualified leads from coordinated launch campaign. If PASS, proceed to Scalable. If FAIL, test different story angles or target tier-2 publications first to build credibility.
 
 ---
 
@@ -82,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥10 press mentions and ≥20 qualified leads from coordinated launch campaign**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

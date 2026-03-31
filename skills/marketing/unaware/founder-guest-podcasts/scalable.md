@@ -1,7 +1,8 @@
 ---
 name: founder-guest-podcasts-scalable
 description: >
-  Founder Guest Podcast — Scalable Automation. Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
+    Founder Guest Podcast — Scalable Automation. Pitch a handful of micro podcasts for one guest
+  spot to test whether podcast exposure drives at least one inbound lead.
 stage: "Marketing > Unaware"
 motion: "PR & Earned Mentions"
 channels: "Content"
@@ -12,19 +13,15 @@ kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - cold-email-sequence
   - content-repurposing
-  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Founder Guest Podcast — Scalable Automation
 
 > **Stage:** Marketing → Unaware | **Motion:** PR & Earned Mentions | **Channels:** Content
 
 ## Overview
-Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
+Founder Guest Podcast — Scalable Automation. Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 10 inbound leads over 2 months
@@ -34,43 +31,25 @@ Pitch a handful of micro podcasts for one guest spot to test whether podcast exp
 ## Budget
 
 **Play-specific tools & costs**
-- **Featured.com (expert quote placements):** ~$100/mo
-- **Qwoted Pro:** ~$50/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Ghost** (Content)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 10 inbound leads over 2 months.
+### 1. Repurpose PR content
+Run the `content-repurposing` drill to turn every media mention into multiple assets: social posts, email newsletter content, website social proof, and sales enablement materials.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Test PR approaches
+Run the `ab-test-orchestrator` drill to test: pitch angles (data-driven vs story-driven), outreach timing, follow-up cadence, and content types (guest post vs quote vs exclusive data). Track which approaches yield the highest coverage rates.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale media relationships
+Move from one-off pitches to ongoing relationships. Offer journalists regular access to data, experts, and customer stories. Build a media list in Attio and nurture it.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Podcast listens, Referral traffic in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 10 inbound leads over 2 months. If PASS, proceed to Durable. If FAIL, focus on the media relationships that are generating the most value.
 
 ---
 
@@ -83,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 10 inbound leads over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

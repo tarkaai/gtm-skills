@@ -1,7 +1,8 @@
 ---
 name: founder-guest-podcasts-smoke
 description: >
-  Founder Guest Podcast — Smoke Test. Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
+    Founder Guest Podcast — Smoke Test. Pitch a handful of micro podcasts for one guest spot to test
+  whether podcast exposure drives at least one inbound lead.
 stage: "Marketing > Unaware"
 motion: "PR & Earned Mentions"
 channels: "Content"
@@ -12,7 +13,8 @@ kpis: ["Podcast listens", "Referral traffic"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
 drills:
-  - social-content-pipeline
+  - icp-definition
+  - blog-seo-pipeline
   - threshold-engine
 ---
 # Founder Guest Podcast — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Unaware | **Motion:** PR & Earned Mentions | **Channels:** Content
 
 ## Overview
-Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
+Founder Guest Podcast — Smoke Test. Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
 
 **Time commitment:** 3 hours over 1 week
 **Pass threshold:** ≥ 1 inbound lead in 1 week
@@ -35,32 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-_No specialized tools required at this level._
-
----
-
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 1 inbound lead in 1 week).
+### 1. Define your PR angle
+Run the `icp-definition` drill to define your target media audience: which publications your ICP reads, which journalists cover your space, what story angles would resonate. List 10-20 target publications and journalists.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Create foundational content
+Run the `blog-seo-pipeline` drill to create 2-3 high-quality content pieces that can serve as PR assets: data-driven blog posts, original research, or expert commentary. These give journalists something to reference and link to.
 
-3. Set up PostHog or your CRM with properties for Podcast listens, Referral traffic so you can compare results to your threshold.
+**Human action required:** Pitch journalists and publications directly. Personalize each pitch with why this is relevant to their beat. Offer exclusive data or quotes. Log all outreach in Attio.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 3. Track media outreach
+Log every pitch: publication, journalist, angle, status (pitched, responded, published, linked). Track resulting coverage: mentions, backlinks, referral traffic.
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
-
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥ 1 inbound lead in 1 week. If PASS, proceed to Baseline. If FAIL, refine your angles or target different publications.
 
 ---
 
@@ -73,8 +64,8 @@ _No specialized tools required at this level._
 ## Pass threshold
 **≥ 1 inbound lead in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

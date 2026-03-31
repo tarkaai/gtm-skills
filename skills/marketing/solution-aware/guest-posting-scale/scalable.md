@@ -1,7 +1,9 @@
 ---
 name: guest-posting-scale-scalable
 description: >
-  Guest Posting at Scale — Scalable Automation. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+    Guest Posting at Scale — Scalable Automation. Publish guest posts on relevant industry blogs to
+  build backlinks and awareness, from manual pitching to automated outreach and AI-driven content
+  placement optimization.
 stage: "Marketing > Solution Aware"
 motion: "PR & Earned Mentions"
 channels: "Content, Email"
@@ -12,19 +14,15 @@ kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic", "Backl
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - build-prospect-list
-  - cold-email-sequence
   - content-repurposing
-  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Guest Posting at Scale — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Content, Email
 
 ## Overview
-Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+Guest Posting at Scale — Scalable Automation. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
 
 **Time commitment:** 55 hours over 2 months
 **Pass threshold:** ≥20 published articles and ≥1,500 referral visits/month
@@ -34,46 +32,25 @@ Publish guest posts on relevant industry blogs to build backlinks and awareness,
 ## Budget
 
 **Play-specific tools & costs**
-- **Featured.com (expert quote placements):** ~$100/mo
-- **Qwoted Pro:** ~$50/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Scale target list to 150-200 blogs; build n8n workflow to automate blog discovery via Ahrefs API (find blogs in your niche with DA 30+, accepting guest posts).
+### 1. Repurpose PR content
+Run the `content-repurposing` drill to turn every media mention into multiple assets: social posts, email newsletter content, website social proof, and sales enablement materials.
 
-2. Create n8n outreach automation: fetch blog details, generate personalized pitches using AI (referencing recent articles), send via email, and track responses in Attio.
+### 2. Test PR approaches
+Run the `ab-test-orchestrator` drill to test: pitch angles (data-driven vs story-driven), outreach timing, follow-up cadence, and content types (guest post vs quote vs exclusive data). Track which approaches yield the highest coverage rates.
 
-3. Send 100-120 pitches over 2 months (12-15 per week); n8n automatically follows up with non-responders after 7 days with a different angle.
+### 3. Scale media relationships
+Move from one-off pitches to ongoing relationships. Offer journalists regular access to data, experts, and customer stories. Build a media list in Attio and nurture it.
 
-4. Build AI content pipeline: for accepted pitches, n8n generates article drafts via Anthropic API based on approved outlines; human editor reviews and finalizes before submission.
-
-5. Implement backlink strategy: for each article, identify 2-3 strategic internal pages to link to; track backlink acquisition in Ahrefs and referral traffic in PostHog.
-
-6. Set guardrails: acceptance rate must stay ≥15%; if it drops below, pause outreach and refine pitch templates or target blog criteria.
-
-7. Connect PostHog to n8n: when a guest post drives ≥100 referral visits, trigger workflow to repurpose the article into LinkedIn posts, Twitter threads, and email newsletter content.
-
-8. Use PostHog to track conversion journeys from guest post referrals; identify which blog tiers and topics drive highest conversion rates.
-
-9. After 2 months, evaluate: total articles published, backlinks acquired, referral traffic volume, and conversions; calculate cost per published article and cost per acquisition.
-
-10. If metrics hold and ROI is positive, document the automated outreach and content pipeline and prepare for Durable agent-driven optimization; if metrics decline, reduce outreach volume or improve pitch quality.
+### 4. Evaluate against threshold
+Measure against: ≥20 published articles and ≥1,500 referral visits/month. If PASS, proceed to Durable. If FAIL, focus on the media relationships that are generating the most value.
 
 ---
 
@@ -90,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥20 published articles and ≥1,500 referral visits/month**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
