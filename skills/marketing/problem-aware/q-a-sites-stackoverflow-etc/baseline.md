@@ -1,7 +1,8 @@
 ---
 name: q-a-sites-stackoverflow-etc-baseline
 description: >
-  Q&A Site Authority — Baseline Run. Answer a few relevant questions on Q&A sites with a soft CTA to test if authority-building drives profile clicks and a lead.
+    Q&A Site Authority — Baseline Run. Answer a few relevant questions on Q&A sites with a soft CTA
+  to test if authority-building drives profile clicks and a lead.
 stage: "Marketing > Problem Aware"
 motion: "Communities & Forums"
 channels: "Other"
@@ -12,16 +13,15 @@ kpis: ["Profile views", "Profile click rate"]
 slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
+  - content-repurposing
 ---
 # Q&A Site Authority — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Communities & Forums | **Channels:** Other
 
 ## Overview
-Answer a few relevant questions on Q&A sites with a soft CTA to test if authority-building drives profile clicks and a lead.
+Q&A Site Authority — Baseline Run. Answer a few relevant questions on Q&A sites with a soft CTA to test if authority-building drives profile clicks and a lead.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 80 profile clicks and ≥ 3 leads over 2 weeks
@@ -30,38 +30,26 @@ Answer a few relevant questions on Q&A sites with a soft CTA to test if authorit
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 80 profile clicks and ≥ 3 leads over 2 weeks).
+### 1. Set up analytics
+Run the `posthog-gtm-events` drill to track community-driven traffic and conversions: `q-a-sites-stackoverflow-etc_community_post`, `q-a-sites-stackoverflow-etc_referral_visit`, `q-a-sites-stackoverflow-etc_signup_from_community`. Use UTM parameters on all shared links to attribute traffic to specific communities.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Build a content repurposing system
+Run the `content-repurposing` drill to adapt your best-performing community content across multiple communities and formats. One detailed answer can become a Reddit post, a Slack thread, a blog post, and a Twitter thread.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Execute a 2-week community engagement plan
+Post 2-3 times per week across your top communities. Track everything in PostHog. Focus on communities that showed traction in Smoke.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Profile views, Profile click rate so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 80 profile clicks and ≥ 3 leads over 2 weeks. If PASS, proceed to Scalable. If FAIL, narrow focus to fewer communities or try different content types.
 
 ---
 
@@ -74,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 80 profile clicks and ≥ 3 leads over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

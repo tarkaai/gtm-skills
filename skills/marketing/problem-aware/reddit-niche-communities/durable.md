@@ -1,7 +1,10 @@
 ---
 name: reddit-niche-communities-durable
 description: >
-  Reddit and community participation — Durable Intelligence. Authentic posting and commenting in Reddit and Slack/Discord communities where your ICP spends time, from a one-week smoke test through scaled participation and agent-driven optimization that sustains or improves referral traffic and signups over time.
+    Reddit and community participation — Durable Intelligence. Authentic posting and commenting in
+  Reddit and Slack/Discord communities where your ICP spends time, from a one-week smoke test
+  through scaled participation and agent-driven optimization that sustains or improves referral
+  traffic and signups over time.
 stage: "Marketing > Problem Aware"
 motion: "Communities & Forums"
 channels: "Social, Communities"
@@ -12,20 +15,14 @@ kpis: ["Referral traffic", "Comment engagement", "Link clicks"]
 slug: "reddit-niche-communities"
 install: "npx gtm-skills add marketing/problem-aware/reddit-niche-communities"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - content-repurposing
-  - tool-sync-workflow
   - dashboard-builder
-  - ab-test-orchestrator
-  - newsletter-pipeline
 ---
 # Reddit and community participation — Durable Intelligence
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Communities & Forums | **Channels:** Social, Communities
 
 ## Overview
-Authentic posting and commenting in Reddit and Slack/Discord communities where your ICP spends time, from a one-week smoke test through scaled participation and agent-driven optimization that sustains or improves referral traffic and signups over time.
+Reddit and community participation — Durable Intelligence. Authentic posting and commenting in Reddit and Slack/Discord communities where your ICP spends time, from a one-week smoke test through scaled participation and agent-driven optimization that sustains or improves referral traffic and signups over time.
 
 **Time commitment:** 200 hours over 6 months
 **Pass threshold:** Sustained or improving referral sessions or signups over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.
@@ -35,46 +32,26 @@ Authentic posting and commenting in Reddit and Slack/Discord communities where y
 ## Budget
 
 **Play-specific tools & costs**
-- **Community management tool (Common Room or Orbit):** ~$50–200/mo
-- **Premium community memberships:** ~$50–200/mo
-
-_Total play-specific: ~$50–200/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Reddit** (Channel)
-- **PostHog** (Product analytics)
-- **n8n** (Automation)
-- **Discord** (Communication)
-- **Slack** (Communication)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Ensure PostHog receives all community-sourced referral and signup events so you have a single view of performance by community and over time.
+### 1. Build community dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: traffic from each community, conversion rates by community, engagement trends, pipeline value attributed to community activity. Set alerts for traffic drops from key communities.
 
-2. In n8n, add AI-powered workflows triggered by PostHog: e.g. when referral or signup rate drops week-over-week, trigger an analysis that suggests which communities or content to emphasize or change.
+### 2. Autonomous community optimization
+Configure the agent to: monitor community engagement trends, identify emerging communities in your space, flag when your reputation score drops (fewer upvotes, less engagement), and generate weekly community content briefs.
 
-3. Configure an AI agent to review weekly metrics: compare referral sessions and signups to prior weeks and to Scalable baseline; output recommendations (e.g. shift focus to higher-converting communities, test different CTA or value asset).
+### 3. Sustain and evolve
+The agent runs monthly reviews: which communities are driving the most pipeline, which are declining, what new communities should be tested. Adjust community allocation accordingly.
 
-4. Run A/B tests on one variable at a time: e.g. CTA in comment vs in post; or one value asset vs another; use PostHog to segment by variant and measure signups per variant.
-
-5. Have the agent recommend the winning variant and update your content or CTA approach; document the change and date.
-
-6. Continuously test new communities or threads; log each experiment in PostHog and retire low-signal channels so the mix evolves.
-
-7. Set a guardrail: if referral or signup volume falls more than 20% below Scalable baseline for two consecutive weeks, trigger an alert and have the agent suggest corrective actions.
-
-8. Use the agent to monitor community rules and sentiment; suggest when to adjust tone or frequency to avoid fatigue or moderation issues.
-
-9. Monthly: review which experiments improved or maintained referral and signup volume; double down on winning patterns.
-
-10. Sustain or improve referral traffic and signups over 6 months by repeating measure-recommend-test-apply so the system adapts to community and platform changes.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving referral sessions or signups over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.. This level runs continuously. If community-driven pipeline sustains, the play is durable.
 
 ---
 

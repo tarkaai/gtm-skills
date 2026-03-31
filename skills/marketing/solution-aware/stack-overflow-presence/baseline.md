@@ -1,7 +1,9 @@
 ---
 name: stack-overflow-presence-baseline
 description: >
-  Stack Overflow Presence — Baseline Run. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+    Stack Overflow Presence — Baseline Run. Answer questions on Stack Overflow to build authority,
+  drive organic traffic, and generate awareness with solution-aware developers searching for
+  solutions.
 stage: "Marketing > Solution Aware"
 motion: "Communities & Forums"
 channels: "Communities"
@@ -12,16 +14,15 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
+  - content-repurposing
 ---
 # Stack Overflow Presence — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Communities & Forums | **Channels:** Communities
 
 ## Overview
-Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+Stack Overflow Presence — Baseline Run. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥30 answers, ≥1,000 views, and ≥5 qualified leads in 6 weeks
@@ -30,40 +31,26 @@ Answer questions on Stack Overflow to build authority, drive organic traffic, an
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week stack overflow presence experiment; define detailed ICP criteria.
+### 1. Set up analytics
+Run the `posthog-gtm-events` drill to track community-driven traffic and conversions: `stack-overflow-presence_community_post`, `stack-overflow-presence_referral_visit`, `stack-overflow-presence_signup_from_community`. Use UTM parameters on all shared links to attribute traffic to specific communities.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Build a content repurposing system
+Run the `content-repurposing` drill to adapt your best-performing community content across multiple communities and formats. One detailed answer can become a Reddit post, a Slack thread, a blog post, and a Twitter thread.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Execute a 2-week community engagement plan
+Post 2-3 times per week across your top communities. Track everything in PostHog. Focus on communities that showed traction in Smoke.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: ≥30 answers, ≥1,000 views, and ≥5 qualified leads in 6 weeks. If PASS, proceed to Scalable. If FAIL, narrow focus to fewer communities or try different content types.
 
 ---
 
@@ -78,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥30 answers, ≥1,000 views, and ≥5 qualified leads in 6 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

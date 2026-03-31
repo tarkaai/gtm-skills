@@ -1,7 +1,8 @@
 ---
 name: communities-slack-discord-scalable
 description: >
-  Slack/Discord Community Rhythm — Scalable Automation. Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
+    Slack/Discord Community Rhythm — Scalable Automation. Join a few groups and post value weekly to
+  test repeatable leads and whether to scale or pause low-signal communities.
 stage: "Marketing > Problem Aware"
 motion: "Communities & Forums"
 channels: "Communities"
@@ -12,18 +13,15 @@ kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - content-repurposing
   - tool-sync-workflow
-  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Slack/Discord Community Rhythm — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Communities & Forums | **Channels:** Communities
 
 ## Overview
-Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
+Slack/Discord Community Rhythm — Scalable Automation. Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 8 meetings over 2 months
@@ -33,43 +31,25 @@ Join a few groups and post value weekly to test repeatable leads and whether to 
 ## Budget
 
 **Play-specific tools & costs**
-- **Premium community memberships (Slack groups, paid newsletters):** ~$50–200/mo
-
-_Total play-specific: ~$50–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Discord** (Communication)
-- **Slack** (Communication)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 8 meetings over 2 months.
+### 1. Automate community monitoring
+Run the `tool-sync-workflow` drill to build n8n workflows that monitor target communities for relevant discussions, new questions matching your expertise, and mentions of competitors. Send alerts to Slack when high-opportunity threads appear.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Test engagement approaches
+Run the `ab-test-orchestrator` drill to test: response formats (short vs detailed), content types (how-to vs opinion vs data), timing of engagement, and CTA approaches (soft mention vs case study link).
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale to daily community presence
+Respond to community threads daily using the monitoring alerts. Establish authority in 3-5 key communities. Track which communities drive the most qualified traffic and focus effort there.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Engagement rate, Inbound inquiries in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 8 meetings over 2 months. If PASS, proceed to Durable. If FAIL, reassess community selection or pivot to creating your own community.
 
 ---
 
@@ -82,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 8 meetings over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

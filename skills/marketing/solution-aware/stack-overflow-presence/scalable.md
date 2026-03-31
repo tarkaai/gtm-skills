@@ -1,7 +1,9 @@
 ---
 name: stack-overflow-presence-scalable
 description: >
-  Stack Overflow Presence — Scalable Automation. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+    Stack Overflow Presence — Scalable Automation. Answer questions on Stack Overflow to build
+  authority, drive organic traffic, and generate awareness with solution-aware developers searching
+  for solutions.
 stage: "Marketing > Solution Aware"
 motion: "Communities & Forums"
 channels: "Communities"
@@ -12,18 +14,15 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - content-repurposing
   - tool-sync-workflow
-  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Stack Overflow Presence — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Communities & Forums | **Channels:** Communities
 
 ## Overview
-Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+Stack Overflow Presence — Scalable Automation. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥100 answers, ≥10,000 views, and ≥20 qualified leads over 4 months
@@ -33,43 +32,25 @@ Answer questions on Stack Overflow to build authority, drive organic traffic, an
 ## Budget
 
 **Play-specific tools & costs**
-- **Premium community memberships (Slack groups, paid newsletters):** ~$50–200/mo
-
-_Total play-specific: ~$50–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Automate community monitoring
+Run the `tool-sync-workflow` drill to build n8n workflows that monitor target communities for relevant discussions, new questions matching your expertise, and mentions of competitors. Send alerts to Slack when high-opportunity threads appear.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for stack overflow presence execution.
+### 2. Test engagement approaches
+Run the `ab-test-orchestrator` drill to test: response formats (short vs detailed), content types (how-to vs opinion vs data), timing of engagement, and CTA approaches (soft mention vs case study link).
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Scale to daily community presence
+Respond to community threads daily using the monitoring alerts. Establish authority in 3-5 key communities. Track which communities drive the most qualified traffic and focus effort there.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥100 answers, ≥10,000 views, and ≥20 qualified leads over 4 months. If PASS, proceed to Durable. If FAIL, reassess community selection or pivot to creating your own community.
 
 ---
 
@@ -85,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥100 answers, ≥10,000 views, and ≥20 qualified leads over 4 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

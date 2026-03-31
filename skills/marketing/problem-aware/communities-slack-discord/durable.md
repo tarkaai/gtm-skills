@@ -1,7 +1,8 @@
 ---
 name: communities-slack-discord-durable
 description: >
-  Slack/Discord Community Rhythm — Durable Intelligence. Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
+    Slack/Discord Community Rhythm — Durable Intelligence. Join a few groups and post value weekly
+  to test repeatable leads and whether to scale or pause low-signal communities.
 stage: "Marketing > Problem Aware"
 motion: "Communities & Forums"
 channels: "Communities"
@@ -12,20 +13,14 @@ kpis: ["Engagement rate", "Inbound inquiries"]
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - content-repurposing
-  - tool-sync-workflow
   - dashboard-builder
-  - ab-test-orchestrator
-  - newsletter-pipeline
 ---
 # Slack/Discord Community Rhythm — Durable Intelligence
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Communities & Forums | **Channels:** Communities
 
 ## Overview
-Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
+Slack/Discord Community Rhythm — Durable Intelligence. Join a few groups and post value weekly to test repeatable leads and whether to scale or pause low-signal communities.
 
 **Time commitment:** 200 hours over 6 months
 **Pass threshold:** Sustained or improving meetings over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.
@@ -35,44 +30,26 @@ Join a few groups and post value weekly to test repeatable leads and whether to 
 ## Budget
 
 **Play-specific tools & costs**
-- **Community management tool (Common Room or Orbit):** ~$50–200/mo
-- **Premium community memberships:** ~$50–200/mo
-
-_Total play-specific: ~$50–200/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Discord** (Communication)
-- **Slack** (Communication)
-
----
-
 ## Instructions
 
-1. Ensure PostHog is receiving events from all your tools so you have a single view of performance over time; create a dashboard for Engagement rate, Inbound inquiries.
+### 1. Build community dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: traffic from each community, conversion rates by community, engagement trends, pipeline value attributed to community activity. Set alerts for traffic drops from key communities.
 
-2. In n8n, add AI-powered workflows triggered by PostHog: e.g. when a key metric drops week-over-week, trigger an analysis that suggests changes to messaging, timing, or targeting.
+### 2. Autonomous community optimization
+Configure the agent to: monitor community engagement trends, identify emerging communities in your space, flag when your reputation score drops (fewer upvotes, less engagement), and generate weekly community content briefs.
 
-3. Configure an AI agent to review weekly performance: compare current week to prior weeks and to Scalable baseline; output concrete recommendations (e.g. change subject line, shift send window, tighten list).
+### 3. Sustain and evolve
+The agent runs monthly reviews: which communities are driving the most pipeline, which are declining, what new communities should be tested. Adjust community allocation accordingly.
 
-4. Run A/B tests on one variable at a time (e.g. subject line, send time, audience segment); use PostHog to segment events by variant and compute conversion per variant.
-
-5. Have the agent recommend the winning variant and apply the change to the live workflow; document the change and date.
-
-6. Run continuous experiments on messaging, timing, and targeting; log each experiment and outcome in PostHog.
-
-7. Set a guardrail: if performance falls more than 20% below Scalable baseline for two consecutive weeks, trigger an alert and have the agent suggest rollback or corrective actions.
-
-8. Use the agent to monitor deliverability, inbox health, or channel-specific issues; suggest when to rotate or adjust.
-
-9. Monthly: review which experiments improved or maintained results; double down on winning patterns and retire underperformers.
-
-10. Sustain or improve outcomes over 6 months (Sustained or improving meetings over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.) by repeating the cycle: measure, recommend, A/B test, apply, and adapt to market changes.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving meetings over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.. This level runs continuously. If community-driven pipeline sustains, the play is durable.
 
 ---
 

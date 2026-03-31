@@ -1,7 +1,9 @@
 ---
 name: alumni-campus-pro-orgs-baseline
 description: >
-  Alumni & Campus Outreach — Baseline Run. Post or email in alumni, campus, or professional org groups to reach warm communities and test whether 1–2 meetings come from low-friction participation.
+    Alumni & Campus Outreach — Baseline Run. Post or email in alumni, campus, or professional org
+  groups to reach warm communities and test whether 1–2 meetings come from low-friction
+  participation.
 stage: "Marketing > Unaware"
 motion: "Communities & Forums"
 channels: "Communities, Other"
@@ -12,16 +14,15 @@ kpis: ["Post engagement", "Inbound inquiries"]
 slug: "alumni-campus-pro-orgs"
 install: "npx gtm-skills add marketing/unaware/alumni-campus-pro-orgs"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
+  - content-repurposing
 ---
 # Alumni & Campus Outreach — Baseline Run
 
 > **Stage:** Marketing → Unaware | **Motion:** Communities & Forums | **Channels:** Communities, Other
 
 ## Overview
-Post or email in alumni, campus, or professional org groups to reach warm communities and test whether 1–2 meetings come from low-friction participation.
+Alumni & Campus Outreach — Baseline Run. Post or email in alumni, campus, or professional org groups to reach warm communities and test whether 1–2 meetings come from low-friction participation.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 2 meetings over 2 weeks
@@ -30,38 +31,26 @@ Post or email in alumni, campus, or professional org groups to reach warm commun
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 2 meetings over 2 weeks).
+### 1. Set up analytics
+Run the `posthog-gtm-events` drill to track community-driven traffic and conversions: `alumni-campus-pro-orgs_community_post`, `alumni-campus-pro-orgs_referral_visit`, `alumni-campus-pro-orgs_signup_from_community`. Use UTM parameters on all shared links to attribute traffic to specific communities.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Build a content repurposing system
+Run the `content-repurposing` drill to adapt your best-performing community content across multiple communities and formats. One detailed answer can become a Reddit post, a Slack thread, a blog post, and a Twitter thread.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Execute a 2-week community engagement plan
+Post 2-3 times per week across your top communities. Track everything in PostHog. Focus on communities that showed traction in Smoke.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Post engagement, Inbound inquiries so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 2 meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, narrow focus to fewer communities or try different content types.
 
 ---
 
@@ -74,8 +63,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 2 meetings over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

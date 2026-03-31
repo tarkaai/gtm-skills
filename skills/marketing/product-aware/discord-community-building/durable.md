@@ -1,7 +1,9 @@
 ---
 name: discord-community-building-durable
 description: >
-  Discord Community Management — Durable Intelligence. Build and nurture a Discord server to engage users, provide support, and generate product-aware leads through authentic community interaction.
+    Discord Community Management — Durable Intelligence. Build and nurture a Discord server to
+  engage users, provide support, and generate product-aware leads through authentic community
+  interaction.
 stage: "Marketing > Product Aware"
 motion: "Communities & Forums"
 channels: "Communities, Product"
@@ -12,20 +14,14 @@ kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
 drills:
-  - social-content-pipeline
-  - crm-pipeline-setup
-  - content-repurposing
-  - tool-sync-workflow
   - dashboard-builder
-  - ab-test-orchestrator
-  - newsletter-pipeline
 ---
 # Discord Community Management — Durable Intelligence
 
 > **Stage:** Marketing → Product Aware | **Motion:** Communities & Forums | **Channels:** Communities, Product
 
 ## Overview
-Build and nurture a Discord server to engage users, provide support, and generate product-aware leads through authentic community interaction.
+Discord Community Management — Durable Intelligence. Build and nurture a Discord server to engage users, provide support, and generate product-aware leads through authentic community interaction.
 
 **Time commitment:** 180 hours over 12 months
 **Pass threshold:** Sustained community growth (≥15% QoQ members) and ≥25 qualified leads/month over 12 months via AI-driven engagement and moderation
@@ -35,45 +31,26 @@ Build and nurture a Discord server to engage users, provide support, and generat
 ## Budget
 
 **Play-specific tools & costs**
-- **Community management tool (Common Room or Orbit):** ~$50–200/mo
-- **Premium community memberships:** ~$50–200/mo
-
-_Total play-specific: ~$50–200/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Deploy AI-powered intelligence system in n8n: analyze PostHog data to identify patterns predicting success and failure in discord community management campaigns.
+### 1. Build community dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: traffic from each community, conversion rates by community, engagement trends, pipeline value attributed to community activity. Set alerts for traffic drops from key communities.
 
-2. Build continuous experimentation framework: AI automatically tests variations in messaging, timing, targeting, creative, and channel mix.
+### 2. Autonomous community optimization
+Configure the agent to: monitor community engagement trends, identify emerging communities in your space, flag when your reputation score drops (fewer upvotes, less engagement), and generate weekly community content briefs.
 
-3. Implement learning loops: AI monitors experiment results, identifies winners, analyzes root causes, and applies learnings to future campaigns automatically.
+### 3. Sustain and evolve
+The agent runs monthly reviews: which communities are driving the most pipeline, which are declining, what new communities should be tested. Adjust community allocation accordingly.
 
-4. Set up market adaptation system: AI detects when performance drops due to market saturation, competition, seasonality, or external changes; recommends and tests adjustments.
-
-5. Create smart optimization engine: AI continuously tunes targeting criteria, send times, budget allocation, message variants, and creative based on real-time performance data.
-
-6. Build predictive models in n8n using Anthropic Claude: forecast campaign results, predict lead quality, and recommend proactive optimizations before metrics decline.
-
-7. Deploy competitive intelligence: AI monitors competitor activities, market trends, and emerging best practices; adapts strategy automatically to maintain edge.
-
-8. Establish sophisticated guardrails: if performance drops >20% below Scalable benchmark for 2+ consecutive weeks, AI investigates root causes and suggests specific corrective actions.
-
-9. Implement automated insights and reporting: AI generates weekly summaries of what's working, what's declining, which experiments won, and what to test next.
-
-10. Conduct monthly AI-driven strategy reviews: analyze long-term trends, update success playbooks, identify new opportunities, and maintain or improve results over 6-12 months through continuous intelligent adaptation.
+### 4. Evaluate sustainability
+Measure against: Sustained community growth (≥15% QoQ members) and ≥25 qualified leads/month over 12 months via AI-driven engagement and moderation. This level runs continuously. If community-driven pipeline sustains, the play is durable.
 
 ---
 

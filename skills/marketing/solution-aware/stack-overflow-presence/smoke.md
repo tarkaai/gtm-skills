@@ -1,7 +1,9 @@
 ---
 name: stack-overflow-presence-smoke
 description: >
-  Stack Overflow Presence — Smoke Test. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+    Stack Overflow Presence — Smoke Test. Answer questions on Stack Overflow to build authority,
+  drive organic traffic, and generate awareness with solution-aware developers searching for
+  solutions.
 stage: "Marketing > Solution Aware"
 motion: "Communities & Forums"
 channels: "Communities"
@@ -12,6 +14,7 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add marketing/solution-aware/stack-overflow-presence"
 drills:
+  - icp-definition
   - social-content-pipeline
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Communities & Forums | **Channels:** Communities
 
 ## Overview
-Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
+Stack Overflow Presence — Smoke Test. Answer questions on Stack Overflow to build authority, drive organic traffic, and generate awareness with solution-aware developers searching for solutions.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥10 high-quality answers and ≥100 profile views in 2 weeks
@@ -35,32 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this stack overflow presence play; document hypothesis and success criteria.
+### 1. Identify target communities
+Run the `icp-definition` drill to map where your ICP spends time: Slack communities, Discord servers, Reddit subreddits, forums, Facebook groups. List 5-10 communities ranked by relevance and activity level.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Create valuable content for communities
+Run the `social-content-pipeline` drill to create 5-10 pieces of community-appropriate content: helpful answers, resource shares, discussion starters, case studies. Avoid promotional content -- focus on being genuinely useful.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Join the communities and post content manually. Engage authentically in discussions. Build reputation before mentioning your product. Log all activity in Attio.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track community engagement
+Log each interaction: post/comment, community name, engagement received, DMs or follows generated, any leads captured. Note which communities and content types generate the most interest.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥10 high-quality answers and ≥100 profile views in 2 weeks. If PASS, proceed to Baseline. If FAIL, try different communities or adjust your content approach.
 
 ---
 
@@ -74,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥10 high-quality answers and ≥100 profile views in 2 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
