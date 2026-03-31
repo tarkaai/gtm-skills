@@ -1,81 +1,128 @@
 ---
 name: retention-cohort-analysis-smoke
 description: >
-    Retention Cohort Analytics — Smoke Test. Analyze retention by cohort to find patterns and
-  optimize for different user segments.
+  Retention Cohort Analytics — Smoke Test. Run a single cohort retention extraction, generate
+  10 structured insights from the data, and validate that cohort analysis surfaces actionable
+  retention patterns your team did not already know.
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "10 cohort analyses"
-kpis: ["Retention by cohort", "Insight generation", "Action success"]
+outcome: "10 cohort analyses with 3+ novel insights"
+kpis: ["Cohorts analyzed", "Divergent cohorts identified", "Novel insights generated"]
 slug: "retention-cohort-analysis"
 install: "npx gtm-skills add product/retain/retention-cohort-analysis"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - cohort-retention-extraction
+  - cohort-insight-generation
   - threshold-engine
 ---
+
 # Retention Cohort Analytics — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product -> Retain | **Motion:** Lead Capture Surface | **Channels:** Product
 
-## Overview
-Retention Cohort Analytics — Smoke Test. Analyze retention by cohort to find patterns and optimize for different user segments.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** 10 cohort analyses
+Prove the concept: can you extract retention data by cohort from PostHog, identify divergent cohorts, and generate insights your team did not already have? No automation, no always-on. A single agent run that produces a structured retention analysis and validates that cohort-level data reveals patterns invisible in aggregate metrics.
 
----
+Pass threshold: 10 cohort analyses completed with at least 3 novel insights (insights the team was not already aware of and that map to a specific intervention).
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- PostHog retention query returns data for 8+ weekly cohorts (data coverage is sufficient)
+- At least 2 cohorts are flagged as divergent from the population baseline (the data is not uniform — there are patterns to find)
+- Insight generation produces hypotheses with "high" or "medium" confidence (the data supports root-cause analysis, not just speculation)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Verify PostHog data readiness
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Confirm your PostHog project has at least 8 weeks of tracked user events. Run a data coverage check via PostHog API or MCP:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+```
+SELECT
+  dateTrunc('week', person.created_at) AS signup_week,
+  count(distinct distinct_id) AS users
+FROM events
+WHERE person.created_at > now() - interval 12 week
+GROUP BY signup_week
+ORDER BY signup_week
+```
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+You need at least 8 weekly cohorts with 20+ users each. If fewer than 8 cohorts meet the minimum, wait until more data accumulates or lower the cohort threshold to 10 users (accept noisier results).
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: 10 cohort analyses. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Choose your retention event
 
----
+Decide which event signals a retained user. Options in order of preference:
 
-## KPIs to track
-- Retention by cohort
-- Insight generation
-- Action success
+1. **Core feature event** (e.g., `project_created`, `report_generated`, `message_sent`) — best signal of real engagement
+2. **Session event** (e.g., `session_started`, `$pageview`) — acceptable floor if core features are not instrumented
+3. **Login event** — weakest signal; users who log in but do nothing are not truly retained
 
----
+Document your choice. This becomes the standard retention event for all future runs.
 
-## Pass threshold
-**10 cohort analyses**
+### 3. Run cohort retention extraction
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Execute the `cohort-retention-extraction` drill with these parameters:
+- Cohort dimension: signup week
+- Retention event: your chosen event from step 2
+- Time window: 12 weeks (or maximum available)
+- Retention intervals: Week 1 through Week 8
 
----
+The drill produces a structured JSON with cohort survival data, population baseline, and divergent cohort flags.
 
-## How to run this skill
+**Human action required:** Review the extraction output. Check that the cohort sizes are reasonable and the retention percentages are plausible for your product. If Week 1 retention is >90% or <10% for most cohorts, your retention event may be too broad or too narrow — adjust and re-run.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Generate insights from the cohort data
 
-_Install this skill: `npx gtm-skills add product/retain/retention-cohort-analysis`_
+Run the `cohort-insight-generation` drill on the extraction output. The drill classifies divergent cohorts by pattern (activation gap, habit failure, value plateau, consistent outperformer), investigates root causes using PostHog user path analysis, and generates ranked hypotheses with intervention recommendations.
+
+Review the output. For each insight, answer:
+- Is this something the team already knew? (If yes, it does not count toward the 3 novel insights threshold)
+- Is the intervention recommendation specific enough for an agent to execute? (If not, refine it)
+- Does the confidence level match the data strength? (Reject insights based on <20 users as low-confidence)
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill to verify:
+- **Quantity check:** Did you analyze 10+ cohorts? Count the cohorts in the extraction output.
+- **Quality check:** Did you generate 3+ novel insights? Count insights marked as novel (not previously known to the team).
+- **Actionability check:** Does each novel insight have a specific, executable intervention recommendation?
+
+If PASS (10+ cohorts, 3+ novel insights), document the findings and proceed to Baseline. If FAIL:
+- If <10 cohorts: wait for more data or switch to a broader retention event
+- If <3 novel insights: run the extraction with additional cohort dimensions (acquisition channel, plan type) to find patterns signup-week alone does not reveal
+
+### 6. Document findings
+
+Record in Attio:
+- Total cohorts analyzed
+- Population baseline retention curve (Week 1 through Week 8)
+- Divergent cohorts and their patterns
+- Top 3-5 insights ranked by priority score
+- Recommended next steps for Baseline
+
+## Time Estimate
+
+- 1 hour: verify PostHog data readiness and choose retention event
+- 1.5 hours: run cohort retention extraction and review output
+- 1.5 hours: run insight generation and evaluate hypotheses
+- 0.5 hours: threshold evaluation and documentation
+- 0.5 hours: document findings and plan Baseline
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Retention data extraction, cohort queries, user path analysis | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| Anthropic API (Claude) | Hypothesis generation from cohort data | ~$0.50-2.00 for a single analysis run — [anthropic.com/pricing](https://anthropic.com/pricing) |
+
+**Estimated cost for Smoke: Free** (PostHog free tier + <$2 in API calls)
+
+## Drills Referenced
+
+- `cohort-retention-extraction` — extracts cohort survival data from PostHog, computes population baseline, and flags divergent cohorts
+- `cohort-insight-generation` — analyzes divergent cohorts, generates root-cause hypotheses, and produces ranked intervention recommendations
+- `threshold-engine` — evaluates whether the analysis meets the pass threshold (10 cohorts, 3+ novel insights)
