@@ -1,81 +1,126 @@
 ---
 name: podcast-sponsorships-b2b-smoke
 description: >
-    B2B Podcast Sponsorships — Smoke Test. Sponsor relevant B2B podcasts for brand awareness and
-  lead generation with problem-aware and solution-aware listeners in target industries.
+  B2B Podcast Sponsorships — Smoke Test. Book one paid host-read ad on one niche
+  B2B podcast to test whether the audience generates clicks and at least one
+  qualified lead before committing recurring sponsorship budget.
 stage: "Marketing > Problem Aware"
-motion: "Lightweight Paid"
+motion: "LightweightPaid"
 channels: "Paid, Content"
 level: "Smoke Test"
-time: "6 hours over 1 week"
-outcome: "≥5,000 listener impressions and ≥3 qualified leads from first sponsorship"
-kpis: ["Response rate", "Engagement quality", "Time to response"]
+time: "5 hours over 3 weeks"
+outcome: "≥15 clicks (UTM + vanity URL) and ≥1 qualified lead from a single paid podcast sponsorship"
+kpis: ["Total attributed clicks", "Qualified leads", "CPC", "CPL", "Promo code redemptions"]
 slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
 drills:
-  - ad-campaign-setup
-  - landing-page-pipeline
+  - podcast-sponsor-research
+  - podcast-sponsor-booking
   - threshold-engine
 ---
+
 # B2B Podcast Sponsorships — Smoke Test
 
-> **Stage:** Marketing → Problem Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Content
+> **Stage:** Marketing → Problem Aware | **Motion:** LightweightPaid | **Channels:** Paid, Content
 
-## Overview
-B2B Podcast Sponsorships — Smoke Test. Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** ≥5,000 listener impressions and ≥3 qualified leads from first sponsorship
+One paid host-read mid-roll sponsorship placed on one niche B2B podcast. At least 15 total attributed clicks (UTM show-notes clicks + vanity URL clicks) and at least 1 qualified lead (signup, demo request, or promo code redemption) within 14 days of the episode air date. This proves that buying audio ad placements on podcasts produces measurable signal for your ICP before you invest in a multi-podcast sponsorship program.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Podcast host responds to your sponsorship inquiry within 7 business days (signal: active ad program)
+- Placement cost falls within $100-400 range for a niche B2B podcast with 1,000-10,000 downloads/episode (signal: accessible pricing for testing)
+- Show-notes clicks begin arriving within 24 hours of episode publish (signal: engaged audience checking show notes)
+- Vanity URL clicks appear within 48 hours (signal: listeners heard the verbal CTA and acted)
+- Promo code redemptions within 14 days (signal: purchase-intent audience)
 
 ## Instructions
 
-### 1. Set up ad campaign
-Run the `ad-campaign-setup` drill to configure your ad platform (Google Ads, LinkedIn Ads, or Meta Ads depending on the play). Set up conversion tracking pixels. Define your target audience using the ICP from your Smoke hypothesis.
+### 1. Research and select one podcast to sponsor
 
-### 2. Build a landing page
-Run the `landing-page-pipeline` drill to create a dedicated landing page in Webflow for this campaign. Include: clear headline matching the ad copy, social proof, single CTA, and PostHog tracking. Keep the page simple -- one message, one action.
+Run the `podcast-sponsor-research` drill with reduced scope: search AdvertiseCast, Podcorn, and Gumball for 15 candidate podcasts in your ICP's industry vertical. Also check 5-10 niche B2B podcasts via ListenNotes for direct sponsorship pages.
 
-**Human action required:** Set a small test budget ($200-500). Launch the campaign and monitor for 1 week. Do not optimize mid-flight -- let the data accumulate.
+Score each podcast on ICP audience density, cost efficiency, and show quality. Select the single best podcast for your first placement based on highest composite score. Prioritize podcasts with:
 
-### 3. Track results
-Monitor: impressions, clicks, CTR, landing page conversion rate, cost per lead, lead quality (are they ICP matches?).
+- 1,000-10,000 downloads per episode (large enough for signal, affordable for testing)
+- Host-read mid-roll available (outperforms pre-produced by ~31%)
+- Active sponsorship program (existing sponsors prove the pipeline works)
+- Placement cost of $100-400
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥5,000 listener impressions and ≥3 qualified leads from first sponsorship. If PASS, proceed to Baseline. If FAIL, diagnose whether the issue is targeting (wrong audience), creative (low CTR), or landing page (low conversion).
+### 2. Book the placement and configure tracking
 
----
+Run the `podcast-sponsor-booking` drill for your selected podcast:
 
-## KPIs to track
-- Response rate
-- Engagement quality
-- Time to response
+- Negotiate the rate. For a first-time test, ask for a single-episode test rate with the option to commit to a package if results meet your threshold.
+- Set up three attribution signals:
+  - **UTM link** for show notes: `{landing_page}?utm_source={podcast_slug}&utm_medium=paid-podcast&utm_campaign=podcast-sponsorships-b2b&utm_content={podcast_slug}-smoke-v1`
+  - **Vanity URL** for verbal CTA: `yoursite.com/{podcast-slug}` redirecting to the UTM link
+  - **Promo code** for checkout attribution: `{PODCASTNAME}` offering a clear incentive (extended trial, discount, etc.)
+- Write 3 host-read ad script variants (problem-led, story-led, data-led). Select the best fit for the podcast's tone.
+- Submit the script, show-notes text, vanity URL, and promo code to the host before the script deadline.
 
----
+**Human action required:** Approve the placement cost and process payment. Review the ad script before submission. Verify the promo code is active in your billing system.
 
-## Pass threshold
-**≥5,000 listener impressions and ≥3 qualified leads from first sponsorship**
+### 3. Prepare the landing page
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Ensure the landing page receiving podcast traffic:
+- Has one clear CTA matching what the ad promises (demo request, free trial, or resource download)
+- Loads in under 3 seconds on mobile
+- Has PostHog tracking capturing `$pageview` with UTM parameters, `podcast_sponsor_click` on arrival, and `podcast_sponsor_lead` on CTA completion
+- Accepts the promo code if applicable
+- Matches the messaging from the ad script (headline and CTA should be consistent with what the host reads)
 
----
+### 4. Monitor results after episode airs
 
-## How to run this skill
+When the episode publishes:
+- Confirm the episode is live and your ad was included (listen to verify)
+- Check show notes for your tracked URL
+- Monitor PostHog for `podcast_sponsor_click` events and `podcast_sponsor_lead` events
+- Check Dub.co/Rebrandly for vanity URL clicks
+- Note the click velocity: podcast listeners convert over 1-14 days (slower than newsletter or paid search)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b`_
+Run the `threshold-engine` drill 14 days after the episode air date. Measure:
+
+- **Total clicks**: UTM clicks (PostHog) + vanity URL clicks (Dub.co/Rebrandly)
+- **Leads**: `podcast_sponsor_lead` events + promo code redemptions
+- **CPC**: placement cost / total clicks
+- **CPL**: placement cost / total leads
+
+**Pass threshold: >= 15 total clicks AND >= 1 qualified lead**
+
+- **Pass**: Document which podcast, what ad script angle, and what CPC/CPL you achieved. Proceed to Baseline.
+- **Marginal**: 8-14 clicks or 0 leads but strong click engagement. Test one more podcast before deciding.
+- **Fail**: <8 clicks. Diagnose: Was the podcast audience misaligned with your ICP? Was the ad script too generic? Did the host skip or butcher the read? Was the show-notes link missing? Try a different podcast with better ICP fit.
+
+## Time Estimate
+
+- Podcast research and selection: 2 hours
+- Rate negotiation and booking: 30 minutes (plus wait time for host response — allow 1-2 weeks)
+- Ad script writing and tracking setup: 1.5 hours
+- Monitoring and evaluation: 1 hour (spread over 14 days post-air)
+
+Total: ~5 hours of active work over 3 weeks (including host response time and the 14-day measurement window)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| AdvertiseCast / Podcorn / Gumball | Podcast ad marketplace discovery | Free for advertisers |
+| ListenNotes | Podcast directory search | Free tier: 5 req/min; $9/mo for 300 req/day ([listennotes.com/pricing](https://www.listennotes.com/api/pricing/)) |
+| Clay | Podcast publisher research and enrichment | Launch: $185/mo ([clay.com/pricing](https://www.clay.com/pricing)) |
+| Attio | CRM tracking for sponsorship deals | Free up to 3 users ([attio.com/pricing](https://attio.com/pricing)) |
+| PostHog | Click and lead tracking | Free up to 1M events/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Dub.co | Vanity URL for verbal CTA | Free: 1,000 links/mo ([dub.co/pricing](https://dub.co/pricing)) |
+| Anthropic Claude | Ad script copywriting | Pay-per-use, ~$0.10-0.50 per script ([anthropic.com/pricing](https://anthropic.com/pricing)) |
+| Podcast placement | Paid sponsorship | $100-400 for a single niche B2B placement |
+
+**Estimated cost for this level: $100-400** (the podcast placement itself; all tools within free tiers)
+
+## Drills Referenced
+
+- `podcast-sponsor-research` — find and rank podcasts accepting paid sponsorships based on ICP overlap and cost-efficiency
+- `podcast-sponsor-booking` — negotiate, book, write ad script, configure multi-signal tracking, and collect 14-day results
+- `threshold-engine` — evaluate clicks and leads against the pass threshold
