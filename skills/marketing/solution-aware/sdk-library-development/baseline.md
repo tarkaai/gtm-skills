@@ -1,80 +1,93 @@
 ---
 name: sdk-library-development-baseline
 description: >
-    SDK & Library Development — Baseline Run. Build and distribute SDKs and libraries for popular
-  languages and frameworks to reduce friction and drive developer adoption.
+  SDK & Library Development — Baseline Run. Establish always-on download tracking, conversion
+  funnels, and automated release cadence across 1-2 SDKs. Prove sustained developer
+  signups from registry presence.
 stage: "Marketing > Solution Aware"
 motion: "Directories & Marketplaces"
 channels: "Communities, Product"
 level: "Baseline Run"
-time: "18 hours over 2 weeks"
-outcome: "≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks"
-kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
+time: "20 hours over 4 weeks"
+outcome: ">=500 downloads/month and >=10 developer signups/month from SDK registries sustained over 8 weeks"
+kpis: ["Downloads per month (per registry)", "README CTA click-through rate", "Signup conversion rate (CTA click to signup)", "Developer activation rate (signup to first API call)", "SDK-sourced leads in CRM"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
 drills:
+  - sdk-registry-distribution
   - posthog-gtm-events
-  - landing-page-pipeline
 ---
 # SDK & Library Development — Baseline Run
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Product
+> **Stage:** Marketing -> Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Product
 
-## Overview
-SDK & Library Development — Baseline Run. Build and distribute SDKs and libraries for popular languages and frameworks to reduce friction and drive developer adoption.
+## Outcomes
+Always-on download tracking across all published SDKs, a fully instrumented conversion funnel from registry download to product activation, automated release cadence, and SDK-sourced leads flowing into the CRM. The system runs continuously without manual intervention and delivers >=500 downloads/month and >=10 developer signups/month over 8 weeks.
 
-**Time commitment:** 18 hours over 2 weeks
-**Pass threshold:** ≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks
-
----
-
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+## Leading Indicators
+- Weekly download report is generated and posted automatically
+- CTA click-through rate on README is >=0.5% of downloads
+- At least 1 SDK-sourced signup per week within the first 4 weeks
+- SDK-sourced developers have a higher activation rate (signup to first API call) than the product average
+- Release cadence: at least 1 release per month per SDK
 
 ## Instructions
 
-### 1. Configure tracking
-Run the `posthog-gtm-events` drill to track: `sdk-library-development_listing_view`, `sdk-library-development_listing_click`, `sdk-library-development_listing_signup`, `sdk-library-development_review_submitted`. Use UTM parameters per directory for attribution.
+### 1. Set up the event taxonomy for SDK tracking
+Run the `posthog-gtm-events` drill to define SDK-specific events in your PostHog taxonomy:
+- `sdk_weekly_downloads` -- weekly download counts per registry, collected by n8n
+- `sdk_docs_visit` -- visit to SDK documentation pages
+- `sdk_readme_cta_clicked` -- arrival at your site via registry README UTM link
+- `sdk_signup_completed` -- signup by a developer arriving from an SDK source
+- `sdk_api_key_created` -- first API key creation by SDK-sourced developer
+- `sdk_first_api_call` -- first successful API call attributed to an SDK user-agent
 
-### 2. Build landing pages for directory traffic
-Run the `landing-page-pipeline` drill to create directory-specific landing pages. Match the messaging to what users expect when coming from each directory. Include social proof relevant to that directory's audience.
+Add person properties: `sdk_source_registry`, `sdk_source_language`, `first_touch_channel = sdk`.
 
-### 3. Scale review collection
-Implement a systematic review collection process: after positive customer interactions, send a Loops email requesting a review on the relevant directory. Track review velocity in PostHog.
+### 2. Build the distribution tracking pipeline
+Run the `sdk-registry-distribution` drill to:
+- Configure n8n to collect download counts from all registries weekly
+- Build PostHog funnels: downloads -> CTA clicks -> signups -> activation
+- Set up automated release cadence with conversion-tracked release notes
+- Route SDK-sourced signups to Attio with registry/language attribution
+- Generate weekly SDK distribution reports posted to Slack
 
-### 4. Evaluate against threshold
-Measure against: ≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks. If PASS, proceed to Scalable. If FAIL, focus on the directories driving the most qualified traffic.
+### 3. Publish a second SDK (if not already done)
+If you only have one SDK, use the `sdk-package-scaffold` drill (from Smoke) to publish for the second-most-requested language. Two SDKs provide enough data to compare performance across registries and validate that the pattern works for more than one ecosystem.
 
----
+**Human action required:** Review the second SDK for code quality. Test the install and quick start flow.
 
-## KPIs to track
-- Conversion rate
-- Cost per result
-- Response quality
-- Cycle time
+### 4. Optimize README CTAs based on data
+After 4 weeks of tracking data, analyze:
+- Which registry generates the most CTA clicks relative to downloads?
+- What is the click-to-signup conversion rate per registry?
+- Are developers who arrive via one registry more likely to activate?
 
----
+Update README CTA copy and positioning on the lower-performing SDKs to match the patterns of the higher-performing ones.
 
-## Pass threshold
-**≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks**
+### 5. Evaluate against threshold
+Measure against: >=500 downloads/month and >=10 developer signups/month from SDK registries sustained over 8 weeks.
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+If PASS: The SDK channel is a repeatable source of developer leads. Proceed to Scalable.
+If FAIL: Diagnose the funnel stage where drop-off occurs. Low downloads = discoverability problem (improve metadata, keywords, add more community seeding). High downloads but low CTA clicks = README problem. High CTA clicks but low signups = landing page or onboarding problem.
 
----
+## Time Estimate
+- PostHog event taxonomy setup: 3 hours
+- n8n download tracking pipeline: 4 hours
+- Conversion funnel instrumentation: 3 hours
+- Second SDK scaffold and publish: 6 hours (if needed)
+- CRM integration and reporting: 2 hours
+- Analysis and optimization: 2 hours
 
-## How to run this skill
+## Tools & Pricing
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| GitHub | Host SDK repos and CI/CD | Free for public repos |
+| npm / PyPI / registries | Package distribution | Free to publish |
+| PostHog | Event tracking, funnels, dashboards | Free up to 1M events/mo (https://posthog.com/pricing) |
+| n8n | Scheduled download collection, reporting | Free self-hosted or from EUR 20/mo cloud (https://n8n.io/pricing) |
+| Attio | SDK-sourced lead tracking | Free for small teams (https://attio.com/pricing) |
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
-
-_Install this skill: `npx gtm-skills add marketing/solution-aware/sdk-library-development`_
+## Drills Referenced
+- `sdk-registry-distribution` -- builds the always-on tracking pipeline across registries with download collection, conversion funnels, release automation, and CRM attribution
+- `posthog-gtm-events` -- defines the event taxonomy and person properties for SDK-specific tracking
