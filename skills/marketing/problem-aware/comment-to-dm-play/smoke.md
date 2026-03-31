@@ -7,7 +7,7 @@ stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Social"
 level: "Smoke Test"
-time: "4 hours over 1 week"
+time: "5 hours over 1 week"
 outcome: "≥ 3 DM conversations started and ≥ 1 meeting booked in 1 week"
 kpis: ["Author reply rate on comments", "DM reply rate", "Meetings booked from DMs"]
 slug: "comment-to-dm-play"
