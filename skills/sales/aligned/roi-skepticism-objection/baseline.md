@@ -1,85 +1,155 @@
 ---
 name: roi-skepticism-objection-baseline
 description: >
-    ROI Skepticism Handling — Baseline Run. Prove ROI when prospects question value by using
-  customer data, conservative modeling, and co-creating financial analysis with prospect's own
-  inputs to build conviction.
+  ROI Skepticism Handling — Baseline Run. First always-on automation: auto-build
+  ROI calculators when deals hit proposal stage with sufficient pain data,
+  trigger persona-matched follow-up sequences when skepticism is unresolved,
+  and track model acceptance and deal progression continuously over 2 weeks.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
 level: "Baseline Run"
 time: "16 hours over 2 weeks"
-outcome: "ROI skepticism handled on ≥80% of instances over 2 weeks"
-kpis: ["Objection resolution rate", "Collaborative model adoption", "Customer reference effectiveness", "ROI claim accuracy post-sale"]
+outcome: "ROI skepticism resolved on >=80% of instances over 2 weeks with always-on tracking proving the approach holds over time"
+kpis: ["Objection resolution rate", "Collaborative model adoption rate", "Customer reference effectiveness", "ROI claim accuracy post-sale"]
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
-  - cold-email-sequence
-  - linkedin-outreach
+  - roi-calculator-build
+  - objection-follow-up-sequence
   - posthog-gtm-events
 ---
+
 # ROI Skepticism Handling — Baseline Run
 
-> **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales > Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
-## Overview
-ROI Skepticism Handling — Baseline Run. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+## Outcomes
 
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ROI skepticism handled on ≥80% of instances over 2 weeks
+ROI skepticism resolved on 80% or more of instances over 2 weeks. Always-on automation handles ROI calculator generation and follow-up sequencing without manual intervention. The agent builds the calculator; the founder reviews and presents. Follow-up sequences fire automatically when skepticism is unresolved, delivering the right proof asset for the right objection root cause.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- ROI calculators generated within 2 hours of deal reaching proposal stage (automation speed)
+- Follow-up sequences trigger automatically when objection_outcome is "partially_resolved" or "unresolved"
+- Proof asset open rates > 40% (case studies, business cases, calculators sent in follow-up sequences)
+- Time from ROI objection to resolution < 5 days (faster than manual approach)
+- At least 1 prospect shares the ROI calculator internally without being asked
 
 ## Instructions
 
-### 1. Set up cold outreach tooling
-Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
+### 1. Configure event tracking for the play
 
-### 2. Launch LinkedIn outreach in parallel
-Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
+Run the `posthog-gtm-events` drill to set up event tracking for ROI skepticism handling. Configure these events:
 
-### 3. Configure tracking
-Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `roi-skepticism-objection_email_sent`, `roi-skepticism-objection_email_replied`, `roi-skepticism-objection_meeting_booked`, `roi-skepticism-objection_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
+- `roi_skepticism_raised` — fired when a deal record is updated with an ROI objection (from call transcript extraction or manual flag)
+- `roi_calculator_presented` — fired when the agent-generated calculator is sent to the prospect
+- `roi_calculator_validated` — fired when the prospect engages with or responds to the calculator
+- `roi_skepticism_resolved` — fired when the deal advances after ROI objection
+- `roi_skepticism_unresolved` — fired when follow-up sequence completes without resolution
+- `roi_follow_up_sent` — fired for each touch in the follow-up sequence
+- `roi_proof_asset_engaged` — fired when the prospect opens a proof asset (case study, business case, calculator)
 
-### 4. Execute and monitor for 2 weeks
-Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
+Connect PostHog to Attio via webhook so deal stage changes and ROI attribute updates fire events automatically.
+
+### 2. Set up always-on ROI calculator generation
+
+Extend the `roi-calculator-build` drill to run on every qualifying deal, not just the 5 from Smoke:
+
+Build an n8n workflow that monitors Attio for deals meeting these criteria:
+- Stage = "Proposed" or "Negotiation"
+- `pain_count >= 2` and `pain_quantification_rate >= 0.5`
+- `roi_model_status != "generated"` (not already done)
+- An ROI-related objection flag OR the deal has been in Proposed stage for > 3 days without advancing (potential implicit skepticism)
+
+When triggered, the workflow runs `roi-calculator-build` automatically:
+1. Pulls pain data and enrichment from Attio
+2. Re-quantifies weak pains via `pain-quantification-prompt`
+3. Generates the ROI model via `roi-model-generation`
+4. Creates the Google Sheet calculator
+5. Notifies the founder via Slack: "ROI calculator ready for {company}. ROI: {X}x, payback: {Y} months. Review and present: {link}"
+
+The founder reviews before sending — the agent does not auto-send to the prospect at Baseline level.
+
+### 3. Deploy follow-up sequences for unresolved skepticism
+
+Run the `objection-follow-up-sequence` drill configured for ROI skepticism root causes. After each ROI presentation where the outcome is `partially_resolved` or `unresolved`, the follow-up sequence fires automatically.
+
+ROI-skepticism-specific sequence routing by root cause:
+
+**value_gap sequence (the prospect does not see enough value):**
+- Day 1: Business case document generated from their pain data (auto-generated by `roi-calculator-build`)
+- Day 3: Case study from same industry showing quantified, realized ROI
+- Day 7: "Cost of doing nothing" analysis using their own pain numbers from the calculator
+- Day 10: Offer a live ROI walkthrough where the prospect adjusts inputs in real time
+
+**proof_demand sequence (the prospect wants evidence, not projections):**
+- Day 1: Customer reference with verified ROI metrics from a similar company
+- Day 3: Post-sale validation data showing projected vs actual ROI for existing customers
+- Day 7: Offer a call with an existing customer in a similar role/industry
+- Day 10: Send a compilation of 3 customer ROI data points with methodology transparency
+
+**model_distrust sequence (the prospect doubts the math/methodology):**
+- Day 1: Send the full calculation methodology — every assumption cited and editable
+- Day 3: Third-party industry benchmark data that supports the key assumptions
+- Day 7: Offer to rebuild the model using only numbers the prospect provides (zero assumptions from seller)
+- Day 10: Invite the prospect's finance team to review the model directly
+
+**executive_skeptic sequence (the economic buyer questions ROI despite champion support):**
+- Day 1: Executive summary with persona-specific framing (CFO gets NPV, CEO gets competitive advantage)
+- Day 3: Arm the champion with a budget justification email template pre-filled with ROI data
+- Day 7: Offer a 15-minute exec briefing focused on risk-adjusted return
+- Day 10: Send a peer reference — another company's CFO/CEO who validated similar ROI
+
+### 4. Monitor and adjust for 2 weeks
+
+Let the automation run for 2 weeks. Monitor daily:
+
+- How many calculators were auto-generated vs. how many the founder actually sent
+- Reply and engagement rates on follow-up sequence touches
+- Which proof assets (calculator, case study, business case) prospects engage with most
+- Resolution rate by root cause — which skepticism types resolve easiest vs. hardest
+
+Adjust mid-flight:
+- If follow-up open rates < 20% after first 5 sends, revise subject lines
+- If a specific root cause (e.g., model_distrust) has < 30% resolution, strengthen the proof assets for that sequence
+- If the collaborative model format outperforms static PDFs, make it the default
 
 ### 5. Evaluate against threshold
-Review PostHog funnel data and Attio deal pipeline. Measure against: ROI skepticism handled on ≥80% of instances over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
----
+After 2 weeks, measure:
 
-## KPIs to track
-- Objection resolution rate
-- Collaborative model adoption
-- Customer reference effectiveness
-- ROI claim accuracy post-sale
+- Primary: ROI skepticism resolved on >= 80% of instances (deal advanced after ROI presentation + follow-up)
+- Secondary: Collaborative model adoption rate >= 50% (prospects who adjusted inputs vs. just viewed)
+- Secondary: Average time to resolution < 7 days
+- Secondary: At least 2 deals where the prospect referenced the ROI calculator in buying decision communications
 
----
+If PASS, document the best-performing sequences by root cause and proceed to Scalable. If FAIL, diagnose: is the problem model quality (prospects reject the math even after adjustments), proof gaps (no credible customer references for this vertical), follow-up timing (sequences too aggressive or too passive), or root cause misclassification (the wrong follow-up sequence fires).
 
-## Pass threshold
-**ROI skepticism handled on ≥80% of instances over 2 weeks**
+## Time Estimate
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+- 4 hours: n8n workflow setup (auto-generation trigger, follow-up sequence configuration, event tracking)
+- 2 hours: follow-up sequence content creation (email copy, asset assembly)
+- 1 hour/day for 10 business days: monitoring, review, ROI presentation delivery: 10 hours
+- **Total: ~16 hours over 2 weeks**
 
----
+## Tools & Pricing
 
-## How to run this skill
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal records, pain data, ROI tracking, automation triggers | Plus $29/user/mo |
+| PostHog | Analytics — event tracking, funnel analysis | Free tier includes 1M events/mo |
+| Fireflies | Transcription — objection detection from call recordings | Pro $10/user/mo |
+| n8n | Automation — ROI calculator auto-generation, follow-up sequence triggers | Free self-hosted; Pro $60/mo cloud |
+| Instantly | Email sequences — follow-up delivery for unresolved skepticism | Growth $30/mo |
+| Loops | Lifecycle email — warmer follow-up sequences | Free tier for <1000 contacts; Starter $35/mo |
+| Anthropic API | AI — ROI model generation, pain quantification | ~$5-15/mo at this volume |
+| Google Sheets | Calculator artifact — prospect-editable | Free |
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Estimated play-specific cost at Baseline:** ~$30-80/mo (Instantly + Anthropic API; n8n self-hosted; other tools on existing plans)
 
-_Install this skill: `npx gtm-skills add sales/aligned/roi-skepticism-objection`_
+## Drills Referenced
+
+- `roi-calculator-build` — auto-generates prospect-specific ROI calculators from CRM pain data when deals reach proposal stage
+- `objection-follow-up-sequence` — delivers root-cause-matched proof assets on a timed sequence when ROI skepticism is unresolved
+- `posthog-gtm-events` — configures event tracking for the play's full funnel from skepticism detection through resolution
