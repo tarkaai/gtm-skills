@@ -10,7 +10,7 @@ motion: "Lightweight Paid"
 channels: "Paid"
 level: "Durable Intelligence"
 time: "200 hours over 6 months"
-outcome: "Sustained or improving leads and meetings over 6 months; CPL stays within 15% of Scalable baseline; agent runs autonomously with weekly human review"
+outcome: "≥ 15 leads/month for 6 consecutive months with CPL within 15% of Scalable baseline; agent generates weekly reports and creative variants with ≤ 2 hours/week human oversight"
 kpis: ["Monthly lead volume trend", "CPL trend (rolling 30-day)", "Lead-to-meeting conversion rate", "Blended ROAS", "Creative win rate (% of new variants that beat control)", "Audience refresh frequency", "Agent intervention count (lower is better)"]
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
@@ -190,9 +190,16 @@ Once per month, the agent generates a deeper analysis:
 
 Run the `threshold-engine` drill monthly. The durable threshold is:
 
-**Sustained or improving leads and meetings over 6 months; CPL stays within 15% of Scalable baseline; agent runs autonomously with weekly human review.**
+**≥ 15 leads/month for 6 consecutive months with CPL within 15% of Scalable baseline; agent generates weekly reports and creative variants with ≤ 2 hours/week human oversight.**
 
-Monthly check: Is lead volume at or above the Scalable run rate (15+ leads/month)? Is CPL within 15% of the Scalable CPL? Is the agent producing useful weekly reports and creative variants?
+Monthly check:
+- Is lead volume ≥ 15/month? (PASS/FAIL)
+- Is CPL within 15% of Scalable CPL? (PASS/FAIL)
+- Did the agent generate a weekly report every week this month? (PASS/FAIL)
+- Did the agent produce and test new creative variants every 2 weeks? (PASS/FAIL)
+- Was human oversight ≤ 2 hours/week on average? (PASS/FAIL)
+
+All 5 must pass for the month to count. 6 consecutive passing months = Durable achieved.
 
 If any metric degrades for 2 consecutive months:
 1. Agent diagnoses: is it creative fatigue, audience saturation, market shift, or budget constraint?
