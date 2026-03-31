@@ -1,81 +1,107 @@
 ---
 name: engagement-scoring-smoke
 description: >
-    User Engagement Scoring — Smoke Test. Score users by engagement level to prioritize high-value
-  users and identify disengaged users.
+  User Engagement Scoring — Smoke Test. Define the engagement event taxonomy, build the scoring
+  model, and compute scores for all active users in a single manual run to validate the model
+  produces meaningful tier separations before investing in automation.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Score all users"
-kpis: ["Score accuracy", "Engagement correlation", "Predictive value"]
+outcome: "Score all active users with tier separation: top-quartile churn rate < 10%, bottom-quartile churn rate > 30%"
+kpis: ["Score distribution across 5 tiers", "Tier-churn correlation (top vs bottom quartile)", "Dimension coverage (all 4 dimensions producing non-zero scores)"]
 slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
 drills:
-  - icp-definition
-  - onboarding-flow
-  - threshold-engine
+  - engagement-score-computation
+  - posthog-gtm-events
 ---
+
 # User Engagement Scoring — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-User Engagement Scoring — Smoke Test. Score users by engagement level to prioritize high-value users and identify disengaged users.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Score all users
+Score every active user (anyone with at least 1 event in the last 30 days) on a 0-100 composite engagement scale. Validate that the scoring model separates users meaningfully: users in the top engagement quartile should have a churn rate under 10% while users in the bottom quartile should have a churn rate above 30% when back-tested against the last 60 days of churn data.
 
----
+This is a one-time manual run. No automation, no always-on pipelines. The agent computes scores locally and validates the model has predictive signal before investing in infrastructure.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- All 4 dimension scores (frequency, breadth, depth, recency) produce a non-degenerate distribution (not all zeros, not all 100s)
+- The 5-tier classification (Power User / Engaged / Casual / At Risk / Dormant) has users in at least 3 tiers
+- Spot-checking the top 10 and bottom 10 scored users matches intuition about who is engaged vs disengaged
+- At least 50% of known recent churners (if any) would have scored in the At Risk or Dormant tier 14 days before they left
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Verify event tracking coverage
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `posthog-gtm-events` drill to audit your current PostHog event instrumentation. Identify the 5-10 events that represent intentional, value-creating user behavior in your product. Document them in a `engagement_events.json` file:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+```json
+{
+  "core_events": ["feature_used", "content_created", "report_exported", "teammate_invited", "integration_connected"],
+  "moderate_events": ["settings_configured", "docs_viewed", "dashboard_visited"],
+  "total_trackable_features": 8
+}
+```
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+If critical engagement events are not yet tracked in PostHog, instrument them now using the `posthog-custom-events` fundamental. Do not proceed until the events are firing correctly -- verify by triggering each event manually and confirming it appears in PostHog's live events stream.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Score all users. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+**Human action required:** Review the event list. Confirm these are the actions that genuinely indicate a user is getting value from the product. Remove vanity metrics (page views, passive logins).
 
----
+### 2. Compute engagement scores for all users
 
-## KPIs to track
-- Score accuracy
-- Engagement correlation
-- Predictive value
+Run the `engagement-score-computation` drill steps 1-4 manually. Execute the four HogQL queries against PostHog to compute dimension scores for every active user:
 
----
+- **Frequency (30%):** Active days in the last 14 days, normalized against a 10-day target
+- **Breadth (25%):** Distinct feature events used, normalized against total trackable features
+- **Depth (25%):** Events per session and average session duration, normalized against target thresholds
+- **Recency (20%):** Days since last core action, decaying from 100 (today) to 0 (10+ days)
 
-## Pass threshold
-**Score all users**
+Compute the composite score: `frequency * 0.30 + breadth * 0.25 + depth * 0.25 + recency * 0.20`
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Classify each user into a tier: Power User (80-100), Engaged (60-79), Casual (40-59), At Risk (20-39), Dormant (0-19).
 
----
+### 3. Validate the score distribution
 
-## How to run this skill
+Check the output for quality signals:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- **Distribution shape:** Plot or summarize the histogram. A healthy model produces a roughly normal or bimodal distribution. If 90%+ of users cluster in one tier, the thresholds or weights need adjustment.
+- **Dimension independence:** Check that the four dimension scores are not perfectly correlated. If frequency and recency produce identical rankings, one of them is redundant -- consider replacing it with a different signal.
+- **Face validity:** Pull the top 10 scored users and the bottom 10. Do the top 10 look like your most engaged power users? Do the bottom 10 look like users who are drifting away? If not, adjust dimension weights.
 
-_Install this skill: `npx gtm-skills add product/retain/engagement-scoring`_
+### 4. Back-test against churn data
+
+If you have users who churned in the last 60 days:
+
+1. Pull their engagement dimension data from 14 days before churn
+2. Compute what their engagement score would have been
+3. Check: would 50%+ of them have been classified as At Risk or Dormant?
+4. If yes, the model has baseline predictive value -- PASS
+5. If no, the model needs iteration: try different event weights, add or remove events, adjust tier thresholds
+
+If you do not have churn data yet, validate using the score distribution and face validity checks from step 3. The back-test becomes mandatory at Baseline level once you have 60+ days of scoring history.
+
+**Human action required:** Review the back-test results. Decide whether the score separations are strong enough to act on. If the model correctly identifies at-risk users, approve proceeding to Baseline.
+
+## Time Estimate
+
+- 1 hour: Audit and document engagement events (step 1)
+- 2 hours: Run HogQL queries and compute scores (step 2)
+- 1 hour: Validate distribution and face validity (step 3)
+- 1 hour: Back-test against churn data and iterate weights (step 4)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, HogQL queries, user data | Free tier: 1M events/mo. https://posthog.com/pricing |
+
+## Drills Referenced
+
+- `engagement-score-computation` -- defines the scoring model, dimension queries, and tier classification
+- `posthog-gtm-events` -- audits and configures PostHog event tracking for the engagement taxonomy
