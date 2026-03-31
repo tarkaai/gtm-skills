@@ -1,21 +1,21 @@
 ---
 name: champion-driven-outbound-scalable
 description: >
-    Champion-driven Outbound — Scalable Automation. Identify and activate champions within target
-  accounts to facilitate introductions and accelerate outbound conversion with solution-aware buying
-  committees.
+  Champion-driven Outbound — Scalable Automation. Scale to 150 accounts/month with automated
+  champion health monitoring, multi-threaded account coverage, A/B-tested recruitment sequences,
+  and self-healing follow-up workflows that re-engage disengaged champions.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email, Social, Direct"
 level: "Scalable Automation"
 time: "75 hours over 3 months"
 outcome: "≥3% account conversion at 150 accounts/month over 4 months"
-kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
+kpis: ["Monthly account volume", "Account-to-meeting conversion rate", "Champion pipeline velocity", "Automation coverage rate", "Cost per champion-facilitated meeting"]
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
 drills:
+  - champion-health-monitoring
   - follow-up-automation
-  - tool-sync-workflow
   - ab-test-orchestrator
 ---
 # Champion-driven Outbound — Scalable Automation
@@ -23,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social, Direct
 
 ## Overview
-Champion-driven Outbound — Scalable Automation. Identify and activate champions within target accounts to facilitate introductions and accelerate outbound conversion with solution-aware buying committees.
+Find the 10x multiplier. Automate the full champion lifecycle — profiling, recruitment, enablement, and health monitoring — to sustain 150 accounts/month without proportional effort. The agent handles the volume; the founder handles only high-signal champion conversations.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥3% account conversion at 150 accounts/month over 4 months
@@ -33,37 +33,105 @@ Champion-driven Outbound — Scalable Automation. Identify and activate champion
 ## Budget
 
 **Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
+- **Instantly:** scaled email sequences — $77/mo (Hypergrowth plan, https://instantly.ai/pricing)
+- **Clay:** continuous enrichment and signal monitoring — $349/mo (Team, https://clay.com/pricing)
+- **LinkedIn Sales Navigator:** advanced search and lead tracking — $99/mo (Core)
+- **Loops:** enablement drip sequences — $49/mo (Starter, https://loops.so/pricing)
+- **Loom:** personalized video at scale — $12.50/user/mo (Business, https://loom.com/pricing)
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+
+**Estimated monthly cost:** ~$590/mo
 
 ---
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Deploy champion health monitoring
+Run the `champion-health-monitoring` drill. This creates an always-on system that:
+- Runs daily health checks for all active and recruited champions
+- Scores each champion on a composite engagement metric (email opens, replies, material forwards, meeting activity)
+- Detects disengagement early: if a champion's score drops >15 points or they go dark for 14+ days, the system alerts via Slack and creates re-engagement tasks in Attio
+- When a champion goes dark for 21+ days, automatically triggers `champion-profiling` to find a replacement at the same account
+- Produces a weekly Champion Health Digest posted to Slack
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Configure the health check n8n workflow with the champion events defined during Baseline. The drill sets up the PostHog dashboard panels: champion health distribution, score trends, deals-without-champions, recruitment funnel, and at-risk alert volume.
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+### 2. Build self-healing follow-up automation
+Run the `follow-up-automation` drill, configured specifically for the champion pathway:
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+**Workflow 1 — Recruitment follow-up:**
+n8n detects when a champion candidate opens a recruitment email but does not reply within 48 hours. Trigger: send a follow-up via a different channel (if email → LinkedIn DM, if LinkedIn → email). Log the cross-channel touch in Attio.
 
-### 5. Evaluate against threshold
-Measure against: ≥3% account conversion at 150 accounts/month over 4 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+**Workflow 2 — Enablement re-engagement:**
+n8n detects when a recruited champion does not open the enablement kit within 5 days of delivery. Trigger: resend via a different subject line. If still no open after 3 days, switch to a LinkedIn DM with a direct link to the Loom video.
+
+**Workflow 3 — Champion revival:**
+n8n detects when a champion's status changes from Active to At Risk (from the health monitoring drill). Trigger: send a personalized check-in email asking "How did the conversation go internally? Any concerns I can help address?" Log the re-engagement attempt.
+
+**Workflow 4 — Positive reply routing:**
+n8n detects positive sentiment in email replies (via Instantly webhook + Claude sentiment classification). Trigger: update Attio champion status, notify the founder via Slack with the reply text and recommended next action, and create a task in Attio.
+
+### 3. Launch A/B testing on the champion funnel
+Run the `ab-test-orchestrator` drill. Set up experiments on the champion-specific variables that matter most:
+
+**Experiment 1 — Recruitment message framing:**
+- Control: signal-reference opening ("Saw your post about X")
+- Variant: problem-quantification opening ("Companies like {company} typically lose $X/year to {problem}")
+- Metric: reply rate. Minimum 100 sends per variant.
+
+**Experiment 2 — Enablement kit format:**
+- Control: text-based enablement kit (email + PDF)
+- Variant: Loom video walkthrough of the business case (no PDF)
+- Metric: champion forward rate. Minimum 30 kits per variant.
+
+**Experiment 3 — Recruitment cadence timing:**
+- Control: 4-touch sequence over 14 days
+- Variant: 3-touch sequence over 7 days (faster cadence, one fewer touch)
+- Metric: days from first contact to recruited status.
+
+Use PostHog feature flags to randomly assign each new champion candidate to experiment variants. Run each experiment until statistical significance (p < 0.05) or 4 weeks, whichever is longer.
+
+### 4. Scale to 150 accounts/month
+Increase the monthly account intake to 150. The automation handles:
+- **Profiling:** Clay runs weekly scheduled enrichment against a growing account list, pushing new champion candidates to Attio automatically
+- **Recruitment:** Instantly sequences launch automatically when new candidates appear in Attio (via n8n webhook on `champion_status: Candidate`)
+- **Enablement:** Loops sequences trigger automatically when status changes to Recruited
+- **Health monitoring:** Daily checks run for all champions regardless of volume
+
+The founder's weekly time commitment should be:
+- 1 hour: review Champion Health Digest and act on at-risk alerts
+- 1 hour: record Loom videos for top 5 highest-scoring new candidates
+- 30 min: review A/B test results and approve next experiments
+
+### 5. Set up guardrails
+Configure n8n guardrails:
+- If account-to-meeting rate drops below 2% for 2 consecutive weeks (vs 3% target), pause new account intake and diagnose
+- If champion recruitment reply rate drops below 5% for 50+ sends, pause the underperforming Instantly campaign and alert founder
+- If any single account has >5 champion candidates contacted without a single reply, blacklist the account for 90 days
+- Weekly: compare champion-facilitated meeting quality (deal size, close rate) against non-champion outbound. If champion deals are not outperforming, escalate for strategic review.
+
+### 6. Evaluate against threshold
+Measure monthly over 4 months: ≥3% account conversion at 150 accounts/month. That means ≥4-5 champion-facilitated meetings per month from the 150-account cohort.
+
+Pull from PostHog:
+- Monthly funnel: accounts → profiled → contacted → recruited → enabled → meetings
+- Conversion rate trend by month (should be stable or improving)
+- A/B test winners and their impact on funnel metrics
+- Cost per meeting trend (should be declining as automation coverage increases)
+- Champion yield: average meetings facilitated per active champion
+
+If PASS: document the optimized champion playbook (winning variants, best signals, optimal cadence). Proceed to Durable.
+If FAIL: identify whether the issue is volume (not enough accounts), quality (wrong ICP), process (automation failures), or market (champion strategy saturating). Fix and re-run.
 
 ---
 
 ## KPIs to track
-- Weekly volume
-- Conversion rate
-- Cost per result
-- Automation efficiency
-- Quality score
+- Monthly account volume (target: 150)
+- Account-to-meeting conversion rate (target: ≥3%)
+- Champion pipeline velocity (days from profiling to meeting)
+- Automation coverage rate (% of touchpoints handled without manual intervention)
+- Cost per champion-facilitated meeting
 
 ---
 
@@ -72,6 +140,26 @@ Measure against: ≥3% account conversion at 150 accounts/month over 4 months. R
 
 If you hit this threshold, move to the **Durable Intelligence** level.
 If not, iterate on your approach and re-run this level.
+
+---
+
+## Tools & Pricing
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Instantly | Scaled recruitment email sequences | Hypergrowth: $77/mo (https://instantly.ai/pricing) |
+| Clay | Continuous enrichment and signal monitoring | Team: $349/mo (https://clay.com/pricing) |
+| LinkedIn Sales Nav | Champion candidate search at volume | Core: $99/mo (https://linkedin.com/sales-solutions) |
+| Loops | Automated enablement kit delivery | Starter: $49/mo (https://loops.so/pricing) |
+| Loom | Personalized recruitment videos | Business: $12.50/user/mo (https://loom.com/pricing) |
+
+**Estimated monthly cost:** ~$590/mo
+
+---
+
+## Drills Referenced
+- `champion-health-monitoring` — daily health checks, disengagement alerts, and replacement champion triggers
+- `follow-up-automation` — self-healing workflows that re-engage stalled champions across channels
+- `ab-test-orchestrator` — A/B tests on recruitment framing, enablement format, and cadence timing
 
 ---
 
