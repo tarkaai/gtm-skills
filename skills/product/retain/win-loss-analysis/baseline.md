@@ -117,11 +117,11 @@ If FAIL: Diagnose which metric fell short. Low interview count = outreach/accept
 | Cal.com | Interview scheduling | Free tier — [cal.com](https://cal.com) |
 | Fireflies | Interview transcription | Pro $10/mo/seat — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
 | Typeform | Fallback survey | Basic $25/mo — [typeform.com](https://www.typeform.com) |
-| Loops | Automated outreach sequences | Starter $25/mo — [loops.so/pricing](https://loops.so/pricing) |
-| n8n | Workflow automation | Free (self-hosted) or Starter $24/mo — [n8n.io/pricing](https://n8n.io/pricing) |
+| Loops | Automated outreach sequences | Free (<1k contacts) or from $49/mo — [loops.so/pricing](https://loops.so/pricing) |
+| n8n | Workflow automation | Free (self-hosted) or Starter €24/mo — [n8n.io/pricing](https://n8n.io/pricing) |
 | Claude API | Insight extraction | ~$0.50/transcript, est. $5-10/mo — [anthropic.com](https://console.anthropic.com) |
 
-**Estimated play-specific cost:** ~$60-95/mo (Fireflies Pro + Typeform Basic + Loops + n8n Cloud + Claude API)
+**Estimated play-specific cost:** ~$35-110/mo (Fireflies Pro + Typeform Basic + Loops free tier or paid + n8n self-hosted or Cloud + Claude API)
 
 ## Drills Referenced
 

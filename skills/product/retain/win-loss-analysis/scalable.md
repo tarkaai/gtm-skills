@@ -132,12 +132,12 @@ If FAIL: Diagnose. Low coverage = outreach optimization needed. No measurable im
 
 | Tool | Purpose | Pricing |
 |------|---------|---------|
-| Attio | Deal tracking, competitive DB, insight storage | Growth plan ~$29/user/mo — [attio.com](https://attio.com) |
+| Attio | Deal tracking, competitive DB, insight storage | Free (up to 3 users) or Plus $29/user/mo — [attio.com/pricing](https://attio.com/pricing) |
 | Cal.com | Interview scheduling | Free tier or Team $12/user/mo — [cal.com](https://cal.com) |
 | Fireflies | Interview transcription (multi-user) | Pro $10/mo/seat (2-3 seats) — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
 | Typeform | Survey fallback | Basic $25/mo — [typeform.com](https://www.typeform.com) |
-| Loops | Automated outreach sequences | Growth $49/mo — [loops.so/pricing](https://loops.so/pricing) |
-| n8n | Workflow automation (more workflows) | Pro $50/mo — [n8n.io/pricing](https://n8n.io/pricing) |
+| Loops | Automated outreach sequences | From $49/mo — [loops.so/pricing](https://loops.so/pricing) |
+| n8n | Workflow automation (more workflows) | Pro €60/mo — [n8n.io/pricing](https://n8n.io/pricing) |
 | PostHog | Dashboards and trend tracking | Free tier (1M events) or $0/mo to start — [posthog.com/pricing](https://posthog.com/pricing) |
 | Claude API | Insight extraction + report synthesis | ~$15-30/mo — [anthropic.com](https://console.anthropic.com) |
 | Interview incentives | Gift cards for interviewees | ~$25 per interview, est. $250-500/mo |
