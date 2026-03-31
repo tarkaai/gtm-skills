@@ -1,81 +1,128 @@
 ---
 name: feature-flag-management-smoke
 description: >
-    Feature Flag System — Smoke Test. Use feature flags for gradual rollouts, kill switches, and
-  experimentation to reduce risk.
+  Feature Flag System -- Smoke Test. Deploy 5 feature flags with progressive rollout
+  conditions in PostHog, execute one full rollout cycle, and validate that the flag
+  infrastructure works end-to-end before automating.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "5 flags deployed"
-kpis: ["Flag usage", "Rollout success", "Rollback rate"]
+outcome: "5 flags deployed with at least 1 completing a full rollout cycle (0% to 100%)"
+kpis: ["Flags deployed", "Rollout completion rate", "Rollback count"]
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - posthog-gtm-events
   - threshold-engine
 ---
-# Feature Flag System — Smoke Test
+# Feature Flag System -- Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Feature Flag System — Smoke Test. Use feature flags for gradual rollouts, kill switches, and experimentation to reduce risk.
+## Outcomes
+5 feature flags created and deployed in PostHog. At least 1 flag completes a full rollout cycle from 0% to 100% with no rollback. The agent confirms that flag evaluation, rollout percentage changes, and cohort-based targeting all work via the PostHog API.
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** 5 flags deployed
-
----
-
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+## Leading Indicators
+- PostHog feature flag API responds correctly to create, read, update operations
+- Flag evaluation returns the correct variant for users in and outside the rollout percentage
+- `$feature_flag_called` events appear in PostHog when flags are evaluated in the product
+- Rollout percentage changes propagate within 60 seconds
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Configure PostHog event tracking for flags
+Run the `posthog-gtm-events` drill to set up the base event taxonomy. Add these flag-specific events:
+- `flag_created` — properties: flag_key, risk_level, owner, rollout_schedule
+- `flag_rollout_advanced` — properties: flag_key, old_percentage, new_percentage
+- `flag_rollout_completed` — properties: flag_key, total_days_to_complete
+- `flag_rolled_back` — properties: flag_key, rollback_reason, percentage_at_rollback
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+### 2. Create 5 feature flags via PostHog API
+For each flag, use the PostHog API:
+```
+POST /api/projects/<project_id>/feature_flags/
+{
+  "key": "{feature-slug}",
+  "name": "{Feature Name}",
+  "filters": {
+    "groups": [{
+      "rollout_percentage": 0
+    }]
+  },
+  "active": true
+}
+```
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Create flags across different risk levels to test the range:
+- 2 low-risk flags (UI tweaks, copy changes) — start at 5% canary
+- 2 medium-risk flags (new features) — start at 2% canary
+- 1 high-risk flag (core flow change) — start at 1% canary, internal-only cohort
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Log each creation as a `flag_created` event.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: 5 flags deployed. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 3. Execute a manual progressive rollout on 1 flag
+Choose one low-risk flag. Manually advance it through the low-risk schedule:
+- Day 0: Set to 5%. Verify flag evaluates correctly for ~5% of users via PostHog live events.
+- Day 1: Advance to 25%. Check `$feature_flag_called` events show ~25% true evaluations.
+- Day 3: Advance to 50%. Verify no error rate increase in treatment group.
+- Day 5: Advance to 100%. Confirm all users see the feature.
 
----
+At each stage, use the PostHog API to update:
+```
+PATCH /api/projects/<project_id>/feature_flags/<flag_id>/
+{"filters": {"groups": [{"rollout_percentage": 25}]}}
+```
 
-## KPIs to track
-- Flag usage
-- Rollout success
-- Rollback rate
+Log each advance as a `flag_rollout_advanced` event.
 
----
+### 4. Test a rollback
+On a second flag, intentionally roll back from a partial rollout:
+- Create the flag and advance to 10%
+- Simulate a regression: roll back to 0% via the API
+- Log `flag_rolled_back` with a reason
+- Re-advance the flag to confirm the rollback was clean (no stuck state)
 
-## Pass threshold
-**5 flags deployed**
+This validates that the rollback mechanism works before you rely on it in automation.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+### 5. Test cohort-based targeting
+For the high-risk flag, create a PostHog cohort for internal users and target the flag to that cohort only:
+```
+POST /api/projects/<project_id>/feature_flags/
+{
+  "key": "high-risk-core-change",
+  "filters": {
+    "groups": [{
+      "properties": [{
+        "key": "id",
+        "value": <internal-users-cohort-id>,
+        "type": "cohort"
+      }],
+      "rollout_percentage": 100
+    }]
+  }
+}
+```
 
----
+Verify that internal users see the flag and external users do not.
 
-## How to run this skill
+### 6. Evaluate against threshold
+Run the `threshold-engine` drill. Pass criteria: 5 flags deployed AND at least 1 completed a full 0%->100% rollout cycle. If PASS, proceed to Baseline. If FAIL, diagnose which API operations did not work and fix before re-running.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Human action required:** Review the 5 flags in PostHog to confirm they correspond to real features in your product. Verify the SDK is checking these flags in the product code at the correct decision points.
 
-_Install this skill: `npx gtm-skills add product/retain/feature-flag-management`_
+## Time Estimate
+- 1 hour: PostHog event setup and flag taxonomy design
+- 2 hours: Create 5 flags and execute manual progressive rollout
+- 1 hour: Test rollback and cohort targeting
+- 1 hour: Verify all events logged correctly and evaluate threshold
+
+## Tools & Pricing
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, event tracking, cohorts | Free tier: 1M events/mo, unlimited flags. https://posthog.com/pricing |
+
+## Drills Referenced
+- `posthog-gtm-events` -- establishes the event taxonomy for flag lifecycle tracking
+- `threshold-engine` -- evaluates pass/fail against the 5-flag deployment target
