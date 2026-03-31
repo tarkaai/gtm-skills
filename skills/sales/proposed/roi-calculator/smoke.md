@@ -1,10 +1,9 @@
 ---
 name: roi-calculator-smoke
 description: >
-    ROI Calculator & Business Case — Smoke Test. Quantify and demonstrate ROI to justify purchase
-  decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic
-  business case generation that personalizes value narratives and auto-updates based on prospect
-  data and market benchmarks.
+  ROI Calculator & Business Case — Smoke Test. Manually build ROI calculators
+  for 5 prospects using discovery pain data, present the calculators, and
+  validate that strong ROI (>=5x) correlates with deal advancement.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email, Website"
@@ -15,72 +14,102 @@ kpis: ["ROI value distribution", "Payback period", "ROI validation rate", "ROI i
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - roi-calculator-build
   - threshold-engine
 ---
+
 # ROI Calculator & Business Case — Smoke Test
 
-> **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email, Website
+> **Stage:** Sales > Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email, Website
 
-## Overview
-ROI Calculator & Business Case — Smoke Test. Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
+## Outcomes
 
-**Time commitment:** 7 hours over 1 week
-**Pass threshold:** >=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week
+Prove that building prospect-specific ROI calculators using their own pain data produces measurably stronger deal progression than presenting pricing without quantified value. Target: build ROI calculators for >=5 prospects showing >=5x ROI, and >=3 prospects cite ROI in their buying decision conversations.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Pain data sufficient for ROI modeling (>=2 quantified pains) on at least 5 deals in Proposed stage
+- ROI calculator completed and shared within 48 hours of discovery for all 5 prospects
+- Prospect validates or adjusts calculator inputs (engagement signal) for at least 3 of 5
+- Payback period < 6 months on at least 4 of 5 calculators
+- At least 2 prospects forward the calculator internally within 5 business days
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for roi-calculator. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Identify 5 deals with sufficient pain data
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your roi-calculator materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Query Attio for deals in the Proposed stage that have completed pain discovery. Filter for deals where:
+- `pain_count >= 2` (at least 2 quantified pain points)
+- `pain_quantification_rate >= 0.5` (at least half have dollar estimates)
+- `roi_model_status` is null or "not_started"
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+If fewer than 5 qualify, check deals approaching Proposed stage and fast-track their pain discovery. You need 5 deals with real pain data to run this test.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+For each qualifying deal, pull from Attio:
+- All quantified pains with dollar estimates and confidence levels
+- Champion name and role
+- Company size, industry, and revenue estimate
+- Product pricing applicable to this deal
+- Any competitor mentions from discovery
+
+### 2. Run the `roi-calculator-build` drill for each deal
+
+For each of the 5 deals, execute the `roi-calculator-build` drill:
+
+1. Validate pain data readiness (pain count, quantification rate, pain-to-price ratio)
+2. Re-quantify any low-confidence pains using `pain-quantification-prompt`
+3. Generate the structured ROI model via `roi-model-generation` — this produces inputs, assumptions, savings breakdown, costs, summary with ROI percentage and payback period, and sensitivity analysis (conservative/moderate/optimistic)
+4. Build the calculator artifact: a Google Sheet with adjustable inputs so the prospect can modify their own numbers and watch the ROI recalculate
+5. **Human action required:** Present the calculator to the prospect. Lead with their pain ("You mentioned [quote] — here's what that costs you annually"), show the savings, reveal the ROI, and invite them to adjust any inputs
+6. Send the calculator to the prospect after presenting
+7. Log ROI metrics and validation status in Attio
+
+Do NOT present a generic ROI. Every calculator must use the prospect's own numbers from discovery. If you don't have their numbers, you don't have enough discovery data — go back and get it.
+
+### 3. Track engagement and influence
+
+For each of the 5 deals, monitor over the following 7 days:
+- Did the prospect open the calculator? (Track via Google Sheet view history or hosted link analytics)
+- Did the prospect adjust any inputs? (Check Sheet edit history)
+- Did the prospect reference ROI in any subsequent conversation? (Log in Attio: `roi_referenced_in_decision = true`)
+- Did the deal advance to the next stage within 7 days of ROI presentation?
+- Did the prospect share the calculator internally? (Check Sheet sharing or forwarding analytics)
+
+Fire PostHog events for each interaction: `roi_calculator_presented`, `roi_calculator_validated`, `roi_referenced_in_decision`.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: >=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Run the `threshold-engine` drill at the end of 1 week. The threshold engine queries PostHog and Attio to check:
+- Total ROI calculators built and presented: must be >= 5
+- Calculators showing >= 5x ROI: must be >= 5
+- Prospects who referenced ROI in decision conversations: must be >= 3
 
----
+If PASS (>=5 with >=5x ROI, >=3 referencing ROI): document which value drivers produced the strongest ROI, which presentation framing resonated most, and whether validated vs unvalidated calculators correlated with deal advancement. Proceed to Baseline.
 
-## KPIs to track
-- ROI value distribution
-- Payback period
-- ROI validation rate
-- ROI impact on deal velocity
+If FAIL: diagnose the failure mode:
+- Weak ROI (<5x on most deals): discovery is not uncovering enough pain. Improve discovery questions targeting time savings, cost reduction, and revenue impact.
+- Strong ROI but not referenced: the calculator may not be reaching the economic buyer. Ask champions how budget decisions are made and adjust delivery.
+- Low engagement (prospect didn't open/adjust): the format or framing may be wrong. Test a simpler one-page summary vs the full spreadsheet.
 
----
+## Time Estimate
 
-## Pass threshold
-**>=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week**
+- 1 hour: identifying qualifying deals and pulling pain data from Attio
+- 3 hours: running roi-calculator-build 5 times (validate pain, generate model, build artifact, present)
+- 1.5 hours: tracking engagement and logging outcomes over the week
+- 1.5 hours: threshold evaluation, analysis, and documentation
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Tools & Pricing
 
----
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | Deal records, pain data, ROI logging | Standard stack (excluded from play budget) |
+| PostHog | Event tracking for calculator engagement | Standard stack (excluded from play budget) |
+| Anthropic Claude API | ROI model generation via `roi-model-generation` | ~$0.50-2 for 5 models at Sonnet 4.6 rates ($3/$15 per M tokens) — [pricing](https://platform.claude.com/docs/en/about-claude/pricing) |
+| Google Sheets | Calculator artifact delivery | Free with Google Workspace |
 
-## How to run this skill
+**Play-specific cost:** Free (Claude API cost negligible at this volume)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add sales/proposed/roi-calculator`_
+- `roi-calculator-build` — builds a prospect-specific ROI calculator from pain data, generates the model, creates the shareable artifact, and captures validation
+- `threshold-engine` — evaluates pass/fail against the >=5 calculators / >=3 referenced target at week's end
