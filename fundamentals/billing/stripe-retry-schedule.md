@@ -2,6 +2,7 @@
 name: stripe-retry-schedule
 description: Query and configure Stripe's automatic payment retry schedule and smart retries
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

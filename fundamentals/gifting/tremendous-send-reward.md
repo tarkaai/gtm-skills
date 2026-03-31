@@ -2,6 +2,7 @@
 name: tremendous-send-reward
 description: Send a digital gift card or reward to a recipient via the Tremendous API
 tool: Tremendous
+product: Tremendous
 difficulty: Setup
 ---
 

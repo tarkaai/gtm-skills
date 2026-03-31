@@ -2,6 +2,7 @@
 name: badge-scan-lead-import
 description: Import badge scan and lead retrieval data from conference platforms into CRM
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

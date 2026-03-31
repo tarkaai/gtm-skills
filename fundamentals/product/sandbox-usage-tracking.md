@@ -2,6 +2,7 @@
 name: sandbox-usage-tracking
 description: Capture and structure sandbox usage events in PostHog for engagement scoring and sales intelligence
 tool: PostHog
+product: PostHog
 difficulty: Config
 ---
 

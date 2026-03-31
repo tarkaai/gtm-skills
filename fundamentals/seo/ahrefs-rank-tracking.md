@@ -2,6 +2,7 @@
 name: ahrefs-rank-tracking
 description: Monitor keyword ranking positions over time via the Ahrefs Rank Tracker API
 tool: Ahrefs
+product: Ahrefs
 difficulty: Config
 ---
 

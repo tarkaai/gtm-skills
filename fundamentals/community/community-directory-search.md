@@ -2,6 +2,7 @@
 name: community-directory-search
 description: Search community directories and aggregators to discover alumni, campus, and professional org groups
 tool: Clay
+product: Clay
 difficulty: Setup
 ---
 

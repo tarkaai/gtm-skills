@@ -2,6 +2,7 @@
 name: onesignal-send-notification
 description: Send a push notification to users or segments via the OneSignal REST API
 tool: OneSignal
+product: OneSignal
 difficulty: Setup
 ---
 

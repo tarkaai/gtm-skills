@@ -2,6 +2,7 @@
 name: loom-recording
 description: Create async video messages with Loom for demos, walkthroughs, and prospect outreach.
 tool: Loom
+product: Loom
 difficulty: Setup
 ---
 

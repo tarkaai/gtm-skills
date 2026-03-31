@@ -2,6 +2,7 @@
 name: sms-phone-number-provisioning
 description: Provision a phone number and register for A2P 10DLC compliance
 tool: Twilio
+product: Twilio
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: fireflies-transcription
 description: Configure Fireflies.ai to automatically join, record, and transcribe your meetings with searchable notes and summaries.
 tool: Fireflies
+product: Fireflies
 difficulty: Setup
 ---
 

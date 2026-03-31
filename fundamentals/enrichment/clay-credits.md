@@ -2,6 +2,7 @@
 name: clay-credits
 description: Monitor and optimize Clay credit usage to control enrichment costs
 tool: Clay
+product: Clay
 difficulty: Beginner
 ---
 

@@ -2,6 +2,7 @@
 name: stripe-usage-records
 description: Report metered usage to Stripe Billing via the Meter Events API for usage-based pricing
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

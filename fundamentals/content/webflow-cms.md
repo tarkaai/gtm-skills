@@ -2,6 +2,7 @@
 name: webflow-cms
 description: Manage Webflow CMS collections for dynamic content via the Webflow API
 tool: Webflow
+product: Webflow
 difficulty: Intermediate
 ---
 

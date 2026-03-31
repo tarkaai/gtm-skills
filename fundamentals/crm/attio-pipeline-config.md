@@ -2,6 +2,7 @@
 name: attio-pipeline-config
 description: Configure your Attio sales pipeline with stages, required fields, and views
 tool: Attio
+product: Attio
 difficulty: Setup
 ---
 

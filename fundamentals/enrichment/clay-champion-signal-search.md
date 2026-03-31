@@ -2,6 +2,7 @@
 name: clay-champion-signal-search
 description: Search Clay for behavioral and firmographic signals that identify potential internal champions at target accounts
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

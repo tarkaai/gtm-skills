@@ -2,6 +2,7 @@
 name: calcom-crm-sync
 description: Connect Cal.com to Attio via webhooks and n8n so booked meetings automatically create or update CRM records
 tool: Cal.com
+product: Cal.com
 difficulty: Intermediate
 ---
 

@@ -2,6 +2,7 @@
 name: intercom-help-articles
 description: Create and organize help articles in Intercom for self-serve support
 tool: Intercom
+product: Intercom
 difficulty: Beginner
 ---
 

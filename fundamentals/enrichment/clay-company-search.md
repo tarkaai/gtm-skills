@@ -2,6 +2,7 @@
 name: clay-company-search
 description: Use Clay to find companies matching your ICP criteria
 tool: Clay
+product: Clay
 difficulty: Beginner
 ---
 

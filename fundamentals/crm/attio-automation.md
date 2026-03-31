@@ -2,6 +2,7 @@
 name: attio-automation
 description: Set up Attio automations for deal routing, task creation, and notifications
 tool: Attio
+product: Attio
 difficulty: Intermediate
 ---
 

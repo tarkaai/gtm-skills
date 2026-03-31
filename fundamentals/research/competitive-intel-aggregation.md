@@ -2,6 +2,7 @@
 name: competitive-intel-aggregation
 description: Aggregate competitor mentions from win/loss data into a structured competitive intelligence database
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

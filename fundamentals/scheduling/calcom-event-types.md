@@ -2,6 +2,7 @@
 name: calcom-event-types
 description: Set up different meeting types in Cal.com via API -- discovery calls, demos, team meetings
 tool: Cal.com
+product: Cal.com
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: descript-editing
 description: Use Descript's text-based editor to edit video and audio content by editing the transcript — delete words to delete footage.
 tool: Descript
+product: Descript
 difficulty: Config
 ---
 

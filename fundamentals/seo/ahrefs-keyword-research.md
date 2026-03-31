@@ -2,6 +2,7 @@
 name: ahrefs-keyword-research
 description: Discover long-tail keywords with search volume, difficulty, and SERP data via the Ahrefs API
 tool: Ahrefs
+product: Ahrefs
 difficulty: Config
 ---
 

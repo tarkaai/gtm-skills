@@ -2,6 +2,7 @@
 name: attio-champion-tracking
 description: Create champion-specific custom attributes, lists, and automations in Attio for tracking champion status across deals
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

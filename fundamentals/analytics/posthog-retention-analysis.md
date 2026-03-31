@@ -2,6 +2,7 @@
 name: posthog-retention-analysis
 description: Query retention curves, cohort survival rates, and churn timing patterns from PostHog
 tool: PostHog
+product: PostHog
 difficulty: Advanced
 ---
 

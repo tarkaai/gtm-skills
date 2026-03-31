@@ -2,6 +2,7 @@
 name: n8n-workflow-basics
 description: Create and structure n8n workflows for GTM automation
 tool: n8n
+product: n8n
 difficulty: Beginner
 ---
 

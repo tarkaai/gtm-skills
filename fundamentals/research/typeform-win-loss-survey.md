@@ -2,6 +2,7 @@
 name: typeform-win-loss-survey
 description: Create a structured win/loss survey in Typeform with branching logic for won vs lost deals
 tool: Typeform
+product: Typeform
 difficulty: Config
 ---
 

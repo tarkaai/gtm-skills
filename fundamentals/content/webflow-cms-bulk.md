@@ -2,6 +2,7 @@
 name: webflow-cms-bulk
 description: Create and update Webflow CMS items in bulk via API for programmatic page generation
 tool: Webflow
+product: Webflow
 difficulty: Advanced
 ---
 

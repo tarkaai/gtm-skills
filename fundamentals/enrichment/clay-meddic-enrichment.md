@@ -2,6 +2,7 @@
 name: clay-meddic-enrichment
 description: Enrich prospects with MEDDIC-relevant signals — org chart for economic buyer, decision process indicators, pain signals, and champion identification
 tool: Clay
+product: Clay
 difficulty: Advanced
 ---
 

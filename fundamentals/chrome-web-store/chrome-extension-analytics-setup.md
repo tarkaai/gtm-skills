@@ -2,6 +2,7 @@
 name: chrome-extension-analytics-setup
 description: Instrument a Chrome extension with PostHog analytics to track installs, popup opens, and lead capture events
 tool: PostHog
+product: PostHog
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: clay-table-setup
 description: Create and configure Clay tables for prospect enrichment workflows
 tool: Clay
+product: Clay
 difficulty: Setup
 ---
 

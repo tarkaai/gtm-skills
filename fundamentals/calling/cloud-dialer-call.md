@@ -2,6 +2,7 @@
 name: cloud-dialer-call
 description: Initiate, log, and manage outbound sales calls via cloud dialer APIs
 tool: Orum
+product: Orum
 difficulty: Config
 ---
 

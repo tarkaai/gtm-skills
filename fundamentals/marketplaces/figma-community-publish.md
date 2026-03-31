@@ -2,6 +2,7 @@
 name: figma-community-publish
 description: Publish a design template or UI kit to Figma Community with optimized metadata and CTA links
 tool: Figma
+product: Figma
 difficulty: Setup
 ---
 

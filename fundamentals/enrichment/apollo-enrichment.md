@@ -2,6 +2,7 @@
 name: apollo-enrichment
 description: Enrich contact and company records using Apollo's data
 tool: Apollo
+product: Apollo
 difficulty: Beginner
 ---
 

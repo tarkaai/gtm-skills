@@ -2,6 +2,7 @@
 name: intercom-ticket-tagging
 description: Auto-tag and categorize Intercom conversations by topic, severity, and sentiment
 tool: Intercom
+product: Intercom
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: attio-lists
 description: Build and manage dynamic and static lists in Attio for segmentation
 tool: Attio
+product: Attio
 difficulty: Beginner
 ---
 

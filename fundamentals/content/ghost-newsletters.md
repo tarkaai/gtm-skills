@@ -2,6 +2,7 @@
 name: ghost-newsletters
 description: Send email newsletters through Ghost's built-in newsletter feature via the Admin API
 tool: Ghost
+product: Ghost
 difficulty: Intermediate
 ---
 

@@ -2,6 +2,7 @@
 name: conference-cfp-search
 description: Discover open call-for-papers (CFP) at developer conferences and meetups via web scraping and CFP aggregator APIs
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

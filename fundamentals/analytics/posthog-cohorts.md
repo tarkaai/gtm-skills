@@ -2,6 +2,7 @@
 name: posthog-cohorts
 description: Create user cohorts in PostHog for targeted analysis and action
 tool: PostHog
+product: PostHog
 difficulty: Intermediate
 ---
 

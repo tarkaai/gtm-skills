@@ -2,6 +2,7 @@
 name: calcom-booking-links
 description: Generate and distribute Cal.com booking links across your GTM channels for maximum meeting conversion.
 tool: Cal.com
+product: Cal.com
 difficulty: Setup
 ---
 

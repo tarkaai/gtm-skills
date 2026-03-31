@@ -2,6 +2,7 @@
 name: tally-form-setup
 description: Create interactive forms, calculators, and assessments in Tally with conditional logic and result screens
 tool: Tally
+product: Tally
 difficulty: Setup
 ---
 

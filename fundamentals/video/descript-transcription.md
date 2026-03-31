@@ -2,6 +2,7 @@
 name: descript-transcription
 description: Use Descript to transcribe video and audio files into searchable, editable text for repurposing content.
 tool: Descript
+product: Descript
 difficulty: Setup
 ---
 

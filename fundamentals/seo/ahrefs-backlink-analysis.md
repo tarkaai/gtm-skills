@@ -2,6 +2,7 @@
 name: ahrefs-backlink-analysis
 description: Pull backlink profiles, new/lost backlinks, and referring domain data via the Ahrefs Site Explorer API
 tool: Ahrefs
+product: Ahrefs
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: stripe-payment-failure-webhook
 description: Configure Stripe webhooks to receive real-time payment failure events and extract failure metadata
 tool: Stripe
+product: Stripe
 difficulty: Setup
 ---
 

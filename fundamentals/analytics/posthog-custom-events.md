@@ -2,6 +2,7 @@
 name: posthog-custom-events
 description: Define and implement custom events for GTM measurement in PostHog
 tool: PostHog
+product: PostHog
 difficulty: Intermediate
 ---
 

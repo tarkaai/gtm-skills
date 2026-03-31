@@ -2,6 +2,7 @@
 name: gong-engagement-analysis
 description: Extract engagement signals from Gong demo recordings to measure prospect attention, emotional connection, and storytelling effectiveness
 tool: Gong
+product: Gong
 difficulty: Advanced
 ---
 

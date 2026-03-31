@@ -2,6 +2,7 @@
 name: clay-intent-scoring
 description: Build a weighted intent scoring model in Clay that combines first-party and third-party signals into a single priority score
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

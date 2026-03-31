@@ -2,6 +2,7 @@
 name: giftsenda-send-gift
 description: Send a curated gift internationally via the Giftsenda API with delivery in 200+ countries
 tool: Giftsenda
+product: Giftsenda
 difficulty: Config
 ---
 

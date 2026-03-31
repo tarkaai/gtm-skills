@@ -2,6 +2,7 @@
 name: attio-deals
 description: Create, update, and manage deals in Attio throughout the sales cycle
 tool: Attio
+product: Attio
 difficulty: Beginner
 ---
 

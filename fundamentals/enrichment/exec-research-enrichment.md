@@ -2,6 +2,7 @@
 name: exec-research-enrichment
 description: Enrich an executive contact with strategic priorities, recent news, earnings highlights, and competitive context using Clay and web research
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

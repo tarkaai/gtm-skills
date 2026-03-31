@@ -2,6 +2,7 @@
 name: attio-health-score-sync
 description: Write computed health scores and risk classifications to Attio company records
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

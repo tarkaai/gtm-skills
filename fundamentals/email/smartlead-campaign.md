@@ -2,6 +2,7 @@
 name: smartlead-campaign
 description: Create and manage cold email campaigns in Smartlead
 tool: Smartlead
+product: Smartlead
 difficulty: Intermediate
 ---
 

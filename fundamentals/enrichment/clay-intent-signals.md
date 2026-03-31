@@ -2,6 +2,7 @@
 name: clay-intent-signals
 description: Enrich leads with behavioral intent signals using Clay's data providers and Claygent
 tool: Clay
+product: Clay
 difficulty: Advanced
 ---
 

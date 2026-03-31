@@ -2,6 +2,7 @@
 name: posthog-user-path-analysis
 description: Analyze user workflow sequences and navigation paths in PostHog to identify optimization opportunities
 tool: PostHog
+product: PostHog
 difficulty: Advanced
 ---
 

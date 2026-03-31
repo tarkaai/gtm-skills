@@ -2,6 +2,7 @@
 name: media-pitch-email
 description: Craft and send personalized pitch emails to journalists and newsletter editors for earned coverage
 tool: Instantly
+product: Instantly
 difficulty: Config
 ---
 

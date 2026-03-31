@@ -2,6 +2,7 @@
 name: n8n-scheduling
 description: Build scheduled n8n workflows for recurring GTM tasks
 tool: n8n
+product: n8n
 difficulty: Beginner
 ---
 

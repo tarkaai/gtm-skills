@@ -2,6 +2,7 @@
 name: clay-people-search
 description: Find decision-makers and contacts at target companies using Clay
 tool: Clay
+product: Clay
 difficulty: Beginner
 ---
 

@@ -2,6 +2,7 @@
 name: podcast-episode-repurposing
 description: Extract short clips, audiograms, show notes, and social posts from a podcast episode recording
 tool: Descript
+product: Descript
 difficulty: Config
 ---
 

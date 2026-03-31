@@ -2,6 +2,7 @@
 name: loops-transactional
 description: Send transactional emails through Loops API for consistent branding
 tool: Loops
+product: Loops
 difficulty: Beginner
 ---
 

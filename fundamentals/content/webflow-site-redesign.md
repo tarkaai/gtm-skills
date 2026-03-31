@@ -2,6 +2,7 @@
 name: webflow-site-redesign
 description: Programmatically update Webflow site pages, styles, and content via the Webflow CMS and Designer API
 tool: Webflow
+product: Webflow
 difficulty: Advanced
 ---
 

@@ -2,6 +2,7 @@
 name: podcast-host-enrichment
 description: Enrich podcast host contact information using Clay waterfall enrichment
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

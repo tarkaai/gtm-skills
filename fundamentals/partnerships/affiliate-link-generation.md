@@ -2,6 +2,7 @@
 name: affiliate-link-generation
 description: Generate, manage, and distribute unique affiliate tracking links and referral codes
 tool: Rewardful
+product: Rewardful
 difficulty: Setup
 ---
 

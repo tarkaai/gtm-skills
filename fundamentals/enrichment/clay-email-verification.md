@@ -2,6 +2,7 @@
 name: clay-email-verification
 description: Verify email addresses before outreach to protect sender reputation
 tool: Clay
+product: Clay
 difficulty: Beginner
 ---
 

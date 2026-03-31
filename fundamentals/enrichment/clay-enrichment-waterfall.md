@@ -2,6 +2,7 @@
 name: clay-enrichment-waterfall
 description: Configure multi-provider enrichment waterfalls to maximize data coverage
 tool: Clay
+product: Clay
 difficulty: Intermediate
 ---
 

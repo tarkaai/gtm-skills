@@ -2,6 +2,7 @@
 name: fireflies-action-items
 description: Extract action items, decisions, and follow-ups from meeting transcripts using Fireflies API
 tool: Fireflies
+product: Fireflies
 difficulty: Intermediate
 ---
 

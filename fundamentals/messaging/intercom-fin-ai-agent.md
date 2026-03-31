@@ -2,6 +2,7 @@
 name: intercom-fin-ai-agent
 description: Configure Intercom Fin AI Agent as a contextual in-product coaching surface that answers questions and guides users based on help content and user context
 tool: Intercom
+product: Intercom
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: account-intelligence-assembly
 description: Pull and merge account data from CRM, enrichment, news, and social sources into a single structured intelligence profile
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

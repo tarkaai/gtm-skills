@@ -2,6 +2,7 @@
 name: sms-provider-send
 description: Send an SMS message to a single recipient via API
 tool: Twilio
+product: Twilio
 difficulty: Setup
 ---
 

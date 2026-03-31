@@ -2,6 +2,7 @@
 name: gumroad-product-publish
 description: Publish a digital product (template, tool, resource) to Gumroad with optimized listing and tracking
 tool: Gumroad
+product: Gumroad
 difficulty: Setup
 ---
 

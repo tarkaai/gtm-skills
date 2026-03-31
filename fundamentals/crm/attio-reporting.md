@@ -2,6 +2,7 @@
 name: attio-reporting
 description: Build pipeline reports and dashboards in Attio for forecasting and performance tracking
 tool: Attio
+product: Attio
 difficulty: Intermediate
 ---
 

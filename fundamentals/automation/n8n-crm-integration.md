@@ -2,6 +2,7 @@
 name: n8n-crm-integration
 description: Connect n8n workflows to Attio CRM for automated data sync
 tool: n8n
+product: n8n
 difficulty: Intermediate
 ---
 

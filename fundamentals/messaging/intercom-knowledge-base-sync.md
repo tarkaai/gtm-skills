@@ -2,6 +2,7 @@
 name: intercom-knowledge-base-sync
 description: Sync and maintain knowledge sources that power Intercom Fin AI and Help Center
 tool: Intercom
+product: Intercom
 difficulty: Config
 ---
 

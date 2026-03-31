@@ -2,6 +2,7 @@
 name: loops-audience
 description: Set up and manage contact audiences in Loops for lifecycle email
 tool: Loops
+product: Loops
 difficulty: Setup
 ---
 

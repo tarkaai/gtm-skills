@@ -2,6 +2,7 @@
 name: openai-embeddings
 description: Use OpenAI embeddings for lead similarity, content matching, and semantic search in GTM
 tool: OpenAI
+product: OpenAI
 difficulty: Advanced
 ---
 

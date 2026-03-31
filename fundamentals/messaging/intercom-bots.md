@@ -2,6 +2,7 @@
 name: intercom-bots
 description: Configure Intercom bots for automated user engagement and support
 tool: Intercom
+product: Intercom
 difficulty: Intermediate
 ---
 

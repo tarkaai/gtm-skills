@@ -2,6 +2,7 @@
 name: intercom-product-tours
 description: Build interactive product tours in Intercom for user onboarding
 tool: Intercom
+product: Intercom
 difficulty: Intermediate
 ---
 

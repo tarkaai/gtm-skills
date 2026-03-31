@@ -2,6 +2,7 @@
 name: stripe-invoice-pay
 description: Programmatically attempt payment on an open invoice or void/forgive a failed invoice
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

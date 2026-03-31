@@ -2,6 +2,7 @@
 name: posthog-mcp-setup
 description: Install and configure the PostHog MCP server for Claude Code integration
 tool: PostHog
+product: PostHog
 difficulty: Setup
 ---
 

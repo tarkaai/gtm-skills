@@ -2,6 +2,7 @@
 name: typeform-survey-setup
 description: Build surveys and forms in Typeform for customer feedback, lead qualification, and research with branching logic.
 tool: Typeform
+product: Typeform
 difficulty: Config
 ---
 

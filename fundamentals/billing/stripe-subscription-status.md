@@ -2,6 +2,7 @@
 name: stripe-subscription-status
 description: Query subscription status, past-due state, and cancellation schedule from Stripe API
 tool: Stripe
+product: Stripe
 difficulty: Setup
 ---
 

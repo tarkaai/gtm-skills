@@ -2,6 +2,7 @@
 name: directory-review-monitoring
 description: Monitor, fetch, and respond to product reviews across software directories via APIs and webhooks
 tool: G2
+product: G2
 difficulty: Config
 ---
 

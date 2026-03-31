@@ -2,6 +2,7 @@
 name: newsletter-placement-tracking
 description: Build UTM-tagged tracking links and PostHog events for individual paid newsletter placements
 tool: PostHog
+product: PostHog
 difficulty: Setup
 ---
 

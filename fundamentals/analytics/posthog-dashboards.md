@@ -2,6 +2,7 @@
 name: posthog-dashboards
 description: Build PostHog dashboards for GTM performance monitoring
 tool: PostHog
+product: PostHog
 difficulty: Intermediate
 ---
 

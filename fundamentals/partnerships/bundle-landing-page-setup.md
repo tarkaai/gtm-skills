@@ -2,6 +2,7 @@
 name: bundle-landing-page-setup
 description: Create a co-branded landing page for a partner bundle deal with tracking and checkout flow
 tool: Webflow
+product: Webflow
 difficulty: Config
 ---
 

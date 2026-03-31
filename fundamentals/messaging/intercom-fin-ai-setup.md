@@ -2,6 +2,7 @@
 name: intercom-fin-ai-setup
 description: Configure Intercom Fin AI agent for automated support resolution
 tool: Intercom
+product: Intercom
 difficulty: Config
 ---
 

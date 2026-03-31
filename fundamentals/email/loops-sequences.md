@@ -2,6 +2,7 @@
 name: loops-sequences
 description: Build automated email sequences triggered by user actions in Loops
 tool: Loops
+product: Loops
 difficulty: Intermediate
 ---
 

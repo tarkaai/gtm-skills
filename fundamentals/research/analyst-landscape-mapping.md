@@ -2,6 +2,7 @@
 name: analyst-landscape-mapping
 description: Identify and map industry analysts, consultants, and influencers who shape buyer decisions in a target market
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

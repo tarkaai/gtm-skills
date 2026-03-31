@@ -2,6 +2,7 @@
 name: posthog-feature-flags
 description: Use PostHog feature flags for controlled GTM feature rollouts
 tool: PostHog
+product: PostHog
 difficulty: Intermediate
 ---
 

@@ -2,6 +2,7 @@
 name: loops-broadcasts
 description: Send one-time broadcast emails to segments in Loops
 tool: Loops
+product: Loops
 difficulty: Beginner
 ---
 

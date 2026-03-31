@@ -2,6 +2,7 @@
 name: sendoso-send-gift
 description: Send a physical or digital gift to a prospect via the Sendoso REST API
 tool: Sendoso
+product: Sendoso
 difficulty: Config
 ---
 

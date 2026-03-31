@@ -2,6 +2,7 @@
 name: lob-campaign-tracking
 description: Track postcard delivery status and scan events via the Lob API
 tool: Lob
+product: Lob
 difficulty: Config
 ---
 

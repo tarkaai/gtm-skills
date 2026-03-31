@@ -2,6 +2,7 @@
 name: notion-template-publish
 description: Publish a Notion template to the Notion Marketplace with optimized metadata and tracking links
 tool: Notion
+product: Notion
 difficulty: Setup
 ---
 

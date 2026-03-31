@@ -2,6 +2,7 @@
 name: instantly-reply-detection
 description: Classify and route replies from cold email campaigns
 tool: Instantly
+product: Instantly
 difficulty: Intermediate
 ---
 

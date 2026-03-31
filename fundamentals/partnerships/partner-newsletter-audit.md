@@ -2,6 +2,7 @@
 name: partner-newsletter-audit
 description: Research a partner's newsletter to assess audience size, frequency, engagement, and fit for co-marketing
 tool: Clay
+product: Clay
 difficulty: Setup
 ---
 

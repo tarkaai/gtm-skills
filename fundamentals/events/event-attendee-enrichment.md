@@ -2,6 +2,7 @@
 name: event-attendee-enrichment
 description: Extract and enrich attendee/speaker lists from event websites and platforms
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

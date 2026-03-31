@@ -2,6 +2,7 @@
 name: ghost-blog-publishing
 description: Create and publish blog content on Ghost CMS via the Admin API
 tool: Ghost
+product: Ghost
 difficulty: Intermediate
 ---
 

@@ -2,6 +2,7 @@
 name: apollo-sequences
 description: Set up multi-step outreach sequences in Apollo
 tool: Apollo
+product: Apollo
 difficulty: Intermediate
 ---
 

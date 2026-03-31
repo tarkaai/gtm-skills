@@ -2,6 +2,7 @@
 name: lob-postcard-send
 description: Send a physical postcard to a recipient via the Lob Print & Mail API
 tool: Lob
+product: Lob
 difficulty: Setup
 ---
 

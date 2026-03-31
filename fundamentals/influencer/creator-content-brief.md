@@ -2,6 +2,7 @@
 name: creator-content-brief
 description: Generate and send a structured content brief to a creator for a sponsored post
 tool: Notion
+product: Notion
 difficulty: Config
 ---
 

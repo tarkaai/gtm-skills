@@ -2,6 +2,7 @@
 name: clay-deduplication
 description: Prevent duplicate records and wasted enrichment credits in Clay
 tool: Clay
+product: Clay
 difficulty: Beginner
 ---
 

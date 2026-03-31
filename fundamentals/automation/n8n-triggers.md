@@ -2,6 +2,7 @@
 name: n8n-triggers
 description: Configure triggers to start n8n workflows from events, schedules, or webhooks
 tool: n8n
+product: n8n
 difficulty: Beginner
 ---
 

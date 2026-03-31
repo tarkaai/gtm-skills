@@ -2,6 +2,7 @@
 name: instantly-account-setup
 description: Set up Instantly accounts and sending domains for cold outreach
 tool: Instantly
+product: Instantly
 difficulty: Setup
 ---
 

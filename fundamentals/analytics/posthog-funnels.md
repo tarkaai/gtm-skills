@@ -2,6 +2,7 @@
 name: posthog-funnels
 description: Create conversion funnels in PostHog to find GTM bottlenecks
 tool: PostHog
+product: PostHog
 difficulty: Intermediate
 ---
 

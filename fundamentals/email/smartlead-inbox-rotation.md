@@ -2,6 +2,7 @@
 name: smartlead-inbox-rotation
 description: Configure inbox rotation to distribute sends across multiple accounts
 tool: Smartlead
+product: Smartlead
 difficulty: Intermediate
 ---
 

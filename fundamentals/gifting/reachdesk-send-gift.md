@@ -2,6 +2,7 @@
 name: reachdesk-send-gift
 description: Send a physical gift, eGift, or branded swag to a prospect via the Reachdesk API
 tool: Reachdesk
+product: Reachdesk
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: loom-personalized-outreach
 description: Record personalized Loom videos for prospect outreach with naming conventions and CTA configuration
 tool: Loom
+product: Loom
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: gong-call-recording
 description: Configure Gong to automatically record and analyze sales calls for coaching, deal intelligence, and process improvement.
 tool: Gong
+product: Gong
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: billing-event-streaming
 description: Stream billing events (subscriptions, invoices, usage) from Stripe to PostHog for analytics
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

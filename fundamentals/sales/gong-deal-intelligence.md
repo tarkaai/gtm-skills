@@ -2,6 +2,7 @@
 name: gong-deal-intelligence
 description: Use Gong's API to analyze deal health, identify risks, and forecast outcomes from conversation data
 tool: Gong
+product: Gong
 difficulty: Advanced
 ---
 

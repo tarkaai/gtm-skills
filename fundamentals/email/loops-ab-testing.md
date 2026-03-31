@@ -2,6 +2,7 @@
 name: loops-ab-testing
 description: Run A/B tests on email subject lines and content in Loops
 tool: Loops
+product: Loops
 difficulty: Intermediate
 ---
 

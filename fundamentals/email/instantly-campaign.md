@@ -2,6 +2,7 @@
 name: instantly-campaign
 description: Create and launch cold email campaigns in Instantly
 tool: Instantly
+product: Instantly
 difficulty: Intermediate
 ---
 

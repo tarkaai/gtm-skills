@@ -2,6 +2,7 @@
 name: attio-contacts
 description: Create and manage contact records in Attio with proper data hygiene
 tool: Attio
+product: Attio
 difficulty: Beginner
 ---
 

@@ -2,6 +2,7 @@
 name: intercom-conversations-export
 description: Export support conversations and ticket data from Intercom via API for analysis
 tool: Intercom
+product: Intercom
 difficulty: Setup
 ---
 

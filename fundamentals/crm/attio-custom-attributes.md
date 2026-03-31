@@ -2,6 +2,7 @@
 name: attio-custom-attributes
 description: Create and manage custom attributes on Attio objects for structured data like BANT scores
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: n8n-email-integration
 description: Connect n8n to email tools for automated outreach workflows
 tool: n8n
+product: n8n
 difficulty: Intermediate
 ---
 

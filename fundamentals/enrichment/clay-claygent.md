@@ -2,6 +2,7 @@
 name: clay-claygent
 description: Use Claygent AI agent to research prospects with natural language prompts
 tool: Clay
+product: Clay
 difficulty: Intermediate
 ---
 

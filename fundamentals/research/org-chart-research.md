@@ -2,6 +2,7 @@
 name: org-chart-research
 description: Research and reconstruct a target company's org chart using Clay, LinkedIn, and Apollo
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

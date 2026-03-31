@@ -2,6 +2,7 @@
 name: loom-analytics
 description: Track video engagement data from Loom via API to prioritize follow-ups
 tool: Loom
+product: Loom
 difficulty: Beginner
 ---
 

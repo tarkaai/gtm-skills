@@ -2,6 +2,7 @@
 name: stripe-pricing-tables
 description: Create and manage Stripe pricing tables and checkout sessions for plan selection
 tool: Stripe
+product: Stripe
 difficulty: Setup
 ---
 

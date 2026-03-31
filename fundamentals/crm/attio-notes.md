@@ -2,6 +2,7 @@
 name: attio-notes
 description: Create and query structured notes on Attio records for logging interactions
 tool: Attio
+product: Attio
 difficulty: Setup
 ---
 

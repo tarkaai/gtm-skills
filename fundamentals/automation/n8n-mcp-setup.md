@@ -2,6 +2,7 @@
 name: n8n-mcp-setup
 description: Install and configure the n8n MCP server for Claude Code integration
 tool: n8n
+product: n8n
 difficulty: Setup
 ---
 

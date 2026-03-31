@@ -2,6 +2,7 @@
 name: instantly-tracking
 description: Track replies and campaign performance in Instantly via API
 tool: Instantly
+product: Instantly
 difficulty: Beginner
 ---
 

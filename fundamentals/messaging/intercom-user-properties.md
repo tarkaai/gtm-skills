@@ -2,6 +2,7 @@
 name: intercom-user-properties
 description: Configure user properties in Intercom for targeted messaging
 tool: Intercom
+product: Intercom
 difficulty: Setup
 ---
 

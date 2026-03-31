@@ -2,6 +2,7 @@
 name: airtable-content-management
 description: Use Airtable as a content calendar and asset management system for planning, tracking, and organizing marketing content.
 tool: Airtable
+product: Airtable
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: affiliate-program-setup
 description: Create and configure an affiliate or reseller tracking program in your chosen platform
 tool: Rewardful
+product: Rewardful
 difficulty: Setup
 ---
 

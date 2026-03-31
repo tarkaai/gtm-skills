@@ -2,6 +2,7 @@
 name: posthog-holdout-group
 description: Create and manage a persistent holdout group in PostHog that is excluded from all experiments
 tool: PostHog
+product: PostHog
 difficulty: Advanced
 ---
 

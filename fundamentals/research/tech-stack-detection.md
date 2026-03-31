@@ -2,6 +2,7 @@
 name: tech-stack-detection
 description: Detect a company's technology stack via BuiltWith, Wappalyzer, or Clay enrichment
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

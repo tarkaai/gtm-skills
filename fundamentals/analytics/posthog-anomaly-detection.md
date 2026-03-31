@@ -2,6 +2,7 @@
 name: posthog-anomaly-detection
 description: Detect metric anomalies and trend shifts in PostHog using HogQL queries
 tool: PostHog
+product: PostHog
 difficulty: Advanced
 ---
 

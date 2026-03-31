@@ -2,6 +2,7 @@
 name: intercom-checklists
 description: Create and manage Intercom Checklists for guided in-app setup flows with auto-completion tracking
 tool: Intercom
+product: Intercom
 difficulty: Config
 ---
 

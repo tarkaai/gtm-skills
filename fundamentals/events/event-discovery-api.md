@@ -2,6 +2,7 @@
 name: event-discovery-api
 description: Search for upcoming industry events, conferences, and meetups using web scraping and event platform APIs
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

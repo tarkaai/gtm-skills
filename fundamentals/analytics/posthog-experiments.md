@@ -2,6 +2,7 @@
 name: posthog-experiments
 description: Run A/B experiments in PostHog to optimize GTM flows
 tool: PostHog
+product: PostHog
 difficulty: Advanced
 ---
 

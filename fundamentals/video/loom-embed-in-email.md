@@ -2,6 +2,7 @@
 name: loom-embed-in-email
 description: Embed Loom video GIF thumbnails in cold emails for high-engagement outreach
 tool: Loom
+product: Loom
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: posthog-project-setup
 description: Set up a PostHog project with proper configuration for GTM tracking
 tool: PostHog
+product: PostHog
 difficulty: Setup
 ---
 

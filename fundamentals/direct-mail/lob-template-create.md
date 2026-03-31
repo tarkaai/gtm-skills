@@ -2,6 +2,7 @@
 name: lob-template-create
 description: Create a reusable HTML postcard template in Lob with merge variable placeholders
 tool: Lob
+product: Lob
 difficulty: Config
 ---
 

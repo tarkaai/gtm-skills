@@ -2,6 +2,7 @@
 name: podcast-tracking-links
 description: Create UTM-tagged tracking links and vanity URLs for podcast guest appearances
 tool: PostHog
+product: PostHog
 difficulty: Setup
 ---
 

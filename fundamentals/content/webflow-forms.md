@@ -2,6 +2,7 @@
 name: webflow-forms
 description: Create and configure forms in Webflow for lead capture, contact requests, and survey submissions with proper integrations.
 tool: Webflow
+product: Webflow
 difficulty: Setup
 ---
 

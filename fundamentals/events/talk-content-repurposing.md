@@ -2,6 +2,7 @@
 name: talk-content-repurposing
 description: Extract blog posts, social clips, and quote graphics from recorded conference talks using AI transcription and editing
 tool: Descript
+product: Descript
 difficulty: Config
 ---
 

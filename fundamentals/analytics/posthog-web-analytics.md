@@ -2,6 +2,7 @@
 name: posthog-web-analytics
 description: Query PostHog Web Analytics API for page-level traffic, bounce rate, session duration, and conversion data
 tool: PostHog
+product: PostHog
 difficulty: Setup
 ---
 

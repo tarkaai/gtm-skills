@@ -2,6 +2,7 @@
 name: onesignal-segment-management
 description: Create, update, and query user segments in OneSignal for targeted push notification delivery
 tool: OneSignal
+product: OneSignal
 difficulty: Config
 ---
 

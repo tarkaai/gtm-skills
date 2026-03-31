@@ -2,6 +2,7 @@
 name: stripe-subscription-management
 description: Create, update, and manage Stripe subscriptions including plan changes, trials, and cancellations
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

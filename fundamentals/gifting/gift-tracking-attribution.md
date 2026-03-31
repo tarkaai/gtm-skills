@@ -2,6 +2,7 @@
 name: gift-tracking-attribution
 description: Track gift delivery status and attribute downstream responses (meetings, replies, pipeline) to specific gift sends
 tool: PostHog
+product: PostHog
 difficulty: Config
 ---
 

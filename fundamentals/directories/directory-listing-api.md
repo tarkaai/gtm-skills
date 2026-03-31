@@ -2,6 +2,7 @@
 name: directory-listing-api
 description: Create, update, and manage product listings on software directories via their APIs and vendor portals
 tool: G2
+product: G2
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: webflow-landing-pages
 description: Design and launch high-converting landing pages in Webflow for campaigns, product launches, and lead generation.
 tool: Webflow
+product: Webflow
 difficulty: Config
 ---
 

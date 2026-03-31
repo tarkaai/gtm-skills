@@ -2,6 +2,7 @@
 name: integration-compatibility-assessment
 description: Evaluate the technical feasibility and effort required to build a product integration with a partner
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

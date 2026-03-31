@@ -2,6 +2,7 @@
 name: calcom-inline-embed
 description: Embed Cal.com scheduling widget inline on web pages, landing pages, and email CTAs
 tool: Cal.com
+product: Cal.com
 difficulty: Setup
 ---
 

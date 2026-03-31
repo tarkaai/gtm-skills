@@ -2,6 +2,7 @@
 name: outgrow-interactive-content
 description: Build calculators, assessments, quizzes, and recommendation engines in OutGrow with lead capture and analytics
 tool: OutGrow
+product: OutGrow
 difficulty: Config
 ---
 

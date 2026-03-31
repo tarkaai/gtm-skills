@@ -2,6 +2,7 @@
 name: marketplace-analytics-scraping
 description: Scrape download counts, view stats, and ranking data from template marketplaces using Clay or direct APIs
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

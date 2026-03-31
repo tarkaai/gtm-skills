@@ -2,6 +2,7 @@
 name: smartlead-warmup
 description: Warm up sending accounts using Smartlead's warmup network
 tool: Smartlead
+product: Smartlead
 difficulty: Setup
 ---
 

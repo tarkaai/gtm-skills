@@ -2,6 +2,7 @@
 name: descript-clips
 description: Extract and publish short clips from longer recordings using Descript for social media and content marketing.
 tool: Descript
+product: Descript
 difficulty: Config
 ---
 

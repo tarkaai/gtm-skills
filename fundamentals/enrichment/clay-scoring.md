@@ -2,6 +2,7 @@
 name: clay-scoring
 description: Build lead scoring formulas in Clay to prioritize outreach
 tool: Clay
+product: Clay
 difficulty: Intermediate
 ---
 

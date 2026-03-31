@@ -2,6 +2,7 @@
 name: lob-address-verify
 description: Verify and standardize a US mailing address via the Lob Address Verification API
 tool: Lob
+product: Lob
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: apollo-search
 description: Search Apollo's database for prospects matching your ICP
 tool: Apollo
+product: Apollo
 difficulty: Beginner
 ---
 

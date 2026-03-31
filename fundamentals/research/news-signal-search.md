@@ -2,6 +2,7 @@
 name: news-signal-search
 description: Search for recent company news, funding, launches, and leadership changes via web APIs and Clay
 tool: Clay
+product: Clay
 difficulty: Config
 ---
 

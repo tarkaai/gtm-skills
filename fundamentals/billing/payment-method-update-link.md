@@ -2,6 +2,7 @@
 name: payment-method-update-link
 description: Generate a secure one-click link for customers to update their payment method without logging in
 tool: Stripe
+product: Stripe
 difficulty: Config
 ---
 

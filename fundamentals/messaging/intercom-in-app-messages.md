@@ -2,6 +2,7 @@
 name: intercom-in-app-messages
 description: Create targeted in-app messages in Intercom for user engagement
 tool: Intercom
+product: Intercom
 difficulty: Intermediate
 ---
 

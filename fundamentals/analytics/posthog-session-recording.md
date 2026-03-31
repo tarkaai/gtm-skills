@@ -2,6 +2,7 @@
 name: posthog-session-recording
 description: Use PostHog session recordings to understand user behavior
 tool: PostHog
+product: PostHog
 difficulty: Beginner
 ---
 

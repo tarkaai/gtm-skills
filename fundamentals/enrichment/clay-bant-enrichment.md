@@ -2,6 +2,7 @@
 name: clay-bant-enrichment
 description: Enrich prospects with BANT-relevant signals — budget indicators, org chart, tech spend, and timing triggers
 tool: Clay
+product: Clay
 difficulty: Advanced
 ---
 

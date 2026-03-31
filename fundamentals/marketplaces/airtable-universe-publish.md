@@ -2,6 +2,7 @@
 name: airtable-universe-publish
 description: Publish a base template to Airtable Universe with optimized description and CTA links
 tool: Airtable
+product: Airtable
 difficulty: Setup
 ---
 

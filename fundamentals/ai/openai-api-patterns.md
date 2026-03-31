@@ -2,6 +2,7 @@
 name: openai-api-patterns
 description: Use the OpenAI API for embeddings, content generation, and classification in GTM workflows
 tool: OpenAI
+product: OpenAI
 difficulty: Config
 ---
 

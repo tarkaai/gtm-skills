@@ -2,6 +2,7 @@
 name: crossbeam-account-mapping
 description: Use Crossbeam to find overlapping accounts between your CRM and a partner's CRM
 tool: Crossbeam
+product: Crossbeam
 difficulty: Config
 ---
 

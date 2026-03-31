@@ -2,6 +2,7 @@
 name: attio-mcp-setup
 description: Install and configure the Attio MCP server for Claude Code integration
 tool: Attio
+product: Attio
 difficulty: Setup
 ---
 

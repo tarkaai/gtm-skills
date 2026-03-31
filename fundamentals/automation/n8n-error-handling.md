@@ -2,6 +2,7 @@
 name: n8n-error-handling
 description: Add error handling and retry logic to n8n workflows
 tool: n8n
+product: n8n
 difficulty: Intermediate
 ---
 

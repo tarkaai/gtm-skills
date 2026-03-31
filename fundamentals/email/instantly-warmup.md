@@ -2,6 +2,7 @@
 name: instantly-warmup
 description: Warm up sending accounts to build sender reputation before campaigns
 tool: Instantly
+product: Instantly
 difficulty: Setup
 ---
 

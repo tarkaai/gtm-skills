@@ -2,6 +2,7 @@
 name: onesignal-ab-test
 description: Run A/B tests on push notification content, timing, and targeting via OneSignal
 tool: OneSignal
+product: OneSignal
 difficulty: Config
 ---
 

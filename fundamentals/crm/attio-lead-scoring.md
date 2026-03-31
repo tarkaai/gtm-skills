@@ -2,6 +2,7 @@
 name: attio-lead-scoring
 description: Configure lead scoring fields, computed attributes, and score-based automations in Attio
 tool: Attio
+product: Attio
 difficulty: Config
 ---
 

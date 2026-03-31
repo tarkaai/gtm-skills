@@ -2,6 +2,7 @@
 name: affiliate-commission-configuration
 description: Configure commission structures, tiers, and payout rules for an affiliate or reseller program
 tool: Rewardful
+product: Rewardful
 difficulty: Config
 ---
 

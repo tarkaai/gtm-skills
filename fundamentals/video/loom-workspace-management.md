@@ -2,6 +2,7 @@
 name: loom-workspace-management
 description: Organize, tag, and manage a Loom video library at scale via the Loom API for structured tutorial collections
 tool: Loom
+product: Loom
 difficulty: Config
 ---
 

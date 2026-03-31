@@ -2,6 +2,7 @@
 name: ugc-submission-webhook
 description: Receive and process user-generated content submissions via webhook endpoint
 tool: n8n
+product: n8n
 difficulty: Config
 ---
 

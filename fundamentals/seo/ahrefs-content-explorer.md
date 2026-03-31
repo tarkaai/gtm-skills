@@ -2,6 +2,7 @@
 name: ahrefs-content-explorer
 description: Search for blogs accepting guest posts and analyze content opportunities via the Ahrefs Content Explorer API
 tool: Ahrefs
+product: Ahrefs
 difficulty: Config
 ---
 
