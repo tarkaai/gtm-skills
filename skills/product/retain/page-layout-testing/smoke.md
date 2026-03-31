@@ -1,81 +1,92 @@
 ---
 name: page-layout-testing-smoke
 description: >
-    UI/UX Experimentation — Smoke Test. Test UI/UX variations to improve usability, engagement, and
-  conversion.
+  UI/UX Experimentation — Smoke Test. Manually test 3 page layout variations on a small
+  user sample to validate that layout changes produce measurable engagement signal.
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Test 3 layouts"
-kpis: ["Engagement metrics", "Conversion rate", "User satisfaction"]
+outcome: "Test 3 layouts and measure engagement delta on each"
+kpis: ["Click-through rate per layout variant", "Scroll depth per variant", "Time-on-page per variant"]
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - layout-variant-builder
+  - session-recording-friction-analysis
   - threshold-engine
 ---
+
 # UI/UX Experimentation — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** Lead Capture Surface | **Channels:** Product
 
-## Overview
-UI/UX Experimentation — Smoke Test. Test UI/UX variations to improve usability, engagement, and conversion.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Test 3 layouts
+Test 3 distinct page layout variations on 10-50 users each. For each variant, capture click-through rate, scroll depth, and time-on-page. Pass threshold: at least one variant shows a measurable engagement delta (positive or negative) relative to the current layout — proving that layout changes move the metric at all.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- PostHog events firing correctly for all 3 variants within the first 24 hours
+- Session recordings captured for at least 10 users per variant
+- At least one friction pattern identified from recording review
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Identify the target page and form hypotheses
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Select the highest-traffic page that contributes to retention (e.g., the main dashboard, a key feature page, or the settings/configuration flow). Using PostHog funnel data, identify the page with the highest drop-off rate.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Form 3 hypotheses — one per variant. Each hypothesis must follow the format: "If we [specific layout change], then [metric] will [change by X%], because [reason]."
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Example hypotheses for a dashboard page:
+- Variant A: Move the primary CTA above the fold. Expected: +10% click-through because 60% of users never scroll past the fold.
+- Variant B: Replace the feature grid with a single-column list. Expected: +15% scroll depth because list layouts reduce cognitive load.
+- Variant C: Add contextual tooltips to the 3 most-used elements. Expected: +8% time-on-page because tooltips increase exploration.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Test 3 layouts. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Build and instrument the 3 layout variants
 
----
+Run the `layout-variant-builder` drill for each of the 3 variants. For the Smoke level, create PostHog feature flags with low rollout percentages (10-20% per variant, remaining traffic stays on control). Instrument these events on every variant:
 
-## KPIs to track
-- Engagement metrics
-- Conversion rate
-- User satisfaction
+- `layout_variant_viewed` — user saw this variant (with `variant` property)
+- `layout_cta_clicked` — user clicked the primary CTA
+- `layout_scroll_depth` — scroll milestones at 25%, 50%, 75%, 100%
+- `layout_time_on_page` — time spent before navigating away
 
----
+**Human action required:** Implement the actual layout changes in your product code behind the feature flags. The agent instruments events and creates flags; a developer deploys the code changes.
 
-## Pass threshold
-**Test 3 layouts**
+### 3. Review session recordings for friction signals
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Run the `session-recording-friction-analysis` drill on the target page. Review 10-15 recordings of the current layout (before variants go live) to establish a baseline friction profile. Document:
 
----
+- Where users hesitate or scroll back and forth
+- Which elements get rage-clicked
+- Where users abandon the page
 
-## How to run this skill
+After variants are live for 3+ days with 10+ users per variant, review recordings for each variant to compare friction patterns against the baseline.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Evaluate against pass threshold
 
-_Install this skill: `npx gtm-skills add product/retain/page-layout-testing`_
+Run the `threshold-engine` drill. Pass criteria: at least one of the 3 variants shows a measurable engagement delta (>5% change in any primary metric). This proves that layout changes affect user behavior on this page and justifies investing in structured A/B testing at Baseline.
+
+If none of the 3 variants move any metric, either the page is already well-optimized (unlikely) or the changes were too subtle. Test bolder layout changes.
+
+## Time Estimate
+
+- 1 hour: Identify target page, analyze funnel data, form hypotheses
+- 2 hours: Build feature flags, instrument events, configure recordings
+- 1 hour: Review baseline session recordings and document friction
+- 1 hour: Review variant recordings and evaluate threshold after 5-7 days
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, event tracking, session recording, funnels | Free tier: 1M events + 5K recordings/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+
+## Drills Referenced
+
+- `layout-variant-builder` — creates feature flags, instruments events, and wires up variant rendering for each layout test
+- `session-recording-friction-analysis` — reviews session recordings to identify friction patterns and quantify their impact
+- `threshold-engine` — evaluates measured results against the pass/fail threshold

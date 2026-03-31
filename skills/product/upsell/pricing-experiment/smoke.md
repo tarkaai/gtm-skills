@@ -1,81 +1,94 @@
 ---
 name: pricing-experiment-smoke
 description: >
-    Pricing Tests — Smoke Test. Test pricing changes with cohorts to optimize revenue without
-  hurting conversion.
+  Pricing Tests — Smoke Test. Run one controlled pricing experiment on a single plan
+  to prove that pricing changes move revenue per user without spiking churn.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
-channels: "Product, Website"
+motion: "LeadCaptureSurface"
+channels: "Product"
 level: "Smoke Test"
-time: "5 hours over 1 week"
-outcome: "Test 2 pricing models"
-kpis: ["Revenue per user", "Conversion rate", "Churn rate"]
+time: "8 hours over 2 weeks"
+outcome: "1 pricing variant tested with directional revenue-per-user signal (positive or negative) from 50+ users"
+kpis: ["Revenue per user (treatment vs. control)", "30-day churn rate (treatment vs. control)", "Checkout conversion rate"]
 slug: "pricing-experiment"
 install: "npx gtm-skills add product/upsell/pricing-experiment"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - usage-pricing-model-analysis
+  - pricing-experiment-runner
   - threshold-engine
 ---
+
 # Pricing Tests — Smoke Test
 
-> **Stage:** Product → Upsell | **Motion:** Lead Capture Surface | **Channels:** Product, Website
+> **Stage:** Product > Upsell | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Pricing Tests — Smoke Test. Test pricing changes with cohorts to optimize revenue without hurting conversion.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Test 2 pricing models
+One pricing variant has been tested against the current pricing on a small cohort (50+ users). You have directional data showing whether the variant moved revenue per user up, down, or neutral, and whether churn spiked. This is proof of signal, not proof of scale.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Stripe price objects created for the variant without errors
+- PostHog feature flag live and assigning users to control/treatment
+- First billing cycle completed for treatment users (invoices generated at the new price)
+- No surge in support tickets mentioning billing or pricing within the first 7 days
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Analyze current pricing and define the experiment hypothesis
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `usage-pricing-model-analysis` drill to:
+- Identify the value metric that best correlates with retention (API calls, seats, storage, etc.)
+- Map the usage distribution across all active customers (P25, P50, P75, P95)
+- Compute churn rate by usage band to find where pricing causes churn
+- Model 3 pricing scenarios (per-unit, tiered, hybrid) and pick the most promising one
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Produce a structured hypothesis: "If we change from [current pricing] to [variant pricing], then revenue per user will [increase/maintain] by [estimated %] because [reasoning], and churn rate will not increase by more than [limit]."
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+**Human action required:** Review the hypothesis. Approve or revise before proceeding. Pricing experiments directly affect customer trust and revenue.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Test 2 pricing models. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Set up and launch the experiment
 
----
+Run the `pricing-experiment-runner` drill to:
+- Create variant price objects in Stripe (tagged with `metadata[experiment]=pricing_smoke_v1`)
+- Create a PostHog feature flag `pricing-experiment-smoke` with 50/50 split, targeting only the plan being tested, excluding enterprise/custom-priced accounts and accounts less than 30 days old
+- Build the n8n workflow that migrates treatment users to the variant price at their next billing cycle (proration_behavior=none)
+- Send an Intercom in-app message to treatment users explaining the pricing change
+- Define guardrail metrics: auto-revert if treatment churn exceeds control by >50% at any weekly check, or if gross revenue drops >15% vs. control, or if >10 support tickets about pricing in 7 days
 
-## KPIs to track
-- Revenue per user
-- Conversion rate
-- Churn rate
+**Human action required:** Review and approve the Intercom message copy before launch. Pricing communication must be clear and honest.
 
----
+### 3. Monitor for 2 billing cycles and evaluate
 
-## Pass threshold
-**Test 2 pricing models**
+Wait for the experiment to run through at least 1 full billing cycle (minimum 14 days for this smoke test). The `pricing-experiment-runner` drill's weekly monitoring workflow checks guardrails automatically.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+After the evaluation period, run the `threshold-engine` drill to measure against the pass threshold:
+- Did 50+ users complete a billing cycle under the variant?
+- Is there a directional signal on revenue per user (even if not statistically significant)?
+- Did churn rate in the treatment group stay within the guardrail?
 
----
+If PASS: document the hypothesis result, the directional signal, and proceed to Baseline where you run the experiment at scale with statistical rigor. If FAIL: diagnose whether the hypothesis was wrong (pricing model), the execution was wrong (targeting, communication), or the sample was too small. Iterate and re-run.
 
-## How to run this skill
+## Time Estimate
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- 3 hours: usage analysis, hypothesis formulation, hypothesis review
+- 2 hours: Stripe price creation, PostHog flag setup, n8n workflow build, Intercom message
+- 1 hour: launch verification and first-week monitoring
+- 2 hours: evaluation, documentation, decision
 
-_Install this skill: `npx gtm-skills add product/upsell/pricing-experiment`_
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, experiments, event tracking | Free up to 1M feature flag requests/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| Stripe | Variant price objects, subscription management | 2.9% + $0.30/transaction + 0.7% Billing fee — [stripe.com/pricing](https://stripe.com/pricing) |
+| n8n | Subscription migration workflow, weekly monitoring | Standard stack (excluded from play budget) |
+| Intercom | In-app pricing change notification | Proactive Support Plus $99/mo for advanced in-app messages — [intercom.com/pricing](https://www.intercom.com/pricing) |
+
+**Play-specific cost:** Free (PostHog free tier covers smoke-scale flag requests; Stripe fees are transaction-based on existing revenue; Intercom base plan includes basic in-app messaging)
+
+## Drills Referenced
+
+- `usage-pricing-model-analysis` — analyze usage data to identify the optimal pricing variant to test
+- `pricing-experiment-runner` — create Stripe prices, PostHog flags, n8n migration workflow, and guardrail monitoring
+- `threshold-engine` — evaluate experiment results against pass/fail criteria
