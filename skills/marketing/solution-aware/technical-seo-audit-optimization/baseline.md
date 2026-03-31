@@ -5,7 +5,7 @@ description: >
   and fix pipelines. Establish continuous indexation and CWV monitoring.
   Measure organic traffic lift from sustained technical hygiene.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Baseline Run"
 time: "20 hours over 8 weeks"

@@ -8,7 +8,7 @@ description: >
   and produce weekly optimization briefs. The system finds the local maximum for
   case study impact on deal close rate and maintains it as market conditions change.
 stage: "Marketing > ProductAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Durable Intelligence"
 time: "90 hours over 6 months"

@@ -5,7 +5,7 @@ description: >
   driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to
   AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
 stage: "Sales > Won"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Email, Product, Direct"
 level: "Scalable Automation"
 time: "75 hours over 2 months"

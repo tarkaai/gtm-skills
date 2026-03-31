@@ -6,7 +6,7 @@ description: >
   hypotheses, run A/B experiments, evaluate results, and auto-implement winners.
   Converges when successive experiments produce < 2% improvement.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Durable Intelligence"
 time: "Ongoing (2-4 hours/month oversight)"

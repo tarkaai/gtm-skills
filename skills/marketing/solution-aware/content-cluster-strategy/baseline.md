@@ -5,7 +5,7 @@ description: >
   always-on SEO monitoring, automated gap detection, and systematic content production
   to establish consistent organic traffic growth.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Baseline Run"
 time: "40 hours over 8 weeks"

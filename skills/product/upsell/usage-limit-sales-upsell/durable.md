@@ -7,7 +7,7 @@ description: >
   variables, and auto-implements winners. Converges when successive experiments produce
   <2% improvement.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Durable Intelligence"
 time: "130 hours over 6 months"

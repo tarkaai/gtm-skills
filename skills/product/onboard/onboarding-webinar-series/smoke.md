@@ -5,7 +5,7 @@ description: >
   new users. Manually plan, promote, execute, and follow up. Measure whether
   attendees activate at a higher rate than non-attendees.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "MicroEvents"
 channels: "Product, Email, Events"
 level: "Smoke Test"
 time: "6 hours over 2 weeks"

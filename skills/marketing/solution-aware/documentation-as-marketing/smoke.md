@@ -5,7 +5,7 @@ description: >
   readiness, publish 5-8 keyword-targeted documentation pages, and validate that
   docs can attract organic search traffic from solution-aware technical buyers.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "12 hours over 2 weeks"

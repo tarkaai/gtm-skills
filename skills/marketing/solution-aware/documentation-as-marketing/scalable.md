@@ -6,7 +6,7 @@ description: >
   tracking run continuously with minimal human intervention, scaling docs
   traffic and leads 10x.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Scalable Automation"
 time: "50 hours over 3 months"

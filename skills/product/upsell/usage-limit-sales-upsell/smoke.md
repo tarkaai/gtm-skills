@@ -5,7 +5,7 @@ description: >
   qualify the top 3-5 for sales outreach, and close at least 1 expansion deal within
   1 week to validate that usage-limit signals drive sales-led upsell conversations.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Smoke Test"
 time: "7 hours over 1 week"

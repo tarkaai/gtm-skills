@@ -6,7 +6,7 @@ description: >
   autonomous-optimization loop detects anomalies, generates hypotheses, runs experiments, and
   auto-implements winners. Weekly optimization briefs track convergence.
 stage: "Marketing > SolutionAware"
-motion: "PartnershipsWarmIntros"
+motion: "PREarnedMentions"
 channels: "Other"
 level: "Durable Intelligence"
 time: "160 hours over 12 months"

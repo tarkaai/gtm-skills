@@ -5,7 +5,7 @@ description: >
   that surfaces expansion-ready accounts daily, triggers a 4-touch outreach sequence,
   and maintains a live expansion pipeline in Attio over 2 weeks.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Baseline Run"
 time: "22 hours over 2 weeks"

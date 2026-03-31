@@ -6,7 +6,7 @@ description: >
   run A/B experiments on promotion timing/topics/nurture sequences, evaluate results,
   and auto-implement winners. Weekly optimization briefs. Converges at local maximum.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "MicroEvents"
 channels: "Product, Email, Events"
 level: "Durable Intelligence"
 time: "Ongoing — 4 hours/month agent maintenance + human webinar delivery"

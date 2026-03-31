@@ -5,7 +5,7 @@ description: >
   rankings, and conversions. Detects anomalies, generates hypotheses, runs experiments, and auto-implements
   winners to find the local maximum of organic search performance.
 stage: "Marketing > ProblemAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Durable Intelligence"
 time: "120 hours over 6 months"

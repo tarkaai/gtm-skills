@@ -5,7 +5,7 @@ description: >
   targeting a validated ICP pain point. Deploy on a landing page with email-gated results and
   basic PostHog tracking. Prove that prospects will complete the tool and trade their email for results.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Smoke Test"
 time: "6 hours over 3 weeks"

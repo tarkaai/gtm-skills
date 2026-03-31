@@ -5,7 +5,7 @@ description: >
   with always-on SEO monitoring, lead capture infrastructure, and automated
   conversion tracking to establish docs as a consistent pipeline source.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Baseline Run"
 time: "30 hours over 8 weeks"

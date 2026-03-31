@@ -5,7 +5,7 @@ description: >
   outreach, launch quarterly nurture cadence, and validate that analyst engagement produces
   report mentions and influenced deals over 10 weeks.
 stage: "Marketing > SolutionAware"
-motion: "PartnershipsWarmIntros"
+motion: "PREarnedMentions"
 channels: "Other"
 level: "Baseline Run"
 time: "30 hours over 10 weeks"

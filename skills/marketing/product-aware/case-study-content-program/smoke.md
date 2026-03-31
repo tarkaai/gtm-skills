@@ -6,7 +6,7 @@ description: >
   they generate page views and conversions. Validates that customer success stories
   attract product-aware visitors and drive next-step actions.
 stage: "Marketing > ProductAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "10 hours over 4 weeks"

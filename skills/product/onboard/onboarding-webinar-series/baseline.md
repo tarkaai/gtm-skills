@@ -5,7 +5,7 @@ description: >
   and post-webinar nurture pipeline. Run 2-4 webinars over 4 weeks. Validate that
   the activation lift holds with always-on automation handling everything except delivery.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "MicroEvents"
 channels: "Product, Email, Events"
 level: "Baseline Run"
 time: "20 hours over 4 weeks"

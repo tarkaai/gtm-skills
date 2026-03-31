@@ -5,7 +5,7 @@ description: >
   automated tracking, CRM-routed lead capture, and continuous ranking monitoring as the
   first always-on comparison page system.
 stage: "Marketing > SolutionAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Baseline Run"
 time: "25 hours over 8 weeks"

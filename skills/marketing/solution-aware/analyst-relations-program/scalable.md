@@ -5,7 +5,7 @@ description: >
   report tracking via n8n. Scale to 25+ analyst relationships, track analyst-influenced
   pipeline systematically, and hit 30+ influenced deals over 6 months.
 stage: "Marketing > SolutionAware"
-motion: "PartnershipsWarmIntros"
+motion: "PREarnedMentions"
 channels: "Other"
 level: "Scalable"
 time: "75 hours over 6 months"

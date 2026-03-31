@@ -6,7 +6,7 @@ description: >
   hypotheses, run A/B experiments on page elements, auto-implement winners, and maintain
   competitive intelligence freshness.
 stage: "Marketing > SolutionAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Durable Intelligence"
 time: "95 hours over 6 months"

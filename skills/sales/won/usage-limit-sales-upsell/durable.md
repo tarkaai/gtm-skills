@@ -6,7 +6,7 @@ description: >
   to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates
   expansion proposals.
 stage: "Sales > Won"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Durable Intelligence"
 time: "130 hours over 6 months"

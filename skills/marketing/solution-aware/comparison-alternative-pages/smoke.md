@@ -5,7 +5,7 @@ description: >
   comparison pages manually, deploy lead capture CTAs, and validate that competitor-keyword
   organic traffic converts to leads.
 stage: "Marketing > SolutionAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "8 hours over 4 weeks"

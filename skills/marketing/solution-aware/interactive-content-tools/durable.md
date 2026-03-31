@@ -6,7 +6,7 @@ description: >
   winners. Autonomous optimization finds the local maximum for each tool. New tool concepts are
   surfaced from customer conversation analysis.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Durable Intelligence"
 time: "85 hours over 6 months"

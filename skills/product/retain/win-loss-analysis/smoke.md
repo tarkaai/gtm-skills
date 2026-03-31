@@ -5,7 +5,7 @@ description: >
   (won and lost) to validate that structured buyer interviews produce actionable insights
   about why deals are won and lost.
 stage: "Product > Retain"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "8 hours over 1 week"

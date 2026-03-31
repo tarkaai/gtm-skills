@@ -5,7 +5,7 @@ description: >
   closed deals, build competitive intelligence from aggregated data, and measure the impact
   of insight-driven changes on win rates.
 stage: "Product > Retain"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Direct, Email"
 level: "Scalable Automation"
 time: "75 hours over 2 months"

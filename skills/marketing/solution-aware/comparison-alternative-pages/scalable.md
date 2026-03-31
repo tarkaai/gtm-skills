@@ -5,7 +5,7 @@ description: >
   programmatic generation, automated competitive intelligence, and content refresh pipelines
   that maintain and expand the comparison page portfolio without proportional effort.
 stage: "Marketing > SolutionAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Scalable Automation"
 time: "60 hours over 2 months"

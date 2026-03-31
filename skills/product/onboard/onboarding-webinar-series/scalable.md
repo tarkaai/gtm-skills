@@ -5,7 +5,7 @@ description: >
   fully automated series operations. Agent handles topic scheduling, persona-segmented
   promotion, cross-event analytics, and net-new prospect enrichment. Human delivers content.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "MicroEvents"
 channels: "Product, Email, Events"
 level: "Scalable Automation"
 time: "40 hours over 2 months"

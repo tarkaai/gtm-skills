@@ -4,7 +4,7 @@ description: >
   Programmatic SEO Pages — Scalable Automation. Fully automated pipeline generating 500-2,000+ pages
   with AI content generation, automated quality checks, and content refresh cycles.
 stage: "Marketing > ProblemAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Scalable Automation"
 time: "60 hours over 2 months"

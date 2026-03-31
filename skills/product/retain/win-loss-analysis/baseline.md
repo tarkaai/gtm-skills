@@ -5,7 +5,7 @@ description: >
   so every closed deal triggers outreach, and transcripts are automatically analyzed. Prove the
   system produces consistent insights over 2 weeks of continuous operation.
 stage: "Product > Retain"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Direct, Email"
 level: "Baseline Run"
 time: "24 hours over 2 weeks"

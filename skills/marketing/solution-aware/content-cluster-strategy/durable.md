@@ -6,7 +6,7 @@ description: >
   auto-implement winners, and generate weekly optimization briefs to find the local
   maximum of organic traffic and conversion.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Durable Intelligence"
 time: "110 hours over 6 months"

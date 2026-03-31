@@ -6,7 +6,7 @@ description: >
   PostHog event tracking, gated/ungated formats, and a case study hub. First
   always-on automation for identifying and recruiting case study candidates.
 stage: "Marketing > ProductAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Baseline Run"
 time: "35 hours over 8 weeks"

@@ -5,7 +5,7 @@ description: >
   analyze deal outcomes, maintain competitive intelligence, detect strategic shifts, and
   auto-recommend adaptations to sustain or improve win rates over 6+ months.
 stage: "Product > Retain"
-motion: "Outbound Founder-Led"
+motion: "LeadCaptureSurface"
 channels: "Direct, Email"
 level: "Durable Intelligence"
 time: "140 hours over 6 months"

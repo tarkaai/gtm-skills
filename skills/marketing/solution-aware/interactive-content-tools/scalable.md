@@ -5,7 +5,7 @@ description: >
   advanced lead scoring from tool responses, automated A/B testing of tool elements, and multi-channel
   promotion. Find the 10x multiplier through tool templatization and programmatic result personalization.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Scalable Automation"
 time: "55 hours over 2 months"

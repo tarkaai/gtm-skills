@@ -5,7 +5,7 @@ description: >
   category, prepare tailored briefing documents, request briefings, and validate that analyst
   engagement produces at least 2 completed briefings and constructive positioning feedback.
 stage: "Marketing > SolutionAware"
-motion: "PartnershipsWarmIntros"
+motion: "PREarnedMentions"
 channels: "Other"
 level: "Smoke Test"
 time: "12 hours over 3 weeks"

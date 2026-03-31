@@ -5,7 +5,7 @@ description: >
   publish the pillar page and 5 cluster articles with internal links, and validate
   that the cluster drives organic traffic and conversions.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "12 hours over 4 weeks"

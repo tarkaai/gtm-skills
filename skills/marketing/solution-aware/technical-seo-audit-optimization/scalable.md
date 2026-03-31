@@ -5,7 +5,7 @@ description: >
   cover every page. Automate all fix categories including performance. Scale to
   handle site growth without proportional effort.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Scalable Automation"
 time: "40 hours over 3 months"

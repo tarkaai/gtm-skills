@@ -5,7 +5,7 @@ description: >
   Deploy automated lead nurture sequences personalized by tool results. Always-on tracking, CRM routing,
   and result-based email follow-up running continuously.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Baseline Run"
 time: "22 hours over 6 weeks"

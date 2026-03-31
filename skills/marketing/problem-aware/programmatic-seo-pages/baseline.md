@@ -4,7 +4,7 @@ description: >
   Programmatic SEO Pages — Baseline Run. Scale to 50-200 pages with automated content generation,
   structured tracking, and weekly publishing cadence to prove sustained organic growth.
 stage: "Marketing > ProblemAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Baseline Run"
 time: "20 hours over 8 weeks"

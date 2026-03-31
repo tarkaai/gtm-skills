@@ -6,7 +6,7 @@ description: >
   deal-matching engine that routes the right case study to the right deal at the
   right sales stage, and a production cadence of 3-4 new case studies per month.
 stage: "Marketing > ProductAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Scalable Automation"
 time: "60 hours over 2 months"

@@ -4,7 +4,7 @@ description: >
   Programmatic SEO Pages — Smoke Test. Manually research 10-20 long-tail keywords, create a page
   template, and publish 10 pages to prove organic search traffic can be captured at scale.
 stage: "Marketing > ProblemAware"
-motion: "LeadCaptureSurface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "8 hours over 4 weeks"

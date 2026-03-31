@@ -5,7 +5,7 @@ description: >
   content production pipelines, and use cross-channel distribution to reach 12,000+
   monthly organic page views with conversion rate >= 1.0%.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Scalable Automation"
 time: "70 hours over 2 months"

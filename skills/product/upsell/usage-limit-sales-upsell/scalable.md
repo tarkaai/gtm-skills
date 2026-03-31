@@ -6,7 +6,7 @@ description: >
   copy, timing, and offer structure. Scale to 50+ qualified accounts per month with
   expansion close rate sustained at 35%+.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Scalable Automation"
 time: "70 hours over 2 months"

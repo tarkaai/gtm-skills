@@ -5,7 +5,7 @@ description: >
   docs traffic, rankings, and conversions, autonomously running experiments to
   find the local maximum of docs-driven lead generation.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Content, Website"
 level: "Durable Intelligence"
 time: "20 hours over 6 months (ongoing agent compute)"

@@ -5,7 +5,7 @@ description: >
   audit of the website, fix all critical and high-severity issues, and verify
   indexation and Core Web Vitals improvements.
 stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+motion: "FounderSocialContent"
 channels: "Website, Content"
 level: "Smoke Test"
 time: "8 hours over 2 weeks"
