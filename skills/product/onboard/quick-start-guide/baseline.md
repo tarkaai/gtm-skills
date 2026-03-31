@@ -105,7 +105,7 @@ Run the `activation-optimization` drill. Using the PostHog funnels from Step 1:
 1. Identify the guide step with the largest drop-off. This is where users get stuck.
 2. Diagnose the friction:
    - If step instructions are unclear: rewrite using simpler language and add a screenshot/GIF
-   - If the product action is too complex: consider simplifying the UI for that action or breaking the step into sub-steps
+   - If the product action is too complex: break the step into 2 sub-steps, each with a single action, and redeploy
    - If users abandon after viewing but before starting: the guide is not compelling enough — rewrite the intro to emphasize the outcome
 3. Use PostHog session recordings (if enabled) to watch 5-10 users who abandoned at the problem step. Note exactly where they hesitate or leave.
 4. Test one change at a time. Deploy to 50% of new signups via PostHog feature flag. Compare guide completion rate between control and variant after 100+ users per group.
