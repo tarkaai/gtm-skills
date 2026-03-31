@@ -1,80 +1,114 @@
 ---
 name: paid-reddit-ads-smoke
 description: >
-    Paid Reddit Ads — Smoke Test. Run a small Reddit ad budget across a couple of sets and one LP to
-  test if paid community placement drives leads or a meeting.
+  Paid Reddit Ads — Smoke Test. Run a $200-500 Reddit ad campaign targeting 2-3 subreddit
+  clusters with one landing page to test if paid community placement drives leads or a meeting.
 stage: "Marketing > Problem Aware"
-motion: "Lightweight Paid"
+motion: "LightweightPaid"
 channels: "Paid, Social"
 level: "Smoke Test"
-time: "3 hours over 1 week"
-outcome: "≥ 2 leads or ≥ 1 meeting in 1 week"
-kpis: ["Click-through rate", "Landing page visits"]
+time: "4 hours setup + 7 days runtime"
+outcome: "≥ 2 leads or ≥ 1 meeting in 7 days"
+kpis: ["Click-through rate", "Cost per click", "Landing page conversion rate", "Leads generated"]
 slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
-  - ad-campaign-setup
-  - landing-page-pipeline
+  - reddit-ads-campaign-build
+  - reddit-ads-subreddit-targeting
   - threshold-engine
 ---
+
 # Paid Reddit Ads — Smoke Test
 
-> **Stage:** Marketing → Problem Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Social
+> **Stage:** Marketing -> Problem Aware | **Motion:** LightweightPaid | **Channels:** Paid, Social
 
-## Overview
-Paid Reddit Ads — Smoke Test. Run a small Reddit ad budget across a couple of sets and one LP to test if paid community placement drives leads or a meeting.
+## Outcomes
 
-**Time commitment:** 3 hours over 1 week
-**Pass threshold:** ≥ 2 leads or ≥ 1 meeting in 1 week
+Prove that Reddit's community-based audiences respond to your offer. A passing Smoke test demonstrates that people in your target subreddits click your ad and convert on your landing page at a rate worth scaling. You need 2 leads or 1 booked meeting from $200-500 in ad spend.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Ad CTR above 0.4% within the first 3 days (signals creative resonates with the subreddit audience)
+- Landing page views matching click count within 10% (signals tracking is working)
+- At least 1 form engagement (partial fill or scroll past fold) within the first 50 clicks
 
 ## Instructions
 
-### 1. Set up ad campaign
-Run the `ad-campaign-setup` drill to configure your ad platform (Google Ads, LinkedIn Ads, or Meta Ads depending on the play). Set up conversion tracking pixels. Define your target audience using the ICP from your Smoke hypothesis.
+### 1. Research and select target subreddits
 
-### 2. Build a landing page
-Run the `landing-page-pipeline` drill to create a dedicated landing page in Webflow for this campaign. Include: clear headline matching the ad copy, social proof, single CTA, and PostHog tracking. Keep the page simple -- one message, one action.
+Run the `reddit-ads-subreddit-targeting` drill. Identify 6-10 subreddits where your ICP is active. Group them into 2 clusters:
 
-**Human action required:** Set a small test budget ($200-500). Launch the campaign and monitor for 1 week. Do not optimize mid-flight -- let the data accumulate.
+- **Cluster A (Core):** 3-4 subreddits with the highest ICP density scores
+- **Cluster B (Adjacent):** 3-4 subreddits with related but broader audiences
 
-### 3. Track results
-Monitor: impressions, clicks, CTR, landing page conversion rate, cost per lead, lead quality (are they ICP matches?).
+Skip the third cluster at Smoke level. Focus budget on proving the core thesis.
+
+### 2. Build the campaign
+
+Run the `reddit-ads-campaign-build` drill with these Smoke-level parameters:
+
+- **Budget:** $30-70/day for 7 days ($200-500 total)
+- **Objective:** CONVERSIONS
+- **Bid strategy:** CPC at $2.00-3.00
+- **Ad groups:** 2 (one per subreddit cluster)
+- **Ad variants:** 3 per ad group (data hook, question hook, story hook)
+- **Landing page:** 1 dedicated page with Reddit Pixel + PostHog tracking
+
+The drill handles subreddit targeting, creative creation, landing page build, and conversion tracking setup.
+
+**Human action required:** Review the landing page and ad creative before launch. Approve the $200-500 test budget. Activate the campaign.
+
+### 3. Let it run — do not optimize mid-flight
+
+This is a signal test, not an optimization exercise. Let the campaign run for the full 7 days without changing bids, targeting, or creative. The only exceptions:
+
+- If an ad is rejected by Reddit, fix the compliance issue and resubmit
+- If spend is zero after 48 hours, check that campaigns/ad groups/ads are all set to ACTIVE
+- If comments on promoted posts need responses, reply authentically within 4 hours
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥ 2 leads or ≥ 1 meeting in 1 week. If PASS, proceed to Baseline. If FAIL, diagnose whether the issue is targeting (wrong audience), creative (low CTR), or landing page (low conversion).
 
----
+Run the `threshold-engine` drill to measure results against the pass criteria: >= 2 leads or >= 1 meeting in 7 days.
 
-## KPIs to track
-- Click-through rate
-- Landing page visits
+Pull the final numbers from PostHog (leads) and your CRM (meetings). Cross-reference against Reddit Ads Manager reported conversions. Document:
 
----
+- Total spend
+- Impressions, clicks, CTR by ad group
+- Landing page views, conversion rate
+- Leads and meetings by subreddit cluster
+- Cost per lead
+- Which ad variant (data/question/story hook) performed best
+- Qualitative: Were the leads ICP matches? Did they have the problem you solve?
 
-## Pass threshold
-**≥ 2 leads or ≥ 1 meeting in 1 week**
+**PASS (>= 2 leads or >= 1 meeting):** Reddit works for your audience. Move to Baseline.
+**FAIL:** Diagnose the failure point:
+- Low CTR (<0.3%): Creative does not resonate. Test different hooks or subreddits.
+- Good CTR but low conversion: Landing page mismatch. Align page with ad promise.
+- Good conversion but wrong audience: Subreddit targeting needs refinement.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Time Estimate
 
----
+- Subreddit research: 1 hour
+- Campaign build (landing page + creative + tracking): 2 hours
+- Launch review and approval: 30 minutes
+- Monitoring (comment responses, spend checks): 30 minutes total over 7 days
+- Analysis and threshold evaluation: 30 minutes
 
-## How to run this skill
+**Total active time: ~4.5 hours. Calendar time: 7 days.**
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Tools & Pricing
 
-_Install this skill: `npx gtm-skills add marketing/problem-aware/paid-reddit-ads`_
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Reddit Ads | Ad platform | $200-500 test budget. Minimum $5/day. CPC: $0.50-4.00. https://ads.reddit.com |
+| PostHog | Analytics & conversion tracking | Free up to 1M events/mo. https://posthog.com/pricing |
+| Webflow | Landing page | Free plan available, paid from $14/mo. https://webflow.com/pricing |
+| Attio | CRM for lead tracking | Free up to 3 users. https://attio.com/pricing |
+
+**Estimated total cost: $200-500 (ad spend only). No tool costs at Smoke level with free tiers.**
+
+## Drills Referenced
+
+- `reddit-ads-campaign-build` — builds the full campaign (subreddit targeting, creative, landing page, tracking)
+- `reddit-ads-subreddit-targeting` — discovers and scores subreddits for ad targeting
+- `threshold-engine` — evaluates pass/fail against the 2-lead / 1-meeting threshold
