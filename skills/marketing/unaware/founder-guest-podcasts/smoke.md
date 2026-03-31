@@ -1,80 +1,95 @@
 ---
 name: founder-guest-podcasts-smoke
 description: >
-    Founder Guest Podcast — Smoke Test. Pitch a handful of micro podcasts for one guest spot to test
-  whether podcast exposure drives at least one inbound lead.
+  Founder Guest Podcast — Smoke Test. Research 10 relevant podcasts, pitch 5 hosts manually,
+  and book at least 1 guest appearance to test whether podcast exposure generates inbound interest.
 stage: "Marketing > Unaware"
 motion: "PR & Earned Mentions"
 channels: "Content"
 level: "Smoke Test"
 time: "3 hours over 1 week"
-outcome: "≥ 1 inbound lead in 1 week"
-kpis: ["Podcast listens", "Referral traffic"]
+outcome: "≥ 1 podcast guest appearance booked"
+kpis: ["Pitches sent", "Reply rate", "Bookings"]
 slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
 drills:
-  - icp-definition
-  - blog-seo-pipeline
+  - podcast-prospect-research
+  - podcast-pitch-outreach
   - threshold-engine
 ---
+
 # Founder Guest Podcast — Smoke Test
 
 > **Stage:** Marketing → Unaware | **Motion:** PR & Earned Mentions | **Channels:** Content
 
-## Overview
-Founder Guest Podcast — Smoke Test. Pitch a handful of micro podcasts for one guest spot to test whether podcast exposure drives at least one inbound lead.
+## Outcomes
 
-**Time commitment:** 3 hours over 1 week
-**Pass threshold:** ≥ 1 inbound lead in 1 week
+Book at least 1 podcast guest appearance from a cold pitch. This validates that (a) the founder has a pitchable angle, (b) relevant podcasts exist and accept guests, and (c) the pitch-to-booking pipeline works before investing in automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Podcast hosts open pitch emails (open rate > 40%)
+- At least 2 hosts reply (positive or negative — proves deliverability and relevance)
+- At least 1 host requests more info or a one-sheet
 
 ## Instructions
 
-### 1. Define your PR angle
-Run the `icp-definition` drill to define your target media audience: which publications your ICP reads, which journalists cover your space, what story angles would resonate. List 10-20 target publications and journalists.
+### 1. Build a short podcast prospect list
 
-### 2. Create foundational content
-Run the `blog-seo-pipeline` drill to create 2-3 high-quality content pieces that can serve as PR assets: data-driven blog posts, original research, or expert commentary. These give journalists something to reference and link to.
+Run the `podcast-prospect-research` drill at Smoke scale:
+- Search ListenNotes for 3-5 keyword combinations related to the founder's expertise
+- Cross-reference by searching for 2-3 competitor or peer founder names as podcast guests
+- Qualify 10 podcasts: active (episode in last 30 days), accepts guests, listen_score >= 20
+- Manually find host contact info (check podcast website, RSS feed `<itunes:email>`, Twitter bio, LinkedIn)
+- Store in a spreadsheet or Attio list with: podcast name, host name, contact method, topic fit (1-5)
 
-**Human action required:** Pitch journalists and publications directly. Personalize each pitch with why this is relevant to their beat. Offer exclusive data or quotes. Log all outreach in Attio.
+### 2. Prepare 3 pitch angles
 
-### 3. Track media outreach
-Log every pitch: publication, journalist, angle, status (pitched, responded, published, linked). Track resulting coverage: mentions, backlinks, referral traffic.
+Define 3 distinct topics the founder can speak on. Each must be:
+- Specific enough to be a standalone episode title
+- Tied to a data point, contrarian take, or founder story
+- Relevant to the podcast's audience (not a product pitch)
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥ 1 inbound lead in 1 week. If PASS, proceed to Baseline. If FAIL, refine your angles or target different publications.
+Write a 50-word bio and a 150-word bio for the founder. List 2-3 social proof points (prior talks, published work, company milestones).
 
----
+### 3. Pitch 5 podcast hosts
 
-## KPIs to track
-- Podcast listens
-- Referral traffic
+Run the `podcast-pitch-outreach` drill at Smoke scale:
+- Send 5 personalized pitch emails from the founder's personal email (not a sales tool)
+- For each pitch: reference a specific recent episode, match one pitch angle to the show's topics, keep under 150 words
+- Follow up once after 5 days if no reply. Follow up a second time after 12 days. Maximum 3 emails total per host.
 
----
+**Human action required:** The founder sends these emails personally. Agent prepares the drafts and personalizes each one.
 
-## Pass threshold
-**≥ 1 inbound lead in 1 week**
+### 4. Handle replies
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+- Positive ("let's book"): Send the founder's calendar link and bio. Log booking date in Attio.
+- Soft positive ("send more info"): Send the bio and 2-3 tailored topic ideas. Follow up in 3 days.
+- Form redirect ("fill out our form"): Submit the guest application form. Log in Attio.
+- Negative or no reply: Log and move on. Do not re-pitch for 6 months.
 
----
+### 5. Evaluate against threshold
 
-## How to run this skill
+Run the `threshold-engine` drill: did you book at least 1 guest appearance? If PASS, proceed to Baseline. If FAIL, revisit pitch angles (too generic? too niche?), target podcast selection (wrong audience?), or the founder's positioning (is there a clear reason to have them on?).
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Time Estimate
 
-_Install this skill: `npx gtm-skills add marketing/unaware/founder-guest-podcasts`_
+- 1 hour: Podcast research and list building
+- 1 hour: Pitch writing and personalization
+- 1 hour: Sending, monitoring replies, follow-ups
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| ListenNotes | Podcast search and discovery | Free tier: 5 req/min ([pricing](https://www.listennotes.com/api/pricing/)) |
+| Gmail/Workspace | Send pitch emails from founder's address | Included in existing email |
+| Attio | Track podcast pitch status | Part of default stack |
+
+**Estimated play-specific cost:** Free
+
+## Drills Referenced
+
+- `podcast-prospect-research` — find and qualify 10 target podcasts
+- `podcast-pitch-outreach` — craft and send 5 personalized pitches
+- `threshold-engine` — evaluate pass/fail against booking threshold
