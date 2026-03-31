@@ -1,81 +1,109 @@
 ---
 name: reseller-affiliate-program-smoke
 description: >
-    Reseller & Affiliate Program — Smoke Test. Recruit partners to sell your product for commission,
-  expanding reach and generating leads from solution-aware audiences through partner networks.
+  Reseller & Affiliate Program — Smoke Test. Set up affiliate tracking, recruit
+  3-5 partners from your existing network, and validate that partner-referred
+  traffic converts to signups before investing in a scaled program.
 stage: "Marketing > Solution Aware"
 motion: "Partnerships & Warm Intros"
 channels: "Other"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: "≥3 active partners and ≥2 partner-sourced deals in 6 weeks"
-kpis: ["Response rate", "Engagement quality", "Time to response"]
+outcome: "≥3 active partners and ≥2 partner-sourced signups in 2 weeks"
+kpis: ["Partner recruitment rate", "Affiliate link clicks", "Click-to-signup conversion rate"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - threshold-engine
+  - affiliate-program-design
+  - affiliate-recruitment-outreach
 ---
+
 # Reseller & Affiliate Program — Smoke Test
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Other
 
-## Overview
-Reseller & Affiliate Program — Smoke Test. Recruit partners to sell your product for commission, expanding reach and generating leads from solution-aware audiences through partner networks.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** ≥3 active partners and ≥2 partner-sourced deals in 6 weeks
+A configured affiliate tracking platform with 3-5 active partners from your existing network. At least 2 partner-sourced signups within 2 weeks of partner activation. This proves that your product's value proposition translates through partners — that someone other than you can describe the product and drive conversions — before you invest in building a scaled program.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- At least 3 out of 5 recruited partners generate their first affiliate link click within 7 days (signal: the onboarding kit is clear enough for partners to take action)
+- At least 1 partner shares their link without being prompted after the initial pitch (signal: genuine enthusiasm, not just compliance)
+- Click-to-signup conversion rate from affiliate traffic exceeds 5% (signal: partner audiences contain qualified prospects)
+- At least 1 partner asks about commission rates or payment timing (signal: they see this as a real revenue opportunity)
 
 ## Instructions
 
-### 1. Define partner ICP
-Run the `icp-definition` drill to define your ideal partner profile: complementary products, overlapping audiences, similar company stage, and shared values. Identify 10-20 potential partners.
+### 1. Design and configure the affiliate program
 
-### 2. Build a partner prospect list
-Run the `build-prospect-list` drill to research and enrich partner contacts: find the right person at each company (partnerships lead, founder, head of BD), get their email and LinkedIn, and add them to an Attio list.
+Run the `affiliate-program-design` drill with a minimal scope:
 
-**Human action required:** Reach out to 10 partners personally. Use warm intros where possible. Propose a specific, low-commitment collaboration (content swap, co-promotion, intro exchange). Log all outreach in Attio.
+- Choose a commission model: start with 20% recurring for 12 months (standard B2B SaaS benchmark). You can adjust after the smoke test.
+- Set up Rewardful (if you use Stripe) or FirstPromoter. Both have free trials — no cost for the smoke test.
+- Install the tracking snippet on your marketing site and signup flow.
+- Create the partner onboarding kit: partner agreement, product one-pager, 3 approved email blurbs, and affiliate portal login instructions.
+- Run a test purchase through a test affiliate link to verify end-to-end tracking.
 
-### 3. Track partner conversations
-Log every partner interaction in Attio: outreach sent, response received, meeting booked, collaboration agreed, results generated.
+**Human action required:** Complete a test purchase through the affiliate link to verify the tracking works before recruiting real partners.
+
+### 2. Recruit 5 partners from your network
+
+Run the `affiliate-recruitment-outreach` drill with a reduced scope — warm outreach only, no cold:
+
+- Source 5-10 candidates from your existing network: current customers who are consultants or agency owners, founders of complementary products you have a relationship with, advisors or investors with relevant audiences.
+- Personalize each outreach. Reference your existing relationship and explain the specific value prop: "You already know [product] — now earn [commission%] for every customer you refer."
+- Create an affiliate account and tracking link for each partner who accepts.
+- Send them the onboarding kit.
+
+**Human action required:** Personally reach out to 5-10 potential partners. Warm intros and direct outreach only — no cold email at this stage. Log all outreach in Attio.
+
+### 3. Track partner activation
+
+Monitor in Rewardful/FirstPromoter and PostHog:
+
+- Which partners have clicked their own link (testing it)?
+- Which partners have generated clicks from their audience?
+- Which clicks have converted to signups?
+- Which signups have converted to paid?
+
+Log every interaction in Attio: outreach sent, partner accepted, link generated, first click, first referral.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥3 active partners and ≥2 partner-sourced deals in 6 weeks. If PASS, proceed to Baseline. If FAIL, adjust your partner ICP or value proposition.
 
----
+After 2 weeks, measure:
 
-## KPIs to track
-- Response rate
-- Engagement quality
-- Time to response
+- **Active partners**: How many of the recruited partners generated at least 1 click? Target: ≥3
+- **Partner-sourced signups**: How many signups came through affiliate links? Target: ≥2
 
----
+**Pass threshold: ≥3 active partners AND ≥2 partner-sourced signups**
 
-## Pass threshold
-**≥3 active partners and ≥2 partner-sourced deals in 6 weeks**
+- **Pass**: Document which partner types drove the most value (customer-affiliates vs. SaaS resellers vs. content creators). Note which onboarding kit assets partners actually used. Proceed to Baseline.
+- **Marginal**: 2 active partners or 1 signup. Diagnose: Was the commission unappealing? Was the onboarding kit confusing? Did partners not have a natural way to promote? Adjust and re-test with 5 more partners.
+- **Fail**: <2 active partners and 0 signups. The product may not be "referrable" yet — partners need a clear, compelling reason to recommend it. Consider: Is the product differentiated enough? Is the ICP too narrow for partners to identify prospects?
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Time Estimate
 
----
+- Affiliate platform setup and configuration: 2 hours
+- Onboarding kit creation: 1 hour
+- Partner outreach (5-10 contacts): 1 hour (human action)
+- Monitoring and partner support: 1 hour
+- Evaluation and documentation: 1 hour
 
-## How to run this skill
+Total: ~6 hours of active work over 1-2 weeks (waiting for partner activation)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Tools & Pricing
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/reseller-affiliate-program`_
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Rewardful | Affiliate tracking and commission management | 14-day free trial; Starter $49/mo ([rewardful.com/pricing](https://www.rewardful.com/pricing)) |
+| Attio | Partner CRM tracking | Free for up to 3 users ([attio.com/pricing](https://attio.com/pricing)) |
+| PostHog | Click and conversion tracking | Free up to 1M events/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Anthropic Claude | Onboarding kit copywriting | Pay-per-use, ~$0.50 total ([anthropic.com/pricing](https://anthropic.com/pricing)) |
+
+**Estimated cost for this level: Free** (Rewardful free trial covers the smoke test period; all other tools within free tiers)
+
+## Drills Referenced
+
+- `affiliate-program-design` — set up affiliate tracking platform, configure commissions, build onboarding kit
+- `affiliate-recruitment-outreach` — source and recruit partners from your existing network (warm outreach only at this level)
