@@ -1,81 +1,108 @@
 ---
 name: feature-discovery-tooltips-smoke
 description: >
-    Contextual Feature Tooltips — Smoke Test. Show contextual tooltips highlighting underused
-  features at optimal moments to increase discovery and adoption.
+  Contextual Feature Tooltips — Smoke Test. Deploy a single in-app tooltip targeting one
+  underused feature, measure click-through, and validate that contextual nudges drive
+  feature discovery.
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥30% click CTA"
-kpis: ["Tooltip CTR", "Feature adoption", "Dismissal rate"]
+outcome: ">=30% tooltip CTR on >=50 impressions"
+kpis: ["Tooltip CTR", "Feature first-use rate", "Dismissal rate"]
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
 drills:
-  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
+
 # Contextual Feature Tooltips — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product -> Retain | **Motion:** Lead Capture Surface | **Channels:** Product
 
-## Overview
-Contextual Feature Tooltips — Smoke Test. Show contextual tooltips highlighting underused features at optimal moments to increase discovery and adoption.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥30% click CTA
+One tooltip targeting one underused feature achieves >=30% CTR on at least 50 impressions. This proves that contextual in-app nudges can drive feature discovery for your product and user base.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Tooltip impressions accumulating (Intercom message shown events in PostHog)
+- Click events firing within minutes of first deployment
+- Dismissal rate below 50% (users are not annoyed)
+- At least some users who click the tooltip go on to use the feature
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Identify the target feature
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Query PostHog for features with low adoption but high value. Run this PostHog insight:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+```
+Event: feature_used
+Breakdown: feature_name
+Date range: last 30 days
+```
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Rank features by: (total active users) minus (users who used this feature). Pick the feature with the largest gap where the feature is accessible from a page users already visit frequently. Do NOT pick a feature that requires setup or configuration -- pick one that works with a single click or interaction.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥30% click CTA. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Build the tooltip
 
----
+Run the `onboarding-flow` drill to configure a single Intercom in-app tooltip:
 
-## KPIs to track
-- Tooltip CTR
-- Feature adoption
-- Dismissal rate
+- **Target element**: CSS selector of the UI element for the chosen feature
+- **Trigger**: Show when user visits the page where the feature lives AND has not used the feature in the last 30 days AND has been active for at least 7 days
+- **Copy**: One sentence, benefit-first. Example: "Export this view as a spreadsheet in one click." NOT "Did you know about CSV export?"
+- **CTA**: "Try it" -- the button should activate the feature or navigate directly to it
+- **Frequency**: Show once per user. If dismissed, do not show again.
+- **Audience**: All active users who have not used this feature (use Intercom user properties to filter)
 
----
+### 3. Instrument tracking in PostHog
 
-## Pass threshold
-**≥30% click CTA**
+Log these events via PostHog SDK or Intercom-to-PostHog forwarding:
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+```javascript
+posthog.capture('tooltip_shown', { feature: 'csv-export', tooltip_id: 'smoke-v1' });
+posthog.capture('tooltip_cta_clicked', { feature: 'csv-export', tooltip_id: 'smoke-v1' });
+posthog.capture('tooltip_dismissed', { feature: 'csv-export', tooltip_id: 'smoke-v1' });
+```
 
----
+Also track downstream feature usage:
+```javascript
+posthog.capture('feature_used', { feature: 'csv-export', source: 'tooltip' });
+```
 
-## How to run this skill
+**Human action required:** Deploy the Intercom tooltip to production. Verify it renders correctly on the target page by testing with a user account that matches the audience criteria.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Run for 1 week and evaluate
 
-_Install this skill: `npx gtm-skills add product/retain/feature-discovery-tooltips`_
+Let the tooltip run for 7 days or until it accumulates 50+ impressions, whichever comes first.
+
+Run the `threshold-engine` drill to evaluate:
+
+- **Primary metric**: Tooltip CTR (clicks / impressions). Threshold: >=30%.
+- **Secondary metric**: Feature first-use rate (users who used the feature within 24 hours of clicking / total clickers). No threshold for Smoke, but record this -- it becomes the Baseline target.
+- **Guard metric**: Dismissal rate. If >70%, the tooltip is poorly targeted or poorly written.
+
+If PASS (>=30% CTR): Proceed to Baseline. Record the feature first-use rate as the benchmark.
+If FAIL (<30% CTR): Rewrite the copy (try a different benefit angle), change the trigger timing, or pick a different target feature. Re-run.
+
+## Time Estimate
+
+- 1 hour: Feature gap analysis in PostHog
+- 1.5 hours: Tooltip configuration in Intercom + PostHog event setup
+- 0.5 hours: Deploy and verify
+- 2 hours: Monitor over the week + final evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Track tooltip events and feature usage | Free up to 1M events/mo (https://posthog.com/pricing) |
+| Intercom | Deliver in-app tooltips | From $39/seat/mo, tooltips require Engage add-on (https://www.intercom.com/pricing) |
+
+## Drills Referenced
+
+- `onboarding-flow` -- configure the Intercom tooltip and PostHog tracking
+- `threshold-engine` -- evaluate CTR against the >=30% pass threshold
