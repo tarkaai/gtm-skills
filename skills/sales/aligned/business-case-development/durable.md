@@ -1,85 +1,191 @@
 ---
 name: business-case-development-durable
 description: >
-    Business Case Development — Durable Intelligence. Help prospects build compelling internal
-  business case with quantified ROI, strategic alignment, and risk mitigation to secure executive
-  and CFO approval.
+  Business Case Development — Durable Intelligence. Autonomous optimization loop detects
+  declining approval rates, generates improvement hypotheses, A/B tests business case
+  elements, and auto-implements winners. ROI prediction accuracy calibrates continuously
+  from closed-deal outcomes.
 stage: "Sales > Aligned"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Durable Intelligence"
 time: "160 hours over 6 months"
-outcome: "Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence"
-kpis: ["Executive approval rate", "Time to approval", "Business case ROI accuracy", "Enterprise win rate", "Deal size optimization"]
+outcome: "Approval rate sustained or improving over 6 months; ROI prediction accuracy ≥70%; autonomous optimization converges (<2% improvement in 3 consecutive experiments)"
+kpis: ["Executive approval rate trend", "ROI prediction accuracy", "Time-to-approval trend", "Enterprise win rate", "Autonomous experiment win rate"]
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
-  - dashboard-builder
-  - signal-detection
+  - autonomous-optimization
+  - business-case-effectiveness-monitor
+  - roi-prediction-accuracy
 ---
+
 # Business Case Development — Durable Intelligence
 
-> **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales → Aligned | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-## Overview
-Business Case Development — Durable Intelligence. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+## Outcomes
 
-**Time commitment:** 160 hours over 6 months
-**Pass threshold:** Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence
+The business case development process runs autonomously with an always-on optimization loop. The agent detects when approval rates plateau or decline, generates hypotheses for improvement, runs A/B experiments on business case elements, evaluates results, and auto-implements winners. ROI projections continuously calibrate against actual closed-deal outcomes. The system converges toward the local maximum — the best possible approval rate given your market, product, and competitive landscape — and sustains it as conditions change.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Ongoing tool costs:** ~$100-500/mo
-- **Agent compute costs:** Variable based on monitoring frequency
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Autonomous optimization fires hypotheses within 24 hours of anomaly detection
+- A/B experiments complete within 2 weeks (sufficient deal volume per variant)
+- ROI prediction accuracy improves quarter-over-quarter
+- Approval rate holds steady despite market or competitive changes
+- Experiment win rate exceeds 30% (at least 1 in 3 hypotheses produces a measurable improvement)
+- Convergence signal: 3 consecutive experiments produce <2% improvement (local maximum reached)
 
 ## Instructions
 
-### 1. Build monitoring dashboards
-Run the `dashboard-builder` drill to create a PostHog dashboard for business-case-development with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
+### 1. Deploy the autonomous optimization loop
 
-### 2. Deploy signal-based targeting
-Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
+Run the `autonomous-optimization` drill configured for business case development. This creates the core always-on agent loop:
 
-### 3. Set up autonomous optimization
-Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
+**Monitor (daily via n8n cron):**
+1. Query PostHog for the business case approval funnel metrics from the last 2 weeks
+2. Compare against 4-week rolling average
+3. Classify: **normal** (within ±10%), **plateau** (±2% for 3+ weeks), **drop** (>20% decline), **spike** (>50% increase)
+4. If normal → log and continue monitoring
+5. If anomaly detected → trigger diagnosis
 
-### 4. Run continuous improvement cycles
-Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
+**Diagnose (triggered by anomaly):**
+1. Pull current business case configuration from Attio: template version, persona framing, delivery method, ROI presentation format
+2. Pull 8-week metric history from PostHog including segment breakdowns (by industry, deal size, executive persona)
+3. Run `hypothesis-generation` with the anomaly context and business-case-specific variables:
+   - Hypothesis categories: template structure, ROI framing, strategic alignment depth, risk section approach, delivery format, follow-up cadence, champion enablement materials
+4. Receive 3 ranked hypotheses with expected impact
+5. If top hypothesis has risk = "high" (e.g., changes the core financial model approach) → send Slack alert for human review
+6. If risk = "low" or "medium" → proceed to experiment
 
-### 5. Evaluate sustainability
-Measure against: Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
+**Experiment (triggered by hypothesis acceptance):**
+1. Design the experiment using PostHog feature flags
+2. Implement the variant: update the auto-generation n8n workflow to produce the variant version for flagged deals
+3. Minimum experiment duration: 14 days or 15 cases per variant, whichever is longer
+4. Log experiment parameters in Attio: hypothesis, start date, success criteria
+
+**Evaluate (triggered by experiment completion):**
+1. Pull experiment results from PostHog
+2. Run `experiment-evaluation` comparing control vs. variant on approval rate, time-to-approval, and deal progression
+3. Decisions:
+   - **Adopt**: Update the auto-generation workflow to use the winning variant as the new default. Log the change.
+   - **Iterate**: Generate a refined hypothesis building on partial results. Return to Diagnose.
+   - **Revert**: Disable the variant, restore control. Log the failure. Return to Monitor.
+4. Store the full evaluation in Attio
+
+**Report (weekly via n8n cron):**
+1. Aggregate all optimization activity: anomalies detected, hypotheses generated, experiments run, decisions made
+2. Calculate net metric change from adopted changes this week
+3. Generate a weekly optimization brief:
+   - What changed and why
+   - Net impact on approval rate, time-to-approval, win rate
+   - Current distance from estimated local maximum
+   - Recommended focus for next week
+4. Post to Slack and store in Attio
+
+### 2. Deploy business case effectiveness monitoring
+
+Run the `business-case-effectiveness-monitor` drill to create play-specific monitoring:
+
+**Effectiveness dashboard** tracking:
+- Approval funnel: assembled → sent → champion engaged → executive review → approved → won
+- Approval rate by industry, deal size, executive persona, alignment score
+- Element-level tracking: which business case components (strategic alignment, risk mitigation, specific ROI framing) correlate with approval
+
+**Stall detection alerts:**
+- Business case sent > 7 days with no executive review scheduled → alert deal owner
+- Approval rate drops > 15% below 12-week average → alert team lead
+- Low-ROI case sent (< 200%) → flag for additional discovery
+
+**Element effectiveness tracker:**
+After 20+ outcomes, run correlation analysis: which components most strongly predict approval? Feed winning elements into the `autonomous-optimization` loop as high-priority experiment hypotheses.
+
+**Monthly effectiveness report:**
+- Total cases delivered, approved, won
+- Approval rate and time-to-approval trends (3-month chart)
+- Top 3 elements correlated with approval
+- Top 3 rejection/stall reasons
+- Template and framing recommendations
+
+### 3. Deploy ROI prediction accuracy calibration
+
+Run the `roi-prediction-accuracy` drill to create a continuous feedback loop:
+
+**Monthly measurement cycle (n8n cron):**
+1. Query Attio for deals closed ≥90 days ago with ROI models
+2. Pull actual customer outcome data from PostHog (feature adoption, usage volume, time savings)
+3. Run accuracy scoring: compare projected savings per value driver against annualized actuals
+4. Compute:
+   - Mean accuracy across all measured deals
+   - Systematic bias direction (over- or under-projection)
+   - Accuracy by value driver (time savings, cost reduction, revenue increase, risk mitigation)
+   - Accuracy trend over time
+
+**Calibration actions:**
+- If a value driver is systematically over-projected by >20%, add a discount factor to future ROI models
+- If a value driver is under-projected, note it but keep conservative (better to over-deliver)
+- If a value driver has no measurement data, either add PostHog tracking or remove from projections
+- Feed calibration recommendations into the auto-generation workflow so future ROI models improve automatically
+
+**Accuracy target:** ≥70% mean accuracy across all measured deals by month 6.
+
+### 4. Set Durable guardrails
+
+**Critical guardrails (auto-revert if breached):**
+- If approval rate drops >30% during any experiment → auto-revert immediately
+- Maximum 1 active experiment at a time per business case element
+- Maximum 4 experiments per month. If all 4 fail → pause optimization and alert for human strategic review
+
+**Human approval required for:**
+- Changes to the core financial model methodology (NPV calculations, discount rates)
+- Changes that affect >50% of auto-generated cases simultaneously
+- Any hypothesis flagged as "high risk" by the hypothesis generator
+
+**Cooldown rules:**
+- After a failed experiment, wait 7 days before testing the same variable
+- After 3 consecutive failures on the same category, escalate to human review of the entire category
+
+**Convergence detection:**
+- When 3 consecutive experiments produce <2% improvement → declare convergence
+- Reduce monitoring frequency from daily to weekly
+- Report: "Business case development has reached its local maximum. Current approval rate: {X}%. Further gains require strategic changes (new markets, product changes, pricing model changes) rather than tactical optimization."
+
+### 5. Continuous strategic adaptation
+
+Even at convergence, the agent monitors for external changes that may shift the local maximum:
+- Market shifts: new competitor entering, economic conditions changing approval dynamics
+- Product changes: new features that create new value drivers for business cases
+- Buyer behavior changes: new executive personas entering the approval chain, changing procurement processes
+- Seasonal patterns: budget cycles that affect approval timing
+
+When external change is detected, reset to active monitoring and run a fresh diagnosis cycle.
 
 ---
 
-## KPIs to track
-- Executive approval rate
-- Time to approval
-- Business case ROI accuracy
-- Enterprise win rate
-- Deal size optimization
+## Time Estimate
 
----
+- 25 hours: configuring autonomous optimization loop (n8n workflows, PostHog experiments, guardrails)
+- 15 hours: setting up business case effectiveness monitoring and stall detection
+- 10 hours: configuring ROI prediction accuracy measurement and calibration pipeline
+- 80 hours: monitoring, reviewing weekly briefs, approving high-risk experiments over 6 months (~3 hrs/week)
+- 30 hours: analyzing monthly reports, calibrating ROI models, updating templates based on experiment results
 
-## Pass threshold
-**Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence**
+## Tools & Pricing
 
-This level runs continuously. Review monthly: what improved, what to retire, what new experiments to run.
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal data, experiment tracking, accuracy scores | Standard stack (excluded) |
+| PostHog | Analytics — experiments, anomaly detection, dashboards | Standard stack (excluded) |
+| n8n | Automation — optimization loop scheduling, alerts, auto-generation | Standard stack (excluded) |
+| Anthropic Claude API | Hypothesis generation, experiment evaluation, ROI model calibration | ~$30-80/mo at volume ([pricing](https://platform.claude.com/docs/en/about-claude/pricing)) |
+| Clay | Continuous stakeholder and initiative enrichment | ~$200-500/mo ([pricing](https://www.clay.com/pricing)) |
+| Qwilr (optional) | Interactive business case delivery for A/B testing formats | ~$39-49/user/mo ([pricing](https://qwilr.com/pricing/)) |
 
----
+**Estimated play-specific cost:** ~$250-600/mo (Clay + Claude API + optional Qwilr)
 
-## How to run this skill
+## Drills Referenced
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
-
-_Install this skill: `npx gtm-skills add sales/aligned/business-case-development`_
+- `autonomous-optimization` — the core always-on agent loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
+- `business-case-effectiveness-monitor` — play-specific monitoring tracking approval rates, element effectiveness, stall detection, and monthly effectiveness reports
+- `roi-prediction-accuracy` — measures projected vs. realized ROI across closed deals, computes model accuracy, and produces calibration recommendations for future projections

@@ -1,85 +1,145 @@
 ---
 name: risk-assessment-discovery-scalable
 description: >
-    Risk & Concern Discovery — Scalable Automation. Surface concerns, risks, and objections early in
-  the sales cycle to address them proactively rather than encountering surprises at decision time.
+  Risk & Concern Discovery -- Scalable Automation. 10x multiplier via continuous risk monitoring
+  across all deal activity (not just discovery calls), predictive risk scoring per deal, pattern
+  analysis across the pipeline, and automated mitigation content library expansion.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Scalable Automation"
 time: "57 hours over 2 months"
-outcome: "Risks discovered and mitigated on ≥75% of opportunities at scale over 2 months with reduced late-stage surprises"
-kpis: ["Risk discovery rate", "Early risk identification", "Mitigation success rate", "Close rate improvement", "Deal predictability score"]
+outcome: "Risks discovered and mitigated on >=75% of opportunities at scale over 2 months with late-stage surprise rate <10%"
+kpis: ["Risk discovery rate at scale", "Early risk identification rate (before proposal)", "Mitigation success rate", "Close rate improvement vs pre-play baseline", "Deal predictability score"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
-  - ab-test-orchestrator
----
-# Risk & Concern Discovery — Scalable Automation
-
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
-
-## Overview
-Risk & Concern Discovery — Scalable Automation. Surface concerns, risks, and objections early in the sales cycle to address them proactively rather than encountering surprises at decision time.
-
-**Time commitment:** 57 hours over 2 months
-**Pass threshold:** Risks discovered and mitigated on ≥75% of opportunities at scale over 2 months with reduced late-stage surprises
-
+  - risk-intelligence-monitor
+  - risk-pattern-analysis
+  - risk-mitigation-delivery
 ---
 
-## Budget
+# Risk & Concern Discovery -- Scalable Automation
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
+> **Stage:** Sales > Connected | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+## Outcomes
 
----
+Risk monitoring expands from discovery calls only to the entire deal lifecycle. Every call transcript, email exchange, and CRM update is scanned for risk signals. Predictive risk scoring flags at-risk deals before problems surface. Pattern analysis across the pipeline identifies which risks kill deals, which mitigations work, and where the content library has gaps. The 10x multiplier: risks are caught from all touchpoints (not just dedicated risk calls) and mitigations are delivered proactively based on predicted risks, not just discovered ones.
+
+## Leading Indicators
+
+- Risk signals are detected from demo calls, technical deep-dives, and email threads (not just discovery calls)
+- Predictive risk scores correlate with actual deal outcomes (Red deals lose more often than Green)
+- Late-stage surprise rate drops below 10% (surprises = risks first surfaced at proposal/negotiation stage)
+- Mitigation content library is expanding based on gap analysis (content created for the most common unmitigatable risks)
+- Risk prediction accuracy improves month-over-month (as pattern data accumulates)
+- Close rate on risk-assessed deals exceeds close rate on unassessed deals by a measurable margin
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Deploy the always-on risk intelligence monitor
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `risk-intelligence-monitor` drill to create three n8n workflows:
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+**Transcript scanner:** Fireflies webhook triggers risk extraction on ALL sales calls (not just discovery). The scanner compares new risks against existing risk data per deal and detects: new risks, escalated risks, and resolved risks. Alerts fire immediately for new Critical risks and risk escalations.
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+**Email scanner:** Attio webhook triggers on new email activity logged to a deal. Claude analyzes the email body for risk signals, hesitation language, competitor mentions, and disengagement patterns. Results feed into the same risk delta calculation and alert routing.
 
-### 5. Evaluate against threshold
-Measure against: Risks discovered and mitigated on ≥75% of opportunities at scale over 2 months with reduced late-stage surprises. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+**Predictive scorer:** Daily n8n cron workflow scores every open deal's risk likelihood based on:
+- Historical risk patterns for this segment (from pattern analysis)
+- Deal age vs. average cycle time
+- Number of stakeholders engaged (single-thread risk)
+- Days since last activity (going dark risk)
+- Pain-to-price ratio (weak value foundation risk)
+- Champion identification status
+- Existing unaddressed risks
 
----
+Deals are classified Green (0-30), Yellow (31-60), Red (61+). Red deals get immediate Slack alerts.
 
-## KPIs to track
-- Risk discovery rate
-- Early risk identification
-- Mitigation success rate
-- Close rate improvement
-- Deal predictability score
+### 2. Launch bi-weekly risk pattern analysis
 
----
+Run the `risk-pattern-analysis` drill on a bi-weekly n8n schedule. This aggregates risk data across all deals and produces:
 
-## Pass threshold
-**Risks discovered and mitigated on ≥75% of opportunities at scale over 2 months with reduced late-stage surprises**
+- **Risk frequency matrix:** Which categories appear most often, by segment
+- **Mitigation effectiveness report:** Which assets resolve risks fastest, which have low success rates
+- **Risk-to-loss pathway:** For lost deals, was the fatal risk discovered early or late? Was mitigation attempted?
+- **Prediction accuracy tracking:** Pre-call predictions vs. actual risks, trending over time
+- **Content gap analysis:** Which risk categories lack effective mitigation assets
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+Use the output to:
+- Update the risk prediction prompts in `risk-discovery-call-prep` with new segment-specific risk patterns
+- Prioritize mitigation content creation for the highest-frequency, lowest-success-rate gaps
+- Refine the question bank: retire questions with low surface rates, add questions for underprobed categories
 
----
+### 3. Scale the mitigation content library
 
-## How to run this skill
+Based on pattern analysis gaps, systematically build mitigation assets:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- **Financial:** ROI calculator, TCO comparison, payment flexibility options, money-back guarantee terms
+- **Technical:** Security whitepaper, SOC2/compliance documentation, integration architecture diagrams, migration playbooks, uptime SLA
+- **Organizational:** Change management case studies, adoption timeline examples, training plan templates, internal champion toolkit
+- **Timeline:** Implementation plan with milestones, phased rollout options, quick-win examples
+- **Vendor:** Customer reference list (segmented by industry/size), product roadmap summary, support SLA documentation, company stability metrics
 
-_Install this skill: `npx gtm-skills add sales/connected/risk-assessment-discovery`_
+**Human action required:** Create 2-3 mitigation assets per category. The agent can draft outlines, but humans must validate accuracy, especially for security docs and legal commitments.
+
+The `risk-mitigation-delivery` drill uses this expanded library to improve match quality and fill gaps.
+
+### 4. Build the daily risk digest
+
+Configure the `risk-intelligence-monitor` daily digest:
+- Aggregates all risk events from the last 24 hours
+- Groups by deal: new risks, escalations, resolutions
+- Lists all Red deals with predictive scores and top risk factors
+- Reports overall pipeline risk posture: total unaddressed Critical risks, average mitigation coverage
+
+Post to a dedicated Slack channel. The founder reviews the digest each morning to prioritize which deals need attention.
+
+### 5. Set guardrails
+
+- **Late-stage surprise rate:** Track risks first surfaced at proposal or later vs. total risks. Must stay below 10%. If it rises, the discovery process is missing risks.
+- **Mitigation response time:** 24-hour SLA for Medium+ risks. Track via PostHog: `hours_between_risk_identified_and_mitigation_sent`. Alert if SLA is missed.
+- **False positive rate:** Track risk alerts where no actual risk existed. If above 20%, tighten extraction thresholds.
+- **Coverage floor:** Risk data must exist on >= 75% of pipeline deals. If coverage drops, check for automation failures.
+
+### 6. Evaluate at 2 months
+
+Measure against threshold:
+- Risk discovery rate: >= 75% of opportunities have risk data (from any source: calls, emails, predictive)
+- Late-stage surprise rate: < 10% of risks first appear at proposal or later
+- Close rate impact: compare close rate on risk-assessed deals vs. historical baseline (pre-play)
+- Deal predictability: Red-scored deals should lose at >= 2x the rate of Green-scored deals
+
+If PASS and metrics hold for 4+ consecutive weeks, proceed to Durable. If FAIL, focus on the weakest metric: coverage (automation issues), late-stage surprises (discovery gaps), or prediction accuracy (model needs more data).
+
+## Time Estimate
+
+- Risk intelligence monitor setup: 8 hours (3 n8n workflows: transcript, email, predictive)
+- Pattern analysis configuration: 4 hours (bi-weekly cron, report generation)
+- Content library expansion: 16 hours (2-3 assets x 5 categories, human creation with agent drafts)
+- Daily digest setup: 2 hours (aggregation workflow + Slack integration)
+- Guardrail configuration: 3 hours (PostHog alerts + n8n monitors)
+- Ongoing monitoring: 2 hours/week x 8 weeks = 16 hours
+- Pattern analysis review: 1 hour bi-weekly x 4 = 4 hours
+- Evaluation: 2 hours
+- Buffer: 2 hours
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Fireflies | Call transcription for all sales calls | Pro: $10/user/mo annual ([fireflies.ai/pricing](https://fireflies.ai/pricing)) |
+| Clay | Prospect enrichment for risk prediction | Launch: $185/mo ([clay.com/pricing](https://www.clay.com/pricing)) |
+| Anthropic (Claude) | Risk extraction, mitigation matching, pattern analysis | ~$15-40/mo at scale ([anthropic.com/pricing](https://www.anthropic.com/pricing)) |
+| Instantly | Mitigation email delivery at scale | Growth: $30/mo ([instantly.ai/pricing](https://instantly.ai/pricing)) |
+
+**Total play-specific cost:** ~$240-465/mo
+
+_Your CRM (Attio), PostHog, and automation platform (n8n) are standard stack -- not included._
+
+## Drills Referenced
+
+- `risk-intelligence-monitor` -- always-on scanning of transcripts, emails, and deal data for risk signals; predictive scoring; daily digest
+- `risk-pattern-analysis` -- bi-weekly aggregation of risk data across pipeline; identifies patterns, mitigation effectiveness, and content gaps
+- `risk-mitigation-delivery` -- automated matching and delivery of mitigation content (now using expanded library)

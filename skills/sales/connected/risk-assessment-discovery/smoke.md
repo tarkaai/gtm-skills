@@ -1,84 +1,119 @@
 ---
 name: risk-assessment-discovery-smoke
 description: >
-    Risk & Concern Discovery — Smoke Test. Surface concerns, risks, and objections early in the
-  sales cycle to address them proactively rather than encountering surprises at decision time.
+  Risk & Concern Discovery -- Smoke Test. Run structured risk probing on 8-10 discovery calls
+  to surface Financial, Technical, Organizational, Timeline, and Vendor concerns. Agent prepares
+  per-call risk question guides, human executes calls, agent extracts and logs risk data post-call.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Risks identified and addressed with ≥8 opportunities in 1 week"
-kpis: ["Risk discovery completion rate", "High-severity risk identification", "Mitigation plan creation rate", "Late-stage objection reduction"]
+outcome: "Risks identified and addressed with >=8 opportunities in 1 week with >=70% having documented mitigation plans"
+kpis: ["Risk discovery completion rate", "High-severity risk identification count", "Mitigation plan creation rate", "Risk category distribution"]
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - risk-discovery-call-prep
+  - risk-discovery-call
   - threshold-engine
 ---
-# Risk & Concern Discovery — Smoke Test
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+# Risk & Concern Discovery -- Smoke Test
 
-## Overview
-Risk & Concern Discovery — Smoke Test. Surface concerns, risks, and objections early in the sales cycle to address them proactively rather than encountering surprises at decision time.
+> **Stage:** Sales > Connected | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Risks identified and addressed with ≥8 opportunities in 1 week
+## Outcomes
 
----
+Surface hidden risks, concerns, and implementation fears during 8-10 discovery calls. Each call should probe all five risk categories (Financial, Technical, Organizational, Timeline, Vendor). At least 70% of opportunities should have documented mitigation plans for every high-severity risk identified.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Risk questions are surfacing concerns the prospect would not have volunteered unprompted
+- At least 2 risk categories are covered per call
+- Prospects are sharing specific fears (not just "no concerns")
+- Seller has mitigation responses ready for the most common risks
+- Late-stage surprise rate begins to decline compared to deals without risk discovery
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for risk-assessment-discovery. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Prepare risk-probing question guides for upcoming calls
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your risk-assessment-discovery materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+For each of your next 8-10 scheduled discovery calls, run the `risk-discovery-call-prep` drill. This will:
+- Pull the deal context from Attio (company, contact, industry, deal value)
+- Enrich the prospect via Clay (tech stack, recent news, org size, regulatory environment)
+- Generate predicted risks by category using Claude
+- Produce a structured risk-probing question guide stored as an Attio note
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+Do this 24 hours before each call so you have time to review the prep.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Execute risk discovery on each call
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: Risks identified and addressed with ≥8 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+**Human action required:** Run the discovery calls. During each call, after initial pain discovery:
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+- Transition to risk probing: "I want to make sure we address any concerns upfront so nothing catches us off guard later."
+- Use the universal openers first:
+  - "What concerns do you have about making this change?"
+  - "What would need to be true for you to feel confident this will succeed?"
+  - "What has gone wrong with past vendor decisions?"
+- Then probe the 2 predicted decision-blocking categories from the prep doc
+- For each risk surfaced: acknowledge it, probe for severity ("On a scale of 1-10, how worried are you?"), and note whether it blocks the decision
+- Capture exact quotes -- they power the mitigation messaging later
+- Close: "Is there anything else that would prevent this from being successful?"
 
----
+### 3. Process each call post-conversation
 
-## KPIs to track
-- Risk discovery completion rate
-- High-severity risk identification
-- Mitigation plan creation rate
-- Late-stage objection reduction
+After each call, run the `risk-discovery-call` drill. This will:
+- Retrieve the Fireflies transcript
+- Extract all risks with category, severity, likelihood, and supporting quotes
+- Score each risk (severity x likelihood)
+- Compare actual risks against the pre-call predictions
+- Log structured risk data to the Attio deal record
+- Fire PostHog tracking events
+- Route: flag high-risk deals for immediate follow-up, queue medium-risk for mitigation content
 
----
+### 4. Address identified risks within 48 hours
 
-## Pass threshold
-**Risks identified and addressed with ≥8 opportunities in 1 week**
+For each high-severity risk (score >= 50), prepare a mitigation response manually:
+- Financial risks: draft an ROI calculation or cost comparison
+- Technical risks: prepare an integration architecture diagram or security documentation
+- Organizational risks: share a change management case study or adoption timeline
+- Timeline risks: provide a realistic implementation plan with milestones
+- Vendor risks: offer a reference call with a similar customer
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Human action required:** Send the mitigation material to the prospect via email. Reference their exact words: "You mentioned you were concerned about [exact quote] -- here is how we address that."
 
----
+### 5. Evaluate against threshold
 
-## How to run this skill
+Run the `threshold-engine` drill to evaluate results:
+- Did you complete risk discovery on >= 8 opportunities this week?
+- Do >= 70% have documented mitigation plans for all high-severity risks?
+- Were risks logged in Attio with category, severity, and likelihood scores?
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+If PASS, proceed to Baseline. If FAIL, diagnose: Were risk questions too vague? Did prospects not open up? Were certain categories consistently missed? Adjust the question bank and re-run.
 
-_Install this skill: `npx gtm-skills add sales/connected/risk-assessment-discovery`_
+## Time Estimate
+
+- Call prep: 15 min per call x 8-10 calls = 2-2.5 hours (agent does enrichment and question generation; human reviews)
+- Risk probing during calls: 15-20 min per call (incremental time within existing discovery calls)
+- Post-call processing: 10 min per call x 8-10 calls = 1.5 hours (agent extracts and logs)
+- Mitigation prep: 15 min per high-severity risk (human drafts or selects content)
+- Threshold evaluation: 15 min
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Fireflies | Call transcription and risk extraction | Free plan: 800 min/mo; Pro: $10/user/mo annual ([fireflies.ai/pricing](https://fireflies.ai/pricing)) |
+| Clay | Prospect enrichment for risk prediction | Free plan: 100 credits/mo ([clay.com/pricing](https://www.clay.com/pricing)) |
+| Anthropic (Claude) | Risk extraction from transcripts, question generation | Pay-per-use, ~$0.01-0.05 per call extraction ([anthropic.com/pricing](https://www.anthropic.com/pricing)) |
+
+**Total play-specific cost:** Free (using free tiers of Fireflies and Clay, minimal Claude API usage)
+
+_Your CRM (Attio), PostHog, and automation platform (n8n) are standard stack -- not included._
+
+## Drills Referenced
+
+- `risk-discovery-call-prep` -- generates per-call risk-probing question guides from enrichment data
+- `risk-discovery-call` -- post-call processing: extract risks, score, log to CRM, route mitigations
+- `threshold-engine` -- evaluates pass/fail against the 8-opportunity, 70%-mitigation threshold
