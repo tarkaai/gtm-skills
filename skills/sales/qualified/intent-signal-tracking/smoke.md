@@ -1,85 +1,115 @@
 ---
 name: intent-signal-tracking-smoke
 description: >
-    Intent Signal Tracking — Smoke Test. Monitor and act on buyer intent signals like website
-  behavior, content consumption, and G2 research to reach prospects at peak buying moment, from
-  manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers
-  personalized outreach automatically.
+  Intent Signal Tracking — Smoke Test. Manually identify and act on buying intent signals from
+  website visitors, G2 research, job changes, and funding events. Validate that intent-based
+  outreach produces measurably higher reply rates than cold outreach.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: ">=5 high-intent accounts and >=30% reply rate from intent-based outreach in 1 week"
-kpis: ["Intent signals per day", "Reply rate (intent vs non-intent)", "Time from signal to outreach"]
+outcome: ">=5 high-intent accounts identified and >=30% reply rate from intent-based outreach vs <=15% from cold outreach in 1 week"
+kpis: ["Intent signals captured per day", "Reply rate (intent vs cold)", "Time from signal to outreach"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - signal-detection
+  - intent-score-model
   - threshold-engine
 ---
+
 # Intent Signal Tracking — Smoke Test
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
+> **Stage:** Sales > Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
-## Overview
-Intent Signal Tracking — Smoke Test. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** >=5 high-intent accounts and >=30% reply rate from intent-based outreach in 1 week
+Prove that outreach triggered by intent signals produces a measurably higher reply rate than equivalent cold outreach. Identify at least 5 high-intent accounts from signals you can actually capture today. This is a manual, one-week test — no automation, no budget.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Intent signals are appearing daily from at least one source (website analytics, G2, LinkedIn alerts)
+- You can distinguish high-intent from low-intent accounts based on signal strength
+- Reply rate on intent-based outreach is trending above 25% within the first 3 days
+- Time from signal detection to first outreach is under 4 hours
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for intent-signal-tracking. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Set up manual signal capture
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your intent-signal-tracking materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+You do not need paid tools for Smoke. Set up free signal sources:
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+- **Website:** Open PostHog and review identified visitors who viewed your pricing page, case studies, or demo page in the last 7 days. If PostHog identifies companies (via reverse-IP or logged-in users), note them.
+- **G2:** If you have a G2 vendor profile, check my.g2.com for buyer intent signals (available free with basic profiles). Note companies browsing your category or comparing alternatives.
+- **LinkedIn:** Set Google Alerts for your company name and competitor names. Monitor LinkedIn for prospects posting about problems your product solves.
+- **Job boards:** Check if target accounts are hiring for roles that suggest they need your product (e.g., if you sell dev tools, look for "DevOps Engineer" postings at target companies).
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+Log every signal in a spreadsheet or Attio: company name, signal type, signal source, date detected, signal strength (high/medium/low).
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: >=5 high-intent accounts and >=30% reply rate from intent-based outreach in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+### 2. Build a quick scoring model
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Run the `signal-detection` drill to define which signals matter most for your ICP. Then run the `intent-score-model` drill in manual mode: assign rough point values to each signal type. You do not need Clay for Smoke — use a spreadsheet formula.
 
----
+Suggested starting weights:
+- Pricing page visit: 15 points
+- G2 alternatives/compare signal: 20 points
+- Multiple site visits: 5 points per visit (max 25)
+- New exec hire at target: 5 points
+- Active job postings in your domain: 5 points
 
-## KPIs to track
-- Intent signals per day
-- Reply rate (intent vs non-intent)
-- Time from signal to outreach
+Score each account. Any account scoring 40+ is "high intent."
 
----
+### 3. Craft signal-specific outreach
 
-## Pass threshold
-**>=5 high-intent accounts and >=30% reply rate from intent-based outreach in 1 week**
+For each high-intent account, write a personalized email that connects to the specific signal you detected. Do NOT reveal you know they visited your site. Instead, reference the underlying need the signal implies.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Example for a pricing page visitor:**
+"I noticed [Company] is scaling its [domain] team — we have been helping similar companies at your stage [solve specific problem]. Would a 15-minute call be useful?"
 
----
+**Example for a G2 comparison signal:**
+"Companies evaluating [category] tools often struggle with [specific pain point]. We built [product] specifically to solve that. Happy to share what makes us different in 15 minutes."
 
-## How to run this skill
+Write 2 variants per signal type. Send to the highest-ranking contact at each account.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Human action required:** Send each email manually. Do not use an email sequencer — this is a Smoke test. Log every send in your spreadsheet/Attio with timestamp.
 
-_Install this skill: `npx gtm-skills add sales/qualified/intent-signal-tracking`_
+### 4. Run a cold control group
+
+To prove intent signals matter, send the same number of outreach emails to accounts with NO detected intent signals but that otherwise match your ICP. Use your best generic cold email template. Log sends and replies identically.
+
+### 5. Measure and evaluate
+
+After 7 days, run the `threshold-engine` drill to evaluate:
+- How many high-intent accounts did you identify? (target: >=5)
+- What was the reply rate on intent-based outreach? (target: >=30%)
+- What was the reply rate on cold outreach? (expected: <=15%)
+- What was the average time from signal to outreach?
+
+If intent outreach reply rate is at least 2x cold outreach, the signal is real. Proceed to Baseline.
+
+## Time Estimate
+
+- 1 hour: set up signal sources and spreadsheet
+- 1 hour: review signals and score accounts
+- 2 hours: write personalized outreach (intent + cold control)
+- 1 hour: send outreach manually and log results
+- 1 hour: measure, analyze, and document findings
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Website visitor analytics | Free tier (1M events/mo) |
+| Attio | CRM for logging signals and outreach | Free tier (3 users) |
+| G2 (my.g2.com) | Third-party intent signals | Free with vendor profile |
+| Google Alerts | Brand/competitor mention monitoring | Free |
+| Spreadsheet | Manual signal scoring | Free |
+
+**Total play-specific cost: $0**
+
+## Drills Referenced
+
+- `signal-detection` — define which intent signals to monitor and how to categorize them
+- `intent-score-model` — build the weighted scoring model (manual version for Smoke)
+- `threshold-engine` — evaluate results against pass/fail threshold

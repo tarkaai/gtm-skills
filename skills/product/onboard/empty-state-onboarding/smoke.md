@@ -1,81 +1,105 @@
 ---
 name: empty-state-onboarding-smoke
 description: >
-    Empty State Guidance — Smoke Test. Convert empty states into onboarding opportunities with
-  contextual CTAs, examples, and quick-start templates.
+  Empty State Guidance — Smoke Test. Audit product empty states, design contextual CTAs with
+  sample data and templates for the highest-priority surface, and validate that users click
+  through at 40%+ in a small test group.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥40% click CTA"
-kpis: ["Empty state CTR", "Activation rate", "Feature adoption"]
+outcome: ">=40% empty state CTR on the primary P0 surface across 20+ users"
+kpis: ["Empty state CTR", "CTA click-to-creation rate", "Time from empty state view to first item created"]
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - empty-state-design
+  - posthog-gtm-events
   - threshold-engine
 ---
+
 # Empty State Guidance — Smoke Test
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Onboard | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Empty State Guidance — Smoke Test. Convert empty states into onboarding opportunities with contextual CTAs, examples, and quick-start templates.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥40% click CTA
+A single P0 empty state surface has been redesigned with a contextual CTA, sample data or templates, and full PostHog tracking. At least 20 users have seen the new empty state and 40%+ clicked the CTA. You have baseline data on which CTA copy, template, or sample data drove the most first-item creations.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- `empty_state_viewed` events are flowing in PostHog within 1 hour of deploying the new design
+- Users who click the CTA create their first item within 5 minutes (low friction confirmation)
+- No users report confusion or file support tickets about the new empty state
+- Session recordings show users scanning the empty state and clicking the CTA without hesitation
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Set up event tracking
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `posthog-gtm-events` drill to define the empty state event taxonomy. At minimum, instrument these events in your product code:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+- `empty_state_viewed` with properties: `surface`, `priority`, `user_signup_age_hours`
+- `empty_state_cta_clicked` with properties: `surface`, `cta_text`
+- `first_item_created` with properties: `surface`, `creation_method` (from_scratch / from_template)
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Verify events are flowing by checking PostHog Live Events after deploying to staging.
+
+### 2. Audit and design the primary empty state
+
+Run the `empty-state-design` drill. Focus exclusively on the single highest-priority empty state surface — the one on the direct path to your product's activation metric.
+
+Specifically:
+1. Watch 10-20 new user session recordings in PostHog to identify which empty state users hit first and where they stall
+2. Pick the P0 surface that the most users encounter before activating
+3. Design the empty state with: contextual headline, 2-3 templates OR sample data, one specific CTA button, and a secondary help link
+4. Implement the design and deploy behind a PostHog feature flag so you can control rollout
+
+**Human action required:** Review the empty state design before deploying. Verify the CTA copy is specific ("Create your first project" not "Get started"), the templates are relevant to your target user, and the help link goes to useful content. Deploy to 20-50 users via the PostHog feature flag.
+
+### 3. Observe behavior for 7 days
+
+Let the test group use the product for 7 days. Do not change anything during this period. Monitor PostHog daily:
+- Are `empty_state_viewed` events firing? If zero events, the feature flag or tracking is broken — fix immediately.
+- Are `empty_state_cta_clicked` events following views? If yes, the design is working.
+- Are `first_item_created` events following clicks? If clicks are high but creations are low, the creation flow after the CTA has friction.
+
+Watch 5 session recordings of users who saw the empty state but did NOT click the CTA. Note what they did instead — did they navigate away, try a different path, or appear confused?
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥40% click CTA. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
----
+Run the `threshold-engine` drill. Compute:
+- **Empty state CTR:** `empty_state_cta_clicked / empty_state_viewed` for the P0 surface
+- **Click-to-creation rate:** `first_item_created / empty_state_cta_clicked`
+- **Threshold:** CTR >= 40%
 
-## KPIs to track
-- Empty state CTR
-- Activation rate
-- Feature adoption
+If PASS (CTR >= 40%): Document the winning design, the CTR, and the click-to-creation rate. Proceed to Baseline.
 
----
+If FAIL (CTR < 40%): Diagnose from session recordings. Common fixes:
+- CTA copy is too vague — make it more specific
+- Templates are not relevant to the user's use case — change them
+- Empty state is below the fold — move the CTA higher
+- Users do not understand what the feature does — add a one-sentence explanation
+Iterate and re-test with another 20-user cohort. You can run up to 3 iterations within the Smoke week.
 
-## Pass threshold
-**≥40% click CTA**
+## Time Estimate
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+- 1 hour: Set up PostHog event tracking
+- 2 hours: Audit empty states, design the P0 surface, implement and deploy
+- 1 hour: Monitor and watch session recordings during the week
+- 1 hour: Evaluate threshold and document results
 
----
+## Tools & Pricing
 
-## How to run this skill
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, session recordings, feature flags | Free tier: 1M events + 5K recordings/mo. [posthog.com/pricing](https://posthog.com/pricing) |
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Estimated play-specific cost at this level:** $0 (free tier sufficient for 20-50 users)
 
-_Install this skill: `npx gtm-skills add product/onboard/empty-state-onboarding`_
+## Drills Referenced
+
+- `empty-state-design` — audit empty states, design the P0 surface with CTA, templates, and tracking
+- `posthog-gtm-events` — define the event taxonomy for empty state tracking
+- `threshold-engine` — evaluate the 40% CTR pass/fail threshold
