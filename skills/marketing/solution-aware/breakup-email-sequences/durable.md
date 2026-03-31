@@ -18,7 +18,6 @@ slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
 drills:
   - autonomous-optimization
-  - breakup-reengagement-monitor
 ---
 
 # Breakup Email Sequences — Durable Intelligence
@@ -27,7 +26,7 @@ drills:
 
 ## Outcomes
 
-The breakup email pipeline runs autonomously with an AI agent continuously optimizing every variable: copy angles, signal weighting, cool-off timing, asset selection, send timing, and ICP segment targeting. The `autonomous-optimization` drill runs the core loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, and auto-implement winners. The `breakup-reengagement-monitor` drill tracks breakup-specific dynamics: pool health, signal lift trends, message fatigue curves, and breakup-to-pipeline attribution. Together, these drills find the local maximum of breakup re-engagement performance and maintain it as the market, prospect pool, and competitive landscape evolve.
+The breakup email pipeline runs autonomously with an AI agent continuously optimizing every variable: copy angles, signal weighting, cool-off timing, asset selection, send timing, and ICP segment targeting. The `autonomous-optimization` drill runs the core loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, and auto-implement winners. The `autonomous-optimization` drill tracks breakup-specific dynamics: pool health, signal lift trends, message fatigue curves, and breakup-to-pipeline attribution. Together, these drills find the local maximum of breakup re-engagement performance and maintain it as the market, prospect pool, and competitive landscape evolve.
 
 Pass: Re-engagement rate ≥ 4% sustained for 6 consecutive months with the founder spending ≤ 30 minutes/week on breakup-related tasks.
 Fail: Re-engagement rate drops below 4% for 3 consecutive weeks despite automated interventions, or the system requires more than 1 hour/week of founder time.
@@ -118,7 +117,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy breakup-specific monitoring
 
-Run the `breakup-reengagement-monitor` drill to build the monitoring layer that tracks dynamics unique to breakup sequences:
+Run the `autonomous-optimization` drill to build the monitoring layer that tracks dynamics unique to breakup sequences:
 
 **PostHog dashboard (6 panels):**
 1. Weekly re-engagement rate trend (signal vs. no-signal vs. blended) with Scalable baseline reference line
@@ -290,4 +289,4 @@ Compute over the full 6-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that detects metric anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
-- `breakup-reengagement-monitor` — breakup-specific monitoring: pool health, signal lift trends, variant fatigue curves, and breakup-to-pipeline attribution
+- `autonomous-optimization` — breakup-specific monitoring: pool health, signal lift trends, variant fatigue curves, and breakup-to-pipeline attribution

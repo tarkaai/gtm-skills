@@ -15,7 +15,6 @@ slug: "viral-loop-design"
 install: "npx gtm-skills add product/referrals/viral-loop-design"
 drills:
   - autonomous-optimization
-  - viral-coefficient-monitor
 ---
 
 # Built-In Virality — Durable Intelligence
@@ -78,7 +77,7 @@ Run the `autonomous-optimization` drill configured for the viral loop play. The 
 
 ### 2. Deploy viral-specific health monitoring
 
-Run the `viral-coefficient-monitor` drill. This creates the viral-specific signal detection layer:
+Run the `autonomous-optimization` drill. This creates the viral-specific signal detection layer:
 
 **Daily viral health checks:**
 - Primary metrics monitored: K-factor (rolling 7-day), invite volume, invite-to-signup conversion, referee activation rate
@@ -153,4 +152,4 @@ This level runs continuously. Review monthly: what the autonomous loop changed, 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `viral-coefficient-monitor` — viral-specific health monitoring: K-factor trends, channel decay detection, referrer pipeline health, and weekly viral health reports
+- `autonomous-optimization` — viral-specific health monitoring: K-factor trends, channel decay detection, referrer pipeline health, and weekly viral health reports

@@ -15,7 +15,6 @@ slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
 drills:
   - autonomous-optimization
-  - proactive-outreach-health-monitor
   - support-churn-correlation
 ---
 
@@ -43,7 +42,7 @@ Success = sustained or improving engagement ≥45% and retention lift ≥20pp ov
 
 ### 1. Deploy the proactive outreach health monitor
 
-Run the `proactive-outreach-health-monitor` drill (all 5 steps). This builds the observability layer that the autonomous optimization loop needs:
+Run the `autonomous-optimization` drill (all 5 steps). This builds the observability layer that the autonomous optimization loop needs:
 
 - PostHog dashboard with 6 panels tracking the full detection-to-retention pipeline
 - Daily n8n workflow that checks metrics against rolling averages and fires anomaly alerts
@@ -95,7 +94,7 @@ Run the `support-churn-correlation` drill to build a continuous feedback loop be
 The Durable-specific capability: the system automatically adapts when the product changes:
 
 **New struggle pattern detection:**
-When the `proactive-outreach-health-monitor` detects a spike in "unmapped workflow" struggles (users flagged with a `primary_stuck_workflow` that has no help resource mapping), the agent:
+When the `autonomous-optimization` detects a spike in "unmapped workflow" struggles (users flagged with a `primary_stuck_workflow` that has no help resource mapping), the agent:
 1. Extracts the common error messages and failure modes from PostHog
 2. Checks if a relevant Intercom help article already exists
 3. If yes: adds it to the mapping automatically
@@ -152,5 +151,5 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — The always-on monitor/diagnose/experiment/evaluate/implement loop that finds the local maximum
-- `proactive-outreach-health-monitor` — Play-specific monitoring of the full detection-to-retention pipeline with daily checks and weekly health briefs
+- `autonomous-optimization` — Play-specific monitoring of the full detection-to-retention pipeline with daily checks and weekly health briefs
 - `support-churn-correlation` — Continuous feedback loop connecting support ticket patterns to struggle detection and outreach effectiveness

@@ -16,7 +16,6 @@ slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
   - autonomous-optimization
-  - partner-marketplace-monitor
 ---
 
 # Partner Marketplace Listings — Durable Intelligence
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-Always-on AI agents finding the local maximum. The `autonomous-optimization` drill runs the core loop: detect metric anomalies across all marketplace listings, generate improvement hypotheses, run A/B experiments on listing copy and landing pages, evaluate results, and auto-implement winners. The `partner-marketplace-monitor` drill provides the continuous data feed. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
+Always-on AI agents finding the local maximum. The `autonomous-optimization` drill runs the core loop: detect metric anomalies across all marketplace listings, generate improvement hypotheses, run A/B experiments on listing copy and landing pages, evaluate results, and auto-implement winners. The `autonomous-optimization` drill provides the continuous data feed. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
 
 The goal is not to grow forever -- it is to find the best possible performance for each marketplace listing given the current market conditions and maintain it as conditions change (new competitors, marketplace algorithm updates, seasonal demand shifts).
 
@@ -45,7 +44,7 @@ The goal is not to grow forever -- it is to find the best possible performance f
 
 ### 1. Deploy the partner marketplace monitoring system
 
-Run the `partner-marketplace-monitor` drill to build the continuous data collection and reporting infrastructure:
+Run the `autonomous-optimization` drill to build the continuous data collection and reporting infrastructure:
 
 1. Configure comprehensive PostHog tracking events for the full marketplace-to-revenue funnel across all listings
 2. Build the weekly n8n data collection workflow pulling analytics from every marketplace API
@@ -189,4 +188,4 @@ The monitoring system should detect and adapt to:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate-implement loop that finds the local maximum for each marketplace listing
-- `partner-marketplace-monitor` -- continuous data collection, dashboard, anomaly detection, competitive intelligence, and weekly reporting across the full marketplace portfolio
+- `autonomous-optimization` -- continuous data collection, dashboard, anomaly detection, competitive intelligence, and weekly reporting across the full marketplace portfolio

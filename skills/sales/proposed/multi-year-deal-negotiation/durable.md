@@ -18,7 +18,6 @@ slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
   - autonomous-optimization
-  - deal-negotiation-intelligence-monitor
 ---
 
 # Multi-Year Deal Negotiation — Durable Intelligence
@@ -54,7 +53,7 @@ Run the `autonomous-optimization` drill configured for the multi-year deal negot
 **Phase 2 — Diagnose (triggered by anomaly):**
 - Pull play context from Attio: current deal structure templates, scoring model performance, active experiments, pipeline composition
 - Pull 8-week metric history from PostHog
-- Pull behavioral cohort analysis from the `deal-negotiation-intelligence-monitor` (quick closers vs grinders patterns, segment performance, loss reasons)
+- Pull behavioral cohort analysis from the `autonomous-optimization` (quick closers vs grinders patterns, segment performance, loss reasons)
 - Run `hypothesis-generation` with negotiation-specific context. Example hypotheses:
   - "Close rate dropped 15% because 60% of proposals this month went to growth-segment accounts (ACV $10-15K) which historically close at 18% vs 35% for mid-market. Experiment: increase readiness score threshold for growth segment from 80 to 95."
   - "Average discount increased from 12% to 17% — anchor-to-close ratio fell from 0.88 to 0.78. Sellers are conceding faster. Experiment: add a 48-hour cooling period between concession rounds in the automation workflow."
@@ -93,7 +92,7 @@ Run the `autonomous-optimization` drill configured for the multi-year deal negot
 
 ### 2. Deploy the negotiation intelligence monitor
 
-Run the `deal-negotiation-intelligence-monitor` drill to create the play-specific monitoring layer:
+Run the `autonomous-optimization` drill to create the play-specific monitoring layer:
 
 **PostHog dashboard (8 panels):**
 1. Multi-year close rate (weekly trend line with 4-week rolling average)
@@ -178,4 +177,4 @@ Agent compute is variable based on experiment velocity and monitoring frequency.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run experiments -> evaluate -> implement winners -> report weekly. Converges when successive experiments produce <2% improvement.
-- `deal-negotiation-intelligence-monitor` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly intelligence report, behavioral cohort analysis that feeds domain-specific hypotheses into the optimization loop
+- `autonomous-optimization` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly intelligence report, behavioral cohort analysis that feeds domain-specific hypotheses into the optimization loop

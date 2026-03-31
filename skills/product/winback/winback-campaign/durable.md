@@ -16,7 +16,6 @@ slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
 drills:
   - autonomous-optimization
-  - winback-campaign-health-monitor
   - dashboard-builder
 ---
 
@@ -58,7 +57,7 @@ Run the `dashboard-builder` drill to create a comprehensive PostHog dashboard fo
 
 ### 2. Deploy the winback campaign health monitor
 
-Run the `winback-campaign-health-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - Daily anomaly checks on reactivation rate, email open rate, segment performance, rechurn rate, and reactivated user retention
 - Weekly health briefs aggregating metrics, surfacing the biggest optimization opportunity, and listing active experiments
@@ -72,7 +71,7 @@ This monitor is the eyes of the Durable system. Without it, the autonomous optim
 
 Run the `autonomous-optimization` drill, configured for the winback-campaign play. The loop operates on a weekly cadence:
 
-**Monitor (daily):** The `winback-campaign-health-monitor` checks all winback metrics against rolling averages. Anomalies trigger the Diagnose phase.
+**Monitor (daily):** The `autonomous-optimization` checks all winback metrics against rolling averages. Anomalies trigger the Diagnose phase.
 
 **Diagnose (triggered by anomaly):** The agent pulls 8 weeks of winback data from PostHog and the current system configuration from Attio (active segments, offer types, send timing, channel routing, sequence copy). It generates 3 ranked hypotheses. Examples of hypotheses the agent might generate:
 
@@ -200,5 +199,5 @@ If reactivation rate sustains or improves for 6 consecutive months, the play is 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor -> diagnose -> experiment -> evaluate -> implement. Runs weekly and finds the local maximum of the winback system.
-- `winback-campaign-health-monitor` — play-specific monitoring that feeds signals to the optimization loop. Daily anomaly checks, weekly health briefs, critical alerts, segment retirement recommendations.
+- `autonomous-optimization` — play-specific monitoring that feeds signals to the optimization loop. Daily anomaly checks, weekly health briefs, critical alerts, segment retirement recommendations.
 - `dashboard-builder` — PostHog dashboard with reactivation trends, segment heatmaps, offer quality analysis, retention curves, revenue recovery, and experiment log.

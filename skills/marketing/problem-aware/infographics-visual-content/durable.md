@@ -15,14 +15,13 @@ slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
 drills:
   - autonomous-optimization
-  - infographic-performance-monitor
 ---
 # Infographics & Visual Content — Durable Intelligence
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Social, Content
 
 ## Overview
-Deploy always-on AI agents that autonomously monitor infographic performance, detect anomalies, generate improvement hypotheses, run experiments, and implement winners. The `autonomous-optimization` drill runs the core optimization loop. The `infographic-performance-monitor` drill provides the infographic-specific monitoring, attribution, and reporting that feeds the optimization loop with actionable data.
+Deploy always-on AI agents that autonomously monitor infographic performance, detect anomalies, generate improvement hypotheses, run experiments, and implement winners. The `autonomous-optimization` drill runs the core optimization loop. The `autonomous-optimization` drill provides the infographic-specific monitoring, attribution, and reporting that feeds the optimization loop with actionable data.
 
 **Time commitment:** 180 hours over 12 months
 **Pass threshold:** Sustained backlink growth (≥15/month) over 12 months via AI-driven topic selection and design optimization
@@ -44,7 +43,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Instructions
 
 ### 1. Deploy the infographic performance monitor
-Run the `infographic-performance-monitor` drill to build the always-on monitoring system:
+Run the `autonomous-optimization` drill to build the always-on monitoring system:
 
 - **PostHog dashboard** with 5 panels: publishing cadence, social engagement, backlink acquisition, traffic/pipeline, and efficiency metrics
 - **Anomaly detection** checking daily for engagement drops and weekly for backlink drought, link quality decline, or traffic drops
@@ -174,7 +173,7 @@ This level runs continuously. Review monthly: what the optimization loop changed
 
 ## Drills Referenced
 - `autonomous-optimization` — the core optimization loop: monitor, diagnose, experiment, evaluate, implement, report
-- `infographic-performance-monitor` — infographic-specific monitoring, backlink tracking, attribution, and anomaly detection
+- `autonomous-optimization` — infographic-specific monitoring, backlink tracking, attribution, and anomaly detection
 
 ---
 

@@ -15,7 +15,6 @@ slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
 drills:
   - autonomous-optimization
-  - piggyback-meetup-performance-monitor
   - event-scouting
 ---
 
@@ -87,7 +86,7 @@ When an anomaly triggers, the `autonomous-optimization` drill runs Phase 2 (Diag
 
 ### 2. Deploy the performance monitoring layer
 
-Run the `piggyback-meetup-performance-monitor` drill to build:
+Run the `autonomous-optimization` drill to build:
 
 **Real-time dashboard** with:
 - Headline metrics: total RSVPs, attendance rate, meetings, pipeline, cost-per-meeting (30/90 day views)
@@ -182,5 +181,5 @@ All guardrails from the `autonomous-optimization` drill apply, plus:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that makes Durable fundamentally different; detects metric anomalies, generates hypotheses, runs A/B tests, auto-implements winners
-- `piggyback-meetup-performance-monitor` — real-time dashboard, post-event reports, monthly summaries, conference selection intelligence, and promotion channel analysis
+- `autonomous-optimization` — real-time dashboard, post-event reports, monthly summaries, conference selection intelligence, and promotion channel analysis
 - `event-scouting` — continuous conference discovery with learning feedback from actual piggyback outcomes

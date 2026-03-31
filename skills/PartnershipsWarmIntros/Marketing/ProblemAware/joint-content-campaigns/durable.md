@@ -17,7 +17,6 @@ slug: "joint-content-campaigns"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/joint-content-campaigns"
 drills:
   - autonomous-optimization
-  - joint-content-performance-monitor
 ---
 # Joint Content Campaigns -- Durable Intelligence
 
@@ -85,7 +84,7 @@ Run the `autonomous-optimization` drill configured for this play's metrics. The 
 - Post to Slack and store in Attio
 
 ### 2. Deploy joint content performance monitoring
-Run the `joint-content-performance-monitor` drill to maintain a live scorecard of:
+Run the `autonomous-optimization` drill to maintain a live scorecard of:
 - Per-asset download velocity, conversion rate, and lead quality
 - Per-partner contribution (how much of your lead volume comes from each partner's audience)
 - Per-topic performance (which problem areas resonate most with the shared ICP)
@@ -186,4 +185,4 @@ This level runs continuously. Review monthly: what experiments ran, what improve
 
 ## Drills Referenced
 - `autonomous-optimization` -- the always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum
-- `joint-content-performance-monitor` -- per-asset, per-partner, and per-topic performance tracking and weekly briefs
+- `autonomous-optimization` -- per-asset, per-partner, and per-topic performance tracking and weekly briefs

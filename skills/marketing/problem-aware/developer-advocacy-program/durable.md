@@ -17,7 +17,6 @@ slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
 drills:
   - autonomous-optimization
-  - devrel-performance-monitor
   - dashboard-builder
 ---
 
@@ -104,7 +103,7 @@ Post to Slack and store in Attio.
 
 ### 2. Build the devrel performance monitoring system
 
-Run the `devrel-performance-monitor` drill to create the always-on monitoring layer:
+Run the `autonomous-optimization` drill to create the always-on monitoring layer:
 
 1. **Real-time dashboard** in PostHog with 6 panels: content production, content reach, community health, speaking program, full-funnel attribution, and efficiency metrics
 2. **Anomaly detection** running daily for content, community, lead, and speaking signals — each anomaly trigger feeds into the autonomous optimization loop
@@ -176,5 +175,5 @@ Once converged, the agent shifts from optimization to maintenance:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor → diagnose → experiment → evaluate → implement. Finds the local maximum of program performance through continuous experimentation.
-- `devrel-performance-monitor` — real-time dashboards, anomaly detection, cross-channel attribution, and automated reporting specific to developer advocacy programs
+- `autonomous-optimization` — real-time dashboards, anomaly detection, cross-channel attribution, and automated reporting specific to developer advocacy programs
 - `dashboard-builder` — executive-level program dashboards showing health, channel comparison, trends, and convergence tracking

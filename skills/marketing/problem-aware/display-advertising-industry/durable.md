@@ -17,7 +17,6 @@ slug: "display-advertising-industry"
 install: "npx gtm-skills add Marketing/ProblemAware/display-advertising-industry"
 drills:
   - autonomous-optimization
-  - display-performance-reporting
 ---
 
 # Display Advertising — Durable Intelligence
@@ -107,7 +106,7 @@ Run the `autonomous-optimization` drill configured for the display advertising p
 
 ### 2. Deploy Display Performance Reporting
 
-Run the `display-performance-reporting` drill:
+Run the `autonomous-optimization` drill:
 
 1. Build the PostHog display dashboard (8 panels: spend/reach trends, placement quality matrix, creative performance, audience segment comparison, conversion funnel, lead quality trend, cross-platform CPA trend, pipeline attribution)
 2. Build Attio saved views (display-sourced contacts, display pipeline, display ROI by campaign)
@@ -220,4 +219,4 @@ In these cases: the optimizer flags the situation and recommends whether tactica
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in display KPIs, generate hypotheses (placement saturation, creative fatigue, audience exhaustion, cross-platform CPA drift, lead quality decline), run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `display-performance-reporting` — comprehensive reporting on display advertising effectiveness: placement quality matrix, creative health, audience performance, and pipeline attribution dashboards, weekly and monthly automated reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on display advertising effectiveness: placement quality matrix, creative health, audience performance, and pipeline attribution dashboards, weekly and monthly automated reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.

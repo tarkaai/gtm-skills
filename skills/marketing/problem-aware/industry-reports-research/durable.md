@@ -17,7 +17,6 @@ slug: "industry-reports-research"
 install: "npx gtm-skills add marketing/problem-aware/industry-reports-research"
 drills:
   - autonomous-optimization
-  - report-performance-monitor
   - industry-research-production
 ---
 
@@ -27,7 +26,7 @@ drills:
 
 ## Outcomes
 
-Durable is where the report motion runs itself. An always-on AI agent loop monitors the entire report pipeline -- production quality, distribution effectiveness, landing page conversion, lead quality, and long-tail organic performance -- detects anomalies, generates improvement hypotheses, runs experiments, evaluates results, and auto-implements winners. The goal is finding the local maximum of report-driven lead generation and maintaining it as the market shifts. The `autonomous-optimization` drill runs the core loop. The `report-performance-monitor` drill provides the data feeds. Topic selection, distribution timing, and follow-up sequences all evolve based on experiment results rather than guesswork.
+Durable is where the report motion runs itself. An always-on AI agent loop monitors the entire report pipeline -- production quality, distribution effectiveness, landing page conversion, lead quality, and long-tail organic performance -- detects anomalies, generates improvement hypotheses, runs experiments, evaluates results, and auto-implements winners. The goal is finding the local maximum of report-driven lead generation and maintaining it as the market shifts. The `autonomous-optimization` drill runs the core loop. The `autonomous-optimization` drill provides the data feeds. Topic selection, distribution timing, and follow-up sequences all evolve based on experiment results rather than guesswork.
 
 **Pass threshold:** Sustained or improving lead generation (>=40 qualified leads per report) over 6 months. The autonomous optimization loop has run at least 12 experiments and reached convergence (successive experiments produce <2% improvement on the primary metric).
 
@@ -106,7 +105,7 @@ Generate a weekly optimization brief summarizing: anomalies detected, experiment
 
 ### 2. Deploy the report performance monitoring layer
 
-Run the `report-performance-monitor` drill. This builds:
+Run the `autonomous-optimization` drill. This builds:
 
 - **Master dashboard** in PostHog with 5 panels: download funnel per report, lead generation trend, distribution channel performance, long-tail organic performance, and content-to-pipeline attribution.
 - **Anomaly detection** feeding into the autonomous optimization loop: download declines, conversion drops, lead droughts, channel decay, and SEO ranking losses.
@@ -186,5 +185,5 @@ The agent continues monitoring to detect market shifts (competitor report launch
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-report loop that finds the local maximum
-- `report-performance-monitor` — dashboard, anomaly detection, weekly briefs, and content-to-pipeline attribution specific to reports
+- `autonomous-optimization` — dashboard, anomaly detection, weekly briefs, and content-to-pipeline attribution specific to reports
 - `industry-research-production` — quarterly report production with optimization-driven topic selection and format improvements

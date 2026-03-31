@@ -16,7 +16,6 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - autonomous-optimization
-  - technical-intelligence-monitor
   - technical-fit-scoring
 ---
 
@@ -98,7 +97,7 @@ Rank hypotheses by expected impact and risk. Store in Attio. If risk = "high", a
 
 ### 2. Deploy the technical intelligence monitor
 
-Run the `technical-intelligence-monitor` drill to create the always-on monitoring layer:
+Run the `autonomous-optimization` drill to create the always-on monitoring layer:
 
 - PostHog dashboard tracking technical demand patterns across all deals
 - Anomaly alerts for: new certification demand spikes, integration demand shifts, rising technical disqualification rate, composite score decline
@@ -195,5 +194,5 @@ If all metrics sustain, this play is durable. If metrics decay, the autonomous o
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics, generate hypotheses, run experiments, evaluate results, auto-implement winners. This is what makes Durable fundamentally different.
-- `technical-intelligence-monitor` — always-on monitoring of technical requirement patterns, demand shifts, and strategic intelligence
+- `autonomous-optimization` — always-on monitoring of technical requirement patterns, demand shifts, and strategic intelligence
 - `technical-fit-scoring` — continuous refinement of the scoring model based on closed deal accuracy data

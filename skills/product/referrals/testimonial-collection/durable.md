@@ -15,7 +15,6 @@ slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
 drills:
   - autonomous-optimization
-  - testimonial-health-monitor
   - dashboard-builder
 ---
 # Systematic Testimonial Collection — Durable Intelligence
@@ -76,7 +75,7 @@ Run the `autonomous-optimization` drill configured for the testimonial collectio
 - 7-day cooldown after a failed experiment before testing the same variable again
 
 ### 2. Activate the testimonial health monitor
-Run the `testimonial-health-monitor` drill to deploy play-specific monitoring that runs alongside the generic optimization loop:
+Run the `autonomous-optimization` drill to deploy play-specific monitoring that runs alongside the generic optimization loop:
 
 - Daily health check across 6 testimonial-specific metrics (request rate, form open rate, submission rate, quality rate, video willingness, inventory freshness)
 - Diagnostic triggers for each declining metric with root-cause analysis
@@ -123,7 +122,7 @@ Measure against: sustained ≥25 testimonials/month with quality ≥4.0 and full
 
 ## Drills Referenced
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners. Weekly optimization briefs. Converges at <2% improvement.
-- `testimonial-health-monitor` — play-specific daily health checks, diagnostic triggers, automated interventions for collection pipeline problems, and weekly testimonial reports
+- `autonomous-optimization` — play-specific daily health checks, diagnostic triggers, automated interventions for collection pipeline problems, and weekly testimonial reports
 - `dashboard-builder` — durable intelligence dashboard with optimization loop status, experiment history, convergence tracking, and testimonial ROI
 
 ---

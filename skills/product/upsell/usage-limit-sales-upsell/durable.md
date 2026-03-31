@@ -17,7 +17,6 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - autonomous-optimization
-  - expansion-upsell-health-monitor
   - expansion-outreach-sequence
 ---
 
@@ -45,7 +44,7 @@ The expansion pipeline operates autonomously. An always-on agent loop monitors s
 Run the `autonomous-optimization` drill configured for the usage-limit sales upsell play. The optimization loop has 5 phases:
 
 **Phase 1 — Monitor (daily via n8n cron):**
-The agent queries the `expansion-upsell-health-monitor` drill's webhook endpoint to retrieve current metrics: expansion close rate, scoring model accuracy (Tier 1 vs Tier 2 differential), outreach sequence conversion rates per touch, pipeline velocity, expansion ARR, and 90-day retention. It compares the last 2 weeks against the 4-week rolling average and classifies each metric as normal (within +/-10%), plateau (+/-2% for 3+ weeks), drop (>20% decline), or spike (>50% increase). If any anomaly is detected, the loop triggers Phase 2.
+The agent queries the `autonomous-optimization` drill's webhook endpoint to retrieve current metrics: expansion close rate, scoring model accuracy (Tier 1 vs Tier 2 differential), outreach sequence conversion rates per touch, pipeline velocity, expansion ARR, and 90-day retention. It compares the last 2 weeks against the 4-week rolling average and classifies each metric as normal (within +/-10%), plateau (+/-2% for 3+ weeks), drop (>20% decline), or spike (>50% increase). If any anomaly is detected, the loop triggers Phase 2.
 
 **Phase 2 — Diagnose (triggered by anomaly):**
 The agent gathers context: current scoring weights, outreach templates, routing rules, A/B test history from Scalable, 8-week metric trends, per-resource performance breakdown. It runs `hypothesis-generation` to produce 3 ranked hypotheses. Examples specific to this play:
@@ -103,7 +102,7 @@ In addition to the standard `autonomous-optimization` guardrails, add expansion-
 
 ### 3. Deploy the expansion health monitor at Durable cadence
 
-Run the `expansion-upsell-health-monitor` drill with Durable-level configuration:
+Run the `autonomous-optimization` drill with Durable-level configuration:
 
 - Health check: runs daily (scoring accuracy, outreach delivery, pipeline velocity)
 - Scoring model recalibration signal: runs weekly (compare predicted vs actual expansion outcomes)
@@ -188,5 +187,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for expansion close rate and revenue
-- `expansion-upsell-health-monitor` — monitors scoring accuracy, outreach conversion, pipeline velocity, expansion retention, and system health; feeds metrics to the optimization loop
+- `autonomous-optimization` — monitors scoring accuracy, outreach conversion, pipeline velocity, expansion retention, and system health; feeds metrics to the optimization loop
 - `expansion-outreach-sequence` — executes the current best outreach configuration, updated by the optimization loop as experiments produce winners

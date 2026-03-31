@@ -17,7 +17,6 @@ slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
   - autonomous-optimization
-  - technical-objection-intelligence-monitor
 ---
 
 # Technical Fit Objection Handling — Durable Intelligence
@@ -100,7 +99,7 @@ Run the `autonomous-optimization` drill configured for the technical objection h
 
 ### 2. Deploy Technical Objection Intelligence Monitor
 
-Run the `technical-objection-intelligence-monitor` drill:
+Run the `autonomous-optimization` drill:
 - Build the PostHog "Technical Objection Intelligence" dashboard (8 panels)
 - Build Attio saved views (active technical objections, technically stalled deals, proof gaps)
 - Set up daily anomaly detection cron
@@ -213,4 +212,4 @@ In these cases: alert the founder that strategic context has changed. Provide th
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `technical-objection-intelligence-monitor` — comprehensive monitoring of technical objection patterns, resolution effectiveness, gap trends, and roadmap impact. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive monitoring of technical objection patterns, resolution effectiveness, gap trends, and roadmap impact. Provides the data layer the optimization loop reads from.

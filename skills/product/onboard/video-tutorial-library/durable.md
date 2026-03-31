@@ -16,7 +16,6 @@ slug: "video-tutorial-library"
 install: "npx gtm-skills add product/onboard/video-tutorial-library"
 drills:
   - autonomous-optimization
-  - video-tutorial-health-monitor
 ---
 
 # Video Tutorial Library — Durable
@@ -42,7 +41,7 @@ The video tutorial library runs as an always-on system with autonomous optimizat
 
 ### 1. Deploy the video tutorial health monitor
 
-Run the `video-tutorial-health-monitor` drill to set up:
+Run the `autonomous-optimization` drill to set up:
 
 1. The video library health dashboard in PostHog (10 panels covering play rate, completion, activation, per-video scores, surface effectiveness, persona engagement, and content freshness)
 2. Per-video health scoring (0-100 scale: engagement + retention + impact)
@@ -188,4 +187,4 @@ If FAIL on human time: the agent is escalating too many hypotheses for human rev
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core monitor-diagnose-experiment-evaluate-implement loop that makes Durable fundamentally different from Scalable
-- `video-tutorial-health-monitor` -- per-video health scoring, content freshness tracking, coverage gap detection, and weekly structured reports that feed into autonomous optimization
+- `autonomous-optimization` -- per-video health scoring, content freshness tracking, coverage gap detection, and weekly structured reports that feed into autonomous optimization

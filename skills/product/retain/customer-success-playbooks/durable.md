@@ -16,7 +16,6 @@ slug: "customer-success-playbooks"
 install: "npx gtm-skills add product/retain/customer-success-playbooks"
 drills:
   - autonomous-optimization
-  - cs-playbook-health-monitor
   - churn-model-health-monitor
 ---
 
@@ -26,7 +25,7 @@ drills:
 
 ## Outcomes
 
-The CS playbook system runs autonomously. The `autonomous-optimization` drill continuously monitors all playbook KPIs, detects when metrics plateau or drop, generates hypotheses for improvement, runs A/B experiments, evaluates results, and auto-implements winners. The `cs-playbook-health-monitor` feeds play-specific signals into the optimization loop. The system converges on the local maximum -- the best possible playbook performance given the current product, audience, and market -- and maintains it as conditions change. Sustained >=55% success rate over 6 months with cost per save trending downward.
+The CS playbook system runs autonomously. The `autonomous-optimization` drill continuously monitors all playbook KPIs, detects when metrics plateau or drop, generates hypotheses for improvement, runs A/B experiments, evaluates results, and auto-implements winners. The `autonomous-optimization` feeds play-specific signals into the optimization loop. The system converges on the local maximum -- the best possible playbook performance given the current product, audience, and market -- and maintains it as conditions change. Sustained >=55% success rate over 6 months with cost per save trending downward.
 
 ## Leading Indicators
 
@@ -106,7 +105,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy playbook-specific health monitoring
 
-Run the `cs-playbook-health-monitor` drill to build the play-specific signal layer that feeds the optimization loop. This creates:
+Run the `autonomous-optimization` drill to build the play-specific signal layer that feeds the optimization loop. This creates:
 
 - A PostHog dashboard with 6 panels tracking per-playbook performance, scenario coverage, step drop-off, and unmatched at-risk users
 - A daily n8n workflow that checks playbook metrics against the 4-week rolling average and fires alerts on anomalies
@@ -187,5 +186,5 @@ If any metric degrades for 2 consecutive months, the system should self-diagnose
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core optimization loop that detects anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
-- `cs-playbook-health-monitor` -- play-specific monitoring that tracks per-playbook performance, scenario coverage, and step drop-off. Feeds signals to the optimization loop.
+- `autonomous-optimization` -- play-specific monitoring that tracks per-playbook performance, scenario coverage, and step drop-off. Feeds signals to the optimization loop.
 - `churn-model-health-monitor` -- monitors prediction accuracy and calibration drift to ensure the churn scoring model stays reliable under the optimization loop.

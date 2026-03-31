@@ -17,7 +17,6 @@ slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
   - autonomous-optimization
-  - research-effectiveness-monitor
   - signal-detection
 ---
 
@@ -27,7 +26,7 @@ drills:
 
 ## Outcomes
 
-Deploy always-on AI agents that autonomously optimize every dimension of the account research pipeline. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in research effectiveness, generate hypotheses for improvement, design and run A/B experiments, evaluate results, and auto-implement winners. The `research-effectiveness-monitor` provides the signal-level telemetry that feeds the optimization loop. Over 6 months, the system converges on the local maximum — the best possible research approach for your market, ICP, and competitive landscape. Weekly optimization briefs report what changed and why. Convergence is declared when successive experiments produce <2% improvement.
+Deploy always-on AI agents that autonomously optimize every dimension of the account research pipeline. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in research effectiveness, generate hypotheses for improvement, design and run A/B experiments, evaluate results, and auto-implement winners. The `autonomous-optimization` provides the signal-level telemetry that feeds the optimization loop. Over 6 months, the system converges on the local maximum — the best possible research approach for your market, ICP, and competitive landscape. Weekly optimization briefs report what changed and why. Convergence is declared when successive experiments produce <2% improvement.
 
 ## Leading Indicators
 
@@ -43,7 +42,7 @@ Deploy always-on AI agents that autonomously optimize every dimension of the acc
 
 ### 1. Deploy the research effectiveness monitor
 
-Run the `research-effectiveness-monitor` drill. Build the monitoring layer that tracks which research signals and personalization hooks actually convert:
+Run the `autonomous-optimization` drill. Build the monitoring layer that tracks which research signals and personalization hooks actually convert:
 
 **Dashboard panels:**
 - Reply rate by research depth (manual vs automated vs none) — 4-week rolling
@@ -184,5 +183,5 @@ The optimization loop runs indefinitely but should detect when it has reached th
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `research-effectiveness-monitor` — signal-level telemetry tracking which research inputs drive replies and meetings
+- `autonomous-optimization` — signal-level telemetry tracking which research inputs drive replies and meetings
 - `signal-detection` — real-time buying signal monitoring that triggers research refreshes and surfaces high-intent accounts proactively

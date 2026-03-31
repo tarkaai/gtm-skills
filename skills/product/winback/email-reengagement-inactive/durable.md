@@ -17,7 +17,6 @@ slug: "email-reengagement-inactive"
 install: "npx gtm-skills add product/winback/email-reengagement-inactive"
 drills:
   - autonomous-optimization
-  - inactive-reengagement-health-monitor
 ---
 
 # Inactive User Re-engagement — Durable Intelligence
@@ -40,7 +39,7 @@ The reengagement system runs autonomously with AI agents detecting metric anomal
 
 ### 1. Deploy the reengagement health monitor
 
-Run the `inactive-reengagement-health-monitor` drill to set up the monitoring layer:
+Run the `autonomous-optimization` drill to set up the monitoring layer:
 
 1. Build the PostHog "Reengagement Health" dashboard with 6 panels: sequence funnel waterfall, return rate trend by cohort, email performance heatmap, reactivation quality, unsubscribe rate trend, and cohort volume tracker.
 2. Deploy the daily n8n check workflow (09:00 UTC) that queries PostHog for reengagement metrics, compares against 4-week rolling averages, and classifies each metric as normal, warning, or critical.
@@ -54,7 +53,7 @@ This monitor feeds signals directly into the `autonomous-optimization` drill's P
 Run the `autonomous-optimization` drill configured for this play's specific context:
 
 **Phase 1 — Monitor (daily via n8n cron):**
-- The `inactive-reengagement-health-monitor` provides daily anomaly classifications
+- The `autonomous-optimization` provides daily anomaly classifications
 - The optimization loop reads these from Attio notes on the play's campaign record
 - Anomaly triggers: any cohort's return rate drops >10% below 4-week average, any email step's open rate drops >15% below average, reactivation rate drops below 8%, or an experiment opportunity is detected (a metric has been flat for 3+ weeks)
 
@@ -152,4 +151,4 @@ This level runs continuously. If return rate decays below threshold, the optimiz
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly optimization briefs. This is what makes Durable fundamentally different from Scalable.
-- `inactive-reengagement-health-monitor` — play-specific monitoring that feeds signals to the optimization loop: daily metric checks, weekly health briefs, regression trip-wires, and structured signal data in Attio
+- `autonomous-optimization` — play-specific monitoring that feeds signals to the optimization loop: daily metric checks, weekly health briefs, regression trip-wires, and structured signal data in Attio

@@ -19,7 +19,6 @@ slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
 drills:
   - autonomous-optimization
-  - workshop-performance-monitor
 ---
 
 # Workshop Series — Durable Intelligence
@@ -47,7 +46,7 @@ drills:
 
 ### 1. Deploy continuous workshop funnel monitoring
 
-Run the `workshop-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - **Post-event automated checks**: After each workshop, the agent runs immediate health checks -- show rate vs target, exercise completion rate vs target, exercise participation depth, and nurture launch verification. Alerts fire if any metric falls below critical thresholds (show rate <25%, exercise participation <30%).
 - **Rolling trend analysis**: Weekly n8n cron compares the last workshop's metrics against the 4-event rolling average. If any metric declines >15%, it flags for investigation and triggers the optimization loop.
@@ -189,4 +188,4 @@ The play is durable when the agent can maintain qualified leads per workshop abo
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `workshop-performance-monitor` -- continuous monitoring of workshop-specific signals (exercise completion, engagement depth, skill progression), post-event post-mortems, and monthly series health reports that feed data into the optimization loop
+- `autonomous-optimization` -- continuous monitoring of workshop-specific signals (exercise completion, engagement depth, skill progression), post-event post-mortems, and monthly series health reports that feed data into the optimization loop

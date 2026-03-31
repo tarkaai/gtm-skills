@@ -17,7 +17,6 @@ slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
 drills:
   - autonomous-optimization
-  - bundle-performance-reporting
 ---
 
 # Bundle Deal Partnerships — Durable Intelligence
@@ -98,7 +97,7 @@ Run the `autonomous-optimization` drill configured for this play's specific metr
 
 ### 2. Deploy play-specific monitoring and reporting
 
-Run the `bundle-performance-reporting` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Bundle dashboard in PostHog:**
 - Bundle page views by partner (bar chart, last 30 days)
@@ -229,4 +228,4 @@ Total: ~180 hours over 6 months (heavily front-loaded; agent handles most ongoin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `bundle-performance-reporting` — per-partner dashboards, weekly briefs, ROI tracking, tier distribution analysis, and alerts specific to this play
+- `autonomous-optimization` — per-partner dashboards, weekly briefs, ROI tracking, tier distribution analysis, and alerts specific to this play

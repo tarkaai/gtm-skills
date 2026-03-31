@@ -16,7 +16,6 @@ slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
 drills:
   - autonomous-optimization
-  - newsletter-performance-monitor
 ---
 
 # Developer Newsletter — Durable Intelligence
@@ -40,7 +39,7 @@ The newsletter runs as an autonomous, self-optimizing system. AI agents continuo
 
 ### 1. Deploy the newsletter performance monitoring system
 
-Run the `newsletter-performance-monitor` drill to build always-on monitoring:
+Run the `autonomous-optimization` drill to build always-on monitoring:
 
 **Dashboard (always-on in PostHog):**
 The drill creates a 5-panel dashboard covering:
@@ -226,4 +225,4 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for every newsletter variable
-- `newsletter-performance-monitor` — always-on dashboard, anomaly detection, subscriber-to-pipeline attribution, weekly and monthly performance reports
+- `autonomous-optimization` — always-on dashboard, anomaly detection, subscriber-to-pipeline attribution, weekly and monthly performance reports

@@ -18,7 +18,6 @@ install: "npx gtm-skills add product/retain/ai-content-generation"
 drills:
   - autonomous-optimization
   - ai-content-prompt-optimization
-  - ai-content-usage-health-monitor
 ---
 
 # AI Content Assistant — Durable Intelligence
@@ -60,7 +59,7 @@ Run the `autonomous-optimization` drill configured for the AI content generation
 5. If anomaly detected, trigger Phase 2.
 
 **Phase 2 -- Diagnose (triggered by anomaly):**
-1. Pull 8-week metric history from PostHog using the `ai-content-usage-health-monitor` dashboard
+1. Pull 8-week metric history from PostHog using the `autonomous-optimization` dashboard
 2. Identify which KPI is anomalous. Common root causes for this play:
    - Acceptance rate drop: AI model quality degraded, user expectations shifted, new content type launched without prompt tuning
    - Adoption rate drop: in-app discovery surfaces stale or dismissed by most users, competing feature launched that pulls attention
@@ -108,7 +107,7 @@ Run the `autonomous-optimization` drill configured for the AI content generation
 
 ### 2. Deploy the AI content health monitoring layer
 
-Run the `ai-content-usage-health-monitor` drill to create the measurement infrastructure the optimization loop depends on:
+Run the `autonomous-optimization` drill to create the measurement infrastructure the optimization loop depends on:
 
 1. Build the 8-panel AI content health dashboard in PostHog (generation volume, acceptance rate, edit rate, regeneration rate, satisfaction score, generation-to-publish funnel, content type breakdown, retention lift)
 2. Create the 5 health cohorts (AI Power Users, AI Experimenters, AI Churned, AI Frustrated, AI Non-Adopters)
@@ -181,4 +180,4 @@ If metrics decay despite agent optimization, the system needs strategic input:
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate-report loop that makes Durable fundamentally different from Scalable
 - `ai-content-prompt-optimization` -- analyzes rejection patterns, generates prompt improvement hypotheses, runs prompt A/B tests, and maintains the prompt version registry
-- `ai-content-usage-health-monitor` -- the measurement layer providing the dashboards, cohorts, and alerts the optimization loop reads from
+- `autonomous-optimization` -- the measurement layer providing the dashboards, cohorts, and alerts the optimization loop reads from

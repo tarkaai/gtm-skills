@@ -19,7 +19,6 @@ slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
 drills:
   - autonomous-optimization
-  - conference-performance-monitor
 ---
 
 # Annual User Conference -- Durable Intelligence
@@ -48,7 +47,7 @@ drills:
 
 ### 1. Deploy continuous conference program monitoring
 
-Run the `conference-performance-monitor` drill to build the always-on monitoring layer for the annual conference program:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer for the annual conference program:
 
 **Promotion-period monitoring (10-16 weeks before the event):**
 - Weekly registration health checks: compare current registration count against the week-by-week target curve. The target curve is calibrated from prior year data and adjusted for audience growth.
@@ -241,4 +240,4 @@ The play is durable when the agent can maintain or improve conference metrics (a
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor conference metrics across the full lifecycle, diagnose anomalies in promotion, engagement, and pipeline generation, generate hypotheses, run experiments on promotion strategy, session format, content repurposing, and follow-up approaches, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `conference-performance-monitor` -- continuous monitoring of the conference program funnel, promotion-period health checks, post-conference analysis, year-over-year trend tracking, and pipeline attribution that feeds data into the optimization loop
+- `autonomous-optimization` -- continuous monitoring of the conference program funnel, promotion-period health checks, post-conference analysis, year-over-year trend tracking, and pipeline attribution that feeds data into the optimization loop

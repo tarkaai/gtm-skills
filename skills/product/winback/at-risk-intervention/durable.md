@@ -16,7 +16,6 @@ slug: "at-risk-intervention"
 install: "npx gtm-skills add product/winback/at-risk-intervention"
 drills:
   - autonomous-optimization
-  - at-risk-intervention-health-monitor
   - dashboard-builder
 ---
 
@@ -55,7 +54,7 @@ Run the `dashboard-builder` drill to create a comprehensive PostHog dashboard fo
 
 ### 2. Deploy the intervention health monitor
 
-Run the `at-risk-intervention-health-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - Daily anomaly checks on save rate, response rate, intervention reach, and channel performance
 - Weekly health briefs aggregating metrics, surfacing the biggest optimization opportunity, and listing active experiments
@@ -68,7 +67,7 @@ This monitor is the eyes of the Durable system. Without it, the autonomous optim
 
 Run the `autonomous-optimization` drill, configured for the at-risk-intervention play. The loop operates on a weekly cadence:
 
-**Monitor (daily):** The `at-risk-intervention-health-monitor` checks all intervention metrics against rolling averages. Anomalies trigger the Diagnose phase.
+**Monitor (daily):** The `autonomous-optimization` checks all intervention metrics against rolling averages. Anomalies trigger the Diagnose phase.
 
 **Diagnose (triggered by anomaly):** The agent pulls 8 weeks of intervention data from PostHog and the current system configuration from Attio (scoring thresholds, message variants, channel routing rules, timing windows). It generates 3 ranked hypotheses. Examples of hypotheses the agent might generate:
 
@@ -169,5 +168,5 @@ If save rate sustains or improves for 6 consecutive months, the play is durable.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor -> diagnose -> experiment -> evaluate -> implement. Runs weekly and finds the local maximum of the intervention system.
-- `at-risk-intervention-health-monitor` — play-specific monitoring that feeds signals to the optimization loop. Daily anomaly checks, weekly health briefs, critical alerts.
+- `autonomous-optimization` — play-specific monitoring that feeds signals to the optimization loop. Daily anomaly checks, weekly health briefs, critical alerts.
 - `dashboard-builder` — PostHog dashboard with save rate trends, channel performance, segment heatmaps, scoring model health, and experiment log.

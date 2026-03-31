@@ -17,7 +17,6 @@ slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
 drills:
   - autonomous-optimization
-  - display-ads-performance-monitor
   - dashboard-builder
 ---
 
@@ -147,7 +146,7 @@ Run the `autonomous-optimization` drill configured for display ads. This is the 
 
 ### 2. Build the display-ads-specific monitoring layer
 
-Run the `display-ads-performance-monitor` drill to extend the autonomous optimization loop with display-specific monitoring:
+Run the `autonomous-optimization` drill to extend the autonomous optimization loop with display-specific monitoring:
 
 - **Automated placement curation (weekly):** Continue the weekly placement audit from Scalable, now fully automated. The agent excludes junk placements, researches new managed placement candidates (using Clay to identify industry publications), and logs every change.
 - **Creative fatigue detection and rotation (daily):** Monitor each creative's CTR over time. When CTR declines >25% from peak or creative age exceeds 21 days, auto-pause and promote the next variant from the staging queue. If the staging queue has fewer than 3 variants, trigger the AI creative generation pipeline.
@@ -240,5 +239,5 @@ Display ad performance fluctuates with seasons, industry events, and competitive
 ## Drills Referenced
 
 - `autonomous-optimization` -- The core always-on optimization loop: monitor metrics, detect anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, produce weekly briefs
-- `display-ads-performance-monitor` -- Display-specific monitoring: automated placement curation, creative fatigue detection and rotation, audience exhaustion tracking, cross-platform arbitrage, lead quality monitoring
+- `autonomous-optimization` -- Display-specific monitoring: automated placement curation, creative fatigue detection and rotation, audience exhaustion tracking, cross-platform arbitrage, lead quality monitoring
 - `dashboard-builder` -- PostHog dashboard with real-time display ads KPIs, platform comparison, campaign type breakdown, creative health, and experiment tracking

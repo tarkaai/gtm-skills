@@ -15,7 +15,6 @@ slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
   - autonomous-optimization
-  - docs-content-health-monitor
 ---
 
 # Documentation as Marketing — Durable Intelligence
@@ -95,7 +94,7 @@ Run the `autonomous-optimization` drill configured for docs-as-marketing. This c
 
 ### 2. Deploy the docs content health monitor
 
-Run the `docs-content-health-monitor` drill to create always-on content health scoring:
+Run the `autonomous-optimization` drill to create always-on content health scoring:
 
 **Dashboard:** Live PostHog dashboard showing:
 - Total organic docs traffic with 90-day trend
@@ -162,4 +161,4 @@ Even after convergence, the agent remains alert for external shifts that reopen 
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `docs-content-health-monitor` — per-page health scoring, anomaly alerts, weekly health reports, and automatic refresh/gap triggers
+- `autonomous-optimization` — per-page health scoring, anomaly alerts, weekly health reports, and automatic refresh/gap triggers

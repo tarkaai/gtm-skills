@@ -16,7 +16,7 @@ slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
 drills:
   - experiment-pipeline-automation
-  - experiment-impact-reporting
+  - dashboard-builder
 ---
 
 # Product A/B Testing — Scalable Automation
@@ -78,7 +78,7 @@ Maintain a minimum backlog of 5 queued hypotheses at all times. Each hypothesis 
 
 ### 3. Generate business impact reports
 
-Run the `experiment-impact-reporting` drill bi-weekly. The report includes:
+Run the `dashboard-builder` drill bi-weekly. The report includes:
 
 - **Experiment velocity:** experiments completed in the period, compared to the target (5/month)
 - **Win rate:** percentage of experiments with adopted results (healthy: 25-40%)
@@ -124,4 +124,4 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 ## Drills Referenced
 
 - `experiment-pipeline-automation` -- automates the experiment lifecycle from backlog through launch, monitoring, result collection, and auto-queuing
-- `experiment-impact-reporting` -- aggregates experiment results into business impact reports showing cumulative lift, win rates, and ROI
+- `dashboard-builder` -- aggregates experiment results into business impact reports showing cumulative lift, win rates, and ROI

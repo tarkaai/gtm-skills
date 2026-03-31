@@ -16,7 +16,6 @@ slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
 drills:
   - autonomous-optimization
-  - recommendation-health-monitor
 ---
 
 # AI-Powered Recommendations — Durable Intelligence
@@ -83,7 +82,7 @@ Run the `autonomous-optimization` drill to create the always-on improvement engi
 
 ### 2. Deploy recommendation-specific health monitoring
 
-Run the `recommendation-health-monitor` drill to add the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to add the monitoring layer specific to this play:
 
 1. Build the recommendation health dashboard in PostHog: adoption rate trend, per-segment adoption, suggestion quality by feature, dismissal velocity, feature catalog coverage, recommendation diversity, time to adoption, and segment drift.
 2. Configure daily model quality monitoring: compute all recommendation health metrics, compare against thresholds, classify system state (healthy/degrading/unhealthy).
@@ -134,4 +133,4 @@ The system runs indefinitely. Track convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that detects metric anomalies, generates improvement hypotheses, runs A/B experiments, evaluates results, and auto-implements winners across the recommendation system
-- `recommendation-health-monitor` — tracks recommendation-specific health signals (model quality, feature catalog staleness, segment drift, suggestion fatigue) and feeds anomalies into the autonomous optimization loop
+- `autonomous-optimization` — tracks recommendation-specific health signals (model quality, feature catalog staleness, segment drift, suggestion fatigue) and feeds anomalies into the autonomous optimization loop

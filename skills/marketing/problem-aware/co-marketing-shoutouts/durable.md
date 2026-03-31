@@ -16,7 +16,6 @@ slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
 drills:
   - autonomous-optimization
-  - partner-performance-reporting
 ---
 
 # Partner Newsletter Shoutout — Durable Intelligence
@@ -86,7 +85,7 @@ Run the `autonomous-optimization` drill configured for this play's specific metr
 
 ### 2. Deploy play-specific monitoring and reporting
 
-Run the `partner-performance-reporting` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Partnership dashboard in PostHog:**
 - Clicks by partner (bar chart, last 30 days)
@@ -188,4 +187,4 @@ Total: ~200 hours over 6 months (heavily front-loaded; agent handles most ongoin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `partner-performance-reporting` — per-partner dashboards, weekly briefs, ROI tracking, and alerts specific to this play
+- `autonomous-optimization` — per-partner dashboards, weekly briefs, ROI tracking, and alerts specific to this play

@@ -17,7 +17,6 @@ slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
 drills:
   - autonomous-optimization
-  - champion-program-health-monitor
 ---
 
 # Champion Recognition Program — Durable Intelligence
@@ -97,7 +96,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the champion program health monitor
 
-Run the `champion-program-health-monitor` drill for play-specific monitoring that complements the generic optimization loop:
+Run the `autonomous-optimization` drill for play-specific monitoring that complements the generic optimization loop:
 
 - Configure daily health checks for all 8 champion program metrics: champion pool growth, enrollment rate, referral activation rate, referral conversion, co-marketing acceptance, champion retention, champion score stability, content yield
 - Implement diagnostic triggers for each declining metric:
@@ -167,4 +166,4 @@ After structural changes are implemented, reset the optimization baseline and re
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `champion-program-health-monitor` — play-specific monitoring for 8 champion program metrics with diagnostic triggers, automated interventions, and escalation rules
+- `autonomous-optimization` — play-specific monitoring for 8 champion program metrics with diagnostic triggers, automated interventions, and escalation rules

@@ -16,7 +16,6 @@ slug: "time-to-value-optimization"
 install: "npx gtm-skills add product/onboard/time-to-value-optimization"
 drills:
   - autonomous-optimization
-  - ttv-health-monitor
   - nps-feedback-loop
 ---
 
@@ -40,7 +39,7 @@ The activation funnel maintains or improves its 55%+ activation rate and sub-8-m
 
 ### 1. Deploy the TTV health monitor
 
-Run the `ttv-health-monitor` drill. Build the full monitoring infrastructure:
+Run the `autonomous-optimization` drill. Build the full monitoring infrastructure:
 
 **Daily check workflow (n8n cron at 08:00 UTC):**
 1. Query PostHog for yesterday's activation metrics: new signups, activations, median TTV, funnel step conversion rates
@@ -164,5 +163,5 @@ If external conditions change (product redesign, new market segment, competitor 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `ttv-health-monitor` — play-specific monitoring of TTV cohort trends, daily anomaly checks, and weekly health briefs
+- `autonomous-optimization` — play-specific monitoring of TTV cohort trends, daily anomaly checks, and weekly health briefs
 - `nps-feedback-loop` — qualitative feedback collection that feeds themes into hypothesis generation

@@ -16,7 +16,6 @@ slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
   - autonomous-optimization
-  - business-case-effectiveness-monitor
   - roi-prediction-accuracy
 ---
 
@@ -86,7 +85,7 @@ Run the `autonomous-optimization` drill configured for business case development
 
 ### 2. Deploy business case effectiveness monitoring
 
-Run the `business-case-effectiveness-monitor` drill to create play-specific monitoring:
+Run the `autonomous-optimization` drill to create play-specific monitoring:
 
 **Effectiveness dashboard** tracking:
 - Approval funnel: assembled → sent → champion engaged → executive review → approved → won
@@ -187,5 +186,5 @@ When external change is detected, reset to active monitoring and run a fresh dia
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on agent loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `business-case-effectiveness-monitor` — play-specific monitoring tracking approval rates, element effectiveness, stall detection, and monthly effectiveness reports
+- `autonomous-optimization` — play-specific monitoring tracking approval rates, element effectiveness, stall detection, and monthly effectiveness reports
 - `roi-prediction-accuracy` — measures projected vs. realized ROI across closed deals, computes model accuracy, and produces calibration recommendations for future projections

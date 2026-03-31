@@ -16,7 +16,6 @@ slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
   - autonomous-optimization
-  - engagement-performance-reporting
   - dashboard-builder
 ---
 
@@ -109,7 +108,7 @@ Run the `dashboard-builder` drill to create the Durable-level dashboard:
 
 ### 3. Configure engagement performance reporting
 
-Run the `engagement-performance-reporting` drill to establish automated reporting:
+Run the `autonomous-optimization` drill to establish automated reporting:
 
 1. Weekly reports delivered every Monday with all key metrics
 2. Monthly deep-dive reports with funnel analysis, strategy breakdowns, and prospect tier performance
@@ -165,5 +164,5 @@ Run the `engagement-performance-reporting` drill to establish automated reportin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop
-- `engagement-performance-reporting` — weekly/monthly reports with funnel analytics and alerts
+- `autonomous-optimization` — weekly/monthly reports with funnel analytics and alerts
 - `dashboard-builder` — real-time PostHog dashboard for Durable-level metrics and convergence tracking

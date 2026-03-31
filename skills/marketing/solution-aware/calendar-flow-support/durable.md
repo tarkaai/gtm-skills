@@ -18,7 +18,6 @@ install: "npx gtm-skills add marketing/solution-aware/calendar-flow-support"
 drills:
   - autonomous-optimization
   - dashboard-builder
-  - booking-conversion-monitor
 ---
 
 # Calendar Booking Flow Support — Durable Intelligence
@@ -49,7 +48,7 @@ Run the `autonomous-optimization` drill configured specifically for the calendar
 
 **Configure the monitoring phase (daily via n8n cron):**
 
-Use the `booking-conversion-monitor` drill's funnel stages as the primary KPIs for anomaly detection. The agent checks daily:
+Use the `autonomous-optimization` drill's funnel stages as the primary KPIs for anomaly detection. The agent checks daily:
 
 - Overall booking completion rate (7-day rolling vs 4-week rolling average)
 - Per-surface booking rates (each page with an inline embed)
@@ -69,7 +68,7 @@ If anomaly detected on any metric or any surface: trigger the diagnosis phase.
 
 The agent gathers context:
 1. Pull current embed configuration from Attio campaign record: CTA copy per page, embed placement, form fields, availability window
-2. Pull 8-week metric history from PostHog via the `booking-conversion-monitor` funnel
+2. Pull 8-week metric history from PostHog via the `autonomous-optimization` funnel
 3. Pull traffic source breakdown: did the anomaly correlate with a traffic source change?
 4. Run `hypothesis-generation` with the anomaly data + context
 
@@ -128,7 +127,7 @@ Run the `dashboard-builder` drill to create the Durable-level PostHog dashboard:
 
 ### 3. Deploy the booking-specific monitoring layer
 
-Run the `booking-conversion-monitor` drill to add the monitoring layer specific to calendar booking funnels. This runs alongside `autonomous-optimization` and provides the play-specific data that feeds the optimization loop.
+Run the `autonomous-optimization` drill to add the monitoring layer specific to calendar booking funnels. This runs alongside `autonomous-optimization` and provides the play-specific data that feeds the optimization loop.
 
 Configure:
 - Daily funnel monitoring with per-surface breakdown
@@ -237,4 +236,4 @@ Compute over the full 6-month period:
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies per booking surface, generate improvement hypotheses, run A/B experiments via PostHog, evaluate results, auto-implement winners, and produce weekly optimization briefs. Converges when successive experiments produce < 2% improvement.
 - `dashboard-builder` — build the Durable PostHog dashboard with per-surface booking rates, experiment status, show rate trends, and cost-per-meeting tracking
-- `booking-conversion-monitor` — play-specific monitoring for the calendar booking funnel: per-surface health checks, booking timing heatmap, traffic source attribution, and weekly surface rankings that feed the optimization loop
+- `autonomous-optimization` — play-specific monitoring for the calendar booking funnel: per-surface health checks, booking timing heatmap, traffic source attribution, and weekly surface rankings that feed the optimization loop

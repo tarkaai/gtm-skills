@@ -16,7 +16,6 @@ slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
 drills:
   - autonomous-optimization
-  - tla-performance-reporting
 ---
 
 # Thought Leader Ads — Durable Intelligence
@@ -101,7 +100,7 @@ Run the `autonomous-optimization` drill configured for the TLA program. This is 
 
 ### 2. Deploy TLA Performance Reporting
 
-Run the `tla-performance-reporting` drill:
+Run the `autonomous-optimization` drill:
 
 1. Build the PostHog TLA dashboard (8 panels: spend/reach trends, per-post engagement, CPC trends, audience comparison, format performance, hook type analysis, conversion funnel, pipeline attribution)
 2. Build Attio saved views (TLA-sourced contacts, TLA pipeline, TLA ROI by thought leader)
@@ -193,4 +192,4 @@ In these cases: the optimizer flags the situation and recommends whether tactica
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in TLA KPIs, generate hypotheses (audience saturation, content fatigue, nurture sequence staleness, thought leader mismatch), run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `tla-performance-reporting` — comprehensive reporting on TLA program effectiveness: content, audience, and pipeline performance dashboards, weekly and monthly automated reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on TLA program effectiveness: content, audience, and pipeline performance dashboards, weekly and monthly automated reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.

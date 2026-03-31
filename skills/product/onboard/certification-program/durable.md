@@ -17,7 +17,6 @@ slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
 drills:
   - autonomous-optimization
-  - certification-health-monitor
   - nps-feedback-loop
 ---
 
@@ -41,7 +40,7 @@ The certification program is self-optimizing. An AI agent continuously monitors 
 
 ### 1. Deploy the certification health monitor
 
-Run the `certification-health-monitor` drill to establish the monitoring layer:
+Run the `autonomous-optimization` drill to establish the monitoring layer:
 - Daily health check across 8 certification metrics: enrollment rate, Tier 1 completion, tier transition, median completion time, module pass rate, stall rate, retention lift, and advocate rate
 - Weekly health digest with trend analysis and experiment status
 - Certified vs non-certified retention comparison
@@ -177,5 +176,5 @@ The optimization loop should detect when the certification program has reached i
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor → diagnose → experiment → evaluate → implement. This is what makes Durable fundamentally different from Scalable.
-- `certification-health-monitor` — daily/weekly monitoring of 8 certification metrics with anomaly detection feeding the optimization loop
+- `autonomous-optimization` — daily/weekly monitoring of 8 certification metrics with anomaly detection feeding the optimization loop
 - `nps-feedback-loop` — collect and act on feedback from certified users to inform optimization hypotheses

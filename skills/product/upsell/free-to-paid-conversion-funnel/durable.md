@@ -16,7 +16,6 @@ slug: "free-to-paid-conversion-funnel"
 install: "npx gtm-skills add product/upsell/free-to-paid-conversion-funnel"
 drills:
   - autonomous-optimization
-  - free-to-paid-funnel-health-monitor
   - upgrade-prompt-health-monitor
 ---
 
@@ -71,7 +70,7 @@ The agent generates hypotheses from these categories, ranked by expected impact:
 - Never show upgrade prompts to users who have not reached the activation milestone
 
 ### 2. Deploy the funnel health monitor
-Run the `free-to-paid-funnel-health-monitor` drill to create the weekly reporting layer specific to this play:
+Run the `autonomous-optimization` drill to create the weekly reporting layer specific to this play:
 
 - Weekly health report covering: per-surface conversion table, cohort velocity analysis, free user pool health (total, active, activated, upgrade-ready, fatigued, at-risk), revenue attribution by conversion path
 - Daily degradation detection: flag any surface where conversion dropped >20%, flag activation rate drops >15%, flag prompt fatigue exceeding 15% of active free users
@@ -126,5 +125,5 @@ The optimization loop runs indefinitely. The agent detects convergence when 3 co
 
 ## Drills Referenced
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run A/B experiments → evaluate results → auto-implement winners → weekly optimization briefs
-- `free-to-paid-funnel-health-monitor` — weekly funnel health report covering conversion rates, cohort velocity, free user pool health, revenue attribution, and daily degradation detection
+- `autonomous-optimization` — weekly funnel health report covering conversion rates, cohort velocity, free user pool health, revenue attribution, and daily degradation detection
 - `upgrade-prompt-health-monitor` — per-trigger upgrade prompt performance tracking, fatigue detection, suppression management, and revenue attribution per surface

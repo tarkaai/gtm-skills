@@ -16,7 +16,6 @@ slug: "plg-sales-hybrid"
 install: "npx gtm-skills add product/upsell/plg-sales-hybrid"
 drills:
   - autonomous-optimization
-  - plg-conversion-health-monitor
   - nps-feedback-loop
 ---
 
@@ -93,7 +92,7 @@ Run the `autonomous-optimization` drill. This is the core loop that makes Durabl
 
 ### 2. Deploy the PLG conversion health monitor
 
-Run the `plg-conversion-health-monitor` drill. This provides the monitoring and reporting layer that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill. This provides the monitoring and reporting layer that feeds the autonomous optimization loop:
 
 1. **Build the PLG pipeline dashboard** in PostHog with 6 panels: PQL funnel, self-serve conversion trend, sales-assist pipeline, routing quality, time metrics, and PQL signal distribution.
 
@@ -158,5 +157,5 @@ This level runs continuously for 6 months. Monthly evaluation:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly
-- `plg-conversion-health-monitor` -- build the PLG pipeline dashboard, configure anomaly detection, generate weekly health reports, track cohort conversion curves, and detect convergence
+- `autonomous-optimization` -- build the PLG pipeline dashboard, configure anomaly detection, generate weekly health reports, track cohort conversion curves, and detect convergence
 - `nps-feedback-loop` -- collect NPS from upgraded accounts, segment by upgrade path, feed qualitative signals into the optimization loop, and route promoters to expansion programs

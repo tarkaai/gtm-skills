@@ -19,7 +19,6 @@ slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
 drills:
   - autonomous-optimization
-  - field-event-performance-monitor
 ---
 
 # Regional Field Events — Durable Intelligence
@@ -47,7 +46,7 @@ drills:
 
 ### 1. Deploy continuous field event series monitoring
 
-Run the `field-event-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - **Post-event automated checks**: After each event, the agent runs immediate health checks at T+48 hours — show rate vs target, Tier 1 percentage vs target, and nurture launch verification. Alerts fire if any metric falls below critical thresholds (show rate <55%, Tier 1 % <25%).
 - **Rolling trend analysis**: Weekly n8n cron compares the last 2 events' metrics against the 4-event rolling average. If any metric declines >15%, it flags for investigation and triggers the optimization loop.
@@ -191,4 +190,4 @@ The play is durable when the agent can maintain meetings-per-event above the Sca
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `field-event-performance-monitor` — continuous city-level and series-level monitoring, post-event health checks, rolling trend analysis, and monthly reports that feed data into the optimization loop
+- `autonomous-optimization` — continuous city-level and series-level monitoring, post-event health checks, rolling trend analysis, and monthly reports that feed data into the optimization loop

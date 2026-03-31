@@ -16,7 +16,6 @@ slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
 drills:
   - autonomous-optimization
-  - summit-performance-monitor
 ---
 
 # Virtual Summit Hosting — Durable Intelligence
@@ -40,7 +39,7 @@ Deploy always-on AI agents that autonomously monitor summit series health, detec
 
 ### 1. Deploy the summit performance monitor
 
-Run the `summit-performance-monitor` drill. This builds the always-on monitoring layer that watches every part of the summit funnel and surfaces problems before they compound.
+Run the `autonomous-optimization` drill. This builds the always-on monitoring layer that watches every part of the summit funnel and surfaces problems before they compound.
 
 **Metric categories the monitor tracks:**
 
@@ -181,4 +180,4 @@ Measure against threshold quarterly. The play is durable when:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners. Runs the always-on cycle that finds the local maximum for the summit series.
-- `summit-performance-monitor` — the always-on monitoring layer: tracks 6 metric categories across the summit funnel, generates post-summit post-mortems, detects anomalies, and produces quarterly series health reports. Feeds data to the autonomous optimization loop.
+- `autonomous-optimization` — the always-on monitoring layer: tracks 6 metric categories across the summit funnel, generates post-summit post-mortems, detects anomalies, and produces quarterly series health reports. Feeds data to the autonomous optimization loop.

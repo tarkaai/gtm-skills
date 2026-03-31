@@ -18,7 +18,6 @@ slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
 drills:
   - autonomous-optimization
-  - sms-performance-monitor
   - signal-detection
 ---
 
@@ -46,7 +45,7 @@ Durable is autonomous optimization. AI agents run the SMS play continuously, fin
 
 ### 1. Deploy the SMS performance monitoring system
 
-Run the `sms-performance-monitor` drill. This builds:
+Run the `autonomous-optimization` drill. This builds:
 
 1. **PostHog dashboard** — "SMS Outbound — Performance" with panels for: daily send volume, delivery rate trend, response funnel (sent -> delivered -> replied -> meeting_booked), reply sentiment breakdown, opt-out rate trend, cost per reply, and cost per meeting.
 
@@ -192,5 +191,5 @@ Total: ~150 hours over 6 months.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for SMS response rate and cost per meeting
-- `sms-performance-monitor` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection for SMS outbound
+- `autonomous-optimization` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection for SMS outbound
 - `signal-detection` — continuous buying signal monitoring to keep the SMS prospect pipeline fresh and prioritized

@@ -18,7 +18,6 @@ slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
   - autonomous-optimization
-  - roi-skepticism-intelligence-monitor
 ---
 
 # ROI Skepticism Handling — Durable Intelligence
@@ -55,7 +54,7 @@ Run the `autonomous-optimization` drill configured for the ROI skepticism handli
 **Phase 2 — Diagnose (triggered by anomaly):**
 1. Gather context: pull current ROI handling configuration from Attio (proof assets in use, follow-up sequences, model parameters, calibration factors, A/B test winners from Scalable)
 2. Pull 8-week ROI skepticism metric history from PostHog
-3. Run `hypothesis-generation` with anomaly data + context. The `roi-skepticism-intelligence-monitor` drill feeds domain-specific hypotheses. Examples:
+3. Run `hypothesis-generation` with anomaly data + context. The `autonomous-optimization` drill feeds domain-specific hypotheses. Examples:
    - "Model acceptance rate dropped because the primary case study is 6+ months old. Experiment: replace with a customer validated in the last 90 days."
    - "CFO resolution rate (42%) is dragging down overall resolution. Experiment: generate CFO-specific ROI narratives emphasizing NPV and cost-avoidance rather than revenue-increase."
    - "Post-sale accuracy for the revenue_increase driver dropped to 48%. Experiment: apply a 0.65x calibration factor to revenue projections and test whether calibrated models have higher prospect acceptance."
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for the ROI skepticism handli
 
 ### 2. Maintain the ROI skepticism monitoring system
 
-Run the `roi-skepticism-intelligence-monitor` drill continuously. This is the play-specific monitoring layer that feeds the autonomous optimization loop with domain context. At Durable level, the monitor provides:
+Run the `autonomous-optimization` drill continuously. This is the play-specific monitoring layer that feeds the autonomous optimization loop with domain context. At Durable level, the monitor provides:
 
 1. **8-panel dashboard**: resolution rate trends, model acceptance, proof asset engagement, time-to-resolution, collaborative model funnel, post-sale accuracy scatter, persona effectiveness heatmap, revenue preserved scorecard
 2. **Daily anomaly detection**: flags resolution rate drops, model acceptance declines, proof asset staleness, accuracy degradation, and persona-specific issues
@@ -178,4 +177,4 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum of ROI skepticism resolution effectiveness
-- `roi-skepticism-intelligence-monitor` — continuous monitoring of ROI skepticism patterns, model effectiveness, proof asset engagement, persona-specific resolution, and post-sale accuracy with quarterly self-calibration
+- `autonomous-optimization` — continuous monitoring of ROI skepticism patterns, model effectiveness, proof asset engagement, persona-specific resolution, and post-sale accuracy with quarterly self-calibration

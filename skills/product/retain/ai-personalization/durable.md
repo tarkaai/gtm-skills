@@ -14,7 +14,6 @@ slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
 drills:
   - autonomous-optimization
-  - personalization-health-monitor
   - nps-feedback-loop
 ---
 
@@ -104,7 +103,7 @@ Generate 3 ranked hypotheses for what to change. For each:
 
 ### 2. Deploy the personalization health monitor
 
-Run the `personalization-health-monitor` drill:
+Run the `autonomous-optimization` drill:
 
 1. Configure the daily health check pipeline (n8n cron, 08:00 UTC — runs BEFORE the optimization loop)
 2. Set thresholds:
@@ -182,5 +181,5 @@ The autonomous optimization loop should detect when it has reached the local max
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor, diagnose, experiment, evaluate, implement, report. Finds the local maximum of personalization performance through continuous A/B testing.
-- `personalization-health-monitor` — daily health checks, weekly reports, retention correlation tracking, and pipeline reliability monitoring
+- `autonomous-optimization` — daily health checks, weekly reports, retention correlation tracking, and pipeline reliability monitoring
 - `nps-feedback-loop` — NPS surveys for personalized users, closed-loop follow-ups, and feedback-to-hypothesis pipeline

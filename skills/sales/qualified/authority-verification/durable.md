@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - autonomous-optimization
   - stakeholder-intelligence-monitor
-  - authority-verification-reporting
 ---
 
 # Authority Verification — Durable
@@ -101,7 +100,7 @@ Feed intelligence monitor outputs into the autonomous optimization loop as signa
 
 ### 3. Deploy authority verification reporting
 
-Run the `authority-verification-reporting` drill for play-specific monitoring:
+Run the `autonomous-optimization` drill for play-specific monitoring:
 
 1. Build a PostHog dashboard with: verification funnel, verification rate trend (12 weeks), time-to-verification distribution, authority accuracy tracking, and stale deals table
 2. Set up the weekly n8n report workflow: pipeline coverage summary, velocity metrics, accuracy tracking, and specific recommendations for stuck deals
@@ -155,4 +154,4 @@ After setup, the system runs autonomously. Human involvement is limited to weekl
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum of authority verification performance
 - `stakeholder-intelligence-monitor` — always-on monitoring of org changes, sentiment shifts, and engagement decay across all active deals
-- `authority-verification-reporting` — weekly reporting on verification coverage, accuracy, and deal impact with real-time alerts for stale and high-value unverified deals
+- `autonomous-optimization` — weekly reporting on verification coverage, accuracy, and deal impact with real-time alerts for stale and high-value unverified deals

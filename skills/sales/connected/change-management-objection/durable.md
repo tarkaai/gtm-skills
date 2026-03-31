@@ -17,7 +17,6 @@ slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
   - autonomous-optimization
-  - change-objection-intelligence-monitor
 ---
 
 # Change Management Objection Handling — Durable Intelligence
@@ -84,7 +83,7 @@ The optimization agent can experiment on these variables (low/medium risk):
 
 ### 2. Set up change objection intelligence monitoring
 
-Run the `change-objection-intelligence-monitor` drill to build the continuous monitoring layer:
+Run the `autonomous-optimization` drill to build the continuous monitoring layer:
 
 **Real-time dashboard panels:**
 - Weekly resolution rate trend (12-week rolling)
@@ -211,4 +210,4 @@ If metrics degrade:
 ## Drills Referenced
 
 - `autonomous-optimization` — The core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs.
-- `change-objection-intelligence-monitor` — Continuous dashboards, anomaly alerts, weekly intelligence briefs, market-level change pattern analysis, readiness model health monitoring
+- `autonomous-optimization` — Continuous dashboards, anomaly alerts, weekly intelligence briefs, market-level change pattern analysis, readiness model health monitoring

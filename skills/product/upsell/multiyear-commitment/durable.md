@@ -16,7 +16,6 @@ slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
 drills:
   - autonomous-optimization
-  - commitment-health-monitor
   - pricing-experiment-runner
 ---
 
@@ -42,7 +41,7 @@ Human involvement reduces to weekly review of the optimization brief and approva
 
 ### 1. Deploy the commitment health monitor
 
-Run the `commitment-health-monitor` drill to build the continuous monitoring layer:
+Run the `autonomous-optimization` drill to build the continuous monitoring layer:
 
 1. **PostHog dashboard** with funnel, retention, revenue, and pipeline panels
 2. **Anomaly thresholds** for: offer conversion rate drops, committed account churn events, discount-to-retention ratio degradation, Ready-tier volume drops, renewal pipeline gaps, offer dismiss rate spikes
@@ -127,7 +126,7 @@ Post to Slack and store in Attio.
 
 ### 3. Manage the renewal optimization sub-loop
 
-The `commitment-health-monitor` drill surfaces accounts approaching commitment renewal. The autonomous agent manages renewals as a secondary optimization target:
+The `autonomous-optimization` drill surfaces accounts approaching commitment renewal. The autonomous agent manages renewals as a secondary optimization target:
 
 1. **90 days before renewal:** score the account's current health. If healthy and usage has grown, prepare an upsell renewal offer (commit at a higher tier or longer term). If health is declining, flag for human intervention.
 2. **60 days before renewal:** deliver the renewal offer via the winning channel from Scalable testing. For accounts that expanded, offer rate lock on the higher usage.
@@ -187,5 +186,5 @@ If any condition degrades for 2+ consecutive months and the autonomous agent has
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor → diagnose → experiment → evaluate → implement. Makes Durable fundamentally different from Scalable.
-- `commitment-health-monitor` — continuous monitoring layer that feeds anomaly events to the optimization loop and generates weekly health reports
+- `autonomous-optimization` — continuous monitoring layer that feeds anomaly events to the optimization loop and generates weekly health reports
 - `pricing-experiment-runner` — manages pricing-specific experiments (new discount tiers, term structures) with Stripe guardrails and auto-revert

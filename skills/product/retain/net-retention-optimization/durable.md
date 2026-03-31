@@ -16,7 +16,6 @@ slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
 drills:
   - autonomous-optimization
-  - ndr-health-monitor
   - nps-feedback-loop
 ---
 
@@ -26,7 +25,7 @@ drills:
 
 ## Outcomes
 
-Always-on AI agents finding the local maximum for every NDR component. The `autonomous-optimization` drill runs the core loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners. The `ndr-health-monitor` drill feeds it NDR-specific intelligence: which component is degrading, which segments are affected, and what has worked historically. The `nps-feedback-loop` drill captures qualitative signals that quantitative data misses.
+Always-on AI agents finding the local maximum for every NDR component. The `autonomous-optimization` drill runs the core loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners. The `autonomous-optimization` drill feeds it NDR-specific intelligence: which component is degrading, which segments are affected, and what has worked historically. The `nps-feedback-loop` drill captures qualitative signals that quantitative data misses.
 
 The system converges when successive experiments on a component produce <2% improvement for 3 consecutive experiments. At convergence, monitoring frequency reduces and the agent shifts focus to the next component with room for improvement. The play is durable when NDR sustains at >=115% for 3+ months with the agent handling optimization autonomously.
 
@@ -56,7 +55,7 @@ The drill uses `posthog-anomaly-detection` to check all NDR-related KPIs daily. 
 If anomaly detected, Phase 2 triggers automatically.
 
 **Phase 2 — Diagnose (triggered by anomaly):**
-The drill gathers context from the `ndr-health-monitor` (step 2 below), pulls 8-week metric history from PostHog, and runs `hypothesis-generation` with Claude. It receives 3 ranked hypotheses with expected impact and risk levels.
+The drill gathers context from the `autonomous-optimization` (step 2 below), pulls 8-week metric history from PostHog, and runs `hypothesis-generation` with Claude. It receives 3 ranked hypotheses with expected impact and risk levels.
 
 Example hypotheses the agent might generate for NDR:
 - "Churn save rate dropped because intervention emails are going to spam — switch to in-app-only for High risk tier" (low risk)
@@ -83,7 +82,7 @@ Aggregates all optimization activity: anomalies detected, hypotheses generated, 
 
 ### 2. Deploy the NDR health monitor
 
-Run the `ndr-health-monitor` drill to feed the optimization loop with NDR-specific intelligence:
+Run the `autonomous-optimization` drill to feed the optimization loop with NDR-specific intelligence:
 
 1. **Daily signal pipeline:** Computes rolling 7-day NDR components (annualized), compares against 30-day averages, classifies each component as Normal/Watch/Alert, and emits `ndr_health_signal` events to PostHog
 2. **Intervention effectiveness tracking:** Creates PostHog cohorts for each intervention type (churn prevention, upgrade prompt, health alert) and tracks 30-day and 90-day outcomes. Computes save rates and expansion rates per intervention type.
@@ -146,5 +145,5 @@ If NDR drops below 115% after sustained performance, the agent should diagnose: 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `ndr-health-monitor` — NDR-specific monitoring that feeds the optimization loop: daily component health signals, intervention effectiveness tracking, drift detection, convergence detection, and weekly NDR optimization briefs
+- `autonomous-optimization` — NDR-specific monitoring that feeds the optimization loop: daily component health signals, intervention effectiveness tracking, drift detection, convergence detection, and weekly NDR optimization briefs
 - `nps-feedback-loop` — captures qualitative signals via NPS surveys, routes detractor themes to the optimization pipeline, tracks sentiment alongside retention metrics

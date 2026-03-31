@@ -17,7 +17,6 @@ slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
 drills:
   - autonomous-optimization
-  - event-performance-reporting
   - dashboard-builder
 ---
 
@@ -100,7 +99,7 @@ The optimization loop runs on this cadence:
 
 ### 3. Configure play-specific reporting
 
-Run the `event-performance-reporting` drill to build the monitoring layer that feeds the optimization loop:
+Run the `autonomous-optimization` drill to build the monitoring layer that feeds the optimization loop:
 
 **Weekly event optimization brief (generated every Monday via n8n):**
 ```
@@ -203,5 +202,5 @@ If external conditions change (new competitor, market shift, partner ecosystem c
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners → report weekly
-- `event-performance-reporting` — play-specific monitoring: per-event and per-partner ROI, format/topic performance rankings, weekly briefs, and anomaly alerts that feed the optimization loop
+- `autonomous-optimization` — play-specific monitoring: per-event and per-partner ROI, format/topic performance rankings, weekly briefs, and anomaly alerts that feed the optimization loop
 - `dashboard-builder` — build the master event intelligence dashboard in PostHog with funnel, trend, partner, and experiment panels

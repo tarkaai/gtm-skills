@@ -18,7 +18,6 @@ slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
 drills:
   - autonomous-optimization
-  - segment-drift-monitor
   - behavior-segmentation-pipeline
 ---
 # AI Behavior Segmentation -- Durable Intelligence
@@ -27,7 +26,7 @@ drills:
 
 ## Outcomes
 
-The AI agent runs the entire segmentation-personalization-optimization loop without human intervention. `autonomous-optimization` monitors all play KPIs daily, detects when retention lift plateaus or personalization engagement drops, generates hypotheses for improvement, runs A/B experiments, and auto-implements winners. `segment-drift-monitor` watches the segmentation model itself for degradation and triggers cluster refreshes when behavior patterns shift. Together, these drills find and maintain the local maximum of this play.
+The AI agent runs the entire segmentation-personalization-optimization loop without human intervention. `autonomous-optimization` monitors all play KPIs daily, detects when retention lift plateaus or personalization engagement drops, generates hypotheses for improvement, runs A/B experiments, and auto-implements winners. `autonomous-optimization` watches the segmentation model itself for degradation and triggers cluster refreshes when behavior patterns shift. Together, these drills find and maintain the local maximum of this play.
 
 **Pass threshold:** Sustained or improving retention lift >=10% over 6 months with experiment velocity >=2 experiments per month. The play converges when 3 consecutive experiments produce <2% improvement -- at that point, the local maximum is reached.
 
@@ -67,7 +66,7 @@ Segmentation-specific hypotheses the agent should consider:
 - "Segment X's in-app message CTA is stale -- users have seen it too many times" -> test a new CTA
 - "Segment Y's email sequence has declining open rates -- subject lines need refresh" -> test new subjects
 - "The product tour for Segment Z has low completion rate -- it is too long" -> test a shorter tour
-- "Segment boundaries have drifted -- cluster refresh needed" -> trigger `segment-drift-monitor`
+- "Segment boundaries have drifted -- cluster refresh needed" -> trigger `autonomous-optimization`
 - "A new user behavior pattern has emerged that does not fit existing segments" -> run cluster discovery
 
 **Phase 3 -- Experiment (triggered by hypothesis acceptance):**
@@ -79,7 +78,7 @@ For personalization experiments, the agent can modify:
 - Product tour steps and flow via Intercom product tours
 - Feature flag payloads (which features to highlight per segment) via PostHog API
 
-The agent MUST NOT modify: segment definitions directly (that is `segment-drift-monitor`'s job), billing or pricing, or core product functionality.
+The agent MUST NOT modify: segment definitions directly (that is `autonomous-optimization`'s job), billing or pricing, or core product functionality.
 
 **Phase 4 -- Evaluate (triggered by experiment completion):**
 Pull experiment results from PostHog. Run `experiment-evaluation` to decide:
@@ -95,12 +94,12 @@ Generate a weekly optimization brief:
 - Experiments completed: outcome, metric impact
 - Net retention lift change from all adopted changes
 - Current distance from estimated local maximum
-- Segment health summary (from `segment-drift-monitor`)
+- Segment health summary (from `autonomous-optimization`)
 Store in Attio and post to Slack.
 
 ### 2. Deploy the segment drift monitor
 
-Run the `segment-drift-monitor` drill to set up always-on segment quality monitoring:
+Run the `autonomous-optimization` drill to set up always-on segment quality monitoring:
 
 - Weekly health check (Monday 07:00 UTC): compute segment stability, size balance, retention divergence, and personalization engagement spread
 - Automatic drift classification: Healthy / Degrading / Drifted
@@ -132,7 +131,7 @@ The play has reached its local maximum when:
 
 At convergence:
 1. Reduce `autonomous-optimization` monitoring from daily to weekly
-2. Keep `segment-drift-monitor` running weekly (behavior patterns can still shift)
+2. Keep `autonomous-optimization` running weekly (behavior patterns can still shift)
 3. Generate a final optimization report: total experiments run, total wins, cumulative retention lift, current segment definitions, and recommendation for when to re-activate daily optimization (e.g., after a major product launch or significant user growth)
 4. Store the report in Attio. The play is optimized.
 
@@ -170,5 +169,5 @@ This level runs continuously. If retention lift decays below 10% and the agent c
 ## Drills Referenced
 
 - `autonomous-optimization` -- The core Durable loop: monitor -> diagnose -> experiment -> evaluate -> implement. Runs daily. Finds and maintains the local maximum.
-- `segment-drift-monitor` -- Watches segment quality, detects drift, triggers corrective cluster refreshes. Runs weekly.
+- `autonomous-optimization` -- Watches segment quality, detects drift, triggers corrective cluster refreshes. Runs weekly.
 - `behavior-segmentation-pipeline` -- The underlying weekly segmentation pipeline that the drift monitor and optimization loop depend on.

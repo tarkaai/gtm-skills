@@ -17,7 +17,6 @@ slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
 drills:
   - autonomous-optimization
-  - invite-health-monitor
 ---
 
 # Team Invite System — Durable Intelligence
@@ -26,7 +25,7 @@ drills:
 
 ## Outcomes
 
-The invite mechanism runs on autopilot with AI agents monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill creates the core loop: detect metric anomalies in the invite funnel, generate hypotheses for what to change, run A/B experiments, evaluate results, and auto-implement winners. The `invite-health-monitor` drill provides the continuous telemetry that feeds the optimization loop. Over 6 months, invite rate and acceptance rate sustain or improve without manual intervention. The system converges when successive experiments produce less than 2% improvement — meaning the invite mechanism has reached its local maximum given the current product, audience, and market conditions.
+The invite mechanism runs on autopilot with AI agents monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill creates the core loop: detect metric anomalies in the invite funnel, generate hypotheses for what to change, run A/B experiments, evaluate results, and auto-implement winners. The `autonomous-optimization` drill provides the continuous telemetry that feeds the optimization loop. Over 6 months, invite rate and acceptance rate sustain or improve without manual intervention. The system converges when successive experiments produce less than 2% improvement — meaning the invite mechanism has reached its local maximum given the current product, audience, and market conditions.
 
 ## Leading Indicators
 
@@ -41,7 +40,7 @@ The invite mechanism runs on autopilot with AI agents monitoring, diagnosing, ex
 
 ### 1. Deploy the invite health monitor
 
-Run the `invite-health-monitor` drill to create the always-on monitoring layer:
+Run the `autonomous-optimization` drill to create the always-on monitoring layer:
 
 1. Build the PostHog "Invite Mechanism — Health" dashboard with 4 panel groups: top-level metrics, trend charts, funnel breakdown, and segment comparison
 2. Define health thresholds calibrated to your Scalable-level baselines:
@@ -173,4 +172,4 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core Durable loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs. Converges when successive experiments produce <2% improvement.
-- `invite-health-monitor` — continuous monitoring of invite funnel health, acceptance rates, viral coefficient trends, invited-user retention comparison, and viral chain depth tracking. Feeds anomaly data to the autonomous-optimization loop.
+- `autonomous-optimization` — continuous monitoring of invite funnel health, acceptance rates, viral coefficient trends, invited-user retention comparison, and viral chain depth tracking. Feeds anomaly data to the autonomous-optimization loop.

@@ -16,7 +16,6 @@ slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
 drills:
   - autonomous-optimization
-  - retargeting-performance-monitor
 ---
 
 # Multi-platform Retargeting — Durable Intelligence
@@ -64,7 +63,7 @@ Run the `autonomous-optimization` drill configured for retargeting:
 
 **Phase 2 — Diagnose (triggered by anomaly):**
 
-1. Gather context via the `retargeting-performance-monitor` drill:
+1. Gather context via the `autonomous-optimization` drill:
    - Pull the retargeting health dashboard data from PostHog
    - Check creative fatigue status (any creatives with CTR declining > 30%)
    - Check audience exhaustion indicators (frequency > 5 on any segment)
@@ -126,7 +125,7 @@ Run the `autonomous-optimization` drill configured for retargeting:
 
 ### 2. Deploy the retargeting performance monitor
 
-Run the `retargeting-performance-monitor` drill to set up always-on monitoring that feeds the optimization loop:
+Run the `autonomous-optimization` drill to set up always-on monitoring that feeds the optimization loop:
 
 1. Build the 6-panel PostHog dashboard: cross-platform CPA trend, creative performance decay, audience saturation, conversion funnel by platform, budget utilization, and lead quality score.
 
@@ -196,7 +195,7 @@ The optimization loop must detect when the play has reached its local maximum:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `retargeting-performance-monitor` — play-specific monitoring: creative fatigue detection, audience exhaustion alerts, cross-platform CPA tracking, and weekly retargeting health reporting
+- `autonomous-optimization` — play-specific monitoring: creative fatigue detection, audience exhaustion alerts, cross-platform CPA tracking, and weekly retargeting health reporting
 
 ## Guardrails
 

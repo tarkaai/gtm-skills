@@ -17,7 +17,6 @@ install: "npx gtm-skills add OutboundFounderLed/Marketing/SolutionAware/outbound
 drills:
   - autonomous-optimization
   - gift-ab-testing
-  - gift-performance-monitor
   - dashboard-builder
 ---
 
@@ -27,7 +26,7 @@ drills:
 
 ## Outcomes
 
-The gift campaign channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs gift experiments via the `gift-ab-testing` drill, evaluates results, and auto-implements winners. The `gift-performance-monitor` drill provides the daily anomaly detection and weekly reporting that feeds the optimization loop. The system converges when successive experiments produce less than 2% improvement — the play has reached its optimal performance given current market conditions.
+The gift campaign channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs gift experiments via the `gift-ab-testing` drill, evaluates results, and auto-implements winners. The `autonomous-optimization` drill provides the daily anomaly detection and weekly reporting that feeds the optimization loop. The system converges when successive experiments produce less than 2% improvement — the play has reached its optimal performance given current market conditions.
 
 ## Leading Indicators
 
@@ -117,7 +116,7 @@ Run the `autonomous-optimization` drill configured for gift campaigns. This is t
 
 ### 3. Deploy the gift performance monitor
 
-Run the `gift-performance-monitor` drill. This provides the daily anomaly detection and weekly reporting that feeds the autonomous optimization loop.
+Run the `autonomous-optimization` drill. This provides the daily anomaly detection and weekly reporting that feeds the autonomous optimization loop.
 
 **Daily monitoring (8am via n8n):**
 - Check gift delivery status updates from platform webhooks
@@ -225,5 +224,5 @@ Even after convergence, the agent should:
 
 - `autonomous-optimization` — The core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly
 - `gift-ab-testing` — Execute the A/B experiments proposed by the optimization loop on gift type, value, timing, and personalization
-- `gift-performance-monitor` — Daily anomaly detection and weekly performance reports specific to gift campaigns
+- `autonomous-optimization` — Daily anomaly detection and weekly performance reports specific to gift campaigns
 - `dashboard-builder` — Build the PostHog dashboard for real-time gift campaign performance monitoring

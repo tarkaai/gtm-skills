@@ -18,7 +18,6 @@ install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosti
 drills:
   - autonomous-optimization
   - hackathon-performance-monitor
-  - hackathon-optimization-reporting
 ---
 
 # Hackathon Sponsorship -- Durable Intelligence
@@ -91,7 +90,7 @@ Pull results from PostHog. Run `experiment-evaluation`:
 Store full evaluation in Attio with decision, confidence, reasoning.
 
 **Phase 5 -- Report (weekly via n8n cron):**
-Generate weekly optimization brief via the `hackathon-optimization-reporting` drill.
+Generate weekly optimization brief via the `autonomous-optimization` drill.
 
 Estimated time for setup: 12 hours. Then always-on.
 
@@ -107,7 +106,7 @@ Estimated time: 8 hours enhancement, then always-on.
 
 ### 3. Deploy hackathon-specific optimization reporting
 
-Run the `hackathon-optimization-reporting` drill. This adds the play-specific reporting layer on top of the generic autonomous optimization:
+Run the `autonomous-optimization` drill. This adds the play-specific reporting layer on top of the generic autonomous optimization:
 
 - **Weekly optimization briefs** with hackathon-specific context: funnel health, community pulse, active experiments, convergence status
 - **Monthly developer community health reports**: size, active ratio, alumni retention, organic project sharing, community-to-customer pipeline
@@ -190,4 +189,4 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
 - `hackathon-performance-monitor` -- enhanced at Durable with cross-event pattern detection, predictive registration modeling, and developer lifecycle tracking
-- `hackathon-optimization-reporting` -- weekly optimization briefs, monthly community health reports, cross-hackathon A/B test synthesis, and product adoption funnel analysis
+- `autonomous-optimization` -- weekly optimization briefs, monthly community health reports, cross-hackathon A/B test synthesis, and product adoption funnel analysis

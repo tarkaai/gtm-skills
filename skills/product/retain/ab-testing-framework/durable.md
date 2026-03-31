@@ -18,7 +18,6 @@ slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
 drills:
   - autonomous-optimization
-  - experiment-portfolio-health-monitor
   - experiment-learnings-database
 ---
 
@@ -95,7 +94,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the experiment portfolio health monitor
 
-Run the `experiment-portfolio-health-monitor` drill with Durable-level configuration:
+Run the `autonomous-optimization` drill with Durable-level configuration:
 
 - **Health check frequency:** weekly (Monday 08:00 UTC)
 - **Velocity monitoring:** alerts if no experiment completed in 10+ days (stricter than Scalable's 14-day threshold)
@@ -179,5 +178,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for each product area
-- `experiment-portfolio-health-monitor` -- monitors program health including velocity, win rates, coverage gaps, and convergence signals; feeds anomalies to the optimization loop
+- `autonomous-optimization` -- monitors program health including velocity, win rates, coverage gaps, and convergence signals; feeds anomalies to the optimization loop
 - `experiment-learnings-database` -- cumulative knowledge base of experiment outcomes and patterns; queried before every hypothesis to prevent repeated failures and improve hypothesis quality over time

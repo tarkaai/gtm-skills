@@ -16,14 +16,13 @@ slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
 drills:
   - autonomous-optimization
-  - champion-outbound-reporting
 ---
 # Champion-driven Outbound — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social, Direct
 
 ## Overview
-Always-on AI agents find and maintain the local maximum for this play. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in the champion funnel, generate improvement hypotheses, run A/B experiments, evaluate results, and auto-implement winners. The `champion-outbound-reporting` drill provides the play-specific monitoring layer. Weekly optimization briefs. The play converges when successive experiments produce <2% improvement.
+Always-on AI agents find and maintain the local maximum for this play. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in the champion funnel, generate improvement hypotheses, run A/B experiments, evaluate results, and auto-implement winners. The `autonomous-optimization` drill provides the play-specific monitoring layer. Weekly optimization briefs. The play converges when successive experiments produce <2% improvement.
 
 **Time commitment:** 180 hours over 12 months
 **Pass threshold:** Sustained champion conversion (≥3%) over 12 months via AI-powered champion identification and enablement
@@ -104,7 +103,7 @@ Generate the weekly optimization brief using Claude:
 Post to Slack and store in Attio.
 
 ### 2. Deploy champion-specific monitoring
-Run the `champion-outbound-reporting` drill. This builds the monitoring layer unique to this play:
+Run the `autonomous-optimization` drill. This builds the monitoring layer unique to this play:
 
 **Champion Funnel Dashboard (PostHog):**
 - Full funnel from accounts targeted through deals created
@@ -183,7 +182,7 @@ This level runs continuously. Review monthly: what the optimization loop changed
 
 ## Drills Referenced
 - `autonomous-optimization` — the core Durable loop: monitor metrics → diagnose anomalies → generate hypotheses → run experiments → evaluate and implement winners → weekly briefs
-- `champion-outbound-reporting` — champion-specific funnel dashboards, anomaly detection, weekly pipeline reports, and monthly cohort analysis
+- `autonomous-optimization` — champion-specific funnel dashboards, anomaly detection, weekly pipeline reports, and monthly cohort analysis
 
 ---
 

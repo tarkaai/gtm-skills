@@ -17,7 +17,6 @@ slug: "activation-milestone-tracking"
 install: "npx gtm-skills add product/onboard/activation-milestone-tracking"
 drills:
   - autonomous-optimization
-  - activation-health-monitor
 ---
 
 # Activation Milestone Tracking — Durable Intelligence
@@ -129,7 +128,7 @@ Example hypotheses the agent might generate:
 
 ### 2. Deploy the activation health monitor
 
-Run the `activation-health-monitor` drill to create the always-on monitoring layer that feeds signals into the autonomous optimization loop. This drill provides:
+Run the `autonomous-optimization` drill to create the always-on monitoring layer that feeds signals into the autonomous optimization loop. This drill provides:
 
 - A PostHog dashboard with 6 panels tracking per-milestone health
 - A daily n8n workflow that checks milestone metrics and alerts on anomalies
@@ -196,4 +195,4 @@ This level runs continuously. Monthly review checkpoints:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `activation-health-monitor` — play-specific monitoring layer: per-milestone dashboards, daily anomaly checks, weekly health briefs, trip-wire alerts, signal data for the optimization loop
+- `autonomous-optimization` — play-specific monitoring layer: per-milestone dashboards, daily anomaly checks, weekly health briefs, trip-wire alerts, signal data for the optimization loop

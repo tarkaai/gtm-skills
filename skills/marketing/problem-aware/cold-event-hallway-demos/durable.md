@@ -15,7 +15,6 @@ slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
 drills:
   - autonomous-optimization
-  - hallway-demo-performance-monitor
   - event-scouting
 ---
 
@@ -79,7 +78,7 @@ When an anomaly triggers, the `autonomous-optimization` drill runs Phase 2 (Diag
 
 ### 2. Deploy the performance monitoring layer
 
-Run the `hallway-demo-performance-monitor` drill to build:
+Run the `autonomous-optimization` drill to build:
 
 **Real-time dashboard** with:
 - Headline metrics: total demos, meetings, pipeline, cost-per-meeting (30/90 day views)
@@ -165,5 +164,5 @@ All guardrails from the `autonomous-optimization` drill apply, plus:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that makes Durable fundamentally different; detects metric anomalies, generates hypotheses, runs A/B tests, auto-implements winners
-- `hallway-demo-performance-monitor` — real-time dashboard, weekly reports, event ROI comparison, and trend analysis
+- `autonomous-optimization` — real-time dashboard, weekly reports, event ROI comparison, and trend analysis
 - `event-scouting` — continuous scouting with learning feedback from actual event outcomes

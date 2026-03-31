@@ -17,7 +17,6 @@ slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
   - autonomous-optimization
-  - timing-intelligence-monitor
   - timing-objection-detection-automation
 ---
 
@@ -54,7 +53,7 @@ Run the `autonomous-optimization` drill configured for the timing objection hand
 **Phase 2 — Diagnose (triggered by anomaly):**
 - Pull play context from Attio: current strategy effectiveness, root cause distribution, smokescreen trends, active experiments
 - Pull 8-week metric history from PostHog
-- Run hypothesis generation with timing-objection-specific context (fed by `timing-intelligence-monitor`)
+- Run hypothesis generation with timing-objection-specific context (fed by `autonomous-optimization`)
 - Receive 3 ranked hypotheses. Examples specific to this play:
   - "Acceleration rate dropped 20% because `competing_priority` objections doubled after a major competitor launched — prospects are distracted by evaluating the competitor. Experiment: add competitive urgency content to the competing_priority follow-up sequence showing risk of falling behind peers who act now."
   - "Smokescreen detection accuracy fell from 78% to 55% — the classification prompt is not accounting for new objection language patterns. Experiment: retrain the classification prompt with the last 30 days of confirmed smokescreen-vs-genuine outcomes."
@@ -87,7 +86,7 @@ Run the `autonomous-optimization` drill configured for the timing objection hand
 
 ### 2. Deploy the timing intelligence monitor
 
-Run the `timing-intelligence-monitor` drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
 
 **PostHog dashboard (8 panels):**
 - Timeline acceleration rate (weekly trend line)
@@ -164,5 +163,5 @@ Agent compute is variable based on experiment velocity and monitoring frequency.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run experiments -> evaluate -> implement winners -> report weekly
-- `timing-intelligence-monitor` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly timing intelligence report, domain-specific hypothesis context for the optimization loop
+- `autonomous-optimization` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly timing intelligence report, domain-specific hypothesis context for the optimization loop
 - `timing-objection-detection-automation` — continued from Scalable: always-on call and email monitoring, predictive scoring, auto-classification, smokescreen detection

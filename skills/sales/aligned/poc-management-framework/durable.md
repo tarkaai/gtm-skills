@@ -15,7 +15,6 @@ slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
   - autonomous-optimization
-  - poc-intelligence-reporting
 ---
 
 # POC Management Framework — Durable Intelligence
@@ -24,7 +23,7 @@ drills:
 
 ## Outcomes
 
-The POC management system runs autonomously. AI agents continuously monitor POC metrics, detect when performance plateaus or drops, generate hypotheses for improvement, run controlled experiments, and auto-implement winners. The `autonomous-optimization` drill governs the core loop. `poc-intelligence-reporting` provides weekly strategic insight. The system converges on the local maximum for POC-to-close conversion and sustains it as market conditions change.
+The POC management system runs autonomously. AI agents continuously monitor POC metrics, detect when performance plateaus or drops, generate hypotheses for improvement, run controlled experiments, and auto-implement winners. The `autonomous-optimization` drill governs the core loop. `autonomous-optimization` provides weekly strategic insight. The system converges on the local maximum for POC-to-close conversion and sustains it as market conditions change.
 
 ## Leading Indicators
 
@@ -83,7 +82,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy POC intelligence reporting
 
-Run the `poc-intelligence-reporting` drill. This generates weekly strategic reports that complement the optimization loop:
+Run the `autonomous-optimization` drill. This generates weekly strategic reports that complement the optimization loop:
 
 **POC structure effectiveness analysis:** Compare outcomes across POC configurations (duration, criteria count, support model, industry segment). Identify which configurations produce the highest win rates and shortest sales cycles. Recommend structural changes.
 
@@ -154,4 +153,4 @@ If metrics decay for 2+ consecutive months, diagnose: is it market saturation (s
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum for POC-to-close conversion
-- `poc-intelligence-reporting` — weekly strategic reports correlating POC usage patterns with deal outcomes, tracking prediction accuracy, and surfacing structural optimization opportunities
+- `autonomous-optimization` — weekly strategic reports correlating POC usage patterns with deal outcomes, tracking prediction accuracy, and surfacing structural optimization opportunities

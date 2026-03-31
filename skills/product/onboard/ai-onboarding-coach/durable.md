@@ -17,7 +17,6 @@ slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
 drills:
   - autonomous-optimization
-  - ai-coach-health-monitor
   - onboarding-health-monitor
 ---
 
@@ -55,7 +54,7 @@ Run the `autonomous-optimization` drill to build the always-on optimization agen
 **Phase 2 — Diagnose (triggered by anomaly):**
 1. Gather context: pull the coach's current configuration from Attio (active trigger rules, Fin custom answers count, last experiment results, persona distribution)
 2. Pull 8-week metric history from PostHog
-3. Pull the latest content gap report from the `ai-coach-health-monitor` drill
+3. Pull the latest content gap report from the `autonomous-optimization` drill
 4. Run `hypothesis-generation` with the anomaly + context. The hypothesis space for this play includes:
    - **Engagement hypotheses**: Greeting copy, Messenger widget placement, proactive trigger timing, suggestion format
    - **Resolution hypotheses**: Missing knowledge base content, outdated articles, Fin confidence threshold, handoff rules
@@ -97,7 +96,7 @@ Run the `autonomous-optimization` drill to build the always-on optimization agen
 
 ### 2. Deploy coach-specific health monitoring
 
-Run the `ai-coach-health-monitor` drill to build the coach-specific monitoring layer:
+Run the `autonomous-optimization` drill to build the coach-specific monitoring layer:
 
 1. **Daily health checks**: Engagement rate, resolution rate, activation lift, suggestion CTR, handoff rate — all compared against rolling averages with automated anomaly alerts
 2. **Weekly content gap report**: Extract unanswered Fin queries, cluster by topic, identify missing articles and degraded articles, generate a prioritized content fix list
@@ -162,5 +161,5 @@ _CRM (Attio), automation (n8n), and PostHog are standard stack — not counted a
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on optimization loop: daily metric monitoring with anomaly detection, hypothesis generation via Claude, A/B experiment execution via PostHog feature flags, automated evaluation and implementation of winners, and weekly optimization briefs
-- `ai-coach-health-monitor` — coach-specific daily health checks (engagement, resolution, activation lift), weekly content gap reports (unanswered Fin queries), and weekly regression analysis comparing coach effectiveness across signup cohorts
+- `autonomous-optimization` — coach-specific daily health checks (engagement, resolution, activation lift), weekly content gap reports (unanswered Fin queries), and weekly regression analysis comparing coach effectiveness across signup cohorts
 - `onboarding-health-monitor` — onboarding-wide monitoring: per-persona activation rates, tour completion, email engagement, and cohort drift detection providing the broader context the optimization agent needs to diagnose issues correctly

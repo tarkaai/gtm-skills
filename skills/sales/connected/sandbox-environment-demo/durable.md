@@ -16,7 +16,6 @@ slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
   - autonomous-optimization
-  - sandbox-intelligence-reporting
 ---
 
 # Sandbox Environment Demo — Durable Intelligence
@@ -78,7 +77,7 @@ Aggregate all optimization activity: anomalies detected, hypotheses generated, e
 
 ### 2. Launch sandbox intelligence reporting
 
-Run the `sandbox-intelligence-reporting` drill to produce weekly intelligence alongside the optimization brief:
+Run the `autonomous-optimization` drill to produce weekly intelligence alongside the optimization brief:
 
 1. **Predictive model refinement**: Monthly, retrain the close-probability model using the latest outcome data. Track which usage signals gain or lose predictive power as the market and product evolve.
 
@@ -143,4 +142,4 @@ _CRM (Attio), analytics (PostHog), and automation (n8n) are standard stack — n
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum; detects anomalies, generates hypotheses, runs A/B tests, auto-implements winners, and produces weekly optimization briefs
-- `sandbox-intelligence-reporting` — generates weekly intelligence reports correlating sandbox usage with deal outcomes, maintains the close-probability predictive model, and surfaces pipeline risk and sandbox experience quality issues
+- `autonomous-optimization` — generates weekly intelligence reports correlating sandbox usage with deal outcomes, maintains the close-probability predictive model, and surfaces pipeline risk and sandbox experience quality issues

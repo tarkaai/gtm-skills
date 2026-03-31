@@ -18,7 +18,6 @@ slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
 drills:
   - autonomous-optimization
-  - budget-intelligence-monitor
   - budget-detection-automation
 ---
 
@@ -55,7 +54,7 @@ Run the `autonomous-optimization` drill configured for the budget objection hand
 **Phase 2 — Diagnose (triggered by anomaly):**
 - Pull play context from Attio: current framework effectiveness, root cause distribution, active experiments, budget cycle data
 - Pull 8-week metric history from PostHog
-- Run hypothesis generation with budget-objection-specific context (fed by `budget-intelligence-monitor`)
+- Run hypothesis generation with budget-objection-specific context (fed by `autonomous-optimization`)
 - Receive 3 ranked hypotheses. Examples specific to this play:
   - "Navigation success rate dropped 20% because `budget_exhausted` objections surged — it's Q4 for 65% of our pipeline and budgets are spent. Experiment: shift the default for Q4 `budget_exhausted` from 'find remaining budget' to 'defer-and-lock with price protection' plus a year-end signing incentive."
   - "Smokescreen rate increased from 18% to 35%. Discovery calls are not qualifying budget early enough. Experiment: add a mandatory budget qualification step to the discovery framework: 'Is there budget allocated for solving this problem?' before advancing any deal to Proposed."
@@ -90,7 +89,7 @@ Run the `autonomous-optimization` drill configured for the budget objection hand
 
 ### 2. Deploy the budget intelligence monitor
 
-Run the `budget-intelligence-monitor` drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
 
 **PostHog dashboard (8 panels):**
 - Budget navigation success rate (weekly trend line)
@@ -179,5 +178,5 @@ Agent compute is variable based on experiment velocity and monitoring frequency.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run experiments -> evaluate -> implement winners -> report weekly
-- `budget-intelligence-monitor` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly budget intelligence report, budget cycle timing analysis, domain-specific hypothesis context for the optimization loop
+- `autonomous-optimization` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly budget intelligence report, budget cycle timing analysis, domain-specific hypothesis context for the optimization loop
 - `budget-detection-automation` — continued from Scalable: always-on call and email monitoring with budget/price distinction, predictive scoring, auto-classification

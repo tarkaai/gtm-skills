@@ -16,7 +16,6 @@ slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
   - autonomous-optimization
-  - pain-intelligence-reporting
 ---
 
 # Pain Discovery Framework — Durable Intelligence
@@ -79,7 +78,7 @@ The optimization agent can experiment on these variables (low/medium risk):
 
 ### 2. Set up pain intelligence reporting
 
-Run the `pain-intelligence-reporting` drill to build the continuous monitoring layer:
+Run the `autonomous-optimization` drill to build the continuous monitoring layer:
 
 **Real-time dashboard panels:**
 - Weekly pain-to-price ratio trend (12-week rolling)
@@ -198,4 +197,4 @@ If metrics degrade:
 ## Drills Referenced
 
 - `autonomous-optimization` — The core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs.
-- `pain-intelligence-reporting` — Continuous dashboards, anomaly alerts, weekly intelligence briefs, market-level pain analysis, question bank health monitoring
+- `autonomous-optimization` — Continuous dashboards, anomaly alerts, weekly intelligence briefs, market-level pain analysis, question bank health monitoring

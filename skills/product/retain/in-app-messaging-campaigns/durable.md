@@ -16,7 +16,6 @@ slug: "in-app-messaging-campaigns"
 install: "npx gtm-skills add product/retain/in-app-messaging-campaigns"
 drills:
   - autonomous-optimization
-  - in-app-message-health-monitor
   - nps-feedback-loop
 ---
 
@@ -77,7 +76,7 @@ Run the `autonomous-optimization` drill to configure the always-on agent loop fo
 
 ### 2. Deploy the message health monitoring system
 
-Run the `in-app-message-health-monitor` drill to build the monitoring layer specific to in-app messaging. This drill creates:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to in-app messaging. This drill creates:
 
 **Fatigue detection (daily):** An n8n workflow that queries PostHog for the fatigued users cohort (dismissed 3+ messages in 14 days OR ignored 5+ messages in 30 days). Syncs the fatigue flag to Intercom so fatigued users are excluded from non-critical messages. Logs fatigue trend in Attio.
 
@@ -153,5 +152,5 @@ This level runs continuously. Monthly review: what the agent changed, what it le
 ## Drills Referenced
 
 - `autonomous-optimization` — the core agent loop that monitors metrics, generates hypotheses, runs experiments, evaluates results, and auto-implements winners
-- `in-app-message-health-monitor` — monitors message fatigue, delivery rates, engagement decay, and triggers campaign rotation
+- `autonomous-optimization` — monitors message fatigue, delivery rates, engagement decay, and triggers campaign rotation
 - `nps-feedback-loop` — collects qualitative user feedback to inform the optimization loop's hypothesis generation

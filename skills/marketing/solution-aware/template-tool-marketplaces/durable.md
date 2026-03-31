@@ -15,7 +15,6 @@ slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
 drills:
   - autonomous-optimization
-  - marketplace-performance-monitor
   - dashboard-builder
 ---
 
@@ -109,7 +108,7 @@ Run the `autonomous-optimization` drill configured for this play's KPIs:
 
 ### 2. Configure play-specific monitoring
 
-Run the `marketplace-performance-monitor` drill with Durable-level enhancements:
+Run the `autonomous-optimization` drill with Durable-level enhancements:
 
 **Competitive intelligence automation:**
 - Weekly Clay scrape of top 5 competing templates per marketplace per category
@@ -206,5 +205,5 @@ When the optimization loop detects convergence (<2% improvement from 3 consecuti
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate loop that finds the local maximum for template marketplace performance
-- `marketplace-performance-monitor` -- enhanced with competitive intelligence, template portfolio health tracking, lead quality monitoring, and seasonal pattern detection
+- `autonomous-optimization` -- enhanced with competitive intelligence, template portfolio health tracking, lead quality monitoring, and seasonal pattern detection
 - `dashboard-builder` -- executive dashboard with portfolio health, optimization activity, template performance matrix, and convergence tracking

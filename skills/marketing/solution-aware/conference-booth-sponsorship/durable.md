@@ -19,7 +19,6 @@ slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
   - autonomous-optimization
-  - conference-booth-performance-monitor
 ---
 
 # Conference Booth & Sponsorship — Durable Intelligence
@@ -47,7 +46,7 @@ drills:
 
 ### 1. Deploy continuous conference program monitoring
 
-Run the `conference-booth-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - **Post-event automated checks**: 14 days after each conference, the agent runs a full health check — qualified lead rate vs rolling average, cost per meeting vs target, follow-up reply rate by tier, pipeline generated vs sponsorship cost. Alerts fire if any metric falls below critical thresholds (qualified lead rate <12%, cost per meeting >2x rolling average, follow-up reply rate <8%).
 - **Cross-conference trend analysis**: After every 2 conferences, compare the latest pair against the rolling average of all previous conferences. Flag any metric declining for 2 consecutive events.
@@ -178,4 +177,4 @@ The play is durable when the agent can maintain meetings-per-conference and cost
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor conference metrics, diagnose anomalies, generate hypotheses, run experiments across conference selection/booth tactics/follow-up sequences, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `conference-booth-performance-monitor` — continuous monitoring with post-event health checks, cross-conference trend analysis, quarterly program reports, and degradation alerts that feed data into the optimization loop
+- `autonomous-optimization` — continuous monitoring with post-event health checks, cross-conference trend analysis, quarterly program reports, and degradation alerts that feed data into the optimization loop

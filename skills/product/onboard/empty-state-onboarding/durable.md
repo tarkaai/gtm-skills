@@ -16,7 +16,6 @@ slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
 drills:
   - autonomous-optimization
-  - empty-state-health-monitor
 ---
 
 # Empty State Guidance — Durable Intelligence
@@ -72,7 +71,7 @@ Run the `autonomous-optimization` drill configured for empty state metrics:
 
 ### 2. Deploy the empty state health monitor
 
-Run the `empty-state-health-monitor` drill to set up:
+Run the `autonomous-optimization` drill to set up:
 
 **Daily health check (8 AM):**
 - Query all empty state surface metrics
@@ -179,4 +178,4 @@ When converged:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor, diagnose, experiment, evaluate, implement, report
-- `empty-state-health-monitor` — play-specific monitoring: per-surface health checks, untreated surface detection, weekly reports
+- `autonomous-optimization` — play-specific monitoring: per-surface health checks, untreated surface detection, weekly reports

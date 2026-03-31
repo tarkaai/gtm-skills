@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/referrals/referral-program"
 drills:
   - ab-test-orchestrator
   - referral-channel-scaling
-  - referral-funnel-monitor
+  - dashboard-builder
 ---
 
 # Incentivized Referral Program — Scalable Automation
@@ -76,7 +76,7 @@ Log every test result in PostHog and Attio. After each test concludes, implement
 
 ### 3. Build always-on funnel monitoring
 
-Run the `referral-funnel-monitor` drill. Set up:
+Run the `dashboard-builder` drill. Set up:
 
 - Daily automated health check via n8n that calculates 7-day rolling conversion rates at each funnel stage
 - Healthy/warning/critical classification for each stage transition (benchmarks defined in the drill)
@@ -134,4 +134,4 @@ Measure after 6 weeks:
 
 - `ab-test-orchestrator` -- designs, runs, and evaluates A/B tests on incentive structure, prompt timing, share copy, and landing page
 - `referral-channel-scaling` -- deploys referral surfaces across in-app prompts, lifecycle emails, and post-action social sharing
-- `referral-funnel-monitor` -- builds always-on funnel monitoring with daily health checks, alerts, and weekly reports
+- `dashboard-builder` -- builds always-on funnel monitoring with daily health checks, alerts, and weekly reports

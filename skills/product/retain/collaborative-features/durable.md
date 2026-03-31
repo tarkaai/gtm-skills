@@ -17,7 +17,6 @@ slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
 drills:
   - autonomous-optimization
-  - collaboration-adoption-monitor
   - collaboration-network-effects
 ---
 
@@ -136,7 +135,7 @@ Estimated time for setup: 20 hours. Then always-on.
 
 ### 2. Run continuous collaboration health monitoring
 
-Run the `collaboration-adoption-monitor` drill at Durable level. Enhance it beyond Scalable:
+Run the `autonomous-optimization` drill at Durable level. Enhance it beyond Scalable:
 
 - **Cross-workspace pattern detection:** When 5+ workspaces show the same collaboration decline pattern (e.g., co-editing drops after team size exceeds 5), flag it as a systemic product issue rather than individual workspace problems. Feed this into the autonomous optimization loop as a high-priority anomaly.
 - **Seasonal pattern learning:** Over 6 months, the monitor should detect weekly and monthly patterns (e.g., collaboration dips on Fridays, spikes Monday-Wednesday). Exclude known patterns from anomaly detection to reduce false positives.
@@ -229,5 +228,5 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor collaboration metrics daily, diagnose anomalies, generate hypotheses, run experiments on invite flows and sharing surfaces, evaluate results, auto-implement winners, generate weekly optimization briefs
-- `collaboration-adoption-monitor` — enhanced at Durable with cross-workspace pattern detection, seasonal pattern learning, cohort lifecycle tracking, and predictive workspace health scoring
+- `autonomous-optimization` — enhanced at Durable with cross-workspace pattern detection, seasonal pattern learning, cohort lifecycle tracking, and predictive workspace health scoring
 - `collaboration-network-effects` — enhanced at Durable with dynamic amplification, cross-pollination suggestions, deep referral attribution, and viral coefficient decomposition

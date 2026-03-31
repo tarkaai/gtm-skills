@@ -16,7 +16,6 @@ slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
   - autonomous-optimization
-  - comparison-page-health-monitor
   - competitive-intelligence-pipeline
 ---
 
@@ -82,7 +81,7 @@ Run the `autonomous-optimization` drill configured for comparison pages:
 
 ### 2. Deploy comparison page health monitoring
 
-Run the `comparison-page-health-monitor` drill:
+Run the `autonomous-optimization` drill:
 
 - Build the dedicated comparison page PostHog dashboard: traffic, conversion, engagement, rankings, content freshness
 - Configure daily GSC sync tracking ranking positions for all target competitor keywords
@@ -149,5 +148,5 @@ If metrics decay despite optimization, the root cause is likely external: algori
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics daily, diagnose anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `comparison-page-health-monitor` — dedicated monitoring layer for comparison pages tracking rankings, traffic, conversions, and content freshness with anomaly alerts
+- `autonomous-optimization` — dedicated monitoring layer for comparison pages tracking rankings, traffic, conversions, and content freshness with anomaly alerts
 - `competitive-intelligence-pipeline` — twice-weekly competitor monitoring with auto-update of comparison pages when competitor data changes

@@ -16,7 +16,6 @@ slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
 drills:
   - autonomous-optimization
-  - cta-experiment-health-monitor
   - cta-variant-pipeline
 ---
 
@@ -58,7 +57,7 @@ The `autonomous-optimization` drill orchestrates:
 
 ### 2. Configure play-specific monitoring
 
-Run the `cta-experiment-health-monitor` drill to add CTA-specific health tracking on top of the generic autonomous loop. This drill adds:
+Run the `autonomous-optimization` drill to add CTA-specific health tracking on top of the generic autonomous loop. This drill adds:
 
 - **Experiment velocity tracking:** are autonomous experiments running at 2-4/month? If the agent is not testing fast enough, diagnose whether it is stuck in the monitoring phase (no anomalies detected because the play is already well-optimized) or stuck in the experiment phase (tests running too long due to insufficient traffic).
 - **Surface coverage tracking:** ensure the agent is not over-optimizing high-traffic surfaces while neglecting lower-traffic ones. If a surface has not been tested in 60+ days and its CTR is below median, flag it.
@@ -121,5 +120,5 @@ If CTR lift is sustained or improving over 6 months with zero manual experiment 
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop that detects anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
-- `cta-experiment-health-monitor` -- CTA-specific monitoring layer that tracks experiment velocity, surface coverage, diminishing returns, and cumulative impact across all surfaces
+- `autonomous-optimization` -- CTA-specific monitoring layer that tracks experiment velocity, surface coverage, diminishing returns, and cumulative impact across all surfaces
 - `cta-variant-pipeline` -- generates and deploys CTA variants. At Durable level, runs autonomously with the agent selecting and deploying variants without human intervention (except for new variant categories)

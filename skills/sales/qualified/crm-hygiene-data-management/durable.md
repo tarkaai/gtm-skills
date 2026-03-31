@@ -17,7 +17,6 @@ slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
   - autonomous-optimization
-  - crm-data-quality-reporting
 ---
 
 # CRM Hygiene & Data Quality — Durable Intelligence
@@ -100,7 +99,7 @@ Run the `autonomous-optimization` drill configured for the data quality program.
 
 ### 2. Deploy Data Quality Reporting
 
-Run the `crm-data-quality-reporting` drill to build the data substrate the optimization loop reads from:
+Run the `autonomous-optimization` drill to build the data substrate the optimization loop reads from:
 
 **PostHog Dashboard (6 panels):**
 1. Quality Score Trend — line chart, 12 weeks, shows overall trajectory
@@ -212,4 +211,4 @@ When external conditions change (new reps onboarded, CRM migration, new product 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in data quality metrics, generate hypotheses, run A/B experiments on validation rules, enrichment strategies, and dedup thresholds, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `crm-data-quality-reporting` — comprehensive reporting on data quality trends, issue breakdown, enrichment effectiveness, per-rep compliance, and sales outcome correlation. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on data quality trends, issue breakdown, enrichment effectiveness, per-rep compliance, and sales outcome correlation. Provides the data layer the optimization loop reads from.

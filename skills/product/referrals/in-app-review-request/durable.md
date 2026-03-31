@@ -16,7 +16,6 @@ slug: "in-app-review-request"
 install: "npx gtm-skills add product/referrals/in-app-review-request"
 drills:
   - autonomous-optimization
-  - review-request-health-monitor
 ---
 
 # G2/Capterra Review Requests — Durable Intelligence
@@ -101,7 +100,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the review request health monitor
 
-Run the `review-request-health-monitor` drill for play-specific monitoring that complements the generic optimization loop:
+Run the `autonomous-optimization` drill for play-specific monitoring that complements the generic optimization loop:
 
 - Configure the PostHog "Review Request Health" dashboard with all 6 panels: ask-to-review funnel, timing effectiveness, platform split, engagement score distribution of reviewers, ask fatigue signals, review quality
 - Implement daily health checks (08:00 UTC via n8n) covering: ask funnel health, timing window health, platform balance, ask fatigue, review sentiment
@@ -168,4 +167,4 @@ After structural changes are implemented, reset the optimization baseline and re
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: detect anomalies in review metrics, generate hypotheses for what to change, run A/B experiments, evaluate results, auto-implement winners, generate weekly optimization briefs
-- `review-request-health-monitor` — play-specific monitoring for ask-to-review funnels, timing effectiveness, platform balance, ask fatigue, review sentiment, and candidate pipeline health with automated interventions and escalation rules
+- `autonomous-optimization` — play-specific monitoring for ask-to-review funnels, timing effectiveness, platform balance, ask fatigue, review sentiment, and candidate pipeline health with automated interventions and escalation rules

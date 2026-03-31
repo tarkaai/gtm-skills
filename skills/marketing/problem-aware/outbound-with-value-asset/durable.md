@@ -15,7 +15,6 @@ slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
   - autonomous-optimization
-  - value-asset-performance-monitor
   - signal-detection
 ---
 
@@ -72,7 +71,7 @@ Generate a weekly optimization brief summarizing: anomalies detected, experiment
 
 ### 2. Deploy the performance monitoring layer
 
-Run the `value-asset-performance-monitor` drill. This builds:
+Run the `autonomous-optimization` drill. This builds:
 
 - **Master dashboard** in PostHog with 6 panels: weekly funnel trend, click-through rate, asset-referencing reply rate, reply sentiment breakdown, meeting rate by segment, and cost per meeting.
 - **Automated anomaly alerts** for: reply rate drops, deliverability decay, negative reply spikes, and click-through anomalies.
@@ -149,5 +148,5 @@ The agent continues monitoring to detect market shifts (competitor launches, ind
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-report loop that finds the local maximum
-- `value-asset-performance-monitor` — dashboard, anomaly detection, weekly briefs, and pipeline attribution
+- `autonomous-optimization` — dashboard, anomaly detection, weekly briefs, and pipeline attribution
 - `signal-detection` — always-on buying signal monitoring that triggers personalized asset outreach

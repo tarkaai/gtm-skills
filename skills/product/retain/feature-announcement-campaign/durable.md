@@ -16,7 +16,6 @@ slug: "feature-announcement-campaign"
 install: "npx gtm-skills add product/retain/feature-announcement-campaign"
 drills:
   - autonomous-optimization
-  - announcement-health-monitor
   - dashboard-builder
 ---
 
@@ -65,7 +64,7 @@ The agent runs the daily monitoring phase via n8n cron. When an anomaly is detec
 
 ### 2. Deploy the announcement health monitor
 
-Run the `announcement-health-monitor` drill to build the play-specific monitoring layer:
+Run the `autonomous-optimization` drill to build the play-specific monitoring layer:
 
 - Per-feature adoption funnels with channel breakdowns
 - Adoption decay tracking for every announced feature
@@ -162,5 +161,5 @@ If metrics subsequently degrade (new user cohorts respond differently, product c
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `announcement-health-monitor` — play-specific monitoring: per-feature adoption funnels, decay tracking, health classification, and re-engagement automation
+- `autonomous-optimization` — play-specific monitoring: per-feature adoption funnels, decay tracking, health classification, and re-engagement automation
 - `dashboard-builder` — builds the PostHog executive dashboard with trial rate trends, experiment history, and convergence tracking

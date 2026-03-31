@@ -16,7 +16,6 @@ slug: "downgrade-prevention"
 install: "npx gtm-skills add product/retain/downgrade-prevention"
 drills:
   - autonomous-optimization
-  - downgrade-intervention-health-monitor
   - downgrade-intercept-flow
 ---
 
@@ -94,7 +93,7 @@ In addition to the standard `autonomous-optimization` guardrails, add play-speci
 
 ### 3. Deploy the intervention health monitor at Durable cadence
 
-Run the `downgrade-intervention-health-monitor` drill with enhanced frequency:
+Run the `autonomous-optimization` drill with enhanced frequency:
 - Daily anomaly check: runs at 09:00 UTC (same as Baseline/Scalable)
 - Weekly health brief: integrates with the `autonomous-optimization` weekly report
 - Offer economics tracking: expanded to include ROI per offer variant (tracking experiment variants separately)
@@ -170,5 +169,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum
-- `downgrade-intervention-health-monitor` -- monitors prevention rates, offer economics, and channel performance at Durable cadence, feeding signals to the optimization loop
+- `autonomous-optimization` -- monitors prevention rates, offer economics, and channel performance at Durable cadence, feeding signals to the optimization loop
 - `downgrade-intercept-flow` -- executes the current best intervention configuration, updated by the optimization loop as experiments produce winners

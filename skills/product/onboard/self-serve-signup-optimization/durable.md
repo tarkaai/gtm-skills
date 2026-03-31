@@ -15,7 +15,6 @@ slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
   - autonomous-optimization
-  - signup-funnel-health-monitor
 ---
 
 # Signup Funnel Optimization — Durable Intelligence
@@ -58,7 +57,7 @@ Weekly optimization brief including: anomalies detected, hypotheses generated, e
 
 ### 2. Deploy signup funnel health monitoring
 
-Run the `signup-funnel-health-monitor` drill. This creates the monitoring infrastructure that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill. This creates the monitoring infrastructure that feeds the autonomous optimization loop:
 
 - **Dashboard**: 6-panel PostHog dashboard covering overall CVR trend, step-by-step conversion, per-segment performance, form error rate, time to complete, and email verification rate
 - **Daily anomaly detection**: n8n workflow checking all metrics against baseline with tiered alerting (Warning, Critical)
@@ -107,4 +106,4 @@ The agent continues weekly monitoring post-convergence to detect if external cha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core autonomous loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly
-- `signup-funnel-health-monitor` — always-on dashboard, daily anomaly detection, deployment regression checks, weekly briefs, and cumulative experiment impact tracking
+- `autonomous-optimization` — always-on dashboard, daily anomaly detection, deployment regression checks, weekly briefs, and cumulative experiment impact tracking

@@ -16,7 +16,6 @@ slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
   - autonomous-optimization
-  - field-performance-reporting
   - field-territory-optimization
 ---
 
@@ -114,7 +113,7 @@ Generate a weekly optimization brief posted to Slack and stored in Attio:
 
 ### 2. Configure field-specific performance reporting
 
-Run the `field-performance-reporting` drill to set up automated weekly and monthly reports:
+Run the `autonomous-optimization` drill to set up automated weekly and monthly reports:
 
 - Weekly report (Mondays at 8am): Activity summary, results, trends, top-performing venues, next week's plan
 - Monthly deep-dive (1st of month): Venue performance rankings, territory ROI, cohort analysis (of meetings booked this month, how many converted to deals?), month-over-month trends
@@ -182,5 +181,5 @@ The optimization loop tracks convergence — when the play has reached its local
 ## Drills Referenced
 
 - `autonomous-optimization` — the core detect-hypothesize-experiment-evaluate-implement loop that finds the local maximum
-- `field-performance-reporting` — automated weekly/monthly reports with alert thresholds
+- `autonomous-optimization` — automated weekly/monthly reports with alert thresholds
 - `field-territory-optimization` — monthly venue scoring, territory expansion, and rotation management

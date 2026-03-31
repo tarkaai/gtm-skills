@@ -16,7 +16,6 @@ slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
 drills:
   - autonomous-optimization
-  - chrome-store-performance-monitor
   - dashboard-builder
 ---
 
@@ -57,7 +56,7 @@ Set threshold indicators on each panel using the winning metrics from Scalable l
 
 ### 2. Deploy the Chrome Store performance monitor
 
-Run the `chrome-store-performance-monitor` drill to establish always-on monitoring:
+Run the `autonomous-optimization` drill to establish always-on monitoring:
 
 - Configure daily anomaly detection for: install velocity, popup engagement rate, lead conversion rate, uninstall rate, review sentiment
 - Anomaly classification: Normal (within +/-15% of 4-week average), Watch (+/-15-30%), Alert (>30% deviation)
@@ -79,7 +78,7 @@ Run the `chrome-store-performance-monitor` drill to establish always-on monitori
 Run the `autonomous-optimization` drill configured for this play:
 
 **Phase 1 — Monitor (daily via n8n):**
-The `chrome-store-performance-monitor` feeds anomaly data into this phase. When the monitor classifies any metric as Alert or when a metric plateaus (< 2% change for 3+ weeks), Phase 2 triggers automatically.
+The `autonomous-optimization` feeds anomaly data into this phase. When the monitor classifies any metric as Alert or when a metric plateaus (< 2% change for 3+ weeks), Phase 2 triggers automatically.
 
 **Phase 2 — Diagnose (triggered by anomaly):**
 1. Gather context: current listing configuration (title, description, screenshots, keywords), popup variant in production, recent experiment history, competitor landscape from the Scalable-level competitor monitor
@@ -167,5 +166,5 @@ The optimization loop should detect when the play has reached its local maximum:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor > diagnose > experiment > evaluate > implement. Runs always-on, producing weekly optimization briefs and auto-implementing winning experiments.
-- `chrome-store-performance-monitor` — daily anomaly detection and weekly performance reports specific to Chrome Web Store metrics. Feeds data into the autonomous optimization loop.
+- `autonomous-optimization` — daily anomaly detection and weekly performance reports specific to Chrome Web Store metrics. Feeds data into the autonomous optimization loop.
 - `dashboard-builder` — builds the PostHog dashboard for real-time visibility into all CWS metrics and experiment results.

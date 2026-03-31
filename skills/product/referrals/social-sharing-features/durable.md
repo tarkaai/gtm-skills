@@ -16,7 +16,6 @@ slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
 drills:
   - autonomous-optimization
-  - social-share-health-monitor
 ---
 
 # Built-In Social Sharing — Durable Intelligence
@@ -95,7 +94,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the social share health monitor
 
-Run the `social-share-health-monitor` drill for play-specific monitoring that complements the generic optimization loop:
+Run the `autonomous-optimization` drill for play-specific monitoring that complements the generic optimization loop:
 
 - Configure daily health checks for all 8 sharing metrics: share surface impression rate, share initiation rate, share completion rate, share link CTR, viral signup rate, viral activation rate, K-factor, sharer retention
 - Implement diagnostic triggers for each declining metric:
@@ -167,4 +166,4 @@ After structural changes are implemented, reset the optimization baseline and re
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `social-share-health-monitor` — play-specific monitoring for 8 sharing metrics with diagnostic triggers, automated interventions, and escalation rules
+- `autonomous-optimization` — play-specific monitoring for 8 sharing metrics with diagnostic triggers, automated interventions, and escalation rules

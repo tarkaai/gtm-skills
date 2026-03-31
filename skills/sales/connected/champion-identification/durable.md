@@ -16,7 +16,6 @@ slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
   - autonomous-optimization
-  - champion-program-reporting
 ---
 
 # Champion Identification & Development — Durable Intelligence
@@ -96,7 +95,7 @@ Run the `autonomous-optimization` drill configured for the champion program. Thi
 
 ### 2. Deploy Champion Program Reporting
 
-Run the `champion-program-reporting` drill:
+Run the `autonomous-optimization` drill:
 - Build the PostHog "Champion Program Impact" dashboard (6 panels)
 - Build Attio saved views (deals at risk, champion-powered, recruitment pipeline)
 - Set up monthly ROI calculation workflow
@@ -179,4 +178,4 @@ When external conditions change (new product launch, new market segment, competi
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `champion-program-reporting` — comprehensive reporting on champion program effectiveness: win rate correlation, recruitment efficiency, multi-threading impact, program ROI. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on champion program effectiveness: win rate correlation, recruitment efficiency, multi-threading impact, program ROI. Provides the data layer the optimization loop reads from.

@@ -16,7 +16,6 @@ slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
   - autonomous-optimization
-  - interactive-tool-performance-monitor
   - interactive-tool-nurture-pipeline
 ---
 
@@ -80,7 +79,7 @@ Configure the optimization loop with these play-specific parameters:
 
 ### 2. Deploy play-specific monitoring
 
-Run the `interactive-tool-performance-monitor` drill to build:
+Run the `autonomous-optimization` drill to build:
 
 - **Tool funnel dashboard** (7 panels): views → starts → completions → captures → results viewed → CTA clicks → meetings booked, broken out by tool and week
 - **Field-level drop-off heatmap**: identifies exactly which question kills completion on each tool. This is the highest-signal diagnostic panel — every field with >25% drop-off is an optimization target.
@@ -181,5 +180,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `interactive-tool-performance-monitor` — play-specific monitoring: tool funnel dashboard, field-level drop-off heatmap, per-tool health scoring, anomaly detection, and weekly AI-generated briefs
+- `autonomous-optimization` — play-specific monitoring: tool funnel dashboard, field-level drop-off heatmap, per-tool health scoring, anomaly detection, and weekly AI-generated briefs
 - `interactive-tool-nurture-pipeline` — nurture sequences that the autonomous loop continuously optimizes for open rate, click rate, and meeting conversion

@@ -16,7 +16,6 @@ slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
 drills:
   - autonomous-optimization
-  - workflow-optimization-health-monitor
 ---
 
 # AI Workflow Recommendations — Durable Intelligence
@@ -112,7 +111,7 @@ Post the brief to Slack and store in Attio.
 
 ### 2. Deploy the health monitoring system
 
-Run the `workflow-optimization-health-monitor` drill in full:
+Run the `autonomous-optimization` drill in full:
 
 1. Build the 8-panel PostHog dashboard (pipeline health, acceptance trends, segment heatmap, efficiency curve, retention correlation, fatigue indicator, suggestion quality, system ROI)
 2. Configure the 5 threshold alerts in n8n (acceptance drop, dismissal spike, pipeline stall, efficiency regression, segment imbalance)
@@ -179,4 +178,4 @@ If acceptance rate degrades below 20% for 4+ consecutive weeks despite autonomou
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics daily, detect anomalies, generate hypotheses with Claude, run A/B experiments via PostHog, evaluate results, auto-implement winners, generate weekly briefs
-- `workflow-optimization-health-monitor` — continuous visibility: 8-panel dashboard, 5 threshold alerts, weekly operational brief, monthly cohort analysis, monthly ROI report
+- `autonomous-optimization` — continuous visibility: 8-panel dashboard, 5 threshold alerts, weekly operational brief, monthly cohort analysis, monthly ROI report

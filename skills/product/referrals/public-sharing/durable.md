@@ -16,7 +16,6 @@ slug: "public-sharing"
 install: "npx gtm-skills add product/referrals/public-sharing"
 drills:
   - autonomous-optimization
-  - public-share-health-monitor
 ---
 
 # Branded Public Sharing — Durable Intelligence
@@ -92,7 +91,7 @@ Run the `autonomous-optimization` drill to configure the core monitor-diagnose-e
 
 ### 2. Deploy share-specific health monitoring
 
-Run the `public-share-health-monitor` drill to layer play-specific monitoring on top of the autonomous optimization loop:
+Run the `autonomous-optimization` drill to layer play-specific monitoring on top of the autonomous optimization loop:
 
 This drill monitors 8 share-specific metrics (share initiation rate, completion rate, page view rate, CTA CTR, signup conversion, activation rate, viral coefficient, content freshness) and triggers automated interventions for common failure modes:
 
@@ -151,4 +150,4 @@ At full convergence (all testable variables optimized):
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds and maintains the local maximum for public sharing performance
-- `public-share-health-monitor` — play-specific monitoring of 8 share funnel metrics with diagnostic triggers, automated interventions, and weekly performance reports
+- `autonomous-optimization` — play-specific monitoring of 8 share funnel metrics with diagnostic triggers, automated interventions, and weekly performance reports

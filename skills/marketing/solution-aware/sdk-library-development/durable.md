@@ -16,7 +16,6 @@ slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
 drills:
   - autonomous-optimization
-  - sdk-adoption-monitor
 ---
 # SDK & Library Development — Durable Intelligence
 
@@ -78,7 +77,7 @@ Generate a weekly optimization brief:
 - Convergence status: how many consecutive experiments produced <2% improvement?
 
 ### 2. Build the SDK adoption monitoring system
-Run the `sdk-adoption-monitor` drill to:
+Run the `autonomous-optimization` drill to:
 - Build a comprehensive PostHog dashboard with download trends, per-SDK performance, funnels, developer activation, and competitive landscape
 - Configure anomaly detection for 6 key metric categories (download drops, CTA conversion drops, activation drops, new competitors, staleness, breaking changes)
 - Set up weekly competitive tracking via Clay across all registries
@@ -144,4 +143,4 @@ If market conditions change (new competitor, API update, developer ecosystem shi
 
 ## Drills Referenced
 - `autonomous-optimization` -- the core always-on loop that detects metric anomalies, generates improvement hypotheses, runs A/B experiments, evaluates results, and auto-implements winners. Produces weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `sdk-adoption-monitor` -- continuous monitoring of SDK adoption metrics across all registries with anomaly detection, competitive tracking, developer activation instrumentation, and weekly health reports
+- `autonomous-optimization` -- continuous monitoring of SDK adoption metrics across all registries with anomaly detection, competitive tracking, developer activation instrumentation, and weekly health reports

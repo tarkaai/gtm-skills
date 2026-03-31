@@ -19,7 +19,6 @@ slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
 drills:
   - autonomous-optimization
-  - co-webinar-performance-monitor
 ---
 
 # Co-Webinar Series — Durable Intelligence
@@ -101,7 +100,7 @@ Run the `autonomous-optimization` drill configured for this play's specific metr
 
 ### 2. Deploy play-specific monitoring and reporting
 
-Run the `co-webinar-performance-monitor` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Co-webinar dashboard in PostHog:**
 - Registrations by event, colored by partner (bar chart, last 90 days)
@@ -233,4 +232,4 @@ Total: ~200 hours over 6 months (heavily front-loaded; agent handles most ongoin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `co-webinar-performance-monitor` — per-partner dashboards, event post-mortems, monthly series reports, partner health tracking, and alerts specific to the co-webinar series
+- `autonomous-optimization` — per-partner dashboards, event post-mortems, monthly series reports, partner health tracking, and alerts specific to the co-webinar series

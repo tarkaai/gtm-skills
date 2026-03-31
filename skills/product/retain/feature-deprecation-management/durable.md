@@ -16,7 +16,6 @@ slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
   - autonomous-optimization
-  - deprecation-health-monitor
   - nps-feedback-loop
 ---
 
@@ -91,7 +90,7 @@ Run the `autonomous-optimization` drill configured for deprecation management. T
 
 ### 2. Deploy the deprecation health monitor
 
-Run the `deprecation-health-monitor` drill. This builds the monitoring layer that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill. This builds the monitoring layer that feeds the autonomous optimization loop:
 
 - Master dashboard aggregating all active deprecations: feature, sunset date, days remaining, migration %, risk level
 - Anomaly detection for: migration velocity drops, stall rate spikes, regression surges
@@ -154,5 +153,5 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that monitors metrics, generates hypotheses, runs experiments, evaluates results, and auto-implements winners to find the local maximum
-- `deprecation-health-monitor` — continuous monitoring of migration health across all active sunsets with anomaly detection, alerting, and lifecycle metrics that feed the optimization loop
+- `autonomous-optimization` — continuous monitoring of migration health across all active sunsets with anomaly detection, alerting, and lifecycle metrics that feed the optimization loop
 - `nps-feedback-loop` — collects and routes post-migration NPS feedback to measure migration experience quality and feed detractor insights into the optimization loop

@@ -16,7 +16,6 @@ slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
 drills:
   - autonomous-optimization
-  - nps-health-monitor
 ---
 
 # NPS Feedback System — Durable Intelligence
@@ -85,7 +84,7 @@ Run the `autonomous-optimization` drill to configure the continuous improvement 
 
 ### 2. Deploy the NPS health monitor
 
-Run the `nps-health-monitor` drill to build the play-specific monitoring layer:
+Run the `autonomous-optimization` drill to build the play-specific monitoring layer:
 
 Configure daily health checks for 8 NPS-specific metrics:
 
@@ -166,4 +165,4 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that monitors metrics, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
-- `nps-health-monitor` — NPS-specific monitoring layer with 8 health metrics, diagnostic triggers, automated interventions, and escalation rules. Complements the generic optimization loop with play-specific intelligence.
+- `autonomous-optimization` — NPS-specific monitoring layer with 8 health metrics, diagnostic triggers, automated interventions, and escalation rules. Complements the generic optimization loop with play-specific intelligence.

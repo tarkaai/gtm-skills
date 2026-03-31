@@ -20,7 +20,6 @@ install: "npx gtm-skills add marketing/product-aware/discord-community-building"
 drills:
   - autonomous-optimization
   - community-health-scoring
-  - discord-community-program-reporting
 ---
 
 # Discord Community Building — Durable Intelligence
@@ -70,7 +69,7 @@ The agent gathers context and generates hypotheses using the `hypothesis-generat
 
 1. Pull 8 weeks of the anomalous metric from PostHog via `posthog-dashboards`
 2. Pull the latest `community-health-scoring` report for channel-level data
-3. Pull the latest `discord-community-program-reporting` report for member cohort data
+3. Pull the latest `autonomous-optimization` report for member cohort data
 4. Generate 3 ranked hypotheses. Discord-specific hypothesis templates:
 
    - **DAU drop:** "Power users decreased from X to Y this week. Hypothesis: the #office-hours thread was not posted last week, breaking the weekly engagement habit. Test: reinstate and measure DAU recovery over 2 weeks."
@@ -112,7 +111,7 @@ Pull experiment results and run the `experiment-evaluation` fundamental:
 
 ### 2. Run weekly community program reporting
 
-Run the `discord-community-program-reporting` drill on a weekly automated cadence. This drill produces:
+Run the `autonomous-optimization` drill on a weekly automated cadence. This drill produces:
 
 - **Growth metrics:** Member count, new joins, churn, net growth, growth trend
 - **Engagement cohort analysis:** Power users, regular contributors, occasional participants, lurkers, churned — with week-over-week shifts between tiers
@@ -225,4 +224,4 @@ This level runs continuously. At the 6-month mark, conduct a comprehensive revie
 
 - `autonomous-optimization` — the core optimization loop that monitors metrics, detects anomalies, generates hypotheses, runs A/B experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
 - `community-health-scoring` — weekly channel-level scoring that feeds the optimization loop with granular data on where engagement is thriving or declining
-- `discord-community-program-reporting` — weekly community health report with member cohort analysis, channel ROI, and lead attribution data that provides the historical dataset for trend analysis and anomaly detection
+- `autonomous-optimization` — weekly community health report with member cohort analysis, channel ROI, and lead attribution data that provides the historical dataset for trend analysis and anomaly detection
