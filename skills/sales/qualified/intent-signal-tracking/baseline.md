@@ -1,86 +1,121 @@
 ---
 name: intent-signal-tracking-baseline
 description: >
-    Intent Signal Tracking — Baseline Run. Monitor and act on buyer intent signals like website
-  behavior, content consumption, and G2 research to reach prospects at peak buying moment, from
-  manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers
-  personalized outreach automatically.
+  Intent Signal Tracking — Baseline Run. Deploy always-on signal collection from website visitors
+  and third-party intent sources. Automate scoring and routing to CRM. Run continuous intent-based
+  outreach sequences and prove the pipeline sustains over 2 weeks.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
 level: "Baseline Run"
 time: "18 hours over 2 weeks"
-outcome: ">=20 high-intent accounts and >=35% reply rate over 2 weeks"
-kpis: ["High-intent accounts per week", "Reply rate by intent tier", "Signal-to-outreach time", "Meeting rate by intent"]
+outcome: ">=20 high-intent accounts identified and >=35% reply rate from intent-based outreach over 2 weeks"
+kpis: ["High-intent accounts per week", "Reply rate by intent tier", "Signal-to-outreach time (median)", "Meeting rate from intent outreach"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
+  - intent-signal-automation
   - cold-email-sequence
-  - linkedin-outreach
   - posthog-gtm-events
 ---
+
 # Intent Signal Tracking — Baseline Run
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
+> **Stage:** Sales > Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
-## Overview
-Intent Signal Tracking — Baseline Run. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+## Outcomes
 
-**Time commitment:** 18 hours over 2 weeks
-**Pass threshold:** >=20 high-intent accounts and >=35% reply rate over 2 weeks
+Transition from manual signal checking to always-on automated signal collection and scoring. Deploy a website visitor identification tool, automate signal routing to your CRM, and run continuous intent-based email sequences. Prove the pipeline sustains >=20 high-intent accounts and >=35% reply rate over 2 weeks.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Website visitor identification tool is firing and sending data to n8n within the first 2 days
+- Signals are flowing into Clay and scores are being calculated automatically
+- Hot-tier accounts are appearing in Attio within 30 minutes of signal detection
+- Cold email sequences are sending on schedule with no deliverability issues
+- Reply rate on intent-based sequences is above 25% after the first week
 
 ## Instructions
 
-### 1. Set up cold outreach tooling
-Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
+### 1. Install website visitor identification
 
-### 2. Launch LinkedIn outreach in parallel
-Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
+Choose and install a visitor identification tool. For Baseline, start with a free or low-cost option:
 
-### 3. Configure tracking
-Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `intent-signal-tracking_email_sent`, `intent-signal-tracking_email_replied`, `intent-signal-tracking_meeting_booked`, `intent-signal-tracking_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
+- **RB2B** (recommended for Baseline): Free tier gives 150 identifications/month. Install the pixel on your website. Configure the webhook to send identified visitors to your n8n instance.
+- **Koala** (alternative): Free tier gives 250 identifications/month with product usage integration.
 
-### 4. Execute and monitor for 2 weeks
-Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
+Run the `intent-signal-automation` drill, specifically Step 1 (website visitor signal workflow). Configure the n8n webhook to receive visitor data, filter for high-signal pages (pricing, demo, case studies, docs), and push to Clay for scoring.
 
-### 5. Evaluate against threshold
-Review PostHog funnel data and Attio deal pipeline. Measure against: >=20 high-intent accounts and >=35% reply rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
+### 2. Automate signal scoring
 
----
+Set up the Clay intent scoring table from the `intent-score-model` drill (which you validated manually during Smoke). Import your proven weights and thresholds. Connect the n8n webhook output to Clay so every identified visitor is automatically scored.
 
-## KPIs to track
-- High-intent accounts per week
-- Reply rate by intent tier
-- Signal-to-outreach time
-- Meeting rate by intent
+Run the `intent-signal-automation` drill, Step 3 (enrichment signal workflow) to set up weekly refresh of contextual signals (funding, hiring, tech stack changes).
 
----
+If you have a G2 paid profile, also configure the G2 intent webhook (Step 2 of `intent-signal-automation`).
 
-## Pass threshold
-**>=20 high-intent accounts and >=35% reply rate over 2 weeks**
+### 3. Configure outreach sequences
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Run the `cold-email-sequence` drill to set up Instantly with:
+- A **Hot-tier sequence**: 3 emails over 7 days. First email uses the signal-specific copy you validated in Smoke. More aggressive cadence (Day 0, Day 2, Day 5).
+- A **Warm-tier sequence**: 4 emails over 14 days. Less personalized but still references intent category. Slower cadence (Day 0, Day 4, Day 8, Day 12).
 
----
+Import your Smoke-validated email copy as the starting templates. Set up Instantly reply detection to classify responses and route positive replies to Attio.
 
-## How to run this skill
+### 4. Set up measurement
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `posthog-gtm-events` drill to configure tracking for intent-specific events:
+- `intent_signal_received` (properties: source, signal_type, company_domain, intent_score)
+- `intent_outreach_triggered` (properties: tier, channel, company_domain, personalization_type)
+- `intent_email_replied` (properties: sentiment, tier, company_domain)
+- `intent_meeting_booked` (properties: source_signal, tier, company_domain)
 
-_Install this skill: `npx gtm-skills add sales/qualified/intent-signal-tracking`_
+Build a PostHog funnel: `intent_signal_received` -> `intent_outreach_triggered` -> `intent_email_replied` -> `intent_meeting_booked`
+
+### 5. Run for 2 weeks and monitor daily
+
+Each morning, check:
+- How many new signals arrived in the last 24 hours?
+- How many Hot-tier accounts were identified?
+- Were all Hot-tier accounts contacted within 4 hours?
+- What is the cumulative reply rate by tier?
+- Are there any n8n workflow errors?
+
+Adjust mid-flight: if reply rates are below 20% after 50 sends, revisit your email copy. If signal volume is too low (fewer than 3 Hot accounts per week), lower scoring thresholds by 10 points temporarily.
+
+### 6. Evaluate against threshold
+
+After 2 weeks, measure:
+- Total high-intent accounts identified: target >=20
+- Reply rate on intent-based outreach: target >=35%
+- Comparison: intent reply rate vs cold outreach reply rate from Smoke (should be consistently 2x+)
+- Median signal-to-outreach time: target under 4 hours
+
+If PASS, proceed to Scalable. If FAIL, diagnose: is signal volume the issue (need more traffic or additional signal sources)? Is scoring the issue (wrong weights)? Is messaging the issue (low reply rate despite good targeting)?
+
+## Time Estimate
+
+- 4 hours: install visitor ID tool, configure n8n webhooks, set up Clay scoring table
+- 3 hours: build Instantly sequences, configure reply routing
+- 2 hours: set up PostHog events and funnels
+- 6 hours: daily monitoring over 2 weeks (30 min/day)
+- 3 hours: analysis, evaluation, and documentation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| RB2B | Website visitor identification | Free (150/mo) or Pro+ $149/mo |
+| Clay | Intent signal scoring and enrichment | Explorer $149/mo (~2,400 credits) |
+| Instantly | Cold email sequencing | Growth $30/mo (1,000 contacts) |
+| PostHog | Event tracking and funnels | Free tier (1M events/mo) |
+| Attio | CRM for account and deal tracking | Free tier (3 users) |
+| n8n | Workflow automation | Free (self-hosted) or Starter $24/mo |
+
+**Total play-specific cost: ~$50-200/mo** (depending on tool tiers selected)
+
+## Drills Referenced
+
+- `intent-signal-automation` — automate signal collection, scoring, and CRM routing via n8n
+- `cold-email-sequence` — build and launch intent-triggered email sequences in Instantly
+- `posthog-gtm-events` — configure intent-specific event tracking for measurement

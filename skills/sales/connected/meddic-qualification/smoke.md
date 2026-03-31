@@ -1,11 +1,11 @@
 ---
 name: meddic-qualification-smoke
 description: >
-    MEDDIC Qualification System — Smoke Test. Apply MEDDIC (Metrics, Economic Buyer, Decision
-  Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual
-  tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+  MEDDIC Qualification System — Smoke Test. Manually apply MEDDIC scoring to 3-5 active enterprise
+  deals, validate that structured element tracking improves deal visibility and surfaces risks
+  that would otherwise be missed.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "8 hours over 1 week"
@@ -14,71 +14,100 @@ kpis: ["MEDDIC completeness score", "Elements per call", "Time to complete MEDDI
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - meddic-scorecard-setup
+  - meddic-discovery-call
   - threshold-engine
 ---
+
 # MEDDIC Qualification System — Smoke Test
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales > Connected | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-## Overview
-MEDDIC Qualification System — Smoke Test. Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+## Outcomes
 
-**Time commitment:** 8 hours over 1 week
-**Pass threshold:** >=2 deals with >=80% MEDDIC completeness in 1 week
+Prove that structured MEDDIC scoring produces better deal visibility than gut-feel qualification. After 1 week, at least 2 deals should have all 6 MEDDIC elements assessed with 80%+ completeness (scores for every element, evidence captured, gaps identified). The smoke test validates that the framework fits your enterprise deal motion before investing in automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- MEDDIC scorecard created in CRM with all 6 element fields populated for at least 1 deal within first 2 days
+- Discovery call question guide generated and used on at least 1 call
+- At least 1 deal risk surfaced by MEDDIC analysis that was not previously visible (e.g., no identified economic buyer, unclear decision process)
+- Founder reports that MEDDIC-structured calls feel more focused and productive than unstructured calls
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for meddic-qualification. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Set up MEDDIC infrastructure in your CRM
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your meddic-qualification materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Run the `meddic-scorecard-setup` drill. This creates 20+ custom attributes on the Deals object in Attio:
+- Score fields (0-100) for each of the 6 MEDDIC elements: Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion
+- Status fields for each element (e.g., Metrics: Quantified/Directional/Vague/Absent)
+- Evidence fields to store key quotes and findings
+- Composite score with weighted formula: (M * 0.15) + (EB * 0.20) + (DC * 0.15) + (DP * 0.15) + (IP * 0.20) + (C * 0.15)
+- Pipeline stages: New Lead, MEDDIC Pre-Scored, Discovery Scheduled, MEDDIC Qualified, MEDDIC Needs Work, MEDDIC Disqualified
+- PostHog tracking events for qualification milestones
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+Estimated time: 2 hours.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Select 3-5 active deals for MEDDIC scoring
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: >=2 deals with >=80% MEDDIC completeness in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+From your existing pipeline in Attio, select 3-5 deals that are in the Connected stage — deals where you have had initial contact but have not yet fully qualified. Prioritize deals with upcoming calls scheduled so you can run MEDDIC discovery in real time.
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+For each deal, manually review everything you know and score each MEDDIC element 0-100 based on existing information. Set `meddic_assessment_source` to "Pre-call Enrichment" (even though this is manual — it establishes the baseline).
 
----
+### 3. Run MEDDIC discovery calls
 
-## KPIs to track
-- MEDDIC completeness score
-- Elements per call
-- Time to complete MEDDIC
+Run the `meddic-discovery-call` drill for each selected deal that has a call scheduled:
 
----
+1. The drill pulls the deal's current MEDDIC scores and identifies the weakest elements
+2. It generates a tailored question guide targeting the gaps (e.g., if Economic Buyer score is below 50, it generates questions like "Who ultimately signs off on the budget for tools in this area?")
+3. Ensure Fireflies is recording the call
+4. After the call, run `call-transcript-meddic-extraction` to extract structured MEDDIC scores from the transcript
+5. Update the deal record with post-call scores, evidence, and next steps
 
-## Pass threshold
-**>=2 deals with >=80% MEDDIC completeness in 1 week**
+**Human action required:** You must be on the calls. The agent prepares questions and processes transcripts, but the founder runs the conversation.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+For deals without calls scheduled this week, score them based on existing notes, emails, and prior conversations. Document what you know for each element and identify what is missing.
 
----
+### 4. Assess MEDDIC completeness
 
-## How to run this skill
+After scoring all selected deals, evaluate completeness for each:
+- A deal has 80%+ MEDDIC completeness when all 6 elements have scores above 0, at least 4 elements have evidence captured (not just estimated scores), and the weakest elements have documented next actions to address them
+- A deal has 100% MEDDIC completeness when all 6 elements have scores, evidence, and status classifications
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add sales/connected/meddic-qualification`_
+Run the `threshold-engine` drill to evaluate results against the pass threshold: >=2 deals with >=80% MEDDIC completeness in 1 week.
+
+Also assess qualitatively:
+- Did MEDDIC scoring surface any deal risks you did not previously see?
+- Did the structured question guide improve your discovery calls?
+- Are the scoring weights and rubrics appropriate for your deal motion, or do they need adjustment?
+
+If PASS, proceed to Baseline. If FAIL, review: Were the deals too early-stage for MEDDIC scoring? Were the scoring rubrics unclear? Did you not have enough calls scheduled? Adjust and re-run.
+
+## Time Estimate
+
+- CRM setup (meddic-scorecard-setup): 2 hours
+- Deal selection and initial scoring: 1 hour
+- Discovery call prep and execution (2-3 calls): 3 hours
+- Post-call scoring and analysis: 1.5 hours
+- Threshold evaluation and documentation: 0.5 hours
+
+**Total: ~8 hours over 1 week**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal records, MEDDIC custom attributes, pipeline stages | Standard stack (excluded from play budget) |
+| PostHog | Event tracking for qualification milestones | Standard stack (excluded from play budget) |
+| Fireflies.ai | Call transcription for MEDDIC extraction | Free plan: 800 min/mo. Pro: $10/user/mo annual. [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| Cal.com | Meeting scheduling for discovery calls | Standard stack (excluded from play budget) |
+
+**Play-specific cost: Free** (Fireflies free tier sufficient for Smoke volume)
+
+## Drills Referenced
+
+- `meddic-scorecard-setup` — creates CRM infrastructure with all MEDDIC fields and pipeline stages
+- `meddic-discovery-call` — full discovery call lifecycle with element-targeted questions, transcript extraction, and CRM logging
+- `threshold-engine` — evaluates results against pass/fail threshold and recommends next action

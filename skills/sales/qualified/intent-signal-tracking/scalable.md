@@ -1,86 +1,144 @@
 ---
 name: intent-signal-tracking-scalable
 description: >
-    Intent Signal Tracking — Scalable Automation. Monitor and act on buyer intent signals like
-  website behavior, content consumption, and G2 research to reach prospects at peak buying moment,
-  from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers
-  personalized outreach automatically.
+  Intent Signal Tracking — Scalable Automation. Build real-time signal-to-outreach orchestration
+  that automatically triggers personalized multi-channel sequences when intent scores cross
+  thresholds. Add third-party intent sources, AI personalization, and A/B testing to scale
+  volume 10x without proportional effort.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
 level: "Scalable Automation"
 time: "60 hours over 2 months"
-outcome: ">=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months"
-kpis: ["Intent accounts per month", "Signal-to-outreach time", "Conversion rate by intent tier", "Intent decay impact"]
+outcome: ">=200 high-intent accounts/month identified and >=3x conversion rate vs cold outreach over 2 months"
+kpis: ["Intent accounts identified per month", "Median signal-to-outreach time", "Conversion rate by intent tier", "Intent score decay rate"]
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
+  - intent-orchestration
   - ab-test-orchestrator
+  - follow-up-automation
 ---
+
 # Intent Signal Tracking — Scalable Automation
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
+> **Stage:** Sales > Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
-## Overview
-Intent Signal Tracking — Scalable Automation. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+## Outcomes
 
-**Time commitment:** 60 hours over 2 months
-**Pass threshold:** >=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months
+Build the 10x multiplier: real-time orchestration that automatically triggers personalized outreach within minutes of a Hot-tier signal, without manual intervention. Add third-party intent data (G2, Bombora), AI-generated personalization, and systematic A/B testing. Process >=200 high-intent accounts per month while maintaining >=3x conversion advantage over cold outreach.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Hot-tier accounts receive outreach within 30 minutes of signal detection (median)
+- At least 3 signal sources are feeding the scoring model (website visitors + G2 + enrichment signals)
+- AI personalization is generating unique first lines for each Hot-tier contact
+- A/B tests are running with sufficient volume to reach statistical significance within 2 weeks
+- Monthly intent account volume is trending up without proportional effort increase
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Deploy real-time intent orchestration
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `intent-orchestration` drill to build the full automation pipeline:
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+- **Hot-tier instant outreach**: n8n workflow triggered by Attio webhook when any account crosses into Hot tier. The workflow retrieves the account's signals, generates personalized copy via Clay Claygent, adds the contact to the Hot-tier Instantly sequence, logs the action in PostHog, and notifies the founder via Slack. Target: signal to email in under 30 minutes.
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+- **Warm-tier daily batch**: n8n cron workflow at 9am that pulls all new Warm-tier accounts, generates batch personalizations, and adds to the Warm-tier sequence. Maximum 20 per day.
 
-### 5. Evaluate against threshold
-Measure against: >=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+- **Score-change modifier**: n8n workflow that moves contacts between sequences when their intent score changes tier (e.g., Warm account that visits pricing page gets upgraded to Hot sequence immediately).
 
----
+- **Reply routing**: n8n workflow that classifies Instantly replies by sentiment and routes positive replies to Attio deals, neutral replies to manual follow-up tasks, and negative replies to opt-out.
 
-## KPIs to track
-- Intent accounts per month
-- Signal-to-outreach time
-- Conversion rate by intent tier
-- Intent decay impact
+### 2. Add third-party intent sources
 
----
+Expand beyond website visitors to third-party intent:
 
-## Pass threshold
-**>=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months**
+- **G2 Buyer Intent**: If you have a G2 paid profile, configure the G2 intent webhook to feed signals into your n8n pipeline. G2 signals for "alternatives" and "compare" pages are highest value — weight them at 20 points in your scoring model.
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+- **Bombora Company Surge** (if budget allows): At ~$30K/year, Bombora is only justified at Scalable level when monthly deal value exceeds $5K ACV. Configure the Bombora API to pull weekly surge reports for your top 10 topics. Feed surge scores into Clay for scoring.
 
----
+- **Clay enrichment signals**: Expand your weekly enrichment refresh to check for: new funding rounds (Crunchbase via Clay), executive job changes (LinkedIn via Clay), competitor technology adoption (BuiltWith via Clay), and hiring velocity in your product domain.
 
-## How to run this skill
+Each new source feeds into the same Clay scoring table and the same n8n routing logic.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 3. Launch A/B testing program
 
-_Install this skill: `npx gtm-skills add sales/qualified/intent-signal-tracking`_
+Run the `ab-test-orchestrator` drill to set up systematic experiments:
+
+**Test 1 — AI personalization vs static templates** (weeks 1-3):
+- Control: proven email templates from Baseline with static first lines
+- Variant: Clay Claygent-generated personalized first lines referencing specific intent signals
+- Primary metric: reply rate
+- Sample size: 100+ per variant
+- Expected: AI personalization improves reply rate by 3-5 percentage points
+
+**Test 2 — Outreach timing** (weeks 3-5):
+- Control: outreach within 30 minutes of signal
+- Variant: outreach delayed to next business morning at 9am
+- Primary metric: reply rate and meeting rate
+- Test whether urgency outweighs optimal sending time
+
+**Test 3 — Signal-specific messaging** (weeks 5-8):
+- Control: generic intent-aware template
+- Variant: signal-type-specific templates (different copy for pricing page visitors vs G2 researchers vs job-change signals)
+- Primary metric: reply rate by signal type
+
+Implement winning variants permanently after each test concludes.
+
+### 4. Build multi-channel follow-up
+
+Run the `follow-up-automation` drill to add automated follow-up triggers:
+
+- If a Hot-tier email gets opened 3+ times with no reply, trigger a LinkedIn connection request + message via a manual task in Attio (LinkedIn automation is risky at scale — keep it semi-manual)
+- If a Hot-tier contact visits your website again after receiving outreach, trigger an immediate follow-up email referencing the topic of the page they visited
+- If a meeting is booked from intent outreach, trigger a pre-meeting research brief (pull company news, recent signals, LinkedIn activity)
+
+### 5. Scale volume and monitor
+
+Increase monthly throughput to 200+ intent accounts by:
+- Upgrading RB2B to Pro+ ($149/mo) for higher identification volume
+- Expanding target account list in Clay to 500+ companies
+- Adding additional sending accounts in Instantly to support volume (stay under 50 emails/day per account)
+
+Monitor the scoring model weekly: as volume increases, does Hot-tier still convert at 3x+ vs Cold? If the ratio drops below 2x, the model is degrading — tighten thresholds or adjust weights.
+
+### 6. Evaluate against threshold
+
+After 2 months, measure:
+- Total high-intent accounts identified per month: target >=200
+- Hot-tier conversion rate vs cold outreach conversion rate: target >=3x
+- Median signal-to-outreach time for Hot accounts: target <30 minutes
+- A/B test win rate: at least 1 of 3 tests produced a statistically significant improvement
+
+If PASS, proceed to Durable. If FAIL, identify the bottleneck: insufficient signal volume, scoring accuracy degradation, or outreach copy fatigue.
+
+## Time Estimate
+
+- 12 hours: build intent orchestration workflows (Hot-tier, Warm-tier, score-change, reply routing)
+- 6 hours: configure third-party intent sources (G2, optionally Bombora)
+- 8 hours: set up A/B testing infrastructure and launch first test
+- 6 hours: build multi-channel follow-up automation
+- 16 hours: weekly monitoring and optimization over 8 weeks (2 hr/week)
+- 12 hours: A/B test analysis, implementation, and documentation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| RB2B Pro+ | Website visitor identification (scaled) | $149/mo |
+| Clay Explorer | Intent scoring + AI enrichment | $149-349/mo |
+| Instantly Growth | Email sequencing at scale | $77/mo (5,000 contacts) |
+| PostHog | Analytics, funnels, A/B testing | Free tier or Scale $0+ |
+| Attio | CRM and deal pipeline | Pro $29/user/mo |
+| n8n | Workflow automation (4+ workflows) | Starter $24/mo or Pro $60/mo |
+| G2 Buyer Intent | Third-party intent signals | Included in G2 paid profile |
+| Bombora (optional) | Topic-level intent data | ~$30K/yr (only if ACV justifies) |
+
+**Total play-specific cost: ~$200-500/mo** (excluding optional Bombora)
+
+## Drills Referenced
+
+- `intent-orchestration` — real-time signal-to-outreach pipeline with AI personalization
+- `ab-test-orchestrator` — systematic A/B testing on personalization, timing, and messaging
+- `follow-up-automation` — multi-channel follow-up triggered by engagement signals
