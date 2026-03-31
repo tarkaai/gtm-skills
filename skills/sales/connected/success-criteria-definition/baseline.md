@@ -1,7 +1,8 @@
 ---
 name: success-criteria-definition-baseline
 description: >
-  Success Criteria Definition — Baseline Run. Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
+    Success Criteria Definition — Baseline Run. Co-create specific, measurable success criteria with
+  prospects to align expectations and provide clear evaluation framework for purchase decision.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +13,16 @@ kpis: ["Success criteria definition rate", "Stakeholder alignment rate", "Close 
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Success Criteria Definition — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
+Success Criteria Definition — Baseline Run. Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
 
 **Time commitment:** 14 hours over 2 weeks
 **Pass threshold:** Success criteria defined on ≥80% of opportunities over 2 weeks
@@ -32,42 +32,28 @@ Co-create specific, measurable success criteria with prospects to align expectat
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand success criteria definition to 35-50 opportunities over 2 weeks; develop systematic framework for defining and validating success.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create success criteria templates by use case: efficiency gains, revenue impact, cost savings, quality improvements, time-to-value metrics.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Build success criteria workshop format: structured 30-minute conversation to collaboratively define measurable outcomes with prospect stakeholders.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `success-criteria-definition_email_sent`, `success-criteria-definition_email_replied`, `success-criteria-definition_meeting_booked`, `success-criteria-definition_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: success_workshop_completed, criteria_by_category, achievability_score, stakeholder_alignment, baseline_metrics_established.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement baseline measurement: help prospects establish current-state metrics so success can be measured against starting point.
-
-6. Track success criteria to outcome correlation: measure how well-defined success criteria predict close rate, deal velocity, customer satisfaction, and renewal rates.
-
-7. Create mutual success plan document: formalize success criteria in shared document with prospect showing metrics, measurement methods, timeline, responsibilities.
-
-8. Set pass threshold: Success criteria defined on ≥80% of opportunities over 2 weeks with ≥70% achieving mutual stakeholder agreement.
-
-9. Analyze success patterns: which types of success criteria correlate with fastest closes and highest retention; which criteria are most frequently achieved post-sale.
-
-10. If threshold met, document success criteria playbook and proceed to Scalable; if not, refine definition and validation process.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Success criteria defined on ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Success criteria defined on ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

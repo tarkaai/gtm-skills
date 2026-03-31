@@ -1,7 +1,10 @@
 ---
 name: roi-calculator-smoke
 description: >
-  ROI Calculator & Business Case — Smoke Test. Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
+    ROI Calculator & Business Case — Smoke Test. Quantify and demonstrate ROI to justify purchase
+  decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic
+  business case generation that personalizes value narratives and auto-updates based on prospect
+  data and market benchmarks.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email, Website"
@@ -13,6 +16,7 @@ slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # ROI Calculator & Business Case — Smoke Test
@@ -20,7 +24,7 @@ drills:
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email, Website
 
 ## Overview
-Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
+ROI Calculator & Business Case — Smoke Test. Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** >=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week
@@ -35,33 +39,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Create a simple ROI calculator in a spreadsheet with inputs for prospect's current costs (labor hours, tool costs, inefficiency losses) and outputs showing savings, payback period, and 3-year ROI.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for roi-calculator. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. During discovery, gather ROI inputs: "How many hours per week does your team spend on [task]?" "What's the loaded cost per hour?" "How much are you spending on [current solution]?" "What's the cost of [problem] to your business?"
+### 2. Prepare outreach materials
+Using the ICP output, draft your roi-calculator materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: build ROI calculators for >=5 prospects showing >=5x ROI within 1 year, and >=3 prospects reference ROI in decision-making conversations.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. After discovery, fill out calculator with prospect's numbers; calculate total annual savings, payback period (time to recoup investment), and 3-year ROI.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Present ROI in follow-up: "Based on our conversation, you're spending $100K/year on this problem. Our solution costs $20K and saves you $80K annually—4x ROI in year 1, payback in 10 weeks."
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Send calculator spreadsheet to prospect for validation: "Here's the math based on your numbers—do these figures align with your experience? Feel free to adjust inputs if needed."
-
-7. Log ROI metrics in Attio with fields for annual_savings, payback_period, three_year_roi, and roi_validated (yes/no); track which ROI thresholds move deals forward.
-
-8. In PostHog, create events for roi_calculated and roi_presented with properties for ROI value, payback period, and prospect response.
-
-9. After 1 week, analyze: did >=3 prospects reference ROI in decision conversations? Did strong ROI (>=5x) correlate with faster deal progression or higher close rates?
-
-10. If >=5 prospects have strong ROI and >=3 reference it in decisions, ROI is a powerful sales tool; document calculator methodology and proceed to Baseline; otherwise improve discovery to capture better ROI inputs.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=5 prospects with >=5x ROI calculated and >=3 reference ROI in decisions within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: outbound-founder-email-baseline
 description: >
-  Outbound founder-led email — Baseline Run. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+    Outbound founder-led email — Baseline Run. Founder-sent cold email sequences to solution-aware
+  prospects, from a small smoke test through scaled automation to agent-driven durable optimization
+  that keeps or improves meeting rate over time.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email"
@@ -12,17 +14,16 @@ kpis: ["Reply rate", "Time to first reply", "Emails sent"]
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Outbound founder-led email — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email
 
 ## Overview
-Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+Outbound founder-led email — Baseline Run. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
 
 **Time commitment:** 14 hours over 2 weeks
 **Pass threshold:** ≥ 2% meeting rate over 2 weeks
@@ -32,49 +33,28 @@ Founder-sent cold email sequences to solution-aware prospects, from a small smok
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-### 1. Refine your ICP
-Run the `icp-definition` drill to expand your ICP with firmographic and role criteria. Define a list size target of 100 contacts for this 2-week run.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-### 2. Build your prospect list
-Run the `build-prospect-list` drill to source 100 contacts. This uses the `apollo-search` and `clay-table-setup` fundamentals to source contacts, then `clay-enrichment-waterfall` to enrich with verified emails, titles, and company data. Push qualified contacts to Attio using the `attio-contacts` fundamental.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-### 3. Set up your email sequence
-Run the `cold-email-sequence` drill to create a 3-step sequence in Instantly using the same structure that passed Smoke:
-- Use the `instantly-campaign` fundamental to create the campaign via API
-- Upload your enriched lead list from Clay
-- Configure sending schedule (weekdays, 8-11am recipient timezone)
-- Set daily limits to 20 sends and ramp after 3 days
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `outbound-founder-email_email_sent`, `outbound-founder-email_email_replied`, `outbound-founder-email_meeting_booked`, `outbound-founder-email_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-### 4. Execute the campaign
-Launch the Instantly campaign. In parallel, add one LinkedIn touch per lead where possible (connection request referencing your email). Log each touch in Attio.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-### 5. Handle replies and route to CRM
-Use the `instantly-reply-detection` fundamental to monitor Unibox. For positive replies, create deals in Attio at "Meeting Requested" stage. Send Cal.com booking link within 1 hour.
-
-### 6. Measure against threshold
-Run the `threshold-engine` drill after 2 weeks:
-- **Pass:** ≥ 2% meeting rate from 100 contacts
-- **If pass:** Document volume, conversion rates, and sequence. Proceed to Scalable.
-- **If fail:** Refine list quality, adjust messaging, or switch ICP segment and re-run Baseline.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: ≥ 2% meeting rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -88,8 +68,8 @@ Run the `threshold-engine` drill after 2 weeks:
 ## Pass threshold
 **≥ 2% meeting rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

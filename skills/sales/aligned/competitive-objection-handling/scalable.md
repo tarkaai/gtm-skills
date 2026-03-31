@@ -1,7 +1,10 @@
 ---
 name: competitive-objection-handling-scalable
 description: >
-  Competitive Objection Handling — Scalable Automation. Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
+    Competitive Objection Handling — Scalable Automation. Address "we're evaluating competitor X"
+  objections by differentiating your solution, highlighting unique value, and leveraging competitive
+  intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each
+  prospect's priorities and decision criteria.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +15,16 @@ kpis: ["Competitive win rate by competitor", "Battlecard currency", "Proactive p
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Competitive Objection Handling — Scalable Automation
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
+Competitive Objection Handling — Scalable Automation. Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
 
 **Time commitment:** 75 hours over 2 months
 **Pass threshold:** >=45% win rate in competitive deals over 2 months
@@ -34,45 +34,28 @@ Address "we're evaluating competitor X" objections by differentiating your solut
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Fireflies** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Scale to 50+ competitive deals per quarter; integrate competitive intelligence tools (Klue, Crayon) with Attio to auto-update battlecards when competitors release features, change pricing, or announce customers.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow that triggers when competitive objection is detected in call recording: identify competitor mentioned, pull relevant battlecard from Attio, send to rep with recommended positioning, log in PostHog.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create persona-specific competitive positioning: CFO cares about TCO (show pricing comparison), CTO cares about architecture (show technical differentiation), VP Sales cares about ease-of-use (show setup time comparison).
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track competitive intelligence: which competitors appear most often? in which deal sizes/industries? at which stage do they enter evaluation? Use patterns to position proactively.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build a competitive content library: comparison pages, switch guides ("Migrating from X to us"), ROI calculators with competitor TCO, head-to-head demo videos; auto-recommend content based on competitor and persona.
-
-6. Implement proactive competitive positioning: if PostHog shows competitor X appears in 60% of deals, address them upfront in discovery or demo before prospect mentions them.
-
-7. Create competitive win/loss tracking: for every closed deal, log whether competitors were involved, who was chosen, and why; feed learnings back into battlecards.
-
-8. Build a competitive intelligence dashboard in PostHog showing win rate by competitor, most common decision criteria, and which differentiators correlate with wins.
-
-9. Each week, review competitive losses to understand why: did competitor have must-have feature? better pricing? stronger champion? Update battlecards and positioning based on loss analysis.
-
-10. After 2 months, if win rate >=45% in competitive deals and battlecards are kept current via automated intel, move to Durable; otherwise refine positioning or improve win/loss analysis process.
+### 5. Evaluate against threshold
+Measure against: >=45% win rate in competitive deals over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=45% win rate in competitive deals over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: technical-requirements-discovery-scalable
 description: >
-  Technical Requirements Discovery — Scalable Automation. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+    Technical Requirements Discovery — Scalable Automation. Systematically uncover technical needs,
+  integrations, security requirements, and constraints to prevent deal-killing surprises late in the
+  sales cycle.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +14,16 @@ kpis: ["Technical discovery completion rate", "Technical fit prediction accuracy
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Technical Requirements Discovery — Scalable Automation
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+Technical Requirements Discovery — Scalable Automation. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
 
 **Time commitment:** 58 hours over 2 months
 **Pass threshold:** Technical discovery completed on ≥70% of opportunities at scale over 2 months with improved technical fit prediction
@@ -34,44 +33,28 @@ Systematically uncover technical needs, integrations, security requirements, and
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that triggers technical discovery checklist after qualification; auto-assigns technical complexity score based on prospect data.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create technical intelligence layer: n8n analyzes prospect's tech stack (from website, LinkedIn, job postings) and pre-populates likely technical requirements.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated technical routing: high technical complexity deals automatically schedule solutions engineer involvement; low complexity follow standard sales flow.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up technical requirement matching: n8n compares prospect's stated technical needs against product capabilities; flags gaps for product or solutions team.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when critical technical requirement is identified, trigger automated content delivery (security docs, integration guides, architecture diagrams).
-
-6. Build technical intelligence dashboard: track technical requirement patterns, integration demands, security certification requests, technical win/loss reasons.
-
-7. Create technical enablement library: maintain repository of technical collateral (SOC2 report, API docs, security questionnaires, reference architectures) accessible to sales.
-
-8. Set guardrails: technical discovery completion rate must stay ≥70% of Baseline level; technical fit scoring must predict deal outcomes within 15% accuracy.
-
-9. Implement technical risk alerting: flag deals with unmet technical requirements for product roadmap discussions or partnership solutions.
-
-10. After 2 months, evaluate technical discovery impact on deal success and implementation smoothness; if metrics hold, proceed to Durable AI-driven technical intelligence.
+### 5. Evaluate against threshold
+Measure against: Technical discovery completed on ≥70% of opportunities at scale over 2 months with improved technical fit prediction. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical discovery completed on ≥70% of opportunities at scale over 2 months with improved technical fit prediction**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

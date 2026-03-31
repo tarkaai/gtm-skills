@@ -1,7 +1,9 @@
 ---
 name: mutual-action-plan-smoke
 description: >
-  Mutual Action Plan (MAP) — Smoke Test. Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
+    Mutual Action Plan (MAP) — Smoke Test. Co-create timeline and milestones with prospect to align
+  on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP
+  orchestration that monitors progress and auto-escalates risks.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Mutual Action Plan (MAP) — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
+Mutual Action Plan (MAP) — Smoke Test. Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
 
 **Time commitment:** 7 hours over 2 weeks
 **Pass threshold:** >=3 MAPs created and >=25% faster close time for MAP deals within 2 weeks
@@ -35,33 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Create a MAP template in a spreadsheet or doc with columns: Milestone, Owner (your team or prospect's), Due Date, Status, Dependencies; include milestones for both sides (demo, technical review, proposal, legal review, approval, contract signing).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for mutual-action-plan. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Select 3 active opportunities in proposal/negotiation stage; schedule MAP planning calls with champion or key stakeholder to build shared timeline.
+### 2. Prepare outreach materials
+Using the ICP output, draft your mutual-action-plan materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: build MAPs for >=3 deals, and MAP deals close >=25% faster than deals without MAPs within 2 weeks.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. During MAP call, collaboratively define milestones: "What steps need to happen on your end before you can approve?" "Who needs to review?" "When can we schedule executive alignment?" Get specific dates and owners.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. For each milestone, identify dependencies: "You can't do legal review until we deliver security docs—we'll have those by [date]" ensures clarity on blockers and sequencing.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=3 MAPs created and >=25% faster close time for MAP deals within 2 weeks. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Share MAP with all stakeholders via email or shared doc; make it visible and accessible so everyone knows what's next and who's responsible.
-
-7. Log MAP in Attio with custom fields for map_created_date, expected_close_date, completion_percentage, and at_risk_status; track MAP progress weekly.
-
-8. In PostHog, create events for map_created, milestone_completed, milestone_delayed with properties for milestone type, owner, and delay reason.
-
-9. Send weekly MAP updates to prospect: "We completed [milestone X], next up is [milestone Y] owned by [person] due [date]—are you on track?" Keeps deal momentum visible.
-
-10. If MAPs accelerate >=3 deals by >=25%, shared timelines reduce friction and ambiguity; document MAP process and proceed to Baseline; otherwise refine milestone definitions or engagement process.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=3 MAPs created and >=25% faster close time for MAP deals within 2 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

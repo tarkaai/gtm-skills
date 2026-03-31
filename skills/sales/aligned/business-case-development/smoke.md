@@ -1,7 +1,9 @@
 ---
 name: business-case-development-smoke
 description: >
-  Business Case Development — Smoke Test. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+    Business Case Development — Smoke Test. Help prospects build compelling internal business case
+  with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO
+  approval.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Business Case Development — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+Business Case Development — Smoke Test. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** Business cases created for ≥5 opportunities in 1 week
@@ -35,32 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. When 5-8 prospects need internal approval, offer to co-create business case: 'Let me help you build the case for your leadership team'.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for business-case-development. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Structure business case with key sections: Executive Summary (one-page overview), Problem Statement (current pain and cost), Proposed Solution (how you solve it), Financial Analysis (ROI and payback), Implementation Plan (timeline and resources), Risk Mitigation (how you de-risk), Strategic Alignment (how it supports company goals).
+### 2. Prepare outreach materials
+Using the ICP output, draft your business-case-development materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Quantify current state costs: inefficiencies, manual work, lost opportunities, error rates, customer churn; calculate total annual impact.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Model future state benefits: time savings, cost reductions, revenue increases, quality improvements; show year 1, 2, 3 projections.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Calculate financial metrics: Total Cost of Ownership (TCO), Return on Investment (ROI), Payback Period, Net Present Value (NPV) if applicable.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Business cases created for ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Address executive concerns: include competitive risks of not acting, alignment with strategic initiatives, change management plan, measurement framework.
-
-7. Track PostHog events: business_case_initiated, section_completed, financial_model_created, executive_review_scheduled.
-
-8. Set pass threshold: Co-create business cases for ≥5 opportunities in 1 week with ≥60% securing executive approval.
-
-9. Measure effectiveness: track business case win rates, time to approval, deal size impact.
-
-10. Document which business case elements drive approvals; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Business cases created for ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

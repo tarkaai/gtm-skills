@@ -1,7 +1,9 @@
 ---
 name: demo-follow-up-sequence-baseline
 description: >
-  Demo Follow-Up Sequence — Baseline Run. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+    Demo Follow-Up Sequence — Baseline Run. Structured multi-touch follow-up after demos delivering
+  recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate
+  deals.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,17 +14,16 @@ kpis: ["Follow-up sequence completion", "Response rate by touch", "Next step con
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Demo Follow-Up Sequence — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+Demo Follow-Up Sequence — Baseline Run. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
 
 **Time commitment:** 15 hours over 2 weeks
 **Pass threshold:** Demo follow-up on ≥80% of demos over 2 weeks
@@ -32,43 +33,28 @@ Structured multi-touch follow-up after demos delivering recap, resources, answer
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Expand demo follow-up to 30-40 opportunities over 2 weeks; develop standardized follow-up sequence framework.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create demo follow-up templates: recap email template, resource compilation templates, check-in email templates, value-add touch templates customized by persona.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Build demo-specific resource packages: assemble relevant materials based on what was discussed in demo (technical resources for engineer calls, ROI materials for executive calls).
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `demo-follow-up-sequence_email_sent`, `demo-follow-up-sequence_email_replied`, `demo-follow-up-sequence_meeting_booked`, `demo-follow-up-sequence_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: follow_up_sequence_initiated, email_opened, resource_accessed, response_received, next_step_type.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement follow-up cadence: 0 hours (recap), 24 hours (check-in), 3 days (resources), 7 days (value-add), 10 days (final ask with urgency).
-
-6. Track follow-up effectiveness: measure open rates, click rates, response rates, next step conversion by follow-up touch and content type.
-
-7. Create demo notes capture process: standardize what to document during demo to enable personalized follow-up (questions asked, features highlighted, concerns raised, stakeholders involved).
-
-8. Set pass threshold: Demo follow-up on ≥80% of demos over 2 weeks with ≥55% scheduling next step within 10 days.
-
-9. Analyze follow-up patterns: which touches drive responses, which resources get consumed, which next steps are most common, what timing works best.
-
-10. If threshold met, document demo follow-up playbook and proceed to Scalable; if not, refine sequence timing or content.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Demo follow-up on ≥80% of demos over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -84,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Demo follow-up on ≥80% of demos over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

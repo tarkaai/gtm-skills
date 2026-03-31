@@ -1,7 +1,9 @@
 ---
 name: business-case-development-baseline
 description: >
-  Business Case Development — Baseline Run. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+    Business Case Development — Baseline Run. Help prospects build compelling internal business case
+  with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO
+  approval.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Business case completion rate", "Executive approval rate", "Deal size im
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Business Case Development — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+Business Case Development — Baseline Run. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** Business cases developed on ≥80% of enterprise deals over 2 weeks
@@ -32,42 +33,28 @@ Help prospects build compelling internal business case with quantified ROI, stra
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand business case development to 15-25 opportunities over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build business case template library: executive summary templates, financial model spreadsheets, implementation timelines, risk matrices by industry and company size.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create ROI calculator integrated into business case: prospect inputs their numbers; auto-generates TCO, ROI, payback period charts.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `business-case-development_email_sent`, `business-case-development_email_replied`, `business-case-development_meeting_booked`, `business-case-development_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog tracking: business_case_stage, approval_level_reached, objection_encountered, final_outcome.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop strategic alignment framework: map solution benefits to common corporate initiatives (digital transformation, efficiency, growth, customer experience).
-
-6. Track business case outcomes: measure approval rates, time to executive buy-in, deal size correlation, win rates with vs without business case.
-
-7. Build executive objection library: common CFO/CEO concerns and responses with supporting data.
-
-8. Set pass threshold: Business cases developed on ≥80% of enterprise opportunities over 2 weeks with ≥70% securing approval.
-
-9. Analyze success patterns: which financial metrics executives prioritize, which risk mitigations build confidence, which strategic alignments resonate.
-
-10. If threshold met, document business case playbook and proceed to Scalable; if not, refine template or financial modeling.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Business cases developed on ≥80% of enterprise deals over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Business cases developed on ≥80% of enterprise deals over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

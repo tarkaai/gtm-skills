@@ -1,7 +1,10 @@
 ---
 name: champion-identification-scalable
 description: >
-  Champion Identification & Development — Scalable Automation. Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
+    Champion Identification & Development — Scalable Automation. Find and nurture internal champions
+  who advocate for your solution inside prospect organizations, from manual champion vetting to
+  AI-driven champion development programs that increase win rates by ensuring strong internal
+  advocates in every deal.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +15,16 @@ kpis: ["Champion rate", "Champion engagement score", "Win rate lift", "Champion 
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Champion Identification & Development — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
+Champion Identification & Development — Scalable Automation. Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
 
 **Time commitment:** 65 hours over 2 months
 **Pass threshold:** >=60% of deals with active champions and >=40% higher win rate over 2 months
@@ -34,45 +34,28 @@ Find and nurture internal champions who advocate for your solution inside prospe
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Scale champion development to 50+ deals per quarter; integrate PostHog with Attio to auto-score champion candidates based on engagement behaviors (call attendance, email clicks, material shares).
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow that triggers when a contact hits high engagement thresholds: send automated champion recruitment email with enablement kit, log as champion_candidate in Attio, notify rep.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create tiered champion enablement kits by deal size: SMB kit (one-pager, case study), Mid-market (ROI calculator, implementation plan), Enterprise (executive briefing, CFO business case, security docs).
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track champion engagement across multiple dimensions: material downloads, internal forwards (tracked via unique links), stakeholder introductions, meeting attendance.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. In Attio, create automated champion nurture sequences: drip educational content, share customer success stories, provide competitive intelligence, offer to join champion-only events or workshops.
-
-6. Build a champion health score in n8n: combine engagement data from PostHog, Attio activity, and meeting attendance; champions dropping below threshold get proactive outreach.
-
-7. Launch a champion advocacy program: invite high-engagement champions to exclusive dinners, early product access, or advisory board; deepen their investment in your success.
-
-8. Track champion impact in PostHog: create cohorts for champion deals vs non-champion deals; measure win rate, deal size, and velocity differences; target >=40% lift in win rate.
-
-9. Each week, identify deals without champions (high risk); assign reps to specifically recruit champions in those deals or consider disqualifying if no champion emerges.
-
-10. After 2 months, if >=60% of deals have Active Champions and champion deals win >=40% more often, move to Durable; otherwise refine recruitment tactics or enablement content.
+### 5. Evaluate against threshold
+Measure against: >=60% of deals with active champions and >=40% higher win rate over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=60% of deals with active champions and >=40% higher win rate over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

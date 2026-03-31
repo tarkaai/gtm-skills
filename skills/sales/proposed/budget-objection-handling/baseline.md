@@ -1,7 +1,9 @@
 ---
 name: budget-objection-handling-baseline
 description: >
-  Budget Objection Navigation — Baseline Run. Navigate 'no budget' situations by helping prospects find budget, build compelling business case, or structure creative payment terms that enable purchase within constraints.
+    Budget Objection Navigation — Baseline Run. Navigate 'no budget' situations by helping prospects
+  find budget, build compelling business case, or structure creative payment terms that enable
+  purchase within constraints.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Objection resolution rate", "Budget found rate", "Business case win rate
 slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Budget Objection Navigation — Baseline Run
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Navigate 'no budget' situations by helping prospects find budget, build compelling business case, or structure creative payment terms that enable purchase within constraints.
+Budget Objection Navigation — Baseline Run. Navigate 'no budget' situations by helping prospects find budget, build compelling business case, or structure creative payment terms that enable purchase within constraints.
 
 **Time commitment:** 15 hours over 2 weeks
 **Pass threshold:** Budget objections handled on ≥80% of instances over 2 weeks
@@ -32,42 +33,28 @@ Navigate 'no budget' situations by helping prospects find budget, build compelli
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand budget objection handling to 20-30 instances over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build budget navigation framework: diagnostic questions, budget source menu, business case templates, payment options catalog, ROI calculators by use case.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create budget source guide: common budget pools by company size and type (departmental, project-based, efficiency, IT, innovation), typical approval processes, timing considerations.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `budget-objection-handling_email_sent`, `budget-objection-handling_email_replied`, `budget-objection-handling_meeting_booked`, `budget-objection-handling_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: budget_objection_type, true_vs_price_objection, budget_source_explored, roi_presented, payment_terms_offered, objection_resolution.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop ROI template library: industry-specific ROI models, cost savings calculators, revenue impact models, efficiency gain quantifiers, competitive risk assessments.
-
-6. Track budget objection outcomes: measure resolution rates by objection type, deals saved by payment flexibility, business case win rates, average discount given.
-
-7. Build payment flexibility playbook: standard payment terms, creative structures, volume discounts, multi-year incentives, pilot programs, approval required for each.
-
-8. Set pass threshold: Budget objections addressed on ≥80% of instances over 2 weeks with ≥60% finding budget solution or accepting payment terms.
-
-9. Analyze budget patterns: which objections are real vs negotiation tactics, which payment structures work best, which budget sources close fastest.
-
-10. If threshold met, document budget objection playbook and proceed to Scalable; if not, refine business case or payment options.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Budget objections handled on ≥80% of instances over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Budget objections handled on ≥80% of instances over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

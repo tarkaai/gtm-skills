@@ -1,7 +1,10 @@
 ---
 name: champion-identification-durable
 description: >
-  Champion Identification & Development — Durable Intelligence. Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
+    Champion Identification & Development — Durable Intelligence. Find and nurture internal
+  champions who advocate for your solution inside prospect organizations, from manual champion
+  vetting to AI-driven champion development programs that increase win rates by ensuring strong
+  internal advocates in every deal.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +15,15 @@ kpis: ["Champion win rate lift", "Champion engagement trend", "Agent experiment 
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Champion Identification & Development — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
+Champion Identification & Development — Durable Intelligence. Find and nurture internal champions who advocate for your solution inside prospect organizations, from manual champion vetting to AI-driven champion development programs that increase win rates by ensuring strong internal advocates in every deal.
 
 **Time commitment:** 125 hours over 6 months
 **Pass threshold:** Sustained or improving champion impact (>=40% win rate lift) over 6 months via continuous agent-driven recruitment optimization, enablement personalization, and risk monitoring
@@ -36,46 +33,29 @@ Find and nurture internal champions who advocate for your solution inside prospe
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **OpenAI** (AI/LLM)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which contact behaviors best predict strong championship; auto-adjusts champion scoring model weekly based on win/loss data.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for champion-identification with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run experiments on champion recruitment messaging: test different value propositions, enablement offers, and timing; promote high-conversion approaches.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every closed-won deal triggers the agent to analyze the champion's engagement history; identify early signals that predicted strong advocacy and boost those signals.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy AI-driven champion enablement personalization: agent analyzes each champion's role, seniority, and company to recommend tailored materials (CFO gets ROI focus, VP Ops gets efficiency focus).
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement champion risk monitoring: agent tracks champion engagement trends and alerts when champions disengage (no activity for 10 days, declining meeting attendance); suggests re-engagement tactics.
-
-6. Build automatic champion coaching: agent generates pre-call briefings for champions based on upcoming internal meetings (e.g., "Your CFO cares about payback period—emphasize 6-month ROI").
-
-7. Create market adaptation logic: if champion patterns change (e.g., more deals require IT champion during security-focused buying cycles), agent updates recruitment targets and enablement kits.
-
-8. Agent continuously experiments with champion development cadence: test different touchpoint frequencies, content types, and engagement tactics; optimize for highest champion scores and win rates.
-
-9. Implement predictive champion identification: agent uses machine learning on historical engagement data to predict which contacts will become strong champions before they fully emerge.
-
-10. Establish monthly review cycles: agent generates champion program reports showing recruitment rates, engagement trends, win rate impact, and recommended enablement updates; team reviews and approves changes or rolls back underperforming experiments.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving champion impact (>=40% win rate lift) over 6 months via continuous agent-driven recruitment optimization, enablement personalization, and risk monitoring. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

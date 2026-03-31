@@ -1,7 +1,9 @@
 ---
 name: outbound-founder-email-smoke
 description: >
-  Outbound founder-led email — Smoke Test. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+    Outbound founder-led email — Smoke Test. Founder-sent cold email sequences to solution-aware
+  prospects, from a small smoke test through scaled automation to agent-driven durable optimization
+  that keeps or improves meeting rate over time.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email"
@@ -13,6 +15,7 @@ slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Outbound founder-led email — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email
 
 ## Overview
-Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+Outbound founder-led email — Smoke Test. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
 
 **Time commitment:** 4 hours over 1 week
 **Pass threshold:** ≥ 2 meetings in 1 week
@@ -35,40 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-### 1. Define your ICP
-Run the `icp-definition` drill to define your Ideal Customer Profile. Document industry, role, company size, and pain points. At Smoke level this is manual -- write a short brief.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for outbound-founder-email. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-### 2. Source 10 prospects manually
-Search Apollo or LinkedIn for 10 contacts matching your ICP. For each, collect: email, first name, last name, company, title, and one personalization hook (recent news, tech stack, hiring signal). Log them in Attio using the `attio-contacts` fundamental.
+### 2. Prepare outreach materials
+Using the ICP output, draft your outbound-founder-email materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-### 3. Write a 3-step email sequence
-Write your emails manually at Smoke level (no automation tool needed):
-- **Step 1 (Day 0):** Personalized opener referencing the hook, clear value prop, soft CTA
-- **Step 2 (Day 3):** Different angle, lead with value
-- **Step 3 (Day 7):** Include Cal.com booking link as the CTA
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-Send from the founder's primary email. Keep each email under 100 words.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-### 4. Send manually and track
-Send all 10 intro emails. Schedule follow-ups in your calendar. Log each send in Attio with status: Sent, Replied, Meeting Booked, No Response.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥ 2 meetings in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-### 5. Handle replies
-Respond to positive replies within 1 hour. Use the `attio-deals` fundamental to create a deal at "Meeting Requested" stage for every positive reply.
-
-### 6. Measure against threshold
-Run the `threshold-engine` drill to evaluate results after 7 days:
-- **Pass:** ≥ 2 meetings from 10 emails
-- **If pass:** Document the winning ICP and sequence, proceed to Baseline
-- **If fail:** Adjust ICP, messaging, or list source and re-run Smoke
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -82,8 +68,8 @@ Run the `threshold-engine` drill to evaluate results after 7 days:
 ## Pass threshold
 **≥ 2 meetings in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

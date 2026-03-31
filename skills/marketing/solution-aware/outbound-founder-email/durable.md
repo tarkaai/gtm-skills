@@ -1,7 +1,9 @@
 ---
 name: outbound-founder-email-durable
 description: >
-  Outbound founder-led email — Durable Intelligence. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+    Outbound founder-led email — Durable Intelligence. Founder-sent cold email sequences to
+  solution-aware prospects, from a small smoke test through scaled automation to agent-driven
+  durable optimization that keeps or improves meeting rate over time.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email"
@@ -12,21 +14,15 @@ kpis: ["Reply rate", "Time to first reply", "Emails sent"]
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Outbound founder-led email — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email
 
 ## Overview
-Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+Outbound founder-led email — Durable Intelligence. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
 
 **Time commitment:** 250 hours over 6 months
 **Pass threshold:** Sustained or improving meeting rate over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.
@@ -36,63 +32,29 @@ Founder-sent cold email sequences to solution-aware prospects, from a small smok
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Apollo** (Enrichment)
-- **Loops** (Email)
-
----
-
 ## Instructions
 
-### 1. Build the unified dashboard
-Run the `dashboard-builder` drill to create a comprehensive PostHog dashboard:
-- Reply rate, meeting rate, and pipeline value trending weekly
-- Breakdown by campaign, ICP segment, and sequence variant
-- Comparison to Scalable baseline metrics
-- Use the `posthog-dashboards` fundamental to create via API
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for outbound-founder-email with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-### 2. Set up A/B testing infrastructure
-Run the `ab-test-orchestrator` drill to enable continuous experimentation:
-- Use the `posthog-experiments` fundamental to create experiments
-- Test one variable at a time: subject line, send time, sequence length, CTA
-- Agent analyzes results via PostHog MCP and applies winning variant to Instantly
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-### 3. Build agent-driven optimization workflows
-Use n8n to create AI-powered monitoring and optimization:
-- **Weekly review:** Scheduled n8n workflow queries PostHog via API, compares current week to baseline, outputs recommendations
-- **Auto-adjustment:** When a variant wins with 95% significance, the agent updates the Instantly campaign via API
-- **Alert on degradation:** If meeting rate drops 20%+ below baseline for 2 consecutive weeks, trigger Slack alert with suggested corrective actions
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-### 4. Automate the full prospecting pipeline
-Run the `multi-channel-cadence` drill to add LinkedIn and call touches alongside email:
-- n8n orchestrates the cadence: email Day 0, LinkedIn Day 1, follow-up email Day 3, call Day 5
-- Each touch logged to Attio and PostHog automatically
-- Reply classification uses AI to route positive responses
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-### 5. Monitor deliverability and scaling health
-Use n8n scheduled workflows to:
-- Pull `instantly-warmup` health scores daily
-- Alert when any account drops below 80% warmup score
-- Suggest inbox rotation changes using the `smartlead-inbox-rotation` pattern
-- Monitor Clay enrichment hit rates and credit usage
-
-### 6. Continuous improvement cycle
-Monthly review: which experiments improved meeting rate, which to retire, what new hypotheses to test. Agent runs the `threshold-engine` drill monthly to verify the play still passes. Adapt to seasonal and market changes by refreshing ICP criteria quarterly.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving meeting rate over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

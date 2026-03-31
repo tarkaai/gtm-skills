@@ -1,7 +1,9 @@
 ---
 name: change-management-objection-baseline
 description: >
-  Change Management Objection Handling — Baseline Run. Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
+    Change Management Objection Handling — Baseline Run. Overcome resistance to changing from
+  current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive
+  change support to reduce adoption risk.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,17 +14,16 @@ kpis: ["Objection resolution rate", "Status quo overcome rate", "Change plan acc
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Change Management Objection Handling — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
+Change Management Objection Handling — Baseline Run. Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
 
 **Time commitment:** 15 hours over 2 weeks
 **Pass threshold:** Change objections handled on ≥80% of instances over 2 weeks
@@ -32,41 +33,28 @@ Overcome resistance to changing from current solution by quantifying switching c
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo (includes dialer) or Aircall:** ~$50–100/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand change objection handling to 20-30 instances over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build change management framework: diagnostic questions, status quo cost calculator, change support plan templates, risk mitigation menu, case study library.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create change cost comparison tool: calculate total cost of ownership for current solution vs new solution over 1, 2, 3 years including hidden costs, opportunity costs, scaling costs.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `change-management-objection_email_sent`, `change-management-objection_email_replied`, `change-management-objection_meeting_booked`, `change-management-objection_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: objection_type, root_concern, cost_comparison_impact, plan_component_emphasized, resolution_method.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop implementation support package: standard migration plan, training curriculum, onboarding timeline, success milestones, dedicated support resources.
-
-6. Track change objection outcomes: measure resolution rates, deals saved from status quo, post-sale adoption rates, customer satisfaction with change process.
-
-7. Build change management content library: migration guides, training materials, communication templates, adoption playbooks, success stories organized by company size and industry.
-
-8. Set pass threshold: Change objections addressed on ≥80% of instances over 2 weeks with ≥65% accepting change support and progressing to proposal.
-
-9. Analyze change patterns: which concerns are most common, which risk mitigation tactics work best, which change support elements drive acceptance.
-
-10. If threshold met, document change objection playbook and proceed to Scalable; if not, refine cost comparison or support packages.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Change objections handled on ≥80% of instances over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -81,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Change objections handled on ≥80% of instances over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

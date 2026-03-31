@@ -1,7 +1,9 @@
 ---
 name: business-case-development-durable
 description: >
-  Business Case Development — Durable Intelligence. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+    Business Case Development — Durable Intelligence. Help prospects build compelling internal
+  business case with quantified ROI, strategic alignment, and risk mitigation to secure executive
+  and CFO approval.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["Executive approval rate", "Time to approval", "Business case ROI accurac
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Business Case Development — Durable Intelligence
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
+Business Case Development — Durable Intelligence. Help prospects build compelling internal business case with quantified ROI, strategic alignment, and risk mitigation to secure executive and CFO approval.
 
 **Time commitment:** 160 hours over 6 months
 **Pass threshold:** Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence
@@ -36,45 +32,29 @@ Help prospects build compelling internal business case with quantified ROI, stra
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog streams triggering n8n AI agents when: enterprise deal requires business case, executive review is scheduled, or approval stalls.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for business-case-development with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI business case intelligence agent analyzing historical approvals: identifies which financial metrics drive CFO approval, which strategic alignments resonate with CEOs, which risk mitigations satisfy boards.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered business case generation: AI creates sophisticated business cases incorporating prospect-specific data, industry benchmarks, validated customer outcomes, and tailored executive messaging.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which business case elements correlate with executive approval and deal closure; AI refines recommendations by company size and industry.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive financial modeling: AI generates realistic ROI projections based on latest customer outcome data; adjusts assumptions to maintain credibility.
-
-6. Deploy intelligent approval navigation: AI analyzes approval chain dynamics; recommends stakeholder engagement strategy and timeline.
-
-7. Implement proactive objection handling: AI predicts likely executive concerns based on company characteristics; prepares preemptive responses.
-
-8. Create dynamic business case optimization: AI monitors which sections executives engage with; suggests emphasis adjustments in real-time.
-
-9. Set guardrails: if approval rate drops >15% or time-to-approval increases significantly, alert team and suggest refinements.
-
-10. Establish monthly review: analyze approval patterns, financial model accuracy, executive engagement; refine AI intelligence based on outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving executive approval rates over 6 months via AI-driven business case intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

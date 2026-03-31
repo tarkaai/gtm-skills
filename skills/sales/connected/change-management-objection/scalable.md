@@ -1,7 +1,9 @@
 ---
 name: change-management-objection-scalable
 description: >
-  Change Management Objection Handling — Scalable Automation. Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
+    Change Management Objection Handling — Scalable Automation. Overcome resistance to changing from
+  current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive
+  change support to reduce adoption risk.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,19 +14,16 @@ kpis: ["Objection resolution rate", "Status quo overcome rate", "Deal progressio
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Change Management Objection Handling — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
+Change Management Objection Handling — Scalable Automation. Overcome resistance to changing from current solution by quantifying switching costs vs ongoing pain costs, and providing comprehensive change support to reduce adoption risk.
 
 **Time commitment:** 59 hours over 2 months
 **Pass threshold:** Change objections handled systematically at scale over 2 months with improved resolution and adoption rates
@@ -34,42 +33,28 @@ Overcome resistance to changing from current solution by quantifying switching c
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (calling at volume):** ~$100–200/mo
-
-_Total play-specific: ~$100–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that detects change resistance signals in conversations; automatically generates customized status quo cost analysis.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create change objection intelligence: n8n analyzes prospect's current solution, usage patterns, pain points; calculates personalized cost of staying vs switching.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated change support delivery: when change objection is raised, n8n sends relevant case studies of similar successful migrations, implementation guides, risk mitigation docs.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up change readiness assessment: n8n surveys prospect on change management maturity; tailors support plan and risk mitigation based on readiness level.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when change objection is logged, trigger delivery of migration success stories, implementation timeline, training preview, and schedule implementation planning call.
-
-6. Build change objection dashboard: track objection frequency, resolution rates by support package type, post-sale adoption correlation, implementation success rates.
-
-7. Create change management playbook library: maintain repository of migration plans, training programs, communication templates, adoption strategies by vertical and company size.
-
-8. Set guardrails: change objection resolution rate must stay ≥70% of Baseline level; post-sale adoption for change objection deals must be ≥85%.
-
-9. Implement post-sale tracking: monitor implementation success and adoption rates for deals that overcame change objections; validate that support promises were delivered.
-
-10. After 2 months, evaluate change objection handling impact on close rates and customer success; if metrics hold, proceed to Durable AI-driven change intelligence.
+### 5. Evaluate against threshold
+Measure against: Change objections handled systematically at scale over 2 months with improved resolution and adoption rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -85,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Change objections handled systematically at scale over 2 months with improved resolution and adoption rates**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

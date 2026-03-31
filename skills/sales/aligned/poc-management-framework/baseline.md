@@ -1,7 +1,8 @@
 ---
 name: poc-management-framework-baseline
 description: >
-  POC Management Framework — Baseline Run. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+    POC Management Framework — Baseline Run. Run structured proof-of-concept with clear success
+  criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product, Email"
@@ -12,17 +13,16 @@ kpis: ["POC qualification accuracy", "Success criteria achievement rate", "POC-t
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # POC Management Framework — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product, Email
 
 ## Overview
-Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+POC Management Framework — Baseline Run. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 
 **Time commitment:** 24 hours over 4 weeks
 **Pass threshold:** POCs on ≥80% of qualified opportunities over 4 weeks
@@ -32,42 +32,28 @@ Run structured proof-of-concept with clear success criteria, timeline, and stake
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand POC management to 15-25 opportunities over 4 weeks; develop standardized POC framework and governance.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create POC playbook: templates for success criteria definition, kickoff agendas, check-in formats, results summaries, decision-making frameworks.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Build POC qualification criteria: not every deal needs POC; define when POC is appropriate (deal size, complexity, technical risk, competitive situation, budget authority).
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `poc-management-framework_email_sent`, `poc-management-framework_email_replied`, `poc-management-framework_meeting_booked`, `poc-management-framework_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: poc_qualified, poc_scoped, kickoff_scheduled, usage_tracked, milestone_reached, blocker_resolved, results_reviewed.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement POC usage monitoring: track prospect engagement with POC environment in PostHog; identify low usage early and intervene.
-
-6. Develop POC support structure: define what support you'll provide during POC (slack channel, office hours, technical assistance, training resources).
-
-7. Create POC escalation process: when POC encounters blocker or goes off track, establish clear escalation path to resolve quickly.
-
-8. Set pass threshold: POCs on ≥80% of qualified opportunities over 4 weeks with ≥65% achieving success criteria and ≥50% converting to closed-won.
-
-9. Analyze POC patterns: which success criteria predict closes, what POC length is optimal, which support interventions improve outcomes.
-
-10. If threshold met, document POC management playbook and proceed to Scalable; if not, refine POC structure and support model.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: POCs on ≥80% of qualified opportunities over 4 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **POCs on ≥80% of qualified opportunities over 4 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

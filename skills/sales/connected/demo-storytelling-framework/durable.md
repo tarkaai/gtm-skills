@@ -1,7 +1,9 @@
 ---
 name: demo-storytelling-framework-durable
 description: >
-  Demo Storytelling Framework — Durable Intelligence. Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
+    Demo Storytelling Framework — Durable Intelligence. Transform product demos from feature
+  walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to
+  drive emotional engagement and conviction.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -12,21 +14,15 @@ kpis: ["Demo-to-proposal conversion", "Engagement score", "Story matching accura
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Demo Storytelling Framework — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
+Demo Storytelling Framework — Durable Intelligence. Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
 
 **Time commitment:** 145 hours over 6 months
 **Pass threshold:** Sustained or improving demo engagement and conversion over 6 months via continuous AI-driven story intelligence and narrative optimization
@@ -36,45 +32,29 @@ Transform product demos from feature walkthroughs into compelling narratives usi
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (AI-assisted calling):** ~$100–300/mo
-- **Intercom or Loops (agent-driven messaging):** ~$150–400/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: demo is scheduled, prospect shows low engagement signals, or story selection is needed.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for demo-storytelling-framework with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI story intelligence agent analyzing demo recordings and outcomes: identifies which narratives drive highest engagement and conversion by prospect type.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered story customization: AI agent takes base customer story and adapts it in real-time to prospect's specific context, industry nuances, and pain points.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog and Gong track engagement signals during storytelling demos; AI agent learns which narrative elements create strongest emotional connection and conviction.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive story recommendations: AI agent continuously refines which stories to use for which prospects based on latest conversion data and engagement patterns.
-
-6. Deploy real-time demo coaching: AI agent monitors demo in real-time; suggests which story elements to emphasize, which customer outcomes to highlight based on prospect reactions.
-
-7. Implement automatic story generation: AI agent creates new customer stories from case study interviews and customer conversations; generates narrative frameworks optimized for different segments.
-
-8. Create predictive engagement modeling: AI agent predicts which stories will resonate most with each prospect; helps reps select narratives with highest probability of driving conviction.
-
-9. Set guardrails: if demo-to-proposal conversion improvement drops below 10% or storytelling adoption falls below Scalable benchmark for 2+ weeks, alert team and suggest refinements.
-
-10. Establish monthly review cycle: analyze story performance, engagement patterns, narrative effectiveness; refine AI agent intelligence and story library based on demo outcomes and close rates.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving demo engagement and conversion over 6 months via continuous AI-driven story intelligence and narrative optimization. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

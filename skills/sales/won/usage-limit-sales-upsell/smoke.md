@@ -1,7 +1,10 @@
 ---
 name: usage-limit-sales-upsell-smoke
 description: >
-  Usage-Based Upsell — Smoke Test. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+    Usage-Based Upsell — Smoke Test. Trigger upsell conversations when customers hit usage limits or
+  demonstrate expansion readiness through product engagement, from manual usage monitoring to
+  AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates
+  expansion proposals.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Direct"
@@ -13,6 +16,7 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Usage-Based Upsell — Smoke Test
@@ -20,7 +24,7 @@ drills:
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Direct
 
 ## Overview
-Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+Usage-Based Upsell — Smoke Test. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** >=1 upsell closed from >=3 customers with expansion signals within 1 week
@@ -35,33 +39,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define 3-5 usage expansion signals in a spreadsheet: approaching plan limits (80%+ of seats, API calls, storage), adding team members, using premium features heavily, achieving strong outcomes, expanding to new use cases.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for usage-limit-sales-upsell. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Monitor 10 active customers in Attio; track their usage against plan limits weekly using product data or manual checks; identify customers showing expansion signals.
+### 2. Prepare outreach materials
+Using the ICP output, draft your usage-limit-sales-upsell materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: identify >=3 customers with expansion signals and successfully upsell >=1 customer (tier upgrade, seat expansion, or add-on purchase) within 1 week.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. When customer hits usage threshold (e.g., 80% of seats used), send personalized email: "Noticed your team is growing—you're at 8/10 seats. Want to add more seats so new team members can join?"
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. For customers using premium features heavily, reach out: "You're getting great value from [feature]—have you considered [higher tier] to unlock [additional benefit]?"
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=1 upsell closed from >=3 customers with expansion signals within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Schedule upsell calls with high-usage customers; come prepared with their usage data: "You've run 45K API calls this month—you're close to your 50K limit. Let's discuss upgrading to 100K so you have headroom."
-
-7. Log expansion signals and upsell attempts in Attio with fields for expansion_signal_type, upsell_offer_made, upsell_value, and outcome; track which signals convert best.
-
-8. In PostHog, create events for usage_threshold_hit, upsell_offer_sent, upsell_call_scheduled, upsell_closed with properties for signal type, expansion value, and time to close.
-
-9. After 1 week, analyze which expansion signals yielded successful upsells; if seat expansion signals convert well but API limit signals don't, prioritize seat-based upsells.
-
-10. If >=1 upsell closed from >=3 customers with expansion signals, usage-based upsell is working; document signals and outreach templates, then proceed to Baseline; otherwise refine signal definitions or offer positioning.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=1 upsell closed from >=3 customers with expansion signals within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

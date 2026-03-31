@@ -1,7 +1,9 @@
 ---
 name: technical-requirements-discovery-durable
 description: >
-  Technical Requirements Discovery — Durable Intelligence. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+    Technical Requirements Discovery — Durable Intelligence. Systematically uncover technical needs,
+  integrations, security requirements, and constraints to prevent deal-killing surprises late in the
+  sales cycle.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["Technical fit prediction accuracy", "Technical blocker early detection",
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Technical Requirements Discovery — Durable Intelligence
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+Technical Requirements Discovery — Durable Intelligence. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
 
 **Time commitment:** 140 hours over 6 months
 **Pass threshold:** Sustained or improving technical fit accuracy and implementation success over 6 months via continuous AI-driven technical intelligence
@@ -36,46 +32,29 @@ Systematically uncover technical needs, integrations, security requirements, and
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: new opportunity lacks technical assessment after 48 hours, complex technical requirement emerges, or technical blocker is identified.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for technical-requirements-discovery with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI technical intelligence agent analyzing won/lost deal data: identifies which technical requirements predict wins, which integrations are deal-breakers, which security needs are negotiable.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered technical discovery: AI agent analyzes sales call transcripts and emails to automatically extract technical requirements; auto-populates technical assessment in Attio.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which technical discovery approaches uncover critical requirements early; AI agent recommends optimal technical qualification sequences by industry and prospect tech maturity.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive technical fit scoring: AI agent learns from closed deals which technical factors most strongly predict success; continuously refines scoring model.
-
-6. Deploy proactive technical risk management: AI agent monitors technical discussions for emerging blockers; suggests mitigation strategies (roadmap commitments, partner integrations, workarounds).
-
-7. Implement automatic technical content matching: AI agent analyzes prospect's specific technical needs and automatically surfaces most relevant technical collateral and case studies.
-
-8. Create technical competitive intelligence: AI agent tracks competitor technical capabilities from win/loss data; identifies technical differentiation opportunities and gaps.
-
-9. Set guardrails: if technical discovery completion drops >15% or prediction accuracy falls below Scalable benchmark for 2+ weeks, alert technical sales team and suggest refinements.
-
-10. Establish monthly review cycle: analyze technical requirement evolution, discovery question effectiveness, technical win/loss patterns; refine AI agent intelligence based on implementation outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving technical fit accuracy and implementation success over 6 months via continuous AI-driven technical intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

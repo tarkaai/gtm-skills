@@ -1,7 +1,9 @@
 ---
 name: technical-requirements-discovery-smoke
 description: >
-  Technical Requirements Discovery — Smoke Test. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+    Technical Requirements Discovery — Smoke Test. Systematically uncover technical needs,
+  integrations, security requirements, and constraints to prevent deal-killing surprises late in the
+  sales cycle.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Technical Requirements Discovery — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+Technical Requirements Discovery — Smoke Test. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** Technical discovery completed on ≥5 opportunities in 1 week
@@ -35,32 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Create technical requirements checklist covering: integrations needed, security/compliance requirements, data migration needs, technical architecture, performance expectations, user volume/scale.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for technical-requirements-discovery. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. On first 5-10 qualified opportunities, conduct technical discovery call with prospect's technical stakeholder (IT, engineering, DevOps, security).
+### 2. Prepare outreach materials
+Using the ICP output, draft your technical-requirements-discovery materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Ask systematic questions in each area: 'What systems must we integrate with?', 'What security certifications do you require?', 'What's your deployment preference?'.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Document all technical requirements in Attio custom fields; flag any show-stoppers or complex requirements immediately.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Assess technical fit score (1-10) based on how well your product meets their technical needs; identify gaps that need product roadmap commitment.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Technical discovery completed on ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: technical_discovery_completed, integration_required, security_requirement_identified, technical_blocker_found.
-
-7. Loop in technical team (engineering, solutions architect, security) early for complex technical requirements.
-
-8. Set pass threshold: Complete technical discovery on ≥5 opportunities in 1 week with ≥80% technical fit score.
-
-9. Compare deal outcomes: measure how technical discovery impacts close rate and identifies deal risks early.
-
-10. Document which technical questions uncover most critical requirements; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical discovery completed on ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

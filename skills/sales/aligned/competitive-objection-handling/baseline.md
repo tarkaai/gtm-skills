@@ -1,7 +1,10 @@
 ---
 name: competitive-objection-handling-baseline
 description: >
-  Competitive Objection Handling — Baseline Run. Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
+    Competitive Objection Handling — Baseline Run. Address "we're evaluating competitor X"
+  objections by differentiating your solution, highlighting unique value, and leveraging competitive
+  intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each
+  prospect's priorities and decision criteria.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +15,16 @@ kpis: ["Competitive win rate", "Engagement retention", "Differentiator effective
 slug: "competitive-objection-handling"
 install: "npx gtm-skills add sales/aligned/competitive-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Competitive Objection Handling — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
+Competitive Objection Handling — Baseline Run. Address "we're evaluating competitor X" objections by differentiating your solution, highlighting unique value, and leveraging competitive intelligence, from manual battlecards to AI-driven competitive positioning that adapts to each prospect's priorities and decision criteria.
 
 **Time commitment:** 22 hours over 2 weeks
 **Pass threshold:** >=40% win rate in competitive deals and >=70% engagement retention over 2 weeks
@@ -32,43 +34,28 @@ Address "we're evaluating competitor X" objections by differentiating your solut
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand to 10-15 competitive situations over 2 weeks; build comprehensive battlecards in Attio for top 5 competitors with sections: Overview, Strengths, Weaknesses, Pricing, Key Differentiators, When We Win, When They Win, Proof Points.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Develop competitor-specific positioning guides: for each competitor, create 3-5 talk tracks based on common decision criteria (ROI, ease of use, integrations, support, security).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: win >=40% of competitive deals (prospect chooses you over competitor) and maintain engagement in >=70% of competitive situations over 2 weeks.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `competitive-objection-handling_email_sent`, `competitive-objection-handling_email_replied`, `competitive-objection-handling_meeting_booked`, `competitive-objection-handling_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. When competitive objection arises, send competitive comparison asset within 24 hours: side-by-side feature comparison, TCO analysis, or case study from customer who switched from that competitor.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Use discovery insights to position against competitors: "You said integration with [system] is critical—competitor X has basic API, we have native integration that saves 20 hours of setup time."
-
-6. Schedule competitive differentiation calls: dedicate 15-20 minutes to walk through why your solution fits their needs better; use demos, case studies, and proof points specific to their criteria.
-
-7. Sync competitive data from Attio to PostHog; create a funnel showing competitive_objection → differentiation_call → competitive_asset_sent → prospect_engaged → deal_won.
-
-8. Track which competitors you win against most often and which are hardest to beat; for tough competitors, develop specialized positioning or consider conceding if fit is genuinely poor.
-
-9. After 2 weeks, analyze competitive win rate by competitor, decision criteria, and deal size; identify patterns (e.g., "We win on ease-of-use criteria, lose on enterprise feature depth").
-
-10. If win rate >=40% in competitive deals and >=70% stay engaged, move to Scalable; otherwise strengthen battlecards, gather more competitive intel, or improve differentiation messaging.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=40% win rate in competitive deals and >=70% engagement retention over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=40% win rate in competitive deals and >=70% engagement retention over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

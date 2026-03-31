@@ -1,7 +1,10 @@
 ---
 name: pain-discovery-framework-baseline
 description: >
-  Pain Discovery Framework — Baseline Run. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+    Pain Discovery Framework — Baseline Run. Uncover and quantify prospect pain points to build
+  compelling business cases and justify budget allocation, from manual discovery note-taking to
+  AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case
+  content.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,17 +15,16 @@ kpis: ["Quantified pain per prospect", "Pain-to-price ratio", "Pain validation r
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Pain Discovery Framework — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+Pain Discovery Framework — Baseline Run. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
 
 **Time commitment:** 20 hours over 2 weeks
 **Pass threshold:** >=70% of prospects with >=4 quantified pains totaling >=10x product cost over 2 weeks
@@ -32,42 +34,28 @@ Uncover and quantify prospect pain points to build compelling business cases and
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo (includes dialer) or Aircall:** ~$50–100/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand pain discovery to 10-15 prospects over 2 weeks; build a pain discovery playbook in Attio with question frameworks for each pain category (cost, time, risk, opportunity cost).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Develop a pain quantification calculator: if prospect says "10 hours/week on manual reports," calculate: 10 hrs × 52 weeks × $80/hr = $41,600/year; show ROI if you save 80% = $33,280 saved.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: uncover >=4 quantified pain points per prospect for >=70% of prospects, and total pain value >=10x your product cost over 2 weeks.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `pain-discovery-framework_email_sent`, `pain-discovery-framework_email_replied`, `pain-discovery-framework_meeting_booked`, `pain-discovery-framework_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. After each discovery call, send pain summary email: "Based on our conversation, you're spending $40K/year on [pain 1] and losing $25K in [pain 2]—total $65K. Does that align with your experience?"
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Use validated pain to build a mini business case: "You're losing $65K/year on these issues. Our solution costs $10K/year and addresses 80% of this pain—net ROI of $42K annually."
-
-6. Sync pain data from Attio to PostHog; create a funnel showing pain_discovered → pain_quantified → pain_validated → business_case_presented → opportunity_advanced.
-
-7. Track which pain types most strongly correlate with deal progression: if compliance risk pains accelerate deals faster than efficiency pains, prioritize uncovering compliance issues.
-
-8. For prospects with low quantified pain (<5x product cost), either find additional pains or consider disqualifying (weak business case = low close probability).
-
-9. After 2 weeks, analyze: did >=70% of prospects yield >=4 quantified pains? Did prospects with strong pain quantification progress faster or close at higher rates?
-
-10. If pain discovery yields strong quantification (>=10x product cost) and accelerates deal progression, move to Scalable; otherwise refine quantification techniques or questioning approach.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=70% of prospects with >=4 quantified pains totaling >=10x product cost over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=70% of prospects with >=4 quantified pains totaling >=10x product cost over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

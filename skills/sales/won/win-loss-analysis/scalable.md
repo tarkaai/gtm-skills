@@ -1,7 +1,10 @@
 ---
 name: win-loss-analysis-scalable
 description: >
-  Win/Loss Analysis Program — Scalable Automation. Systematically analyze won and lost deals to improve sales effectiveness, product positioning, and competitive strategy, from manual post-deal interviews to AI-driven continuous win/loss intelligence that auto-identifies patterns and recommends strategic adjustments.
+    Win/Loss Analysis Program — Scalable Automation. Systematically analyze won and lost deals to
+  improve sales effectiveness, product positioning, and competitive strategy, from manual post-deal
+  interviews to AI-driven continuous win/loss intelligence that auto-identifies patterns and
+  recommends strategic adjustments.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +15,16 @@ kpis: ["Interview completion rate", "Win rate trend", "Insight implementation ra
 slug: "win-loss-analysis"
 install: "npx gtm-skills add sales/won/win-loss-analysis"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Win/Loss Analysis Program — Scalable Automation
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically analyze won and lost deals to improve sales effectiveness, product positioning, and competitive strategy, from manual post-deal interviews to AI-driven continuous win/loss intelligence that auto-identifies patterns and recommends strategic adjustments.
+Win/Loss Analysis Program — Scalable Automation. Systematically analyze won and lost deals to improve sales effectiveness, product positioning, and competitive strategy, from manual post-deal interviews to AI-driven continuous win/loss intelligence that auto-identifies patterns and recommends strategic adjustments.
 
 **Time commitment:** 75 hours over 2 months
 **Pass threshold:** >=50% interview completion rate and measurable win rate improvement from implemented insights over 2 months
@@ -34,46 +34,28 @@ Systematically analyze won and lost deals to improve sales effectiveness, produc
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Fireflies** (Sales Engagement)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Scale to 50+ interviews per quarter; build an n8n workflow that triggers when deal closes in Attio: send automated interview request email to key stakeholder, schedule interview via Cal.com, send reminder 24 hours before.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Integrate call recording tools (Fireflies, Gong) to auto-transcribe win/loss interviews; use AI to extract key themes (win reasons, loss reasons, competitive mentions, feature requests) and populate Attio fields.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create a win/loss intelligence dashboard in PostHog showing: win rate trends, primary win/loss reasons over time, competitor win rates, feature gap impact, sales process effectiveness metrics.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track patterns: if loss rate increases for specific competitor, alert team; if feature gap appears in multiple losses, flag for product team; if pricing objections spike, review pricing strategy.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build an automated win/loss report generator in n8n: monthly report compiling interview insights, win/loss trends, competitive intelligence, and recommended actions; distribute to sales, product, and leadership.
-
-6. Implement structured follow-up on insights: create Attio tasks for each actionable insight, assign owners, track completion; measure impact of implemented changes on subsequent win rates.
-
-7. Develop persona-specific interview questions: CFO interviews focus on ROI and business case, CTO interviews focus on technical fit, VP Sales interviews focus on sales process and value delivery.
-
-8. Each month, compare win rate before vs after implementing win/loss insights; target >=10% win rate improvement or >=20% loss rate reduction in addressable loss categories.
-
-9. Create a competitive intelligence repository fed by win/loss interviews: track competitor strengths, weaknesses, pricing changes, feature launches; use intel to update battlecards and positioning.
-
-10. After 2 months, if interview completion rate >=50% and implemented changes show measurable impact on win rates, move to Durable; otherwise refine interview process or stakeholder engagement tactics.
+### 5. Evaluate against threshold
+Measure against: >=50% interview completion rate and measurable win rate improvement from implemented insights over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=50% interview completion rate and measurable win rate improvement from implemented insights over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

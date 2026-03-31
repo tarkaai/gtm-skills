@@ -1,7 +1,10 @@
 ---
 name: price-objection-handling-durable
 description: >
-  Price Objection Handling — Durable Intelligence. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+    Price Objection Handling — Durable Intelligence. Address "too expensive" objections by reframing
+  value, demonstrating ROI, and offering flexible options, from manual objection responses to
+  AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal
+  value.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +15,15 @@ kpis: ["Objection overcome rate trend", "Agent experiment win rate", "Discount o
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Price Objection Handling — Durable Intelligence
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+Price Objection Handling — Durable Intelligence. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
 
 **Time commitment:** 130 hours over 6 months
 **Pass threshold:** Sustained or improving objection overcome rate (>=65%) over 6 months via continuous agent-driven response optimization, pricing intelligence, and objection prevention
@@ -36,46 +33,29 @@ Address "too expensive" objections by reframing value, demonstrating ROI, and of
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Fireflies** (Sales Engagement)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which objection responses best predict deal closure; auto-optimizes response frameworks and asset recommendations based on win patterns.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for price-objection-handling with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run experiments on objection handling approaches: test different value framing, timing of discount offers, and payment flexibility options; promote highest-win-rate approaches.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every closed-won deal that had a price objection triggers the agent to analyze how objection was overcome; strengthen successful patterns in playbook.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy real-time objection coaching: agent listens to sales calls and detects price objections in real-time; suggests next question or response framework to rep via notification during call.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement predictive objection detection: agent analyzes deal characteristics (weak pain quantification, low engagement, missing economic buyer) to predict price objection likelihood; prompts reps to address preemptively.
-
-6. Build AI-driven pricing optimization: agent analyzes which pricing structures (annual vs quarterly, upfront vs installments) overcome objections fastest by segment; auto-recommends optimal structure for each deal.
-
-7. Create market adaptation logic: if price objections increase during economic downturns, agent suggests emphasizing ROI and cost savings over feature value; adjusts messaging automatically.
-
-8. Agent continuously tests objection prevention tactics: stronger discovery questions, earlier price anchoring, champions armed with ROI materials pre-proposal; measures which reduce objection frequency.
-
-9. Implement dynamic discount optimization: agent learns which discount levels (5%, 10%, 15%) successfully close deals without leaving money on table; recommends minimum effective discount per objection scenario.
-
-10. Establish monthly review cycles: agent generates objection intelligence reports showing overcome rates, response effectiveness, pricing optimization results, and recommended playbook updates; team reviews and approves changes or rolls back underperforming experiments.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving objection overcome rate (>=65%) over 6 months via continuous agent-driven response optimization, pricing intelligence, and objection prevention. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: local-field-prospecting-baseline
 description: >
-  Local Field Prospecting — Baseline Run. Visit a couple of coworking hubs and have short conversations to test if in-person outreach yields meetings for your ICP.
+    Local Field Prospecting — Baseline Run. Visit a couple of coworking hubs and have short
+  conversations to test if in-person outreach yields meetings for your ICP.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Other"
@@ -12,17 +13,16 @@ kpis: ["2 meetings"]
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Local Field Prospecting — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Other
 
 ## Overview
-Visit a couple of coworking hubs and have short conversations to test if in-person outreach yields meetings for your ICP.
+Local Field Prospecting — Baseline Run. Visit a couple of coworking hubs and have short conversations to test if in-person outreach yields meetings for your ICP.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 2 meetings over 2 weeks
@@ -31,40 +31,29 @@ Visit a couple of coworking hubs and have short conversations to test if in-pers
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 2 meetings over 2 weeks).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `local-field-prospecting_email_sent`, `local-field-prospecting_email_replied`, `local-field-prospecting_meeting_booked`, `local-field-prospecting_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Log every outcome in PostHog: track 2 meetings so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: ≥ 2 meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -76,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 2 meetings over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: video-prospecting-scale-baseline
 description: >
-  Video Prospecting at Scale — Baseline Run. Create personalized video messages for prospects using AI tools to increase engagement and response rates in outbound campaigns targeting solution-aware audiences.
+    Video Prospecting at Scale — Baseline Run. Create personalized video messages for prospects
+  using AI tools to increase engagement and response rates in outbound campaigns targeting
+  solution-aware audiences.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email, Social"
@@ -12,17 +14,16 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Video Prospecting at Scale — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social
 
 ## Overview
-Create personalized video messages for prospects using AI tools to increase engagement and response rates in outbound campaigns targeting solution-aware audiences.
+Video Prospecting at Scale — Baseline Run. Create personalized video messages for prospects using AI tools to increase engagement and response rates in outbound campaigns targeting solution-aware audiences.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥6% response rate from 100 video messages over 2 weeks
@@ -32,44 +33,28 @@ Create personalized video messages for prospects using AI tools to increase enga
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week video prospecting at scale experiment; define detailed ICP criteria.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `video-prospecting-scale_email_sent`, `video-prospecting-scale_email_replied`, `video-prospecting-scale_meeting_booked`, `video-prospecting-scale_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: ≥6% response rate from 100 video messages over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -84,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥6% response rate from 100 video messages over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

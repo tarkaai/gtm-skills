@@ -1,7 +1,10 @@
 ---
 name: pain-discovery-framework-smoke
 description: >
-  Pain Discovery Framework — Smoke Test. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+    Pain Discovery Framework — Smoke Test. Uncover and quantify prospect pain points to build
+  compelling business cases and justify budget allocation, from manual discovery note-taking to
+  AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case
+  content.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -13,6 +16,7 @@ slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Pain Discovery Framework — Smoke Test
@@ -20,7 +24,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+Pain Discovery Framework — Smoke Test. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** >=3 quantified pain points per prospect for >=3 prospects with total pain >=5x product cost in 1 week
@@ -35,33 +39,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Create a pain discovery template in a spreadsheet with columns: Pain Type (inefficiency, revenue loss, compliance risk, manual work), Description, Quantified Impact ($/time), Frequency, Owner, Urgency (1-5).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for pain-discovery-framework. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Select 5 active discovery calls; prepare 5-7 pain discovery questions: "What's your biggest challenge with [process]?" "How much time does your team spend on [task]?" "What does [problem] cost you per month?" "What happens if you don't solve this?"
+### 2. Prepare outreach materials
+Using the ICP output, draft your pain-discovery-framework materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: uncover >=3 quantified pain points per prospect for >=3 prospects within 1 week, and quantified pain >=5x your product's cost.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. During calls, ask open-ended pain questions, then drill into impact: "You said 10 hours/week—at $100/hour, that's $4K/month. Is that accurate?" Validate and document numbers.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. After each call, fill out pain template; categorize each pain point and calculate annual cost impact; share summary with prospect for validation.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=3 quantified pain points per prospect for >=3 prospects with total pain >=5x product cost in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log pain points in Attio with custom fields for pain_type, quantified_impact, and urgency_score; track total pain value per opportunity.
-
-7. In PostHog, create events for pain_discovered and pain_quantified with properties for pain type, value, and discovery stage.
-
-8. Test whether prospects with >=3 quantified pains progress faster to proposal stage than prospects with vague or unquantified pains.
-
-9. After 1 week, analyze: did you uncover >=3 quantified pains for >=3 prospects? Is total pain >=5x your pricing? If yes, pain discovery is working.
-
-10. If threshold met, document pain questions and quantification method, then proceed to Baseline; otherwise refine questions to surface quantifiable impact.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=3 quantified pain points per prospect for >=3 prospects with total pain >=5x product cost in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

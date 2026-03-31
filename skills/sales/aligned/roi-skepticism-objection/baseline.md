@@ -1,7 +1,9 @@
 ---
 name: roi-skepticism-objection-baseline
 description: >
-  ROI Skepticism Handling — Baseline Run. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+    ROI Skepticism Handling — Baseline Run. Prove ROI when prospects question value by using
+  customer data, conservative modeling, and co-creating financial analysis with prospect's own
+  inputs to build conviction.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Objection resolution rate", "Collaborative model adoption", "Customer re
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # ROI Skepticism Handling — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+ROI Skepticism Handling — Baseline Run. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
 
 **Time commitment:** 16 hours over 2 weeks
 **Pass threshold:** ROI skepticism handled on ≥80% of instances over 2 weeks
@@ -32,42 +33,28 @@ Prove ROI when prospects question value by using customer data, conservative mod
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand ROI skepticism handling to 20-30 instances over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build ROI proof framework: customer results database, collaborative calculator template, conservative modeling guidelines, measurement framework templates.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create customer proof library: document 10-15 customer success stories with specific ROI metrics (time saved, cost reduced, revenue increased), organized by industry and use case.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `roi-skepticism-objection_email_sent`, `roi-skepticism-objection_email_replied`, `roi-skepticism-objection_meeting_booked`, `roi-skepticism-objection_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: skepticism_type, proof_method_used, collaborative_modeling_completed, conservative_vs_aggressive_assumptions, agreement_reached.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop collaborative ROI calculator: spreadsheet or tool that prospect can input their numbers, adjust assumptions, see impact; increases ownership of results.
-
-6. Track ROI proof outcomes: measure resolution rates by proof method, deals progressed with ROI agreement, post-sale validation of ROI claims.
-
-7. Build measurement framework templates: define KPIs to track, baseline metrics to establish, timeframes for evaluation, reporting cadence.
-
-8. Set pass threshold: ROI skepticism addressed on ≥80% of instances over 2 weeks with ≥65% achieving ROI agreement and progressing to proposal.
-
-9. Analyze ROI proof patterns: which proof methods work best, which customer examples resonate most, which assumptions prospects challenge, which measurement frameworks build confidence.
-
-10. If threshold met, document ROI proof playbook and proceed to Scalable; if not, refine customer proof or calculator methodology.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: ROI skepticism handled on ≥80% of instances over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **ROI skepticism handled on ≥80% of instances over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

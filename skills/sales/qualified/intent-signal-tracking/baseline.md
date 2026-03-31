@@ -1,7 +1,10 @@
 ---
 name: intent-signal-tracking-baseline
 description: >
-  Intent Signal Tracking — Baseline Run. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+    Intent Signal Tracking — Baseline Run. Monitor and act on buyer intent signals like website
+  behavior, content consumption, and G2 research to reach prospects at peak buying moment, from
+  manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers
+  personalized outreach automatically.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
@@ -12,17 +15,16 @@ kpis: ["High-intent accounts per week", "Reply rate by intent tier", "Signal-to-
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Intent Signal Tracking — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
 ## Overview
-Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+Intent Signal Tracking — Baseline Run. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** >=20 high-intent accounts and >=35% reply rate over 2 weeks
@@ -32,44 +34,28 @@ Monitor and act on buyer intent signals like website behavior, content consumpti
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Expand intent tracking to 50+ accounts over 2 weeks; create an intent scoring model where each signal has a point value (demo request=30, pricing page=15, case study=10, etc.).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. In PostHog, set up cohorts for accounts with high intent (>=40 points), medium intent (20-39), and low intent (<20); track cohort size daily.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=20 accounts reach high intent over 2 weeks, and high-intent outreach yields >=35% reply rate and >=20% meeting rate.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `intent-signal-tracking_email_sent`, `intent-signal-tracking_email_replied`, `intent-signal-tracking_meeting_booked`, `intent-signal-tracking_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Build a daily workflow: each morning, query PostHog for accounts that crossed into high intent in the past 24 hours; export to Attio with intent score and signal breakdown.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. For high-intent accounts, use Clay to enrich with firmographics, find decision-makers, and pull recent company news; prioritize accounts with recent funding or executive hires.
-
-6. Send personalized emails within 4 hours of intent signal; reference specific behaviors ("Noticed your team has been exploring our API docs—here's a sandbox to test").
-
-7. Sync Attio to PostHog so every outreach logs an intent_outreach_sent event; track response time and meeting conversion by intent tier.
-
-8. For medium-intent accounts, add to nurture sequence; for low-intent accounts, add to retargeting audience but don't reach out yet.
-
-9. After 2 weeks, analyze: which signals most strongly predict reply/meeting? Adjust point values to boost high-signal behaviors.
-
-10. If >=20 accounts reach high intent and reply rate >=35%, document intent model and move to Scalable; otherwise refine signals or account enrichment.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=20 high-intent accounts and >=35% reply rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -84,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=20 high-intent accounts and >=35% reply rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

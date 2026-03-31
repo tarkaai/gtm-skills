@@ -1,7 +1,8 @@
 ---
 name: risk-assessment-discovery-smoke
 description: >
-  Risk & Concern Discovery — Smoke Test. Surface concerns, risks, and objections early in the sales cycle to address them proactively rather than encountering surprises at decision time.
+    Risk & Concern Discovery — Smoke Test. Surface concerns, risks, and objections early in the
+  sales cycle to address them proactively rather than encountering surprises at decision time.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +14,7 @@ slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Risk & Concern Discovery — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Surface concerns, risks, and objections early in the sales cycle to address them proactively rather than encountering surprises at decision time.
+Risk & Concern Discovery — Smoke Test. Surface concerns, risks, and objections early in the sales cycle to address them proactively rather than encountering surprises at decision time.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** Risks identified and addressed with ≥8 opportunities in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. On first 8-10 discovery calls, explicitly ask: 'What concerns do you have about making this change?' and 'What could prevent this from being successful?'.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for risk-assessment-discovery. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Create risk categories: Financial (budget, ROI, cost), Technical (integration, security, complexity), Organizational (change management, adoption, training), Timeline (urgency, competing priorities), Vendor (company stability, support, roadmap).
+### 2. Prepare outreach materials
+Using the ICP output, draft your risk-assessment-discovery materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Use follow-up probes: 'What's the worst that could happen if this doesn't work?' and 'What would your CEO/board say if this failed?'.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Log all identified risks in Attio with severity rating (High/Medium/Low) and category; create mitigation plan for each high-severity risk.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Track PostHog events: risk_identified, high_severity_risk, mitigation_plan_created, risk_addressed.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Risks identified and addressed with ≥8 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Address risks immediately: provide proof points, case studies, guarantees, or commitments that mitigate specific concerns.
-
-7. Create risk mitigation document: written plan showing how each identified risk will be addressed with specific actions and timelines.
-
-8. Set pass threshold: Identify risks with ≥8 opportunities in 1 week with ≥70% having documented mitigation plans.
-
-9. Measure impact: track how early risk discovery affects close rates, deal velocity, and objection frequency at proposal stage.
-
-10. Document which risk discovery questions uncover most critical concerns; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Risks identified and addressed with ≥8 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

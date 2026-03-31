@@ -1,7 +1,9 @@
 ---
 name: authority-verification-scalable
 description: >
-  Authority Verification Process — Scalable Automation. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+    Authority Verification Process — Scalable Automation. Confirm you're speaking with actual
+  decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right
+  stakeholders.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,19 +14,16 @@ kpis: ["Authority verification rate", "Time to authority confirmation", "Deal ve
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Authority Verification Process — Scalable Automation
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+Authority Verification Process — Scalable Automation. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
 
 **Time commitment:** 50 hours over 2 months
 **Pass threshold:** Authority verified in ≥75% of opportunities at scale over 2 months with deal velocity +20%
@@ -34,46 +33,28 @@ Confirm you're speaking with actual decision-makers to prevent wasted cycles on 
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **LinkedIn Sales Navigator** (Channel)
-- **Apollo** (Enrichment)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that enriches every new opportunity with org chart data: pulls LinkedIn data, identifies reporting structure, highlights likely decision makers.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create authority scoring model in PostHog: assign points based on job title, seniority, budget keywords in LinkedIn bio, department; auto-tag authority level in Attio.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Set up automated pre-call research: n8n generates briefing doc for every sales call showing org structure, authority likelihood, recommended questions, and intro paths.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Implement multi-threading triggers: when authority level is 'Influencer' or 'End User', n8n automatically suggests action items to connect with economic buyer.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Create email templates for authority navigation: requesting introductions, confirming budget authority, involving decision makers in next steps.
-
-6. Connect PostHog to n8n: when authority is not verified after 7 days, trigger automated reminder to sales rep with suggested actions.
-
-7. Track authority verification at scale: measure % of pipeline with verified authority, average time to authority confirmation, correlation with close rate.
-
-8. Set guardrails: authority verification rate must stay ≥75% of Baseline level; if it drops for 2+ weeks, revisit qualification process.
-
-9. Build authority intelligence dashboard in PostHog: show authority verification trends, deal velocity by authority type, close rate impact.
-
-10. After 2 months, evaluate impact on deal quality and velocity; if metrics hold, proceed to Durable AI-driven authority intelligence.
+### 5. Evaluate against threshold
+Measure against: Authority verified in ≥75% of opportunities at scale over 2 months with deal velocity +20%. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -89,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Authority verified in ≥75% of opportunities at scale over 2 months with deal velocity +20%**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: authority-verification-smoke
 description: >
-  Authority Verification Process — Smoke Test. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+    Authority Verification Process — Smoke Test. Confirm you're speaking with actual decision-makers
+  to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -13,6 +14,7 @@ slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Authority Verification Process — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+Authority Verification Process — Smoke Test. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
 
 **Time commitment:** 4 hours over 1 week
 **Pass threshold:** ≥3 opportunities with verified authority in 1 week
@@ -35,33 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **LinkedIn** (Channel)
-
----
-
 ## Instructions
 
-1. Before any sales call, research the prospect's org chart on LinkedIn to identify who reports to whom and where budget authority likely sits.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for authority-verification. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. In first 5 minutes of initial call, ask: 'Who else will be involved in evaluating and approving this purchase?' to map decision structure.
+### 2. Prepare outreach materials
+Using the ICP output, draft your authority-verification materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Use RACI framework: identify who is Responsible, Accountable, Consulted, and Informed for this buying decision.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Ask explicitly: 'Do you have budget authority for this purchase, or will someone else need to approve?' to confirm authority level.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. If speaking with non-authority, ask: 'Can you introduce me to [decision maker name]?' or 'What's the best way to involve [budget holder] in our next conversation?'.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥3 opportunities with verified authority in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log authority level in Attio custom field: 'Decision Maker', 'Influencer', 'Champion', or 'End User'.
-
-7. Track PostHog events: authority_verified, decision_maker_identified, multi_threading_needed.
-
-8. Set pass threshold: ≥3 deals in 1 week where you've confirmed authority and connected with actual decision maker.
-
-9. Measure time saved: compare deal velocity for authority-verified vs. non-verified opportunities.
-
-10. Document learnings: what questions work best, what signals indicate authority, what org structures to watch for; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥3 opportunities with verified authority in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

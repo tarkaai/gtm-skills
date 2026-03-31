@@ -1,7 +1,9 @@
 ---
 name: roi-skepticism-objection-smoke
 description: >
-  ROI Skepticism Handling — Smoke Test. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+    ROI Skepticism Handling — Smoke Test. Prove ROI when prospects question value by using customer
+  data, conservative modeling, and co-creating financial analysis with prospect's own inputs to
+  build conviction.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # ROI Skepticism Handling — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+ROI Skepticism Handling — Smoke Test. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ROI skepticism handled on ≥5 opportunities in 1 week
@@ -35,32 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. When 5-8 prospects express ROI skepticism, diagnose concern: question value proposition, doubt claimed results, need proof for internal approval, burned by past vendor promises.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for roi-skepticism-objection. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Use customer proof strategy: share specific customer examples with real numbers, show before/after metrics, provide references willing to discuss results.
+### 2. Prepare outreach materials
+Using the ICP output, draft your roi-skepticism-objection materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Co-create ROI model: don't present generic calculator; work with prospect to input their specific numbers (current costs, volume, inefficiencies, time spent); calculate ROI using their data.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Use conservative assumptions: model worst-case scenario with modest adoption rates and conservative efficiency gains; show ROI even in pessimistic case.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Provide payback period focus: shift from multi-year ROI to time-to-payback; show 'How quickly will you recoup your investment?' (aim for <12 months).
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ROI skepticism handled on ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Offer measurement framework: propose specific metrics to track post-purchase, define success criteria, agree on how ROI will be validated.
-
-7. Track PostHog events: roi_skepticism_raised, customer_proof_shared, collaborative_model_created, conservative_assumptions_used, measurement_framework_agreed.
-
-8. Set pass threshold: Handle ROI skepticism on ≥5 opportunities in 1 week with ≥60% accepting ROI proof and advancing to proposal.
-
-9. Measure effectiveness: track ROI objection resolution rate, collaborative modeling acceptance, deals progressed with ROI agreement.
-
-10. Document which ROI proof approaches work best; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **ROI skepticism handled on ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

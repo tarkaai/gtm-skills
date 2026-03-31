@@ -1,7 +1,10 @@
 ---
 name: executive-demo-baseline
 description: >
-  Executive-Focused Demo — Baseline Run. Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
+    Executive-Focused Demo — Baseline Run. Deliver condensed, business-focused demos for C-level
+  stakeholders emphasizing strategic value and ROI rather than feature details, from manual
+  executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on
+  stakeholder priorities and company context.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,17 +15,16 @@ kpis: ["Exec demo conversion", "Deal velocity (exec vs non-exec)", "Close rate (
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Executive-Focused Demo — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
+Executive-Focused Demo — Baseline Run. Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
 
 **Time commitment:** 20 hours over 2 weeks
 **Pass threshold:** >=75% exec demo-to-nextstep conversion and >=30% faster close time for exec-engaged deals over 2 weeks
@@ -32,42 +34,28 @@ Deliver condensed, business-focused demos for C-level stakeholders emphasizing s
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo (includes dialer) or Aircall:** ~$50–100/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand to 10-15 executive demos over 2 weeks; build persona-specific exec demo decks: CEO (growth, competitive advantage), CFO (ROI, risk), CTO (architecture, security), COO (efficiency, scale).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create pre-demo research process: 15 minutes of research per exec (LinkedIn, recent company news, earnings highlights, competitive positioning) to identify top 3 priorities; tailor demo opening to those priorities.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=75% of exec demos yield next-step commitment, and exec-influenced deals close >=30% faster than deals without exec engagement.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `executive-demo_email_sent`, `executive-demo_email_replied`, `executive-demo_meeting_booked`, `executive-demo_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Structure exec demos with tight time discipline: 2 min context (their business), 3 min problem (quantified pain), 5 min solution (strategic approach), 3 min outcomes (ROI and proof), 2 min next steps; leave 5+ min for Q&A.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop executive-specific ROI narratives: CFO gets payback period and NPV, CEO gets market share and competitive positioning, CTO gets technical debt reduction and risk mitigation.
-
-6. Sync exec engagement data from Attio to PostHog; create a funnel showing exec_demo_delivered → exec_endorsement → proposal_approved → deal_accelerated; measure exec impact on deal velocity.
-
-7. After each exec demo, send follow-up email within 2 hours with exec summary (1-pager), ROI calculator, case study, and next-step proposal; track email engagement in PostHog.
-
-8. For deals with multiple execs, orchestrate exec alignment: identify which exec cares about what (CFO = cost, CTO = security, CEO = strategy) and address each in tailored conversations.
-
-9. After 2 weeks, compare deals with exec engagement vs deals without: measure close rate, deal velocity, and average deal size; if exec-engaged deals perform >=30% better, exec demos are high-leverage.
-
-10. If >=75% exec demo next-step rate and exec-engaged deals close faster, move to Scalable; otherwise refine exec messaging or improve demo-to-decision process.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=75% exec demo-to-nextstep conversion and >=30% faster close time for exec-engaged deals over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=75% exec demo-to-nextstep conversion and >=30% faster close time for exec-engaged deals over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

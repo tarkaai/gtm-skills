@@ -1,7 +1,9 @@
 ---
 name: crm-hygiene-data-management-baseline
 description: >
-  CRM Hygiene & Data Quality — Baseline Run. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+    CRM Hygiene & Data Quality — Baseline Run. Maintain clean, accurate CRM data to enable reliable
+  forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data
+  quality that detects and fixes errors in real-time and prevents data degradation.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product"
@@ -12,17 +14,16 @@ kpis: ["Data quality score", "Duplicate rate", "Stale record rate", "Compliance 
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # CRM Hygiene & Data Quality — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product
 
 ## Overview
-Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+CRM Hygiene & Data Quality — Baseline Run. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
 
 **Time commitment:** 16 hours over 2 weeks
 **Pass threshold:** >=85% data quality score and <3% duplicate rate over 2 weeks
@@ -32,42 +33,28 @@ Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and
 ## Budget
 
 **Play-specific tools & costs**
-- **Intercom or Loops (in-app/email triggers):** ~$75–150/mo
-
-_Total play-specific: ~$75–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand data quality program to all active opportunities (100-200 records); create automated data quality reports in Attio showing compliance with quality rules by rep, stage, and record type.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Implement data quality checkpoints in sales process: require specific fields before advancing opportunity stages (e.g., can't move to Proposal stage without Economic Buyer identified and BANT complete).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: maintain >=85% data quality score across all records, reduce duplicate rate to <3%, and keep stale record rate (no activity >30 days) <15% over 2 weeks.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `crm-hygiene-data-management_email_sent`, `crm-hygiene-data-management_email_replied`, `crm-hygiene-data-management_meeting_booked`, `crm-hygiene-data-management_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Build data quality dashboards in Attio showing: quality score trends, top issues by type, compliance by rep, records needing attention; review weekly with sales team.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Sync data quality metrics from Attio to PostHog; create alerts when quality drops below thresholds (e.g., quality score <80% for 3 consecutive days triggers alert to manager).
-
-6. Schedule weekly data quality audits: randomly sample 20 records, check compliance, log issues, assign cleanup tasks to record owners; track resolution time.
-
-7. Implement duplicate detection workflow: when new contact/company is created, scan Attio for similar records (matching email, name, domain); flag potential duplicates for review before creation.
-
-8. Create data enrichment process: integrate Clay with Attio to auto-fill missing fields (company size, industry, title) when records are created or updated; reduce manual data entry.
-
-9. After 2 weeks, measure: Is data quality score >=85%? Are duplicates <3%? Are reps entering data consistently? If yes, data hygiene processes are working.
-
-10. If quality thresholds met and compliance is consistent, move to Scalable; otherwise strengthen checkpoints, improve rep training, or add automation.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=85% data quality score and <3% duplicate rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=85% data quality score and <3% duplicate rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

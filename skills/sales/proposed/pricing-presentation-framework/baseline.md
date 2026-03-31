@@ -1,7 +1,8 @@
 ---
 name: pricing-presentation-framework-baseline
 description: >
-  Pricing Presentation Framework — Baseline Run. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+    Pricing Presentation Framework — Baseline Run. Present pricing confidently with value anchoring,
+  multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +13,16 @@ kpis: ["Pricing acceptance rate", "Average discount percentage", "Tier mix optim
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Pricing Presentation Framework — Baseline Run
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+Pricing Presentation Framework — Baseline Run. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
 
 **Time commitment:** 14 hours over 2 weeks
 **Pass threshold:** Pricing presented on ≥80% of opportunities over 2 weeks with ≥65% acceptance
@@ -32,42 +32,28 @@ Present pricing confidently with value anchoring, multiple options, and clear RO
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand pricing presentations to 20-30 opportunities over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build pricing presentation playbook: value recap script, pricing reveal frameworks, three-option structures, objection responses, discount guidelines.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create pricing tiers strategy: define Good/Better/Best packages with clear feature differentiation; position Better as optimal value.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `pricing-presentation-framework_email_sent`, `pricing-presentation-framework_email_replied`, `pricing-presentation-framework_meeting_booked`, `pricing-presentation-framework_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog tracking: pricing_tier_presented, initial_reaction, discount_requested, final_tier_selected, contract_value.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop value anchoring techniques: always tie price to specific ROI, time savings, or revenue impact discovered in qualification.
-
-6. Track pricing outcomes: measure acceptance rates by tier, discount frequency and size, time from pricing to signature, deal size preservation.
-
-7. Build discount authority matrix: define when reps can discount without approval, escalation thresholds, maximum discounts by deal size.
-
-8. Set pass threshold: Pricing presented on ≥80% of qualified opportunities over 2 weeks with ≥65% accepting without significant discounting.
-
-9. Analyze pricing patterns: which tiers sell best, which objections arise most, which value anchors work, what discount requests indicate.
-
-10. If threshold met, document pricing framework and proceed to Scalable; if not, refine presentation or tier structure.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Pricing presented on ≥80% of opportunities over 2 weeks with ≥65% acceptance. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Pricing presented on ≥80% of opportunities over 2 weeks with ≥65% acceptance**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

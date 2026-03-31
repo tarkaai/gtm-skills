@@ -1,7 +1,9 @@
 ---
 name: lead-scoring-system-baseline
 description: >
-  Lead Scoring System — Baseline Run. Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
+    Lead Scoring System — Baseline Run. Prioritize leads by fit (firmographics) and intent
+  (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet
+  scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
@@ -12,17 +14,16 @@ kpis: ["Meeting rate by tier", "Score accuracy", "False negative rate", "Time to
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Lead Scoring System — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
 ## Overview
-Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
+Lead Scoring System — Baseline Run. Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
 
 **Time commitment:** 16 hours over 2 weeks
 **Pass threshold:** Hot leads convert at >=3x rate vs Cold leads over 2 weeks
@@ -32,43 +33,28 @@ Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales ef
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand to 100 leads over 2 weeks; build a lead scoring model in Attio with fit attributes (company size, industry, role, tech stack) and intent behaviors (website visits, email opens, content downloads).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Assign points: fit (company >$5M = 15pts, target industry = 10pts, decision-maker role = 15pts, uses competitor = 10pts) and intent (demo request = 30pts, pricing page = 20pts, case study = 10pts).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=30% of leads score as Hot (>=80), and Hot leads have >=3x meeting rate vs Cold (<50) over 2 weeks.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `lead-scoring-system_email_sent`, `lead-scoring-system_email_replied`, `lead-scoring-system_meeting_booked`, `lead-scoring-system_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Integrate PostHog with Attio to automatically log intent behaviors; configure PostHog to send lead_behavior events (page_viewed, email_clicked) to Attio with scores.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. In Attio, create an automation that updates lead score in real-time as PostHog events arrive; recalculate score daily and update tier (Hot/Warm/Cold).
-
-6. Prioritize outreach: contact Hot leads within 24 hours, Warm leads within 3 days, Cold leads within 7 days; log all outreach in Attio.
-
-7. Track meeting conversion rate by tier in PostHog; create a funnel showing lead_scored → outreach_sent → meeting_booked by score tier.
-
-8. After 2 weeks, analyze: did >=30% score as Hot? Did Hot leads convert >=3x better? If not, adjust point values or add/remove signals.
-
-9. Identify leads that scored Cold but booked meetings (false negatives); investigate what signals were missed and add to scoring model.
-
-10. If Hot leads convert >=3x better and score distribution is balanced, document scoring model and proceed to Scalable; otherwise iterate on fit criteria or intent signals.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Hot leads convert at >=3x rate vs Cold leads over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Hot leads convert at >=3x rate vs Cold leads over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

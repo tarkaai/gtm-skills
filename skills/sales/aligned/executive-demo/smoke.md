@@ -1,7 +1,10 @@
 ---
 name: executive-demo-smoke
 description: >
-  Executive-Focused Demo — Smoke Test. Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
+    Executive-Focused Demo — Smoke Test. Deliver condensed, business-focused demos for C-level
+  stakeholders emphasizing strategic value and ROI rather than feature details, from manual
+  executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on
+  stakeholder priorities and company context.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -13,6 +16,7 @@ slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Executive-Focused Demo — Smoke Test
@@ -20,7 +24,7 @@ drills:
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
+Executive-Focused Demo — Smoke Test. Deliver condensed, business-focused demos for C-level stakeholders emphasizing strategic value and ROI rather than feature details, from manual executive demo prep to AI-driven dynamic executive presentations that auto-adapt based on stakeholder priorities and company context.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** >=3 exec demos with >=70% next-step commitment within 1 week
@@ -35,33 +39,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Create an executive demo template (15-20 minutes max) with structure: Business context (their pain), Strategic solution (your approach), Key outcomes (quantified value), Proof (case study), Next steps (decision process); avoid feature details.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for executive-demo. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Identify 3 upcoming executive stakeholder calls (CEO, CFO, CTO, VP+); for each, research executive's priorities via LinkedIn, company news, earnings calls, and discovery notes.
+### 2. Prepare outreach materials
+Using the ICP output, draft your executive-demo materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: deliver >=3 executive demos with >=70% achieving next-step commitment (follow-up with decision, proposal request, or trial approval) within 1 week.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Before each exec demo, customize opening: "[Exec name], based on your [priority from research], here's how we help companies like yours [achieve outcome]" — establish relevance in first 30 seconds.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Lead with business outcomes, not features: "We help companies reduce customer acquisition cost by 35%" not "We have a multi-channel attribution dashboard"; tie every point back to exec's priorities (revenue, cost, risk, competitive advantage).
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=3 exec demos with >=70% next-step commitment within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Use executive-friendly visuals: simple charts showing ROI, before/after comparisons, customer testimonials from peer companies; avoid technical screenshots or feature lists.
-
-7. Include peer proof points: "Companies like [similar company in their industry] saw [quantified result] in [timeframe]" — executives trust peer experiences.
-
-8. Reserve 5-10 minutes for Q&A; expect strategic questions ("How does this integrate with our roadmap?" "What's the implementation timeline?" "What resources do we need?").
-
-9. Log exec demo outcomes in Attio with fields for exec_title, demo_duration, questions_asked, next_step_committed, and sentiment_score; track which approaches resonate.
-
-10. If >=3 exec demos yield >=70% next-step commitment, executive demo format is working; document template and proceed to Baseline; otherwise refine value messaging or demo structure.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=3 exec demos with >=70% next-step commitment within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

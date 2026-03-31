@@ -1,7 +1,9 @@
 ---
 name: demo-follow-up-sequence-smoke
 description: >
-  Demo Follow-Up Sequence — Smoke Test. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+    Demo Follow-Up Sequence — Smoke Test. Structured multi-touch follow-up after demos delivering
+  recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate
+  deals.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -13,6 +15,7 @@ slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Demo Follow-Up Sequence — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+Demo Follow-Up Sequence — Smoke Test. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
 
 **Time commitment:** 6 hours over 2 weeks
 **Pass threshold:** Demo follow-up completed on ≥8 opportunities in 2 weeks
@@ -35,33 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. After first 8-10 demos, immediately send demo recap email (within 2 hours) summarizing: key points discussed, how product addresses their needs, answers to questions raised, suggested next steps.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for demo-follow-up-sequence. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Include relevant resources in recap: link to recording, relevant case study, feature documentation, ROI calculator, pricing overview.
+### 2. Prepare outreach materials
+Using the ICP output, draft your demo-follow-up-sequence materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Schedule Day 1 follow-up: send personalized email checking in, asking if additional questions arose, offering to connect with specific team members (technical, customer success).
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Execute Day 3 follow-up: share additional valuable content based on demo discussion (integration guide, security docs, customer story); propose specific next step (technical demo, POC, proposal discussion).
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Implement Day 7 follow-up: if no response, send value-add touch (relevant blog post, industry report, competitor comparison); ask if timeline has changed.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Demo follow-up completed on ≥8 opportunities in 2 weeks. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: demo_recap_sent, resource_clicked, follow_up_sent, response_received, next_step_scheduled.
-
-7. Log all follow-up activities in Attio; note which follow-ups generate responses and which content drives engagement.
-
-8. Set pass threshold: Complete demo follow-up sequences on ≥8 opportunities in 2 weeks with ≥50% scheduling next step.
-
-9. Measure effectiveness: track response rates by follow-up touch, time to next step, demo-to-proposal conversion rate.
-
-10. Document which follow-up approaches and content drive highest engagement; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Demo follow-up completed on ≥8 opportunities in 2 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

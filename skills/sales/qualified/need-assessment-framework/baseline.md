@@ -1,7 +1,8 @@
 ---
 name: need-assessment-framework-baseline
 description: >
-  Need Assessment Framework — Baseline Run. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+    Need Assessment Framework — Baseline Run. Systematically evaluate whether prospects have genuine
+  business needs your product solves to avoid wasting time on poor-fit opportunities.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,17 +13,16 @@ kpis: ["Need assessment completion rate", "Need score correlation with close rat
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Need Assessment Framework — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+Need Assessment Framework — Baseline Run. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
 
 **Time commitment:** 14 hours over 2 weeks
 **Pass threshold:** Need assessment completed on ≥80% of opportunities over 2 weeks
@@ -32,42 +32,28 @@ Systematically evaluate whether prospects have genuine business needs your produ
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand need assessment to 50-100 opportunities over 2 weeks; refine scoring criteria based on Smoke test learnings.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build need-to-product mapping: document exactly how each critical need maps to specific product capabilities and customer outcomes.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create tiered qualification criteria: A-tier (≥18 need score), B-tier (12-17), C-tier (<12); define different engagement strategies for each tier.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `need-assessment-framework_email_sent`, `need-assessment-framework_email_replied`, `need-assessment-framework_meeting_booked`, `need-assessment-framework_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Develop need-specific discovery question banks: 3-5 probing questions per need area to uncover depth, urgency, budget impact, and stakeholder buy-in.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Set up PostHog event tracking: need_category_identified, high_need_opportunity, multi_need_prospect, need_to_product_mapped.
-
-6. Track conversion funnel: measure how need scores correlate with demo acceptance, proposal delivery, and close rate across different deal sizes.
-
-7. Analyze need patterns by segment: which ICPs have which need profiles, what need combinations predict highest win rates.
-
-8. Set pass threshold: Need assessment completed on ≥80% of opportunities over 2 weeks, with need score predicting close rate within 15% accuracy.
-
-9. Build need assessment playbook: standardized questions, scoring rubric, qualification thresholds, and handoff criteria to next stage.
-
-10. If threshold met, document need patterns and proceed to Scalable; if not, refine need definitions or assessment methodology.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Need assessment completed on ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Need assessment completed on ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

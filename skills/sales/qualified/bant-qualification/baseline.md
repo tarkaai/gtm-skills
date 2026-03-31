@@ -1,7 +1,10 @@
 ---
 name: bant-qualification-baseline
 description: >
-  BANT Qualification Framework — Baseline Run. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+    BANT Qualification Framework — Baseline Run. Systematically qualify leads using Budget,
+  Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual
+  scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market
+  feedback.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +15,16 @@ kpis: ["Qualification rate", "Time to qualify", "Disqualification reasons", "Cal
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # BANT Qualification Framework — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+BANT Qualification Framework — Baseline Run. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** >=40% qualification rate over 2 weeks
@@ -32,44 +34,28 @@ Systematically qualify leads using Budget, Authority, Need, and Timeline to ensu
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Cal.com** (Scheduling)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand your BANT scorecard to 20-30 leads; add scoring weights (Budget=25%, Authority=25%, Need=30%, Timeline=20%) and threshold (>=70% to qualify).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build a BANT question library in Attio with 5-7 questions per category; tag each with expected answer patterns (red flag, yellow flag, green flag).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create a discovery call template in Attio that auto-populates BANT questions based on lead source and industry.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `bant-qualification_email_sent`, `bant-qualification_email_replied`, `bant-qualification_meeting_booked`, `bant-qualification_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set pass threshold: qualify >=40% of leads over 2 weeks and reduce time-to-qualify to <48 hours from first call.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Conduct 20-30 discovery calls over 2 weeks; for each call, complete the BANT scorecard within 24 hours and update Attio.
-
-6. Sync Attio to PostHog so every BANT update triggers a lead_scored event with BANT breakdown and timestamp.
-
-7. In PostHog, create a funnel: discovery_call_completed → lead_scored → lead_qualified; measure conversion rate and time between stages.
-
-8. For disqualified leads, tag disqualification reason (no budget, wrong authority, weak need, long timeline) in Attio and PostHog.
-
-9. After 2 weeks, analyze which BANT criteria most often disqualify leads; refine weighting or thresholds if <40% qualify.
-
-10. If qualification rate is >=40% and time-to-qualify <=48 hours, document BANT process and move to Scalable; otherwise iterate on questions or scoring model.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=40% qualification rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -84,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=40% qualification rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

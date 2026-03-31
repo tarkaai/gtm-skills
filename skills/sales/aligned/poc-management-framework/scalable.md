@@ -1,7 +1,9 @@
 ---
 name: poc-management-framework-scalable
 description: >
-  POC Management Framework — Scalable Automation. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+    POC Management Framework — Scalable Automation. Run structured proof-of-concept with clear
+  success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate
+  close.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product, Email"
@@ -12,19 +14,16 @@ kpis: ["POC completion rate", "Success criteria achievement", "POC-to-close conv
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # POC Management Framework — Scalable Automation
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product, Email
 
 ## Overview
-Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+POC Management Framework — Scalable Automation. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 
 **Time commitment:** 68 hours over 2 months
 **Pass threshold:** POCs on ≥75% of qualified opportunities at scale over 2 months with improved conversion
@@ -34,45 +33,28 @@ Run structured proof-of-concept with clear success criteria, timeline, and stake
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that triggers POC qualification assessment when deal reaches aligned stage; auto-generates POC scope based on prospect requirements.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create POC automation: n8n provisions POC environments automatically, sends kickoff materials, schedules check-in meetings, delivers usage reports.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement POC health monitoring: n8n tracks PostHog usage data from POC environments; alerts when engagement is low, blockers emerge, or timeline is at risk.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up POC milestone tracking: n8n monitors whether POC milestones are being achieved on schedule; triggers interventions when progress stalls.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when POC usage drops below threshold for 48 hours, automatically trigger check-in email and suggest support resources.
-
-6. Build POC intelligence dashboard: track POC pipeline, success criteria achievement rates, usage patterns, conversion rates, time-to-decision.
-
-7. Create POC content library: maintain repository of POC success criteria templates, test scenarios, configuration guides, troubleshooting docs by use case.
-
-8. Set guardrails: POC completion rate must stay ≥75% of Baseline level; POC-to-close conversion must remain ≥45%.
-
-9. Implement predictive POC scoring: flag POCs at risk of failure early based on usage patterns and milestone achievement; prioritize intervention efforts.
-
-10. After 2 months, evaluate POC management impact on close rates and sales cycle length; if metrics hold, proceed to Durable AI-driven POC intelligence.
+### 5. Evaluate against threshold
+Measure against: POCs on ≥75% of qualified opportunities at scale over 2 months with improved conversion. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **POCs on ≥75% of qualified opportunities at scale over 2 months with improved conversion**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

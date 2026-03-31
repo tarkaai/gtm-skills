@@ -1,7 +1,9 @@
 ---
 name: discovery-based-demo-smoke
 description: >
-  Discovery-Based Demo — Smoke Test. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+    Discovery-Based Demo — Smoke Test. Tailor product demos to pain points uncovered in discovery to
+  maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that
+  auto-adapt based on prospect signals and deliver personalized value narratives.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -13,6 +15,7 @@ slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Discovery-Based Demo — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+Discovery-Based Demo — Smoke Test. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
 
 **Time commitment:** 8 hours over 1 week
 **Pass threshold:** >=3 out of 5 demos yield next-step commitment via pain-based customization in 1 week
@@ -35,34 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Create a demo preparation checklist: review discovery notes, identify top 3 pain points, map each pain to specific product features, prepare custom demo narrative.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for discovery-based-demo. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. For 5 upcoming demos, spend 15-20 minutes before each call reviewing discovery notes in Attio and customizing demo flow to address prospect's specific pains.
+### 2. Prepare outreach materials
+Using the ICP output, draft your discovery-based-demo materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: >=3 out of 5 demos result in next-step commitment (technical eval, proposal request, stakeholder intro), and customized demos outperform generic demos by >=30% in engagement.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Structure demo around prospect's pain journey: start with their current state and pain, show how product solves each pain, quantify value at each step, end with their future state.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. During demo, explicitly connect features to discovery: "You mentioned spending 10 hours/week on manual reports—this feature automates that, saving your team 8 hours weekly."
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=3 out of 5 demos yield next-step commitment via pain-based customization in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. After each demo, log outcome in Attio (next step committed, needs follow-up, not interested) and track which pain-to-feature mappings resonated most.
-
-7. In PostHog, create events for demo_conducted, demo_customized, and demo_outcome with properties for pains addressed and next-step status.
-
-8. Compare engagement metrics for customized demos vs generic feature walkthroughs: measure questions asked, meeting duration, and next-step conversion rate.
-
-9. After 1 week, analyze: did >=3 out of 5 customized demos yield next steps? Did customization improve engagement or outcomes vs your baseline generic demo approach?
-
-10. If customized demos convert >=60% to next steps (vs ~30% for generic), document pain-to-feature mapping process and proceed to Baseline; otherwise refine demo structure or discovery quality.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -77,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=3 out of 5 demos yield next-step commitment via pain-based customization in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

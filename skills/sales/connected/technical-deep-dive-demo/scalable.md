@@ -1,7 +1,9 @@
 ---
 name: technical-deep-dive-demo-scalable
 description: >
-  Technical Deep-Dive Demo — Scalable Automation. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+    Technical Deep-Dive Demo — Scalable Automation. Deliver detailed technical demonstration for
+  engineers and architects covering architecture, APIs, security, integrations, and implementation
+  details.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -12,19 +14,16 @@ kpis: ["Technical demo completion rate", "POC conversion rate", "Technical valid
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Technical Deep-Dive Demo — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+Technical Deep-Dive Demo — Scalable Automation. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
 
 **Time commitment:** 64 hours over 2 months
 **Pass threshold:** Technical demos on ≥75% of technical opportunities at scale over 2 months with improved POC conversion
@@ -34,44 +33,28 @@ Deliver detailed technical demonstration for engineers and architects covering a
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (calling at volume):** ~$100–200/mo
-- **Intercom or Loops (automated sequences):** ~$100–300/mo
-
-_Total play-specific: ~$100–300/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that triggers technical demo prep checklist when technical stakeholder is identified; auto-generates customized demo agenda.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create technical demo intelligence: n8n analyzes prospect's tech stack and generates recommended demo focus areas; pre-populates technical questions likely to arise.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated demo environment setup: n8n provisions sandbox with prospect-relevant configurations, data, and integrations before each technical demo.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up technical demo recording: automatically record and transcribe technical demos; extract technical questions and commitments made for follow-up.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: after technical demo, trigger automated delivery of technical package (docs, code samples, architecture diagrams) customized to topics discussed.
-
-6. Build technical demo performance dashboard: track demo completion rates, module effectiveness, POC conversion, technical validation time, close rates.
-
-7. Create technical demo library: maintain library of demo recordings, code examples, architecture patterns, integration demos organized by use case and tech stack.
-
-8. Set guardrails: technical demo rate must stay ≥75% of Baseline level; POC conversion must remain ≥45%.
-
-9. Implement technical stakeholder engagement scoring: measure quality of technical demos based on question depth, hands-on participation, and validation achievement.
-
-10. After 2 months, evaluate technical demo impact on deal velocity and technical close rates; if metrics hold, proceed to Durable AI-driven technical intelligence.
+### 5. Evaluate against threshold
+Measure against: Technical demos on ≥75% of technical opportunities at scale over 2 months with improved POC conversion. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical demos on ≥75% of technical opportunities at scale over 2 months with improved POC conversion**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

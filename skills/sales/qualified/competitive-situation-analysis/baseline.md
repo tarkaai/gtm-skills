@@ -1,7 +1,9 @@
 ---
 name: competitive-situation-analysis-baseline
 description: >
-  Competitive Situation Assessment — Baseline Run. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+    Competitive Situation Assessment — Baseline Run. Discover which competitors prospects are
+  evaluating to position differentiation effectively and develop winning strategies against specific
+  alternatives.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Competitive discovery rate", "Win rate by competitor", "Competitive posi
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Competitive Situation Assessment — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+Competitive Situation Assessment — Baseline Run. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
 
 **Time commitment:** 15 hours over 2 weeks
 **Pass threshold:** Competitive situation assessed on ≥80% of opportunities over 2 weeks
@@ -32,42 +33,28 @@ Discover which competitors prospects are evaluating to position differentiation 
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand competitive discovery to 40-60 opportunities over 2 weeks; develop standardized competitive intelligence framework.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build competitor battlecards: for top 5-7 competitors, document their strengths, weaknesses, typical objections, winning strategies, and proof points.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create competitive question bank: questions to uncover competitor engagement, prospect sentiment, specific features they're evaluating, pricing discussions, decision timeline.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `competitive-situation-analysis_email_sent`, `competitive-situation-analysis_email_replied`, `competitive-situation-analysis_meeting_booked`, `competitive-situation-analysis_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: competitor_evaluated, competitive_positioning_delivered, battlecard_accessed, competitive_win, competitive_loss.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement competitive positioning playbook: when specific competitor is identified, deliver tailored differentiation narrative highlighting your unique advantages.
-
-6. Track competitive win/loss metrics: measure close rate against each major competitor, analyze why you win or lose, identify patterns.
-
-7. Build competitive response library: objection handlers, comparison docs, customer case studies showing wins from competitor switches.
-
-8. Set pass threshold: Competitive situation assessed on ≥80% of opportunities over 2 weeks with competitive intelligence accurately predicting deal strategies.
-
-9. Analyze competitive patterns: which competitors appear most often, in which segments, at what deal stages, with what success rates.
-
-10. If threshold met, document competitive intelligence playbook and proceed to Scalable; if not, refine competitor discovery and positioning.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Competitive situation assessed on ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Competitive situation assessed on ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

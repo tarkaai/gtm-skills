@@ -1,7 +1,9 @@
 ---
 name: discovery-based-demo-scalable
 description: >
-  Discovery-Based Demo — Scalable Automation. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+    Discovery-Based Demo — Scalable Automation. Tailor product demos to pain points uncovered in
+  discovery to maximize relevance and engagement, from manual demo customization to AI-driven
+  dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -12,19 +14,16 @@ kpis: ["Demo-to-nextstep conversion", "Demo-to-proposal conversion", "Demo perso
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Discovery-Based Demo — Scalable Automation
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+Discovery-Based Demo — Scalable Automation. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
 
 **Time commitment:** 75 hours over 2 months
 **Pass threshold:** >=70% demo-to-nextstep and >=45% demo-to-proposal conversion over 2 months
@@ -34,45 +33,28 @@ Tailor product demos to pain points uncovered in discovery to maximize relevance
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (calling at volume):** ~$100–200/mo
-- **Intercom or Loops (automated sequences):** ~$100–300/mo
-
-_Total play-specific: ~$100–300/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Loom** (Video)
-- **Fireflies** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Scale to 50+ demos per quarter; integrate Attio with demo automation tools to auto-populate demo environments with prospect-specific data (company name, use case examples).
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow that triggers before scheduled demos: pull discovery notes from Attio, identify top pains, generate custom demo agenda, send pre-demo email with agenda to prospect and rep.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create personalized demo environments using tools like Walnut or Navattic: pre-configure product with prospect's branding, sample data relevant to their use case, and workflows that match their processes.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track in-demo engagement: which features shown, time spent on each section, questions asked (via call recording analysis), drop-off points.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. In Attio, create demo scoring: rate each demo on preparation quality (1-5), pain coverage (1-5), engagement (1-5), and outcome (1-5); identify patterns in high-scoring demos.
-
-6. Build automated demo follow-up sequences in n8n: send recap video + ROI summary within 2 hours, send case study relevant to top pain in 2 days, send competitive comparison in 4 days if no response.
-
-7. Integrate call recording tools with PostHog to analyze demo sentiment: use AI to detect prospect engagement cues ("That's interesting!", "Can you show that again?") and flag high-engagement demos for fast follow-up.
-
-8. Create a demo performance dashboard in PostHog showing demo-to-nextstep rate, average engagement score, most-shown features, and correlation between pain coverage and outcomes.
-
-9. Each week, identify low-performing demos (no next step, low engagement); review recordings to understand why customization failed and update demo playbook.
-
-10. After 2 months, if >=70% of demos yield next steps and demo-to-proposal conversion >=45%, move to Durable; otherwise refine personalization or follow-up sequences.
+### 5. Evaluate against threshold
+Measure against: >=70% demo-to-nextstep and >=45% demo-to-proposal conversion over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=70% demo-to-nextstep and >=45% demo-to-proposal conversion over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

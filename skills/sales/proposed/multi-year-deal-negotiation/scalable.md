@@ -1,7 +1,9 @@
 ---
 name: multi-year-deal-negotiation-scalable
 description: >
-  Multi-Year Deal Structuring — Scalable Automation. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+    Multi-Year Deal Structuring — Scalable Automation. Structure and price multi-year commitments to
+  increase deal value and customer lifetime value, from manual contract terms to AI-driven contract
+  optimization that maximizes ACVand retention while maintaining competitive pricing.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +14,16 @@ kpis: ["Multi-year close rate", "Average contract length", "LTV (multi-year vs a
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Multi-Year Deal Structuring — Scalable Automation
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+Multi-Year Deal Structuring — Scalable Automation. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
 
 **Time commitment:** 75 hours over 2 months
 **Pass threshold:** >=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months
@@ -34,44 +33,28 @@ Structure and price multi-year commitments to increase deal value and customer l
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Scale multi-year proposals to 50+ opportunities per quarter; build n8n workflows that auto-generate multi-year pricing scenarios when opportunities reach proposal stage: calculate discount tiers, payment options, and TCV based on deal characteristics.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Integrate multi-year contract logic with Attio: when rep marks opportunity as "ready for proposal," n8n calculates optimal contract length and discount based on customer profile (industry, size, strategic value, expansion potential).
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Set up PostHog to track multi-year deal metrics: proposal rate by segment, close rate by contract length, average discount, TCV, and customer lifetime value (LTV) for multi-year vs annual deals.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Create tiered discount structures: Standard (10% for 2-yr, 15% for 3-yr), Strategic (15% for 2-yr, 25% for 3-yr for high-value accounts); auto-recommend tier based on opportunity value and strategic fit.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build automated multi-year renewal workflows: 90 days before contract end, trigger renewal conversation with CSM; offer multi-year renewal with expansion incentives; track renewal rate for multi-year vs annual customers.
-
-6. Implement multi-year forecasting: use contract length and payment terms to model cash flow and revenue recognition; track bookings (TCV) separately from recognized revenue.
-
-7. Create multi-year sales training: equip reps with positioning, objection handling, and negotiation tactics for long-term deals; use role-play and successful deal examples.
-
-8. Each quarter, analyze multi-year deal performance: which segments close most multi-year deals? what discount levels optimize for TCV without leaving money on table? what contract lengths balance revenue and customer commitment?
-
-9. Test multi-year deal incentives: SPIFs for reps who close 3-year deals, accelerated commissions for prepaid multi-year contracts; measure impact on multi-year adoption.
-
-10. After 2 months, if >=40% of opportunities result in multi-year proposals, >=35% of those close, and LTV for multi-year customers is >=2.5x annual customers, move to Durable; otherwise refine pricing or incentives.
+### 5. Evaluate against threshold
+Measure against: >=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -86,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

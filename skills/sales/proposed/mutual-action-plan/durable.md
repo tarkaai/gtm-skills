@@ -1,7 +1,9 @@
 ---
 name: mutual-action-plan-durable
 description: >
-  Mutual Action Plan (MAP) — Durable Intelligence. Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
+    Mutual Action Plan (MAP) — Durable Intelligence. Co-create timeline and milestones with prospect
+  to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP
+  orchestration that monitors progress and auto-escalates risks.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["MAP impact on velocity/win rate", "Agent experiment win rate", "Risk pre
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Mutual Action Plan (MAP) — Durable Intelligence
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
+Mutual Action Plan (MAP) — Durable Intelligence. Co-create timeline and milestones with prospect to align on deal progression and prevent stalls, from manual shared timelines to AI-driven MAP orchestration that monitors progress and auto-escalates risks.
 
 **Time commitment:** 130 hours over 6 months
 **Pass threshold:** Sustained or improving MAP impact (>=35% velocity lift, >=25% win rate lift) over 6 months via continuous agent-driven milestone optimization, risk detection, and timeline personalization
@@ -36,45 +32,29 @@ Co-create timeline and milestones with prospect to align on deal progression and
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which MAP milestones and timelines best predict successful closes; auto-optimizes milestone templates based on win patterns.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for mutual-action-plan with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to monitor MAP progress in real-time and predict deal risk: if milestone completion rate drops below historical patterns, alert team and suggest intervention tactics.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every closed deal with MAP triggers the agent to analyze milestone adherence and identify which milestones were most predictive of outcome; strengthen those in future MAPs.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy AI-driven MAP personalization: agent analyzes deal characteristics (size, complexity, industry, buyer type) to generate custom milestone timelines that reflect realistic completion times for that profile.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement automatic milestone risk detection: agent identifies when prospects miss milestones, analyzes historical data for similar delays, and recommends specific actions (escalate to executive, offer implementation support, simplify milestone).
-
-6. Build market adaptation logic: if economic conditions slow buying cycles, agent adjusts MAP timelines to reflect longer decision processes; prevents unrealistic expectations.
-
-7. Create predictive close date estimation: agent uses MAP completion velocity and historical patterns to forecast close date; updates automatically as milestones are completed or delayed.
-
-8. Agent continuously experiments with MAP structures: tests different milestone sequences, ownership assignments, and granularity levels; promotes structures with highest completion and win rates.
-
-9. Implement dynamic milestone recommendations: when prospects complete milestones faster than expected, agent suggests accelerating subsequent milestones to maintain momentum.
-
-10. Establish monthly review cycles: agent generates MAP intelligence reports showing completion trends, risk predictions, optimal timeline templates, and recommended process updates; team reviews and approves changes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving MAP impact (>=35% velocity lift, >=25% win rate lift) over 6 months via continuous agent-driven milestone optimization, risk detection, and timeline personalization. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

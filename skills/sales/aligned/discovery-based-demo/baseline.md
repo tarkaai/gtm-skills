@@ -1,7 +1,9 @@
 ---
 name: discovery-based-demo-baseline
 description: >
-  Discovery-Based Demo — Baseline Run. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+    Discovery-Based Demo — Baseline Run. Tailor product demos to pain points uncovered in discovery
+  to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos
+  that auto-adapt based on prospect signals and deliver personalized value narratives.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -12,17 +14,16 @@ kpis: ["Demo-to-nextstep conversion", "Demo-to-proposal conversion", "Demo engag
 slug: "discovery-based-demo"
 install: "npx gtm-skills add sales/aligned/discovery-based-demo"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Discovery-Based Demo — Baseline Run
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
+Discovery-Based Demo — Baseline Run. Tailor product demos to pain points uncovered in discovery to maximize relevance and engagement, from manual demo customization to AI-driven dynamic demos that auto-adapt based on prospect signals and deliver personalized value narratives.
 
 **Time commitment:** 22 hours over 2 weeks
 **Pass threshold:** >=70% demo-to-nextstep conversion and >=40% demo-to-proposal conversion over 2 weeks
@@ -32,43 +33,28 @@ Tailor product demos to pain points uncovered in discovery to maximize relevance
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo (includes dialer) or Aircall:** ~$50–100/mo
-- **Intercom or Loops (in-app/email triggers):** ~$75–150/mo
-
-_Total play-specific: ~$50–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand to 10-15 demos over 2 weeks; build a demo playbook in Attio with pain-to-feature maps for top 10 pain types your prospects experience.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create demo templates by persona: Sales Leader demo (pipeline visibility, forecasting), Operations demo (workflow automation, reporting), Finance demo (cost savings, ROI tracking).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=70% of demos result in next-step commitment, and demo-to-proposal conversion rate is >=40% within 2 weeks.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `discovery-based-demo_email_sent`, `discovery-based-demo_email_replied`, `discovery-based-demo_meeting_booked`, `discovery-based-demo_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Before each demo, review discovery notes and create a custom demo agenda: list 3-5 pain points to address, features to show for each, and ROI points to emphasize.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Send pre-demo email with agenda: "Based on our discovery, I'll show how we solve [pain 1], [pain 2], and [pain 3]—I expect this will save you ~$40K/year." Sets expectations and confirms relevance.
-
-6. During demo, use storytelling: show customer case study with similar pains, walk through their before/after journey, connect to prospect's situation throughout.
-
-7. After demo, send recap video (Loom) highlighting the 3 features that solve their top pains; include ROI summary and next steps; track view rate and engagement in PostHog.
-
-8. Sync demo outcomes from Attio to PostHog; build a funnel showing discovery_completed → demo_scheduled → demo_conducted → next_step_committed → proposal_requested.
-
-9. After 2 weeks, analyze which pain-to-feature mappings drive highest demo-to-nextstep conversion; prioritize showing those features first in future demos.
-
-10. If >=70% of demos yield next steps and demo-to-proposal conversion >=40%, document demo playbook and move to Scalable; otherwise refine pain mapping or demo structure.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=70% demo-to-nextstep conversion and >=40% demo-to-proposal conversion over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=70% demo-to-nextstep conversion and >=40% demo-to-proposal conversion over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

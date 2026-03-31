@@ -1,7 +1,9 @@
 ---
 name: bant-qualification-smoke
 description: >
-  BANT Qualification Framework — Smoke Test. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+    BANT Qualification Framework — Smoke Test. Systematically qualify leads using Budget, Authority,
+  Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in
+  spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # BANT Qualification Framework — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+BANT Qualification Framework — Smoke Test. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** >=3 qualified leads in 1 week
@@ -35,34 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Create a BANT scorecard in a spreadsheet with columns for Budget (yes/no), Authority (yes/no), Need (1-5), Timeline (<3mo, 3-6mo, >6mo), and overall score.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for bant-qualification. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Identify 5-10 recent inbound leads or outbound replies from your CRM; for each, fill out the BANT scorecard based on available information.
+### 2. Prepare outreach materials
+Using the ICP output, draft your bant-qualification materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set a pass threshold: at least 3 out of 5 leads must score "qualified" (Budget=yes, Authority=yes, Need>=3, Timeline<=6mo) to proceed.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. For leads missing BANT data, draft 3-5 discovery questions per category (e.g., Budget: "Do you have budget allocated?"; Authority: "Who else needs to approve this?").
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Schedule discovery calls with 5 leads; during each call, ask your BANT questions and take notes in the scorecard.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=3 qualified leads in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. After each call, update the lead's BANT score in the spreadsheet and log the outcome in Attio with a custom field for BANT status.
-
-7. Track how many leads qualify vs disqualify; if >=3 qualify in 1 week, your BANT criteria are working.
-
-8. Log qualification outcomes in PostHog as events (lead_qualified, lead_disqualified) with BANT properties for analysis.
-
-9. Compare time spent on qualified vs unqualified leads; calculate time saved by early disqualification.
-
-10. If >=3 leads qualified and you saved >2 hours by disqualifying bad fits early, document your BANT questions and thresholds, then proceed to Baseline; otherwise refine criteria.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=3 qualified leads in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

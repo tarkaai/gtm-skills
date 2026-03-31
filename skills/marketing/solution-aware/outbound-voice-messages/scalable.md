@@ -1,7 +1,9 @@
 ---
 name: outbound-voice-messages-scalable
 description: >
-  Outbound Voice Messages — Scalable Automation. Leave personalized voice messages via LinkedIn or phone to increase response rates and stand out in outbound campaigns targeting solution-aware prospects.
+    Outbound Voice Messages — Scalable Automation. Leave personalized voice messages via LinkedIn or
+  phone to increase response rates and stand out in outbound campaigns targeting solution-aware
+  prospects.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Direct, Social"
@@ -12,19 +14,16 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Outbound Voice Messages — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Direct, Social
 
 ## Overview
-Leave personalized voice messages via LinkedIn or phone to increase response rates and stand out in outbound campaigns targeting solution-aware prospects.
+Outbound Voice Messages — Scalable Automation. Leave personalized voice messages via LinkedIn or phone to increase response rates and stand out in outbound campaigns targeting solution-aware prospects.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥5% response rate at 500 voice messages/month over 3 months
@@ -34,44 +33,28 @@ Leave personalized voice messages via LinkedIn or phone to increase response rat
 ## Budget
 
 **Play-specific tools & costs**
-- **LinkedIn Sales Navigator:** ~$100/mo
-- **Dripify or Expandi (LinkedIn automation):** ~$60–100/mo
-
-_Total play-specific: ~$60–100/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for outbound voice messages execution.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 5. Evaluate against threshold
+Measure against: ≥5% response rate at 500 voice messages/month over 3 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥5% response rate at 500 voice messages/month over 3 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

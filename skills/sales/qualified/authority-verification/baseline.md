@@ -1,7 +1,9 @@
 ---
 name: authority-verification-baseline
 description: >
-  Authority Verification Process — Baseline Run. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+    Authority Verification Process — Baseline Run. Confirm you're speaking with actual
+  decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right
+  stakeholders.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,17 +14,16 @@ kpis: ["Authority verification rate", "Economic buyer connection rate", "Deal ve
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Authority Verification Process — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+Authority Verification Process — Baseline Run. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** Authority verified in ≥80% of opportunities over 2 weeks
@@ -32,43 +33,28 @@ Confirm you're speaking with actual decision-makers to prevent wasted cycles on 
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Create authority verification checklist: org chart research, LinkedIn reporting structure, budget authority confirmation, RACI mapping, introduction to economic buyer.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build question bank for different scenarios: inbound leads, outbound prospects, enterprise vs. SMB, technical vs. business buyers.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Research 50-100 target accounts over 2 weeks; map org structures in advance using LinkedIn Sales Navigator and company websites.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `authority-verification_email_sent`, `authority-verification_email_replied`, `authority-verification_meeting_booked`, `authority-verification_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. On every discovery call, use standardized authority questions within first 10 minutes; log responses in Attio custom fields immediately.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Create multi-threading strategy: when speaking with influencer, request introduction to decision maker before moving to demo or proposal.
-
-6. Set up PostHog event tracking: authority_question_asked, authority_level_identified, decision_maker_intro_requested, economic_buyer_connected.
-
-7. Track conversion metrics: what % of opportunities with verified authority convert to meeting vs. non-verified; measure deal velocity difference.
-
-8. Set pass threshold: Authority verified in ≥80% of opportunities within 2 weeks, with ≥50% resulting in connection to economic buyer.
-
-9. Analyze data: which authority verification approaches work best by buyer persona, deal size, and industry.
-
-10. If threshold met, document authority verification playbook and proceed to Scalable; if not, refine questions or earlier qualification.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Authority verified in ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Authority verified in ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

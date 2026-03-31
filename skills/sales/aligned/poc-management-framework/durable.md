@@ -1,7 +1,9 @@
 ---
 name: poc-management-framework-durable
 description: >
-  POC Management Framework — Durable Intelligence. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+    POC Management Framework — Durable Intelligence. Run structured proof-of-concept with clear
+  success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate
+  close.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product, Email"
@@ -12,21 +14,15 @@ kpis: ["POC-to-close conversion rate", "POC success prediction accuracy", "Inter
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # POC Management Framework — Durable Intelligence
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product, Email
 
 ## Overview
-Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+POC Management Framework — Durable Intelligence. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 
 **Time commitment:** 160 hours over 6 months
 **Pass threshold:** Sustained or improving POC conversion rates over 6 months via continuous AI-driven POC intelligence and adaptive support
@@ -36,45 +32,29 @@ Run structured proof-of-concept with clear success criteria, timeline, and stake
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: POC is initiated, usage patterns indicate risk, milestones are missed, or success criteria aren't being met.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for poc-management-framework with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI POC intelligence agent analyzing historical POC data: identifies which success criteria predict closes, which usage patterns indicate strong intent, which interventions improve outcomes.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered POC scoping: AI agent analyzes prospect requirements and historical similar POCs; recommends optimal success criteria, timeline, and test scenarios.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks POC usage patterns, milestone achievement, and outcomes; AI agent learns which POC structures drive highest conversion by segment.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive POC support: AI agent monitors POC engagement in real-time; predicts when prospect needs help; automatically suggests resources or triggers human intervention.
-
-6. Deploy proactive POC risk management: AI agent identifies POC risk signals (declining usage, missed milestones, unanswered questions); recommends specific intervention strategies.
-
-7. Implement automatic POC optimization: AI agent analyzes POC results and suggests improvements to success criteria, timeline, or support model for future POCs.
-
-8. Create predictive POC outcomes: AI agent predicts POC success probability based on early usage patterns and engagement signals; prioritizes high-risk POCs for attention.
-
-9. Set guardrails: if POC conversion rate drops >10% or completion rate falls below Scalable benchmark for 2+ weeks, alert team and suggest POC refinements.
-
-10. Establish monthly review cycle: analyze POC success patterns, intervention effectiveness, prediction accuracy; refine AI agent intelligence based on POC outcomes and close rates.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving POC conversion rates over 6 months via continuous AI-driven POC intelligence and adaptive support. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

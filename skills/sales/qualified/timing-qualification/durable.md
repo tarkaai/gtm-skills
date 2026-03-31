@@ -1,7 +1,9 @@
 ---
 name: timing-qualification-durable
 description: >
-  Timing Qualification Process — Durable Intelligence. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+    Timing Qualification Process — Durable Intelligence. Determine prospect's urgency and buying
+  timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future
+  deals.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,21 +14,15 @@ kpis: ["Forecast accuracy", "Timeline slippage rate", "Deal velocity improvement
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Timing Qualification Process — Durable Intelligence
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+Timing Qualification Process — Durable Intelligence. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
 
 **Time commitment:** 125 hours over 6 months
 **Pass threshold:** Sustained or improving forecast accuracy over 6 months via continuous AI-driven timeline intelligence
@@ -36,45 +32,29 @@ Determine prospect's urgency and buying timeline to prioritize opportunities rea
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: deal stalls beyond timeline, urgency signals appear, or competitive pressure increases.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for timing-qualification with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI timeline intelligence agent analyzing historical data: identifies which timelines prove accurate, which urgency triggers predict fastest closes.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered urgency detection: AI scans call transcripts for true urgency language; auto-adjusts timeline categorization.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which timing questions yield accurate predictions; AI recommends optimal discovery sequences.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive timeline forecasting: AI refines close date predictions based on deal progression signals.
-
-6. Deploy proactive timeline risk management: when AI detects slippage signals, triggers intervention playbook.
-
-7. Implement automatic urgency creation: AI identifies legitimate deadline opportunities and suggests urgency tactics.
-
-8. Create timing pattern intelligence: AI analyzes seasonal trends and company-specific buying patterns.
-
-9. Set guardrails: if forecast accuracy drops >20% for 2+ weeks, alert team and suggest refinements.
-
-10. Establish monthly review cycle: analyze accuracy trends, slippage patterns; refine AI intelligence based on outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving forecast accuracy over 6 months via continuous AI-driven timeline intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

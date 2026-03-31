@@ -1,7 +1,9 @@
 ---
 name: timing-objection-handling-scalable
 description: >
-  Timing Objection Handling — Scalable Automation. Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
+    Timing Objection Handling — Scalable Automation. Address 'not the right time' objections by
+  uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to
+  accelerate deal timeline.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +14,16 @@ kpis: ["Objection detection rate", "Resolution automation efficiency", "Timeline
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Timing Objection Handling — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
+Timing Objection Handling — Scalable Automation. Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
 
 **Time commitment:** 56 hours over 2 months
 **Pass threshold:** Timing objections handled systematically at scale over 2 months with improved resolution rates
@@ -34,44 +33,28 @@ Address 'not the right time' objections by uncovering true urgency drivers, quan
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that detects timing objections in Attio notes and emails; automatically triggers timing objection playbook.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create automated cost of inaction analysis: n8n pulls prospect data and generates personalized cost calculations showing financial impact of delay.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement timing objection intelligence: n8n analyzes historical timing objections to predict which are real constraints vs. avoidance; suggests appropriate response strategy.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up proactive timeline monitoring: n8n tracks deals approaching stated 'future timing'; triggers reengagement sequence 30 days before target date.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when timing objection is logged, automatically deliver relevant urgency content (seasonal prep guides, implementation timeline docs, cost calculators).
-
-6. Build timing objection dashboard: track objection frequency, resolution rates, timeline acceleration success, eventual conversion rates, delay costs.
-
-7. Create urgency content library: maintain repository of urgency drivers (quarter-end incentives, implementation timelines, case studies of delayed decisions, competitive timing risks).
-
-8. Set guardrails: timing objection resolution rate must stay ≥70% of Baseline level; timeline acceleration must occur in ≥45% of cases.
-
-9. Implement timing risk scoring: flag deals with weak urgency drivers or vague timelines as high risk for perpetual delay.
-
-10. After 2 months, evaluate timing objection handling impact on deal velocity and pipeline conversion; if metrics hold, proceed to Durable AI-driven timing intelligence.
+### 5. Evaluate against threshold
+Measure against: Timing objections handled systematically at scale over 2 months with improved resolution rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Timing objections handled systematically at scale over 2 months with improved resolution rates**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

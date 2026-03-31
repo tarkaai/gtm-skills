@@ -1,7 +1,9 @@
 ---
 name: competitive-situation-analysis-smoke
 description: >
-  Competitive Situation Assessment — Smoke Test. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+    Competitive Situation Assessment — Smoke Test. Discover which competitors prospects are
+  evaluating to position differentiation effectively and develop winning strategies against specific
+  alternatives.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Competitive Situation Assessment — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+Competitive Situation Assessment — Smoke Test. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** Competitive situation identified in ≥8 opportunities in 1 week
@@ -35,32 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. On first 10 discovery calls, ask directly: 'What other solutions are you currently evaluating?' and 'How are you comparing alternatives?'.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for competitive-situation-analysis. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Identify competitive set: direct competitors, indirect alternatives, status quo (doing nothing), build vs buy options.
+### 2. Prepare outreach materials
+Using the ICP output, draft your competitive-situation-analysis materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Understand evaluation criteria: ask 'What's most important to you in selecting a solution?' to learn how they're making the decision.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Probe competitor engagement level: 'How far along are you with [competitor]?' to understand deal stage with alternatives.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Uncover competitive gaps: 'What do you wish [competitor] could do that it doesn't?' to find opportunities for differentiation.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Competitive situation identified in ≥8 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log competitive situation in Attio: competitors being evaluated, evaluation stage, decision criteria, gaps identified.
-
-7. Track PostHog events: competitive_situation_identified, competitor_named, status_quo_bias_detected, build_option_considered.
-
-8. Set pass threshold: Competitive situation identified in ≥8 opportunities in 1 week with ≥60% having active competitor evaluation.
-
-9. Analyze win rates: compare close rates when competing against specific competitors vs status quo.
-
-10. Document which competitive discovery questions reveal most useful intelligence; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Competitive situation identified in ≥8 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

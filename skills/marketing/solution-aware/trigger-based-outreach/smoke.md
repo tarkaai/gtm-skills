@@ -1,7 +1,8 @@
 ---
 name: trigger-based-outreach-smoke
 description: >
-  Trigger-based Outreach — Smoke Test. Automate outreach based on intent signals like funding, hiring, tech stack changes, or job changes to reach solution-aware prospects at optimal timing.
+    Trigger-based Outreach — Smoke Test. Automate outreach based on intent signals like funding,
+  hiring, tech stack changes, or job changes to reach solution-aware prospects at optimal timing.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email, Social"
@@ -13,6 +14,7 @@ slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Trigger-based Outreach — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social
 
 ## Overview
-Automate outreach based on intent signals like funding, hiring, tech stack changes, or job changes to reach solution-aware prospects at optimal timing.
+Trigger-based Outreach — Smoke Test. Automate outreach based on intent signals like funding, hiring, tech stack changes, or job changes to reach solution-aware prospects at optimal timing.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥3 meetings from 30 trigger-based contacts in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this trigger-based outreach play; document hypothesis and success criteria.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for trigger-based-outreach. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Prepare outreach materials
+Using the ICP output, draft your trigger-based-outreach materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥3 meetings from 30 trigger-based contacts in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -74,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥3 meetings from 30 trigger-based contacts in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

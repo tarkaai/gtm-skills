@@ -1,7 +1,10 @@
 ---
 name: pain-discovery-framework-scalable
 description: >
-  Pain Discovery Framework — Scalable Automation. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+    Pain Discovery Framework — Scalable Automation. Uncover and quantify prospect pain points to
+  build compelling business cases and justify budget allocation, from manual discovery note-taking
+  to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business
+  case content.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,19 +15,16 @@ kpis: ["Pain quantification rate", "Pain-to-price ratio", "AI extraction accurac
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Pain Discovery Framework — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+Pain Discovery Framework — Scalable Automation. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
 
 **Time commitment:** 70 hours over 2 months
 **Pass threshold:** >=70% of prospects with quantified pains >=10x cost and >=30% faster deal velocity over 2 months
@@ -34,44 +34,28 @@ Uncover and quantify prospect pain points to build compelling business cases and
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (calling at volume):** ~$100–200/mo
-
-_Total play-specific: ~$100–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Fireflies** (Sales Engagement)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Scale pain discovery to 50+ prospects per quarter; integrate call recording tools (Fireflies, Gong) with Attio to auto-extract pain points from discovery call transcripts.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow that triggers after each discovery call: pull transcript from Fireflies, use AI to identify pain statements, extract quantifiable metrics, create pain summary in Attio, notify rep to validate.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create industry-specific pain benchmarks: if you know SaaS companies typically spend 15% of revenue on customer support, use benchmarks to help prospects quantify pains they haven't measured.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track pain discovery effectiveness: measure pain points per call, quantification rate, and correlation between total pain value and close probability.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build automated pain validation sequences in n8n: after extracting pains, send email with summary and ask prospect to confirm numbers; log validation status in Attio.
-
-6. In Attio, create a pain intelligence dashboard showing distribution of pain types, average pain-to-price ratio, and which pains most strongly predict closed deals.
-
-7. Develop AI-generated business cases: use Claude or GPT-4 to automatically generate business case documents based on quantified pains in Attio; reps review and send to prospects.
-
-8. Implement pain prioritization: if prospects have 5+ pains, use AI to rank by impact, urgency, and alignment with your solution's strengths; focus on top 3 in proposals.
-
-9. Each week, analyze which pain discovery questions yield highest quantification rates; update playbook with winning questions and retire low-signal questions.
-
-10. After 2 months, if >=70% of prospects have quantified pains >=10x cost and pain-rich deals close >=30% faster, move to Durable; otherwise refine AI extraction or benchmarking.
+### 5. Evaluate against threshold
+Measure against: >=70% of prospects with quantified pains >=10x cost and >=30% faster deal velocity over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -86,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=70% of prospects with quantified pains >=10x cost and >=30% faster deal velocity over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

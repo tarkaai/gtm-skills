@@ -1,7 +1,10 @@
 ---
 name: usage-limit-sales-upsell-baseline
 description: >
-  Usage-Based Upsell — Baseline Run. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+    Usage-Based Upsell — Baseline Run. Trigger upsell conversations when customers hit usage limits
+  or demonstrate expansion readiness through product engagement, from manual usage monitoring to
+  AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates
+  expansion proposals.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Direct"
@@ -12,17 +15,16 @@ kpis: ["Upsell conversion rate", "Expansion ARR", "Time from signal to close", "
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Usage-Based Upsell — Baseline Run
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Direct
 
 ## Overview
-Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+Usage-Based Upsell — Baseline Run. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
 
 **Time commitment:** 22 hours over 2 weeks
 **Pass threshold:** >=30% upsell conversion rate and expansion ARR >=10% of base ARR over 2 weeks
@@ -32,43 +34,28 @@ Trigger upsell conversations when customers hit usage limits or demonstrate expa
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Expand to 30-50 customers over 2 weeks; build a usage monitoring dashboard in PostHog showing each customer's usage vs plan limits, growth trends, and expansion readiness score.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create tiered expansion signals: Tier 1 (approaching hard limit, high urgency), Tier 2 (heavy feature usage, medium urgency), Tier 3 (new use case expansion, low urgency); prioritize Tier 1 for immediate outreach.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: identify >=10 expansion-ready customers, achieve >=30% upsell conversion rate (3+ upsells closed), and average expansion deal size >=40% of original ACV.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `usage-limit-sales-upsell_email_sent`, `usage-limit-sales-upsell_email_replied`, `usage-limit-sales-upsell_meeting_booked`, `usage-limit-sales-upsell_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Build automated usage alert emails: when customer hits 80% of limit, send automated warning + upgrade CTA; when customer hits 95%, send urgent upgrade prompt; when customer exceeds limit, offer immediate upgrade.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Sync usage data from PostHog to Attio so customer success and sales teams see real-time expansion signals; create tasks for outreach when signals trigger.
-
-6. Develop expansion playbooks by signal type: seat expansion ("Your team is growing—add seats now"), tier upgrade ("You're using premium features heavily—unlock full power with Pro tier"), add-on sales ("You love X feature—try Y feature to amplify results").
-
-7. Track expansion pipeline in Attio separately from new business pipeline; measure expansion ARR, time from signal to close, and which signals yield largest expansion deals.
-
-8. After upsell closes, log expansion reason in PostHog and Attio; analyze whether upsell was proactive (you reached out first) or reactive (customer requested); optimize for proactive.
-
-9. After 2 weeks, measure expansion conversion rate, average deal size, and expansion ARR as % of base ARR; target >=30% conversion and expansion ARR >=10% of base.
-
-10. If >=30% upsell conversion and expansion metrics are strong, move to Scalable; otherwise refine signal definitions, improve offer positioning, or enhance customer success touchpoints.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=30% upsell conversion rate and expansion ARR >=10% of base ARR over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=30% upsell conversion rate and expansion ARR >=10% of base ARR over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

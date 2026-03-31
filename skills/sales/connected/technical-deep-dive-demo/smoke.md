@@ -1,7 +1,8 @@
 ---
 name: technical-deep-dive-demo-smoke
 description: >
-  Technical Deep-Dive Demo — Smoke Test. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+    Technical Deep-Dive Demo — Smoke Test. Deliver detailed technical demonstration for engineers
+  and architects covering architecture, APIs, security, integrations, and implementation details.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -13,6 +14,7 @@ slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Technical Deep-Dive Demo — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+Technical Deep-Dive Demo — Smoke Test. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
 
 **Time commitment:** 8 hours over 1 week
 **Pass threshold:** Technical demos completed on ≥5 opportunities in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Schedule 5-8 technical deep-dive demos with prospects who have passed initial discovery and have engaged technical stakeholders.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for technical-deep-dive-demo. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Pre-demo: gather technical requirements from discovery notes in Attio; identify which technical areas to emphasize (APIs, security, integrations, architecture, performance).
+### 2. Prepare outreach materials
+Using the ICP output, draft your technical-deep-dive-demo materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Structure demo in technical layers: system architecture overview, API capabilities and documentation, data model and schema, security and compliance features, integration patterns, performance and scale characteristics.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Demonstrate with technical depth: show actual API calls, review authentication flows, walk through integration code examples, discuss deployment options.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Invite technical questions throughout: encourage architects and engineers to probe deeply; treat objections as opportunities to showcase technical rigor.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Technical demos completed on ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Provide technical resources during demo: share API documentation links, integration guides, SDKs, architecture diagrams, security whitepapers.
-
-7. Track PostHog events: technical_demo_completed, api_demonstrated, security_reviewed, integration_discussed, technical_question_answered.
-
-8. Set pass threshold: Complete technical demos on ≥5 opportunities in 1 week with ≥60% advancing to POC or proposal stage.
-
-9. Gather technical stakeholder feedback: ask 'What technical questions remain?' and 'Do you see any technical blockers?'.
-
-10. Document which technical demo elements drive strongest engagement and progression; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical demos completed on ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

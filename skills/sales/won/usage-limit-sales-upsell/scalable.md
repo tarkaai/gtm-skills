@@ -1,7 +1,10 @@
 ---
 name: usage-limit-sales-upsell-scalable
 description: >
-  Usage-Based Upsell — Scalable Automation. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+    Usage-Based Upsell — Scalable Automation. Trigger upsell conversations when customers hit usage
+  limits or demonstrate expansion readiness through product engagement, from manual usage monitoring
+  to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates
+  expansion proposals.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Direct"
@@ -12,19 +15,16 @@ kpis: ["Expansion conversion by score tier", "Expansion ARR growth", "Self-servi
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Usage-Based Upsell — Scalable Automation
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Direct
 
 ## Overview
-Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+Usage-Based Upsell — Scalable Automation. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
 
 **Time commitment:** 70 hours over 2 months
 **Pass threshold:** >=35% upsell conversion for high-scoring accounts and expansion ARR >=15% of base ARR over 2 months
@@ -34,45 +34,28 @@ Trigger upsell conversations when customers hit usage limits or demonstrate expa
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **n8n** (Automation)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Scale to 200+ customers; build n8n workflows that trigger automatically when PostHog detects expansion signals: send usage alert email, create upsell task in Attio, notify account owner, schedule follow-up if no response.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Implement in-product upsell prompts using PostHog: when user hits usage threshold, show banner "You're at 90% of your seat limit—upgrade now to add more team members" with direct upgrade link.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create expansion scoring in PostHog: combine usage level (40%), growth velocity (30%), feature adoption (20%), and engagement (10%) to generate expansion readiness score 0-100; target >=35% conversion for high-scoring accounts (>=70).
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track expansion funnel: usage_threshold_hit → upsell_prompt_shown → upsell_engaged → upsell_closed; identify drop-off points and optimize.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build automated expansion sequences in n8n: first touch (usage alert), second touch (ROI reminder: "You've saved $X—expand to save $Y more"), third touch (urgency: "You'll hit limit in 3 days"), fourth touch (personal call from CSM/AE).
-
-6. Integrate usage data with Attio to auto-calculate expansion opportunity size: if customer is at 8/10 seats and adding 1 seat/month, project they'll need 15 seats in 6 months; present upgrade to 15-20 seat plan.
-
-7. Create customer segmentation for expansion: Enterprise (high-touch, AE-led), Mid-market (CSM-led, assisted upsell), SMB (self-service, in-product prompts); route expansion opportunities accordingly.
-
-8. Each week, analyze which expansion signals yield highest conversion rates and largest deal sizes; prioritize resources on high-ROI signals (e.g., if seat expansion converts 50% vs API limit 20%, focus on seat expansion).
-
-9. Test expansion pricing strategies: volume discounts ("Upgrade to 50 seats and save 20%"), annual commitments ("Upgrade to annual and get 2 months free"), bundling ("Add X feature for only $Y/mo extra").
-
-10. After 2 months, if expansion conversion >=35% for high-scoring accounts and expansion ARR >=15% of base ARR, move to Durable; otherwise refine scoring or prompt effectiveness.
+### 5. Evaluate against threshold
+Measure against: >=35% upsell conversion for high-scoring accounts and expansion ARR >=15% of base ARR over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=35% upsell conversion for high-scoring accounts and expansion ARR >=15% of base ARR over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: pricing-presentation-framework-scalable
 description: >
-  Pricing Presentation Framework — Scalable Automation. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+    Pricing Presentation Framework — Scalable Automation. Present pricing confidently with value
+  anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount
+  requests.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +14,16 @@ kpis: ["Pricing acceptance rate", "Discount optimization", "Tier mix revenue imp
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Pricing Presentation Framework — Scalable Automation
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+Pricing Presentation Framework — Scalable Automation. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
 
 **Time commitment:** 58 hours over 2 months
 **Pass threshold:** Pricing presented systematically at scale over 2 months with maintained acceptance rates
@@ -34,44 +33,28 @@ Present pricing confidently with value anchoring, multiple options, and clear RO
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow generating personalized pricing proposals: pulls discovered value metrics from Attio; creates custom pricing presentation linking price to their specific ROI.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create pricing intelligence: n8n analyzes deal characteristics to recommend optimal tier and pricing structure based on similar won deals.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated proposal generation: n8n creates formatted pricing proposals with value recap, pricing options, ROI summary, next steps.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up pricing analytics: n8n tracks which pricing approaches drive acceptance, which tiers convert best, which discounts are most effective.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when pricing is presented, trigger delivery of supporting materials (ROI calculator, customer case studies, payment options).
-
-6. Build pricing dashboard: track acceptance rates by tier, discount analysis, deal size distribution, conversion velocity after pricing.
-
-7. Create dynamic pricing guidance: n8n recommends pricing tier and structure based on prospect characteristics, competitive situation, deal urgency.
-
-8. Set guardrails: acceptance rate must stay ≥60% of Baseline; average discount must not exceed 12% without strategic justification.
-
-9. Implement pricing experimentation: A/B test different pricing structures, tier positioning, and value anchoring approaches.
-
-10. After 2 months, evaluate pricing framework impact on close rates and deal profitability; if metrics hold, proceed to Durable.
+### 5. Evaluate against threshold
+Measure against: Pricing presented systematically at scale over 2 months with maintained acceptance rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -86,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Pricing presented systematically at scale over 2 months with maintained acceptance rates**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

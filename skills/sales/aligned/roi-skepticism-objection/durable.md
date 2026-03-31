@@ -1,7 +1,9 @@
 ---
 name: roi-skepticism-objection-durable
 description: >
-  ROI Skepticism Handling — Durable Intelligence. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+    ROI Skepticism Handling — Durable Intelligence. Prove ROI when prospects question value by using
+  customer data, conservative modeling, and co-creating financial analysis with prospect's own
+  inputs to build conviction.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["ROI objection resolution rate", "ROI claim accuracy", "Customer proof ef
 slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # ROI Skepticism Handling — Durable Intelligence
 
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
+ROI Skepticism Handling — Durable Intelligence. Prove ROI when prospects question value by using customer data, conservative modeling, and co-creating financial analysis with prospect's own inputs to build conviction.
 
 **Time commitment:** 152 hours over 6 months
 **Pass threshold:** Sustained or improving ROI skepticism resolution and claim accuracy over 6 months via continuous AI-driven ROI intelligence and validation
@@ -36,45 +32,29 @@ Prove ROI when prospects question value by using customer data, conservative mod
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: ROI skepticism is detected, value justification is needed, or CFO approval is required.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for roi-skepticism-objection with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI ROI intelligence agent analyzing historical customer outcomes and ROI claims: identifies which ROI arguments drive acceptance, which assumptions prospects trust, which proof points overcome skepticism.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered ROI modeling: AI agent generates sophisticated ROI analyses incorporating prospect-specific variables, industry benchmarks, and validated customer outcomes from similar deployments.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which ROI proof methods and customer examples correlate with skepticism resolution and deal closure; AI agent recommends optimal proof strategies by prospect segment and skepticism type.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive ROI validation: AI agent monitors post-sale customer outcomes in PostHog; continuously validates ROI claims; updates sales ROI models based on actual customer data.
-
-6. Deploy intelligent customer proof matching: AI agent analyzes prospect characteristics and skepticism patterns; identifies most persuasive customer references and specific ROI data points to share.
-
-7. Implement proactive value justification: AI agent predicts when ROI skepticism will arise based on deal characteristics; prepares compelling ROI proof and customer examples before objection surfaces.
-
-8. Create dynamic measurement frameworks: AI agent generates customized post-sale measurement plans showing exactly how ROI will be tracked and validated; builds confidence in claims.
-
-9. Set guardrails: if resolution rate drops >15% or post-sale ROI validation falls below 75% of claimed benefits, alert team and suggest ROI modeling refinements.
-
-10. Establish monthly review cycle: analyze ROI proof effectiveness, customer outcome validation, skepticism patterns; refine AI agent intelligence and ROI claims based on actual customer results.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving ROI skepticism resolution and claim accuracy over 6 months via continuous AI-driven ROI intelligence and validation. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: outbound-with-value-asset-scalable
 description: >
-  Outbound With Value Asset — Scalable Automation. Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
+    Outbound With Value Asset — Scalable Automation. Share a one-page checklist asset in 100 emails
+  to see if asset-led messaging drives replies that reference the asset.
 stage: "Marketing > Problem Aware"
 motion: "Outbound Founder-Led"
 channels: "Other"
@@ -12,19 +13,16 @@ kpis: ["Reply rate", "Open rate"]
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Outbound With Value Asset — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Outbound Founder-Led | **Channels:** Other
 
 ## Overview
-Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
+Outbound With Value Asset — Scalable Automation. Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 15 positive replies referencing asset over 2 months
@@ -33,43 +31,29 @@ Share a one-page checklist asset in 100 emails to see if asset-led messaging dri
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Instantly** (Email)
-- **Clay** (Enrichment)
-- **Attio** (CRM)
-- **Apollo** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 15 positive replies referencing asset over 2 months.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Each week, record Reply rate, Open rate in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 5. Evaluate against threshold
+Measure against: ≥ 15 positive replies referencing asset over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -82,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 15 positive replies referencing asset over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 name: ai-meeting-prep-durable
 description: >
-  AI-Powered Meeting Preparation — Durable Intelligence. Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
+    AI-Powered Meeting Preparation — Durable Intelligence. Use AI to research accounts and prepare
+  for sales calls automatically, from manual research checklists to AI agents that generate
+  comprehensive call briefs with account intelligence, talk tracks, and objection responses in
+  real-time.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,21 +15,15 @@ kpis: ["Call outcome trend", "Agent experiment win rate", "Brief personalization
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # AI-Powered Meeting Preparation — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
+AI-Powered Meeting Preparation — Durable Intelligence. Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
 
 **Time commitment:** 120 hours over 6 months
 **Pass threshold:** Sustained or improving call outcomes (>=30% lift vs non-prepped) over 6 months via continuous agent-driven brief optimization, insight prioritization, and market adaptation
@@ -36,45 +33,29 @@ Use AI to research accounts and prepare for sales calls automatically, from manu
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (AI-assisted calling):** ~$100–300/mo
-
-_Total play-specific: ~$100–300/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **OpenAI** (AI/LLM)
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Clay** (Enrichment)
-- **Fireflies** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously learns which meeting prep insights best predict successful call outcomes; auto-evolves brief templates and research focus based on won deals.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for ai-meeting-prep with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run experiments on brief content: test emphasizing different insight categories (pain points vs tech stack vs competitive intel); promote highest-impact insights.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every successful call triggers the agent to analyze which AI-provided insights were used and how; strengthens those research patterns for future briefs.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy real-time meeting intelligence: agent monitors scheduled calls and generates updated briefs when new information emerges (funding announcement, executive hire, competitor mention); sends alerts to reps before calls.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement predictive meeting outcomes: agent analyzes brief quality, rep's historical performance, and deal context to predict call success probability; suggests additional prep for high-stakes, low-probability calls.
-
-6. Build dynamic brief personalization: agent learns each rep's preferences (level of detail, preferred insights, reading time) and customizes briefs accordingly; some reps get bullet points, others get deep dives.
-
-7. Create market adaptation logic: if buyer priorities shift (e.g., focus on cost during recession), agent automatically adjusts brief focus to emphasize cost-savings intel over growth intel.
-
-8. Agent continuously refines data sources: tests different enrichment providers, news sources, and research databases; routes requests to highest-quality sources for each data type.
-
-9. Implement automatic call prep-to-outcome tracking: agent connects brief contents to call recordings and outcomes; calculates which insights contribute most to successful calls and prioritizes those.
-
-10. Establish monthly review cycles: agent generates meeting prep intelligence reports showing brief quality trends, insight effectiveness, adoption rates, and recommended research focus updates; team reviews and approves changes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving call outcomes (>=30% lift vs non-prepped) over 6 months via continuous agent-driven brief optimization, insight prioritization, and market adaptation. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: pricing-presentation-framework-smoke
 description: >
-  Pricing Presentation Framework — Smoke Test. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+    Pricing Presentation Framework — Smoke Test. Present pricing confidently with value anchoring,
+  multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +14,7 @@ slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Pricing Presentation Framework — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
+Pricing Presentation Framework — Smoke Test. Present pricing confidently with value anchoring, multiple options, and clear ROI context to maximize acceptance and minimize discount requests.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** Pricing presented to ≥5 opportunities in 1 week with ≥60% acceptance
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. On first 5-8 pricing conversations, lead with value before price: recap pain points discovered, solution value delivered, expected outcomes agreed upon.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for pricing-presentation-framework. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Present pricing in context: 'Based on [specific value you'll deliver], our investment is [price]' rather than leading with raw numbers.
+### 2. Prepare outreach materials
+Using the ICP output, draft your pricing-presentation-framework materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Offer 3 options: Good (meets core needs), Better (recommended, includes value-adds), Best (premium features); anchor on Better as recommended choice.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Frame monthly vs annual: show annual pricing with monthly equivalent; highlight annual savings percentage to incentivize upfront commitment.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Link price to value metrics: 'For [your expected ROI/time savings/revenue impact], the investment is [price per month/user/transaction]'.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Pricing presented to ≥5 opportunities in 1 week with ≥60% acceptance. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Pause after presenting: don't immediately defend or discount; let prospect process; wait for their response before addressing concerns.
-
-7. Track PostHog events: pricing_presented, option_selected, discount_requested, objection_type, deal_progressed.
-
-8. Set pass threshold: Present pricing to ≥5 opportunities in 1 week with ≥60% accepting proposal or requesting only modest adjustments.
-
-9. Measure effectiveness: track acceptance rate, discount request frequency, average discount given, close rate by pricing approach.
-
-10. Document which pricing presentation techniques work best; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Pricing presented to ≥5 opportunities in 1 week with ≥60% acceptance**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

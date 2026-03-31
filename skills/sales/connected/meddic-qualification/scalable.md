@@ -1,7 +1,10 @@
 ---
 name: meddic-qualification-scalable
 description: >
-  MEDDIC Qualification System — Scalable Automation. Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+    MEDDIC Qualification System — Scalable Automation. Apply MEDDIC (Metrics, Economic Buyer,
+  Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from
+  manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates
+  cycles.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +15,16 @@ kpis: ["MEDDIC completeness rate", "Deal health score", "Close rate by MEDDIC qu
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # MEDDIC Qualification System — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+MEDDIC Qualification System — Scalable Automation. Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
 
 **Time commitment:** 70 hours over 2 months
 **Pass threshold:** >=50% of deals with >80% MEDDIC completeness and >=15% higher close rate over 2 months
@@ -34,46 +34,28 @@ Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Iden
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Clay** (Enrichment)
-- **Fireflies** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Scale MEDDIC to 50-100 deals per quarter; integrate Clay with Attio to auto-populate Metrics, Economic Buyer, and Decision Criteria based on company research and job titles.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow that triggers when a new opportunity is created in Attio: pull org chart from LinkedIn/Clay, identify likely Economic Buyer and Champion candidates, pre-fill MEDDIC fields.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Create MEDDIC scorecards in Attio that auto-calculate deal health based on completeness (50%) and quality (50%); flag deals with health <60% for immediate intervention.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track MEDDIC completeness over time; create alerts when a deal has been open >7 days with <50% MEDDIC completion.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. In n8n, build a workflow that sends automated reminders to sales reps when MEDDIC elements are missing: "No Champion identified in Deal X—schedule call to find internal advocate."
-
-6. Integrate call recording tools (Fireflies, Gong) with Attio; use AI to extract MEDDIC elements from call transcripts and auto-populate Attio fields with confidence scores.
-
-7. Build a MEDDIC dashboard in PostHog showing distribution of deal health scores, average MEDDIC completeness by stage, and correlation between MEDDIC score and close rate.
-
-8. Each week, analyze which MEDDIC elements are most often missing; if Decision Process is weak across deals, run a team training on how to uncover buying process.
-
-9. Track deal velocity by MEDDIC completeness quartile: deals with >90% MEDDIC should close 30%+ faster than deals with <70% MEDDIC.
-
-10. After 2 months, if >=50% of deals maintain >80% MEDDIC completeness and close rates improve >=15%, move to Durable; otherwise refine automation or rep coaching.
+### 5. Evaluate against threshold
+Measure against: >=50% of deals with >80% MEDDIC completeness and >=15% higher close rate over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=50% of deals with >80% MEDDIC completeness and >=15% higher close rate over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 name: usage-limit-sales-upsell-durable
 description: >
-  Usage-Based Upsell — Durable Intelligence. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+    Usage-Based Upsell — Durable Intelligence. Trigger upsell conversations when customers hit usage
+  limits or demonstrate expansion readiness through product engagement, from manual usage monitoring
+  to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates
+  expansion proposals.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Direct"
@@ -12,21 +15,15 @@ kpis: ["Expansion conversion trend", "Agent experiment win rate", "Expansion ARR
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add sales/won/usage-limit-sales-upsell"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Usage-Based Upsell — Durable Intelligence
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Direct
 
 ## Overview
-Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
+Usage-Based Upsell — Durable Intelligence. Trigger upsell conversations when customers hit usage limits or demonstrate expansion readiness through product engagement, from manual usage monitoring to AI-driven upsell orchestration that identifies optimal upgrade moments and auto-generates expansion proposals.
 
 **Time commitment:** 130 hours over 6 months
 **Pass threshold:** Sustained or improving expansion metrics (>=35% conversion, >=15% expansion ARR) over 6 months via continuous agent-driven signal optimization, personalization, and market adaptation
@@ -36,45 +33,29 @@ Trigger upsell conversations when customers hit usage limits or demonstrate expa
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **n8n** (Automation)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which usage patterns best predict successful upsells; auto-tunes expansion scoring model and signal definitions based on closed expansion deals.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for usage-limit-sales-upsell with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run experiments on upsell timing: test immediate outreach when threshold hit vs 24-hour delay vs wait for customer to contact support; promote optimal timing per segment.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every closed upsell triggers the agent to analyze usage history and identify early signals that predicted expansion need; strengthen detection of those patterns.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy AI-driven expansion personalization: agent analyzes each customer's usage pattern, business context, and engagement to generate custom expansion proposals emphasizing most relevant benefits.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement predictive expansion forecasting: agent predicts which customers will need expansion in next 30/60/90 days based on growth velocity; enables proactive outreach before limits are hit.
-
-6. Build market adaptation logic: if expansion conversion rates drop (economic downturn, budget freezes), agent suggests alternative offers (month-to-month vs annual, smaller increments, pay-as-you-grow pricing).
-
-7. Create automatic upsell optimization: agent tests different prompt copy, offer structures, discount levels, and payment terms; promotes combinations with highest conversion rates and lowest churn.
-
-8. Agent continuously refines expansion segmentation: learns which customer types prefer self-service vs assisted upsells; routes opportunities to optimal motion.
-
-9. Implement dynamic pricing intelligence: agent monitors competitor pricing, customer willingness-to-pay signals, and deal velocity to recommend optimal upsell pricing per account.
-
-10. Establish monthly review cycles: agent generates expansion intelligence reports showing conversion trends, signal quality, pricing effectiveness, and recommended strategy updates; team reviews and approves changes or rolls back underperforming experiments.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving expansion metrics (>=35% conversion, >=15% expansion ARR) over 6 months via continuous agent-driven signal optimization, personalization, and market adaptation. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

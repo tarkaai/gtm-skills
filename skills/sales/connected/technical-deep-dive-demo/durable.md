@@ -1,7 +1,9 @@
 ---
 name: technical-deep-dive-demo-durable
 description: >
-  Technical Deep-Dive Demo — Durable Intelligence. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+    Technical Deep-Dive Demo — Durable Intelligence. Deliver detailed technical demonstration for
+  engineers and architects covering architecture, APIs, security, integrations, and implementation
+  details.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -12,21 +14,15 @@ kpis: ["Technical validation speed", "POC conversion rate", "Technical close rat
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Technical Deep-Dive Demo — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
+Technical Deep-Dive Demo — Durable Intelligence. Deliver detailed technical demonstration for engineers and architects covering architecture, APIs, security, integrations, and implementation details.
 
 **Time commitment:** 155 hours over 6 months
 **Pass threshold:** Sustained or improving technical validation speed and close rates over 6 months via continuous AI-driven technical demo intelligence
@@ -36,45 +32,29 @@ Deliver detailed technical demonstration for engineers and architects covering a
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (AI-assisted calling):** ~$100–300/mo
-- **Intercom or Loops (agent-driven messaging):** ~$150–400/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: technical demo is scheduled, technical questions arise during demo, or technical validation stalls.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for technical-deep-dive-demo with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI technical demo intelligence agent analyzing historical technical demos: identifies which demo approaches drive fastest technical validation, which technical proof points are most persuasive by prospect segment.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered demo customization: AI agent analyzes prospect's tech stack, technical requirements, and engineer background; generates optimal demo flow and key technical topics to emphasize.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which technical demo elements (API demonstrations, security reviews, architecture discussions) correlate with POC conversion and technical wins; AI agent recommends optimal demo sequences.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive technical content generation: AI agent creates customized technical documentation, code samples, and integration guides for each prospect based on their specific tech stack and requirements.
-
-6. Deploy real-time technical question assistance: during demo, AI agent monitors technical questions asked; suggests answers, provides relevant documentation links, flags questions requiring follow-up.
-
-7. Implement automatic technical validation tracking: AI agent monitors post-demo engagement with technical materials; predicts technical validation probability; alerts when validation is at risk.
-
-8. Create technical competitive intelligence: AI agent analyzes technical objections and competitor mentions; generates technical differentiation talking points and competitive technical proof.
-
-9. Set guardrails: if POC conversion drops >10% or technical demo effectiveness falls below Scalable benchmark for 2+ weeks, alert team and suggest demo refinements.
-
-10. Establish monthly review cycle: analyze technical demo effectiveness, validation patterns, technical win/loss reasons; refine AI agent intelligence based on technical deal outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving technical validation speed and close rates over 6 months via continuous AI-driven technical demo intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

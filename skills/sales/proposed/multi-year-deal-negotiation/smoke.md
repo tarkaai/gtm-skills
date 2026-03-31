@@ -1,7 +1,9 @@
 ---
 name: multi-year-deal-negotiation-smoke
 description: >
-  Multi-Year Deal Structuring — Smoke Test. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+    Multi-Year Deal Structuring — Smoke Test. Structure and price multi-year commitments to increase
+  deal value and customer lifetime value, from manual contract terms to AI-driven contract
+  optimization that maximizes ACVand retention while maintaining competitive pricing.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Multi-Year Deal Structuring — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+Multi-Year Deal Structuring — Smoke Test. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
 
 **Time commitment:** 8 hours over 2 weeks
 **Pass threshold:** >=1 multi-year deal closed (2+ years) within 2 weeks
@@ -35,33 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define multi-year deal parameters in a spreadsheet: discount structure (e.g., 1-year full price, 2-year 10% discount, 3-year 20% discount), payment terms (annual prepay vs quarterly), expansion clauses (pricing for additional seats/usage), renewal terms.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for multi-year-deal-negotiation. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Identify 3-5 opportunities in proposal stage where multi-year deals make sense (strong fit, large company, strategic importance, high expansion potential); prepare multi-year proposals.
+### 2. Prepare outreach materials
+Using the ICP output, draft your multi-year-deal-negotiation materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: propose multi-year terms to >=3 prospects and close >=1 multi-year deal (2+ years) within 2 weeks.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Position multi-year benefits to prospects: "Locking in pricing now protects you from future increases" (hedge against inflation), "Multi-year commitment unlocks priority support and early access to features" (added value), "Predictable annual spend simplifies budgeting" (CFO benefit).
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Create pricing scenarios for prospects: Option A (1-year at $100K), Option B (2-year at $180K total = 10% savings), Option C (3-year at $240K total = 20% savings); show total savings and annual cost clearly.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=1 multi-year deal closed (2+ years) within 2 weeks. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Address objections: "What if our needs change?" → Include expansion clauses allowing seat/usage increases mid-contract. "What if we want to cancel?" → Offer annual payment terms (less risk than full prepay) or exit clauses after year 1.
-
-7. Log multi-year proposals in Attio with fields for contract_length, total_contract_value, annual_discount, payment_terms, and outcome; track which terms close most often.
-
-8. In PostHog, create events for multiyear_proposed and multiyear_closed with properties for deal length, discount, and TCV.
-
-9. After 2 weeks, analyze: did >=1 multi-year deal close? What objections arose? What terms were most attractive? If multi-year deals close and TCV is >=1.8x annual deal, multi-year motion is working.
-
-10. If threshold met, document multi-year positioning and pricing structure, then proceed to Baseline; otherwise refine discount levels, payment terms, or value positioning.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=1 multi-year deal closed (2+ years) within 2 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

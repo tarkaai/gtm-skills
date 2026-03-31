@@ -1,7 +1,9 @@
 ---
 name: trial-to-paid-conversion-scalable
 description: >
-  Trial-to-Paid Conversion — Scalable Automation. Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
+    Trial-to-Paid Conversion — Scalable Automation. Convert free trial users to paying customers by
+  driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to
+  AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Email, Product, Direct"
@@ -12,19 +14,16 @@ kpis: ["Trial conversion rate trend", "Activation funnel completion", "Intervent
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Trial-to-Paid Conversion — Scalable Automation
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Email, Product, Direct
 
 ## Overview
-Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
+Trial-to-Paid Conversion — Scalable Automation. Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
 
 **Time commitment:** 75 hours over 2 months
 **Pass threshold:** >=50% trial-to-paid conversion rate over 2 months
@@ -34,45 +33,28 @@ Convert free trial users to paying customers by driving activation, demonstratin
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **n8n** (Automation)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Scale to 200+ trial users per month; build n8n workflows that trigger based on PostHog events: user completes milestone → send congratulations + next step; user stalls → send help resources; day 10 reached → send upgrade offer.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create personalized trial experiences: use PostHog data to tailor onboarding (if user is Sales role, show sales-specific use cases; if Operations, show ops workflows).
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Integrate trial activity from PostHog with Attio to auto-score trial health and route high-scoring trials to sales reps for proactive outreach; target >=50% trial conversion rate.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up PostHog to track trial conversion funnel: trial_started → first_login → activation_milestone_1 → milestone_2 → milestone_3 → trial_converted; identify and fix drop-off points.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Build automated trial extension logic: if user is highly engaged (>=2 milestones) but needs more time, offer 7-day extension; if low engaged (<1 milestone), let trial expire to focus resources on engaged users.
-
-6. Implement usage-based upgrade prompts: when trial user hits usage limits (API calls, seats, features), show upgrade prompt: "You're getting great value—upgrade to remove limits."
-
-7. Create a trial performance dashboard in PostHog showing conversion rate by source, activation milestone completion rates, average time to conversion, and cohort performance over time.
-
-8. Each week, analyze why trials don't convert: survey non-converters or review PostHog data to identify friction (onboarding too complex? missing feature? budget not allocated?).
-
-9. Test trial length experiments: use PostHog feature flags to offer 7-day vs 14-day vs 30-day trials to different cohorts; measure which yields highest conversion without excessive support burden.
-
-10. After 2 months, if trial conversion rate >=50% and activation-based interventions show clear ROI, move to Durable; otherwise refine onboarding or intervention triggers.
+### 5. Evaluate against threshold
+Measure against: >=50% trial-to-paid conversion rate over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=50% trial-to-paid conversion rate over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

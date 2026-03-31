@@ -1,7 +1,9 @@
 ---
 name: authority-verification-durable
 description: >
-  Authority Verification Process — Durable Intelligence. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+    Authority Verification Process — Durable Intelligence. Confirm you're speaking with actual
+  decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right
+  stakeholders.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,21 +14,15 @@ kpis: ["Authority verification rate", "Deal velocity improvement", "Close rate w
 slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Authority Verification Process — Durable Intelligence
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
+Authority Verification Process — Durable Intelligence. Confirm you're speaking with actual decision-makers to prevent wasted cycles on non-buyers and accelerate deals through the right stakeholders.
 
 **Time commitment:** 120 hours over 6 months
 **Pass threshold:** Sustained or improving deal velocity and close rate over 6 months via continuous AI-driven authority intelligence and adaptive navigation strategies
@@ -36,47 +32,29 @@ Confirm you're speaking with actual decision-makers to prevent wasted cycles on 
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **LinkedIn Sales Navigator** (Channel)
-- **Apollo** (Enrichment)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams that trigger n8n AI agents when: new opportunity created without authority verification after 48 hours, deal stalls with non-decision-maker, or buying committee structure changes.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for authority-verification with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI authority intelligence agent that analyzes won/lost deals in Attio: identifies patterns in org structures that predict deal success; learns which authority levels and multi-threading strategies correlate with wins.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement continuous org chart learning: AI agent monitors job changes, promotions, and org restructures on LinkedIn; proactively updates Attio and alerts sales reps when authority structures shift.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create AI-powered authority navigation: when rep logs call with influencer, AI agent suggests specific next steps: recommended questions, introduction requests, alternative paths to economic buyer based on similar successful deals.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build learning loop: PostHog tracks authority verification tactics (questions, timing, approach) and correlates with meeting acceptance, deal progression, and close rate; AI agent surfaces winning patterns and shares with team.
-
-6. Deploy adaptive authority scoring: AI agent continuously refines authority likelihood scoring based on historical data; learns industry-specific, company-size-specific, and role-specific authority patterns.
-
-7. Implement automatic buying committee intelligence: AI agent analyzes email threads and call transcripts to identify all stakeholders; builds comprehensive RACI map; suggests who to engage next.
-
-8. Create proactive authority risk alerts: when deals progress without verified economic buyer involvement, AI agent flags risk and recommends intervention strategies based on similar deal recovery patterns.
-
-9. Set guardrails: if authority verification rate drops >15% or deal velocity improvement falls below Scalable benchmark for 2+ weeks, n8n alerts sales leadership and agent suggests process refinements.
-
-10. Establish monthly review cycle: analyze authority verification effectiveness, org structure insights, multi-threading success patterns; refine AI agent intelligence and authority navigation strategies based on closed-won data.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving deal velocity and close rate over 6 months via continuous AI-driven authority intelligence and adaptive navigation strategies. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

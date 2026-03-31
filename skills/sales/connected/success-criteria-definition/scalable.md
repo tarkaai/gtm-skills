@@ -1,7 +1,9 @@
 ---
 name: success-criteria-definition-scalable
 description: >
-  Success Criteria Definition — Scalable Automation. Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
+    Success Criteria Definition — Scalable Automation. Co-create specific, measurable success
+  criteria with prospects to align expectations and provide clear evaluation framework for purchase
+  decision.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +14,16 @@ kpis: ["Success criteria definition rate", "Close rate improvement", "Post-sale 
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Success Criteria Definition — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
+Success Criteria Definition — Scalable Automation. Co-create specific, measurable success criteria with prospects to align expectations and provide clear evaluation framework for purchase decision.
 
 **Time commitment:** 56 hours over 2 months
 **Pass threshold:** Success criteria defined on ≥75% of opportunities at scale over 2 months with improved close rates
@@ -34,44 +33,28 @@ Co-create specific, measurable success criteria with prospects to align expectat
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that triggers success criteria definition prompt after discovery phase; provides templates and guidance to sales reps.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create success criteria intelligence: n8n analyzes similar won deals to suggest likely success criteria for each prospect based on industry, use case, and company size.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated mutual success plan generation: n8n creates formatted success plan document from Attio data; auto-sends to prospect for review and agreement.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up success criteria matching: n8n compares defined success criteria against product capabilities and historical achievement rates; flags unrealistic expectations.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when success criteria are defined, trigger delivery of relevant case studies showing similar customers achieving those specific outcomes.
-
-6. Build success criteria dashboard: track definition rates, criteria types, achievability scores, correlation with close rates and customer success outcomes.
-
-7. Create success criteria library: maintain repository of common success criteria by vertical and use case with typical achievement timelines and measurement methods.
-
-8. Set guardrails: success criteria definition rate must stay ≥75% of Baseline level; deals with defined criteria must close at ≥15% higher rate than those without.
-
-9. Implement post-sale success tracking: pass success criteria to customer success team; measure actual achievement rates to validate sales promises.
-
-10. After 2 months, evaluate success criteria impact on close rates and customer outcomes; if metrics hold, proceed to Durable AI-driven success intelligence.
+### 5. Evaluate against threshold
+Measure against: Success criteria defined on ≥75% of opportunities at scale over 2 months with improved close rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Success criteria defined on ≥75% of opportunities at scale over 2 months with improved close rates**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

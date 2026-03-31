@@ -1,7 +1,9 @@
 ---
 name: crm-hygiene-data-management-durable
 description: >
-  CRM Hygiene & Data Quality — Durable Intelligence. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+    CRM Hygiene & Data Quality — Durable Intelligence. Maintain clean, accurate CRM data to enable
+  reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven
+  automated data quality that detects and fixes errors in real-time and prevents data degradation.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product"
@@ -12,21 +14,15 @@ kpis: ["Data quality score trend", "Error prevention rate", "Agent correction ac
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # CRM Hygiene & Data Quality — Durable Intelligence
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product
 
 ## Overview
-Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+CRM Hygiene & Data Quality — Durable Intelligence. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
 
 **Time commitment:** 110 hours over 6 months
 **Pass threshold:** Sustained or improving data quality (>=90%) over 6 months via continuous agent-driven quality monitoring, error prevention, and automated correction
@@ -36,44 +32,29 @@ Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and
 ## Budget
 
 **Play-specific tools & costs**
-- **Intercom or Loops (agent-driven messaging):** ~$150–400/mo
-
-_Total play-specific: ~$150–400/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Clay** (Enrichment)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously monitors CRM data patterns to detect data quality issues before they become problems; learns from corrections to prevent future errors.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for crm-hygiene-data-management with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to identify anomalies: unusual data patterns (e.g., deals progressing too fast, missing stakeholders in large deals, duplicates with subtle differences); flag for review.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every manual data correction triggers the agent to analyze root cause; if enrichment source is providing bad data, switch providers; if validation rule is too loose, tighten it.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy AI-driven duplicate detection: agent uses fuzzy matching, semantic analysis, and behavioral patterns to identify duplicates that rule-based systems miss; learns from merge decisions to improve accuracy.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement predictive data quality: agent predicts which records will become stale or inaccurate based on historical patterns; prompts proactive updates before data degrades.
-
-6. Build automatic data correction: agent detects common errors (typos in company names, outdated job titles, incorrect stages) and auto-corrects based on learned patterns; logs corrections for audit.
-
-7. Create market adaptation logic: if data quality degrades during high-growth periods (more reps, more volume), agent suggests process adjustments or additional automation to maintain quality.
-
-8. Agent continuously refines enrichment strategies: tests different data sources, learns which provide highest accuracy for different record types, automatically routes enrichment to best source.
-
-9. Implement dynamic validation rules: agent experiments with different validation strictness levels and measures impact on data quality vs rep friction; optimizes for balance.
-
-10. Establish monthly review cycles: agent generates data quality intelligence reports showing quality trends, automation effectiveness, error prevention rate, and recommended process updates; team reviews and approves changes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving data quality (>=90%) over 6 months via continuous agent-driven quality monitoring, error prevention, and automated correction. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

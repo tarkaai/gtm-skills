@@ -1,7 +1,9 @@
 ---
 name: timing-objection-handling-durable
 description: >
-  Timing Objection Handling — Durable Intelligence. Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
+    Timing Objection Handling — Durable Intelligence. Address 'not the right time' objections by
+  uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to
+  accelerate deal timeline.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["Timeline acceleration rate", "Objection resolution effectiveness", "True
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Timing Objection Handling — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
+Timing Objection Handling — Durable Intelligence. Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
 
 **Time commitment:** 140 hours over 6 months
 **Pass threshold:** Sustained or improving timing objection resolution and deal acceleration over 6 months via continuous AI-driven timing intelligence
@@ -36,46 +32,29 @@ Address 'not the right time' objections by uncovering true urgency drivers, quan
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: timing objection is raised, deal timeline slips, or reengagement date approaches.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for timing-objection-handling with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI timing intelligence agent analyzing historical timing objections and outcomes: identifies which are real constraints vs. avoidance, which resolution tactics work best by segment.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered objection diagnosis: AI agent analyzes language patterns in objection to determine true underlying concern (budget, authority, technical fit, competing priority, risk aversion).
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which timing objection responses lead to timeline acceleration and eventual closes; AI agent recommends optimal approaches by prospect type.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive cost of inaction modeling: AI agent generates personalized, data-driven cost analyses based on prospect's specific situation and historical similar customer outcomes.
-
-6. Deploy proactive timing risk management: AI agent monitors deal progression and predicts timing objections before they're raised; suggests preemptive urgency creation.
-
-7. Implement intelligent reengagement: AI agent tracks reengagement timing and generates personalized outreach when stated 'right time' approaches or market conditions create urgency.
-
-8. Create dynamic urgency generation: AI agent identifies prospect-specific urgency drivers (budget cycles, competitive pressures, seasonal needs, regulatory changes) and suggests timing tactics.
-
-9. Set guardrails: if timeline acceleration rate drops >15% or resolution effectiveness falls below Scalable benchmark for 2+ weeks, alert team and suggest refinements.
-
-10. Establish monthly review cycle: analyze timing objection patterns, resolution effectiveness, urgency tactics performance; refine AI agent intelligence based on deal outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving timing objection resolution and deal acceleration over 6 months via continuous AI-driven timing intelligence. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

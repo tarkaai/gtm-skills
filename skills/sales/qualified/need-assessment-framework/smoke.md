@@ -1,7 +1,8 @@
 ---
 name: need-assessment-framework-smoke
 description: >
-  Need Assessment Framework — Smoke Test. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+    Need Assessment Framework — Smoke Test. Systematically evaluate whether prospects have genuine
+  business needs your product solves to avoid wasting time on poor-fit opportunities.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -13,6 +14,7 @@ slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Need Assessment Framework — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+Need Assessment Framework — Smoke Test. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** ≥10 need assessments completed in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Create need assessment scorecard with 5-7 critical business needs your product addresses (e.g., reducing manual work, improving data accuracy, accelerating workflows).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for need-assessment-framework. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. On first 10 discovery calls, systematically ask about each need area: current pain severity (1-10), impact on business, attempted solutions, urgency of fixing.
+### 2. Prepare outreach materials
+Using the ICP output, draft your need-assessment-framework materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Score each need on 3-point scale: Critical (3), Moderate (2), Low (1); calculate total need score out of 21 for 7 needs.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Set minimum viable need threshold: prospects must score ≥12 total with at least 2 Critical needs to qualify for continued engagement.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Log need scores in Attio custom fields immediately after each discovery call; track which specific needs resonate most by ICP segment.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥10 need assessments completed in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: need_assessment_completed, critical_need_identified, low_need_disqualified.
-
-7. Compare deal progression: measure conversion rates for high-need (≥15) vs. medium-need (12-14) vs. low-need (<12) prospects.
-
-8. Set pass threshold: Complete need assessments on ≥10 opportunities in 1 week with ≥60% meeting minimum viable need threshold.
-
-9. Disqualify low-need prospects early to focus time on high-fit opportunities; document which need areas drive highest qualification rates.
-
-10. If threshold met, document need assessment questions and proceed to Baseline; if not, refine needs or ICP targeting.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥10 need assessments completed in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

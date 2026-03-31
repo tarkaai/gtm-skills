@@ -1,7 +1,9 @@
 ---
 name: technical-fit-objection-baseline
 description: >
-  Technical Fit Objection Handling — Baseline Run. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+    Technical Fit Objection Handling — Baseline Run. Address concerns about technical compatibility,
+  missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to
+  maintain deal momentum.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,17 +14,16 @@ kpis: ["Objection resolution rate", "Deal save rate", "Technical proof effective
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Technical Fit Objection Handling — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+Technical Fit Objection Handling — Baseline Run. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
 
 **Time commitment:** 15 hours over 2 weeks
 **Pass threshold:** Technical objections handled on ≥80% of instances over 2 weeks
@@ -32,41 +33,28 @@ Address concerns about technical compatibility, missing features, or capability 
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo (includes dialer) or Aircall:** ~$50–100/mo
-
-_Total play-specific: ~$50–100/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand technical objection handling to 20-30 instances over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build technical objection playbook: common gaps by category, standard responses, workaround library, roadmap positioning, proof point repository.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create technical proof library: architecture docs, performance benchmarks, integration examples, security certifications, scalability case studies organized by objection type.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `technical-fit-objection_email_sent`, `technical-fit-objection_email_replied`, `technical-fit-objection_meeting_booked`, `technical-fit-objection_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: objection_category, criticality_level, response_type, technical_resource_engaged, resolution_outcome.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop gap assessment framework: evaluate whether gap is dealbreaker, timing sensitivity, competitive impact, workaround feasibility, roadmap fit.
-
-6. Track technical objection outcomes: measure resolution rates by gap type, deals saved vs lost, time to resolution, impact on deal size and timeline.
-
-7. Build escalation process: define when to engage product team for roadmap commitments, when to scope custom development, when to walk away from bad-fit deals.
-
-8. Set pass threshold: Technical objections addressed on ≥80% of instances over 2 weeks with ≥65% achieving resolution that advances deal.
-
-9. Analyze objection patterns: which technical gaps appear most frequently, which are real dealbreakers vs negotiation tactics, which workarounds work best.
-
-10. If threshold met, document technical objection framework and proceed to Scalable; if not, refine response library or technical proof.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Technical objections handled on ≥80% of instances over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -81,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical objections handled on ≥80% of instances over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

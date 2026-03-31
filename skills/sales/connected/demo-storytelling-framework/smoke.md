@@ -1,7 +1,9 @@
 ---
 name: demo-storytelling-framework-smoke
 description: >
-  Demo Storytelling Framework — Smoke Test. Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
+    Demo Storytelling Framework — Smoke Test. Transform product demos from feature walkthroughs into
+  compelling narratives using customer stories and prospect-specific scenarios to drive emotional
+  engagement and conviction.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product"
@@ -13,6 +15,7 @@ slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Demo Storytelling Framework — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product
 
 ## Overview
-Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
+Demo Storytelling Framework — Smoke Test. Transform product demos from feature walkthroughs into compelling narratives using customer stories and prospect-specific scenarios to drive emotional engagement and conviction.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** Storytelling demos delivered to ≥5 opportunities in 1 week
@@ -35,32 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Restructure next 5-8 demos using story framework: Start with customer challenge similar to prospect's, show how they approached solution, demonstrate product solving that specific problem, end with results achieved.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for demo-storytelling-framework. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Gather customer stories from case studies and interviews: 3-5 compelling stories covering different use cases, ICPs, and outcomes.
+### 2. Prepare outreach materials
+Using the ICP output, draft your demo-storytelling-framework materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Create demo story structure: Problem (customer faced this challenge), Impact (here's what it cost them), Solution (here's how they used our product), Outcome (here's what they achieved).
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Personalize story selection: choose customer story that matches prospect's industry, company size, use case, and pain points discussed in discovery.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Weave product demonstration through story: instead of 'Let me show you this feature', say 'Here's how [Customer] uses this capability to [achieve outcome]'.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Storytelling demos delivered to ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: storytelling_demo_delivered, customer_story_referenced, prospect_engagement_signals, emotional_connection_observed.
-
-7. Measure engagement cues during demo: note when prospects lean in, ask questions, take notes, express excitement or relate to story.
-
-8. Set pass threshold: Deliver storytelling demos to ≥5 opportunities in 1 week with ≥70% showing strong engagement signals.
-
-9. Compare storytelling vs. feature-walkthrough demos: measure difference in engagement, demo-to-proposal rates, close rates.
-
-10. Document which stories and narrative structures drive strongest response; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Storytelling demos delivered to ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

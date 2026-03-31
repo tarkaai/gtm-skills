@@ -1,7 +1,9 @@
 ---
 name: trial-to-paid-conversion-baseline
 description: >
-  Trial-to-Paid Conversion — Baseline Run. Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
+    Trial-to-Paid Conversion — Baseline Run. Convert free trial users to paying customers by driving
+  activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven
+  trial orchestration that personalizes interventions and maximizes conversion rates.
 stage: "Sales > Won"
 motion: "Outbound Founder-Led"
 channels: "Email, Product, Direct"
@@ -12,17 +14,16 @@ kpis: ["Trial conversion rate by segment", "Activation milestone completion rate
 slug: "trial-to-paid-conversion"
 install: "npx gtm-skills add sales/won/trial-to-paid-conversion"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Trial-to-Paid Conversion — Baseline Run
 
 > **Stage:** Sales → Won | **Motion:** Outbound Founder-Led | **Channels:** Email, Product, Direct
 
 ## Overview
-Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
+Trial-to-Paid Conversion — Baseline Run. Convert free trial users to paying customers by driving activation, demonstrating value, and creating urgency, from manual trial follow-ups to AI-driven trial orchestration that personalizes interventions and maximizes conversion rates.
 
 **Time commitment:** 24 hours over 2 weeks
 **Pass threshold:** >=45% trial-to-paid conversion rate over 2 weeks
@@ -32,43 +33,28 @@ Convert free trial users to paying customers by driving activation, demonstratin
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Expand to 30-50 trial users over 2 weeks; build an automated email sequence in Instantly or similar: welcome email (day 0), setup guide (day 1), milestone coaching (days 3, 7, 10), upgrade offer (day 12), urgency reminder (day 13).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create in-app messaging (using PostHog or Intercom) that triggers based on user behavior: if user hasn't completed setup after 24 hours, show "Need help getting started?" prompt with link to guide or call booking.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=45% trial-to-paid conversion rate, and users who hit >=3 activation milestones convert at >=3x rate vs users who hit <2 milestones.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `trial-to-paid-conversion_email_sent`, `trial-to-paid-conversion_email_replied`, `trial-to-paid-conversion_meeting_booked`, `trial-to-paid-conversion_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Sync trial user data from product (via PostHog) to Attio so sales/success teams can see trial activity, activation progress, and engagement score in real-time.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement activation-based outreach: when user hits milestone 2, trigger sales call booking email; when user hits milestone 3, trigger upgrade offer; when user stalls, trigger help offer.
-
-6. Build a trial health score in PostHog: combine activation milestones (40%), feature usage frequency (30%), team size (20%), and engagement with emails/content (10%); score 0-100.
-
-7. Create trial user segments in PostHog: Hot (score >=70, call immediately), Warm (score 40-69, automated nurture), Cold (score <40, re-engagement campaign or let expire).
-
-8. Track trial outcomes in PostHog: trial_converted (paid), trial_expired (didn't convert), trial_extended (needed more time); analyze why users don't convert (didn't see value, budget issue, not decision-maker).
-
-9. After 2 weeks, measure conversion rate by segment and activation milestone; if Hot trial users convert >=60% and overall conversion >=45%, trial motion is working.
-
-10. If threshold met, document trial playbook and activation benchmarks, then move to Scalable; otherwise improve onboarding, reduce friction, or adjust trial length.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=45% trial-to-paid conversion rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=45% trial-to-paid conversion rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

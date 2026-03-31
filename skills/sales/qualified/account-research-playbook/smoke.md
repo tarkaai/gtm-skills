@@ -1,7 +1,10 @@
 ---
 name: account-research-playbook-smoke
 description: >
-  Account Research & Intelligence — Smoke Test. Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
+    Account Research & Intelligence — Smoke Test. Systematically research target accounts before
+  outreach to personalize messaging and improve relevance, from manual LinkedIn research to
+  AI-driven account intelligence that auto-generates comprehensive account profiles with buying
+  signals and talk tracks.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +16,7 @@ slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Account Research & Intelligence — Smoke Test
@@ -20,7 +24,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
+Account Research & Intelligence — Smoke Test. Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
 
 **Time commitment:** 8 hours over 1 week
 **Pass threshold:** >=8 accounts researched and >=30% reply rate from personalized outreach within 1 week
@@ -35,34 +39,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Create an account research template in a spreadsheet with sections: Company Overview (what they do, size, stage), Recent News (funding, launches, executive hires), Tech Stack (tools they use), Pain Indicators (signals they have your problem), Key Contacts (names, titles, LinkedIn URLs), Personalization Hooks (specific reference points for outreach).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for account-research-playbook. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Select 10 target accounts from your ICP; spend 15-20 minutes researching each using LinkedIn, company website, Crunchbase, news search, G2 reviews, job postings.
+### 2. Prepare outreach materials
+Using the ICP output, draft your account-research-playbook materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: complete research for >=8 accounts, and personalized outreach to researched accounts yields >=30% reply rate vs <=15% for non-researched accounts within 1 week.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. For each account, identify 2-3 personalization hooks: recent funding round ("Congrats on Series B"), new executive hire ("Saw you brought on new CRO"), product launch ("Noticed you launched X"), pain indicator from job posting ("Hiring for Y role suggests you're scaling Z").
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Use research to craft personalized first lines in outreach emails: "Saw [Company] just raised $X to expand into [market]—as you scale, [pain point] becomes critical. We help companies like [similar company] solve this by [value prop]."
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=8 accounts researched and >=30% reply rate from personalized outreach within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log research data in Attio with custom fields for recent_news, tech_stack, pain_indicators, personalization_hooks; track which hooks generate replies.
-
-7. In PostHog, create events for account_researched and personalized_outreach_sent with properties for research depth and hooks used.
-
-8. After outreach, track reply rates by research quality (deep research vs surface-level vs no research); measure whether personalization improves engagement.
-
-9. After 1 week, compare reply rates: do researched accounts respond >=2x more than non-researched? If yes, research delivers ROI.
-
-10. If >=8 accounts researched and reply rate >=30%, account research is valuable; document research process and proceed to Baseline; otherwise refine research sources or personalization approach.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=8 accounts researched and >=30% reply rate from personalized outreach within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

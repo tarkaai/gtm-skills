@@ -1,7 +1,8 @@
 ---
 name: outbound-with-value-asset-smoke
 description: >
-  Outbound With Value Asset — Smoke Test. Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
+    Outbound With Value Asset — Smoke Test. Share a one-page checklist asset in 100 emails to see if
+  asset-led messaging drives replies that reference the asset.
 stage: "Marketing > Problem Aware"
 motion: "Outbound Founder-Led"
 channels: "Other"
@@ -13,6 +14,7 @@ slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Outbound With Value Asset — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Outbound Founder-Led | **Channels:** Other
 
 ## Overview
-Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
+Outbound With Value Asset — Smoke Test. Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
 
 **Time commitment:** 3 hours over 1 week
 **Pass threshold:** ≥ 2 positive replies referencing asset in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-_No specialized tools required at this level._
-
----
-
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 2 positive replies referencing asset in 1 week).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for outbound-with-value-asset. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Prepare outreach materials
+Using the ICP output, draft your outbound-with-value-asset materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set up PostHog or your CRM with properties for Reply rate, Open rate so you can compare results to your threshold.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥ 2 positive replies referencing asset in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -73,8 +66,8 @@ _No specialized tools required at this level._
 ## Pass threshold
 **≥ 2 positive replies referencing asset in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: need-assessment-framework-scalable
 description: >
-  Need Assessment Framework — Scalable Automation. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+    Need Assessment Framework — Scalable Automation. Systematically evaluate whether prospects have
+  genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,19 +13,16 @@ kpis: ["Need assessment completion rate", "Need score accuracy", "Sales cycle re
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Need Assessment Framework — Scalable Automation
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
+Need Assessment Framework — Scalable Automation. Systematically evaluate whether prospects have genuine business needs your product solves to avoid wasting time on poor-fit opportunities.
 
 **Time commitment:** 55 hours over 2 months
 **Pass threshold:** Need assessment completed on ≥70% of opportunities at scale over 2 months with improved close rate prediction
@@ -34,44 +32,28 @@ Systematically evaluate whether prospects have genuine business needs your produ
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that prompts sales reps to complete need assessment immediately after first discovery call; auto-calculates need score and assigns tier.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create pre-call need hypothesis: n8n analyzes prospect data (industry, company size, tech stack, job postings, LinkedIn signals) and predicts likely need profile before first call.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated need-based routing: high-need (A-tier) opportunities get priority follow-up within 24 hours; low-need (C-tier) get automated nurture sequence or disqualification.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up need-triggered content delivery: n8n automatically sends need-specific case studies, ROI calculators, and product materials based on identified need areas.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when need assessment is incomplete after 48 hours, trigger reminder with pre-populated need hypothesis and suggested questions.
-
-6. Build need intelligence dashboard: track need distribution across pipeline, need-to-close correlation, need pattern trends over time, rep performance on need assessment.
-
-7. Implement A/B testing on need questions: test different question phrasings and sequences to improve assessment accuracy and prospect engagement.
-
-8. Set guardrails: need assessment completion rate must stay ≥70% of Baseline level; predictive accuracy must remain within 20% of close rate correlation.
-
-9. Create need-based forecasting: use need scores as leading indicator for pipeline quality and revenue prediction.
-
-10. After 2 months, evaluate need assessment impact on qualification accuracy and sales efficiency; if metrics hold, proceed to Durable AI-driven need intelligence.
+### 5. Evaluate against threshold
+Measure against: Need assessment completed on ≥70% of opportunities at scale over 2 months with improved close rate prediction. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -87,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Need assessment completed on ≥70% of opportunities at scale over 2 months with improved close rate prediction**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

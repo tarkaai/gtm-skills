@@ -1,7 +1,8 @@
 ---
 name: timing-qualification-smoke
 description: >
-  Timing Qualification Process — Smoke Test. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+    Timing Qualification Process — Smoke Test. Determine prospect's urgency and buying timeline to
+  prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -13,6 +14,7 @@ slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Timing Qualification Process — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+Timing Qualification Process — Smoke Test. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
 
 **Time commitment:** 4 hours over 1 week
 **Pass threshold:** Timeline identified for ≥8 opportunities in 1 week
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. On first 10 discovery calls, ask explicitly 'What's driving you to solve this now?' and 'When do you need this in place?' to understand urgency.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for timing-qualification. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Identify timing triggers: upcoming deadline, seasonal need, executive mandate, budget expiration, competitive pressure.
+### 2. Prepare outreach materials
+Using the ICP output, draft your timing-qualification materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Use timeline categorization: Immediate (0-30 days), Near-term (1-3 months), Medium-term (3-6 months), Long-term (6+ months).
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Ask follow-up 'What happens if you don't solve this by [timeline]?' to validate urgency.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Log timeline in Attio with specific target date and urgency rating (High/Medium/Low).
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Timeline identified for ≥8 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: timeline_identified, urgent_opportunity, timeline_validated.
-
-7. Prioritize Immediate and Near-term opportunities for fast follow-up; place Long-term in nurture.
-
-8. Set pass threshold: Timeline identified for ≥8 opportunities in 1 week with ≥50% Immediate or Near-term.
-
-9. Compare close rates by timeline category to validate that urgency predicts deal velocity.
-
-10. Document which timing questions work best; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -74,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Timeline identified for ≥8 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

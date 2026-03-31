@@ -1,7 +1,8 @@
 ---
 name: multi-stakeholder-discovery-scalable
 description: >
-  Multi-Stakeholder Discovery Process — Scalable Automation. Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+    Multi-Stakeholder Discovery Process — Scalable Automation. Conduct discovery across all key
+  stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,19 +13,16 @@ kpis: ["Stakeholder coverage rate", "Consensus building success", "Multi-threadi
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Multi-Stakeholder Discovery Process — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+Multi-Stakeholder Discovery Process — Scalable Automation. Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
 
 **Time commitment:** 62 hours over 2 months
 **Pass threshold:** Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building
@@ -34,45 +32,28 @@ Conduct discovery across all key stakeholders to understand diverse needs, prior
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that prompts stakeholder mapping after first discovery call; provides templates for tracking stakeholder matrix.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create stakeholder intelligence: n8n analyzes LinkedIn and organizational data to predict stakeholder structure before first call; suggests who to engage.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated stakeholder outreach: n8n generates personalized meeting requests for each stakeholder group with tailored messaging by role.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up stakeholder engagement tracking: n8n monitors which stakeholders have been engaged, which need follow-up, which are blocking progress.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when key stakeholder group hasn't been engaged after 7 days, trigger reminder with suggested outreach approach.
-
-6. Build stakeholder intelligence dashboard: track engagement coverage, consensus levels, multi-threading success rates, stakeholder-specific close rates.
-
-7. Create stakeholder content library: maintain role-specific materials (executive one-pagers, technical architecture docs, user guides, ROI calculators) for targeted engagement.
-
-8. Set guardrails: stakeholder discovery completeness must stay ≥75% of Baseline level; deals must engage ≥3 stakeholder types before proposal.
-
-9. Implement stakeholder gap alerting: flag deals advancing without key stakeholder engagement as high risk for late-stage blockers.
-
-10. After 2 months, evaluate multi-stakeholder discovery impact on close rates and deal predictability; if metrics hold, proceed to Durable AI-driven stakeholder intelligence.
+### 5. Evaluate against threshold
+Measure against: Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: timing-qualification-baseline
 description: >
-  Timing Qualification Process — Baseline Run. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+    Timing Qualification Process — Baseline Run. Determine prospect's urgency and buying timeline to
+  prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,17 +13,16 @@ kpis: ["Timeline qualification rate", "Timeline accuracy", "Deal velocity by tim
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Timing Qualification Process — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
+Timing Qualification Process — Baseline Run. Determine prospect's urgency and buying timeline to prioritize opportunities ready to close now and avoid pipeline bloat from future deals.
 
 **Time commitment:** 13 hours over 2 weeks
 **Pass threshold:** Timeline qualified on ≥80% of opportunities over 2 weeks
@@ -32,42 +32,28 @@ Determine prospect's urgency and buying timeline to prioritize opportunities rea
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand timing qualification to 50-100 opportunities over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build timing trigger library documenting common urgency drivers by industry and ICP.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create timeline-specific engagement strategies: Immediate gets daily touchpoints, Near-term gets 2-3x/week.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `timing-qualification_email_sent`, `timing-qualification_email_replied`, `timing-qualification_meeting_booked`, `timing-qualification_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: timeline_category_assigned, urgency_trigger_identified, timeline_shift_detected.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Implement timeline validation process: for Immediate/Near-term deals, confirm timeline with multiple stakeholders.
-
-6. Track conversion metrics: measure close rate, deal velocity, forecast accuracy by timeline category.
-
-7. Build pipeline segmentation: separate 'active pipeline' (0-3 months) from 'future pipeline' (3+ months).
-
-8. Set pass threshold: Timeline qualified on ≥80% of opportunities over 2 weeks.
-
-9. Analyze timing patterns: which prospects give accurate timelines, what causes slippage.
-
-10. If threshold met, document timing qualification playbook and proceed to Scalable.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Timeline qualified on ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Timeline qualified on ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: technical-requirements-discovery-baseline
 description: >
-  Technical Requirements Discovery — Baseline Run. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+    Technical Requirements Discovery — Baseline Run. Systematically uncover technical needs,
+  integrations, security requirements, and constraints to prevent deal-killing surprises late in the
+  sales cycle.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Technical discovery completion rate", "Technical fit accuracy", "Solutio
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Technical Requirements Discovery — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
+Technical Requirements Discovery — Baseline Run. Systematically uncover technical needs, integrations, security requirements, and constraints to prevent deal-killing surprises late in the sales cycle.
 
 **Time commitment:** 16 hours over 2 weeks
 **Pass threshold:** Technical discovery completed on ≥80% of opportunities over 2 weeks
@@ -32,42 +33,28 @@ Systematically uncover technical needs, integrations, security requirements, and
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand technical discovery to 30-50 opportunities over 2 weeks; build comprehensive technical requirements framework.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create technical requirement categories: Integration (APIs, data sync, SSO), Security (SOC2, GDPR, HIPAA, ISO27001), Infrastructure (cloud, on-prem, hybrid), Performance (SLAs, uptime, scale), Data (migration, formats, volume).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Develop technical discovery question bank with 3-5 questions per category; tailor questions by prospect's industry and tech maturity.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `technical-requirements-discovery_email_sent`, `technical-requirements-discovery_email_replied`, `technical-requirements-discovery_meeting_booked`, `technical-requirements-discovery_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: technical_category_assessed, complex_integration_identified, security_certification_required, custom_development_needed.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Build technical handoff process: when technical complexity is high, schedule solutions engineer or architect call within 48 hours.
-
-6. Track technical-to-commercial correlation: measure how technical fit score predicts close rate, deal velocity, and implementation success.
-
-7. Create technical requirement prioritization: separate must-haves from nice-to-haves; focus on deal-critical technical needs first.
-
-8. Set pass threshold: Technical discovery completed on ≥80% of qualified opportunities over 2 weeks with ≥70% accurately predicting technical fit.
-
-9. Build technical objection library: document common technical concerns and how to address them (security questionnaires, architecture diagrams, compliance docs).
-
-10. If threshold met, document technical discovery playbook and proceed to Scalable; if not, refine technical assessment criteria.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Technical discovery completed on ≥80% of opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Technical discovery completed on ≥80% of opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: meddic-qualification-smoke
 description: >
-  MEDDIC Qualification System — Smoke Test. Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+    MEDDIC Qualification System — Smoke Test. Apply MEDDIC (Metrics, Economic Buyer, Decision
+  Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual
+  tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # MEDDIC Qualification System — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
+MEDDIC Qualification System — Smoke Test. Apply MEDDIC (Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion) to complex enterprise deals, from manual tracking to AI-driven continuous qualification that surfaces deal risks and accelerates cycles.
 
 **Time commitment:** 8 hours over 1 week
 **Pass threshold:** >=2 deals with >=80% MEDDIC completeness in 1 week
@@ -35,34 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Create a MEDDIC scorecard in a spreadsheet with sections for Metrics (quantifiable goals), Economic Buyer (name/title), Decision Criteria (must-haves), Decision Process (steps/timeline), Pain (business impact), Champion (internal advocate).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for meddic-qualification. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Select 3-5 active opportunities from your pipeline; for each, fill out the MEDDIC scorecard based on current knowledge.
+### 2. Prepare outreach materials
+Using the ICP output, draft your meddic-qualification materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Identify gaps: which MEDDIC elements are you missing for each deal? Write 2-3 discovery questions to uncover each missing element.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Set pass threshold: complete >=80% of MEDDIC elements for at least 2 deals within 1 week to validate the framework is practical.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Schedule follow-up calls with prospects to fill MEDDIC gaps; use your questions to uncover Economic Buyer, Decision Process, and Champion.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=2 deals with >=80% MEDDIC completeness in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. After each call, update the MEDDIC scorecard in the spreadsheet and assign a completeness score (0-100%) based on how many elements are known.
-
-7. Log MEDDIC completion scores in Attio as a custom field; track which elements are hardest to uncover (typically Champion and Decision Process).
-
-8. In PostHog, create events for meddic_element_discovered with properties for element type (Metrics, Economic Buyer, etc.) and deal stage.
-
-9. After 1 week, calculate average MEDDIC completeness across your deals; if >=2 deals reach >=80% completeness, the framework is working.
-
-10. If threshold met, document which questions best uncovered each MEDDIC element and proceed to Baseline; otherwise refine discovery approach and retest.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -76,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=2 deals with >=80% MEDDIC completeness in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

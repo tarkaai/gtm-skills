@@ -1,7 +1,10 @@
 ---
 name: bant-qualification-durable
 description: >
-  BANT Qualification Framework — Durable Intelligence. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+    BANT Qualification Framework — Durable Intelligence. Systematically qualify leads using Budget,
+  Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual
+  scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market
+  feedback.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +15,15 @@ kpis: ["Qualification accuracy", "Agent-driven experiment win rate", "False nega
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # BANT Qualification Framework — Durable Intelligence
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
+BANT Qualification Framework — Durable Intelligence. Systematically qualify leads using Budget, Authority, Need, and Timeline to ensure you spend time on deals that can close, from manual scoring in spreadsheets to AI-driven continuous qualification that adapts criteria to market feedback.
 
 **Time commitment:** 120 hours over 6 months
 **Pass threshold:** Sustained or improving qualification accuracy (>=35%) over 6 months via continuous agent-driven BANT optimization and market adaptation
@@ -36,47 +33,29 @@ Systematically qualify leads using Budget, Authority, Need, and Timeline to ensu
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Clay** (Enrichment)
-- **OpenAI** (AI/LLM)
-- **Cal.com** (Scheduling)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes won vs lost deals in PostHog to identify which BANT patterns correlate with closed revenue.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for bant-qualification with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Configure the agent to run weekly experiments: adjust BANT scoring weights, test new qualification questions, or add/remove enrichment signals based on win/loss patterns.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Set up a feedback loop where every won deal triggers the agent to analyze that lead's original BANT scores; strengthen scoring rules for similar profiles.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. When a lead is disqualified but later closes (false negative), the agent flags the pattern and suggests criteria adjustments; test changes on 10% of new leads before full rollout.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build an agent-driven A/B testing framework in PostHog: split new leads into control (current BANT rules) and variant (agent-optimized rules); compare qualification accuracy and close rates.
-
-6. Deploy an AI co-pilot in n8n that listens to discovery call recordings (via Fireflies or similar), extracts BANT signals automatically, and updates Attio with confidence scores.
-
-7. Create market adaptation logic: if qualification rate drops >20% for 2 consecutive weeks, agent alerts team and suggests re-calibrating BANT thresholds or enrichment sources.
-
-8. Agent continuously refines pre-scoring rules by analyzing which enrichment signals (revenue, tech stack, funding events) best predict successful qualification.
-
-9. Implement automatic tuning: agent adjusts BANT question library based on which questions yield highest correlation with closed deals; archive low-signal questions.
-
-10. Establish monthly review cycles: agent generates reports on BANT optimization experiments, qualification trends, and recommended scoring model updates; team reviews and approves changes or rolls back underperformers.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving qualification accuracy (>=35%) over 6 months via continuous agent-driven BANT optimization and market adaptation. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

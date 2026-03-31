@@ -1,7 +1,10 @@
 ---
 name: roi-calculator-baseline
 description: >
-  ROI Calculator & Business Case — Baseline Run. Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
+    ROI Calculator & Business Case — Baseline Run. Quantify and demonstrate ROI to justify purchase
+  decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic
+  business case generation that personalizes value narratives and auto-updates based on prospect
+  data and market benchmarks.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email, Website"
@@ -12,17 +15,16 @@ kpis: ["ROI distribution", "Deal velocity by ROI tier", "Close rate by ROI tier"
 slug: "roi-calculator"
 install: "npx gtm-skills add sales/proposed/roi-calculator"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # ROI Calculator & Business Case — Baseline Run
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email, Website
 
 ## Overview
-Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
+ROI Calculator & Business Case — Baseline Run. Quantify and demonstrate ROI to justify purchase decisions and overcome budget objections, from manual ROI spreadsheets to AI-driven dynamic business case generation that personalizes value narratives and auto-updates based on prospect data and market benchmarks.
 
 **Time commitment:** 24 hours over 2 weeks
 **Pass threshold:** >=70% of prospects with >=5x ROI and >=40% faster close time for strong-ROI deals over 2 weeks
@@ -32,43 +34,28 @@ Quantify and demonstrate ROI to justify purchase decisions and overcome budget o
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand ROI calculators to 15-20 prospects over 2 weeks; build a professional ROI calculator tool (web-based or polished spreadsheet) with multiple value drivers (time savings, cost reduction, revenue increase, risk mitigation).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create industry/persona-specific ROI templates: Sales ROI (pipeline increase, deal velocity), Operations ROI (efficiency, cost reduction), Finance ROI (compliance savings, reporting time).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: >=70% of prospects achieve >=5x ROI, and prospects with strong ROI close >=40% faster than prospects with weak ROI (<3x).
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `roi-calculator_email_sent`, `roi-calculator_email_replied`, `roi-calculator_meeting_booked`, `roi-calculator_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. During discovery and demo, continuously gather ROI inputs; validate numbers with prospect: "You mentioned 40 hours/month—at $100/hour, that's $48K/year. Sound right?"
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Build comprehensive business cases: combine ROI calculator with qualitative benefits (risk reduction, competitive advantage), customer proof points (case studies), and implementation plan; deliver as polished 1-2 page document.
-
-6. Present ROI early in sales cycle (post-demo) to anchor value: "Before we discuss pricing, let's quantify the value—here's what we're projecting based on your situation." Sets high-value expectation.
-
-7. Sync ROI data from Attio to PostHog; create a funnel showing roi_calculated → roi_presented → roi_validated → proposal_delivered → deal_closed; measure conversion at each stage.
-
-8. For deals with weak ROI (<3x), either find additional value drivers (risk reduction, compliance, revenue impact) or consider disqualifying (low ROI = low close probability + high churn risk).
-
-9. After 2 weeks, compare deal velocity and close rates for strong ROI (>=5x) vs weak ROI (<3x) deals; if strong ROI accelerates closes by >=40%, ROI is highly predictive.
-
-10. If >=70% of deals have strong ROI and strong-ROI deals close >=40% faster, move to Scalable; otherwise improve discovery quality or expand value drivers in calculator.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=70% of prospects with >=5x ROI and >=40% faster close time for strong-ROI deals over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=70% of prospects with >=5x ROI and >=40% faster close time for strong-ROI deals over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: price-objection-handling-smoke
 description: >
-  Price Objection Handling — Smoke Test. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+    Price Objection Handling — Smoke Test. Address "too expensive" objections by reframing value,
+  demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven
+  dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -13,6 +15,7 @@ slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Price Objection Handling — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+Price Objection Handling — Smoke Test. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** Overcome >=3 out of 5 price objections within 1 week
@@ -35,33 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Document 5 recent price objections in a spreadsheet with columns: Objection Statement, Prospect Context (budget, company size), Your Response, Outcome; identify patterns in why prospects push back on price.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for price-objection-handling. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Create 3-5 price objection response frameworks: Value Reframe ("$20K seems high, but you're losing $100K/year—this pays for itself in 10 weeks"), ROI Proof (share case study with similar savings), Payment Flexibility (offer quarterly vs annual), Discount Logic (volume discount, multi-year discount).
+### 2. Prepare outreach materials
+Using the ICP output, draft your price-objection-handling materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: successfully overcome >=3 out of 5 price objections (prospects move forward after objection) within 1 week.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. When prospects say "too expensive," diagnose root cause with questions: "Compared to what?" "What budget did you have in mind?" "What's the cost of not solving this problem?" "How are you measuring value?"
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Use pain quantification from discovery to reframe price: "You're spending $100K/year on this problem. Our $20K solution saves you $80K annually—would you spend 20 cents to save a dollar?"
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Overcome >=3 out of 5 price objections within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log objection handling attempts in Attio with fields for objection_type, response_framework, and outcome (moved forward, still negotiating, lost); track success rate per framework.
-
-7. In PostHog, create events for price_objection_received and price_objection_handled with properties for response type and outcome.
-
-8. For objections you can't overcome, identify why: insufficient pain quantification? champion not strong? no budget allocated? missing economic buyer? Document root causes.
-
-9. After 1 week, analyze which response frameworks work best; if >=3 out of 5 objections are overcome, you have a repeatable process.
-
-10. If threshold met, document winning objection responses and proceed to Baseline; if not, refine value messaging or improve discovery quality to prevent weak objections.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Overcome >=3 out of 5 price objections within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

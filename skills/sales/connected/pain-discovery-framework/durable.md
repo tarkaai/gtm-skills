@@ -1,7 +1,10 @@
 ---
 name: pain-discovery-framework-durable
 description: >
-  Pain Discovery Framework — Durable Intelligence. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+    Pain Discovery Framework — Durable Intelligence. Uncover and quantify prospect pain points to
+  build compelling business cases and justify budget allocation, from manual discovery note-taking
+  to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business
+  case content.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,21 +15,15 @@ kpis: ["Pain quantification rate", "Pain-to-price ratio trend", "Agent experimen
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Pain Discovery Framework — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
+Pain Discovery Framework — Durable Intelligence. Uncover and quantify prospect pain points to build compelling business cases and justify budget allocation, from manual discovery note-taking to AI-driven pain intelligence that surfaces high-ROI opportunities and auto-generates business case content.
 
 **Time commitment:** 130 hours over 6 months
 **Pass threshold:** Sustained or improving pain discovery effectiveness (>=70% quantification, >=10x cost) over 6 months via continuous agent-driven question optimization, benchmark refinement, and market adaptation
@@ -36,44 +33,29 @@ Uncover and quantify prospect pain points to build compelling business cases and
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (AI-assisted calling):** ~$100–300/mo
-
-_Total play-specific: ~$100–300/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Fireflies** (Sales Engagement)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which pain types and severities best predict closed-won deals; auto-prioritizes pain discovery based on revenue correlation.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for pain-discovery-framework with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run experiments on pain quantification techniques: test different questioning approaches, benchmark sources, and validation methods; promote techniques with highest accuracy.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every closed-won deal triggers the agent to analyze pain discovery quality; identify which pains were most influential in close decision and emphasize those in future discoveries.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy real-time pain intelligence: agent listens to discovery calls and suggests follow-up questions mid-call to dig deeper into high-value pain areas (e.g., prospect mentions compliance—agent suggests asking about penalty costs).
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement market adaptation: if certain pain types become less relevant (e.g., remote work pains decrease as offices reopen), agent adjusts discovery priorities and updates playbooks.
-
-6. Build AI-driven business case personalization: agent analyzes prospect's industry, role, and quantified pains to generate custom business cases emphasizing most relevant ROI dimensions (CFO gets payback period, CTO gets risk reduction).
-
-7. Create automatic pain validation sequences: agent monitors prospect engagement with pain summaries and business cases; if low engagement, suggests alternative pain framing or additional discovery.
-
-8. Agent continuously refines pain benchmarks: learns from each new data point to improve industry/role-specific pain estimates; increases accuracy of pain quantification for prospects without measured data.
-
-9. Implement predictive pain scoring: agent predicts which prospects will yield high quantifiable pain based on early signals (company size, industry, tech stack); prioritizes those prospects for discovery.
-
-10. Establish monthly review cycles: agent generates pain intelligence reports showing pain type trends, quantification accuracy, ROI impact, and recommended discovery updates; team reviews and approves question library changes or rolls back underperforming experiments.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving pain discovery effectiveness (>=70% quantification, >=10x cost) over 6 months via continuous agent-driven question optimization, benchmark refinement, and market adaptation. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

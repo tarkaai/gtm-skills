@@ -1,7 +1,8 @@
 ---
 name: multi-stakeholder-discovery-baseline
 description: >
-  Multi-Stakeholder Discovery Process — Baseline Run. Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+    Multi-Stakeholder Discovery Process — Baseline Run. Conduct discovery across all key
+  stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +13,16 @@ kpis: ["Stakeholder coverage completeness", "Consensus achievement rate", "Multi
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Multi-Stakeholder Discovery Process — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+Multi-Stakeholder Discovery Process — Baseline Run. Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** Multi-stakeholder discovery on ≥80% of complex deals over 2 weeks
@@ -32,42 +32,28 @@ Conduct discovery across all key stakeholders to understand diverse needs, prior
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand multi-stakeholder discovery to 20-30 complex deals over 2 weeks.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Build stakeholder discovery framework: standardized approach to identify, prioritize, and engage all key decision participants.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Create stakeholder-specific question banks: tailored discovery questions for executives, technical buyers, end users, procurement, legal, security.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `multi-stakeholder-discovery_email_sent`, `multi-stakeholder-discovery_email_replied`, `multi-stakeholder-discovery_meeting_booked`, `multi-stakeholder-discovery_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Set up PostHog event tracking: stakeholder_identified_by_type, discovery_depth_score, consensus_level, multi_threading_success.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Develop stakeholder engagement cadence: coordinate timing of discovery calls to gather input without overwhelming prospect organization.
-
-6. Track stakeholder influence mapping: measure how well you understand power dynamics, who influences whom, where decision authority truly lies.
-
-7. Build consensus-building strategies: when stakeholder needs conflict, develop approaches to find common ground or prioritize most critical needs.
-
-8. Set pass threshold: Multi-stakeholder discovery on ≥80% of complex deals over 2 weeks with ≥75% achieving consensus on key requirements.
-
-9. Analyze stakeholder patterns: which stakeholder combinations predict success, which blockers appear most often, which consensus strategies work best.
-
-10. If threshold met, document multi-stakeholder playbook and proceed to Scalable; if not, refine stakeholder engagement approach.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: Multi-stakeholder discovery on ≥80% of complex deals over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Multi-stakeholder discovery on ≥80% of complex deals over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

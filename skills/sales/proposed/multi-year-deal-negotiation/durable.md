@@ -1,7 +1,9 @@
 ---
 name: multi-year-deal-negotiation-durable
 description: >
-  Multi-Year Deal Structuring — Durable Intelligence. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+    Multi-Year Deal Structuring — Durable Intelligence. Structure and price multi-year commitments
+  to increase deal value and customer lifetime value, from manual contract terms to AI-driven
+  contract optimization that maximizes ACVand retention while maintaining competitive pricing.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,21 +14,15 @@ kpis: ["Multi-year close rate trend", "LTV optimization", "Agent experiment win 
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Multi-Year Deal Structuring — Durable Intelligence
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+Multi-Year Deal Structuring — Durable Intelligence. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
 
 **Time commitment:** 135 hours over 6 months
 **Pass threshold:** Sustained or improving multi-year deal performance (>=35% close rate, >=2.5x LTV) over 6 months via continuous agent-driven contract optimization, pricing intelligence, and renewal management
@@ -36,45 +32,29 @@ Structure and price multi-year commitments to increase deal value and customer l
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$100–200/mo
-- **Clay (enrichment + continuous list refresh):** ~$200–500/mo
-- **LinkedIn Sales Navigator:** ~$100/mo
-
-_Total play-specific: ~$100–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy an AI agent in n8n that continuously analyzes which contract terms (length, discount, payment structure) best predict high LTV and low churn; auto-optimizes multi-year deal structures based on customer patterns.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for multi-year-deal-negotiation with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Set up the agent to run pricing experiments: test different discount levels, payment terms, and contract lengths by segment; measure impact on close rate, TCV, and customer retention.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Build a feedback loop where every multi-year renewal (or churn) triggers the agent to analyze original contract terms and identify what worked or what caused issues; strengthens successful patterns.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Deploy AI-driven contract personalization: agent analyzes customer profile (industry, size, growth stage, cash position) to recommend optimal contract length and payment terms (e.g., high-growth startup → annual payments, established enterprise → 3-year prepay).
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Implement predictive contract modeling: agent forecasts customer LTV, expansion probability, and churn risk based on contract terms; recommends structures that maximize LTV while minimizing churn.
-
-6. Build market adaptation logic: during economic downturns, agent suggests shorter contracts or flexible payment terms; during growth periods, emphasizes longer commitments with strategic benefits.
-
-7. Create automatic discount optimization: agent learns which discount levels close deals without leaving money on table; recommends minimum effective discount for each opportunity based on competitive situation and customer urgency.
-
-8. Agent continuously refines multi-year positioning: experiments with different value propositions (cost savings vs strategic partnership vs priority access) and measures which resonate best by persona and industry.
-
-9. Implement dynamic renewal orchestration: agent predicts renewal likelihood 90 days out; for at-risk renewals, suggests shorter terms or flexible options; for strong renewals, suggests longer commitments with expansion.
-
-10. Establish monthly review cycles: agent generates multi-year deal intelligence reports showing contract performance, pricing optimization, LTV trends, and recommended term updates; team reviews and approves changes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving multi-year deal performance (>=35% close rate, >=2.5x LTV) over 6 months via continuous agent-driven contract optimization, pricing intelligence, and renewal management. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 

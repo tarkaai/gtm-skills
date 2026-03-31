@@ -1,7 +1,9 @@
 ---
 name: outbound-founder-email-scalable
 description: >
-  Outbound founder-led email — Scalable Automation. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+    Outbound founder-led email — Scalable Automation. Founder-sent cold email sequences to
+  solution-aware prospects, from a small smoke test through scaled automation to agent-driven
+  durable optimization that keeps or improves meeting rate over time.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email"
@@ -12,19 +14,16 @@ kpis: ["Reply rate", "Time to first reply", "Emails sent"]
 slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Outbound founder-led email — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email
 
 ## Overview
-Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
+Outbound founder-led email — Scalable Automation. Founder-sent cold email sequences to solution-aware prospects, from a small smoke test through scaled automation to agent-driven durable optimization that keeps or improves meeting rate over time.
 
 **Time commitment:** 70 hours over 2 months
 **Pass threshold:** Meeting rate ≥ 1.6% over 2 months
@@ -34,58 +33,28 @@ Founder-sent cold email sequences to solution-aware prospects, from a small smok
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Apollo** (Enrichment)
-- **Loops** (Email)
-
----
-
 ## Instructions
 
-### 1. Scale list building
-Run the `build-prospect-list` drill on a weekly cadence to source 1,000+ contacts per week. Use the `enrich-and-score` drill to run Clay enrichment waterfalls and score leads automatically. Use the `clay-scoring` fundamental to set up Tier 1/2/3 prioritization.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-### 2. Set up automated email sequences
-Run the `cold-email-sequence` drill at scale:
-- Use `instantly-campaign` to create campaigns via API with 1,000 contacts/week
-- Configure `instantly-warmup` across 6+ sending accounts for volume
-- Use `smartlead-inbox-rotation` if using Smartlead for inbox rotation across domains
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-### 3. Build the automation layer
-Run the `follow-up-automation` drill to connect everything via n8n:
-- **Reply routing:** Instantly webhook -> n8n -> classify reply -> create Attio deal for positive replies
-- **Lead sync:** Clay webhook -> n8n -> push enriched leads to Instantly campaign
-- **Activity sync:** Instantly events -> n8n -> PostHog custom events + Attio activity logging
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-### 4. Set up GTM event tracking
-Run the `posthog-gtm-events` drill to create a standard event taxonomy:
-- `email_sent`, `email_replied`, `meeting_booked` events flowing from Instantly via n8n
-- Properties: campaign_id, lead_source, lead_score, sequence_step
-- Build a weekly outbound dashboard in PostHog using the `posthog-dashboards` fundamental
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-### 5. Launch and monitor
-Start with 500 contacts in week 1, scale to 1,000 by week 3. Monitor weekly:
-- Reply rate (target: maintain within 20% of Baseline)
-- Meeting rate (target: ≥ 1.6%)
-- Deliverability (open rate > 40%, bounce rate < 3%)
-
-### 6. Iterate and prepare for Durable
-If metrics hold for 2 months, document all workflows and prepare for agent-driven optimization. If metrics drop, reduce volume or refine targeting before scaling further.
+### 5. Evaluate against threshold
+Measure against: Meeting rate ≥ 1.6% over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -99,8 +68,8 @@ If metrics hold for 2 months, document all workflows and prepare for agent-drive
 ## Pass threshold
 **Meeting rate ≥ 1.6% over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

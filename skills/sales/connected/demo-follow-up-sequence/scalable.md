@@ -1,7 +1,9 @@
 ---
 name: demo-follow-up-sequence-scalable
 description: >
-  Demo Follow-Up Sequence — Scalable Automation. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+    Demo Follow-Up Sequence — Scalable Automation. Structured multi-touch follow-up after demos
+  delivering recap, resources, answers to questions, and clear next steps to maintain momentum and
+  accelerate deals.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Email, Direct"
@@ -12,19 +14,16 @@ kpis: ["Sequence completion rate", "Response rate", "Next step conversion", "Fol
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Demo Follow-Up Sequence — Scalable Automation
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Email, Direct
 
 ## Overview
-Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
+Demo Follow-Up Sequence — Scalable Automation. Structured multi-touch follow-up after demos delivering recap, resources, answers to questions, and clear next steps to maintain momentum and accelerate deals.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** Automated demo follow-up on ≥80% of demos at scale over 2 months with maintained conversion rates
@@ -34,45 +33,28 @@ Structured multi-touch follow-up after demos delivering recap, resources, answer
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Build n8n workflow that triggers demo follow-up sequence immediately after demo is marked complete in Attio; auto-generates personalized recap from demo notes.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Create intelligent content selection: n8n analyzes demo topics discussed and automatically selects most relevant resources and case studies for each follow-up.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Implement automated follow-up scheduling: n8n sends follow-up touches at optimal times; pauses sequence if prospect responds; resumes if conversation stalls.
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up behavioral triggers: n8n monitors PostHog for prospect engagement with follow-up content; sends additional resources when specific pages are viewed.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. Connect PostHog to n8n: when prospect visits pricing or competitor comparison pages after demo, trigger personalized follow-up addressing those specific topics.
-
-6. Build follow-up intelligence dashboard: track sequence performance, touch effectiveness, content engagement, next step conversion rates, optimal timing.
-
-7. Create A/B testing framework: test different subject lines, content types, timing, and CTAs; automatically promote winning variations.
-
-8. Set guardrails: next step scheduling rate must stay ≥50% of Baseline level; response rate must not decline >15%.
-
-9. Implement follow-up priority scoring: flag demos where prospect showed high interest but hasn't responded to follow-up for additional personalized outreach.
-
-10. After 2 months, evaluate follow-up automation impact on demo-to-proposal conversion; if metrics hold, proceed to Durable AI-driven follow-up intelligence.
+### 5. Evaluate against threshold
+Measure against: Automated demo follow-up on ≥80% of demos at scale over 2 months with maintained conversion rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Automated demo follow-up on ≥80% of demos at scale over 2 months with maintained conversion rates**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

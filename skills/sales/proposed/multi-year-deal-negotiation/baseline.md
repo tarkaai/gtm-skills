@@ -1,7 +1,9 @@
 ---
 name: multi-year-deal-negotiation-baseline
 description: >
-  Multi-Year Deal Structuring — Baseline Run. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+    Multi-Year Deal Structuring — Baseline Run. Structure and price multi-year commitments to
+  increase deal value and customer lifetime value, from manual contract terms to AI-driven contract
+  optimization that maximizes ACVand retention while maintaining competitive pricing.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Multi-year proposal rate", "Multi-year close rate", "Average contract le
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Multi-Year Deal Structuring — Baseline Run
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
+Multi-Year Deal Structuring — Baseline Run. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
 
 **Time commitment:** 22 hours over 2 weeks
 **Pass threshold:** >=30% close rate on multi-year proposals and average TCV >=2x annual deal value over 2 weeks
@@ -32,42 +33,28 @@ Structure and price multi-year commitments to increase deal value and customer l
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand multi-year proposals to 15-20 opportunities over 2 weeks; build standardized multi-year contract templates with clear terms for pricing, payment, expansion, renewal, and exit clauses.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create buyer-persona-specific multi-year positioning: CFO (budget certainty, cost savings), Procurement (simplified vendor management), CTO (stable roadmap, priority support), CEO (strategic partnership).
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: propose multi-year terms to >=60% of qualified opportunities, close >=30% of multi-year proposals, and average TCV is >=2x annual deal value.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `multi-year-deal-negotiation_email_sent`, `multi-year-deal-negotiation_email_replied`, `multi-year-deal-negotiation_meeting_booked`, `multi-year-deal-negotiation_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Introduce multi-year options early in sales cycle (post-demo): "Most customers choose 2-3 year agreements to lock in pricing and get priority support—let's explore what makes sense for you."
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Build multi-year ROI calculators showing cumulative value over contract term: "Year 1 saves $X, Year 2 saves $Y, Year 3 saves $Z—total 3-year savings of $XYZ vs your current solution."
-
-6. Offer payment flexibility: annual prepay (best discount), quarterly payments (lower risk), or hybrid (50% upfront, remainder over contract); remove payment risk as objection.
-
-7. Sync multi-year deal data from Attio to PostHog; create dashboards showing multi-year proposal rate, close rate by contract length, average discount, and TCV by length.
-
-8. Track multi-year deal outcomes: retention (do multi-year customers renew at higher rates?), expansion (do they expand mid-contract?), satisfaction (are they happier with long-term partnership?).
-
-9. After 2 weeks, measure multi-year performance: proposal rate, close rate, TCV, discount levels; if >=30% of multi-year proposals close and TCV >=2x annual, motion is working.
-
-10. If thresholds met and multi-year deals show strong metrics, move to Scalable; otherwise refine pricing, payment terms, or positioning.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=30% close rate on multi-year proposals and average TCV >=2x annual deal value over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -82,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=30% close rate on multi-year proposals and average TCV >=2x annual deal value over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

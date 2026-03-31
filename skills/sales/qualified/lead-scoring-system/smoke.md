@@ -1,7 +1,9 @@
 ---
 name: lead-scoring-system-smoke
 description: >
-  Lead Scoring System — Smoke Test. Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
+    Lead Scoring System — Smoke Test. Prioritize leads by fit (firmographics) and intent (behaviors)
+  to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to
+  AI-driven dynamic scoring that adapts to market changes and win patterns.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
@@ -13,6 +15,7 @@ slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Lead Scoring System — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
 ## Overview
-Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
+Lead Scoring System — Smoke Test. Prioritize leads by fit (firmographics) and intent (behaviors) to focus sales effort on highest-probability opportunities, from manual spreadsheet scoring to AI-driven dynamic scoring that adapts to market changes and win patterns.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** Hot leads have >=2x meeting rate vs Cold leads in 1 week
@@ -35,33 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define 3-5 fit criteria (e.g., company size, industry, role) and 3-5 intent signals (e.g., demo request, pricing page visit, email reply); assign point values (fit: 0-50, intent: 0-50).
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for lead-scoring-system. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Pull 20 recent leads from Attio; manually score each lead on fit and intent using your criteria; total score ranges from 0-100.
+### 2. Prepare outreach materials
+Using the ICP output, draft your lead-scoring-system materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Create score tiers in a spreadsheet: Hot (80-100), Warm (50-79), Cold (0-49); categorize all 20 leads.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Set pass threshold: Hot leads must have >=2x meeting rate vs Cold leads within 1 week to validate scoring predicts engagement.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Reach out to all 20 leads with the same message/offer; track which leads respond and book meetings in Attio and PostHog.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Hot leads have >=2x meeting rate vs Cold leads in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Log lead_scored events in PostHog with properties for fit score, intent score, total score, and tier.
-
-7. After 1 week, compute meeting rate by tier (Hot, Warm, Cold); if Hot leads have >=2x meeting rate vs Cold, scoring is predictive.
-
-8. Analyze which fit criteria and intent signals most strongly correlate with meetings; consider adjusting point values.
-
-9. Test whether calling Hot leads first yields faster pipeline generation than calling leads in random order.
-
-10. If Hot leads convert >=2x better, document scoring criteria and point system, then proceed to Baseline; otherwise refine criteria or signals and retest.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Hot leads have >=2x meeting rate vs Cold leads in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,10 @@
 ---
 name: account-research-playbook-baseline
 description: >
-  Account Research & Intelligence — Baseline Run. Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
+    Account Research & Intelligence — Baseline Run. Systematically research target accounts before
+  outreach to personalize messaging and improve relevance, from manual LinkedIn research to
+  AI-driven account intelligence that auto-generates comprehensive account profiles with buying
+  signals and talk tracks.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +15,16 @@ kpis: ["Reply rate by research depth", "Meeting rate (researched vs non-research
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Account Research & Intelligence — Baseline Run
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
+Account Research & Intelligence — Baseline Run. Systematically research target accounts before outreach to personalize messaging and improve relevance, from manual LinkedIn research to AI-driven account intelligence that auto-generates comprehensive account profiles with buying signals and talk tracks.
 
 **Time commitment:** 24 hours over 2 weeks
 **Pass threshold:** >=35% reply rate from researched outreach and >=2.5x faster progression to meetings over 2 weeks
@@ -32,44 +34,28 @@ Systematically research target accounts before outreach to personalize messaging
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Clay** (Enrichment)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Expand account research to 30-50 accounts over 2 weeks; create a standardized research workflow: LinkedIn (company page, key contacts), Crunchbase (funding, investors), job postings (hiring signals), G2 reviews (competitor usage, pain points), news (Google News, company blog).
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Integrate research tools: use LinkedIn Sales Nav for contact identification, BuiltWith or Wappalyzer for tech stack detection, Crunchbase for funding data; compile findings in Attio.
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: research 40+ accounts, achieve >=35% reply rate from researched outreach, and researched accounts progress to meetings >=2.5x faster than non-researched.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `account-research-playbook_email_sent`, `account-research-playbook_email_replied`, `account-research-playbook_meeting_booked`, `account-research-playbook_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Develop research-to-messaging frameworks by signal type: Funding ("As you scale with new capital..."), Executive hire ("As [name] builds out [function]..."), Product launch ("Congrats on launching X—as you onboard customers..."), Competitor usage ("Noticed you're using [competitor]—customers switch to us for [differentiation]...").
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. Enrich accounts with Clay: pull firmographic data (revenue, employee count, location), technographic data (martech/sales stack), funding history, and recent news; auto-populate Attio fields.
-
-6. Sync enriched account data from Attio to PostHog; create cohorts of accounts by research depth (no research, basic, deep) and measure engagement and conversion differences.
-
-7. Train SDRs on account research: show examples of high-quality research, demonstrate how to find personalization hooks, role-play converting research into compelling outreach.
-
-8. After each outreach attempt, log which research insights were used and whether prospect referenced them in reply; track which signals resonate most (funding, tech stack, job postings, news).
-
-9. After 2 weeks, measure research ROI: time spent on research vs lift in reply rate, meeting rate, and pipeline value; if researched accounts generate >=3x ROI on time invested, research pays off.
-
-10. If reply rate >=35% and researched accounts progress >=2.5x faster, move to Scalable; otherwise refine research workflow or improve research-to-messaging translation.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=35% reply rate from researched outreach and >=2.5x faster progression to meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -84,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=35% reply rate from researched outreach and >=2.5x faster progression to meetings over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

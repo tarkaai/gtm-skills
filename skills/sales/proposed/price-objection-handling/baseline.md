@@ -1,7 +1,9 @@
 ---
 name: price-objection-handling-baseline
 description: >
-  Price Objection Handling — Baseline Run. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+    Price Objection Handling — Baseline Run. Address "too expensive" objections by reframing value,
+  demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven
+  dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
@@ -12,17 +14,16 @@ kpis: ["Objection overcome rate", "Time to objection resolution", "Close rate (o
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
   - cold-email-sequence
-  - threshold-engine
+  - linkedin-outreach
+  - posthog-gtm-events
 ---
 # Price Objection Handling — Baseline Run
 
 > **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
 ## Overview
-Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+Price Objection Handling — Baseline Run. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
 
 **Time commitment:** 20 hours over 2 weeks
 **Pass threshold:** >=60% of price objections overcome with <=14 days to close after resolution over 2 weeks
@@ -32,43 +33,28 @@ Address "too expensive" objections by reframing value, demonstrating ROI, and of
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing):** ~$40–100/mo
-- **Clay or Apollo (list building + enrichment):** ~$50–150/mo
-
-_Total play-specific: ~$40–150/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Expand to 15-20 price objections over 2 weeks; build an objection handling playbook in Attio with 5-7 response frameworks and when to use each based on objection root cause.
+### 1. Set up cold outreach tooling
+Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
 
-2. Create objection diagnostic questions: "Budget: Do you have budget allocated?" "Value: Do you see ROI?" "Alternatives: Are you comparing to other solutions?" "Authority: Is price your only concern or is there something else?"
+### 2. Launch LinkedIn outreach in parallel
+Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
 
-3. Set pass threshold: overcome >=60% of price objections (prospects move to next stage), and objection-to-close time is <=14 days for overcome objections.
+### 3. Configure tracking
+Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `price-objection-handling_email_sent`, `price-objection-handling_email_replied`, `price-objection-handling_meeting_booked`, `price-objection-handling_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
 
-4. Develop objection-specific assets: ROI calculator showing payback period, case studies with quantified value, pricing comparison sheet showing TCO vs competitors, flexible payment term options.
+### 4. Execute and monitor for 2 weeks
+Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
 
-5. When objection arises, send follow-up email within 24 hours with relevant asset: "To address your pricing question, here's a case study showing how [similar company] achieved 5x ROI in 6 months" + ROI calculator pre-filled with their numbers.
-
-6. Sync objection data from Attio to PostHog; create a funnel showing price_objection_received → diagnostic_questions_asked → response_framework_applied → objection_overcome → deal_progressed.
-
-7. Track which objection root causes are most common: if most objections are "no budget allocated," that's a qualification issue (solve in discovery); if "don't see ROI," that's a value communication issue (solve in demo/pain discovery).
-
-8. For objections that don't move forward after initial response, schedule second conversation with economic buyer or champion to address concerns at higher level.
-
-9. After 2 weeks, measure: objection overcome rate, time from objection to resolution, and close rate for deals that had price objections vs deals that didn't.
-
-10. If >=60% of objections overcome and objection deals close within 14 days of resolution, move to Scalable; otherwise refine diagnostic process or response assets.
+### 5. Evaluate against threshold
+Review PostHog funnel data and Attio deal pipeline. Measure against: >=60% of price objections overcome with <=14 days to close after resolution over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
 
 ---
 
@@ -83,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=60% of price objections overcome with <=14 days to close after resolution over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

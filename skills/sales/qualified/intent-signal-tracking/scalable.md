@@ -1,7 +1,10 @@
 ---
 name: intent-signal-tracking-scalable
 description: >
-  Intent Signal Tracking — Scalable Automation. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+    Intent Signal Tracking — Scalable Automation. Monitor and act on buyer intent signals like
+  website behavior, content consumption, and G2 research to reach prospects at peak buying moment,
+  from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers
+  personalized outreach automatically.
 stage: "Sales > Qualified"
 motion: "Outbound Founder-Led"
 channels: "Product, Email, Website"
@@ -12,19 +15,16 @@ kpis: ["Intent accounts per month", "Signal-to-outreach time", "Conversion rate 
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
+  - ab-test-orchestrator
 ---
 # Intent Signal Tracking — Scalable Automation
 
 > **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product, Email, Website
 
 ## Overview
-Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
+Intent Signal Tracking — Scalable Automation. Monitor and act on buyer intent signals like website behavior, content consumption, and G2 research to reach prospects at peak buying moment, from manual tracking in spreadsheets to AI-driven real-time intent orchestration that triggers personalized outreach automatically.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** >=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months
@@ -34,46 +34,28 @@ Monitor and act on buyer intent signals like website behavior, content consumpti
 ## Budget
 
 **Play-specific tools & costs**
-- **Instantly or Smartlead (email sequencing, scaled):** ~$100–200/mo
-- **Clay (enrichment + AI personalization):** ~$150–400/mo
-- **LinkedIn Sales Navigator (prospecting, optional):** ~$100/mo
-
-_Total play-specific: ~$100–400/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **n8n** (Automation)
-- **Clay** (Enrichment)
-- **Instantly** (Email)
-
----
-
 ## Instructions
 
-1. Scale to 200+ high-intent accounts per month; integrate PostHog with n8n to trigger automated workflows when accounts cross intent thresholds.
+### 1. Build automated follow-up workflows
+Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
 
-2. Build an n8n workflow triggered by PostHog's high_intent_threshold event: pull account from PostHog, enrich via Clay, identify stakeholders, find verified emails, create personalized email draft, add to Attio, notify rep.
+### 2. Connect your tool stack
+Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
 
-3. Expand intent model to include third-party signals: G2 profile views (via G2 API), LinkedIn company page visits (via LinkedIn Ads), tech stack changes (via BuiltWith), job postings (via Otta or LinkedIn).
+### 3. Launch A/B testing
+Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
 
-4. Set up real-time intent alerts in Slack: when a Fortune 500 account triggers >=2 high-value signals in 24 hours, n8n sends alert to sales channel with account details and recommended action.
+### 4. Scale volume
+Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
 
-5. In Attio, create intent-based lead routing: accounts with >=50 intent points go to senior AEs, 30-49 to mid-level, <30 to SDRs; route within 1 hour of threshold crossing.
-
-6. Build a PostHog dashboard showing daily intent signal volume, intent tier distribution, outreach velocity (time from signal to contact), and conversion by intent tier.
-
-7. Implement intent decay: if no new signals for 7 days, reduce intent score by 30%; prevents stale leads from staying in high-intent queue.
-
-8. Each week, analyze which signal combinations (e.g., pricing + demo + case study) most strongly predict closed deals; adjust scoring weights in n8n.
-
-9. Test automated outreach: for low-touch segments, have n8n send first email automatically within 30 minutes of high-intent signal; monitor reply rates vs manual outreach.
-
-10. After 2 months, if high-intent accounts convert at >=3x rate of cold outreach and signal-to-outreach time <2 hours, move to Durable; otherwise refine routing or signal sources.
+### 5. Evaluate against threshold
+Measure against: >=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
 ---
 
@@ -88,8 +70,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=200 high-intent accounts/month and >=3x conversion rate vs cold outreach over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

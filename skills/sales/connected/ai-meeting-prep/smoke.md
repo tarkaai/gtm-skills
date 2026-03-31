@@ -1,7 +1,9 @@
 ---
 name: ai-meeting-prep-smoke
 description: >
-  AI-Powered Meeting Preparation — Smoke Test. Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
+    AI-Powered Meeting Preparation — Smoke Test. Use AI to research accounts and prepare for sales
+  calls automatically, from manual research checklists to AI agents that generate comprehensive call
+  briefs with account intelligence, talk tracks, and objection responses in real-time.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -13,6 +15,7 @@ slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # AI-Powered Meeting Preparation — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
+AI-Powered Meeting Preparation — Smoke Test. Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** >=50% reduction in prep time and >=3 actionable insights per call within 1 week
@@ -35,34 +38,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **OpenAI** (AI/LLM)
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Create an AI meeting prep prompt template in Claude or ChatGPT: "Research [Company] for sales call. Find: company overview, recent news, funding, tech stack, competitors, key decision-makers, potential pain points related to [your solution]." 
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for ai-meeting-prep. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Before 5 upcoming sales calls, spend 10 minutes using AI to generate call briefs; paste company name and context into AI, review output, refine with additional searches if needed.
+### 2. Prepare outreach materials
+Using the ICP output, draft your ai-meeting-prep materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set pass threshold: AI research reduces prep time by >=50% (from 20 min to <=10 min per call) and yields >=3 actionable insights per call within 1 week.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Structure AI-generated brief with sections: Company Overview (what they do, size, stage), Recent News (funding, launches, hires), Tech Stack (tools they use, integration opportunities), Pain Points (likely challenges based on industry/size), Key Stakeholders (names, titles, LinkedIn profiles), Suggested Talk Track (opening, discovery questions, value prop).
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. During calls, reference AI-discovered insights to build rapport: "Saw you just raised Series B—congrats! As you scale, [pain point] becomes critical..." validates research and establishes relevance.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: >=50% reduction in prep time and >=3 actionable insights per call within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. After each call, rate AI brief quality (1-5) on accuracy, relevance, and actionability; note which AI-provided insights were most useful during conversation.
-
-7. Log meeting prep metrics in a spreadsheet: prep_time, insights_used_in_call, call_outcome, ai_brief_quality_score; track whether AI prep correlates with better call outcomes.
-
-8. In PostHog, create events for ai_prep_completed and call_conducted with properties for prep time, insights used, and call outcome.
-
-9. After 1 week, measure: Did AI reduce prep time by >=50%? Did AI-prepped calls yield better outcomes (more discovery, stronger rapport, faster progression)?
-
-10. If AI prep saves >=50% time and yields >=3 actionable insights per call, document AI prompts and proceed to Baseline; otherwise refine prompts or add additional data sources.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -77,8 +69,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **>=50% reduction in prep time and >=3 actionable insights per call within 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

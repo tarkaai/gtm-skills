@@ -1,7 +1,8 @@
 ---
 name: poc-management-framework-smoke
 description: >
-  POC Management Framework — Smoke Test. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+    POC Management Framework — Smoke Test. Run structured proof-of-concept with clear success
+  criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 stage: "Sales > Aligned"
 motion: "Outbound Founder-Led"
 channels: "Direct, Product, Email"
@@ -13,6 +14,7 @@ slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
   - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # POC Management Framework — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Sales → Aligned | **Motion:** Outbound Founder-Led | **Channels:** Direct, Product, Email
 
 ## Overview
-Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
+POC Management Framework — Smoke Test. Run structured proof-of-concept with clear success criteria, timeline, and stakeholder alignment to de-risk purchase decision and accelerate close.
 
 **Time commitment:** 10 hours over 2 weeks
 **Pass threshold:** Structured POCs completed on ≥5 opportunities in 2 weeks
@@ -35,32 +37,23 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. On first 5-6 opportunities requiring POC, establish POC framework: define success criteria, timeline (typically 1-2 weeks), resources needed, stakeholder responsibilities.
+### 1. Define your ICP and build a target list
+Run the `icp-definition` drill to document your Ideal Customer Profile for poc-management-framework. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
 
-2. Create POC kickoff doc: document what will be tested, success metrics, timeline, who's involved from both sides, what happens after POC (decision process).
+### 2. Prepare outreach materials
+Using the ICP output, draft your poc-management-framework materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
 
-3. Set up POC environment: provision trial account or sandbox with necessary integrations, data, and configurations; ensure prospect can access immediately.
+**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
 
-4. Schedule POC kickoff call: review success criteria, demonstrate setup, walk through test scenarios, answer initial questions, establish check-in cadence.
+### 3. Track results
+For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
 
-5. Implement POC check-ins: schedule mid-point and final review calls to track progress, address blockers, gather feedback, ensure timeline is on track.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to evaluate results against your pass threshold: Structured POCs completed on ≥5 opportunities in 2 weeks. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-6. Track PostHog events: poc_initiated, poc_kickoff_completed, poc_milestone_achieved, poc_blocker_identified, poc_success_validated.
-
-7. Document POC results: create summary showing which success criteria were met, metrics achieved, stakeholder feedback, next steps.
-
-8. Set pass threshold: Complete structured POCs on ≥5 opportunities in 2 weeks with ≥60% meeting success criteria and progressing to proposal.
-
-9. Measure POC effectiveness: track POC-to-close conversion rate, time from POC completion to decision, impact on deal size.
-
-10. Document which POC structures and success criteria work best; proceed to Baseline if threshold met.
+If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
 
 ---
 
@@ -75,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Structured POCs completed on ≥5 opportunities in 2 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

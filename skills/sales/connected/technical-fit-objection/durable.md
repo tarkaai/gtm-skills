@@ -1,7 +1,9 @@
 ---
 name: technical-fit-objection-durable
 description: >
-  Technical Fit Objection Handling — Durable Intelligence. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+    Technical Fit Objection Handling — Durable Intelligence. Address concerns about technical
+  compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and
+  technical proof to maintain deal momentum.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct"
@@ -12,21 +14,15 @@ kpis: ["Technical objection prediction accuracy", "Resolution rate", "Technical 
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
-  - enrich-and-score
-  - cold-email-sequence
-  - follow-up-automation
-  - multi-channel-cadence
   - dashboard-builder
-  - ab-test-orchestrator
+  - signal-detection
 ---
 # Technical Fit Objection Handling — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
 ## Overview
-Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+Technical Fit Objection Handling — Durable Intelligence. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
 
 **Time commitment:** 145 hours over 6 months
 **Pass threshold:** Sustained or improving technical win rates over 6 months via continuous AI-driven technical objection intelligence and proactive gap management
@@ -36,44 +32,29 @@ Address concerns about technical compatibility, missing features, or capability 
 ## Budget
 
 **Play-specific tools & costs**
-- **Apollo or Aircall (AI-assisted calling):** ~$100–300/mo
-
-_Total play-specific: ~$100–300/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Gong** (Sales Engagement)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: technical objection is raised, technical evaluation stalls, or competitor technical advantage is detected.
+### 1. Build monitoring dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard for technical-fit-objection with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
 
-2. Build n8n AI technical objection intelligence agent analyzing historical objections and outcomes: identifies which technical gaps are dealbreakers vs negotiable, which workarounds drive acceptance, which roadmap commitments close deals.
+### 2. Deploy signal-based targeting
+Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
 
-3. Implement AI-powered objection prediction: AI agent analyzes prospect's technical requirements and tech stack; predicts likely technical objections before discovery; prepares proactive responses and proof.
+### 3. Set up autonomous optimization
+Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
 
-4. Create learning loop: PostHog tracks which technical responses and proof points drive objection resolution and deal progression; AI agent recommends optimal approaches by objection type and prospect segment.
+### 4. Run continuous improvement cycles
+Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
 
-5. Build adaptive technical positioning: AI agent monitors product roadmap changes and competitive technical developments; automatically updates objection responses and technical proof library.
-
-6. Deploy intelligent workaround generation: when technical gap is identified, AI agent suggests creative workarounds based on similar customer solutions and technical architecture possibilities.
-
-7. Implement automatic roadmap intelligence: AI agent analyzes frequency and business impact of technical objections; generates prioritized roadmap recommendations for product team with deal value at stake.
-
-8. Create predictive technical risk scoring: AI agent predicts likelihood of technical objections derailing deals; helps sales team prepare technical proof and engage solutions resources proactively.
-
-9. Set guardrails: if technical loss rate increases >10% or resolution effectiveness falls below Scalable benchmark for 2+ weeks, alert team and suggest technical strategy refinements.
-
-10. Establish monthly review cycle: analyze technical objection trends, resolution effectiveness, roadmap impact, competitive technical positioning; refine AI agent intelligence based on technical win/loss outcomes.
+### 5. Evaluate sustainability
+Measure against: Sustained or improving technical win rates over 6 months via continuous AI-driven technical objection intelligence and proactive gap management. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
 
 ---
 
