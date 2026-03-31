@@ -1,82 +1,139 @@
 ---
 name: outbound-with-value-asset-scalable
 description: >
-    Outbound With Value Asset — Scalable Automation. Share a one-page checklist asset in 100 emails
-  to see if asset-led messaging drives replies that reference the asset.
-stage: "Marketing > Problem Aware"
-motion: "Outbound Founder-Led"
-channels: "Other"
+  Outbound With Value Asset — Scalable Automation. Scale to 1,000+ prospects/month
+  with multi-segment assets, automated A/B testing, signal-triggered sends, and
+  n8n workflows that run the full cycle without manual intervention.
+stage: "Marketing > ProblemAware"
+motion: "OutboundFounderLed"
+channels: "Email"
 level: "Scalable Automation"
-time: "60 hours over 2 months"
-outcome: "≥ 15 positive replies referencing asset over 2 months"
-kpis: ["Reply rate", "Open rate"]
+time: "40 hours over 2 months"
+outcome: ">=15 asset-referencing replies and >=5 meetings booked over 2 months with reply rate holding at >=3%"
+kpis: ["Asset link click rate", "Reply rate", "Asset-referencing reply rate", "Meeting rate", "Cost per meeting"]
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
+  - enrich-and-score
   - follow-up-automation
-  - tool-sync-workflow
   - ab-test-orchestrator
+  - value-asset-refresh-pipeline
 ---
+
 # Outbound With Value Asset — Scalable Automation
 
-> **Stage:** Marketing → Problem Aware | **Motion:** Outbound Founder-Led | **Channels:** Other
+> **Stage:** Marketing > ProblemAware | **Motion:** OutboundFounderLed | **Channels:** Email
 
-## Overview
-Outbound With Value Asset — Scalable Automation. Share a one-page checklist asset in 100 emails to see if asset-led messaging drives replies that reference the asset.
+## Outcomes
 
-**Time commitment:** 60 hours over 2 months
-**Pass threshold:** ≥ 15 positive replies referencing asset over 2 months
+Scalable finds the 10x multiplier. You move from a single asset and sequence to a system that: segments prospects and assigns them the most relevant asset, A/B tests every variable, automates follow-ups across channels, and scales volume to 1,000+ prospects/month without proportional effort increase.
 
----
+**Pass threshold:** >=15 asset-referencing replies AND >=5 meetings booked over 2 months, with reply rate holding at >=3% as volume scales from 200 to 1,000+ per month.
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Reply rate stays within 20% of Baseline rate as volume scales (no quality dilution)
+- A/B tests produce at least 2 winning variants that outperform the original by 10%+
+- Asset click rate holds above 15% across all segments
+- Automated follow-up workflows generate at least 20% of total replies
+- Cost per meeting stays below $150
+- Multiple asset versions in rotation with measurable performance differences
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Segment prospects and build multiple assets
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `enrich-and-score` drill to score and tier your full prospect pipeline. Create at least 2 distinct segments based on:
+- Company size (e.g., 10-50 employees vs 50-200)
+- Industry vertical
+- Pain point category (derived from Clay enrichment)
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+For each segment, either adapt the existing asset or create a new one using the `value-asset-refresh-pipeline` drill. Each segment gets the asset version most relevant to their specific pain. In Clay, add an `assigned_asset` column that maps each prospect to their asset variant.
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+### 2. Launch systematic A/B testing
 
-### 5. Evaluate against threshold
-Measure against: ≥ 15 positive replies referencing asset over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+Run the `ab-test-orchestrator` drill to set up experiments on:
 
----
+**Priority 1 — Email subject lines:**
+Test 3 variants per segment: (a) pain-point lead, (b) curiosity gap, (c) direct asset mention. Minimum 100 sends per variant before declaring a winner.
 
-## KPIs to track
-- Reply rate
-- Open rate
+**Priority 2 — Asset format:**
+If you have a checklist and a benchmark, split-test which format generates more asset-referencing replies. Track not just reply rate but quality of replies (do they reference the content?).
 
----
+**Priority 3 — Sequence timing:**
+Test: (a) standard cadence (Day 0, 4, 9), (b) compressed cadence (Day 0, 2, 5), (c) extended cadence (Day 0, 7, 14). Different audiences may have different response rhythms.
 
-## Pass threshold
-**≥ 15 positive replies referencing asset over 2 months**
+**Priority 4 — Email 3 CTA:**
+Test: (a) Cal.com link, (b) "reply with your availability", (c) "I'll send over a 2-minute demo video." Track which CTA converts replies to meetings.
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+Use PostHog feature flags to randomly assign variants. Never run more than 1 test per prospect. Run each test for its full planned duration — no early stopping.
 
----
+### 3. Build automated follow-up workflows
 
-## How to run this skill
+Run the `follow-up-automation` drill to create n8n workflows for:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- **Asset clicker, no reply (48 hours after click):** Send a follow-up highlighting the specific section they likely read (based on time-on-page if trackable) or the asset's key finding. Do NOT mention that you tracked their click.
+- **Positive reply, no meeting (5 days after reply):** Send a gentle nudge with 2-3 specific time slots. Keep it brief: "Still happy to chat if the timing works — here are a few slots this week: [times]."
+- **Meeting no-show (2 hours after missed meeting):** Auto-send a reschedule message with new times.
+- **New prospect enters pipeline from signal:** When Clay detects a buying signal (job change, funding, hiring), auto-assign the relevant asset and add to the next batch.
 
-_Install this skill: `npx gtm-skills add marketing/problem-aware/outbound-with-value-asset`_
+Set guardrails: maximum 6 total touches per prospect across all channels. Suppress anyone who replied negatively or opted out.
+
+### 4. Scale volume to 1,000+ prospects/month
+
+Increase Clay enrichment to process 250-300 new prospects per week:
+- Run Apollo sourcing weekly with fresh ICP filters
+- Apply the scoring model from `enrich-and-score` — only prospects scoring 70+ enter the sequence
+- Auto-push qualified prospects from Clay to Instantly via n8n
+- Rotate sending accounts to maintain deliverability at higher volume (add 1 new domain per 500 monthly sends)
+
+### 5. Monitor and optimize continuously
+
+Track weekly in PostHog:
+- Reply rate by segment, asset variant, and sequence step
+- A/B test progress and results
+- Cost per meeting trending over time
+- Funnel conversion: send -> click -> reply -> meeting -> pipeline
+
+Monthly: Run the `value-asset-refresh-pipeline` drill to assess asset performance, retire underperformers, and generate new asset topics based on reply patterns.
+
+After 2 months, evaluate against threshold: >=15 asset-referencing replies AND >=5 meetings booked, with reply rate >=3%.
+
+**If PASS:** The play scales profitably. Proceed to Durable to deploy autonomous optimization.
+
+**If FAIL:** Diagnose:
+- Reply rate declined as volume scaled: ICP scoring threshold is too low. Tighten scoring.
+- Meetings low despite replies: Email 3 CTA is not converting. Test different meeting formats (async video, written proposal).
+- One segment performs, others do not: Double down on the winning segment. Create hyper-specific assets for underperforming segments or drop them.
+
+## Time Estimate
+
+- Prospect segmentation and scoring: 4 hours
+- New asset creation (1-2 additional assets): 6 hours
+- A/B test setup (4 experiments): 6 hours
+- Follow-up automation workflows: 6 hours
+- Volume scaling and domain setup: 4 hours
+- Weekly monitoring (1 hr/week x 8 weeks): 8 hours
+- Monthly asset review and optimization: 4 hours
+- Final evaluation: 2 hours
+- **Total: ~40 hours over 2 months**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Instantly | Cold email at scale with A/B testing | Hypergrowth: $78/mo annual — 25,000 contacts, 125,000 emails ([instantly.ai/pricing](https://instantly.ai/pricing)) |
+| Clay | Enrichment, scoring, and segmentation | Launch: $185/mo — 2,500 credits ([clay.com/pricing](https://www.clay.com/pricing)) |
+| Apollo | Prospect sourcing at volume | Basic: $49/user/mo — unlimited email credits ([apollo.io/pricing](https://www.apollo.io/pricing)) |
+| Attio | CRM pipeline and deal tracking | Plus: $29/user/mo ([attio.com](https://attio.com)) |
+| PostHog | Funnel tracking and experimentation | Free tier likely sufficient; paid starts at ~$0.00005/event over 1M ([posthog.com/pricing](https://posthog.com/pricing)) |
+| n8n | Automation workflows | Pro: ~$60/mo — 10,000 executions ([n8n.io/pricing](https://n8n.io/pricing)) |
+
+**Estimated monthly cost: ~$400-500/mo** (Instantly Hypergrowth + Clay Launch + Apollo Basic + Attio Plus + n8n Pro)
+
+## Drills Referenced
+
+- `enrich-and-score` — score and segment prospects for multi-asset routing
+- `follow-up-automation` — build n8n workflows for automated cross-channel follow-ups
+- `ab-test-orchestrator` — design, run, and evaluate experiments on every sequence variable
+- `value-asset-refresh-pipeline` — create new assets, A/B test formats, retire underperformers
