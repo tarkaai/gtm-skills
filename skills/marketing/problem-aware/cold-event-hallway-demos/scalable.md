@@ -1,7 +1,8 @@
 ---
 name: cold-event-hallway-demos-scalable
 description: >
-  Event Hallway Demos — Scalable Automation. Run a single day of lobby or hallway demos at a venue to get instant feedback and a few meetings and validate whether in-person fits your ICP.
+    Event Hallway Demos — Scalable Automation. Run a single day of lobby or hallway demos at a venue
+  to get instant feedback and a few meetings and validate whether in-person fits your ICP.
 stage: "Marketing > Problem Aware"
 motion: "Micro Events"
 channels: "Other"
@@ -12,19 +13,15 @@ kpis: ["Conversations started", "Follow-up requests"]
 slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
 drills:
-  - meetup-pipeline
-  - webinar-pipeline
-  - workshop-pipeline
-  - crm-pipeline-setup
   - follow-up-automation
-  - posthog-gtm-events
+  - ab-test-orchestrator
 ---
 # Event Hallway Demos — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Micro Events | **Channels:** Other
 
 ## Overview
-Run a single day of lobby or hallway demos at a venue to get instant feedback and a few meetings and validate whether in-person fits your ICP.
+Event Hallway Demos — Scalable Automation. Run a single day of lobby or hallway demos at a venue to get instant feedback and a few meetings and validate whether in-person fits your ICP.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 30 demos and ≥ 8 meetings over 2 months
@@ -34,46 +31,25 @@ Run a single day of lobby or hallway demos at a venue to get instant feedback an
 ## Budget
 
 **Play-specific tools & costs**
-- **Riverside or Hopin (production-quality events):** ~$25–150/mo
-- **Event promotion spend (LinkedIn, email list):** ~$100–500/mo
-- **Loom (post-event follow-up clips):** ~$15/mo
-
-_Total play-specific: ~$15–500/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Cal.com** (Scheduling)
-- **Loom** (Video)
-- **Riverside** (Video)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 30 demos and ≥ 8 meetings over 2 months.
+### 1. Automate event operations
+Run the `follow-up-automation` drill to build n8n workflows: auto-send post-event follow-ups based on engagement level (active participants get a different email than passive attendees), auto-create Attio deals for qualified attendees, and auto-schedule next event invitations.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Test event variations
+Run the `ab-test-orchestrator` drill to test: event formats (webinar vs workshop vs AMA), event lengths, topics, speakers, and promotion channels. Use registration and attendance data to identify winning combinations.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale to regular cadence
+Move to bi-weekly or monthly events. Automate as much of the operations as possible. Focus your manual effort on content quality and live delivery.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Conversations started, Follow-up requests in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 30 demos and ≥ 8 meetings over 2 months. If PASS, proceed to Durable. If FAIL, reduce frequency and focus on the event format that converts best.
 
 ---
 
@@ -86,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 30 demos and ≥ 8 meetings over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

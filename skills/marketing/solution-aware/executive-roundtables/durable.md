@@ -1,7 +1,9 @@
 ---
 name: executive-roundtables-durable
 description: >
-  Executive Roundtables — Durable Intelligence. Invite senior leaders for intimate, topic-focused discussions to build relationships and generate high-value pipeline with solution-aware executives.
+    Executive Roundtables — Durable Intelligence. Invite senior leaders for intimate, topic-focused
+  discussions to build relationships and generate high-value pipeline with solution-aware
+  executives.
 stage: "Marketing > Solution Aware"
 motion: "Micro Events"
 channels: "Events"
@@ -12,21 +14,14 @@ kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
 drills:
-  - meetup-pipeline
-  - webinar-pipeline
-  - workshop-pipeline
-  - crm-pipeline-setup
-  - follow-up-automation
-  - posthog-gtm-events
   - dashboard-builder
-  - ab-test-orchestrator
 ---
 # Executive Roundtables — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Micro Events | **Channels:** Events
 
 ## Overview
-Invite senior leaders for intimate, topic-focused discussions to build relationships and generate high-value pipeline with solution-aware executives.
+Executive Roundtables — Durable Intelligence. Invite senior leaders for intimate, topic-focused discussions to build relationships and generate high-value pipeline with solution-aware executives.
 
 **Time commitment:** 180 hours over 12 months
 **Pass threshold:** Sustained executive engagement and ≥25 opportunities/quarter over 12 months via AI-optimized topic selection
@@ -36,46 +31,26 @@ Invite senior leaders for intimate, topic-focused discussions to build relations
 ## Budget
 
 **Play-specific tools & costs**
-- **Riverside or Hopin:** ~$25–150/mo
-- **Promotion spend:** ~$200–1,000/mo
-- **Descript (AI-powered content repurposing):** ~$30/mo
-
-_Total play-specific: ~$25–1000/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Deploy AI-powered intelligence system in n8n: analyze PostHog data to identify patterns predicting success and failure in executive roundtables campaigns.
+### 1. Build event dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: registration trends, attendance rates over time, pipeline generated per event, cost per attendee, content topic performance. Set alerts for declining registration or attendance rates.
 
-2. Build continuous experimentation framework: AI automatically tests variations in messaging, timing, targeting, creative, and channel mix.
+### 2. Autonomous event optimization
+Configure the agent to: analyze which event topics drive the most pipeline, suggest next event topics based on ICP pain point trends, auto-generate promotion copy for upcoming events, and flag when attendance rates are declining.
 
-3. Implement learning loops: AI monitors experiment results, identifies winners, analyzes root causes, and applies learnings to future campaigns automatically.
+### 3. Sustain and evolve
+Monthly: review event ROI, test new formats, and adjust cadence. The agent generates a monthly events report with recommendations.
 
-4. Set up market adaptation system: AI detects when performance drops due to market saturation, competition, seasonality, or external changes; recommends and tests adjustments.
-
-5. Create smart optimization engine: AI continuously tunes targeting criteria, send times, budget allocation, message variants, and creative based on real-time performance data.
-
-6. Build predictive models in n8n using Anthropic Claude: forecast campaign results, predict lead quality, and recommend proactive optimizations before metrics decline.
-
-7. Deploy competitive intelligence: AI monitors competitor activities, market trends, and emerging best practices; adapts strategy automatically to maintain edge.
-
-8. Establish sophisticated guardrails: if performance drops >20% below Scalable benchmark for 2+ consecutive weeks, AI investigates root causes and suggests specific corrective actions.
-
-9. Implement automated insights and reporting: AI generates weekly summaries of what's working, what's declining, which experiments won, and what to test next.
-
-10. Conduct monthly AI-driven strategy reviews: analyze long-term trends, update success playbooks, identify new opportunities, and maintain or improve results over 6-12 months through continuous intelligent adaptation.
+### 4. Evaluate sustainability
+Measure against: Sustained executive engagement and ≥25 opportunities/quarter over 12 months via AI-optimized topic selection. This level runs continuously. If events consistently generate pipeline, the play is durable.
 
 ---
 

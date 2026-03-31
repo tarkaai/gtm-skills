@@ -1,7 +1,8 @@
 ---
 name: conference-booth-sponsorship-smoke
 description: >
-  Conference Booth & Sponsorship — Smoke Test. Exhibit at relevant conferences with booth and sponsorship to generate leads, build awareness, and engage solution-aware prospects face-to-face.
+    Conference Booth & Sponsorship — Smoke Test. Exhibit at relevant conferences with booth and
+  sponsorship to generate leads, build awareness, and engage solution-aware prospects face-to-face.
 stage: "Marketing > Solution Aware"
 motion: "Micro Events"
 channels: "Events"
@@ -12,7 +13,8 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
-  - meetup-pipeline
+  - icp-definition
+  - webinar-pipeline
   - threshold-engine
 ---
 # Conference Booth & Sponsorship — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Micro Events | **Channels:** Events
 
 ## Overview
-Exhibit at relevant conferences with booth and sponsorship to generate leads, build awareness, and engage solution-aware prospects face-to-face.
+Conference Booth & Sponsorship — Smoke Test. Exhibit at relevant conferences with booth and sponsorship to generate leads, build awareness, and engage solution-aware prospects face-to-face.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥50 booth visitors and ≥10 qualified leads from first conference
@@ -29,42 +31,27 @@ Exhibit at relevant conferences with booth and sponsorship to generate leads, bu
 
 ## Budget
 
-**Play-specific tools & costs**
-- **Webinar platform — Zoom free tier or Google Meet:** Free
-- **Cal.com (scheduling, optional):** Free
-
-_Total play-specific: Free_
+**Play-specific cost:** Free
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this conference booth & sponsorship play; document hypothesis and success criteria.
+### 1. Define your event ICP
+Run the `icp-definition` drill to define who should attend your event. Document: target audience, what they want to learn, ideal event format (webinar, meetup, workshop), and how you will invite them.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Set up event infrastructure
+Run the `webinar-pipeline` drill to configure your event: create Cal.com booking page or registration form, set up email confirmations via Loops, create an Attio list for registrants. Prepare your event content and materials.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Promote the event through your channels (email, social, communities). Run the event live. The agent prepares everything but you execute the event.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track registrations and attendance
+Log all registrants in Attio. Track: registrations, attendance rate, engagement during event (questions asked, polls answered), and follow-up actions taken.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥50 booth visitors and ≥10 qualified leads from first conference. If PASS, proceed to Baseline. If FAIL, adjust event topic, format, promotion channels, or timing.
 
 ---
 
@@ -78,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥50 booth visitors and ≥10 qualified leads from first conference**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

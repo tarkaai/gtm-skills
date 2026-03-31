@@ -1,7 +1,8 @@
 ---
 name: conference-speaking-program-baseline
 description: >
-  Conference Speaking — Baseline Run. Secure speaking slots at industry conferences for brand building, thought leadership, and lead generation with solution-aware and problem-aware attendees.
+    Conference Speaking — Baseline Run. Secure speaking slots at industry conferences for brand
+  building, thought leadership, and lead generation with solution-aware and problem-aware attendees.
 stage: "Marketing > Problem Aware"
 motion: "Micro Events"
 channels: "Events, Social"
@@ -13,16 +14,14 @@ slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
 drills:
   - meetup-pipeline
-  - webinar-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
 ---
 # Conference Speaking — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Micro Events | **Channels:** Events, Social
 
 ## Overview
-Secure speaking slots at industry conferences for brand building, thought leadership, and lead generation with solution-aware and problem-aware attendees.
+Conference Speaking — Baseline Run. Secure speaking slots at industry conferences for brand building, thought leadership, and lead generation with solution-aware and problem-aware attendees.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥3 speaking slots and ≥30 qualified leads in 10 weeks
@@ -32,43 +31,25 @@ Secure speaking slots at industry conferences for brand building, thought leader
 ## Budget
 
 **Play-specific tools & costs**
-- **Riverside (webinar + recording):** ~$25/mo
-- **Event promotion (LinkedIn posts, email invite):** Free
-
-_Total play-specific: ~$25/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week conference speaking experiment; define detailed ICP criteria.
+### 1. Build event operations
+Run the `meetup-pipeline` drill to create a repeatable event process: registration page, automated email reminders (1 week, 1 day, 1 hour before), attendee tracking in Attio, and post-event follow-up sequence.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Configure event analytics
+Run the `posthog-gtm-events` drill to track: `conference-speaking-program_registered`, `conference-speaking-program_attended`, `conference-speaking-program_engaged`, `conference-speaking-program_follow_up_replied`, `conference-speaking-program_meeting_booked`. Build a funnel from registration to pipeline.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Run 2-3 events over 2-4 weeks
+Execute a small series to validate repeatable demand. Test different topics, times, and promotion channels. Track what drives the highest registration-to-attendance and attendance-to-pipeline rates.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: ≥3 speaking slots and ≥30 qualified leads in 10 weeks. If PASS, proceed to Scalable. If FAIL, diagnose: is the problem awareness (low registrations), commitment (low attendance), or conversion (attendees don't convert).
 
 ---
 
@@ -83,8 +64,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥3 speaking slots and ≥30 qualified leads in 10 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

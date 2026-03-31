@@ -1,7 +1,8 @@
 ---
 name: micro-roundtables-baseline
 description: >
-  Micro-Roundtable — Baseline Run. Host an invite-only Zoom roundtable with 8–10 execs to test if deep conversations yield multiple meetings and justify the format.
+    Micro-Roundtable — Baseline Run. Host an invite-only Zoom roundtable with 8–10 execs to test if
+  deep conversations yield multiple meetings and justify the format.
 stage: "Marketing > Solution Aware"
 motion: "Micro Events"
 channels: "Events"
@@ -13,16 +14,14 @@ slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
 drills:
   - meetup-pipeline
-  - webinar-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
 ---
 # Micro-Roundtable — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Micro Events | **Channels:** Events
 
 ## Overview
-Host an invite-only Zoom roundtable with 8–10 execs to test if deep conversations yield multiple meetings and justify the format.
+Micro-Roundtable — Baseline Run. Host an invite-only Zoom roundtable with 8–10 execs to test if deep conversations yield multiple meetings and justify the format.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 12 attendees and ≥ 4 meetings over 2 weeks
@@ -32,41 +31,25 @@ Host an invite-only Zoom roundtable with 8–10 execs to test if deep conversati
 ## Budget
 
 **Play-specific tools & costs**
-- **Riverside (webinar + recording):** ~$25/mo
-- **Event promotion (LinkedIn posts, email invite):** Free
-
-_Total play-specific: ~$25/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 12 attendees and ≥ 4 meetings over 2 weeks).
+### 1. Build event operations
+Run the `meetup-pipeline` drill to create a repeatable event process: registration page, automated email reminders (1 week, 1 day, 1 hour before), attendee tracking in Attio, and post-event follow-up sequence.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Configure event analytics
+Run the `posthog-gtm-events` drill to track: `micro-roundtables_registered`, `micro-roundtables_attended`, `micro-roundtables_engaged`, `micro-roundtables_follow_up_replied`, `micro-roundtables_meeting_booked`. Build a funnel from registration to pipeline.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Run 2-3 events over 2-4 weeks
+Execute a small series to validate repeatable demand. Test different topics, times, and promotion channels. Track what drives the highest registration-to-attendance and attendance-to-pipeline rates.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track RSVPs, Show rate so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 12 attendees and ≥ 4 meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose: is the problem awareness (low registrations), commitment (low attendance), or conversion (attendees don't convert).
 
 ---
 
@@ -79,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 12 attendees and ≥ 4 meetings over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
