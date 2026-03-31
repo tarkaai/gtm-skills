@@ -1,80 +1,111 @@
 ---
 name: pricing-page-optimization-baseline
 description: >
-    Self-Serve Pricing Optimization — Baseline Run. Test pricing page to increase self-serve
-  conversions and plan selection.
+  Self-Serve Pricing Optimization — Baseline Run. Deploy the winning Smoke variant
+  to production, build continuous PostHog funnels and dashboards, run a second
+  experiment on plan mix or annual selection, and sustain ≥10% conversion lift
+  over 2 weeks of always-on measurement.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Website, Product"
 level: "Baseline Run"
 time: "16 hours over 2 weeks"
-outcome: "≥10% lift"
-kpis: ["Conversion rate", "Plan mix", "ARPU"]
+outcome: "≥10% sustained lift in pricing page conversion rate over 2 weeks"
+kpis: ["Pricing page conversion rate", "Plan selection mix", "ARPU (new subscribers)", "Checkout abandonment rate"]
 slug: "pricing-page-optimization"
 install: "npx gtm-skills add product/upsell/pricing-page-optimization"
 drills:
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
+  - ab-test-orchestrator
+  - pricing-health-monitor
 ---
+
 # Self-Serve Pricing Optimization — Baseline Run
 
-> **Stage:** Product → Upsell | **Motion:** Lead Capture Surface | **Channels:** Website, Product
+> **Stage:** Product → Upsell | **Motion:** LeadCaptureSurface | **Channels:** Website, Product
 
-## Overview
-Self-Serve Pricing Optimization — Baseline Run. Test pricing page to increase self-serve conversions and plan selection.
+## Outcomes
 
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ≥10% lift
+The Smoke winner is deployed at 100%. A second A/B test targeting the next-biggest funnel drop-off produces an additional lift. Combined conversion improvement ≥10% vs. pre-Smoke baseline is sustained over a full 2-week measurement window. Continuous pricing page monitoring is running.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- PostHog dashboard shows stable or improving daily conversion rate with no regression after Smoke winner rollout
+- Second experiment reaches sufficient sample size within the 2-week window
+- Checkout abandonment rate is trending down vs. Smoke baseline
+- ARPU is stable or increasing (variant is not cannibalizing higher tiers)
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `pricing-page-optimization_impression`, `pricing-page-optimization_engaged`, `pricing-page-optimization_converted`, `pricing-page-optimization_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Roll out the Smoke winner to 100%
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Using the PostHog feature flag from Smoke, ramp the winning variant to 100% of traffic. Remove the control group. Update the pricing page source code to reflect the winning variant as the new default (so you are no longer dependent on the feature flag for the base experience).
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+Verify via PostHog that conversion events continue to fire correctly after the rollout. Check 24 hours of data to confirm the conversion rate matches the Smoke test treatment group rate (within normal variance).
 
-### 4. Evaluate against threshold
-Measure against: ≥10% lift. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+### 2. Build production-grade tracking
 
----
+Run the `posthog-gtm-events` drill to extend the Smoke event taxonomy with these additional events:
 
-## KPIs to track
-- Conversion rate
-- Plan mix
-- ARPU
+| Event | Trigger | Properties |
+|-------|---------|-----------|
+| `pricing_page_scroll_depth` | User scrolls past 25%, 50%, 75%, 100% of the pricing page | `depth_percent`, `time_on_page_ms` |
+| `plan_feature_hover` | User hovers on a feature tooltip or expands a feature description | `plan_name`, `feature_name` |
+| `billing_interval_toggled` | User switches between monthly and annual toggle | `from_interval`, `to_interval`, `plan_name` |
+| `checkout_field_focused` | User focuses a checkout form field | `field_name`, `plan_name` |
+| `checkout_error` | Checkout form validation error or payment failure | `error_type`, `field_name`, `plan_name` |
 
----
+### 3. Launch the pricing health monitor
 
-## Pass threshold
-**≥10% lift**
+Run the `pricing-health-monitor` drill to build:
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+- A PostHog dashboard with ARPU trend, plan mix distribution, conversion rate by source, and checkout abandonment funnel
+- Daily anomaly detection rules: conversion rate drop >15%, ARPU drop >10%, checkout abandonment spike >20pp
+- A daily n8n workflow that checks all pricing metrics and alerts on anomalies
+- A weekly pricing digest posted to Slack
 
----
+This monitor runs continuously from Baseline through Durable.
 
-## How to run this skill
+### 4. Run a second A/B test
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `ab-test-orchestrator` drill to test the next-highest-impact hypothesis. Common Baseline-level experiments:
 
-_Install this skill: `npx gtm-skills add product/upsell/pricing-page-optimization`_
+- **Checkout flow optimization:** If checkout abandonment >40%, test reducing form fields (remove company name, phone number) or adding inline payment via Stripe Elements.
+- **Plan anchoring:** If plan mix is skewed to the cheapest tier, test reordering plans so the recommended plan is visually centered and 20% larger. Test adding a "Best value" badge.
+- **Annual incentive:** If annual selection <30%, test showing a crossed-out monthly price next to the annual price with explicit dollar savings ("$49/mo billed monthly" vs "$39/mo billed annually — save $120/year").
+- **Social proof:** Test adding customer count ("Join 2,000+ teams") or a testimonial quote near the plan CTAs.
+
+Use PostHog feature flags for the split. Run for 7-14 days or until 300+ visitors per variant. Evaluate using the same statistical rigor as the `ab-test-orchestrator` drill specifies: 95% confidence, minimum detectable effect of 3%.
+
+### 5. Evaluate against threshold
+
+After 2 full weeks, measure the combined impact:
+
+- **Primary metric:** Pricing page to checkout conversion rate. Threshold: ≥10% lift vs. pre-Smoke baseline.
+- **Secondary metrics:** ARPU, plan mix (is the recommended plan getting more share?), annual selection rate.
+- **Guardrail:** Checkout abandonment must not be higher than Smoke baseline.
+
+If PASS (≥10% sustained lift): Document the full test history — hypotheses, variants, results, adopted winners — in Attio. Proceed to Scalable.
+If FAIL: Review the pricing health dashboard for anomalies. Use PostHog session recordings to diagnose the remaining friction. Design a third experiment targeting the specific failure point. Re-run Baseline for another 2-week cycle.
+
+## Time Estimate
+
+- 2 hours: Smoke winner rollout and verification
+- 3 hours: extended event instrumentation
+- 4 hours: pricing health monitor setup (dashboard, anomaly rules, n8n workflows)
+- 5 hours: second A/B test (hypothesis, variant build, monitoring)
+- 2 hours: analysis and threshold evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, feature flags, funnels, session recordings, dashboards | Free up to 1M events/mo, then $0.00005/event ([posthog.com/pricing](https://posthog.com/pricing)) |
+| n8n | Daily monitoring workflows, weekly digest automation | From €24/mo cloud or free self-hosted ([n8n.io/pricing](https://n8n.io/pricing/)) |
+| Stripe | Billing event streaming for revenue metrics | 2.9% + $0.30/transaction ([stripe.com/pricing](https://stripe.com/pricing)) |
+
+## Drills Referenced
+
+- `posthog-gtm-events` — extend pricing page event instrumentation with scroll depth, feature hover, checkout field tracking
+- `ab-test-orchestrator` — design, run, and evaluate the second A/B test on plan anchoring, checkout, or annual incentive
+- `pricing-health-monitor` — build always-on pricing dashboard, daily anomaly detection, and weekly digest
