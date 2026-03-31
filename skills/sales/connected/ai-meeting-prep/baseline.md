@@ -15,7 +15,6 @@ kpis: ["Prep time reduction", "Next-step conversion rate", "AI brief usefulness 
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
-  - account-research-brief
   - posthog-gtm-events
 ---
 
@@ -50,7 +49,7 @@ Build an n8n workflow that automatically generates meeting briefs:
 1. Receive Cal.com event (attendee name, email, meeting type, date, duration)
 2. Match the attendee to an Attio contact and deal record (search by email)
 3. If no deal exists: create a skeleton deal in Attio and proceed
-4. Run the `account-research-brief` drill with the deal ID, meeting type, and attendees
+4. Run the the account research brief workflow (see instructions below) drill with the deal ID, meeting type, and attendees
 5. Store the generated brief as an Attio note on the deal
 6. Send a Slack notification to the founder: "Meeting brief ready for {company_name} — {meeting_date}. View in Attio."
 
@@ -132,6 +131,6 @@ If PASS: proceed to Scalable. If FAIL: diagnose using the brief quality scores. 
 
 ## Drills Referenced
 
-- `account-research-brief` — assemble account intelligence and generate a structured meeting brief (now triggered automatically 24 hours before every meeting)
+- the account research brief workflow (see instructions below) — assemble account intelligence and generate a structured meeting brief (now triggered automatically 24 hours before every meeting)
 - the call brief feedback loop workflow (see instructions below) — after each call, compare brief predictions to actual outcomes, score quality, extract new intelligence
 - `posthog-gtm-events` — set up event tracking for brief generation, quality scoring, and outcome correlation

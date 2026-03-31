@@ -14,7 +14,6 @@ kpis: ["Monthly impressions", "Monthly qualified leads", "Cost per qualified lea
 slug: "display-advertising-industry"
 install: "npx gtm-skills add Marketing/ProblemAware/display-advertising-industry"
 drills:
-  - display-creative-scaling
   - budget-allocation
 ---
 
@@ -43,7 +42,7 @@ Find the 10x multiplier. The creative-to-ads pipeline is automated: the agent ge
 
 ### 1. Scale Creative Production
 
-Run the `display-creative-scaling` drill:
+Run the the display creative scaling workflow (see instructions below) drill:
 
 1. **Analyze winning patterns from Baseline:**
    - Query PostHog for per-creative performance: CTR, conversion rate, CPA
@@ -192,5 +191,5 @@ At the end of each month:
 
 ## Drills Referenced
 
-- `display-creative-scaling` — automated creative production pipeline with AI generation, systematic A/B testing, fatigue detection, pain point expansion, and cross-platform creative sync
+- the display creative scaling workflow (see instructions below) — automated creative production pipeline with AI generation, systematic A/B testing, fatigue detection, pain point expansion, and cross-platform creative sync
 - `budget-allocation` — data-driven weekly budget rebalancing across platforms, campaigns, and audience segments using the 70/20/10 framework

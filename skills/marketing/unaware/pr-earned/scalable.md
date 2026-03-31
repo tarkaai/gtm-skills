@@ -14,7 +14,6 @@ kpis: ["Placement rate", "Referral clicks per placement", "Pitch-to-reply rate",
 slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
 drills:
-  - media-relationship-automation
   - ab-test-orchestrator
 ---
 
@@ -41,7 +40,7 @@ Find the 10x multiplier for earned media. Automate media monitoring and opportun
 
 ### 1. Deploy media monitoring and opportunity detection
 
-Run the `media-relationship-automation` drill to build always-on automation:
+Run the the media relationship automation workflow (see instructions below) drill to build always-on automation:
 
 **Source request pipeline:**
 1. Build an n8n workflow that monitors Qwoted and Featured.com email alerts.
@@ -172,5 +171,5 @@ If FAIL: diagnose using A/B test data --
 
 ## Drills Referenced
 
-- `media-relationship-automation` — always-on automation: source request monitoring, brand/competitor mention detection, trending topic alerts, journalist relationship tracking, post-placement amplification
+- the media relationship automation workflow (see instructions below) — always-on automation: source request monitoring, brand/competitor mention detection, trending topic alerts, journalist relationship tracking, post-placement amplification
 - `ab-test-orchestrator` — systematically test pitch angles, outreach timing, outlet types, and follow-up approaches to find the winning combinations

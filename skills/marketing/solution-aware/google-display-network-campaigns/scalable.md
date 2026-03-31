@@ -14,7 +14,6 @@ kpis: ["Monthly qualified leads (target >=50)", "CPA (target <=$180, trending st
 slug: "google-display-network-campaigns"
 install: "npx gtm-skills add marketing/solution-aware/google-display-network-campaigns"
 drills:
-  - display-creative-scaling
   - ab-test-orchestrator
   - tool-sync-workflow
 ---
@@ -43,7 +42,7 @@ Find the 10x multiplier. At Baseline, you proved GDN produces qualified leads at
 
 ### 1. Deploy AI-driven creative scaling
 
-Run the `display-creative-scaling` drill to build the automated creative production pipeline.
+Run the the display creative scaling workflow (see instructions below) drill to build the automated creative production pipeline.
 
 **Configure for this play:**
 
@@ -207,6 +206,6 @@ At the end of month 3, measure:
 
 ## Drills Referenced
 
-- `display-creative-scaling` -- AI-assisted creative generation pipeline, systematic A/B testing, fatigue detection, cross-platform creative synchronization
+- the display creative scaling workflow (see instructions below) -- AI-assisted creative generation pipeline, systematic A/B testing, fatigue detection, cross-platform creative synchronization
 - `ab-test-orchestrator` -- Design, run, and evaluate A/B tests on display creative, targeting, and landing pages with statistical rigor
 - `tool-sync-workflow` -- Cross-platform audience syncing, conversion exclusion lists, and CRM-to-ad-platform data flows

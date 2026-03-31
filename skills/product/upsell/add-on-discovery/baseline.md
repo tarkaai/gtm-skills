@@ -14,7 +14,6 @@ kpis: ["Add-on activation rate", "Cross-sell revenue", "ARPU lift", "Discovery-t
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
-  - addon-discovery-surface-build
   - posthog-gtm-events
 ---
 
@@ -38,11 +37,11 @@ The add-on discovery system runs continuously without manual intervention. Trigg
 
 ### 1. Instrument full-funnel tracking
 
-Run the `posthog-gtm-events` drill to ensure complete event coverage for the cross-sell funnel. You need every event from the `addon-discovery-surface-build` drill flowing reliably: `addon_discovery_impression`, `addon_discovery_clicked`, `addon_activation_started`, `addon_activated`, `addon_discovery_dismissed`. Build a PostHog funnel insight showing the full conversion path. Verify events are flowing by checking PostHog Live Events.
+Run the `posthog-gtm-events` drill to ensure complete event coverage for the cross-sell funnel. You need every event from the the addon discovery surface build workflow (see instructions below) drill flowing reliably: `addon_discovery_impression`, `addon_discovery_clicked`, `addon_activation_started`, `addon_activated`, `addon_discovery_dismissed`. Build a PostHog funnel insight showing the full conversion path. Verify events are flowing by checking PostHog Live Events.
 
 ### 2. Deploy always-on discovery
 
-Run the full `addon-discovery-surface-build` drill for your proven add-on (the one that passed Smoke). This time, complete all 6 steps:
+Run the full the addon discovery surface build workflow (see instructions below) drill for your proven add-on (the one that passed Smoke). This time, complete all 6 steps:
 
 - Step 1: Refine the trigger map using Smoke data — adjust the threshold if the trigger fired too early or too late
 - Step 2: Confirm all PostHog events are instrumented (done in step 1 above)
@@ -94,5 +93,5 @@ If PASS (≥10% activation rate), proceed to Scalable. If FAIL:
 
 ## Drills Referenced
 
-- `addon-discovery-surface-build` — full build of trigger detection, in-app surfaces, email nudges, and fatigue controls
+- the addon discovery surface build workflow (see instructions below) — full build of trigger detection, in-app surfaces, email nudges, and fatigue controls
 - `posthog-gtm-events` — ensures all cross-sell funnel events are instrumented and flowing

@@ -14,7 +14,6 @@ kpis: ["Scoring accuracy (% of converters correctly identified)", "Time-to-score
 slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
 drills:
-  - lead-score-automation
   - engagement-score-computation
   - lead-routing
 ---
@@ -39,7 +38,7 @@ Always-on PQL scoring pipeline: every new user is enriched, scored, tiered, and 
 
 ### 1. Build the automated scoring pipeline
 
-Run the `lead-score-automation` drill to create the always-on scoring infrastructure. This builds four n8n workflows:
+Run the the lead score automation workflow (see instructions below) drill to create the always-on scoring infrastructure. This builds four n8n workflows:
 
 **Workflow 1 — New-user scoring:** Triggered by Attio webhook on new person creation. Enriches the user in Clay (firmographics for fit score), queries PostHog for their product events (intent signals), computes composite PQL score, writes to Attio, and logs to PostHog.
 
@@ -105,6 +104,6 @@ If FAIL on latency: Debug the n8n workflow execution time. Common fixes: reduce 
 
 ## Drills Referenced
 
-- `lead-score-automation` — builds the 4 n8n workflows for automated scoring, re-scoring, decay, and model updates
+- the lead score automation workflow (see instructions below) — builds the 4 n8n workflows for automated scoring, re-scoring, decay, and model updates
 - `engagement-score-computation` — computes daily per-user engagement scores that enhance PQL intent scoring
 - `lead-routing` — auto-routes PQLs to the correct sales rep with full context

@@ -114,7 +114,7 @@ Roundtable-specific experiment design considerations:
 
 Beyond the optimization loop, the agent maintains series health through:
 
-**Guest pool sustainability**: The `roundtable-series-automation` drill's Clay sourcing runs weekly, adding 5-10 new ICP-matched prospects. If guest pool depth drops below 30, the agent increases sourcing intensity. If it drops below 15, the agent alerts the team: "Guest pool critically low. Recommend pausing the series until sourcing catches up or expanding the ICP definition."
+**Guest pool sustainability**: The the roundtable series automation workflow (see instructions below) drill's Clay sourcing runs weekly, adding 5-10 new ICP-matched prospects. If guest pool depth drops below 30, the agent increases sourcing intensity. If it drops below 15, the agent alerts the team: "Guest pool critically low. Recommend pausing the series until sourcing catches up or expanding the ICP definition."
 
 **Topic freshness**: Track which topic categories have been covered. After 6 months, no topic category should be repeated more than twice. If the topic backlog runs thin, the agent generates new topic ideas based on: recent industry news, common pain points from past roundtable transcripts, and competitive landscape changes.
 

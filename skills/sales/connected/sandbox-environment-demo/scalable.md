@@ -14,7 +14,6 @@ kpis: ["Sandbox provisioning automation rate", "Auto-provisioning success rate (
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
-  - sandbox-auto-provisioning
   - ab-test-orchestrator
 ---
 
@@ -38,7 +37,7 @@ Automated sandbox provisioning fires for 75% or more of qualified opportunities 
 
 ### 1. Deploy automated sandbox provisioning
 
-Run the `sandbox-auto-provisioning` drill to build the n8n workflow that fires when a deal reaches Connected stage in Attio:
+Run the the sandbox auto provisioning workflow (see instructions below) drill to build the n8n workflow that fires when a deal reaches Connected stage in Attio:
 
 1. **CRM trigger**: Configure the Attio webhook that fires on stage change to Connected.
 2. **Context enrichment**: n8n calls Clay to enrich the prospect's company (industry, size, tech stack) and pulls discovery notes from Attio. Claude analyzes the combined context and selects the optimal sandbox persona, feature highlights, and success checklist.
@@ -145,5 +144,5 @@ _CRM (Attio), analytics (PostHog), and automation (n8n) are standard stack — n
 
 ## Drills Referenced
 
-- `sandbox-auto-provisioning` — builds the n8n workflow that auto-provisions sandboxes on CRM stage change with AI-personalized configuration, error handling, and edge case routing
+- the sandbox auto provisioning workflow (see instructions below) — builds the n8n workflow that auto-provisions sandboxes on CRM stage change with AI-personalized configuration, error handling, and edge case routing
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on sandbox onboarding variants using PostHog experiments

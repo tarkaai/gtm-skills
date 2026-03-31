@@ -15,7 +15,6 @@ slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
 drills:
   - workflow-behavior-analysis
-  - workflow-suggestion-delivery
 ---
 
 # AI Workflow Recommendations — Smoke Test
@@ -68,7 +67,7 @@ Run the `workflow-behavior-analysis` drill for the smoke cohort:
 
 ### 4. Deliver suggestions via Intercom
 
-Run the `workflow-suggestion-delivery` drill to deliver suggestions:
+Run the the workflow suggestion delivery workflow (see instructions below) drill to deliver suggestions:
 
 1. For this smoke test, use Intercom in-app messages only (no email, no bots)
 2. Create 1 Intercom in-app post per suggestion, targeted to the specific user by user ID
@@ -118,4 +117,4 @@ If FAIL (<30%): Diagnose. Were suggestions irrelevant (wrong feature for the use
 ## Drills Referenced
 
 - `workflow-behavior-analysis` — analyze user behavior patterns, build power user benchmark, generate AI suggestions
-- `workflow-suggestion-delivery` — deliver suggestions via Intercom in-app messages, track acceptance
+- the workflow suggestion delivery workflow (see instructions below) — deliver suggestions via Intercom in-app messages, track acceptance

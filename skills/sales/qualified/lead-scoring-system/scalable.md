@@ -14,7 +14,6 @@ kpis: ["Conversion rate by tier", "Score decay impact on pipeline quality", "Tim
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
 drills:
-  - lead-score-automation
   - lead-routing
   - dashboard-builder
 ---
@@ -70,7 +69,7 @@ Update the lead scoring model built at Baseline. Add new fit and intent dimensio
 | Leadership hire | New VP+ in relevant dept (Clay) | +3 |
 | Conference engagement | Attended/spoke at relevant event | +2 |
 
-Use the `lead-score-automation` drill to update the n8n scoring workflows with these expanded criteria.
+Use the the lead score automation workflow (see instructions below) drill to update the n8n scoring workflows with these expanded criteria.
 
 ### 2. Deploy tier-based lead routing
 
@@ -140,7 +139,7 @@ Each week:
 3. Identify false negatives (Cold leads that converted) and false positives (Hot leads that did not engage)
 4. If any single criterion contributes >30% of false positives, reduce its point value
 5. If a pattern appears in false negatives that the model does not capture, add a new criterion
-6. Re-score all active leads when criteria change (use the model-update workflow from `lead-score-automation`)
+6. Re-score all active leads when criteria change (use the model-update workflow from the lead score automation workflow (see instructions below))
 
 ### 6. Scale to 500+ leads per month
 
@@ -188,6 +187,6 @@ If FAIL: diagnose whether the issue is model accuracy (wrong criteria), routing 
 
 ## Drills Referenced
 
-- `lead-score-automation` — updates scoring workflows for expanded criteria, handles decay and re-scoring at scale
+- the lead score automation workflow (see instructions below) — updates scoring workflows for expanded criteria, handles decay and re-scoring at scale
 - `lead-routing` — builds tier-based routing with SLAs, auto-assignment, and alerting
 - `dashboard-builder` — creates the PostHog dashboard for real-time scoring model health

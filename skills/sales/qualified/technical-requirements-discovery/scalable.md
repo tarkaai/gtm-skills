@@ -59,7 +59,7 @@ Run the `tool-sync-workflow` drill to create an n8n workflow that orchestrates t
 **Step 3 — Post-call processing (triggered by Fireflies transcript webhook):**
 - n8n receives the Fireflies transcript webhook when a new meeting is transcribed
 - Match the meeting to an Attio deal by participant email or company name
-- Call Claude API with the transcript and the `call-transcript-tech-requirements-extraction` prompt
+- Call Claude API with the transcript and the the call transcript tech requirements extraction workflow (see instructions below) prompt
 - Parse the structured requirements JSON
 - Write scores and requirements to the Attio deal record
 - Apply routing logic: set `tech_routing_status` based on composite score and blockers

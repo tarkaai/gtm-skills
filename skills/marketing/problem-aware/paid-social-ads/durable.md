@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
 drills:
   - dashboard-builder
   - ab-test-orchestrator
-  - paid-social-creative-pipeline
   - paid-social-audience-builder
   - budget-allocation
   - threshold-engine
@@ -242,7 +241,7 @@ Total: ~200 hours over 6 months
 
 - `dashboard-builder` — build the paid social performance dashboard with alerts
 - `ab-test-orchestrator` — structured creative testing integrated into the autonomous workflow
-- `paid-social-creative-pipeline` — AI-assisted creative generation on a bi-weekly cadence
+- the paid social creative pipeline workflow (see instructions below) — AI-assisted creative generation on a bi-weekly cadence
 - `paid-social-audience-builder` — audience refresh and expansion managed by the agent
 - `budget-allocation` — automated daily budget adjustments with guardrails
 - `threshold-engine` — monthly sustainability evaluation against Scalable baseline

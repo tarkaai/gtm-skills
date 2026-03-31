@@ -13,7 +13,6 @@ kpis: ["Outreach engagement rate", "Resolution rate", "30-day retention lift", "
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
 drills:
-  - struggle-signal-detection
   - posthog-gtm-events
 ---
 
@@ -51,7 +50,7 @@ Build a PostHog funnel: `struggle_detected` -> `proactive_outreach_sent` -> `pro
 
 ### 2. Deploy automated struggle detection
 
-Run the full `struggle-signal-detection` drill (all 8 steps). This builds:
+Run the full the struggle signal detection workflow (see instructions below) drill (all 8 steps). This builds:
 
 - The scoring query that runs every 6 hours via n8n
 - PostHog cohorts for each struggle tier (mild, moderate, severe, critical)
@@ -120,6 +119,6 @@ If FAIL on retention: The outreach engages users but does not retain them. The u
 
 ## Drills Referenced
 
-- `struggle-signal-detection` — Full automated pipeline detecting users struggling with the product every 6 hours
+- the struggle signal detection workflow (see instructions below) — Full automated pipeline detecting users struggling with the product every 6 hours
 - the proactive outreach pipeline workflow (see instructions below) — Automated contextual help delivery matched to struggle tier and stuck workflow
 - `posthog-gtm-events` — Set up play-specific event tracking and funnels

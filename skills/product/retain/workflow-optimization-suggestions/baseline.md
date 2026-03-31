@@ -15,7 +15,6 @@ slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
 drills:
   - posthog-gtm-events
-  - workflow-suggestion-delivery
 ---
 
 # AI Workflow Recommendations — Baseline Run
@@ -59,7 +58,7 @@ Create a PostHog dashboard with:
 
 ### 2. Build the always-on suggestion pipeline
 
-Run the `workflow-suggestion-delivery` drill in full to create the automated pipeline in n8n:
+Run the the workflow suggestion delivery workflow (see instructions below) drill in full to create the automated pipeline in n8n:
 
 1. **Weekly trigger**: n8n cron fires every Monday at 2 AM
 2. **User selection**: Query PostHog for all users active in the last 14 days, excluding:
@@ -76,7 +75,7 @@ Run the `workflow-suggestion-delivery` drill in full to create the automated pip
 
 ### 3. Configure the Intercom and Loops delivery
 
-Using the templates from the `workflow-suggestion-delivery` drill:
+Using the templates from the the workflow suggestion delivery workflow (see instructions below) drill:
 
 **Intercom in-app messages** (for active users):
 - Tooltip for efficiency suggestions: trigger when user starts the targeted workflow
@@ -146,4 +145,4 @@ If FAIL on efficiency: The suggestions may be cosmetic rather than impactful. Fo
 ## Drills Referenced
 
 - `posthog-gtm-events` — establish the event taxonomy and build the measurement foundation for suggestion tracking
-- `workflow-suggestion-delivery` — build the n8n pipeline, configure Intercom and Loops templates, implement delivery routing and fatigue rules
+- the workflow suggestion delivery workflow (see instructions below) — build the n8n pipeline, configure Intercom and Loops templates, implement delivery routing and fatigue rules

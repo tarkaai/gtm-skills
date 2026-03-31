@@ -10,7 +10,7 @@ Each play covers Marketing, Sales, and Product stages — from a quick **Smoke T
 
 ## How it works
 
-**240 plays to run. ~485 drills to practice. ~375 fundamentals to master.**
+**240 plays to run. ~196 drills to practice. ~375 fundamentals to master.**
 
 The GTM Skills repo is organized in three layers:
 

@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/upsell/freemium-feature-upsell"
 drills:
   - ab-test-orchestrator
   - usage-threshold-detection
-  - gate-conversion-health-report
 ---
 
 # Freemium to Paid Conversion — Scalable Automation
@@ -95,7 +94,7 @@ Implement segment detection using PostHog cohorts. Route each segment to its con
 
 ### 4. Generate weekly performance reports
 
-Run the `gate-conversion-health-report` drill configured for the full freemium conversion system (not just feature gates):
+Run the the gate conversion health report workflow (see instructions below) drill configured for the full freemium conversion system (not just feature gates):
 
 The weekly report covers:
 - Per-trigger conversion rates vs. 4-week average (detect decay early)
@@ -154,4 +153,4 @@ Measure at the end of 2 months:
 
 - `ab-test-orchestrator` — design and run systematic experiments across prompt copy, timing, surface type, and trigger thresholds with PostHog feature flags
 - `usage-threshold-detection` — expand the trigger surface with velocity-based, behavioral proximity, peer comparison, and re-engagement triggers
-- `gate-conversion-health-report` — weekly performance report covering per-trigger conversion, per-segment metrics, experiment outcomes, and revenue attribution
+- the gate conversion health report workflow (see instructions below) — weekly performance report covering per-trigger conversion, per-segment metrics, experiment outcomes, and revenue attribution

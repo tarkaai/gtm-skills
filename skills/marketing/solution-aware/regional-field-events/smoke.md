@@ -16,7 +16,6 @@ slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
 drills:
   - icp-definition
-  - meetup-pipeline
   - threshold-engine
 ---
 
@@ -53,7 +52,7 @@ For smoke test: pick the format you can execute with the least logistical risk. 
 
 ### 2. Set up the event infrastructure
 
-Run the `meetup-pipeline` drill to configure the event:
+Run the the meetup pipeline workflow (see instructions below) drill to configure the event:
 
 - Find a venue using local knowledge or Google Maps search. For the smoke test, use a familiar restaurant or bar — do not optimize venue selection yet. Book a private or semi-private space that fits your target headcount +20% buffer.
 - Create an RSVP page with Cal.com: event name, date, time, neighborhood (not exact address — share the full address after RSVP), and a brief description framing the event as a gathering of [N] [role] peers to discuss [topic]
@@ -131,5 +130,5 @@ Run the `threshold-engine` drill to measure:
 ## Drills Referenced
 
 - `icp-definition` — define who should attend and validate ICP density in target market
-- `meetup-pipeline` — set up RSVP infrastructure, promotion, and basic event operations
+- the meetup pipeline workflow (see instructions below) — set up RSVP infrastructure, promotion, and basic event operations
 - `threshold-engine` — evaluate pass/fail against RSVP, attendance, and meeting targets

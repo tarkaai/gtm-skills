@@ -14,7 +14,6 @@ slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
   - icp-definition
-  - podcast-guest-preparation
   - threshold-engine
 ---
 # Branded Podcast Launch — Smoke Test
@@ -69,7 +68,7 @@ Before recording, complete the one-time setup:
 1. Create a hosting platform account (Buzzsprout free tier or Spotify for Podcasters)
 2. Configure show-level settings: title, description, cover art (3000x3000px square), category, language
 3. Create a Riverside studio for recording
-4. Create a tracking link for the podcast: `yoursite.com/podcast` redirecting to `yoursite.com/?utm_source=podcast&utm_medium=owned&utm_campaign=branded-podcast` (see `podcast-guest-preparation` drill, step 3)
+4. Create a tracking link for the podcast: `yoursite.com/podcast` redirecting to `yoursite.com/?utm_source=podcast&utm_medium=owned&utm_campaign=branded-podcast` (see the podcast guest preparation workflow (see instructions below) drill, step 3)
 
 **Human action required:** Design or commission podcast cover art. The cover art must be 3000x3000px square JPEG/PNG. Use your brand colors and make the podcast name readable at thumbnail size (200x200px).
 
@@ -79,7 +78,7 @@ Run the the podcast episode production workflow (see instructions below) drill f
 
 **Episode 1 (solo or interview):** Choose your strongest topic -- the one where you have the most contrarian or data-backed perspective. This is your proof-of-concept episode. Target 20-30 minutes.
 
-**Episode 2:** If interview format, book your easiest-to-land guest (a friend, advisor, customer, or co-worker). Run `podcast-guest-preparation` to prepare talking points and tracking links. If solo, pick a different topic.
+**Episode 2:** If interview format, book your easiest-to-land guest (a friend, advisor, customer, or co-worker). Run the podcast guest preparation workflow (see instructions below) to prepare talking points and tracking links. If solo, pick a different topic.
 
 **Episode 3:** Vary the format or topic based on what felt natural in episodes 1-2. If episode 1 was solo and felt stiff, try an interview. If interviews flowed well, book another guest.
 
@@ -150,5 +149,5 @@ If FAIL: Diagnose. Check: Were the topics relevant to your ICP? Was the audio qu
 ## Drills Referenced
 - `icp-definition` -- define the target listener profile and podcast positioning
 - the podcast episode production workflow (see instructions below) -- record, edit, and publish each episode
-- `podcast-guest-preparation` -- prepare talking points, tracking links, and guest logistics
+- the podcast guest preparation workflow (see instructions below) -- prepare talking points, tracking links, and guest logistics
 - `threshold-engine` -- evaluate downloads and leads against pass/fail threshold

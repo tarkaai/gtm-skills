@@ -14,7 +14,6 @@ slug: "directories-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/directories-marketplaces"
 drills:
   - autonomous-optimization
-  - directory-performance-monitor
   - dashboard-builder
 ---
 
@@ -104,7 +103,7 @@ Run the `autonomous-optimization` drill configured for this play's KPIs:
 
 ### 2. Configure play-specific monitoring
 
-Run the `directory-performance-monitor` drill with Durable-level enhancements:
+Run the the directory performance monitor workflow (see instructions below) drill with Durable-level enhancements:
 
 **Competitive intelligence automation:**
 - Weekly Clay scrape of top 5 competitors across all Tier 1 directories
@@ -194,5 +193,5 @@ When the optimization loop detects convergence (<2% improvement from 3 consecuti
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate loop that finds the local maximum for directory performance
-- `directory-performance-monitor` -- enhanced with competitive intelligence, review health tracking, and ecosystem monitoring
+- the directory performance monitor workflow (see instructions below) -- enhanced with competitive intelligence, review health tracking, and ecosystem monitoring
 - `dashboard-builder` -- executive dashboard with optimization activity, competitive position, and convergence tracking

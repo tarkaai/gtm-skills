@@ -16,7 +16,6 @@ kpis: ["Weekly volume", "Meeting rate", "Cost per meeting", "Outreach angle conv
 slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
 drills:
-  - intent-signal-automation
   - follow-up-automation
   - tool-sync-workflow
   - ab-test-orchestrator
@@ -45,7 +44,7 @@ Scalable is the 10x multiplier. Move from 200 contacts in 2 weeks to 1,000 conta
 
 ### 1. Deploy intent signal automation for continuous prospect discovery
 
-Run the `intent-signal-automation` drill to build always-on n8n workflows that replace manual list building:
+Run the the intent signal automation workflow (see instructions below) drill to build always-on n8n workflows that replace manual list building:
 
 1. **Website visitor workflow**: Configure RB2B or Koala to identify website visitors. n8n webhook receives visitor data, filters for high-intent pages (pricing, case studies, docs), sends to Clay for intent scoring. Hot-tier visitors (score 70+) auto-enter the AI research pipeline. Warm-tier visitors (40-69) go to a watch list.
 2. **Third-party intent workflow**: Connect G2 buyer intent or Bombora signals via n8n. Companies researching your category or competitors trigger automatic Clay enrichment and scoring.
@@ -179,7 +178,7 @@ Total: ~75 hours over 3 months.
 
 ## Drills Referenced
 
-- `intent-signal-automation` — always-on n8n workflows collecting website visitor, G2, and enrichment signals to feed the prospect pipeline continuously
+- the intent signal automation workflow (see instructions below) — always-on n8n workflows collecting website visitor, G2, and enrichment signals to feed the prospect pipeline continuously
 - `follow-up-automation` — automated cross-channel follow-ups that respond to email opens, LinkedIn accepts, and positive/negative replies
 - `tool-sync-workflow` — n8n sync workflows connecting Clay, Instantly, LinkedIn automation, Attio, and PostHog into a single data flow
 - `ab-test-orchestrator` — A/B testing framework for research prompts, outreach angles, email copy, LinkedIn messages, and timing

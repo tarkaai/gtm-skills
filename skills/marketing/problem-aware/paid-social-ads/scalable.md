@@ -15,7 +15,6 @@ slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
 drills:
   - ab-test-orchestrator
-  - paid-social-creative-pipeline
   - paid-social-audience-builder
   - tool-sync-workflow
   - budget-allocation
@@ -114,7 +113,7 @@ Build a workflow that runs every Monday:
 
 ### 5. Produce creative at scale
 
-Run the `paid-social-creative-pipeline` drill on a 2-week cadence:
+Run the the paid social creative pipeline workflow (see instructions below) drill on a 2-week cadence:
 - Every 2 weeks: generate 5-8 new variants using Claude/Anthropic API
 - Use winning patterns from A/B tests: if stat hooks outperform question hooks, create more stat hooks but with new data points
 - Test at least one entirely new angle each cycle (different pain point, different persona, different offer format) to prevent creative tunnel vision
@@ -170,7 +169,7 @@ Total: ~60 hours over 2 months (front-loaded in first 2 weeks, then ~5 hrs/week 
 ## Drills Referenced
 
 - `ab-test-orchestrator` — systematic creative and audience testing with statistical rigor
-- `paid-social-creative-pipeline` — bi-weekly creative production at scale (20-30 variants over 2 months)
+- the paid social creative pipeline workflow (see instructions below) — bi-weekly creative production at scale (20-30 variants over 2 months)
 - `paid-social-audience-builder` — build all 6 audience segments across LinkedIn and Meta
 - `tool-sync-workflow` — sync CRM, PostHog, and ad platforms bidirectionally via n8n
 - `budget-allocation` — automated budget scaling with guardrails and per-campaign CPL triggers

@@ -15,7 +15,6 @@ kpis: ["AI prep adoption rate", "Call outcome improvement", "Prep time savings",
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
-  - account-research-brief
   - dashboard-builder
   - demo-prep-automation
 ---
@@ -43,7 +42,7 @@ Find the 10x multiplier. At Baseline, the system generates a meeting brief for e
 
 ### 1. Differentiate Briefs by Meeting Type
 
-Modify the `account-research-brief` drill to use meeting type-specific prompts:
+Modify the the account research brief workflow (see instructions below) drill to use meeting type-specific prompts:
 
 **Discovery call briefs** emphasize:
 - Hypothesized pain points ranked by likelihood (from enrichment signals)
@@ -169,7 +168,7 @@ If PASS: proceed to Durable. If FAIL: diagnose using the brief quality dashboard
 
 ## Drills Referenced
 
-- `account-research-brief` — now with meeting type-specific prompts and multi-meeting context chains
+- the account research brief workflow (see instructions below) — now with meeting type-specific prompts and multi-meeting context chains
 - the call brief feedback loop workflow (see instructions below) — continuous quality scoring feeding prompt optimization
 - `dashboard-builder` — dashboard, alerts, and weekly reports tracking brief quality and impact at scale
 - `demo-prep-automation` — specialized brief generation for demo meetings: pain-to-feature mapping, custom demo flow, ROI estimates, recap assets

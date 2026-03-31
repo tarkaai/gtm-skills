@@ -14,8 +14,6 @@ kpis: ["Account-to-meeting conversion rate", "Champion recruitment rate", "Enabl
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
 drills:
-  - champion-recruitment-sequence
-  - champion-enablement-delivery
   - posthog-gtm-events
 ---
 # Champion-driven Outbound — Baseline Run
@@ -64,7 +62,7 @@ Using the ICP and champion persona validated in Smoke, build a list of 40 target
 Segment candidates into Track A (score 75+, signal-led) and Track B (score 50-74, value-led).
 
 ### 3. Launch automated recruitment sequences
-Run the `champion-recruitment-sequence` drill. This creates:
+Run the the champion recruitment sequence workflow (see instructions below) drill. This creates:
 
 **For Track A candidates (signal-led):**
 - 4-touch email sequence via Instantly: signal reference → value asset → personalized Loom video → breakup with referral ask
@@ -79,7 +77,7 @@ The drill configures Instantly campaigns, creates Loom video scripts, and sets u
 **Human action required:** Record personalized Loom videos for Track A candidates scoring 85+. The agent prepares the script and talking points. Aim for 60-90 seconds per video.
 
 ### 4. Enable recruited champions
-As champions move to `champion_status: Recruited`, run the `champion-enablement-delivery` drill. For each recruited champion, the drill:
+As champions move to `champion_status: Recruited`, run the the champion enablement delivery workflow (see instructions below) drill. For each recruited champion, the drill:
 - Generates a personalized enablement kit using Claude (internal email draft, one-page business case, objection responses, talking points)
 - Sets up a 3-email drip via Loops delivering the kit over 5 days
 - Tracks engagement: email opens, Loom views, material forwards
@@ -138,8 +136,8 @@ If not, iterate on your approach and re-run this level.
 ---
 
 ## Drills Referenced
-- `champion-recruitment-sequence` — multi-channel outreach sequence to convert champion candidates into active advocates
-- `champion-enablement-delivery` — delivers personalized internal selling materials to recruited champions
+- the champion recruitment sequence workflow (see instructions below) — multi-channel outreach sequence to convert champion candidates into active advocates
+- the champion enablement delivery workflow (see instructions below) — delivers personalized internal selling materials to recruited champions
 - `posthog-gtm-events` — configures champion-specific event tracking in PostHog
 
 ---

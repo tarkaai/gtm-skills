@@ -14,7 +14,6 @@ slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
 drills:
   - directory-review-generation
-  - directory-performance-monitor
   - ab-test-orchestrator
 ---
 
@@ -107,7 +106,7 @@ If incentivized asks convert significantly better without inflating ratings:
 
 ### 5. Monitor cross-directory performance
 
-Run the `directory-performance-monitor` drill with expanded scope:
+Run the the directory performance monitor workflow (see instructions below) drill with expanded scope:
 
 Weekly automated report now covers:
 - Review velocity per directory (target: 2-3 new reviews/week total)
@@ -173,5 +172,5 @@ If FAIL:
 ## Drills Referenced
 
 - `directory-review-generation` — expanded trigger automation and multi-directory review asks
-- `directory-performance-monitor` — cross-directory KPI tracking and competitive monitoring
+- the directory performance monitor workflow (see instructions below) — cross-directory KPI tracking and competitive monitoring
 - `ab-test-orchestrator` — systematic testing of ask copy, timing, sender, and incentives

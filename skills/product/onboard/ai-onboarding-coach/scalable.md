@@ -16,7 +16,6 @@ slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
 drills:
   - onboarding-persona-scaling
-  - struggle-signal-detection
   - ab-test-orchestrator
 ---
 
@@ -61,7 +60,7 @@ Run the `onboarding-persona-scaling` drill to extend the coach's knowledge and b
 
 ### 2. Deploy struggle signal detection
 
-Run the `struggle-signal-detection` drill to build the behavioral detection layer that identifies struggling users in real-time:
+Run the the struggle signal detection workflow (see instructions below) drill to build the behavioral detection layer that identifies struggling users in real-time:
 
 1. Instrument struggle signals: error spikes, rage clicks, repeated failures, help-seeking behavior, abandoned setup flows
 2. Compute per-user struggle scores every 6 hours
@@ -137,5 +136,5 @@ _CRM (Attio), automation (n8n), and PostHog are standard stack — not counted a
 ## Drills Referenced
 
 - `onboarding-persona-scaling` — extends the coach knowledge base, conversation flows, and proactive triggers to cover all user personas with persona-specific content and routing
-- `struggle-signal-detection` — builds the behavioral detection layer that identifies struggling users by error density, rage clicks, abandoned flows, and help-seeking behavior, then routes them to the AI coach with specific context
+- the struggle signal detection workflow (see instructions below) — builds the behavioral detection layer that identifies struggling users by error density, rage clicks, abandoned flows, and help-seeking behavior, then routes them to the AI coach with specific context
 - `ab-test-orchestrator` — runs systematic A/B tests on coach greeting format, proactive suggestion timing, response depth, and struggle intervention format to find the optimal coach configuration at scale

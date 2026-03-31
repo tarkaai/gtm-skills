@@ -16,7 +16,6 @@ slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
   - autonomous-optimization
-  - deal-term-ab-testing
 ---
 
 # Pricing Presentation Framework — Durable Intelligence
@@ -160,4 +159,4 @@ The optimization loop runs indefinitely. Monitor for **convergence** — when su
 
 - `autonomous-optimization` — the core Durable loop: monitor metrics daily, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly. Converges when successive experiments produce <2% improvement.
 - `autonomous-optimization` — weekly pricing intelligence report with Durable-level depth: experiment pipeline, convergence tracking, market signals, and experiment candidate generation
-- `deal-term-ab-testing` — executes the experiments designed by the autonomous optimization loop, using PostHog feature flags to test pricing variables against control
+- the deal term ab testing workflow (see instructions below) — executes the experiments designed by the autonomous optimization loop, using PostHog feature flags to test pricing variables against control

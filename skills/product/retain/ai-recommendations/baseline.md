@@ -15,7 +15,6 @@ slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
 drills:
   - posthog-gtm-events
-  - workflow-suggestion-delivery
   - feature-adoption-monitor
 ---
 
@@ -53,7 +52,7 @@ Build a PostHog funnel: generated > delivered > shown > clicked > adopted. Break
 
 ### 2. Automate suggestion delivery
 
-Run the `workflow-suggestion-delivery` drill to build the automated pipeline:
+Run the the workflow suggestion delivery workflow (see instructions below) drill to build the automated pipeline:
 
 1. Configure an n8n workflow triggered by a weekly cron schedule.
 2. The workflow pulls active users from PostHog, filters out users who received a recommendation in the last 7 days or dismissed 3+ consecutive suggestions, and batches them for AI generation.
@@ -102,5 +101,5 @@ If FAIL: diagnose by channel (in-app vs email), by feature (which recommendation
 ## Drills Referenced
 
 - `posthog-gtm-events` — establishes the recommendation event taxonomy and funnels for consistent tracking
-- `workflow-suggestion-delivery` — builds the automated n8n pipeline that generates, filters, routes, and delivers AI recommendations
+- the workflow suggestion delivery workflow (see instructions below) — builds the automated n8n pipeline that generates, filters, routes, and delivers AI recommendations
 - `feature-adoption-monitor` — tracks feature discovery rates, identifies stalled users, and triggers follow-up nudges

@@ -16,7 +16,6 @@ slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
 drills:
   - autonomous-optimization
-  - tooltip-targeting-automation
 ---
 
 # Contextual Feature Tooltips — Durable Intelligence
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill with Durable-level configuration:
 
 ### 3. Maintain the targeting pipeline
 
-Run the `tooltip-targeting-automation` drill in maintenance mode:
+Run the the tooltip targeting automation workflow (see instructions below) drill in maintenance mode:
 
 - The daily n8n pipeline continues to compute per-user tooltip priorities
 - The autonomous optimization loop can modify targeting parameters (prerequisite feature requirements, segment definitions, frequency caps) as part of its experiments
@@ -140,4 +139,4 @@ This level runs continuously. Monthly review criteria:
 
 - `autonomous-optimization` -- the core monitor-diagnose-experiment-evaluate-implement loop that makes this level self-optimizing
 - `autonomous-optimization` -- measurement layer with auto-retirement pipeline and fatigue detection
-- `tooltip-targeting-automation` -- personalized tooltip delivery pipeline running in maintenance mode
+- the tooltip targeting automation workflow (see instructions below) -- personalized tooltip delivery pipeline running in maintenance mode

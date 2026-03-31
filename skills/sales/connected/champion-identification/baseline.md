@@ -15,8 +15,6 @@ kpis: ["Champion rate per deal", "Champion recruitment conversion rate", "Enable
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
-  - champion-recruitment-sequence
-  - champion-enablement-delivery
   - posthog-gtm-events
 ---
 
@@ -67,7 +65,7 @@ Connect PostHog events to Attio via n8n webhook so deal records update automatic
 
 ### 3. Launch Recruitment Sequences
 
-Run the `champion-recruitment-sequence` drill:
+Run the the champion recruitment sequence workflow (see instructions below) drill:
 - Build Track A (high-signal, 4-email sequence) and Track B (warm-signal, 3-email sequence) in Instantly
 - Configure LinkedIn touch layer for Track A candidates
 - Set up the n8n workflow that listens for positive replies and auto-updates Attio
@@ -80,7 +78,7 @@ Load all champion candidates from the Smoke test into the appropriate track. Als
 
 ### 4. Deploy Enablement Delivery
 
-Run the `champion-enablement-delivery` drill:
+Run the the champion enablement delivery workflow (see instructions below) drill:
 - Configure the Loops 3-email enablement sequence
 - Set up the AI enablement kit generator (Claude generates personalized business case, internal email draft, objection responses, talking points)
 - Connect Loom analytics tracking so champion video views are logged
@@ -138,6 +136,6 @@ After 2 weeks, measure:
 
 ## Drills Referenced
 
-- `champion-recruitment-sequence` — multi-channel outreach to convert champion candidates into recruited advocates
-- `champion-enablement-delivery` — deliver personalized selling materials to recruited champions
+- the champion recruitment sequence workflow (see instructions below) — multi-channel outreach to convert champion candidates into recruited advocates
+- the champion enablement delivery workflow (see instructions below) — deliver personalized selling materials to recruited champions
 - `posthog-gtm-events` — configure PostHog event tracking for the champion program

@@ -15,7 +15,6 @@ slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
   - price-objection-response
-  - objection-follow-up-sequence
   - pain-based-business-case
   - posthog-gtm-events
 ---
@@ -52,7 +51,7 @@ Build a PostHog funnel: `price_objection_received` -> `price_objection_handled` 
 
 ### 2. Deploy automated follow-up sequences
 
-Run the `objection-follow-up-sequence` drill to build n8n workflows that auto-trigger when an objection outcome is logged as `partially_resolved` or `unresolved` in Attio. This creates:
+Run the the objection follow up sequence workflow (see instructions below) drill to build n8n workflows that auto-trigger when an objection outcome is logged as `partially_resolved` or `unresolved` in Attio. This creates:
 
 - 6 root-cause-specific email sequences (no_budget, value_gap, competitor_comparison, sticker_shock, authority_gap, timing)
 - Each sequence delivers 3-5 touches over 7-14 days with value assets matched to the root cause
@@ -123,6 +122,6 @@ If FAIL: diagnose the bottleneck:
 ## Drills Referenced
 
 - `price-objection-response` — classifies each objection, generates response, logs outcome
-- `objection-follow-up-sequence` — automated multi-touch follow-up with root-cause-matched value assets
+- the objection follow up sequence workflow (see instructions below) — automated multi-touch follow-up with root-cause-matched value assets
 - `pain-based-business-case` — generates champion-ready business case from pain data for value_gap and no_budget objections
 - `posthog-gtm-events` — configures the full event tracking pipeline for the play

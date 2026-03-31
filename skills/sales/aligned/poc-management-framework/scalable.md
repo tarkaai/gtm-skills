@@ -13,8 +13,6 @@ outcome: "POCs on ≥75% of qualified opportunities at scale over 2 months with 
 kpis: ["POC completion rate", "Success criteria achievement rate", "POC-to-close conversion", "Average POC duration", "Intervention effectiveness rate"]
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
-drills:
-  - sandbox-auto-provisioning
 ---
 
 # POC Management Framework — Scalable Automation
@@ -38,7 +36,7 @@ A single rep manages 15-25+ concurrent POCs without losing visibility into any o
 
 ### 1. Deploy auto-provisioning
 
-Run the `sandbox-auto-provisioning` drill. This builds an n8n workflow that:
+Run the the sandbox auto provisioning workflow (see instructions below) drill. This builds an n8n workflow that:
 
 1. Triggers when a deal reaches Aligned and passes POC qualification.
 2. Enriches the prospect context via Clay (industry, company size, tech stack, funding stage).
@@ -133,4 +131,4 @@ If PASS, proceed to Durable. If FAIL, focus on the weakest metric: if close rate
 ## Drills Referenced
 
 - the poc health monitoring workflow (see instructions below) — real-time portfolio monitoring with predictive risk scoring, automated interventions, and weekly briefs
-- `sandbox-auto-provisioning` — fully automated sandbox provisioning triggered by CRM stage changes with AI-personalized configuration
+- the sandbox auto provisioning workflow (see instructions below) — fully automated sandbox provisioning triggered by CRM stage changes with AI-personalized configuration

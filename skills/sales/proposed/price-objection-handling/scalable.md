@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
   - objection-detection-automation
   - ab-test-orchestrator
-  - objection-follow-up-sequence
 ---
 
 # Price Objection Handling — Scalable Automation
@@ -77,7 +76,7 @@ For each experiment:
 
 ### 3. Scale the follow-up sequences
 
-Ensure the `objection-follow-up-sequence` drill's n8n workflows handle increased volume without manual intervention:
+Ensure the the objection follow up sequence workflow (see instructions below) drill's n8n workflows handle increased volume without manual intervention:
 - Verify Instantly sending limits can handle the follow-up volume (upgrade to Hypergrowth at $97/mo if exceeding 5,000 emails/mo)
 - Monitor n8n workflow execution logs for failures — set up error alerting
 - Confirm Attio webhook delivery is reliable (check n8n execution history for missed triggers)
@@ -139,4 +138,4 @@ After 2 months, evaluate:
 
 - `objection-detection-automation` — always-on monitoring of calls and emails for price objections with auto-classification and workflow triggering
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on response frameworks and follow-up sequences
-- `objection-follow-up-sequence` — automated multi-touch follow-ups scaled to handle increased volume from auto-detection
+- the objection follow up sequence workflow (see instructions below) — automated multi-touch follow-ups scaled to handle increased volume from auto-detection

@@ -14,7 +14,6 @@ kpis: ["High-intent accounts per week", "Reply rate by intent tier", "Signal-to-
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - intent-signal-automation
   - cold-email-sequence
   - posthog-gtm-events
 ---
@@ -44,15 +43,15 @@ Choose and install a visitor identification tool. For Baseline, start with a fre
 - **RB2B** (recommended for Baseline): Free tier gives 150 identifications/month. Install the pixel on your website. Configure the webhook to send identified visitors to your n8n instance.
 - **Koala** (alternative): Free tier gives 250 identifications/month with product usage integration.
 
-Run the `intent-signal-automation` drill, specifically Step 1 (website visitor signal workflow). Configure the n8n webhook to receive visitor data, filter for high-signal pages (pricing, demo, case studies, docs), and push to Clay for scoring.
+Run the the intent signal automation workflow (see instructions below) drill, specifically Step 1 (website visitor signal workflow). Configure the n8n webhook to receive visitor data, filter for high-signal pages (pricing, demo, case studies, docs), and push to Clay for scoring.
 
 ### 2. Automate signal scoring
 
 Set up the Clay intent scoring table from the `intent-score-model` drill (which you validated manually during Smoke). Import your proven weights and thresholds. Connect the n8n webhook output to Clay so every identified visitor is automatically scored.
 
-Run the `intent-signal-automation` drill, Step 3 (enrichment signal workflow) to set up weekly refresh of contextual signals (funding, hiring, tech stack changes).
+Run the the intent signal automation workflow (see instructions below) drill, Step 3 (enrichment signal workflow) to set up weekly refresh of contextual signals (funding, hiring, tech stack changes).
 
-If you have a G2 paid profile, also configure the G2 intent webhook (Step 2 of `intent-signal-automation`).
+If you have a G2 paid profile, also configure the G2 intent webhook (Step 2 of the intent signal automation workflow (see instructions below)).
 
 ### 3. Configure outreach sequences
 
@@ -116,6 +115,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose: is signal volume the issue (nee
 
 ## Drills Referenced
 
-- `intent-signal-automation` — automate signal collection, scoring, and CRM routing via n8n
+- the intent signal automation workflow (see instructions below) — automate signal collection, scoring, and CRM routing via n8n
 - `cold-email-sequence` — build and launch intent-triggered email sequences in Instantly
 - `posthog-gtm-events` — configure intent-specific event tracking for measurement

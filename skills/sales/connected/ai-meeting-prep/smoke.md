@@ -15,7 +15,6 @@ kpis: ["Prep time reduction", "Insights per call", "AI brief quality score", "Ca
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
-  - account-research-brief
   - threshold-engine
 ---
 
@@ -50,7 +49,7 @@ For each selected meeting, record the founder's estimated prep time for their no
 
 ### 2. Run the Account Research Brief Drill
 
-For each selected meeting, run the `account-research-brief` drill:
+For each selected meeting, run the the account research brief workflow (see instructions below) drill:
 
 1. Pull the deal context from Attio (company, contacts, prior notes, pain points documented)
 2. Enrich the account in Clay: firmographics, recent news, job openings, tech stack
@@ -116,5 +115,5 @@ Run the `threshold-engine` drill to aggregate results:
 
 ## Drills Referenced
 
-- `account-research-brief` — assemble account intelligence from CRM and enrichment sources, then generate a structured meeting brief with talking points, questions, objection prep, and agenda
+- the account research brief workflow (see instructions below) — assemble account intelligence from CRM and enrichment sources, then generate a structured meeting brief with talking points, questions, objection prep, and agenda
 - `threshold-engine` — evaluate test results against the pass threshold using Attio and PostHog data

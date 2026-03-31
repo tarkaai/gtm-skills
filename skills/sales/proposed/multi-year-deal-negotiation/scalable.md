@@ -14,8 +14,6 @@ outcome: ">=30% close rate on multi-year proposals, average TCV >=2x annual ACV,
 kpis: ["Multi-year close rate", "Average TCV", "Proposal volume (total and proactive vs reactive)", "Experiment win rate", "Average discount efficiency"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
-drills:
-  - deal-term-ab-testing
 ---
 
 # Multi-Year Deal Negotiation — Scalable Automation
@@ -58,7 +56,7 @@ Verify the scoring model against Baseline data:
 
 ### 2. Launch A/B testing on deal structures
 
-Run the `deal-term-ab-testing` drill to start optimizing deal terms:
+Run the the deal term ab testing workflow (see instructions below) drill to start optimizing deal terms:
 
 **First experiment (weeks 1-4): Discount level**
 - Control: Current discount rates (from Baseline)
@@ -136,4 +134,4 @@ If FAIL:
 ## Drills Referenced
 
 - the multi year pipeline scaling workflow (see instructions below) — readiness scoring model, proactive identification workflow, segment-specific deal templates, intent signal monitoring
-- `deal-term-ab-testing` — experiment framework for testing discount levels, option count, payment terms, presentation formats; with PostHog feature flags and evaluation protocol
+- the deal term ab testing workflow (see instructions below) — experiment framework for testing discount levels, option count, payment terms, presentation formats; with PostHog feature flags and evaluation protocol

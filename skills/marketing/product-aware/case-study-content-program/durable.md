@@ -166,7 +166,7 @@ Build an n8n workflow that runs monthly:
 2. For each stale case study, query PostHog for current engagement and conversion metrics
 3. Rank stale case studies by impact: high-traffic + high-influence case studies with stale metrics are the top refresh priority
 4. For the top 2-3 refresh candidates, trigger an outreach email to the original customer via Loops: "It has been [X months] since we published your story. Your team has achieved even more since then -- we would love to update the case study with your latest results. It is a quick 15-minute conversation."
-5. If the customer agrees: schedule a 15-minute refresh interview via Cal.com, update the case study with new metrics, regenerate derivative assets via the `case-study-content-scaling` pipeline (still running from Scalable)
+5. If the customer agrees: schedule a 15-minute refresh interview via Cal.com, update the case study with new metrics, regenerate derivative assets via the the case study content scaling workflow (see instructions below) pipeline (still running from Scalable)
 6. If the customer declines or does not respond within 14 days: keep the current version but add a "Last verified: [date]" label. If the case study is the sole coverage for an important industry/use case, prioritize recruiting a new customer in that segment.
 
 **Human action required:** Approve refreshed case studies before republication. The customer must sign off on updated metrics and quotes.

@@ -14,7 +14,6 @@ kpis: ["Monthly conversions", "Blended CPA", "Creative win rate", "Audience refr
 slug: "retargeting-campaigns-multi-platform"
 install: "npx gtm-skills add marketing/product-aware/retargeting-campaigns-multi-platform"
 drills:
-  - paid-social-creative-pipeline
   - ab-test-orchestrator
   - tool-sync-workflow
 ---
@@ -41,7 +40,7 @@ Scale retargeting spend 5-10x from Baseline while maintaining or improving CPA t
 
 ### 1. Automate creative production and rotation
 
-Run the `paid-social-creative-pipeline` drill adapted for retargeting creative:
+Run the the paid social creative pipeline workflow (see instructions below) drill adapted for retargeting creative:
 
 1. Build a creative production workflow in n8n:
    - Every 2 weeks, trigger a Claude API call via `hypothesis-generation` to generate 5 new retargeting ad variants per platform
@@ -163,6 +162,6 @@ After 3 months, measure:
 
 ## Drills Referenced
 
-- `paid-social-creative-pipeline` — produce, test, and rotate retargeting ad creative across platforms on a 2-week cycle
+- the paid social creative pipeline workflow (see instructions below) — produce, test, and rotate retargeting ad creative across platforms on a 2-week cycle
 - `ab-test-orchestrator` — design and run systematic A/B tests on audiences, creative formats, and landing pages with statistical rigor
 - `tool-sync-workflow` — build n8n workflows that sync audiences, conversions, and budget allocations across platforms and CRM

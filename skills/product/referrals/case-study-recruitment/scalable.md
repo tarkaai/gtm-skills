@@ -16,7 +16,6 @@ slug: "case-study-recruitment"
 install: "npx gtm-skills add product/referrals/case-study-recruitment"
 drills:
   - case-study-candidate-pipeline
-  - case-study-content-scaling
   - dashboard-builder
 ---
 
@@ -52,7 +51,7 @@ Configure the scoring pipeline to report the coverage gap: which verticals have 
 
 ### 2. Deploy content scaling automation
 
-Run the `case-study-content-scaling` drill to build the derivative asset engine:
+Run the the case study content scaling workflow (see instructions below) drill to build the derivative asset engine:
 
 1. Configure the n8n workflow triggered by `case_study_completed` event
 2. Automate Tier 1 asset production (pull quotes, metric highlights, email snippets, in-app banners)
@@ -130,5 +129,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `case-study-candidate-pipeline` — segmented scoring and vertical-specific outreach
-- `case-study-content-scaling` — derivative asset production and automated deal-matched distribution
+- the case study content scaling workflow (see instructions below) — derivative asset production and automated deal-matched distribution
 - `dashboard-builder` — daily health checks, diagnostics, interventions, and weekly reporting

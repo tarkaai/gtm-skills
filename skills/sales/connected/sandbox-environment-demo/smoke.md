@@ -14,7 +14,6 @@ kpis: ["Sandbox provisioning rate", "Time to first login", "Active usage rate (3
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
-  - sandbox-provisioning-workflow
   - threshold-engine
 ---
 
@@ -41,7 +40,7 @@ Pull deals at Connected stage from Attio. For each, verify sandbox qualification
 
 ### 2. Run the sandbox-provisioning-workflow drill
 
-For each selected deal, run the `sandbox-provisioning-workflow` drill. This handles:
+For each selected deal, run the the sandbox provisioning workflow workflow (see instructions below) drill. This handles:
 - Determining the best sample data persona based on discovery notes
 - Provisioning the sandbox environment with relevant sample data
 - Generating a personalized success checklist (3-5 milestones tied to discovery pain points)
@@ -111,5 +110,5 @@ _CRM (Attio), analytics (PostHog), and automation (n8n) are standard stack — n
 
 ## Drills Referenced
 
-- `sandbox-provisioning-workflow` — provisions the sandbox, generates personalized onboarding materials, and sends access to the prospect
+- the sandbox provisioning workflow workflow (see instructions below) — provisions the sandbox, generates personalized onboarding materials, and sends access to the prospect
 - `threshold-engine` — evaluates sandbox usage data against pass/fail criteria and recommends next action

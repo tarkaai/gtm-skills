@@ -14,7 +14,6 @@ kpis: ["Technical discovery completion rate", "Technical fit score distribution"
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
-  - tech-stack-discovery
   - threshold-engine
 ---
 
@@ -45,7 +44,7 @@ Run the the technical fit scoring workflow (see instructions below) drill to cre
 
 ### 2. Research tech stacks for 5-8 qualified deals
 
-Select 5-8 currently qualified deals from your Attio pipeline. For each, run the `tech-stack-discovery` drill:
+Select 5-8 currently qualified deals from your Attio pipeline. For each, run the the tech stack discovery workflow (see instructions below) drill:
 - The agent queries Clay Claygent to detect the prospect's tech stack from their website, job postings, and public data
 - It identifies likely integration requirements, security posture, and technical maturity
 - It generates a call prep brief with priority questions to ask
@@ -105,7 +104,7 @@ If PASS (>=5 scored, >=1 blocker found), proceed to Baseline. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `tech-stack-discovery` — research prospect tech stack, integrations, and security posture from public signals before the call
+- the tech stack discovery workflow (see instructions below) — research prospect tech stack, integrations, and security posture from public signals before the call
 - the technical discovery call workflow (see instructions below) — structured technical discovery call with transcript extraction and fit scoring
 - the technical fit scoring workflow (see instructions below) — set up and apply the 5-category technical scoring rubric
 - `threshold-engine` — evaluate results against the pass threshold

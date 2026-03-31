@@ -15,7 +15,6 @@ slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
   - posthog-gtm-events
-  - sandbox-provisioning-workflow
 ---
 # Technical Deep-Dive Demo — Baseline Run
 
@@ -62,7 +61,7 @@ Configure the the technical demo content assembly workflow (see instructions bel
 **Human action required:** Review each generated demo prep document before the demo. Verify the demo script matches what you want to show. Adjust module ordering or emphasis based on your intuition about the deal.
 
 ### 3. Provision sandbox environments for technical evaluations
-Run the `sandbox-provisioning-workflow` drill to set up the sandbox provisioning pipeline. For every deal that reaches the technical demo stage:
+Run the the sandbox provisioning workflow workflow (see instructions below) drill to set up the sandbox provisioning pipeline. For every deal that reaches the technical demo stage:
 
 1. Qualify the sandbox request (deal at Connected stage, discovery complete, technical stakeholder identified)
 2. Design the sandbox configuration based on discovery notes (industry persona, feature set, success checklist)
@@ -126,4 +125,4 @@ If PASS, document the winning patterns (best module order, optimal attendee mix,
 ## Drills Referenced
 - `posthog-gtm-events` — defines and implements the event taxonomy for the technical demo funnel in PostHog
 - the technical demo content assembly workflow (see instructions below) — auto-generates prospect-customized demo scripts, integration code, and follow-up packages from discovery data and tech stack enrichment
-- `sandbox-provisioning-workflow` — provisions sandbox environments with industry-relevant data, sends access with onboarding materials, and schedules follow-up touchpoints
+- the sandbox provisioning workflow workflow (see instructions below) — provisions sandbox environments with industry-relevant data, sends access with onboarding materials, and schedules follow-up touchpoints

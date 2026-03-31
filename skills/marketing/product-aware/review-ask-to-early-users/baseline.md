@@ -15,7 +15,6 @@ install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
 drills:
   - posthog-gtm-events
   - directory-review-generation
-  - directory-performance-monitor
 ---
 
 # Review Ask to Early Users — Baseline Run
@@ -90,7 +89,7 @@ Build an n8n workflow that runs daily:
 
 ### 4. Set up weekly directory performance monitoring
 
-Run the `directory-performance-monitor` drill to track:
+Run the the directory performance monitor workflow (see instructions below) drill to track:
 
 - Profile views per directory per week
 - Clicks to website per directory per week
@@ -147,4 +146,4 @@ If FAIL: Diagnose:
 
 - `posthog-gtm-events` — define and implement the review funnel event taxonomy in PostHog
 - `directory-review-generation` — build automated review ask sequences and review tracking
-- `directory-performance-monitor` — track directory KPIs and set up weekly monitoring
+- the directory performance monitor workflow (see instructions below) — track directory KPIs and set up weekly monitoring

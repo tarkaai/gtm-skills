@@ -14,8 +14,6 @@ outcome: "≥ 4,000 page views/month and deal close rate +15% when case studies 
 kpis: ["Monthly page views across all case studies (target ≥ 4,000)", "Monthly conversions (target ≥ 60)", "Deal close rate lift when case study used vs not used (target +15%)", "Production velocity (target ≥ 3 new case studies/month)", "Sales usage rate (target ≥ 50% of active deals receive a matched case study)", "Multi-format engagement (target: PDF + social + email each receive > 100 interactions/month)"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
-drills:
-  - case-study-content-scaling
 ---
 
 # Case Study Content Program — Scalable Automation
@@ -42,7 +40,7 @@ Fail: < 4,000 views/month after 2 months, or case studies have no measurable eff
 
 ### 1. Deploy the multi-format content scaling pipeline
 
-Run the `case-study-content-scaling` drill. This builds the automated system that takes each completed case study and produces derivative assets across three tiers:
+Run the the case study content scaling workflow (see instructions below) drill. This builds the automated system that takes each completed case study and produces derivative assets across three tiers:
 
 **Tier 1 — Fully automated (no human review):**
 - 3-4 pull quote cards with the strongest customer quotes and metrics
@@ -155,5 +153,5 @@ Compute:
 
 ## Drills Referenced
 
-- `case-study-content-scaling` — automated pipeline that produces 8-12 derivative assets from each completed case study (pull quotes, PDFs, blog posts, social posts, email snippets, in-app banners) and distributes them through sales, email, in-app, and content channels with full PostHog tracking
+- the case study content scaling workflow (see instructions below) — automated pipeline that produces 8-12 derivative assets from each completed case study (pull quotes, PDFs, blog posts, social posts, email snippets, in-app banners) and distributes them through sales, email, in-app, and content channels with full PostHog tracking
 - the case study deal matching workflow (see instructions below) — always-on engine that matches published case studies to active deals by industry, company size, use case, and metric relevance, routes assets to deal owners at each sales stage, and generates weekly coverage gap reports

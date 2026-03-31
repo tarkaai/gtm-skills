@@ -14,7 +14,6 @@ kpis: ["Objection resolution rate", "Timeline acceleration success", "Cost of in
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - timing-scorecard-setup
   - posthog-gtm-events
 ---
 
@@ -38,7 +37,7 @@ Scale to 15-20 timing objections over 2 weeks with automated follow-up sequences
 
 ### 1. Configure CRM infrastructure
 
-Run the `timing-scorecard-setup` drill to create timeline scoring fields on Attio Deals: `timeline_category`, `target_close_date`, `urgency_drivers`, `timeline_confidence`, `slippage_risk`, `consequence_of_inaction`, `timing_objection_root_cause`, `timing_objection_strategy`, `timing_objection_outcome`. Configure pipeline routing so Immediate deals get daily follow-up cadence, Near-term gets 2-3x/week, and Long-term goes to biweekly nurture.
+Run the the timing scorecard setup workflow (see instructions below) drill to create timeline scoring fields on Attio Deals: `timeline_category`, `target_close_date`, `urgency_drivers`, `timeline_confidence`, `slippage_risk`, `consequence_of_inaction`, `timing_objection_root_cause`, `timing_objection_strategy`, `timing_objection_outcome`. Configure pipeline routing so Immediate deals get daily follow-up cadence, Near-term gets 2-3x/week, and Long-term goes to biweekly nurture.
 
 ### 2. Configure event tracking
 
@@ -126,5 +125,5 @@ If FAIL: diagnose the bottleneck:
 
 - the timing objection response workflow (see instructions below) — classifies each timing objection, determines genuine vs smokescreen, generates cost-of-delay analysis and strategy-matched response
 - the timing objection follow up sequence workflow (see instructions below) — automated multi-touch follow-ups with root-cause-matched urgency assets (cost-of-delay, pilot proposals, reengagement scheduling)
-- `timing-scorecard-setup` — creates timeline scoring fields, pipeline routing, and PostHog events for timing qualification in Attio
+- the timing scorecard setup workflow (see instructions below) — creates timeline scoring fields, pipeline routing, and PostHog events for timing qualification in Attio
 - `posthog-gtm-events` — configures the full event tracking pipeline for the play

@@ -14,7 +14,6 @@ kpis: ["Gamification participation rate at scale", "Streak 14-day survival rate"
 slug: "gamification-engagement"
 install: "npx gtm-skills add product/retain/gamification-engagement"
 drills:
-  - gamification-personalization
   - ab-test-orchestrator
 ---
 
@@ -38,7 +37,7 @@ drills:
 
 ### 1. Personalize gamification by user segment
 
-Run the `gamification-personalization` drill to segment users and calibrate difficulty:
+Run the the gamification personalization workflow (see instructions below) drill to segment users and calibrate difficulty:
 
 - Analyze 4+ weeks of gamification data to identify behavioral segments: Sprinters (high initial velocity), Steady Builders (consistent pace), Slow Explorers (cautious adopters)
 - Assign each user to a segment via PostHog person property `gamification_segment`
@@ -132,6 +131,6 @@ If FAIL: identify the bottleneck. If participation is high but retention lift is
 
 ## Drills Referenced
 
-- `gamification-personalization` — segments users and calibrates gamification difficulty per segment
+- the gamification personalization workflow (see instructions below) — segments users and calibrates gamification difficulty per segment
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on gamification mechanics
 - the gamification leaderboard pipeline workflow (see instructions below) — builds, computes, and serves leaderboards with weekly resets

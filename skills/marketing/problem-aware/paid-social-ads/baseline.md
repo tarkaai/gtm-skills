@@ -14,7 +14,6 @@ kpis: ["Cost per lead (CPL)", "Cost per meeting (CPM)", "Lead-to-meeting convers
 slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
 drills:
-  - paid-social-creative-pipeline
   - paid-social-lead-routing
   - retargeting-setup
   - budget-allocation
@@ -64,7 +63,7 @@ Run the `paid-social-lead-routing` drill to set up:
 
 ### 3. Expand creative from smoke test winners
 
-Run the `paid-social-creative-pipeline` drill to create additional variants:
+Run the the paid social creative pipeline workflow (see instructions below) drill to create additional variants:
 - Take the winning variant type from smoke (stat/question/proof hook) and write 3 new versions with different pain points
 - Add a second pain point from your ICP — create 3 variants for it
 - Total: 6-9 active variants across 2 pain points
@@ -150,7 +149,7 @@ Decision:
 
 ## Drills Referenced
 
-- `paid-social-creative-pipeline` — expand winning smoke test creative to 6-9 variants across 2 pain points
+- the paid social creative pipeline workflow (see instructions below) — expand winning smoke test creative to 6-9 variants across 2 pain points
 - `paid-social-lead-routing` — automate lead flow from ad forms to CRM with enrichment and nurture
 - `retargeting-setup` — capture non-converters and re-engage with stronger CTAs
 - `budget-allocation` — distribute budget across audience segments and retargeting

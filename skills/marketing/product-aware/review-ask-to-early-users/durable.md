@@ -15,7 +15,6 @@ slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
 drills:
   - autonomous-optimization
-  - directory-performance-monitor
 ---
 
 # Review Ask to Early Users — Durable
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill to build the monitoring layer specific t
 
 ### 3. Deploy competitive tracking
 
-Run the `directory-performance-monitor` drill with competitive intelligence focus:
+Run the the directory performance monitor workflow (see instructions below) drill with competitive intelligence focus:
 
 **Weekly competitive data collection:**
 - Top 5 competitors' review counts on G2 and Capterra
@@ -191,4 +190,4 @@ When the `autonomous-optimization` drill detects convergence (3 consecutive expe
 
 - `autonomous-optimization` — continuous monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for review generation
 - `autonomous-optimization` — play-specific monitoring of review velocity, ratings, ask effectiveness, and review-to-lead attribution
-- `directory-performance-monitor` — cross-directory KPI tracking and competitive intelligence
+- the directory performance monitor workflow (see instructions below) — cross-directory KPI tracking and competitive intelligence

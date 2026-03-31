@@ -41,7 +41,7 @@ Success = at least 45% engagement rate sustained at 500+ users per month, AND at
 
 ### 1. Expand struggle detection coverage
 
-Review the `struggle-signal-detection` drill output from the last 4 weeks. Identify:
+Review the the struggle signal detection workflow (see instructions below) drill output from the last 4 weeks. Identify:
 
 - **Uncovered workflows:** Struggle patterns where `primary_stuck_workflow` maps to a workflow with no help resource. Build help resources (articles, videos, deep links) for every workflow that appears 5+ times in the detection log.
 - **New signal types:** Product areas generating struggle that the current detection does not capture. Common gaps: mobile-specific struggles, API integration errors, team administration confusion, billing/plan confusion. Add new PostHog events for any gaps found.

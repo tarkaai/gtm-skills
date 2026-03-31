@@ -15,7 +15,6 @@ slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
 drills:
   - stakeholder-org-mapping
-  - stakeholder-engagement-scoring
   - ab-test-orchestrator
 ---
 
@@ -54,7 +53,7 @@ Configure the following Attio list views for pipeline reviews:
 
 ### 2. Deploy engagement scoring
 
-Run the `stakeholder-engagement-scoring` drill to:
+Run the the stakeholder engagement scoring workflow (see instructions below) drill to:
 
 1. Define the engagement event taxonomy in PostHog (email opens, replies, meetings, calls, LinkedIn connections, content shares)
 2. Build individual engagement scores per stakeholder (rolling 14-day window, point-based system)
@@ -176,5 +175,5 @@ If PASS, proceed to Durable. If FAIL, diagnose: mapping coverage gap (Clay retur
 ## Drills Referenced
 
 - `stakeholder-org-mapping` — Continuously map org charts across all active deals with weekly refresh, delta detection, and auto-population of new stakeholders
-- `stakeholder-engagement-scoring` — Compute individual and deal-level engagement scores, surface single-threaded risks, and power the multi-threading dashboard
+- the stakeholder engagement scoring workflow (see instructions below) — Compute individual and deal-level engagement scores, surface single-threaded risks, and power the multi-threading dashboard
 - `ab-test-orchestrator` — Design, run, and analyze A/B tests on role-specific messaging, cadence timing, and engagement strategies

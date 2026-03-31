@@ -15,7 +15,6 @@ install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
 drills:
   - podcast-prospect-research
   - podcast-pitch-outreach
-  - podcast-guest-preparation
   - content-repurposing
   - dashboard-builder
   - ab-test-orchestrator
@@ -61,7 +60,7 @@ Run the `podcast-pitch-outreach` drill at Scalable volume:
 
 ### 3. Streamline guest preparation
 
-Run the `podcast-guest-preparation` drill with a templatized process:
+Run the the podcast guest preparation workflow (see instructions below) drill with a templatized process:
 - Maintain a master talking points library organized by topic angle. Update monthly.
 - For each new booking, customize the template with podcast-specific research (host's recent content, audience profile)
 - Pre-create tracking links in bulk: set up vanity URLs for all booked podcasts in one batch via Dub.co API
@@ -127,7 +126,7 @@ Measure against: ≥ 8 bookings AND ≥ 10 leads over 2 months. If bookings are 
 
 - `podcast-prospect-research` — automated monthly podcast discovery pipeline
 - `podcast-pitch-outreach` — scaled pitch campaigns with A/B testing via Instantly
-- `podcast-guest-preparation` — templatized prep with automated tracking link creation
+- the podcast guest preparation workflow (see instructions below) — templatized prep with automated tracking link creation
 - `content-repurposing` — turn each episode into 5-10 derivative content pieces
 - `dashboard-builder` — PostHog dashboard, automated weekly reports, ROI tracking
 - `ab-test-orchestrator` — test pitch variables, CTA offers, and targeting criteria

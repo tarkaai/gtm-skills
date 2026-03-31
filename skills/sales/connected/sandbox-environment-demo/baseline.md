@@ -62,7 +62,7 @@ Run the the sandbox usage monitoring workflow (see instructions below) drill to 
 
 ### 3. Provision sandboxes for all qualified opportunities
 
-Continue using the `sandbox-provisioning-workflow` drill (from Smoke level) to provision sandboxes. The target is now 80%+ of qualified opportunities — not just a handpicked batch. Identify any bottlenecks in the provisioning process:
+Continue using the the sandbox provisioning workflow workflow (see instructions below) drill (from Smoke level) to provision sandboxes. The target is now 80%+ of qualified opportunities — not just a handpicked batch. Identify any bottlenecks in the provisioning process:
 
 - Does provisioning take too long? Streamline the persona selection or sample data configuration.
 - Are some deals missing discovery data? Flag incomplete discovery as a blocker for sandbox access.

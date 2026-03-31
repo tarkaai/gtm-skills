@@ -14,7 +14,6 @@ kpis: ["Technical demo completion rate", "Demo-to-POC conversion rate", "Technic
 slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
-  - account-research-brief
   - threshold-engine
 ---
 # Technical Deep-Dive Demo — Smoke Test
@@ -37,8 +36,8 @@ Query Attio for deals at Connected stage where at least one contact has a techni
 
 **Human action required:** Review the list and select 5-8 opportunities where a technical deep-dive is the appropriate next step. Exclude deals where the buyer is non-technical and no technical evaluator has been identified.
 
-### 2. Run the `account-research-brief` drill for each opportunity
-For each selected deal, run the `account-research-brief` drill with `meeting_type: "technical_deep_dive"`. This pulls CRM context, enriches the account via Clay, incorporates prior discovery call transcripts from Fireflies, and generates a structured meeting brief with technical talking points.
+### 2. Run the the account research brief workflow (see instructions below) drill for each opportunity
+For each selected deal, run the the account research brief workflow (see instructions below) drill with `meeting_type: "technical_deep_dive"`. This pulls CRM context, enriches the account via Clay, incorporates prior discovery call transcripts from Fireflies, and generates a structured meeting brief with technical talking points.
 
 Review the output. Verify that the brief includes:
 - The prospect's tech stack
@@ -101,6 +100,6 @@ If PASS, proceed to Baseline. If FAIL, analyze which step broke:
 **Play-specific cost:** Free (uses free tiers of Attio, Fireflies, Cal.com; Claude API cost negligible at ~$2.50 total for 5 demos)
 
 ## Drills Referenced
-- `account-research-brief` — assembles account intelligence and generates a structured meeting brief from CRM data, Clay enrichment, and prior call transcripts
+- the account research brief workflow (see instructions below) — assembles account intelligence and generates a structured meeting brief from CRM data, Clay enrichment, and prior call transcripts
 - the technical demo content assembly workflow (see instructions below) — generates prospect-customized demo script with live API calls, integration code, architecture talking points, and technical follow-up package
 - `threshold-engine` — evaluates play results against the pass threshold and recommends next action

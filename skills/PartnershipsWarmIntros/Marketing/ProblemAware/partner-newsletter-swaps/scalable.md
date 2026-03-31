@@ -14,7 +14,6 @@ kpis: ["Active partner count", "Swaps per month", "Subscribers per swap (trendin
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/partner-newsletter-swaps"
 drills:
-  - list-swap-scheduling
   - partner-pipeline-automation
 ---
 # Partner Newsletter Swaps — Scalable Automation
@@ -43,7 +42,7 @@ Run the `partner-pipeline-automation` drill to automate the entire partner lifec
 
 1. **Automated partner outreach sequence:** When a new partner is added to the "Newsletter Partners" list in Attio with status "Prospect", n8n triggers a personalized outreach email via Instantly. If no reply in 5 days, one follow-up sends automatically. Positive replies update Attio status to "In Conversation" and create a deal in the Partnerships pipeline.
 
-2. **Placement scheduling workflow:** Weekly cron checks Attio for partners with upcoming swap dates, verifies email copy is ready, and alerts when action is needed. This extends the Baseline `list-swap-scheduling` drill to handle 15-25 partners simultaneously.
+2. **Placement scheduling workflow:** Weekly cron checks Attio for partners with upcoming swap dates, verifies email copy is ready, and alerts when action is needed. This extends the Baseline the list swap scheduling workflow (see instructions below) drill to handle 15-25 partners simultaneously.
 
 3. **Performance tracking workflow:** PostHog webhooks fire on swap events. n8n routes these to Attio, incrementing per-partner lead counts and creating attributed lead records automatically.
 
@@ -53,7 +52,7 @@ Run the `partner-pipeline-automation` drill to automate the entire partner lifec
 
 ### 2. Scale the swap scheduling system
 
-Extend the Baseline `list-swap-scheduling` drill to handle the larger portfolio:
+Extend the Baseline the list swap scheduling workflow (see instructions below) drill to handle the larger portfolio:
 
 1. **Performance-triggered cadence adjustment:** n8n workflows auto-propose cadence upgrades for partners whose last 2 swaps both exceeded 50 clicks and 2 meetings (quarterly -> bimonthly, bimonthly -> monthly). Auto-propose downgrades for partners with <10 clicks on last 2 swaps. Log all recommendations in Attio for human approval.
 
@@ -120,5 +119,5 @@ If FAIL: Identify the bottleneck. If partner acquisition is slow, invest more in
 **Estimated play-specific cost:** ~$150-300/mo at scale
 
 ## Drills Referenced
-- `list-swap-scheduling` — coordinate 15-25 partner swaps with performance-based cadence adjustment and list protection
+- the list swap scheduling workflow (see instructions below) — coordinate 15-25 partner swaps with performance-based cadence adjustment and list protection
 - `partner-pipeline-automation` — automate the full partner lifecycle from prospect to active to health-monitored

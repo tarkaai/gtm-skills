@@ -16,7 +16,6 @@ drills:
   - posthog-gtm-events
   - directory-review-generation
   - landing-page-pipeline
-  - directory-performance-monitor
 ---
 
 # Directory & Marketplace Listings — Baseline Run
@@ -75,7 +74,7 @@ Update your directory listings to point to these landing pages instead of your h
 
 ### 4. Set up weekly monitoring
 
-Run the `directory-performance-monitor` drill to configure:
+Run the the directory performance monitor workflow (see instructions below) drill to configure:
 
 1. Weekly n8n workflow that pulls analytics from each directory API
 2. PostHog dashboard with views, clicks, inquiries, and review trends by directory
@@ -115,4 +114,4 @@ After 2 weeks, measure:
 - `posthog-gtm-events` -- establishes the directory event taxonomy for tracking views, clicks, and inquiries
 - `directory-review-generation` -- automated review collection via Loops sequences and CRM-triggered asks
 - `landing-page-pipeline` -- builds directory-specific landing pages that convert comparison shoppers
-- `directory-performance-monitor` -- weekly analytics collection, dashboard, and alerts
+- the directory performance monitor workflow (see instructions below) -- weekly analytics collection, dashboard, and alerts

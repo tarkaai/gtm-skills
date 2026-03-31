@@ -16,7 +16,6 @@ kpis: ["Attendees per event", "Meeting conversion rate", "Cost per meeting", "Gu
 slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
 drills:
-  - roundtable-series-automation
   - ab-test-orchestrator
 ---
 
@@ -46,7 +45,7 @@ drills:
 
 ### 1. Launch the automated roundtable series engine
 
-Run the `roundtable-series-automation` drill to build the full series operations system:
+Run the the roundtable series automation workflow (see instructions below) drill to build the full series operations system:
 
 **Topic calendar:**
 Create a topic backlog with at least 8 topics scored on: timeliness (is this urgent now?), discussion potential (will execs disagree?), and guest availability (can you find 20+ targets with direct experience?). Schedule 6 events bi-monthly for the next 12 months. Store the calendar in Attio.
@@ -168,5 +167,5 @@ After 6 months (6 events), evaluate:
 
 ## Drills Referenced
 
-- `roundtable-series-automation` — automate the full bi-monthly series: topic calendar, guest curation engine, invitation scheduling, cross-event analytics, and guest pool management
+- the roundtable series automation workflow (see instructions below) — automate the full bi-monthly series: topic calendar, guest curation engine, invitation scheduling, cross-event analytics, and guest pool management
 - `ab-test-orchestrator` — systematically test topic category, guest composition, invitation approach, discussion format, timing, and follow-up variables across events

@@ -14,7 +14,6 @@ kpis: ["RSVP rate (target ≥ 40%)", "Show rate (target ≥ 75%)", "Meeting conv
 slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
 drills:
-  - roundtable-series-automation
   - ab-test-orchestrator
 ---
 
@@ -40,7 +39,7 @@ Fail: Fewer than 40 attendees OR fewer than 12 meetings.
 
 ### 1. Launch the automated roundtable series
 
-Run the `roundtable-series-automation` drill to set up the full series infrastructure:
+Run the the roundtable series automation workflow (see instructions below) drill to set up the full series infrastructure:
 
 **Topic calendar**: Build a 3-month topic backlog with 6-8 topics scored by timeliness, discussion potential, and guest availability. Store in Attio as a "Roundtable Calendar" list. Schedule events bi-weekly or monthly based on your Baseline data — use whichever cadence your guest pool can sustain without fatigue.
 
@@ -84,7 +83,7 @@ For each test, use PostHog experiments to track the variant and measure outcomes
 
 ### 3. Build cross-event analytics
 
-Using the `roundtable-series-automation` drill's analytics components, create a PostHog dashboard showing:
+Using the the roundtable series automation workflow (see instructions below) drill's analytics components, create a PostHog dashboard showing:
 
 - **Registration pipeline**: RSVP confirmations by event (bar chart), RSVP rate trend across events (line chart)
 - **Attendance quality**: Show rate trend, engagement tier distribution per event (stacked bar), guest freshness ratio (new vs returning) per event
@@ -143,5 +142,5 @@ After 2 months (4-6 events), aggregate:
 
 ## Drills Referenced
 
-- `roundtable-series-automation` — automate recurring roundtable operations: guest sourcing, invitation cadences, transcript processing, follow-up sequencing, and cross-event analytics
+- the roundtable series automation workflow (see instructions below) — automate recurring roundtable operations: guest sourcing, invitation cadences, transcript processing, follow-up sequencing, and cross-event analytics
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on roundtable variables (topic framing, time slot, group size, format, invitation channel)

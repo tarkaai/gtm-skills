@@ -15,7 +15,6 @@ slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
 drills:
   - posthog-gtm-events
-  - meetup-pipeline
 ---
 
 # Event Piggyback Meetup — Baseline Run
@@ -38,7 +37,7 @@ Prove the piggyback meetup motion is repeatable across multiple conferences. Run
 
 ### 1. Build the piggyback event operations stack
 
-Run the `meetup-pipeline` drill to create a repeatable template:
+Run the the meetup pipeline workflow (see instructions below) drill to create a repeatable template:
 
 - Cal.com event type template for piggyback meetups (clone per event, update date/venue)
 - Loops email sequences: registration confirmation, T-7 reminder, T-1 reminder, post-event follow-up
@@ -130,4 +129,4 @@ If FAIL: diagnose by event:
 
 - the piggyback event promotion workflow (see instructions below) — structured promotion campaign targeting conference attendees via email, LinkedIn, and community channels
 - `posthog-gtm-events` — implement the piggyback event taxonomy for full funnel tracking
-- `meetup-pipeline` — repeatable event operations: registration, confirmations, attendee management
+- the meetup pipeline workflow (see instructions below) — repeatable event operations: registration, confirmations, attendee management

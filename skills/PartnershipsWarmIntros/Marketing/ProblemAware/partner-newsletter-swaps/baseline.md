@@ -14,7 +14,6 @@ kpis: ["Swaps completed per week", "Subscribers per swap", "Click-to-lead conver
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/partner-newsletter-swaps"
 drills:
-  - list-swap-scheduling
   - posthog-gtm-events
   - warm-intro-request
 ---
@@ -61,7 +60,7 @@ Target: >=5 partners with confirmed first-swap dates within 3 weeks.
 
 ### 3. Build the swap scheduling system
 
-Run the `list-swap-scheduling` drill to automate coordination across your portfolio. This drill builds n8n workflows that:
+Run the the list swap scheduling workflow (see instructions below) drill to automate coordination across your portfolio. This drill builds n8n workflows that:
 1. **Swap calendar workflow** (weekly cron, Monday 9am): queries Attio for partners with swaps due in the next 14 days, checks email copy status ("Our Email Status": draft/approved/sent-to-partner/confirmed-sent), alerts you when copy is needed
 2. **Reciprocal send automation**: when you approve a partner's email, n8n auto-creates a Loops broadcast with their content targeted to the agreed segment, schedules it for the swap date
 3. **Confirmation workflow** (daily cron on swap days): verifies both sides sent, marks completed swaps in Attio, sets the next swap date per cadence agreement, flags delinquent partners
@@ -118,6 +117,6 @@ If FAIL: Analyze which partners and variants drove the most value. Consolidate t
 **Estimated play-specific cost:** ~$50-100/mo (n8n cloud + Loops if beyond free tier)
 
 ## Drills Referenced
-- `list-swap-scheduling` — automate swap coordination, reciprocal sends, confirmation, and cadence management
+- the list swap scheduling workflow (see instructions below) — automate swap coordination, reciprocal sends, confirmation, and cadence management
 - `posthog-gtm-events` — define and verify all swap tracking events in PostHog
 - `warm-intro-request` — leverage mutual connections to reach partner contacts

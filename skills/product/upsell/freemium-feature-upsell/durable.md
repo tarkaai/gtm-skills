@@ -16,7 +16,6 @@ slug: "freemium-feature-upsell"
 install: "npx gtm-skills add product/upsell/freemium-feature-upsell"
 drills:
   - autonomous-optimization
-  - freemium-conversion-health-report
   - nps-feedback-loop
 ---
 
@@ -85,7 +84,7 @@ Run the `autonomous-optimization` drill to create the always-on monitor-diagnose
 
 ### 2. Generate weekly conversion health reports
 
-Run the `freemium-conversion-health-report` drill to produce a structured weekly brief every Monday:
+Run the the freemium conversion health report workflow (see instructions below) drill to produce a structured weekly brief every Monday:
 
 The report covers:
 - **Conversion table:** trigger type, prompts shown, prompts clicked, upgrades started, upgrades completed, conversion rate, MRR attributed, trend vs. 4-week average
@@ -157,5 +156,5 @@ If any metric degrades for 2 consecutive months despite optimization, escalate t
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that finds the local maximum for freemium conversion rates across all trigger types and segments
-- `freemium-conversion-health-report` — weekly structured report with per-trigger conversion, cohort analysis, free user pool health, segment performance, fatigue signals, revenue attribution, and recommended next experiment
+- the freemium conversion health report workflow (see instructions below) — weekly structured report with per-trigger conversion, cohort analysis, free user pool health, segment performance, fatigue signals, revenue attribution, and recommended next experiment
 - `nps-feedback-loop` — collect and act on feedback from converted users to validate that the paid plan delivers the value the upgrade prompts promise

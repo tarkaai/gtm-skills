@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/onboard/freemium-model"
 drills:
   - ab-test-orchestrator
   - feature-readiness-gating
-  - freemium-conversion-health-report
 ---
 
 # Freemium Tier Strategy — Scalable Automation
@@ -82,7 +81,7 @@ The key insight: progressive gating creates a series of small wins on the free t
 
 ### 3. Build the freemium conversion health report
 
-Run the `freemium-conversion-health-report` drill to deploy weekly monitoring of the full pipeline:
+Run the the freemium conversion health report workflow (see instructions below) drill to deploy weekly monitoring of the full pipeline:
 
 - Build the PostHog dashboard: free-to-paid funnel (overall), conversion by trigger type, cohort progression velocity, revenue from conversions, prompt fatigue index, free user pool health
 - Define free user health metric: activation state (inactive/activated/habitual/power-free), prompt history, conversion probability score
@@ -144,4 +143,4 @@ If FAIL, diagnose:
 
 - `ab-test-orchestrator` -- designs, runs, and evaluates A/B tests on upgrade prompts, gate presentations, email timing, and pricing page layout
 - `feature-readiness-gating` -- deploys progressive feature disclosure based on behavior signals, creating a series of small wins before the paid gate
-- `freemium-conversion-health-report` -- weekly monitoring of the full free-to-paid pipeline with degradation detection, cohort analysis, and revenue attribution
+- the freemium conversion health report workflow (see instructions below) -- weekly monitoring of the full free-to-paid pipeline with degradation detection, cohort analysis, and revenue attribution

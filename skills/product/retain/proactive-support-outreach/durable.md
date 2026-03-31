@@ -84,7 +84,7 @@ The optimization loop runs Phase 1 (Monitor) daily, Phase 2 (Diagnose) when anom
 
 Run the `support-churn-correlation` drill to build a continuous feedback loop between support data and proactive outreach:
 
-- Monthly: Recalibrate which support ticket patterns correlate with churn. Feed new signals back into `struggle-signal-detection` scoring weights.
+- Monthly: Recalibrate which support ticket patterns correlate with churn. Feed new signals back into the struggle signal detection workflow (see instructions below) scoring weights.
 - Weekly: Analyze new support tickets from users who were proactively outreached. If outreached users still file tickets about the SAME workflow they were helped with, the outreach content is not working for that workflow. The optimization loop should flag this as a priority experiment.
 - Weekly: Analyze support tickets from users who were NOT outreached (cooldown-suppressed or below threshold). If these tickets could have been prevented by outreach, consider lowering the detection threshold for that workflow.
 - Monthly: Update the struggle-to-help-resource mapping based on new support resolution approaches. When support agents find better ways to resolve common issues, propagate those fixes into the proactive outreach templates.

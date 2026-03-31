@@ -16,7 +16,6 @@ slug: "roi-skepticism-objection"
 install: "npx gtm-skills add sales/aligned/roi-skepticism-objection"
 drills:
   - roi-calculator-build
-  - objection-follow-up-sequence
   - posthog-gtm-events
 ---
 
@@ -73,7 +72,7 @@ The founder reviews before sending — the agent does not auto-send to the prosp
 
 ### 3. Deploy follow-up sequences for unresolved skepticism
 
-Run the `objection-follow-up-sequence` drill configured for ROI skepticism root causes. After each ROI presentation where the outcome is `partially_resolved` or `unresolved`, the follow-up sequence fires automatically.
+Run the the objection follow up sequence workflow (see instructions below) drill configured for ROI skepticism root causes. After each ROI presentation where the outcome is `partially_resolved` or `unresolved`, the follow-up sequence fires automatically.
 
 ROI-skepticism-specific sequence routing by root cause:
 
@@ -151,5 +150,5 @@ If PASS, document the best-performing sequences by root cause and proceed to Sca
 ## Drills Referenced
 
 - `roi-calculator-build` — auto-generates prospect-specific ROI calculators from CRM pain data when deals reach proposal stage
-- `objection-follow-up-sequence` — delivers root-cause-matched proof assets on a timed sequence when ROI skepticism is unresolved
+- the objection follow up sequence workflow (see instructions below) — delivers root-cause-matched proof assets on a timed sequence when ROI skepticism is unresolved
 - `posthog-gtm-events` — configures event tracking for the play's full funnel from skepticism detection through resolution

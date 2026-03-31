@@ -14,7 +14,6 @@ kpis: ["Add-on discovery CTR", "Add-on activation rate", "Trigger accuracy"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
-  - addon-discovery-surface-build
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ Pick the single add-on with the highest revenue potential and the clearest usage
 
 ### 2. Build the discovery surface
 
-Run the `addon-discovery-surface-build` drill, but scope it to ONE add-on and ONE surface type (tooltip or banner). Specifically:
+Run the the addon discovery surface build workflow (see instructions below) drill, but scope it to ONE add-on and ONE surface type (tooltip or banner). Specifically:
 
 - Complete Step 1 (map the trigger behavior for this one add-on)
 - Complete Step 2 (instrument the four PostHog events: `addon_discovery_impression`, `addon_discovery_clicked`, `addon_activation_started`, `addon_activated`)
@@ -83,5 +82,5 @@ Run the `threshold-engine` drill to measure: ≥15% click-through rate on the ad
 
 ## Drills Referenced
 
-- `addon-discovery-surface-build` — builds the in-product surface that shows users the add-on at the trigger moment
+- the addon discovery surface build workflow (see instructions below) — builds the in-product surface that shows users the add-on at the trigger moment
 - `threshold-engine` — evaluates whether CTR hit the 15% pass threshold

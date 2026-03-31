@@ -15,7 +15,6 @@ slug: "paid-social-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-social-ads"
 drills:
   - paid-social-audience-builder
-  - paid-social-creative-pipeline
   - ad-campaign-setup
   - landing-page-pipeline
   - threshold-engine
@@ -56,7 +55,7 @@ Set up exclusions: current customers, your own employees, competitors.
 
 ### 3. Create 3 ad variants
 
-Run the `paid-social-creative-pipeline` drill. For the smoke test, create 3 variants using one pain point from your ICP:
+Run the the paid social creative pipeline workflow (see instructions below) drill. For the smoke test, create 3 variants using one pain point from your ICP:
 - Variant A: Statistic hook (lead with a surprising data point about the problem)
 - Variant B: Question hook (ask a question they will answer "yes" to)
 - Variant C: Social proof hook (lead with a customer result)
@@ -120,7 +119,7 @@ Also check lead quality: of the leads received, how many match your ICP? If you 
 ## Drills Referenced
 
 - `paid-social-audience-builder` — build one targeted audience segment on LinkedIn or Meta
-- `paid-social-creative-pipeline` — create 3 problem-aware ad variants for the smoke test
+- the paid social creative pipeline workflow (see instructions below) — create 3 problem-aware ad variants for the smoke test
 - `ad-campaign-setup` — configure the campaign structure, budget, and tracking
 - `landing-page-pipeline` — build a dedicated landing page (if not using lead gen forms)
 - `threshold-engine` — evaluate smoke test results against the pass threshold

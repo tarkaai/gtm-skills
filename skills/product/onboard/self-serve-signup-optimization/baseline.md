@@ -13,7 +13,6 @@ kpis: ["Signup CVR", "Form completion rate", "Form error rate", "Lift vs baselin
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
-  - signup-friction-reduction
   - lead-capture-surface-setup
 ---
 
@@ -37,7 +36,7 @@ The top 2-3 friction points identified in Smoke are fixed. Each fix is deployed 
 
 ### 1. Deploy friction fixes
 
-Run the `signup-friction-reduction` drill. Using the bottleneck analysis from Smoke, implement the top 2-3 fixes (field reduction, OAuth addition, inline validation, mobile optimization, trust signals, or deferred email verification). Each fix goes behind a PostHog feature flag at 50% rollout so you can measure impact per-change.
+Run the the signup friction reduction workflow (see instructions below) drill. Using the bottleneck analysis from Smoke, implement the top 2-3 fixes (field reduction, OAuth addition, inline validation, mobile optimization, trust signals, or deferred email verification). Each fix goes behind a PostHog feature flag at 50% rollout so you can measure impact per-change.
 
 **Human action required:** Review the proposed changes before deployment. Approve feature flag activation. If the changes involve backend modifications (OAuth integration, email verification deferral), implement those first.
 
@@ -90,5 +89,5 @@ If the 10pp lift is not achieved after deploying all 3 fixes, diagnose which fix
 
 ## Drills Referenced
 
-- `signup-friction-reduction` — implements targeted fixes for the signup bottleneck behind feature flags with per-variant tracking
+- the signup friction reduction workflow (see instructions below) — implements targeted fixes for the signup bottleneck behind feature flags with per-variant tracking
 - `lead-capture-surface-setup` — optimizes the signup form as a conversion surface with proper tracking and CRM routing

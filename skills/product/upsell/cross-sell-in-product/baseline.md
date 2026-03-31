@@ -15,7 +15,6 @@ slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
 drills:
   - posthog-gtm-events
-  - addon-discovery-surface-build
   - activation-optimization
 ---
 
@@ -58,7 +57,7 @@ Build the PostHog funnel: `cross_sell_impression` -> `cross_sell_clicked` -> `cr
 
 ### 2. Deploy always-on discovery surfaces
 
-Run the `addon-discovery-surface-build` drill for 1-2 validated products (the Smoke winner plus the next highest-scoring product from the catalog mapping). This time, complete ALL steps:
+Run the the addon discovery surface build workflow (see instructions below) drill for 1-2 validated products (the Smoke winner plus the next highest-scoring product from the catalog mapping). This time, complete ALL steps:
 
 - Step 1: Use the trigger map from the cross sell catalog mapping workflow (see instructions below) (already validated at Smoke)
 - Step 2: Events are configured from Step 1 above
@@ -105,5 +104,5 @@ Measure after 3 weeks of always-on operation: >=10% of triggered users activated
 ## Drills Referenced
 
 - `posthog-gtm-events` — establishes the cross-sell event taxonomy for consistent tracking
-- `addon-discovery-surface-build` — builds always-on in-product surfaces with automated trigger detection, email fallback, and sales routing
+- the addon discovery surface build workflow (see instructions below) — builds always-on in-product surfaces with automated trigger detection, email fallback, and sales routing
 - `activation-optimization` — identifies and fixes the biggest drop-off in the cross-sell activation funnel

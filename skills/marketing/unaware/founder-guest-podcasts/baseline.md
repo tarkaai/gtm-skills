@@ -16,7 +16,6 @@ drills:
   - podcast-prospect-research
   - podcast-pitch-outreach
   - posthog-gtm-events
-  - podcast-guest-preparation
   - threshold-engine
 ---
 
@@ -66,7 +65,7 @@ Run the `podcast-pitch-outreach` drill at Baseline scale:
 
 ### 4. Prepare for each booked appearance
 
-Run the `podcast-guest-preparation` drill for each booking:
+Run the the podcast guest preparation workflow (see instructions below) drill for each booking:
 - Research the podcast and host (listen to 2-3 episodes, review host's social media)
 - Build a talking points document with opening hook, 3-5 core points, stories, and CTA
 - Create a tracking link: vanity URL (e.g., yoursite.com/podcast-name) redirecting to UTM-tagged URL
@@ -111,5 +110,5 @@ Run the `threshold-engine` drill: (a) did you book ≥ 3 appearances? (b) did ai
 - `podcast-prospect-research` — find and qualify 25-30 target podcasts with Clay enrichment
 - `podcast-pitch-outreach` — send 20-25 automated pitch sequences via Instantly
 - `posthog-gtm-events` — configure podcast-specific tracking events
-- `podcast-guest-preparation` — prep the founder and create tracking links for each booking
+- the podcast guest preparation workflow (see instructions below) — prep the founder and create tracking links for each booking
 - `threshold-engine` — evaluate pass/fail against booking + lead thresholds

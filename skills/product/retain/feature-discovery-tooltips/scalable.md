@@ -14,7 +14,6 @@ kpis: ["Tooltip CTR at scale", "Sustained adoption rate", "Segment-specific adop
 slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
 drills:
-  - tooltip-targeting-automation
   - ab-test-orchestrator
   - feature-adoption-monitor
 ---
@@ -39,7 +38,7 @@ Automated tooltip delivery across all user segments -- new, established, and pow
 
 ### 1. Deploy automated tooltip targeting
 
-Run the `tooltip-targeting-automation` drill to build the personalized delivery system:
+Run the the tooltip targeting automation workflow (see instructions below) drill to build the personalized delivery system:
 
 1. **Feature usage matrix**: Query PostHog for every user's feature usage pattern. For each user, compute the feature gap -- features used by similar users but not by this user.
 
@@ -121,6 +120,6 @@ If FAIL: Diagnose by segment. If one segment underperforms, adjust that segment'
 
 ## Drills Referenced
 
-- `tooltip-targeting-automation` -- build the automated per-user tooltip selection and delivery pipeline
+- the tooltip targeting automation workflow (see instructions below) -- build the automated per-user tooltip selection and delivery pipeline
 - `ab-test-orchestrator` -- run A/B tests on tooltip copy, timing, and CTA design
 - `feature-adoption-monitor` -- track tooltip-driven feature adoption and detect stalled users

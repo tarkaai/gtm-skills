@@ -16,7 +16,6 @@ slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
   - objection-detection-automation
-  - tech-stack-discovery
   - competitive-battlecard-assembly
 ---
 
@@ -43,7 +42,7 @@ Find the 10x multiplier. Instead of reacting to technical objections after they 
 
 ### 1. Deploy Proactive Technical Objection Prediction
 
-Run the `tech-stack-discovery` drill for every new deal entering the "Connected" stage. Build an n8n workflow:
+Run the the tech stack discovery workflow (see instructions below) drill for every new deal entering the "Connected" stage. Build an n8n workflow:
 
 **Trigger:** Attio webhook when a deal moves to "Connected" stage.
 
@@ -171,6 +170,6 @@ After 2 months, evaluate:
 ## Drills Referenced
 
 - `objection-detection-automation` — auto-detect technical objections in call transcripts and CRM activity, classify severity, trigger response workflows
-- `tech-stack-discovery` — discover prospect tech stack, integration landscape, and technical constraints before the technical call
+- the tech stack discovery workflow (see instructions below) — discover prospect tech stack, integration landscape, and technical constraints before the technical call
 - the technical proof library workflow (see instructions below) — maintain and retrieve proof assets matched to gap types, track effectiveness
 - `competitive-battlecard-assembly` — build technical competitive positioning from deal data and market intelligence

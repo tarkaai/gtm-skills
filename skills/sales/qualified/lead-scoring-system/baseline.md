@@ -13,7 +13,6 @@ kpis: ["Meeting rate by tier", "Score accuracy (predicted tier vs actual outcome
 slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
 drills:
-  - lead-score-automation
   - posthog-gtm-events
   - enrich-and-score
 ---
@@ -58,7 +57,7 @@ Expand the scoring model from Smoke: add 2-3 new fit attributes (tech stack over
 
 ### 3. Deploy the automated scoring pipeline
 
-Run the `lead-score-automation` drill. Build 3 n8n workflows:
+Run the the lead score automation workflow (see instructions below) drill. Build 3 n8n workflows:
 
 **Workflow 1 — New lead scoring:**
 - Trigger: new person created in Attio (webhook)
@@ -130,6 +129,6 @@ If FAIL: diagnose — is the issue fit criteria (wrong companies), intent signal
 
 ## Drills Referenced
 
-- `lead-score-automation` — builds the 3 n8n workflows for real-time scoring, intent re-scoring, and decay
+- the lead score automation workflow (see instructions below) — builds the 3 n8n workflows for real-time scoring, intent re-scoring, and decay
 - `posthog-gtm-events` — sets up the event taxonomy for scoring and conversion tracking
 - `enrich-and-score` — expands Clay enrichment waterfalls and scoring formulas for 100 leads

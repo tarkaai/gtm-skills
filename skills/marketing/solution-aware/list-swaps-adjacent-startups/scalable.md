@@ -14,7 +14,6 @@ kpis: ["Click-through rate", "Email open rate", "Click-to-meeting rate", "Swaps 
 slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
 drills:
-  - list-swap-scheduling
   - partner-pipeline-automation
   - tool-sync-workflow
 ---
@@ -42,7 +41,7 @@ A portfolio of 10+ active swap partners with automated swap scheduling, email de
 
 ### 1. Build the swap scheduling automation
 
-Run the `list-swap-scheduling` drill to create n8n workflows that automate the full swap lifecycle:
+Run the the list swap scheduling workflow (see instructions below) drill to create n8n workflows that automate the full swap lifecycle:
 
 **Swap calendar workflow (weekly cron, Monday 9am):**
 - Query Attio for active partners where "Next Swap Date" is within the next 14 days
@@ -155,6 +154,6 @@ Total: ~60 hours over 2 months
 
 ## Drills Referenced
 
-- `list-swap-scheduling` — automate swap cadence, reciprocal sends, and partner coordination across 10+ partners
+- the list swap scheduling workflow (see instructions below) — automate swap cadence, reciprocal sends, and partner coordination across 10+ partners
 - `partner-pipeline-automation` — automate partner outreach, onboarding, and lifecycle management
 - `tool-sync-workflow` — connect PostHog, Attio, Loops, and n8n for bidirectional data flow

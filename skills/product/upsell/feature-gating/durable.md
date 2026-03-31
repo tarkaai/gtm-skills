@@ -16,7 +16,6 @@ slug: "feature-gating"
 install: "npx gtm-skills add product/upsell/feature-gating"
 drills:
   - autonomous-optimization
-  - gate-conversion-health-report
   - nps-feedback-loop
 ---
 
@@ -84,7 +83,7 @@ Run the `autonomous-optimization` drill to create the always-on monitor-diagnose
 
 ### 2. Generate weekly gate health reports
 
-Run the `gate-conversion-health-report` drill to produce a structured weekly brief every Monday:
+Run the the gate conversion health report workflow (see instructions below) drill to produce a structured weekly brief every Monday:
 
 The report covers:
 - **Per-feature gate table:** feature name, gate impressions, preview engagements, trials started, upgrades completed, conversion rate, MRR attributed, trend vs. 4-week average
@@ -152,5 +151,5 @@ If any metric degrades for 2 consecutive months despite optimization, escalate t
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that finds the local maximum for gate conversion rates
-- `gate-conversion-health-report` — weekly structured report with per-feature gate performance, trial pipeline, revenue attribution, fatigue signals, and recommended next experiment
+- the gate conversion health report workflow (see instructions below) — weekly structured report with per-feature gate performance, trial pipeline, revenue attribution, fatigue signals, and recommended next experiment
 - `nps-feedback-loop` — collect and act on feedback from gate-driven upgraders to validate that gated features deliver the value the gates promise

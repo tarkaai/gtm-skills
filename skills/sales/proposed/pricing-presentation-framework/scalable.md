@@ -16,7 +16,6 @@ slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
   - roi-auto-generation
-  - deal-term-ab-testing
   - dashboard-builder
   - threshold-engine
 ---
@@ -66,7 +65,7 @@ Create an n8n workflow triggered by Attio deal stage changes:
 
 ### 2. Launch pricing A/B experiments
 
-Run the `deal-term-ab-testing` drill to systematically test pricing variables. Unlike the generic deal-term drill, configure experiments specifically for pricing presentation:
+Run the the deal term ab testing workflow (see instructions below) drill to systematically test pricing variables. Unlike the generic deal-term drill, configure experiments specifically for pricing presentation:
 
 **Experiment 1: Presentation format**
 - Control: email proposal with pricing PDF attachment
@@ -157,6 +156,6 @@ If FAIL: identify the bottleneck:
 ## Drills Referenced
 
 - `roi-auto-generation` — auto-generates ROI calculators and business cases when deals enter Proposed stage with qualifying pain data
-- `deal-term-ab-testing` — runs controlled experiments on pricing variables (format, tier count, value anchoring depth) using PostHog feature flags
+- the deal term ab testing workflow (see instructions below) — runs controlled experiments on pricing variables (format, tier count, value anchoring depth) using PostHog feature flags
 - `dashboard-builder` — weekly report on pricing effectiveness with trends, anomalies, and experiment recommendations
 - `threshold-engine` — monthly evaluation against acceptance rate, discount, and volume targets

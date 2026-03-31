@@ -15,7 +15,6 @@ kpis: ["Experiment velocity", "Win rate", "Cumulative lift", "Cycle time", "Prod
 slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
 drills:
-  - experiment-pipeline-automation
   - dashboard-builder
 ---
 
@@ -39,7 +38,7 @@ The experiment pipeline runs continuously with minimal manual intervention. The 
 
 ### 1. Deploy the automated experiment pipeline
 
-Run the `experiment-pipeline-automation` drill to build the always-on experiment system. This creates 4 n8n workflows:
+Run the the experiment pipeline automation workflow (see instructions below) drill to build the always-on experiment system. This creates 4 n8n workflows:
 
 **Experiment launcher (daily cron at 09:00 UTC):**
 - Checks Attio for running experiments. If none, selects the top "next" hypothesis from the backlog.
@@ -123,5 +122,5 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `experiment-pipeline-automation` -- automates the experiment lifecycle from backlog through launch, monitoring, result collection, and auto-queuing
+- the experiment pipeline automation workflow (see instructions below) -- automates the experiment lifecycle from backlog through launch, monitoring, result collection, and auto-queuing
 - `dashboard-builder` -- aggregates experiment results into business impact reports showing cumulative lift, win rates, and ROI

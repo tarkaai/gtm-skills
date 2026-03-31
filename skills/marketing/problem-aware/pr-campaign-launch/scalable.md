@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
 drills:
   - media-target-research
   - media-pitch-outreach
-  - media-relationship-automation
   - dashboard-builder
 ---
 
@@ -63,7 +62,7 @@ Execute the `media-pitch-outreach` drill as quarterly campaigns:
 
 ### 3. Deploy Media Relationship Automation
 
-Run the `media-relationship-automation` drill:
+Run the the media relationship automation workflow (see instructions below) drill:
 
 1. **Source request detection:** Build an n8n workflow that ingests Qwoted and Featured.com alerts, evaluates relevance using Claude API, drafts responses, and routes to Slack for founder approval
 2. **Brand and competitor monitoring:** Configure Mention API (or Google Alerts + n8n) to detect brand mentions, competitor coverage, and trending topics in your space
@@ -135,5 +134,5 @@ Monthly review cycle:
 
 - `media-target-research` — monthly media list refresh with 75+ targets, Clay enrichment, and scoring
 - `media-pitch-outreach` — quarterly launch campaign execution with tiered personalization via Instantly
-- `media-relationship-automation` — always-on opportunity detection, reactive pitching, journalist relationship tracking, and post-placement amplification
+- the media relationship automation workflow (see instructions below) — always-on opportunity detection, reactive pitching, journalist relationship tracking, and post-placement amplification
 - `dashboard-builder` — continuous monitoring of outreach pipeline, placements, referral traffic, attribution, and relationship health

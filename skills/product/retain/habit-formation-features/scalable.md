@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/habit-formation-features"
 drills:
   - ab-test-orchestrator
   - churn-prevention
-  - gamification-personalization
 ---
 
 # Habit-Building Features — Scalable Automation
@@ -62,7 +61,7 @@ Run the `churn-prevention` drill to catch users whose habits are decaying before
 
 ### 3. Personalize habit mechanics per segment
 
-Run the `gamification-personalization` drill to ensure the habit system works across user types:
+Run the the gamification personalization workflow (see instructions below) drill to ensure the habit system works across user types:
 
 - Use PostHog cohorts to identify behavioral segments: "Power Users" (top 20% by weekly actions), "Steady Users" (middle 60%), "Light Users" (bottom 20%).
 - Personalize streak difficulty: Power Users get a harder qualifying action (e.g., 3 actions/day instead of 1). Steady Users keep the standard mechanic. Light Users get an easier entry (any product visit counts for day 1-3, then escalates).
@@ -103,4 +102,4 @@ After 2 months, measure:
 
 - `ab-test-orchestrator` — design and run 4 systematic experiments on streak mechanics, timing, rewards, and social proof
 - `churn-prevention` — detect habit-decay signals and trigger tiered interventions to save at-risk users
-- `gamification-personalization` — segment users by behavior and personalize streak difficulty, reminders, and rewards
+- the gamification personalization workflow (see instructions below) — segment users by behavior and personalize streak difficulty, reminders, and rewards

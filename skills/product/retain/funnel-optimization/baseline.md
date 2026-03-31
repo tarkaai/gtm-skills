@@ -14,7 +14,6 @@ kpis: ["Funnel conversion rate per step", "Drop-off reduction", "Test velocity (
 slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
-  - signup-friction-reduction
   - activation-optimization
   - threshold-engine
 ---
@@ -55,7 +54,7 @@ Three funnels to have fully instrumented:
 
 ### 2. Deploy friction fixes with feature flags
 
-Run the `signup-friction-reduction` drill for each funnel's primary bottleneck. This deploys fixes behind PostHog feature flags with 50/50 control/treatment splits. Each fix gets:
+Run the the signup friction reduction workflow (see instructions below) drill for each funnel's primary bottleneck. This deploys fixes behind PostHog feature flags with 50/50 control/treatment splits. Each fix gets:
 
 - A PostHog feature flag gating the change
 - Tracking events for the specific fix (so you can measure its individual impact)
@@ -130,6 +129,6 @@ If FAIL: Diagnose — is the issue insufficient experiment volume (need more tes
 
 ## Drills Referenced
 
-- `signup-friction-reduction` — Deploys feature-flagged friction fixes with A/B tracking and automated monitoring
+- the signup friction reduction workflow (see instructions below) — Deploys feature-flagged friction fixes with A/B tracking and automated monitoring
 - `activation-optimization` — Finds the activation metric, measures it, and systematically improves it
 - `threshold-engine` — Evaluates cumulative improvement against the >=20% threshold

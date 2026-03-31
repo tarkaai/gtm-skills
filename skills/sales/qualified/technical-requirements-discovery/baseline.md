@@ -14,7 +14,6 @@ kpis: ["Technical discovery completion rate", "Technical fit prediction accuracy
 slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
-  - tech-stack-discovery
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -50,7 +49,7 @@ Run the `posthog-gtm-events` drill to define technical discovery events. Create 
 
 ### 2. Run tech stack discovery on all new qualified deals
 
-For every deal that enters "Qualified" stage in Attio during the 2-week period, immediately run the `tech-stack-discovery` drill. Target: research should complete within 24 hours of deal qualification.
+For every deal that enters "Qualified" stage in Attio during the 2-week period, immediately run the the tech stack discovery workflow (see instructions below) drill. Target: research should complete within 24 hours of deal qualification.
 
 The agent:
 - Detects tech stack from public signals via Clay Claygent
@@ -124,7 +123,7 @@ If PASS, document the process as your standard technical discovery playbook and 
 
 ## Drills Referenced
 
-- `tech-stack-discovery` — pre-call tech stack research from public signals
+- the tech stack discovery workflow (see instructions below) — pre-call tech stack research from public signals
 - the technical discovery call workflow (see instructions below) — structured discovery call with transcript extraction
 - the technical fit scoring workflow (see instructions below) — apply 5-category scoring rubric and route deals
 - the technical collateral matching workflow (see instructions below) — match requirements to documentation and generate follow-up

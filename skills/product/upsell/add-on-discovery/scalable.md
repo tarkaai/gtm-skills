@@ -14,7 +14,6 @@ kpis: ["Add-on activation rate by module", "Cross-sell revenue", "ARPU lift", "S
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
-  - addon-discovery-surface-build
   - ab-test-orchestrator
   - dashboard-builder
   - upgrade-prompt
@@ -40,7 +39,7 @@ Discovery surfaces are live for 3+ add-ons, each with validated triggers. A/B te
 
 ### 1. Expand the add-on catalog
 
-Run the `addon-discovery-surface-build` drill for each additional add-on you want to cross-sell. For each new add-on:
+Run the the addon discovery surface build workflow (see instructions below) drill for each additional add-on you want to cross-sell. For each new add-on:
 
 - Analyze PostHog data to identify the trigger behavior (Step 1 of the drill)
 - Instrument the PostHog events using the same event schema but with the new `addon_slug` value
@@ -115,7 +114,7 @@ If PASS, proceed to Durable. If FAIL:
 
 ## Drills Referenced
 
-- `addon-discovery-surface-build` — repeated for each new add-on in the catalog
+- the addon discovery surface build workflow (see instructions below) — repeated for each new add-on in the catalog
 - `ab-test-orchestrator` — systematic testing of surface type, copy, and timing
 - `dashboard-builder` — full monitoring with per-add-on breakdowns and weekly briefs
 - `upgrade-prompt` — integrates limit-approaching triggers with add-on discovery for compound upsell surfaces

@@ -15,7 +15,6 @@ slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - stakeholder-org-mapping
-  - stakeholder-engagement-scoring
   - ab-test-orchestrator
   - threshold-engine
 ---
@@ -54,7 +53,7 @@ Run the `stakeholder-org-mapping` drill to upgrade from one-shot enrichment (Bas
 
 ### 2. Deploy multi-threading engagement scoring
 
-Run the `stakeholder-engagement-scoring` drill to build always-on scoring:
+Run the the stakeholder engagement scoring workflow (see instructions below) drill to build always-on scoring:
 
 1. Define the engagement event taxonomy: `stakeholder_email_sent`, `stakeholder_email_replied`, `stakeholder_meeting_attended`, `stakeholder_call_completed`, `stakeholder_linkedin_connected`, `stakeholder_content_shared`
 2. Build a daily n8n workflow that computes per-stakeholder engagement scores (rolling 14-day window) and writes them to Attio
@@ -123,6 +122,6 @@ If PASS, proceed to Durable. If FAIL, diagnose: is enrichment degrading at scale
 ## Drills Referenced
 
 - `stakeholder-org-mapping` — continuous org chart monitoring with weekly refresh, delta detection, and automated stakeholder population
-- `stakeholder-engagement-scoring` — daily multi-threading health scoring with role coverage and alert thresholds
+- the stakeholder engagement scoring workflow (see instructions below) — daily multi-threading health scoring with role coverage and alert thresholds
 - `ab-test-orchestrator` — experiment design and execution for EB engagement tactics
 - `threshold-engine` — evaluate pass/fail and recommend level progression

@@ -16,7 +16,6 @@ slug: "engagement-scoring"
 install: "npx gtm-skills add product/retain/engagement-scoring"
 drills:
   - autonomous-optimization
-  - engagement-score-weight-tuning
   - engagement-score-computation
 ---
 
@@ -91,7 +90,7 @@ Run the `autonomous-optimization` drill configured for the engagement scoring pl
 
 ### 2. Deploy engagement score weight tuning
 
-Run the `engagement-score-weight-tuning` drill to automate monthly model recalibration:
+Run the the engagement score weight tuning workflow (see instructions below) drill to automate monthly model recalibration:
 
 1. Build the outcome-labeled dataset: label each user as Churned, Expanded, Retained, or Declined based on their 60-day outcome
 2. Measure each dimension's separation score (how well it predicts churn in isolation)
@@ -106,7 +105,7 @@ Run the `engagement-score-weight-tuning` drill to automate monthly model recalib
 Run the `engagement-score-computation` drill in maintenance mode:
 
 1. The daily n8n workflow continues computing scores for all active users
-2. When the `engagement-score-weight-tuning` drill produces new weights, update the computation workflow automatically
+2. When the the engagement score weight tuning workflow (see instructions below) drill produces new weights, update the computation workflow automatically
 3. Monitor for pipeline failures: if the scoring workflow misses a day, alert and re-run
 4. As the user base grows, scale the pipeline: batch queries, parallel processing, error retry logic
 5. When PostHog events or product features change, update the engagement event taxonomy and re-validate dimension queries
@@ -161,5 +160,5 @@ If metrics decay despite agent optimization, the system needs strategic input:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate-report loop that makes Durable fundamentally different from Scalable
-- `engagement-score-weight-tuning` -- monthly automated recalibration of scoring dimension weights based on prediction accuracy back-tests
+- the engagement score weight tuning workflow (see instructions below) -- monthly automated recalibration of scoring dimension weights based on prediction accuracy back-tests
 - `engagement-score-computation` -- the daily scoring pipeline maintained and updated by the optimization loop

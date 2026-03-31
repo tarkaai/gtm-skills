@@ -54,7 +54,7 @@ Log these 5 deals as the test cohort. Identify 3-5 comparable deals as the contr
 Run the the technical gap assessment workflow (see instructions below) drill for each of the 5 test deals:
 
 - Pull all technical requirements from call transcripts, emails, and deal notes
-- If call transcripts exist, run `call-transcript-tech-requirements-extraction` to get structured requirements
+- If call transcripts exist, run the call transcript tech requirements extraction workflow (see instructions below) to get structured requirements
 - If no transcripts exist, extract requirements manually from deal notes in Attio
 - Match each requirement against the product capability matrix
 - Classify every gap: `no_gap`, `roadmap`, `workaround_available`, `custom_dev_required`, `partner_solution`, `no_fit`

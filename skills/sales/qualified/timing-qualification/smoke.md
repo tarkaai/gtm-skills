@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
   - icp-definition
   - build-prospect-list
-  - timing-scorecard-setup
   - threshold-engine
 ---
 
@@ -48,7 +47,7 @@ Run the `icp-definition` drill to document your Ideal Customer Profile. Extend i
 
 ### 2. Set up timeline scoring in your CRM
 
-Run the `timing-scorecard-setup` drill to create timeline custom fields on Attio Deals:
+Run the the timing scorecard setup workflow (see instructions below) drill to create timeline custom fields on Attio Deals:
 - Timeline category (Immediate/Near-term/Medium-term/Long-term)
 - Target close date
 - Urgency drivers (multi-select)
@@ -110,6 +109,6 @@ If PASS, proceed to Baseline. If FAIL, diagnose: wrong ICP (no one has urgency),
 
 - `icp-definition` — define ICP and extend with timing-specific qualification criteria
 - `build-prospect-list` — source and enrich 15-20 prospects from Clay/Apollo
-- `timing-scorecard-setup` — create timeline scoring infrastructure in Attio
+- the timing scorecard setup workflow (see instructions below) — create timeline scoring infrastructure in Attio
 - the timing discovery call workflow (see instructions below) — structured discovery call with transcript timing extraction
 - `threshold-engine` — evaluate results against the pass threshold

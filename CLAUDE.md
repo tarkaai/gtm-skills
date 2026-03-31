@@ -29,7 +29,7 @@ If no config exists, prompt the user: "It looks like you haven't configured your
 Skills are organized in three layers:
 
 - **Plays** (240) at `skills/{stage}/{sub-stage}/{play-slug}/{level}.md` — what to run. Each play references drills and fundamentals instead of giving vague instructions.
-- **Drills** (~485) at `drills/{category}/{drill-name}.md` — practiced routines that combine multiple tools into reusable workflows (e.g., `/build-prospect-list`, `/cold-email-sequence`). Organized into 12 categories: prospecting, outreach, content, events, paid, partnerships, measurement, activation, engagement, monetization, sales-process, advocacy.
+- **Drills** (~196) at `drills/{category}/{drill-name}.md` — practiced routines that combine multiple tools into reusable workflows (e.g., `/build-prospect-list`, `/cold-email-sequence`). Organized into 12 categories: prospecting, outreach, content, events, paid, partnerships, measurement, activation, engagement, monetization, sales-process, advocacy.
 - **Fundamentals** (~25) at `skills/fundamentals/{category}/{tool}/SKILL.md` — tool-specific core skills the agent must master (e.g., Clay enrichment, Attio pipeline management).
 
 Each play file contains:

@@ -15,7 +15,6 @@ slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
   - ab-test-orchestrator
-  - tooltip-targeting-automation
   - dashboard-builder
 ---
 
@@ -40,7 +39,7 @@ Shortcut promotion running for all eligible users across the entire user base. P
 
 ### 1. Roll out to 100% and segment by persona
 
-Remove the 50/50 feature flag from Baseline. Enable shortcut hints for all eligible users. Using the `tooltip-targeting-automation` drill, build persona-specific hint strategies:
+Remove the 50/50 feature flag from Baseline. Enable shortcut hints for all eligible users. Using the the tooltip targeting automation workflow (see instructions below) drill, build persona-specific hint strategies:
 
 **Technical builders:** Surface advanced shortcuts first (multi-key combinations, custom shortcuts). These users expect power-user features. Hint copy should emphasize speed: "0.5s vs 3s. Cmd+Shift+P every time."
 
@@ -164,5 +163,5 @@ If FAIL on ratio at 500+ users: The promotion is reaching users but not converti
 ## Drills Referenced
 
 - `ab-test-orchestrator` — systematic A/B testing of hint copy, timing, and format
-- `tooltip-targeting-automation` — persona-specific tooltip delivery with usage-based targeting
+- the tooltip targeting automation workflow (see instructions below) — persona-specific tooltip delivery with usage-based targeting
 - `dashboard-builder` — adoption funnel tracking, stalled-user interventions at scale, retention correlation analysis

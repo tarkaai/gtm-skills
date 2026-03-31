@@ -15,7 +15,6 @@ slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
 drills:
   - ab-test-orchestrator
-  - engagement-score-weight-tuning
   - engagement-alert-routing
 ---
 
@@ -62,7 +61,7 @@ For each experiment: set up the PostHog feature flag, implement the variant in t
 
 ### 2. Auto-calibrate scoring weights monthly
 
-Run the `engagement-score-weight-tuning` drill to build the monthly recalibration pipeline:
+Run the the engagement score weight tuning workflow (see instructions below) drill to build the monthly recalibration pipeline:
 
 1. Build the outcome-labeled dataset: for every user scored 60+ days ago, label them as Churned, Expanded, Retained, or Declined based on current Attio status and PostHog activity.
 2. Measure each scoring dimension's predictive power by computing separation scores (churn rate in bottom quartile minus top quartile).
@@ -129,5 +128,5 @@ If FAIL on false positives: Raise the Hot threshold or add a "confirmation signa
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on scoring thresholds and weights
-- `engagement-score-weight-tuning` — monthly auto-calibration of scoring dimension weights against actual outcomes
+- the engagement score weight tuning workflow (see instructions below) — monthly auto-calibration of scoring dimension weights against actual outcomes
 - `engagement-alert-routing` — routes PQL alerts to the right intervention channel based on account value and risk tier

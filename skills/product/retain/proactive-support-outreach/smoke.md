@@ -13,7 +13,6 @@ kpis: ["Outreach engagement rate", "Struggle detection count", "Resolution rate"
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
 drills:
-  - struggle-signal-detection
   - threshold-engine
 ---
 
@@ -38,7 +37,7 @@ Success = at least 40% of users you reach out to engage with the help (click the
 
 ### 1. Instrument struggle signals in PostHog
 
-Run the `struggle-signal-detection` drill Steps 1-2 only. You are not building the full automated pipeline yet. Instead, manually run the struggle scoring query against your PostHog instance to get a list of users with struggle scores.
+Run the the struggle signal detection workflow (see instructions below) drill Steps 1-2 only. You are not building the full automated pipeline yet. Instead, manually run the struggle scoring query against your PostHog instance to get a list of users with struggle scores.
 
 Minimum events you need tracked before proceeding:
 - `error_displayed` (or your equivalent user-facing error event)
@@ -50,7 +49,7 @@ If any of these events are not tracked, instrument them first. This is the prere
 
 ### 2. Manually identify 10-20 struggling users
 
-Run the struggle scoring query from `struggle-signal-detection` Step 2. Pick 10-20 users with scores above 25 (moderate tier or above). For each user:
+Run the struggle scoring query from the struggle signal detection workflow (see instructions below) Step 2. Pick 10-20 users with scores above 25 (moderate tier or above). For each user:
 
 1. Review their PostHog session recordings to understand what they were trying to do
 2. Identify the specific workflow they are stuck on
@@ -105,5 +104,5 @@ If FAIL: Either the struggle detection is picking up false positives, or the hel
 
 ## Drills Referenced
 
-- `struggle-signal-detection` — Detect and score users showing signs of product struggle (Steps 1-2 only at this level)
+- the struggle signal detection workflow (see instructions below) — Detect and score users showing signs of product struggle (Steps 1-2 only at this level)
 - `threshold-engine` — Evaluate pass/fail against the 40% engagement threshold

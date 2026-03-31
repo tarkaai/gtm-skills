@@ -15,7 +15,6 @@ slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
 drills:
   - event-scouting
-  - meetup-pipeline
   - threshold-engine
 ---
 
@@ -50,7 +49,7 @@ Pick the single best conference. Note 10-15 speakers and sponsor contacts who ma
 
 ### 2. Set up the meetup
 
-Run the `meetup-pipeline` drill to create the event infrastructure:
+Run the the meetup pipeline workflow (see instructions below) drill to create the event infrastructure:
 
 - Create a registration page via Cal.com event type or a simple form (Typeform, Google Form). Include: meetup title, date/time, venue address, format description (roundtable, demo night, or casual mixer), and capacity limit.
 - Set up an email confirmation via Loops that fires when someone registers. Include venue directions, parking or transit info, and a calendar invite attachment.
@@ -126,5 +125,5 @@ If FAIL: diagnose the failure point:
 ## Drills Referenced
 
 - `event-scouting` — find and evaluate conferences worth piggybacking on
-- `meetup-pipeline` — set up registration, confirmations, and attendee tracking
+- the meetup pipeline workflow (see instructions below) — set up registration, confirmations, and attendee tracking
 - `threshold-engine` — evaluate pass/fail against the outcome threshold

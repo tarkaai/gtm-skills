@@ -14,7 +14,6 @@ kpis: ["Activation rate by variant and persona", "Experiment throughput (complet
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
 drills:
-  - experiment-pipeline-automation
   - onboarding-persona-scaling
   - ab-test-orchestrator
 ---
@@ -39,7 +38,7 @@ Run an automated experiment pipeline that continuously tests onboarding variatio
 
 ### 1. Automate the experiment pipeline
 
-Run the `experiment-pipeline-automation` drill. This produces:
+Run the the experiment pipeline automation workflow (see instructions below) drill. This produces:
 - An n8n workflow that checks Attio daily for the next queued hypothesis and auto-launches it as a PostHog experiment with feature flag and variant allocation
 - A completion monitor that checks daily whether running experiments have reached sample size, exceeded max duration, or breached guardrails
 - Auto-result collection that pulls PostHog experiment data into Attio when complete
@@ -114,7 +113,7 @@ After 2 months and >= 6 completed experiments:
 
 ## Drills Referenced
 
-- `experiment-pipeline-automation` — automates the full experiment lifecycle: backlog prioritization, PostHog experiment creation, completion monitoring, result collection, and next-experiment queuing
+- the experiment pipeline automation workflow (see instructions below) — automates the full experiment lifecycle: backlog prioritization, PostHog experiment creation, completion monitoring, result collection, and next-experiment queuing
 - the onboarding experiment orchestration workflow (see instructions below) — designs and runs each individual onboarding A/B test with per-variant tracking and evaluation criteria
 - `onboarding-persona-scaling` — scales from 2-3 personas to 5+ with automated classification, per-persona tours/emails/messages, and comparative activation funnels
 - `ab-test-orchestrator` — provides the statistical framework for multi-surface experiments: sample size calculation, significance testing, and peeking discipline

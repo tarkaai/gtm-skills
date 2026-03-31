@@ -14,7 +14,6 @@ kpis: ["Cross-sell surface CTR", "Surface dismissal rate", "Trigger accuracy (% 
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
 drills:
-  - addon-discovery-surface-build
   - threshold-engine
 ---
 
@@ -49,7 +48,7 @@ Pick the single highest-scoring product for this Smoke test. You need a product 
 
 ### 2. Build one cross-sell discovery surface
 
-Run the `addon-discovery-surface-build` drill scoped to the ONE product you selected. Specifically:
+Run the the addon discovery surface build workflow (see instructions below) drill scoped to the ONE product you selected. Specifically:
 
 - Complete Step 1 (use the trigger map from Step 1 above — do not re-derive it)
 - Complete Step 2 (instrument `addon_discovery_impression`, `addon_discovery_clicked`, `addon_activation_started`, `addon_activated` events in PostHog, replacing "addon" references with your cross-sell product slug)
@@ -97,5 +96,5 @@ Run the `threshold-engine` drill to measure: >=15% CTR on the cross-sell surface
 ## Drills Referenced
 
 - the cross sell catalog mapping workflow (see instructions below) — analyzes product usage data to map which products to recommend to which users and what behavior triggers readiness
-- `addon-discovery-surface-build` — builds the in-product surface that shows users the cross-sell product at the trigger moment
+- the addon discovery surface build workflow (see instructions below) — builds the in-product surface that shows users the cross-sell product at the trigger moment
 - `threshold-engine` — evaluates whether CTR hit the 15% pass threshold

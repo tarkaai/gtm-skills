@@ -16,7 +16,6 @@ slug: "freemium-model"
 install: "npx gtm-skills add product/onboard/freemium-model"
 drills:
   - autonomous-optimization
-  - freemium-conversion-health-report
 ---
 
 # Freemium Tier Strategy — Durable Intelligence
@@ -99,7 +98,7 @@ In addition to the standard `autonomous-optimization` guardrails, add conversion
 
 ### 3. Deploy the health report at Durable cadence
 
-Run the `freemium-conversion-health-report` drill with enhanced frequency:
+Run the the freemium conversion health report workflow (see instructions below) drill with enhanced frequency:
 - Health check: runs daily (not just weekly)
 - Free user lifecycle tracking: state transitions (inactive -> activated -> habitual -> power-free -> upgraded -> churned) monitored daily per cohort
 - Weekly health report: integrates with the `autonomous-optimization` weekly brief into a single combined report
@@ -177,5 +176,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum of free-to-paid conversion
-- `freemium-conversion-health-report` -- monitors free-to-paid pipeline health at Durable cadence with daily lifecycle tracking, weekly briefs, and monthly deep analysis
+- the freemium conversion health report workflow (see instructions below) -- monitors free-to-paid pipeline health at Durable cadence with daily lifecycle tracking, weekly briefs, and monthly deep analysis
 - `autonomous-optimization` -- monitors the self-serve upgrade path (pricing page -> checkout -> subscription) and feeds anomalies into the optimization loop
