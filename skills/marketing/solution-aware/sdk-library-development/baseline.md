@@ -1,7 +1,8 @@
 ---
 name: sdk-library-development-baseline
 description: >
-  SDK & Library Development — Baseline Run. Build and distribute SDKs and libraries for popular languages and frameworks to reduce friction and drive developer adoption.
+    SDK & Library Development — Baseline Run. Build and distribute SDKs and libraries for popular
+  languages and frameworks to reduce friction and drive developer adoption.
 stage: "Marketing > Solution Aware"
 motion: "Directories & Marketplaces"
 channels: "Communities, Product"
@@ -12,17 +13,15 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
+  - landing-page-pipeline
 ---
 # SDK & Library Development — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Product
 
 ## Overview
-Build and distribute SDKs and libraries for popular languages and frameworks to reduce friction and drive developer adoption.
+SDK & Library Development — Baseline Run. Build and distribute SDKs and libraries for popular languages and frameworks to reduce friction and drive developer adoption.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks
@@ -32,42 +31,25 @@ Build and distribute SDKs and libraries for popular languages and frameworks to 
 ## Budget
 
 **Play-specific tools & costs**
-- **G2, Capterra, Product Hunt — free listings:** Free
-
-_Total play-specific: Free_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week sdk & library development experiment; define detailed ICP criteria.
+### 1. Configure tracking
+Run the `posthog-gtm-events` drill to track: `sdk-library-development_listing_view`, `sdk-library-development_listing_click`, `sdk-library-development_listing_signup`, `sdk-library-development_review_submitted`. Use UTM parameters per directory for attribution.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Build landing pages for directory traffic
+Run the `landing-page-pipeline` drill to create directory-specific landing pages. Match the messaging to what users expect when coming from each directory. Include social proof relevant to that directory's audience.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Scale review collection
+Implement a systematic review collection process: after positive customer interactions, send a Loops email requesting a review on the relevant directory. Track review velocity in PostHog.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: ≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks. If PASS, proceed to Scalable. If FAIL, focus on the directories driving the most qualified traffic.
 
 ---
 
@@ -82,8 +64,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥500 downloads and ≥20 qualified developer signups across 2-3 SDKs in 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

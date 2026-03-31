@@ -1,7 +1,9 @@
 ---
 name: chrome-web-store-teaser-scalable
 description: >
-  Chrome Extension Teaser — Scalable Automation. Ship a minimal preview extension with a landing page to see if installs and at least one lead show dev or power-user interest before investing further.
+    Chrome Extension Teaser — Scalable Automation. Ship a minimal preview extension with a landing
+  page to see if installs and at least one lead show dev or power-user interest before investing
+  further.
 stage: "Marketing > Unaware"
 motion: "Directories & Marketplaces"
 channels: "Other"
@@ -12,18 +14,15 @@ kpis: ["Store listing views", "Install rate"]
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - crm-pipeline-setup
-  - case-study-creation
-  - posthog-gtm-events
+  - ab-test-orchestrator
+  - tool-sync-workflow
 ---
 # Chrome Extension Teaser — Scalable Automation
 
 > **Stage:** Marketing → Unaware | **Motion:** Directories & Marketplaces | **Channels:** Other
 
 ## Overview
-Ship a minimal preview extension with a landing page to see if installs and at least one lead show dev or power-user interest before investing further.
+Chrome Extension Teaser — Scalable Automation. Ship a minimal preview extension with a landing page to see if installs and at least one lead show dev or power-user interest before investing further.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 200 installs and ≥ 15 leads over 2 months
@@ -33,42 +32,25 @@ Ship a minimal preview extension with a landing page to see if installs and at l
 ## Budget
 
 **Play-specific tools & costs**
-- **G2 or Capterra review generation campaign:** ~$500–2,000/mo (sponsored)
-- **Review incentive budget (gift cards, credits):** ~$100–500
-
-_Total play-specific: ~$100–2000/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 200 installs and ≥ 15 leads over 2 months.
+### 1. Test listing variations
+Run the `ab-test-orchestrator` drill to test: listing headlines, feature ordering, screenshot selection, pricing presentation, and CTA copy across directories. Rotate variations monthly.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Automate review and listing management
+Run the `tool-sync-workflow` drill to build n8n workflows: auto-detect new reviews and alert team, auto-respond to reviews, sync directory-sourced leads to Attio, and auto-update listings when product features change.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Expand to more directories
+List on 10+ directories. Focus effort on the top 3-5 that drive real pipeline. Maintain presence on others with minimal ongoing effort.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Store listing views, Install rate in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 200 installs and ≥ 15 leads over 2 months. If PASS, proceed to Durable. If FAIL, consolidate to highest-ROI directories.
 
 ---
 
@@ -81,8 +63,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 200 installs and ≥ 15 leads over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

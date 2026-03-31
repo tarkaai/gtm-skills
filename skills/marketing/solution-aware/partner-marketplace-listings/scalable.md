@@ -1,7 +1,9 @@
 ---
 name: partner-marketplace-listings-scalable
 description: >
-  Partner Marketplace Listings — Scalable Automation. Get listed in partner app marketplaces (Salesforce AppExchange, HubSpot, Shopify) to drive discovery and leads from solution-aware users of those platforms.
+    Partner Marketplace Listings — Scalable Automation. Get listed in partner app marketplaces
+  (Salesforce AppExchange, HubSpot, Shopify) to drive discovery and leads from solution-aware users
+  of those platforms.
 stage: "Marketing > Solution Aware"
 motion: "Directories & Marketplaces"
 channels: "Other"
@@ -12,18 +14,15 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - crm-pipeline-setup
-  - case-study-creation
-  - posthog-gtm-events
+  - ab-test-orchestrator
+  - tool-sync-workflow
 ---
 # Partner Marketplace Listings — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Other
 
 ## Overview
-Get listed in partner app marketplaces (Salesforce AppExchange, HubSpot, Shopify) to drive discovery and leads from solution-aware users of those platforms.
+Partner Marketplace Listings — Scalable Automation. Get listed in partner app marketplaces (Salesforce AppExchange, HubSpot, Shopify) to drive discovery and leads from solution-aware users of those platforms.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥8 marketplace listings and ≥60 leads/quarter over 6 months
@@ -33,44 +32,25 @@ Get listed in partner app marketplaces (Salesforce AppExchange, HubSpot, Shopify
 ## Budget
 
 **Play-specific tools & costs**
-- **G2 or Capterra review generation campaign:** ~$500–2,000/mo (sponsored)
-- **Review incentive budget (gift cards, credits):** ~$100–500
-
-_Total play-specific: ~$100–2000/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Test listing variations
+Run the `ab-test-orchestrator` drill to test: listing headlines, feature ordering, screenshot selection, pricing presentation, and CTA copy across directories. Rotate variations monthly.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for partner marketplace listings execution.
+### 2. Automate review and listing management
+Run the `tool-sync-workflow` drill to build n8n workflows: auto-detect new reviews and alert team, auto-respond to reviews, sync directory-sourced leads to Attio, and auto-update listings when product features change.
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Expand to more directories
+List on 10+ directories. Focus effort on the top 3-5 that drive real pipeline. Maintain presence on others with minimal ongoing effort.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥8 marketplace listings and ≥60 leads/quarter over 6 months. If PASS, proceed to Durable. If FAIL, consolidate to highest-ROI directories.
 
 ---
 
@@ -86,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥8 marketplace listings and ≥60 leads/quarter over 6 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

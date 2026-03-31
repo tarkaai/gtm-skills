@@ -1,7 +1,8 @@
 ---
 name: review-ask-to-early-users-baseline
 description: >
-  Review Ask to Early Users — Baseline Run. Request reviews from a handful of early users to build social proof and see if new reviews correlate with at least one inbound lead.
+    Review Ask to Early Users — Baseline Run. Request reviews from a handful of early users to build
+  social proof and see if new reviews correlate with at least one inbound lead.
 stage: "Marketing > Product Aware"
 motion: "Directories & Marketplaces"
 channels: "Other"
@@ -12,17 +13,15 @@ kpis: ["3 new reviews", "1 inbound"]
 slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - crm-pipeline-setup
-  - threshold-engine
+  - posthog-gtm-events
+  - landing-page-pipeline
 ---
 # Review Ask to Early Users — Baseline Run
 
 > **Stage:** Marketing → Product Aware | **Motion:** Directories & Marketplaces | **Channels:** Other
 
 ## Overview
-Request reviews from a handful of early users to build social proof and see if new reviews correlate with at least one inbound lead.
+Review Ask to Early Users — Baseline Run. Request reviews from a handful of early users to build social proof and see if new reviews correlate with at least one inbound lead.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 6 new reviews and ≥ 3 inbound leads over 2 weeks
@@ -32,40 +31,25 @@ Request reviews from a handful of early users to build social proof and see if n
 ## Budget
 
 **Play-specific tools & costs**
-- **G2, Capterra, Product Hunt — free listings:** Free
-
-_Total play-specific: Free_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 6 new reviews and ≥ 3 inbound leads over 2 weeks).
+### 1. Configure tracking
+Run the `posthog-gtm-events` drill to track: `review-ask-to-early-users_listing_view`, `review-ask-to-early-users_listing_click`, `review-ask-to-early-users_listing_signup`, `review-ask-to-early-users_review_submitted`. Use UTM parameters per directory for attribution.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Build landing pages for directory traffic
+Run the `landing-page-pipeline` drill to create directory-specific landing pages. Match the messaging to what users expect when coming from each directory. Include social proof relevant to that directory's audience.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Scale review collection
+Implement a systematic review collection process: after positive customer interactions, send a Loops email requesting a review on the relevant directory. Track review velocity in PostHog.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track 3 new reviews, 1 inbound so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 6 new reviews and ≥ 3 inbound leads over 2 weeks. If PASS, proceed to Scalable. If FAIL, focus on the directories driving the most qualified traffic.
 
 ---
 
@@ -78,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 6 new reviews and ≥ 3 inbound leads over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: github-sample-teaser-smoke
 description: >
-  GitHub Sample or Teaser — Smoke Test. Publish a public repo with a README CTA to test whether devs or technical audiences engage and at least one lead comes through.
+    GitHub Sample or Teaser — Smoke Test. Publish a public repo with a README CTA to test whether
+  devs or technical audiences engage and at least one lead comes through.
 stage: "Marketing > Problem Aware"
 motion: "Directories & Marketplaces"
 channels: "Other"
@@ -12,7 +13,8 @@ kpis: ["Repository views", "Clone or download rate"]
 slug: "github-sample-teaser"
 install: "npx gtm-skills add marketing/problem-aware/github-sample-teaser"
 drills:
-  - social-content-pipeline
+  - icp-definition
+  - blog-seo-pipeline
   - threshold-engine
 ---
 # GitHub Sample or Teaser — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Directories & Marketplaces | **Channels:** Other
 
 ## Overview
-Publish a public repo with a README CTA to test whether devs or technical audiences engage and at least one lead comes through.
+GitHub Sample or Teaser — Smoke Test. Publish a public repo with a README CTA to test whether devs or technical audiences engage and at least one lead comes through.
 
 **Time commitment:** 3 hours over 1 week
 **Pass threshold:** ≥ 20 stars or ≥ 100 visitors and ≥ 1 lead in 1 week
@@ -35,32 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-_No specialized tools required at this level._
-
----
-
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 20 stars or ≥ 100 visitors and ≥ 1 lead in 1 week).
+### 1. Identify target directories
+Run the `icp-definition` drill to map where your ICP discovers products: G2, Capterra, Product Hunt, industry-specific directories, GitHub, Chrome Web Store, marketplace listings. Prioritize by relevance and traffic.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Create optimized listings
+Run the `blog-seo-pipeline` drill to research keywords your ICP uses when searching directories. Use these keywords in your listing titles, descriptions, and feature lists. Write compelling copy that differentiates you from competitors on the same platform.
 
-3. Set up PostHog or your CRM with properties for Repository views, Clone or download rate so you can compare results to your threshold.
+**Human action required:** Create or update your listings on 3-5 directories. Submit for review. Ask 5-10 existing customers to leave reviews. Log all listings in Attio.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 3. Track listing performance
+Monitor: page views, clicks to your website, reviews received, leads generated from each directory. Use UTM parameters on all listing links.
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
-
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥ 20 stars or ≥ 100 visitors and ≥ 1 lead in 1 week. If PASS, proceed to Baseline. If FAIL, improve listing copy or target different directories.
 
 ---
 
@@ -73,8 +64,8 @@ _No specialized tools required at this level._
 ## Pass threshold
 **≥ 20 stars or ≥ 100 visitors and ≥ 1 lead in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

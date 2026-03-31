@@ -1,7 +1,9 @@
 ---
 name: open-source-content-release-smoke
 description: >
-  Open Source Content Release — Smoke Test. Release code libraries, tools, datasets, or templates as open source to build brand awareness and generate inbound interest from solution-aware technical audiences.
+    Open Source Content Release — Smoke Test. Release code libraries, tools, datasets, or templates
+  as open source to build brand awareness and generate inbound interest from solution-aware
+  technical audiences.
 stage: "Marketing > Solution Aware"
 motion: "Directories & Marketplaces"
 channels: "Communities, Social, Content"
@@ -12,7 +14,8 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
 drills:
-  - social-content-pipeline
+  - icp-definition
+  - blog-seo-pipeline
   - threshold-engine
 ---
 # Open Source Content Release — Smoke Test
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Social, Content
 
 ## Overview
-Release code libraries, tools, datasets, or templates as open source to build brand awareness and generate inbound interest from solution-aware technical audiences.
+Open Source Content Release — Smoke Test. Release code libraries, tools, datasets, or templates as open source to build brand awareness and generate inbound interest from solution-aware technical audiences.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥50 GitHub stars and ≥5 inbound inquiries in 3 weeks
@@ -35,32 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this open source content release play; document hypothesis and success criteria.
+### 1. Identify target directories
+Run the `icp-definition` drill to map where your ICP discovers products: G2, Capterra, Product Hunt, industry-specific directories, GitHub, Chrome Web Store, marketplace listings. Prioritize by relevance and traffic.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Create optimized listings
+Run the `blog-seo-pipeline` drill to research keywords your ICP uses when searching directories. Use these keywords in your listing titles, descriptions, and feature lists. Write compelling copy that differentiates you from competitors on the same platform.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Create or update your listings on 3-5 directories. Submit for review. Ask 5-10 existing customers to leave reviews. Log all listings in Attio.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track listing performance
+Monitor: page views, clicks to your website, reviews received, leads generated from each directory. Use UTM parameters on all listing links.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥50 GitHub stars and ≥5 inbound inquiries in 3 weeks. If PASS, proceed to Baseline. If FAIL, improve listing copy or target different directories.
 
 ---
 
@@ -74,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥50 GitHub stars and ≥5 inbound inquiries in 3 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: github-project-promotion-durable
 description: >
-  GitHub Project Promotion — Durable Intelligence. Promote open-source projects on GitHub to build developer awareness, drive repository stars, and generate inbound technical leads.
+    GitHub Project Promotion — Durable Intelligence. Promote open-source projects on GitHub to build
+  developer awareness, drive repository stars, and generate inbound technical leads.
 stage: "Marketing > Solution Aware"
 motion: "Directories & Marketplaces"
 channels: "Communities, Social"
@@ -12,20 +13,14 @@ kpis: ["Sustained conversion rate", "AI experiment win rate", "Market adaptation
 slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - crm-pipeline-setup
-  - case-study-creation
-  - posthog-gtm-events
   - dashboard-builder
-  - nps-feedback-loop
 ---
 # GitHub Project Promotion — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Social
 
 ## Overview
-Promote open-source projects on GitHub to build developer awareness, drive repository stars, and generate inbound technical leads.
+GitHub Project Promotion — Durable Intelligence. Promote open-source projects on GitHub to build developer awareness, drive repository stars, and generate inbound technical leads.
 
 **Time commitment:** 180 hours over 12 months
 **Pass threshold:** Sustained star growth (≥20% QoQ) and ≥40 qualified leads/quarter over 12 months via AI-driven promotion and community engagement
@@ -35,45 +30,26 @@ Promote open-source projects on GitHub to build developer awareness, drive repos
 ## Budget
 
 **Play-specific tools & costs**
-- **G2 or Capterra sponsored listings:** ~$1,000–3,000/mo
-- **Reputation management tool (optional):** ~$100–300/mo
-
-_Total play-specific: ~$100–3000/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Deploy AI-powered intelligence system in n8n: analyze PostHog data to identify patterns predicting success and failure in github project promotion campaigns.
+### 1. Build directory dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: traffic per directory, conversion rate per directory, review score trends, pipeline attributed to directory traffic. Set alerts for review score drops or traffic declines.
 
-2. Build continuous experimentation framework: AI automatically tests variations in messaging, timing, targeting, creative, and channel mix.
+### 2. Autonomous directory management
+Configure the agent to: monitor competitor listings for changes, alert when new reviews come in, suggest listing updates based on new features or positioning changes, and track directory ranking positions.
 
-3. Implement learning loops: AI monitors experiment results, identifies winners, analyzes root causes, and applies learnings to future campaigns automatically.
+### 3. Sustain and optimize
+Monthly: review directory ROI, update listing copy, request new reviews, and respond to recent reviews. The agent generates a monthly directory performance report.
 
-4. Set up market adaptation system: AI detects when performance drops due to market saturation, competition, seasonality, or external changes; recommends and tests adjustments.
-
-5. Create smart optimization engine: AI continuously tunes targeting criteria, send times, budget allocation, message variants, and creative based on real-time performance data.
-
-6. Build predictive models in n8n using Anthropic Claude: forecast campaign results, predict lead quality, and recommend proactive optimizations before metrics decline.
-
-7. Deploy competitive intelligence: AI monitors competitor activities, market trends, and emerging best practices; adapts strategy automatically to maintain edge.
-
-8. Establish sophisticated guardrails: if performance drops >20% below Scalable benchmark for 2+ consecutive weeks, AI investigates root causes and suggests specific corrective actions.
-
-9. Implement automated insights and reporting: AI generates weekly summaries of what's working, what's declining, which experiments won, and what to test next.
-
-10. Conduct monthly AI-driven strategy reviews: analyze long-term trends, update success playbooks, identify new opportunities, and maintain or improve results over 6-12 months through continuous intelligent adaptation.
+### 4. Evaluate sustainability
+Measure against: Sustained star growth (≥20% QoQ) and ≥40 qualified leads/quarter over 12 months via AI-driven promotion and community engagement. This level runs continuously. If directories consistently drive qualified traffic, the play is durable.
 
 ---
 
