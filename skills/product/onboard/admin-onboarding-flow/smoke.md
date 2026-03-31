@@ -106,9 +106,9 @@ If FAIL: identify which path underperformed. If admin setup is low, simplify the
 | Tool | Purpose | Pricing |
 |------|---------|---------|
 | PostHog | Analytics, feature flags, funnels | Free tier: 1M events/mo (https://posthog.com/pricing) |
-| Intercom | Checklists, product tours, in-app messages | Starter: $39/seat/mo (https://www.intercom.com/pricing) |
+| Intercom | Checklists, product tours, in-app messages | Essential: $29/seat/mo billed annually (https://www.intercom.com/pricing) |
 | Loops | Lifecycle email sequences | Free tier: 1,000 contacts (https://loops.so/pricing) |
-| n8n | Automation workflows (PostHog→Loops→Intercom) | Free self-hosted; Cloud: $24/mo (https://n8n.io/pricing) |
+| n8n | Automation workflows (PostHog→Loops→Intercom) | Free self-hosted; Cloud Starter: $20/mo (https://n8n.io/pricing) |
 
 **Estimated monthly cost at Smoke:** Free (within free tiers for 10-20 users)
 

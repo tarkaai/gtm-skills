@@ -146,11 +146,11 @@ If FAIL: diagnose which metric is short. If admin completion is low, simplify th
 | Tool | Purpose | Pricing |
 |------|---------|---------|
 | PostHog | Analytics, feature flags, experiments, funnels | Free tier: 1M events/mo (https://posthog.com/pricing) |
-| Intercom | Checklists, product tours, in-app messages | Starter: $39/seat/mo (https://www.intercom.com/pricing) |
-| Loops | Lifecycle email sequences (admin + user paths) | Starter: $49/mo for 5,000 contacts (https://loops.so/pricing) |
-| n8n | Automation (PostHog→Loops webhooks, routing) | Free self-hosted; Cloud: $24/mo (https://n8n.io/pricing) |
+| Intercom | Checklists, product tours, in-app messages | Essential: $29/seat/mo billed annually (https://www.intercom.com/pricing) |
+| Loops | Lifecycle email sequences (admin + user paths) | Paid: from $49/mo (https://loops.so/pricing) |
+| n8n | Automation (PostHog→Loops webhooks, routing) | Free self-hosted; Cloud Starter: $20/mo (https://n8n.io/pricing) |
 
-**Estimated monthly cost at Baseline:** ~$65-115/mo (Intercom $39 + Loops $0-49 + n8n $0-24)
+**Estimated monthly cost at Baseline:** ~$50-100/mo (Intercom $29 + Loops $0-49 + n8n $0-20)
 
 ## Drills Referenced
 

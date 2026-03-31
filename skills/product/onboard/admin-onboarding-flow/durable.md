@@ -221,13 +221,13 @@ If metrics decay despite optimization: the agent diagnoses whether the cause is 
 | Tool | Purpose | Pricing |
 |------|---------|---------|
 | PostHog | Analytics, experiments, feature flags, anomaly detection | Growth: ~$100-450/mo based on events + experiments (https://posthog.com/pricing) |
-| Intercom | Checklists, product tours, in-app messages (per-persona variants) | Pro: $99-299/seat/mo depending on features used (https://www.intercom.com/pricing) |
-| Loops | Lifecycle email sequences (per-persona variants) | Growth: $49-149/mo (https://loops.so/pricing) |
-| n8n | Automation (monitoring crons, experiment orchestration, reporting) | Pro: $50/mo (https://n8n.io/pricing) |
-| Anthropic API | Claude for hypothesis generation and experiment evaluation | Usage-based: ~$20-50/mo at this experiment volume (https://www.anthropic.com/pricing) |
+| Intercom | Checklists, product tours, in-app messages (per-persona variants) | Advanced/Expert plan: ~$99-299/seat/mo (https://www.intercom.com/pricing) |
+| Loops | Lifecycle email sequences (per-persona variants) | Paid: from $49/mo, scales with contacts (https://loops.so/pricing) |
+| n8n | Automation (monitoring crons, experiment orchestration, reporting) | Cloud Pro: ~$50/mo (https://n8n.io/pricing) |
+| Anthropic API | Claude Haiku for hypothesis generation and experiment evaluation | Haiku: $1/$5 per M input/output tokens; ~$15-40/mo at this volume (https://docs.anthropic.com/en/docs/about-claude/pricing) |
 | Attio | CRM logging of experiments, decisions, and health observations | Pro: $0-34/seat/mo (https://attio.com/pricing) |
 
-**Estimated monthly cost at Durable:** ~$300-950/mo (PostHog $100-450 + Intercom $99-299 + Loops $49-149 + n8n $50 + Anthropic $20-50)
+**Estimated monthly cost at Durable:** ~$250-900/mo (PostHog $100-450 + Intercom $99-299 + Loops $49-149 + n8n $50 + Anthropic $15-40)
 
 ## Drills Referenced
 

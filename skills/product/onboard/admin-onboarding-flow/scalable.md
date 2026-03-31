@@ -142,11 +142,11 @@ If FAIL: identify the underperforming persona. If it is a classification problem
 | Tool | Purpose | Pricing |
 |------|---------|---------|
 | PostHog | Analytics, feature flags, experiments, cohorts | Growth: ~$0-450/mo based on events (https://posthog.com/pricing) |
-| Intercom | Checklists, product tours, in-app messages | Pro: $99/seat/mo for advanced targeting (https://www.intercom.com/pricing) |
-| Loops | Lifecycle email sequences per persona | Growth: $49-149/mo for 5K-25K contacts (https://loops.so/pricing) |
-| n8n | Automation (persona routing, stall detection, event bridging) | Pro: $50/mo for higher execution volume (https://n8n.io/pricing) |
+| Intercom | Checklists, product tours, in-app messages | Advanced plan for targeting + automation (https://www.intercom.com/pricing) |
+| Loops | Lifecycle email sequences per persona | Paid: from $49/mo, scales with contacts (https://loops.so/pricing) |
+| n8n | Automation (persona routing, stall detection, event bridging) | Cloud Pro: ~$50/mo for higher execution volume (https://n8n.io/pricing) |
 
-**Estimated monthly cost at Scalable:** ~$200-700/mo (Intercom $99-200 + Loops $49-149 + PostHog $0-300 + n8n $24-50)
+**Estimated monthly cost at Scalable:** ~$200-600/mo (Intercom Advanced ~$99-200 + Loops $49-149 + PostHog $0-300 + n8n $20-50)
 
 ## Drills Referenced
 
