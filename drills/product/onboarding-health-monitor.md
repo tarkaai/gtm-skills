@@ -1,16 +1,16 @@
 ---
 name: onboarding-health-monitor
-description: Continuously monitor onboarding funnel health, detect degradation, and generate weekly activation reports
+description: Continuous per-persona onboarding health monitoring with anomaly alerts, cohort drift detection, and weekly automated reports
 category: Product
 tools:
   - PostHog
   - n8n
   - Attio
 fundamentals:
-  - posthog-funnels
-  - posthog-cohorts
   - posthog-anomaly-detection
   - posthog-dashboards
+  - posthog-cohorts
+  - posthog-custom-events
   - n8n-scheduling
   - n8n-workflow-basics
   - attio-notes
@@ -18,103 +18,117 @@ fundamentals:
 
 # Onboarding Health Monitor
 
-This drill creates an always-on monitoring system for onboarding funnel performance. It runs daily checks, detects degradation before it becomes a crisis, and generates weekly reports with actionable insights. This is the play-specific monitoring layer that feeds into the `autonomous-optimization` drill at the Durable level.
+This drill creates a continuous monitoring system for persona-based onboarding. It detects when any persona's activation rate drifts, identifies the root cause (tour abandonment, email disengagement, classification error), and generates actionable alerts. This drill feeds anomaly data into the `autonomous-optimization` drill for automated experimentation.
 
 ## Prerequisites
 
-- PostHog tracking all onboarding events (from `posthog-gtm-events` drill)
-- At least 4 weeks of onboarding data at Scalable level
-- n8n instance with PostHog and Slack/email credentials
-- Onboarding funnels defined in PostHog
+- Persona-based onboarding running at Scalable level with 5+ personas
+- At least 8 weeks of per-persona activation data in PostHog
+- n8n instance for scheduled monitoring workflows
+- Attio configured for logging health observations
 
 ## Steps
 
-### 1. Define the health metrics
+### 1. Build the per-persona health dashboard
 
-Track these metrics daily:
+Using the `posthog-dashboards` fundamental, create a dashboard titled "Onboarding Health by Persona" with these panels:
 
-- **Overall activation rate**: Percentage of signups reaching activation within 7 days (trailing 7-day cohort)
-- **Tour completion rate**: Percentage of users who start the tour and complete all steps
-- **Time to activation**: Median time from signup to activation event (in hours)
-- **Step drop-off rates**: Conversion rate between each onboarding funnel step
-- **Per-persona activation rate**: Activation rate broken down by persona segment
-- **Email sequence engagement**: Open rate and click rate for each onboarding email
-- **Stalled user count**: Users who signed up 3+ days ago with no milestone progress
+- **Activation rate by persona (weekly trend)**: Line chart, one line per persona, 12-week window. Target line at the play's threshold.
+- **Time to activation by persona (distribution)**: Histogram showing days from signup to activation per persona. Shift right = getting slower = problem.
+- **Tour completion rate by persona**: Bar chart, weekly. A drop here causes downstream activation drops.
+- **Email sequence engagement by persona**: Open rate and click rate per persona, weekly. Declining engagement signals content fatigue.
+- **Persona classification distribution**: Pie chart of new signups by persona. A sudden shift means your user mix changed or classification rules broke.
+- **Drop-off heatmap**: Table showing which tour step or email has the highest abandonment rate per persona. Updated weekly.
 
-### 2. Build the monitoring dashboard
+### 2. Define anomaly thresholds
 
-Using the `posthog-dashboards` fundamental, create a dedicated "Onboarding Health" dashboard:
+For each metric, define what constitutes an anomaly:
 
-- **Row 1**: Activation rate trend (30-day line chart), tour completion rate trend, time-to-activation trend
-- **Row 2**: Onboarding funnel (bar chart showing step-by-step conversion), per-persona activation comparison
-- **Row 3**: Email sequence performance (open/click rates by email step), stalled user count trend
+| Metric | Normal range | Warning | Critical |
+|--------|-------------|---------|----------|
+| Activation rate per persona | Within 10% of 4-week rolling average | 10-20% below average for 1 week | >20% below average OR below play threshold for 2 weeks |
+| Tour completion rate | Within 15% of average | 15-25% below for 1 week | >25% below OR below 40% absolute |
+| Email open rate | Within 20% of average | 20-35% below for 1 week | >35% below OR below 15% absolute |
+| Time to activation | Within 20% of median | 20-40% above median | >40% above median |
+| Persona distribution | Within 15% of historical ratio | Any persona drops >50% of its usual share | Classification returning >30% "default" |
 
-Set each metric's expected range based on the last 4 weeks of Scalable-level performance. Color-code: green = within 5% of baseline, yellow = 5-15% below baseline, red = more than 15% below baseline.
+### 3. Build the daily monitoring workflow
 
-### 3. Build the daily health check workflow
+Using `n8n-scheduling` and `n8n-workflow-basics`, create a workflow that runs daily at 08:00 UTC:
 
-Using the `n8n-scheduling` fundamental, create a workflow that runs daily at 09:00 UTC:
+1. Query PostHog for each persona's metrics from the last 7 days
+2. Compare each metric against its 4-week rolling average (from `posthog-anomaly-detection`)
+3. Classify each metric: normal, warning, or critical
+4. If any metric is critical: send immediate alert (Slack or email) with the persona name, metric, current value, expected value, and suggested investigation steps
+5. If any metric is warning: log to Attio using `attio-notes` as an observation on the play record
+6. If all metrics normal: log a "healthy" status to Attio
 
-1. Query PostHog for yesterday's onboarding metrics using the API:
-   - Activation rate for the 7-day cohort ending yesterday
-   - Tour starts and completions in the last 24 hours
-   - New signups vs activations ratio
-   - Any step with conversion below 50% of its 4-week average
+The alert message format:
+```
+ONBOARDING ALERT: [persona_type] activation rate dropped to [X%] (expected [Y%])
+- Tour completion: [Z%] (change: [delta])
+- Email engagement: [open_rate%] open, [click_rate%] click
+- Suggested cause: [tour step N has highest new dropoff | email M open rate collapsed | classification shifted]
+- Recommended action: [investigate tour step N | refresh email M copy | check classification rules]
+```
 
-2. Run anomaly detection using `posthog-anomaly-detection`:
-   - Compare each metric to its 4-week rolling average
-   - Flag any metric that has declined for 3+ consecutive days
-   - Flag any single-day drop exceeding 25%
+### 4. Build the weekly health report
 
-3. If anomalies detected:
-   - Send an immediate alert to Slack with: metric name, current value, baseline value, percentage change, and the number of consecutive days declining
-   - Log the anomaly in Attio using `attio-notes` on the play's campaign record
+Using `n8n-scheduling`, create a workflow that runs every Monday at 09:00 UTC:
 
-4. If no anomalies: log a "healthy" entry. No alert needed.
+1. Pull 7-day metrics for each persona from PostHog
+2. Pull 4-week trend data for comparison
+3. Generate a structured report:
 
-### 4. Build the stalled-user intervention trigger
+```
+# Onboarding Health Report — Week of [date]
 
-Using `n8n-workflow-basics`, create a workflow that runs daily:
+## Summary
+- Total new signups: [N]
+- Overall activation rate: [X%] (prev week: [Y%])
+- Best persona: [persona] at [rate%]
+- Worst persona: [persona] at [rate%]
 
-1. Query PostHog using `posthog-cohorts` for users matching: `signup_date > 3 days ago AND activation_reached = false AND last_tour_step < total_tour_steps`
-2. For each stalled user, determine where they are stuck (which milestone they last completed)
-3. Group stalled users by stuck-point and persona
-4. Output a daily stalled-user report: "12 users stalled at step 3 (mostly team_lead persona), 8 users stalled at step 1 (mostly solo_creator)"
-5. Feed this data into the `autonomous-optimization` drill as a signal for hypothesis generation
+## Per-Persona Breakdown
+| Persona | Signups | Activation | Trend | Tour Complete | Email CTR |
+|---------|---------|-----------|-------|---------------|-----------|
+| ...     | ...     | ...       | ↑/↓/→ | ...           | ...       |
 
-### 5. Generate the weekly activation report
+## Anomalies Detected
+- [List of warning/critical anomalies with dates]
 
-Using `n8n-scheduling`, create a workflow that runs every Monday at 10:00 UTC:
+## Experiments in Flight
+- [List any active A/B tests from autonomous-optimization]
 
-1. Pull 7-day metrics from PostHog:
-   - Total signups, total activations, activation rate
-   - Tour completion rate and average time-to-activation
-   - Per-persona breakdown
-   - Email sequence metrics (enrollments, opens, clicks, activations attributed to email)
-   - Comparison to prior week and 4-week average
+## Recommended Actions
+- [Prioritized list based on anomaly data]
+```
 
-2. Generate the report using Claude (Anthropic API):
-   - "Onboarding Health Report — Week of [date]"
-   - Summary: 1-2 sentences on overall health
-   - Key metrics table with week-over-week change
-   - Top insight: the single most important finding this week
-   - Recommended action: one specific thing to test or fix
-   - Stalled user analysis: where users are getting stuck and any emerging patterns
+4. Post the report to Slack and store in Attio as a note
 
-3. Post the report to Slack and store in Attio
+### 5. Build cohort drift detection
 
-### 6. Set up guardrail alerts
+Using `posthog-cohorts`, create a weekly cohort comparison workflow:
 
-Using `n8n-workflow-basics`, create always-on guardrails:
+1. Compare this week's signup cohort against the 4-week historical average on: persona distribution, signup source distribution, company size distribution
+2. If the profile of new signups shifts significantly (e.g., suddenly 40% of signups are a persona that was previously 15%), flag it as a cohort drift
+3. Cohort drift is important because a tour optimized for one persona will not work for another — a shift in who signs up requires updating onboarding paths, not fixing them
 
-- **Activation crash**: If activation rate drops below 25% for any 48-hour period, send an urgent alert. This likely indicates a product bug, broken tour, or tracking failure.
-- **Tour breakage**: If tour completion rate drops below 10%, the tour itself may be broken (e.g., targeting a DOM element that no longer exists after a product deploy). Alert immediately.
-- **Email bounce spike**: If Loops reports bounce rate above 5%, the email sequence may be targeting invalid addresses. Pause new enrollments and investigate.
+Log cohort drift observations in Attio. These feed into the `autonomous-optimization` drill's diagnosis phase.
+
+### 6. Connect to autonomous optimization
+
+This drill's output feeds directly into the `autonomous-optimization` drill:
+
+- **Anomaly detected** triggers the Diagnose phase of autonomous optimization
+- **Anomaly type** determines hypothesis space: tour problem leads to test tour variations, email problem leads to test email copy, classification problem leads to fix classification rules
+- **Weekly health report** provides the context data that hypothesis generation needs
+- **Cohort drift** triggers a strategic review rather than tactical optimization
 
 ## Output
 
-- Daily automated health checks with anomaly detection
-- Weekly activation reports with insights and recommendations
-- Stalled-user analysis feeding into the optimization loop
-- Guardrail alerts for critical failures
-- All data logged in Attio for audit trail
+- Daily health check running automatically
+- Critical anomaly alerts delivered within hours of detection
+- Weekly structured health report with per-persona breakdown
+- Cohort drift detection flagging changes in user mix
+- Integration with autonomous-optimization for automated response to anomalies
