@@ -1,81 +1,107 @@
 ---
 name: slack-community-program-smoke
 description: >
-    Slack Community Program — Smoke Test. Create and manage a Slack workspace for community
-  engagement, peer support, and lead generation with product-aware and solution-aware prospects.
-stage: "Marketing > Solution Aware"
-motion: "Communities & Forums"
+  Slack Community Program — Smoke Test. Identify target Slack communities where your ICP
+  congregates, join 3-5 workspaces, and post value-first content to test whether community
+  engagement generates inbound interest and qualified conversations.
+stage: "Marketing > SolutionAware"
+motion: "CommunitiesForums"
 channels: "Communities"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: "≥30 members and ≥10 weekly active users in 2 weeks"
-kpis: ["Response rate", "Engagement quality", "Time to response"]
+outcome: ">=30 members recruited to your own workspace and >=10 weekly active users within 2 weeks"
+kpis: ["Thread reply rate on your posts", "DMs or connection requests received", "Referral visits to your site"]
 slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
 drills:
   - icp-definition
-  - social-content-pipeline
+  - slack-discord-reconnaissance
+  - slack-discord-content-posting
   - threshold-engine
 ---
+
 # Slack Community Program — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Communities & Forums | **Channels:** Communities
+> **Stage:** Marketing > SolutionAware | **Motion:** CommunitiesForums | **Channels:** Communities
 
-## Overview
-Slack Community Program — Smoke Test. Create and manage a Slack workspace for community engagement, peer support, and lead generation with product-aware and solution-aware prospects.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** ≥30 members and ≥10 weekly active users in 2 weeks
+Prove that engaging in existing Slack communities where your ICP is active generates inbound interest. Pass threshold: >=30 workspace members and >=10 weekly active users within 2 weeks.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Thread replies on your posts within 4 hours of posting (signal: content resonates)
+- DMs from community members asking follow-up questions (signal: authority building)
+- Profile views or connection requests on LinkedIn after community engagement (signal: curiosity)
+- At least 3 communities scored 35+ on the reconnaissance scorecard (signal: viable channel)
 
 ## Instructions
 
-### 1. Identify target communities
-Run the `icp-definition` drill to map where your ICP spends time: Slack communities, Discord servers, Reddit subreddits, forums, Facebook groups. List 5-10 communities ranked by relevance and activity level.
+### 1. Define your ICP for community engagement
 
-### 2. Create valuable content for communities
-Run the `social-content-pipeline` drill to create 5-10 pieces of community-appropriate content: helpful answers, resource shares, discussion starters, case studies. Avoid promotional content -- focus on being genuinely useful.
+Run the `icp-definition` drill. Focus specifically on:
+- Which job titles and roles participate in Slack communities (not all ICP segments are active in Slack)
+- What pain points they discuss in community settings vs. what they search for on Google
+- What competitor communities they might already be in
 
-**Human action required:** Join the communities and post content manually. Engage authentically in discussions. Build reputation before mentioning your product. Log all activity in Attio.
+Output: ICP document with a "Community Behavior" section appended.
 
-### 3. Track community engagement
-Log each interaction: post/comment, community name, engagement received, DMs or follows generated, any leads captured. Note which communities and content types generate the most interest.
+### 2. Discover and score target Slack communities
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥30 members and ≥10 weekly active users in 2 weeks. If PASS, proceed to Baseline. If FAIL, try different communities or adjust your content approach.
+Run the `slack-discord-reconnaissance` drill. This produces:
+- A scored list of 10-15 Slack workspaces ranked by ICP fit, activity level, engagement quality, accessibility, and competition saturation
+- Engagement profiles for the top 3-5 communities (primary tier, score 35+)
+- Keyword lists (pain-point, category, ICP identity) for future monitoring
+- Join URLs and community rules summaries
 
----
+**Human action required:** Join the top 3-5 communities manually. Read #rules or #guidelines channels. Introduce yourself in #introductions if the community has one. Do NOT post promotional content during your first 48 hours — observe and react to others' messages only.
 
-## KPIs to track
-- Response rate
-- Engagement quality
-- Time to response
+### 3. Post value-first content
 
----
+Run the `slack-discord-content-posting` drill to create and publish 5-8 pieces of content across your target communities over 1 week. Content types to test:
+- 2 Expert Answers (reply to existing threads with genuine expertise)
+- 2 Tactical Playbooks (step-by-step guides solving a community pain point)
+- 1-2 Discussion Starters (prompt the community to share their approaches)
+- 1 Data Share or Honest Retrospective (if you have original data or experience to share)
 
-## Pass threshold
-**≥30 members and ≥10 weekly active users in 2 weeks**
+Post 1-2 times per day across different communities. Stay in the thread for 2 hours after posting to reply to every response.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Human action required:** Post content manually for the first week. The agent drafts the content; the human posts it and handles real-time conversation. Log every interaction: community name, channel, content type, thread replies received, reactions, DMs.
 
----
+### 4. Track results and evaluate
 
-## How to run this skill
+Log all activity in a structured format (spreadsheet or Attio notes):
+- Date, community, channel, content type, thread URL
+- Reactions count, thread replies count, DMs received
+- Any referral visits (check UTM tags if you included links)
+- Qualitative notes: what resonated, what fell flat, what questions came up repeatedly
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `threshold-engine` drill to evaluate against pass criteria:
+- >=30 members in your workspace (or equivalent: 30 meaningful interactions across communities)
+- >=10 weekly active conversations where you participated
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/slack-community-program`_
+**Decision:** If PASS, proceed to Baseline. If FAIL with >=50% of threshold, iterate on content types and communities for one more week. If hard FAIL (<50% of threshold), reassess whether Slack communities are the right channel for your ICP.
+
+## Time Estimate
+
+- ICP community behavior analysis: 1 hour
+- Slack community reconnaissance: 2 hours
+- Content creation and posting (5-8 posts over 1 week): 2.5 hours
+- Tracking and evaluation: 0.5 hours
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Slack (free tier) | Join and participate in communities | Free |
+| Attio | Log interactions and community targets | Standard stack (excluded) |
+| Clay | ICP enrichment for community behavior | Standard stack (excluded) |
+
+**Total play-specific cost: Free**
+
+## Drills Referenced
+
+- `icp-definition` — define community-specific ICP with behavioral signals
+- `slack-discord-reconnaissance` — discover, score, and profile target Slack communities
+- `slack-discord-content-posting` — create and publish value-first content in Slack communities
+- `threshold-engine` — evaluate results against pass/fail criteria

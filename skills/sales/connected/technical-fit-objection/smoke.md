@@ -1,85 +1,138 @@
 ---
 name: technical-fit-objection-smoke
 description: >
-    Technical Fit Objection Handling — Smoke Test. Address concerns about technical compatibility,
-  missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to
-  maintain deal momentum.
+  Technical Fit Objection Handling — Smoke Test. Manually assess technical gaps on 5 active deals,
+  build response strategies per gap type, and validate that structured technical objection handling
+  resolves objections and advances deals faster than ad-hoc responses.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: "Technical objections handled on ≥5 opportunities in 1 week"
-kpis: ["Technical objection resolution rate", "Workaround acceptance rate", "Deal progression after resolution", "Commitment delivery rate"]
+outcome: ">=5 technical objections handled with structured gap assessment in 1 week, >=60% reaching satisfactory resolution and deal advancement"
+kpis: ["Technical objection resolution rate", "Workaround acceptance rate", "Deal progression after resolution", "Time to resolution (days)"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - technical-gap-assessment
   - threshold-engine
 ---
+
 # Technical Fit Objection Handling — Smoke Test
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
+> **Stage:** Sales → Connected | **Motion:** OutboundFounderLed | **Channels:** Direct
 
-## Overview
-Technical Fit Objection Handling — Smoke Test. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** Technical objections handled on ≥5 opportunities in 1 week
+Prove that systematically assessing technical gaps and matching each to a response strategy (roadmap commit, workaround demo, custom dev scope, or honest no-fit) produces better resolution rates than ad-hoc responses. At this level, the agent runs the gap assessment and generates response plans — the founder executes the technical conversations manually. No automation, no always-on.
 
----
+**Pass threshold:** >=5 technical objections handled with structured gap assessment in 1 week, >=60% reaching satisfactory resolution and deal advancement.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Gap assessments completed for all 5 deals within 24 hours of the technical objection being raised
+- Each assessment produces a clear gap classification (no_gap, roadmap, workaround, custom_dev, no_fit) for every stated requirement
+- Response plans include specific proof assets or commitments (not generic "we can do that")
+- At least 3 of 5 prospects respond positively to the structured technical response (request next meeting, share additional requirements, introduce technical stakeholder)
+- Deals where gap assessment was used show any forward movement vs deals where objections were handled ad-hoc
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for technical-fit-objection. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Select 5 Deals with Active Technical Objections
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your technical-fit-objection materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Query Attio for deals at the "Connected" stage where the prospect has raised technical concerns. Look for deals where:
+- The prospect questioned a specific capability ("Do you integrate with X?", "Can you handle Y?")
+- A technical evaluation is underway or stalled
+- The prospect mentioned a competitor's technical advantage
+- A feature gap was identified during a demo
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+If fewer than 5 deals have active technical objections, include deals approaching technical discovery where objections are likely (based on the prospect's tech stack complexity or industry requirements).
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+Log these 5 deals as the test cohort. Identify 3-5 comparable deals as the control group (handle objections without the structured assessment).
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: Technical objections handled on ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+### 2. Run Technical Gap Assessment
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Run the `technical-gap-assessment` drill for each of the 5 test deals:
 
----
+- Pull all technical requirements from call transcripts, emails, and deal notes
+- If call transcripts exist, run `call-transcript-tech-requirements-extraction` to get structured requirements
+- If no transcripts exist, extract requirements manually from deal notes in Attio
+- Match each requirement against the product capability matrix
+- Classify every gap: `no_gap`, `roadmap`, `workaround_available`, `custom_dev_required`, `partner_solution`, `no_fit`
+- Score gap severity: `none`, `low`, `medium`, `high`, `dealbreaker`
+- Generate a response strategy for each gap with specific proof needed
+- Store the gap assessment and response plan as an Attio note on the deal
 
-## KPIs to track
-- Technical objection resolution rate
-- Workaround acceptance rate
-- Deal progression after resolution
-- Commitment delivery rate
+Review the output manually. For each deal, identify the 1-3 highest-severity gaps that need immediate attention.
 
----
+### 3. Execute Technical Objection Responses
 
-## Pass threshold
-**Technical objections handled on ≥5 opportunities in 1 week**
+**Human action required:** The founder personally delivers the technical objection responses. This is intentionally manual — the goal is to test whether structured gap assessment produces better outcomes before investing in automation.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+For each deal, follow the response plan:
 
----
+**For roadmap gaps:**
+1. Read the response plan specifying the planned delivery date
+2. Present the roadmap timeline to the prospect: "This capability is planned for {quarter}. Here is the product brief showing the spec."
+3. If the prospect needs a contractual commitment, draft a roadmap commitment clause
+4. Log in Attio: `roadmap_commitment_made` with the feature, date, and whether a contract clause was requested
 
-## How to run this skill
+**For workaround gaps:**
+1. Read the alternative approach described in the response plan
+2. Demonstrate the workaround live on a call, or send a recorded walkthrough
+3. Gauge the prospect's reaction: does the workaround satisfy their need or is it insufficient?
+4. Log in Attio: `workaround_demonstrated` with the prospect's response (accepted, partially_accepted, rejected)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**For custom development gaps:**
+1. Read the scoping estimate in the response plan
+2. Present the custom development option: effort, timeline, cost (if any), and what it achieves
+3. Log in Attio: `custom_dev_scoped` with the prospect's interest level
 
-_Install this skill: `npx gtm-skills add sales/connected/technical-fit-objection`_
+**For no-fit gaps:**
+1. Acknowledge the gap honestly: "This is not something we do today or plan to build"
+2. If the gap is not a dealbreaker for the prospect, continue the deal
+3. If it is a dealbreaker, document the loss reason for product feedback
+4. Log in Attio: `no_fit_acknowledged` with whether it killed the deal
+
+### 4. Track Responses for 1 Week
+
+Over 7 days, monitor responses and deal movement for both test and control cohorts:
+- Log every technical objection response outcome in Attio with resolution status (resolved, partially_resolved, unresolved, deal_lost)
+- Track whether the prospect: booked a follow-up technical call, introduced a technical stakeholder, moved forward with evaluation, or stalled/exited
+- For control deals, track stage progression over the same week without structured assessment
+
+### 5. Evaluate Against Threshold
+
+Run the `threshold-engine` drill to compare test vs control:
+- Count deals where technical objections were resolved or partially resolved
+- Calculate resolution rate: resolved / total objections handled
+- Compare deal progression: test cohort vs control cohort
+- Pass threshold: >=5 objections handled AND >=60% resolved with deal advancement
+
+If PASS: The structured gap assessment approach is validated. Proceed to Baseline.
+If FAIL: Diagnose — was the issue gap classification accuracy (wrong response strategy), proof quality (unconvincing evidence), or timing (too slow to respond)? Adjust and re-run.
+
+## Time Estimate
+
+- 1 hour: Select deals and set up test/control groups
+- 2 hours: Run technical gap assessment drill (requirements extraction + capability matching)
+- 1.5 hours: Execute manual technical objection responses across 5 deals
+- 0.5 hours: Daily response monitoring (5 min/day x 7 days)
+- 1 hour: Threshold evaluation and analysis
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal tracking, gap assessment storage, objection logging | Free plan (up to 3 users) or $29/user/mo (Plus) — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — tech stack detection for requirement prediction | $185/mo (Launch) — [clay.com/pricing](https://www.clay.com/pricing) |
+| Fireflies | Transcription — call transcript extraction for requirements | Free (800 min/mo) or $10/user/mo (Pro, annual) — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| PostHog | Analytics — event tracking for threshold evaluation | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| Anthropic API | AI — gap classification and response generation | Claude Sonnet 4.6: $3/$15 per 1M tokens — [claude.com/pricing](https://claude.com/pricing) |
+
+**Estimated play-specific cost this level:** $0-5 incremental (Clay, Fireflies, and Attio likely already in stack; Anthropic API usage minimal at 5 deals).
+
+## Drills Referenced
+
+- `technical-gap-assessment` — assess prospect technical requirements against product capabilities, classify gaps by severity, and generate response strategies per gap type
+- `threshold-engine` — evaluate test results against the pass threshold using Attio and PostHog data

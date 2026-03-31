@@ -1,86 +1,177 @@
 ---
 name: technical-fit-objection-scalable
 description: >
-    Technical Fit Objection Handling — Scalable Automation. Address concerns about technical
-  compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and
-  technical proof to maintain deal momentum.
+  Technical Fit Objection Handling — Scalable Automation. Proactive technical objection prediction
+  based on prospect tech stack and requirements, automated response delivery with matched proof
+  assets, and competitive technical intelligence. The 10x multiplier: predict and address technical
+  gaps before the prospect raises them.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct"
 level: "Scalable Automation"
 time: "58 hours over 2 months"
-outcome: "Technical objections handled systematically at scale over 2 months with improved resolution rates"
-kpis: ["Objection detection and response speed", "Resolution rate", "Technical loss prevention", "Roadmap influence effectiveness", "Win rate improvement"]
+outcome: "Technical objections handled at scale with >=70% resolution rate, <15% technical loss rate, and >=50% of objections addressed proactively (before prospect raises them)"
+kpis: ["Objection detection and proactive response speed", "Resolution rate", "Technical loss prevention rate", "Proactive objection rate (predicted before raised)", "Win rate improvement vs pre-play baseline"]
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
-  - ab-test-orchestrator
+  - objection-detection-automation
+  - tech-stack-discovery
+  - technical-proof-library
+  - competitive-battlecard-assembly
 ---
+
 # Technical Fit Objection Handling — Scalable Automation
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
+> **Stage:** Sales → Connected | **Motion:** OutboundFounderLed | **Channels:** Direct
 
-## Overview
-Technical Fit Objection Handling — Scalable Automation. Address concerns about technical compatibility, missing features, or capability gaps with roadmap commitments, workarounds, and technical proof to maintain deal momentum.
+## Outcomes
 
-**Time commitment:** 58 hours over 2 months
-**Pass threshold:** Technical objections handled systematically at scale over 2 months with improved resolution rates
+Find the 10x multiplier. Instead of reacting to technical objections after they are raised, predict them. The agent analyzes every new deal's tech stack, requirements, and industry constraints to predict likely technical objections before the first technical call. Proof assets and response plans are pre-loaded into the call brief. When objections do arise, detection is automatic (from call transcripts and CRM activity) and responses fire within hours. Competitive technical intelligence tracks which gaps cause losses to specific competitors.
 
----
+**Pass threshold:** Technical objections handled at scale with >=70% resolution rate, <15% technical loss rate, and >=50% of objections addressed proactively (before prospect raises them).
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Tech stack discovery runs automatically for every new qualified deal
+- Predicted technical objections appear in call briefs before technical discovery calls
+- Objection detection from call transcripts fires within 2 hours of call end
+- Proof assets auto-attached to response plans for >=80% of identified gaps
+- Competitive battlecards include technical positioning for top 3 competitors
+- Roadmap commitment dashboard shows on-time delivery rate >=80%
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Deploy Proactive Technical Objection Prediction
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `tech-stack-discovery` drill for every new deal entering the "Connected" stage. Build an n8n workflow:
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+**Trigger:** Attio webhook when a deal moves to "Connected" stage.
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+**Step 1:** Run tech stack discovery via Clay — detect the prospect's technology stack, integration landscape, security posture, and technical maturity.
 
-### 5. Evaluate against threshold
-Measure against: Technical objections handled systematically at scale over 2 months with improved resolution rates. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+**Step 2:** Based on the tech stack profile, predict likely technical objections. Send to Claude:
 
----
+```json
+{
+  "prompt": "Given this prospect's technical profile, predict the technical objections they are most likely to raise.\n\nTech stack: {tech_stack}\nIntegration landscape: {integrations}\nSecurity posture: {security}\nTechnical maturity: {maturity_score}/5\nIndustry: {industry}\nCompany size: {employee_count}\n\nOur product capabilities: {capability_matrix}\n\nReturn JSON array of predicted objections:\n[{\n  \"predicted_objection\": \"specific objection they will likely raise\",\n  \"probability\": 0.0-1.0,\n  \"gap_type\": \"integration|security|performance|feature|architecture|migration\",\n  \"basis\": \"why we predict this based on their tech stack\",\n  \"pre_emptive_response\": \"what to proactively address in the call brief\",\n  \"proof_needed\": \"type of proof asset to prepare\"\n}]\nSort by probability descending. Return top 5."
+}
+```
 
-## KPIs to track
-- Objection detection and response speed
-- Resolution rate
-- Technical loss prevention
-- Roadmap influence effectiveness
-- Win rate improvement
+**Step 3:** Run `technical-gap-assessment` against the predicted objections (not just stated ones).
 
----
+**Step 4:** Query the `technical-proof-library` for assets matching each predicted gap.
 
-## Pass threshold
-**Technical objections handled systematically at scale over 2 months with improved resolution rates**
+**Step 5:** Generate a proactive call brief stored as an Attio note:
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+```
+## Pre-Call Technical Intelligence — {Company Name}
 
----
+### Predicted Technical Objections (pre-emptive prep):
+1. {objection} (probability: {p}) — Response: {pre_emptive_response} — Proof: {asset_link}
+2. ...
 
-## How to run this skill
+### Tech Stack Context:
+- Current stack: {key tools}
+- Integration requirements: {predicted integrations}
+- Security posture: {maturity} — likely requires: {certifications}
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### Recommended Call Strategy:
+- Address {top objection} proactively in the first 10 minutes
+- Have {proof asset} ready to screenshare
+- Probe: {questions to validate or invalidate predictions}
+```
 
-_Install this skill: `npx gtm-skills add sales/connected/technical-fit-objection`_
+Fire PostHog event: `tech_objection_predicted` with deal_id, predicted_count, top_gap_type.
+
+### 2. Deploy Automated Objection Detection
+
+Run the `objection-detection-automation` drill adapted for technical objections. Build the n8n workflow that:
+
+**From call transcripts:** When Fireflies processes a call transcript, run `call-transcript-tech-requirements-extraction` and `call-transcript-objection-extraction` automatically. Compare extracted requirements against product capabilities. If new gaps are found, update the deal's gap assessment and trigger proof retrieval.
+
+**From CRM activity:** Monitor Attio for email threads and notes containing technical objection signals. When detected, classify the objection type and severity, then trigger the response workflow.
+
+**From deal stalls:** Daily cron checks for deals at "Connected" stage that have not progressed in 7+ days where `tech_fit_verdict` is `moderate_fit` or `weak_fit`. Flag these as technically stalled and surface to the founder with the specific unresolved gaps.
+
+### 3. Scale the Proof Library
+
+Expand the `technical-proof-library` to cover the full range of technical objections being encountered:
+
+- Analyze 2 months of objection data to identify the top 10 gap types by frequency
+- For each gap type, ensure at least 2 proof assets exist (benchmark, case study, architecture diagram, or customer reference)
+- Where proof gaps exist, create the missing assets:
+  - **Benchmarks:** Run performance tests and document results
+  - **Architecture diagrams:** Create integration architecture diagrams for the top 5 requested integrations
+  - **Customer references:** Identify existing customers who solved similar technical challenges and get permission to reference them
+  - **Workaround demos:** Record short video walkthroughs of workaround approaches
+
+Set up weekly proof effectiveness review: which assets are driving resolution and which need replacement?
+
+### 4. Build Competitive Technical Intelligence
+
+Run the `competitive-battlecard-assembly` drill focused on technical positioning:
+
+- For each competitor that appears in technically competitive deals, build a technical battlecard section:
+  - Their integration coverage vs ours
+  - Their security certifications vs ours
+  - Their performance benchmarks vs ours (if public)
+  - Technical gaps they have that we fill
+  - Technical gaps we have that they fill
+- Store competitive technical intelligence in Attio
+- When a deal involves a known competitor, auto-inject the technical battlecard into the call brief
+
+### 5. Implement Roadmap Commitment Tracking
+
+Build an n8n workflow that monitors all roadmap commitments made during technical objection handling:
+
+- Pull all `roadmap_commitment_made` events from PostHog
+- Cross-reference with product roadmap status (query from wherever the roadmap lives — Jira, Linear, Notion)
+- If a commitment is approaching its date and the feature is not on track, alert the founder and product team
+- If a commitment is delivered, notify the sales team to update the prospect
+- Track on-time delivery rate as a KPI
+
+**Human action required:** Product team must provide roadmap status updates. The agent monitors and alerts, but cannot force roadmap delivery.
+
+### 6. Set Guardrails and Evaluate
+
+Apply guardrails:
+- Technical objection resolution rate must stay >=70% of Baseline level
+- Deals lost to technical gaps must be <15% of pipeline
+- Proactive prediction accuracy must be tracked (did predicted objections actually arise?)
+- Roadmap commitments must have >=80% on-time delivery
+
+After 2 months, evaluate:
+- Resolution rate at scale (>=70%)
+- Technical loss rate (<15%)
+- Proactive objection rate (>=50% addressed before raised)
+- If metrics hold, proceed to Durable
+
+## Time Estimate
+
+- 12 hours: Build proactive prediction workflow (tech stack discovery + gap prediction + call brief generation)
+- 10 hours: Deploy automated objection detection from transcripts and CRM
+- 10 hours: Scale proof library (create missing assets, configure retrieval)
+- 8 hours: Build competitive technical battlecards
+- 6 hours: Implement roadmap commitment tracking
+- 12 hours: Ongoing monitoring and iteration over 2 months (~1.5 hours/week)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal tracking, gap assessments, proof library, battlecards | $29/user/mo (Plus) or $59/user/mo (Pro) — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — tech stack detection, company research | $185/mo (Launch) or $495/mo (Growth) — [clay.com/pricing](https://www.clay.com/pricing) |
+| Fireflies | Transcription — automated call transcript processing | $10/user/mo (Pro, annual) or $19/user/mo (Business) — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| PostHog | Analytics — event tracking, funnels, dashboards | Free up to 1M events/mo, then usage-based — [posthog.com/pricing](https://posthog.com/pricing) |
+| n8n | Automation — prediction workflows, detection, proof retrieval, tracking | $60/mo (Pro, 10K executions) — [n8n.io/pricing](https://n8n.io/pricing) |
+| Anthropic API | AI — gap assessment, objection prediction, response generation | Claude Sonnet 4.6: $3/$15 per 1M tokens — [claude.com/pricing](https://claude.com/pricing) |
+
+**Estimated play-specific cost this level:** ~$100-250/mo. Primary cost drivers: Clay ($185), n8n Pro ($60), Anthropic API (~$30-60/mo for continuous prediction and assessment at volume).
+
+## Drills Referenced
+
+- `objection-detection-automation` — auto-detect technical objections in call transcripts and CRM activity, classify severity, trigger response workflows
+- `tech-stack-discovery` — discover prospect tech stack, integration landscape, and technical constraints before the technical call
+- `technical-proof-library` — maintain and retrieve proof assets matched to gap types, track effectiveness
+- `competitive-battlecard-assembly` — build technical competitive positioning from deal data and market intelligence
