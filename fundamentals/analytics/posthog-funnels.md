@@ -13,14 +13,38 @@ difficulty: Intermediate
 
 ## Steps
 
-1. **Define your funnel stages.** Map the user journey as a sequence of events. Example signup funnel: "page_viewed (pricing)" > "signup_started" > "signup_completed" > "onboarding_step_1" > "onboarding_complete". Each step should be a distinct, trackable event.
+1. **Define your funnel stages.** Map the user journey as a sequence of events. Example signup funnel: `page_viewed` (pricing) > `signup_started` > `signup_completed` > `onboarding_step_1` > `onboarding_complete`. Each step must be a distinct, trackable event.
 
-2. **Create a funnel insight.** In PostHog, go to Insights > New > Funnel. Add your events in order. Set the conversion window (how long users have to complete the funnel -- typically 7 days for signup flows, 30 days for sales processes).
+2. **Create a funnel insight via API.** Use the PostHog API or MCP to create a funnel:
+   ```
+   POST /api/projects/<id>/insights/
+   {
+     "name": "Signup Funnel",
+     "filters": {
+       "insight": "FUNNELS",
+       "events": [
+         {"id": "page_viewed", "properties": [{"key": "$current_url", "value": "/pricing"}]},
+         {"id": "signup_started"},
+         {"id": "signup_completed"}
+       ],
+       "funnel_window_days": 7
+     }
+   }
+   ```
+   Set the conversion window: 7 days for signup flows, 30 days for sales processes.
 
-3. **Analyze drop-off points.** PostHog shows the conversion rate between each step. Identify the biggest drop-off. If 80% start signup but only 40% complete it, the signup form is your bottleneck. Focus optimization effort on the step with the largest absolute drop.
+3. **Analyze drop-off points.** PostHog returns conversion rates between each step. Identify the biggest drop-off. If 80% start signup but only 40% complete it, the signup form is the bottleneck. Focus optimization effort on the step with the largest absolute drop.
 
-4. **Break down by properties.** Use PostHog's breakdown feature to slice the funnel by: traffic source (organic vs paid vs outbound), device (desktop vs mobile), plan type, or geography. This reveals which segments convert best and which need attention.
+4. **Break down by properties.** Add breakdown parameters to slice the funnel by traffic source, device, plan type, or geography:
+   ```
+   "breakdown": "utm_source", "breakdown_type": "event"
+   ```
+   This reveals which segments convert best and which need attention.
 
-5. **Compare time periods.** Use the date range selector to compare this week vs last week, or this month vs previous month. Look for improving or declining conversion rates at each stage. A declining step indicates something changed (new bug, UX change, market shift).
+5. **Compare time periods.** Use HogQL to compare funnel performance across periods:
+   ```sql
+   SELECT step, count() FROM funnel WHERE timestamp > now() - interval 7 day GROUP BY step
+   ```
+   Look for improving or declining conversion rates. A declining step indicates something changed (new bug, UX change, market shift).
 
-6. **Set up funnel alerts.** If a stage's conversion rate drops below a threshold, you want to know immediately. Use PostHog's alerting or connect to n8n (see `fundamentals/automation/n8n-crm-integration`) to trigger a Slack notification when funnel performance degrades.
+6. **Set up funnel alerts.** Use n8n to build a scheduled workflow that queries funnel conversion rates via the PostHog API and triggers a Slack notification when a stage's conversion rate drops below your threshold. See `n8n-crm-integration` for the n8n-to-PostHog pattern.

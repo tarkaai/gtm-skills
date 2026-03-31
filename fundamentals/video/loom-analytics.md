@@ -1,20 +1,30 @@
 ---
 name: loom-analytics
-description: Monitor who watches your Loom videos, how much they watch, and use engagement data to prioritize follow-ups.
+description: Track video engagement data from Loom via API to prioritize follow-ups
 tool: Loom
-difficulty: Config
+difficulty: Beginner
 ---
 
 # Track Loom Video Analytics
 
-### Step-by-step
-1. After sharing a Loom video, go to your Loom dashboard and click on the video.
-2. View the analytics panel: see total views, unique viewers, and average watch percentage.
-3. Check the viewer list: Loom shows who watched (by email if they're logged in) and how much they watched.
-4. Prioritize follow-ups based on engagement: a prospect who watched 90% of your demo is more interested than one who watched 10%.
-5. Set up view notifications: Loom can notify you in real-time when someone watches your video — follow up within hours for maximum impact.
-6. Track CTA clicks: if you added a button (book a call, visit pricing), see how many viewers clicked it.
-7. Use analytics to improve: if most viewers drop off at the same point, your content needs work there — tighten the script or reorganize.
-8. For team analytics, see which team members' videos get the most engagement — share best practices.
-9. Integrate Loom data with your CRM: use n8n to sync view events to Attio (e.g., 'Watched demo video') and PostHog for analytics.
-10. Track Loom video performance over time: which types of videos (demos, personal messages, tutorials) get the highest completion rates?
+## Prerequisites
+- Loom account with shared videos
+- Loom API access (Business plan)
+
+## Steps
+
+1. **Query video analytics via API.** Use the Loom API to retrieve engagement data for your videos:
+   ```
+   GET /v1/videos/<video-id>/analytics
+   ```
+   Returns: total views, unique viewers, average watch percentage, and viewer list.
+
+2. **Check the viewer list.** The API returns who watched (by email if logged in) and how much they watched. This data is critical for sales follow-up prioritization.
+
+3. **Prioritize follow-ups based on engagement.** A prospect who watched 90% of your demo is more interested than one who watched 10%. Build an n8n workflow that scores viewers by watch percentage and creates prioritized follow-up tasks in Attio.
+
+4. **Set up view notifications.** Configure Loom webhooks to notify you in real-time when someone watches your video. Follow up within hours for maximum impact.
+
+5. **Track CTA engagement.** If you added a CTA button (book a call, visit pricing), the API returns how many viewers engaged with it. Use this to measure video-to-meeting conversion rates.
+
+6. **Sync to CRM and analytics.** Build an n8n workflow: Loom webhook (video viewed) -> Attio (update contact with "watched demo video" activity) -> PostHog (capture `video_viewed` event with properties: video_id, watch_percentage, viewer_email). This connects video engagement to your pipeline.

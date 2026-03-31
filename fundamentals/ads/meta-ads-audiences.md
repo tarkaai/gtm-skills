@@ -1,20 +1,43 @@
 ---
 name: meta-ads-audiences
-description: Create custom, lookalike, and interest-based audiences for Meta ad campaigns targeting your ideal customers.
+description: Create custom, lookalike, and interest-based audiences via the Meta Marketing API
 tool: Meta Ads
-difficulty: Config
+difficulty: Intermediate
 ---
 
 # Build Meta Ads Audiences
 
-### Step-by-step
-1. Go to Meta Ads Manager > Audiences > Create Audience.
-2. Create a Custom Audience from your website visitors: 'All website visitors in the last 30 days' or 'Visited pricing page in the last 14 days'.
-3. Create a Custom Audience from your customer list: upload a CSV of customer emails. Meta matches to Facebook/Instagram profiles (typically 40-70% match rate).
-4. Create Lookalike Audiences: select your best customers as the source, choose the country, and set the lookalike percentage (1% is most similar, 5-10% is broader).
-5. For B2B targeting: use interest targeting with job-related interests and behaviors. Combine with demographics like employer size if available.
-6. Use Detailed Targeting: layer interests (e.g., 'SaaS', 'Entrepreneurship'), behaviors (e.g., 'Small business owners'), and demographics.
-7. Exclude existing customers and recent converters to avoid wasting spend on people who've already converted.
-8. Test audience size: aim for 100K-2M for prospecting campaigns, 10K-100K for retargeting.
-9. Create audience combinations: combine multiple targeting criteria using AND/OR logic for precision.
-10. Refresh Custom Audiences monthly: re-upload customer lists and update website visitor windows to keep audiences current.
+## Prerequisites
+- Meta Business Manager with Marketing API access
+- Meta Pixel installed for website visitor audiences
+- Customer email list for custom audiences
+
+## Steps
+
+1. **Create a Custom Audience from website visitors.** Use the Marketing API:
+   ```
+   POST /act_<ad-account-id>/customaudiences
+   {
+     "name": "Pricing Page Visitors - Last 14 Days",
+     "subtype": "WEBSITE",
+     "rule": {"url": {"i_contains": "/pricing"}, "retention_days": 14}
+   }
+   ```
+
+2. **Create a Custom Audience from customer list.** Upload a CSV of customer emails via the API. Meta matches to Facebook/Instagram profiles (typically 40-70% match rate). Hash emails with SHA-256 before uploading for privacy compliance.
+
+3. **Create Lookalike Audiences.** Select your best customers as the source:
+   ```
+   POST /act_<ad-account-id>/customaudiences
+   { "name": "Lookalike - Best Customers 1%", "subtype": "LOOKALIKE", "origin_audience_id": "<source-id>", "lookalike_spec": {"country": "US", "ratio": 0.01} }
+   ```
+   1% is most similar, 5-10% is broader.
+
+4. **Use interest and behavior targeting.** For B2B: layer interests (SaaS, Entrepreneurship), behaviors (Small business owners), and demographics in your ad set targeting configuration.
+
+5. **Exclude audiences.** Exclude existing customers and recent converters in the ad set targeting to avoid wasting spend:
+   ```json
+   { "targeting": { "exclusions": { "custom_audiences": [{"id": "<customers-audience-id>"}] } } }
+   ```
+
+6. **Refresh audiences.** Re-upload customer lists monthly and update website visitor windows via the API to keep audiences current. Automate with an n8n workflow that exports customers from Attio and uploads to Meta weekly.

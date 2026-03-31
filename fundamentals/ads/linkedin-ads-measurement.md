@@ -1,20 +1,42 @@
 ---
 name: linkedin-ads-measurement
-description: Set up conversion tracking and analyze LinkedIn Ads campaign performance to optimize spend and improve ROI.
+description: Set up conversion tracking and analyze LinkedIn Ads performance via the Marketing API
 tool: LinkedIn Ads
-difficulty: Config
+difficulty: Intermediate
 ---
 
 # Measure LinkedIn Ads Performance
 
-### Step-by-step
-1. Verify the LinkedIn Insight Tag is installed: check Account Assets > Insight Tag for active status.
-2. Set up conversion actions: go to Account Assets > Conversions > Create Conversion. Define conversions for your key actions: demo requested, sign-up completed, content downloaded.
-3. Configure conversion tracking: choose pixel-based (for web actions) or event-based (for API-tracked conversions). Set the attribution window (7-day click, 1-day view is standard).
-4. In Campaign Manager, view the performance dashboard: impressions, clicks, CTR, conversions, cost per conversion.
-5. Segment performance by audience: compare metrics across job functions, seniority levels, and company sizes to find your best-performing segments.
-6. Track down-funnel metrics: connect LinkedIn leads to your CRM (Attio) to measure which LinkedIn leads become pipeline and revenue.
-7. Calculate ROAS: compare total LinkedIn ad spend to revenue generated from LinkedIn-sourced deals.
-8. Build a PostHog dashboard for LinkedIn ad performance: sync conversion data via n8n to see LinkedIn ads alongside organic metrics.
-9. Run weekly performance reviews: pause underperforming campaigns (CPA > 2x target), increase budget on winners.
-10. Generate monthly reports: summarize spend, leads, pipeline, and ROAS. Use these to justify budget increases or shifts.
+## Prerequisites
+- LinkedIn Insight Tag installed on your website
+- LinkedIn Marketing API access
+
+## Steps
+
+1. **Verify Insight Tag installation.** Use the LinkedIn API to check tag status. The Insight Tag JavaScript snippet must be on all pages for conversion tracking to work.
+
+2. **Set up conversion actions via API.** Define conversions using the Marketing API:
+   ```
+   POST /v2/conversions
+   {
+     "name": "Demo Requested",
+     "type": "LEAD",
+     "attributionType": "LAST_TOUCH_BY_CAMPAIGN",
+     "conversionMethod": "PIXEL",
+     "postClickAttributionWindowSize": 7,
+     "viewThroughAttributionWindowSize": 1
+   }
+   ```
+   Define conversions for: demo requested, sign-up completed, content downloaded.
+
+3. **Query campaign performance via API.** Pull metrics:
+   ```
+   GET /v2/adAnalytics?campaigns=urn:li:sponsoredCampaign:<id>&dateRange.start.year=2025
+   ```
+   Key metrics: impressions, clicks, CTR, conversions, cost per conversion.
+
+4. **Segment performance by audience.** Compare metrics across job functions, seniority levels, and company sizes via the API breakdown parameters to find your best-performing segments.
+
+5. **Track down-funnel metrics.** Connect LinkedIn leads to Attio (via n8n) to measure which LinkedIn leads become pipeline and revenue. Calculate ROAS: total ad spend vs revenue from LinkedIn-sourced deals.
+
+6. **Build unified reporting.** Sync LinkedIn ad performance data to PostHog via n8n. This lets you see LinkedIn ads alongside organic metrics in one dashboard. Run weekly reviews: pause campaigns with CPA > 2x target, increase budget on winners.

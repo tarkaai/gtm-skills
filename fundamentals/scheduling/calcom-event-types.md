@@ -1,20 +1,44 @@
 ---
 name: calcom-event-types
-description: Set up different meeting types in Cal.com — discovery calls, demos, team meetings — with appropriate durations, buffers, and availability.
+description: Set up different meeting types in Cal.com via API -- discovery calls, demos, team meetings
 tool: Cal.com
 difficulty: Setup
 ---
 
 # Configure Cal.com Event Types
 
-### Step-by-step
-1. Sign up at cal.com and complete your profile: name, timezone, and working hours.
-2. Create your first event type: click 'New Event Type' and choose between individual and team.
-3. Set the event details: name (e.g., '30-min Discovery Call'), duration (15, 30, or 60 minutes), and description.
-4. Configure availability: set which days and hours you're bookable. Add buffer time between meetings (15 min is recommended).
-5. Set minimum notice: require at least 24 hours' notice for bookings to avoid surprise meetings.
-6. Set how far in advance people can book: 2-4 weeks is typical.
-7. Add questions to the booking form: 'What would you like to discuss?', 'Company name', 'How did you hear about us?'.
-8. Set up confirmation emails: customize the email the booker receives with meeting details, prep instructions, and any required reading.
-9. Add calendar integrations: connect Google Calendar, Outlook, or Apple Calendar so availability is always accurate.
-10. Create your booking link: customize the URL (cal.com/yourname/discovery) and add it to your email signature, LinkedIn, and website.
+## Prerequisites
+- Cal.com account with API access
+- Calendar connected (Google Calendar, Outlook, or Apple Calendar)
+
+## Steps
+
+1. **Create event types via API.** Use the Cal.com REST API to create meeting types:
+   ```
+   POST /api/v1/event-types
+   {
+     "title": "30-min Discovery Call",
+     "slug": "discovery",
+     "length": 30,
+     "description": "Explore how we can help solve your problem"
+   }
+   ```
+   Create separate types for: Discovery Call (30 min), Product Demo (45 min), Quick Chat (15 min).
+
+2. **Configure availability.** Set which days and hours you are bookable via the API. Add buffer time between meetings (15 min recommended):
+   ```
+   PATCH /api/v1/event-types/<id>
+   { "beforeEventBuffer": 15, "afterEventBuffer": 15 }
+   ```
+
+3. **Set booking constraints.** Require minimum notice (24 hours) and set how far in advance people can book (2-4 weeks):
+   ```
+   PATCH /api/v1/event-types/<id>
+   { "minimumBookingNotice": 1440, "periodDays": 28 }
+   ```
+
+4. **Add booking form questions.** Configure custom questions on the booking form: "What would you like to discuss?", "Company name", "How did you hear about us?". These feed into your CRM via the webhook integration (see `calcom-crm-sync`).
+
+5. **Set up confirmation emails.** Customize the confirmation email with meeting details, prep instructions, and any required reading. Include your calendar link for rescheduling.
+
+6. **Generate and distribute booking links.** Each event type has a unique URL: `cal.com/yourname/discovery`. Add to your email signature, LinkedIn profile Featured section, website contact page, and cold email CTAs. Track booking sources with UTM parameters: `cal.com/yourname/demo?utm_source=linkedin`.

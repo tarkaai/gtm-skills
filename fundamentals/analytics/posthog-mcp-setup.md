@@ -13,14 +13,40 @@ difficulty: Setup
 
 ## Steps
 
-1. **Generate API keys.** In PostHog, go to Settings > Personal API Keys and create a new key with read access to all resources. Note your Project API Key (from Project Settings) as well. You need both: the personal key for querying and the project key for event ingestion.
+1. **Generate API keys.** Via the PostHog API or dashboard, create a personal API key with read access to all resources. Note the Project API Key from project settings. You need both: the personal key for querying and the project key for event ingestion.
 
-2. **Install the PostHog MCP server.** Add the PostHog MCP server configuration to your Claude Code MCP config. Set the required environment variables: `POSTHOG_API_KEY` (personal API key), `POSTHOG_PROJECT_ID` (your project ID), and `POSTHOG_HOST` (https://app.posthog.com for cloud, or your self-hosted URL).
+2. **Install the MCP server.** Add the PostHog MCP server to your Claude Code MCP config file (`.claude/settings.json` or project-level `.mcp.json`):
 
-3. **Verify the connection.** Ask Claude Code to query recent events from PostHog. The MCP server should return event data. If you get authentication errors, verify your personal API key has the correct scopes and your project ID is correct.
+```json
+{
+  "posthog": {
+    "command": "npx",
+    "args": ["-y", "@anthropic/posthog-mcp"],
+    "env": {
+      "POSTHOG_API_KEY": "<personal-api-key>",
+      "POSTHOG_PROJECT_ID": "<project-id>",
+      "POSTHOG_HOST": "https://app.posthog.com"
+    }
+  }
+}
+```
 
-4. **Understand available operations.** The PostHog MCP server supports: querying events, running HogQL queries, listing feature flags, reading experiment results, fetching insight data, and querying persons/cohorts. This lets Claude Code analyze your data and build insights programmatically.
+For self-hosted PostHog, set `POSTHOG_HOST` to your instance URL.
 
-5. **Set up HogQL access.** The most powerful PostHog MCP capability is running HogQL queries -- PostHog's SQL dialect. Claude Code can write and execute queries like: "SELECT count() FROM events WHERE event = 'signup_completed' AND timestamp > now() - interval 7 day". This enables ad-hoc analysis.
+3. **Verify the connection.** After restarting Claude Code, use the MCP to query recent events. Expected successful output: a list of event objects with `event`, `timestamp`, and `properties` fields. Authentication errors indicate an incorrect personal API key or project ID.
 
-6. **Test a practical query.** Ask Claude Code to use the PostHog MCP to answer a GTM question: "What was our signup conversion rate this week vs last week?" Verify the query runs, returns accurate data, and Claude Code interprets the results correctly.
+4. **Available MCP operations.** The PostHog MCP server supports:
+   - `query_events` -- fetch events with filters
+   - `run_hogql_query` -- execute HogQL (PostHog SQL dialect) queries
+   - `list_feature_flags` -- read flag configurations
+   - `get_experiment_results` -- read A/B test outcomes
+   - `get_insight` -- fetch saved insight data
+   - `query_persons` -- look up user records and cohort membership
+
+5. **Test HogQL access.** Run a test query through the MCP:
+```sql
+SELECT count() FROM events WHERE event = 'signup_completed' AND timestamp > now() - interval 7 day
+```
+Verify the query executes and returns a numeric result. HogQL is the primary interface for ad-hoc PostHog analysis.
+
+6. **Security.** Store API keys in environment variables or a `.env` file listed in `.gitignore`. Never commit keys to version control. Rotate keys immediately if exposed.

@@ -1,20 +1,36 @@
 ---
 name: fireflies-action-items
-description: Use Fireflies AI to automatically extract action items, decisions, and follow-ups from meeting transcripts.
+description: Extract action items, decisions, and follow-ups from meeting transcripts using Fireflies API
 tool: Fireflies
-difficulty: Config
+difficulty: Intermediate
 ---
 
 # Extract Action Items with Fireflies
 
-### Step-by-step
-1. After a meeting is transcribed, go to the meeting page in Fireflies.
-2. Review the AI-generated Action Items section: Fireflies extracts to-do items mentioned during the call.
-3. Edit and assign action items: click each item to assign it to a team member and set a due date.
-4. Review the 'Decisions' section: Fireflies also captures decisions made during the meeting.
-5. Check the 'Questions' section: see what questions were asked — unresolved questions may need follow-up.
-6. Export action items: send them to your project management tool (Asana, Linear, Notion) or CRM (Attio).
-7. Set up automatic action item notifications: configure Fireflies to email action items to relevant team members after each meeting.
-8. Build an n8n workflow: when Fireflies creates a transcript (via webhook), extract action items and create tasks in Attio automatically.
-9. Track action item completion: review open items from previous meetings before each new call.
-10. Use Fireflies' Smart Search: ask questions about past meetings like 'What did we decide about pricing?' to find specific decisions without re-watching recordings.
+## Prerequisites
+- Fireflies account with meetings being transcribed
+- n8n instance for automation (optional but recommended)
+
+## Steps
+
+1. **Retrieve transcripts via API.** After a meeting is transcribed, use the Fireflies GraphQL API to fetch the transcript and AI-generated sections:
+   ```graphql
+   query { transcript(id: "<transcript-id>") { title, action_items, decisions, questions, summary } }
+   ```
+
+2. **Extract action items.** Parse the `action_items` field from the API response. Each item includes the text and speaker. Review for accuracy -- AI extraction may miss nuanced action items or include false positives.
+
+3. **Extract decisions and open questions.** Parse the `decisions` field for decisions made during the meeting and `questions` for unresolved questions that need follow-up.
+
+4. **Push action items to CRM.** Use an n8n workflow to create tasks in Attio from extracted action items:
+   - Trigger: Fireflies webhook (`BOOKING_COMPLETED`)
+   - Parse: Extract action items from webhook payload
+   - Create: Attio task for each action item, assigned to the deal owner
+
+5. **Set up automatic notifications.** Configure Fireflies via API to email action items to relevant team members after each meeting. Or use n8n to route action items to Slack channels based on the meeting type.
+
+6. **Search past meetings via API.** Use Fireflies' search API to find specific decisions across all meetings:
+   ```graphql
+   query { transcripts(search: "pricing decision") { title, date, action_items } }
+   ```
+   This retrieves decisions without re-watching recordings.

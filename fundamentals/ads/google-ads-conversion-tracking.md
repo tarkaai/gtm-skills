@@ -1,20 +1,47 @@
 ---
 name: google-ads-conversion-tracking
-description: Implement conversion tracking for Google Ads to measure which clicks lead to valuable actions like sign-ups, demos, and purchases.
+description: Implement conversion tracking for Google Ads to measure which actions lead to sign-ups, demos, and purchases
 tool: Google Ads
-difficulty: Config
+difficulty: Intermediate
 ---
 
 # Set Up Google Ads Conversion Tracking
 
-### Step-by-step
-1. Go to Google Ads > Tools > Measurement > Conversions > New Conversion Action.
-2. Choose the conversion source: Website, App, Phone Calls, or Import.
-3. For website conversions: define the conversion (e.g., 'Demo Requested', 'Sign Up Completed', 'Purchase').
-4. Set the conversion value: assign a dollar value if possible (e.g., $200 for a demo request based on your close rate and ACV).
-5. Set the count: 'One' for lead gen (count one conversion per click) or 'Every' for e-commerce.
-6. Set the conversion window: 30-day click-through and 1-day view-through are standard for B2B.
-7. Install the Google Ads tag on your website: add the global site tag to all pages and the event snippet to your thank-you/confirmation page.
-8. Alternatively, use Google Tag Manager: create a trigger for form submissions or page views of your confirmation page.
-9. Test the conversion: submit a test form and verify the conversion appears in Google Ads within a few hours.
-10. Verify in the Conversions report: check that conversions are recording. If not, use the Google Tag Assistant browser extension to debug.
+## Prerequisites
+- Google Ads account with API access
+- Access to your website codebase or Google Tag Manager
+
+## Steps
+
+1. **Create a conversion action via API.** Use the Google Ads API to define conversion actions:
+   ```
+   POST /customers/<id>/conversionActions:mutate
+   {
+     "operations": [{
+       "create": {
+         "name": "Demo Requested",
+         "type": "WEBPAGE",
+         "category": "SUBMIT_LEAD_FORM",
+         "value_settings": { "default_value": 200, "always_use_default_value": false },
+         "counting_type": "ONE_PER_CLICK",
+         "click_through_lookback_window_days": 30,
+         "view_through_lookback_window_days": 1
+       }
+     }]
+   }
+   ```
+   Set counting to ONE_PER_CLICK for lead gen, MANY_PER_CLICK for e-commerce.
+
+2. **Install the Google Ads tag.** Add the global site tag (gtag.js) to all pages and the event snippet to your conversion pages:
+   ```html
+   <script>gtag('event', 'conversion', {'send_to': 'AW-XXXXXX/YYYYYY'});</script>
+   ```
+   Alternatively, use Google Tag Manager with a form submission trigger.
+
+3. **Set conversion values.** Assign dollar values based on your unit economics: $200 for demo request (based on close rate x ACV), $50 for content download. This enables ROAS-based optimization.
+
+4. **Implement server-side tracking.** For critical conversions, send events server-side via the Google Ads API to complement browser-based tracking and avoid ad-blocker gaps.
+
+5. **Test the conversion.** Submit a test form and verify the conversion appears in the Google Ads API within a few hours: `GET /customers/<id>/conversionActions`.
+
+6. **Verify conversion data.** Query the conversion report via API to confirm conversions are recording correctly. Match conversion counts against your backend data to ensure accuracy.

@@ -13,14 +13,33 @@ difficulty: Beginner
 
 ## Steps
 
-1. **Enable session recording.** In PostHog, go to Project Settings > Session Recording and toggle it on. Configure the sampling rate -- start with 100% for low-traffic sites or 10-20% for high-traffic sites. PostHog captures DOM changes, mouse movements, clicks, and console errors.
+1. **Enable session recording via API.** Use the PostHog API to enable recordings in your project settings:
+   ```
+   PATCH /api/projects/<id>/
+   { "session_recording_opt_in": true }
+   ```
+   Or enable during SDK init: `posthog.init('<key>', { session_recording: { maskAllInputs: true } })`. Configure the sampling rate: 100% for low-traffic sites, 10-20% for high-traffic sites.
 
-2. **Set up recording filters.** You do not need to record everything. Configure filters to focus on high-value pages: pricing page, signup flow, onboarding screens, and key feature pages. Exclude sensitive pages (account settings, payment forms) to protect user privacy.
+2. **Set up recording filters.** Configure the SDK to focus on high-value pages: pricing page, signup flow, onboarding screens, and key feature pages. Exclude sensitive pages (account settings, payment forms) via SDK config:
+   ```javascript
+   posthog.init('<key>', {
+     session_recording: { maskAllInputs: true, blockSelector: '.sensitive-data' }
+   })
+   ```
 
-3. **Watch recordings of key flows.** Go to Session Recordings and filter by: users who visited the pricing page but did not sign up, users who started onboarding but dropped off, or users who hit an error. Watch 10-15 sessions per pattern to identify common friction points.
+3. **Query recordings via API.** Use the PostHog API to find relevant recordings:
+   ```
+   GET /api/projects/<id>/session_recordings/?events=[{"id":"signup_started"}]&date_from=-7d
+   ```
+   Filter by: users who visited pricing but did not sign up, users who started onboarding but dropped off, or users who hit an error. Review 10-15 sessions per pattern to identify common friction points.
 
-4. **Use the event timeline.** Each recording shows a timeline of events the user triggered. Click on events to jump to that moment in the recording. This lets you quickly find the moments where users hesitated, rage-clicked, or abandoned a flow.
+4. **Use event timeline data.** Each recording has an associated event timeline accessible via the API. Events are timestamped so you can jump to specific moments: hesitations, rage-clicks, or flow abandonment.
 
-5. **Create playlists.** Save interesting recordings to playlists: "Signup Friction", "Onboarding Confusion", "Feature Discovery". Share playlists with your product and design team. Watching real user behavior is more persuasive than metrics alone when advocating for changes.
+5. **Create playlists via API.** Save recordings to playlists for team review:
+   ```
+   POST /api/projects/<id>/session_recording_playlists/
+   { "name": "Signup Friction", "description": "Users who abandoned signup form" }
+   ```
+   Share playlists with your product and design team for qualitative analysis.
 
-6. **Connect recordings to funnels.** When analyzing a funnel (see `fundamentals/analytics/posthog-funnels`), click into a drop-off step to see recordings of users who dropped off at that stage. This combines quantitative (where they drop) with qualitative (why they drop) analysis.
+6. **Connect recordings to funnels.** When analyzing a funnel (see `posthog-funnels`), use the API to fetch recordings of users who dropped off at a specific step. This combines quantitative (where they drop) with qualitative (why they drop) analysis.
