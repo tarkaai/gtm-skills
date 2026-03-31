@@ -1,82 +1,123 @@
 ---
 name: direct-mail-postcard-smoke
 description: >
-    Direct Mail Postcards — Smoke Test. Send a small batch of postcards to named accounts to test if
-  physical touch cuts through and drives inbound interest or a meeting.
-stage: "Marketing > Solution Aware"
-motion: "Outbound Founder-Led"
+  Direct Mail Postcards — Smoke Test. Send 20-50 personalized postcards to named accounts
+  via the Lob API to test whether physical mail cuts through digital noise and generates
+  inbound interest or meetings.
+stage: "Marketing > SolutionAware"
+motion: "OutboundFounderLed"
 channels: "Other"
 level: "Smoke Test"
-time: "3 hours over 1 week"
-outcome: "≥ 2 inbound leads or ≥ 1 meeting in 1 week"
-kpis: ["Response rate", "Inbound inquiries"]
+time: "4 hours over 2 weeks"
+outcome: "≥ 1 response (URL visit, email reply, or meeting booked) from 20-50 postcards within 14 days of delivery"
+kpis: ["Postcards delivered", "Response rate", "Meetings booked"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
 drills:
   - icp-definition
   - build-prospect-list
+  - postcard-campaign-send
   - threshold-engine
 ---
+
 # Direct Mail Postcards — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Other
+> **Stage:** Marketing > SolutionAware | **Motion:** OutboundFounderLed | **Channels:** Other
 
-## Overview
-Direct Mail Postcards — Smoke Test. Send a small batch of postcards to named accounts to test if physical touch cuts through and drives inbound interest or a meeting.
+## Outcomes
 
-**Time commitment:** 3 hours over 1 week
-**Pass threshold:** ≥ 2 inbound leads or ≥ 1 meeting in 1 week
+Prove that sending physical postcards to named accounts generates ANY signal — a tracking URL visit, an inbound email, or a meeting booking. This is a one-shot manual test, not an always-on campaign. The goal is to validate the channel before investing in automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Postcards successfully delivered (Lob tracking shows `Processed for Delivery` or `In Local Area`)
+- Personalized tracking URL gets at least 1 visit within 14 days of delivery
+- Any inbound email or LinkedIn message that references the postcard
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for direct-mail-postcard. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Define your ICP for direct mail
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your direct-mail-postcard materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Run the `icp-definition` drill. For direct mail, your ICP must include contacts for whom you can obtain a verified physical mailing address (typically office addresses). Focus on:
+- Decision makers at companies with physical offices (not fully remote)
+- Job titles that receive and process their own mail (founders, VPs at small companies)
+- Industries where physical mail is uncommon in sales (SaaS, tech) — this is where postcards stand out most
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+### 2. Build and enrich a prospect list with mailing addresses
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+Run the `build-prospect-list` drill with a focus on enriching mailing addresses. Target 20-50 contacts for this Smoke test. In Clay, use the `clay-enrichment-waterfall` to source business mailing addresses. If Clay cannot find a physical address for a contact, check LinkedIn for company headquarters and use that address. Remove any contact without a verifiable physical address.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥ 2 inbound leads or ≥ 1 meeting in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+Export the list to Attio with fields: first_name, last_name, company, title, address_line1, address_line2, city, state, zip, pain_point (a one-line description of their primary challenge that your product addresses).
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+### 3. Write postcard copy
 
----
+Create one postcard variant. This is a Smoke test — you are testing the CHANNEL, not optimizing copy.
 
-## KPIs to track
-- Response rate
-- Inbound inquiries
+**Front copy template:**
+- Headline: Personalized to the recipient's pain point (e.g., "{{first_name}}, still spending 10 hours/week on {{pain_point}}?")
+- One sentence of value proposition
+- Keep it scannable — recipients decide in 2 seconds whether to flip the card
 
----
+**Back copy template:**
+- 2-3 sentences expanding on how you solve their problem
+- A clear CTA: "Scan the QR code for a 15-minute demo" or "Visit {{tracking_url}} to see how we helped {{similar_company}}"
+- Include a personalized tracking URL: `https://yoursite.com/dm?ref={{contact_id}}&c=smoke-1`
+- Your name, title, and company (this is founder-led outreach, make it personal)
 
-## Pass threshold
-**≥ 2 inbound leads or ≥ 1 meeting in 1 week**
+### 4. Send the postcards
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Run the `postcard-campaign-send` drill:
+1. Verify all addresses via Lob's address verification API
+2. Create front and back templates in Lob with your copy
+3. Send postcards to all verified addresses
+4. Log send data in Attio (postcard ID, send date, expected delivery)
 
----
+**Human action required:** Review the Lob PDF preview of your postcard before confirming the live send. Check that merge variables rendered correctly, the layout is readable, and the tracking URL is correct.
 
-## How to run this skill
+**Cost estimate:** 20-50 postcards x $0.77/piece (Lob Developer plan) = $15-$39 total.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Wait for delivery and responses
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/direct-mail-postcard`_
+Monitor Lob tracking events for delivery confirmation. Postcards typically deliver in 3-7 business days.
+
+After delivery confirmation, watch for responses over 14 days:
+- Check PostHog for `direct_mail_url_visited` events from the tracking URLs
+- Check email inbox for replies mentioning the postcard
+- Check Attio for any new meetings booked by contacts who received postcards
+
+Log every response manually in Attio: response type, date, and the contact's reaction.
+
+### 6. Evaluate against threshold
+
+Run the `threshold-engine` drill. Pass threshold: at least 1 response (URL visit, email reply, or meeting booked) from 20-50 postcards within 14 days of delivery.
+
+If PASS: Direct mail works for your audience. Proceed to Baseline to automate and scale.
+If FAIL: Diagnose whether the issue was addressing (postcards returned?), relevance (wrong ICP or messaging), or timing. Iterate and re-run Smoke with adjusted targeting or copy.
+
+Record qualitative notes: Who responded? What did they say? Did anyone mention the postcard was surprising or memorable? This qualitative signal is as valuable as the numbers at Smoke stage.
+
+## Time Estimate
+
+- 1 hour: ICP definition and prospect list building (with Clay enrichment)
+- 1 hour: Copy writing and template creation in Lob
+- 30 minutes: Address verification and send execution
+- 30 minutes: Response monitoring and evaluation (spread over 2 weeks)
+- Total: ~4 hours of active work over a 2-week window (including delivery and response time)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Lob | Print and mail postcards via API | $0/mo + $0.77/postcard (Developer plan). https://www.lob.com/pricing |
+| Clay | Enrich prospects with mailing addresses | From $149/mo. https://www.clay.com/pricing |
+| Attio | Store contacts, log send data and responses | Free for small teams. https://attio.com/pricing |
+| PostHog | Track URL visits from postcards | Free up to 1M events/mo. https://posthog.com/pricing |
+
+**Estimated total cost for Smoke:** $15-$39 (postcard printing and mailing only)
+
+## Drills Referenced
+
+- `icp-definition` — Define the ideal customer profile for direct mail targeting
+- `build-prospect-list` — Source and enrich 20-50 prospects with mailing addresses
+- `postcard-campaign-send` — Verify addresses, create templates, and send postcards via Lob API
+- `threshold-engine` — Evaluate results against the pass threshold

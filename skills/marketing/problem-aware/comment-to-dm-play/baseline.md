@@ -1,78 +1,133 @@
 ---
 name: comment-to-dm-play-baseline
 description: >
-    Comment-to-DM Play — Baseline Run. Leave thoughtful comments in relevant threads for a few days,
-  then soft CTA into DMs to test whether earned engagement turns into conversations and meetings.
+  Comment-to-DM Play — Baseline Run. First always-on automation: systematically comment on ICP prospects'
+  LinkedIn posts daily, track engagement in CRM, and convert warm prospects to DM conversations with
+  full analytics tracking.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Social"
 level: "Baseline Run"
-time: "12 hours over 2 weeks"
-outcome: "≥ 15 DMs and ≥ 2 meetings over 2 weeks"
-kpis: ["Comment engagement", "Profile visits"]
+time: "15 hours over 4 weeks"
+outcome: "≥ 10 DM conversations and ≥ 4 meetings booked over 4 weeks with full funnel attribution"
+kpis: ["Author reply rate", "DM-to-reply conversion", "Comment-to-meeting rate", "Days from first comment to meeting"]
 slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
-  - content-repurposing
+  - comment-to-dm-cadence
   - posthog-gtm-events
+  - linkedin-lead-capture
 ---
+
 # Comment-to-DM Play — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Social
 
-## Overview
-Comment-to-DM Play — Baseline Run. Leave thoughtful comments in relevant threads for a few days, then soft CTA into DMs to test whether earned engagement turns into conversations and meetings.
+## Outcomes
 
-**Time commitment:** 12 hours over 2 weeks
-**Pass threshold:** ≥ 15 DMs and ≥ 2 meetings over 2 weeks
+Run the comment-to-DM motion continuously for 4 weeks with structured cadence tracking, CRM logging, and analytics. Prove the motion is repeatable: consistent commenting produces consistent DM opportunities, which produce consistent meetings. The agent manages discovery, tracking, and reporting while the founder focuses on commenting and DMs.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Steady comment volume: ≥ 25 comments per week across target list
+- Author reply rate holding at ≥ 15% over 4 weeks
+- Prospect cadence pipeline: ≥ 10 prospects in warming/warm stage at any given time
+- DM acceptance rate: ≥ 40% of DMs get a substantive reply
+- Profile views sustained at 2x pre-play baseline
 
 ## Instructions
 
-### 1. Set up content repurposing
-Run the `content-repurposing` drill to build a system that takes each piece of content and adapts it across formats: LinkedIn post to Twitter thread, blog post to newsletter, video clip to social post. This multiplies your content output without multiplying effort.
+### 1. Set up the comment-to-DM cadence system
+
+Run the `comment-to-dm-cadence` drill to establish the full tracking system in Attio:
+
+1. Add the `comment_dm_stage` custom field to Person records (values: cold, warming, warm, dm-ready, dm_sent, conversation, meeting_booked)
+2. Add tracking fields: `comment_touch_count`, `last_comment_date`, `first_comment_date`, `dm_sent_date`
+3. Import your Smoke-level target list (expand to 30-40 prospects)
+4. Set each prospect's initial stage based on Smoke results (prospects you already engaged are at least "warming")
 
 ### 2. Configure analytics tracking
-Run the `posthog-gtm-events` drill to track content performance events: `comment-to-dm-play_post_published`, `comment-to-dm-play_engagement_received`, `comment-to-dm-play_profile_visit`, `comment-to-dm-play_dm_received`, `comment-to-dm-play_lead_captured`. Connect social platform analytics to PostHog via n8n webhooks.
 
-### 3. Execute a 2-week content calendar
-Publish 3-5 pieces per week across platforms using the repurposed content system. Track all engagement in PostHog. Identify which content pillars (topics) drive the most qualified engagement.
+Run the `posthog-gtm-events` drill to set up the comment-to-DM event taxonomy in PostHog:
 
-### 4. Evaluate against threshold
-Review PostHog data against: ≥ 15 DMs and ≥ 2 meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, pivot content topics or try different formats (video, carousels, threads vs single posts).
+| Event | Properties | When Fired |
+|-------|-----------|------------|
+| `comment_posted` | prospect_name, prospect_tier, post_url, comment_strategy, author_name | After posting each comment |
+| `author_reply_received` | prospect_name, post_url, reply_text | When author replies to your comment |
+| `prospect_stage_advanced` | prospect_name, from_stage, to_stage, touch_count | When prospect moves to next cadence stage |
+| `dm_sent` | prospect_name, dm_type (opening, follow_up, meeting_ask), referenced_post | When DM is sent |
+| `dm_reply_received` | prospect_name, reply_sentiment (positive, neutral, negative) | When prospect replies to DM |
+| `meeting_booked` | prospect_name, source_post, days_from_first_comment, total_touches | When meeting is booked |
 
----
+Fire these events via n8n webhooks triggered by CRM updates, or log them manually during daily tracking.
 
-## KPIs to track
-- Comment engagement
-- Profile visits
+### 3. Execute the daily cadence
 
----
+Each business day:
 
-## Pass threshold
-**≥ 15 DMs and ≥ 2 meetings over 2 weeks**
+**Morning (20-30 min):**
+1. The agent runs `prospect-content-discovery` (Option B -- semi-automated via Taplio) to surface today's commentable posts
+2. The founder reviews the queue and selects 5-8 posts
+3. The agent drafts comments using the `comment-crafting` drill strategies
+4. The founder reviews, edits for voice, and posts each comment
+5. The agent logs each comment in Attio (increment touch count, update last_comment_date) and fires `comment_posted` events
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+**Afternoon (10 min):**
+6. Check for author replies on today's comments
+7. Reply to any authors who responded (keep conversations going)
+8. Log replies and fire `author_reply_received` events
+9. Update prospect stages: if a prospect now meets DM-ready criteria, advance them
 
----
+**DM window (as signals appear):**
+10. When a prospect reaches DM-ready stage, the agent drafts a DM using the `comment-to-dm-cadence` drill templates
+11. The founder reviews and sends the DM
+12. Log the DM in Attio, fire `dm_sent` event
 
-## How to run this skill
+### 4. Set up lead capture and enrichment
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `linkedin-lead-capture` drill to build the system that enriches DM-ready prospects:
 
-_Install this skill: `npx gtm-skills add marketing/problem-aware/comment-to-dm-play`_
+1. When a prospect reaches DM-ready or conversation stage, trigger Clay enrichment: company data, email, technographics
+2. Create or update the full lead record in Attio with enriched data
+3. Tag the lead with `lead_source = comment-to-dm` and `first_touch_post` = the first post you commented on
+4. Track the full attribution chain: first comment date -> DM date -> meeting date -> deal date
+
+### 5. Weekly review and pipeline management
+
+Every Friday (30 min):
+1. Review the full prospect pipeline in Attio: how many at each stage (cold, warming, warm, dm-ready, conversation)
+2. Identify stalled prospects (no new engagement in 10+ days) and decide: re-engage or deprioritize
+3. Add 5-10 new prospects to the target list to replace churned ones
+4. Review the week's metrics: comments posted, author replies, DMs sent, meetings booked
+5. Note what comment strategies worked best this week
+
+### 6. Evaluate against threshold
+
+After 4 weeks, measure: ≥ 10 DM conversations started AND ≥ 4 meetings booked. Also evaluate the funnel health: is the pipeline filling with new prospects, or are you exhausting your target list?
+
+If PASS, proceed to Scalable. If FAIL, diagnose the funnel stage where conversion breaks down and address it before re-running.
+
+## Time Estimate
+
+- Cadence setup (Attio + PostHog): 2 hours
+- Daily commenting and DMs (20 days x 30 min): 10 hours
+- Weekly reviews (4 x 30 min): 2 hours
+- Lead capture setup: 1 hour
+- **Total: ~15 hours over 4 weeks**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| LinkedIn (free or Premium) | Commenting, DMs | Free or $29.99/mo (https://www.linkedin.com/premium/) |
+| Taplio | Feed monitoring, prospect post tracking | $49/mo (https://taplio.com/pricing) |
+| PostHog | Event tracking, funnel analytics | Free up to 1M events (https://posthog.com/pricing) |
+| Attio | CRM, prospect cadence tracking | Free up to 3 users (https://attio.com/pricing) |
+| Clay | Prospect enrichment | $149/mo Explorer plan (https://clay.com/pricing) |
+| n8n | Automation workflows | Free self-hosted or $20/mo cloud (https://n8n.io/pricing) |
+
+## Drills Referenced
+
+- `comment-to-dm-cadence` — the full warming-to-DM conversion sequence with stage tracking
+- `posthog-gtm-events` — set up the event taxonomy for comment-to-DM tracking
+- `linkedin-lead-capture` — enrich and route DM-ready prospects to CRM pipeline

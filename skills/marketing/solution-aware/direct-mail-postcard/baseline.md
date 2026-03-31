@@ -1,82 +1,129 @@
 ---
 name: direct-mail-postcard-baseline
 description: >
-    Direct Mail Postcards — Baseline Run. Send a small batch of postcards to named accounts to test
-  if physical touch cuts through and drives inbound interest or a meeting.
-stage: "Marketing > Solution Aware"
-motion: "Outbound Founder-Led"
+  Direct Mail Postcards — Baseline Run. Send 100-200 postcards per month with automated
+  tracking, delivery attribution, and a digital follow-up sequence triggered by postcard
+  delivery. First always-on direct mail operation.
+stage: "Marketing > SolutionAware"
+motion: "OutboundFounderLed"
 channels: "Other"
 level: "Baseline Run"
-time: "12 hours over 2 weeks"
-outcome: "≥ 5 inbound leads or ≥ 2 meetings over 2 weeks"
-kpis: ["Response rate", "Inbound inquiries"]
+time: "15 hours over 1 month"
+outcome: "≥ 5% response rate (URL visits + meetings + replies) from 100-200 postcards over 1 month"
+kpis: ["Delivery rate", "Response rate", "Cost per response", "Meetings booked"]
 slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
 drills:
-  - cold-email-sequence
-  - linkedin-outreach
+  - postcard-campaign-send
+  - postcard-response-tracking
   - posthog-gtm-events
+  - follow-up-automation
 ---
+
 # Direct Mail Postcards — Baseline Run
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Other
+> **Stage:** Marketing > SolutionAware | **Motion:** OutboundFounderLed | **Channels:** Other
 
-## Overview
-Direct Mail Postcards — Baseline Run. Send a small batch of postcards to named accounts to test if physical touch cuts through and drives inbound interest or a meeting.
+## Outcomes
 
-**Time commitment:** 12 hours over 2 weeks
-**Pass threshold:** ≥ 5 inbound leads or ≥ 2 meetings over 2 weeks
+Run direct mail as an always-on outbound channel with automated tracking and digital follow-up. Send 100-200 postcards per month with full delivery tracking, response attribution, and a coordinated email/LinkedIn follow-up triggered by postcard delivery confirmation. Prove that the response rate holds at 5%+ over sustained sending.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Delivery rate ≥ 90% (address verification working correctly)
+- Tracking URLs receiving clicks within 7 days of delivery
+- Digital follow-ups (email after delivery) increasing overall response rate vs. postcard-only
+- Cost per response below $20
 
 ## Instructions
 
-### 1. Set up cold outreach tooling
-Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
+### 1. Set up event tracking
 
-### 2. Launch LinkedIn outreach in parallel
-Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
+Run the `posthog-gtm-events` drill to configure a standardized event taxonomy for direct mail. Define these events in PostHog:
 
-### 3. Configure tracking
-Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `direct-mail-postcard_email_sent`, `direct-mail-postcard_email_replied`, `direct-mail-postcard_meeting_booked`, `direct-mail-postcard_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
+- `direct_mail_sent` — Postcard created in Lob (properties: contact_id, campaign_id, variant)
+- `direct_mail_delivered` — Lob webhook confirms delivery (properties: contact_id, days_to_deliver)
+- `direct_mail_returned` — Postcard returned to sender (properties: contact_id, reason)
+- `direct_mail_url_visited` — Tracking URL clicked (properties: contact_id, variant, campaign_id)
+- `direct_mail_meeting_booked` — Meeting attributed to postcard (properties: contact_id, days_since_delivery)
+- `direct_mail_response` — Any response attributed to postcard (properties: contact_id, response_type)
 
-### 4. Execute and monitor for 2 weeks
-Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
+### 2. Configure delivery tracking and attribution
 
-### 5. Evaluate against threshold
-Review PostHog funnel data and Attio deal pipeline. Measure against: ≥ 5 inbound leads or ≥ 2 meetings over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
+Run the `postcard-response-tracking` drill to set up:
+- Lob webhook integration with n8n for real-time delivery updates
+- Automated CRM updates when postcards are delivered or returned
+- Response attribution linking URL visits and meetings to specific postcards
+- A 14-day attribution window for response measurement
 
----
+### 3. Build the digital follow-up workflow
 
-## KPIs to track
-- Response rate
-- Inbound inquiries
+Run the `follow-up-automation` drill to create an n8n workflow triggered by postcard delivery:
 
----
+**Trigger:** Lob `postcard.delivered` webhook event via n8n
 
-## Pass threshold
-**≥ 5 inbound leads or ≥ 2 meetings over 2 weeks**
+**Sequence:**
+1. Day 0 (delivery confirmed): No action — let the postcard speak for itself
+2. Day 3: Send a short email from the founder's address: "I sent you a quick note in the mail earlier this week about {{pain_point}}. Did it land on your desk?" Keep it to 2-3 sentences. Reference the postcard specifically — this multiplies its impact.
+3. Day 7 (if no response to email): Send a LinkedIn connection request with a note referencing both the postcard and the email
+4. Day 10 (if no response): Final follow-up email with a different angle — share a relevant case study or data point
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+**Important:** This follow-up sequence is what turns direct mail from a standalone channel into a multi-touch play. The postcard creates physical awareness; the email/LinkedIn follow-up captures the response. Track which step in the sequence generates the response.
 
----
+### 4. Scale to 100-200 postcards per month
 
-## How to run this skill
+Run the `postcard-campaign-send` drill at Baseline volume:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- Source 100-200 new prospects per month via Clay and push to Attio
+- Verify all addresses before sending
+- Send in weekly batches of 25-50 (not all at once) so follow-up workload is spread evenly
+- Use a single postcard variant (the one that worked in Smoke) — do not A/B test yet, focus on proving the channel sustains
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/direct-mail-postcard`_
+**Cost estimate:** 100-200 postcards x $0.77/piece = $77-$154/month on Lob's Developer plan. At $0.51/piece on the Small Business plan ($260/mo platform): $51-$102/mo + $260 platform = $311-$362/mo total.
+
+### 5. Monitor and evaluate weekly
+
+Each week, review in PostHog:
+- Postcards sent vs. delivered (delivery rate should be ≥ 90%)
+- Tracking URL visits this week
+- Meetings booked attributed to postcards
+- Which step in the follow-up sequence generated the most responses
+
+At the end of 1 month, calculate:
+- Overall response rate (all responses / postcards delivered)
+- Cost per response
+- Cost per meeting
+- Pipeline value generated
+
+**Pass threshold:** ≥ 5% response rate from 100-200 postcards over 1 month.
+
+If PASS: The channel sustains at Baseline volume. Proceed to Scalable to introduce A/B testing and higher volume.
+If FAIL: Diagnose by funnel stage — delivery issues (bad addresses), awareness issues (postcard not noticed), or conversion issues (postcard noticed but no action taken). Adjust and re-run.
+
+## Time Estimate
+
+- 3 hours: Event tracking and webhook setup (one-time)
+- 3 hours: Follow-up automation workflow in n8n (one-time)
+- 2 hours/week: List building, address verification, and sending (8 hours over 4 weeks)
+- 30 minutes/week: Monitoring and evaluation (2 hours over 4 weeks)
+- Total: ~15 hours over 1 month (6 hours one-time setup + 9 hours ongoing)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Lob | Print, mail, and track postcards | $0/mo + $0.77/pc (Developer) or $260/mo + $0.51/pc (Small Business). https://www.lob.com/pricing |
+| Clay | Enrich prospects with mailing addresses | From $149/mo. https://www.clay.com/pricing |
+| Attio | CRM — store contacts, send data, responses | Free for small teams. https://attio.com/pricing |
+| PostHog | Event tracking and attribution analytics | Free up to 1M events/mo. https://posthog.com/pricing |
+| n8n | Webhook processing, follow-up automation | Free (self-hosted) or from $24/mo (cloud). https://n8n.io/pricing |
+| Instantly | Send follow-up emails triggered by delivery | From $30/mo. https://instantly.ai/pricing |
+
+**Estimated total monthly cost:** $200-$500/mo depending on volume and plan tiers
+
+## Drills Referenced
+
+- `postcard-campaign-send` — Verify addresses, create templates, and send 100-200 postcards/month
+- `postcard-response-tracking` — Lob webhook integration, delivery tracking, response attribution
+- `posthog-gtm-events` — Set up standardized direct mail event taxonomy in PostHog
+- `follow-up-automation` — Digital follow-up sequence triggered by postcard delivery
