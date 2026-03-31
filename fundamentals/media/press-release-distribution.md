@@ -1,7 +1,7 @@
 ---
 name: press-release-distribution
 description: Distribute press releases via wire services to reach journalists and publications at scale
-tool: PR Newswire / Business Wire / GlobeNewsWire / EIN Presswire / Newswire.com
+tool: PR Newswire
 difficulty: Config
 ---
 

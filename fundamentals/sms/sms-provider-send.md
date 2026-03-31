@@ -1,7 +1,7 @@
 ---
 name: sms-provider-send
 description: Send an SMS message to a single recipient via API
-tool: Twilio / Salesmsg / OpenPhone (Quo) / SlickText / Heymarket
+tool: Twilio
 difficulty: Setup
 ---
 

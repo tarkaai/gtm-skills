@@ -1,7 +1,7 @@
 ---
 name: podcast-sponsor-marketplace-search
 description: Search podcast advertising marketplaces to find shows accepting paid sponsorships matching your ICP
-tool: AdvertiseCast / Podcorn / Acast / Podscribe / Gumball / RedCircle
+tool: AdvertiseCast
 difficulty: Setup
 ---
 

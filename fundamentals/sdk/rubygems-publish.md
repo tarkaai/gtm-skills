@@ -1,7 +1,7 @@
 ---
 name: rubygems-publish
 description: Publish or update a Ruby gem on RubyGems.org with metadata optimized for discoverability
-tool: gem CLI / RubyGems API
+tool: gem CLI
 difficulty: Setup
 ---
 

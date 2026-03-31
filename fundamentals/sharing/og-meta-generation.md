@@ -1,7 +1,7 @@
 ---
 name: og-meta-generation
 description: Programmatically generate Open Graph meta tags and social share preview cards for product pages and shared content
-tool: Vercel OG / @vercel/og
+tool: Vercel OG
 difficulty: Setup
 ---
 

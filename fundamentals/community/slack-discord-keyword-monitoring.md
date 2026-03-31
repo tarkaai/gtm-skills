@@ -1,7 +1,7 @@
 ---
 name: slack-discord-keyword-monitoring
 description: Monitor Slack and Discord communities for keyword matches and route alerts to an engagement queue
-tool: n8n / Common Room / Slack API / Discord API
+tool: Common Room
 difficulty: Config
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: docs-search-analytics
 description: Track and extract what users search for within docs site search and identify content gaps
-tool: Algolia / Mintlify / PostHog
+tool: Algolia
 difficulty: Config
 ---
 

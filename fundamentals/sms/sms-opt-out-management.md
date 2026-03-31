@@ -1,7 +1,7 @@
 ---
 name: sms-opt-out-management
 description: Handle opt-out requests, TCPA compliance, and consent tracking for SMS outreach
-tool: Twilio / Salesmsg / OpenPhone (Quo)
+tool: Twilio
 difficulty: Config
 ---
 

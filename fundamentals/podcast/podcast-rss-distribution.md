@@ -1,7 +1,7 @@
 ---
 name: podcast-rss-distribution
 description: Submit and manage podcast RSS feed listings across Apple Podcasts, Spotify, and other major directories
-tool: Apple Podcasts Connect / Spotify for Podcasters / Google Podcasts Manager
+tool: Apple Podcasts Connect
 difficulty: Setup
 ---
 

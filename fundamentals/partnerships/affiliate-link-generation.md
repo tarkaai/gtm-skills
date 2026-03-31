@@ -1,7 +1,7 @@
 ---
 name: affiliate-link-generation
 description: Generate, manage, and distribute unique affiliate tracking links and referral codes
-tool: Rewardful / FirstPromoter / PartnerStack / Tapfiliate
+tool: Rewardful
 difficulty: Setup
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: linkedin-automation-sequence
 description: Automate LinkedIn connection requests and follow-up message sequences via LinkedIn automation tools
-tool: Dripify / Expandi / PhantomBuster / Linked Helper / Waalaxy
+tool: Expandi
 difficulty: Config
 ---
 

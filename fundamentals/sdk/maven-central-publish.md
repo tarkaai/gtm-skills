@@ -1,7 +1,7 @@
 ---
 name: maven-central-publish
 description: Publish a Java/Kotlin library to Maven Central via Sonatype OSSRH
-tool: Maven / Gradle / Sonatype API
+tool: Maven
 difficulty: Advanced
 ---
 

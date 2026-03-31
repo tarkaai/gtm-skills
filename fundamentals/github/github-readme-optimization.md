@@ -1,7 +1,7 @@
 ---
 name: github-readme-optimization
 description: Write and push a README.md structured for developer engagement and lead capture via CTA
-tool: GitHub CLI / git
+tool: GitHub CLI
 difficulty: Config
 ---
 

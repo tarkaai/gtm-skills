@@ -1,7 +1,7 @@
 ---
 name: community-engagement-tracking
 description: Track community engagement metrics (karma, replies, referral clicks) in a structured log
-tool: PostHog / Attio / Spreadsheet
+tool: PostHog
 difficulty: Setup
 ---
 

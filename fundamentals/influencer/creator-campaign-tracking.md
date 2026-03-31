@@ -1,7 +1,7 @@
 ---
 name: creator-campaign-tracking
 description: Track clicks, leads, and conversions from a creator-sponsored post using UTM links and PostHog
-tool: PostHog / Attio / n8n
+tool: PostHog
 difficulty: Setup
 ---
 

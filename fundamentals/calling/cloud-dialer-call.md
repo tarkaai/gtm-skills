@@ -1,7 +1,7 @@
 ---
 name: cloud-dialer-call
 description: Initiate, log, and manage outbound sales calls via cloud dialer APIs
-tool: Orum / PhoneBurner / JustCall / Aircall / Kixie
+tool: Orum
 difficulty: Config
 ---
 

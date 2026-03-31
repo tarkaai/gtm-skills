@@ -1,7 +1,7 @@
 ---
 name: podcast-directory-search
 description: Search podcast directories to find shows matching topic, audience size, and guest format criteria
-tool: ListenNotes / Podchaser / Rephonic
+tool: ListenNotes
 difficulty: Setup
 ---
 

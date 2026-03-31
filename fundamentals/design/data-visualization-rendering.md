@@ -1,7 +1,7 @@
 ---
 name: data-visualization-rendering
 description: Render data charts, graphs, and statistical visualizations as static images suitable for infographic embedding
-tool: Plotly / Chart.js / D3
+tool: Plotly
 difficulty: Config
 ---
 

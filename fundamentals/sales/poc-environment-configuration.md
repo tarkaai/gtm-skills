@@ -1,7 +1,7 @@
 ---
 name: poc-environment-configuration
 description: Configure a POC environment with prospect-specific data, integrations, and success tracking instrumentation
-tool: Product API / PostHog
+tool: Product API
 difficulty: Advanced
 ---
 

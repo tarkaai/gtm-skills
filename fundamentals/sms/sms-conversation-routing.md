@@ -1,7 +1,7 @@
 ---
 name: sms-conversation-routing
 description: Route inbound SMS replies to CRM deals, classify sentiment, and trigger follow-up workflows
-tool: Twilio / n8n / Attio
+tool: Twilio
 difficulty: Config
 ---
 

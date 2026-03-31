@@ -1,7 +1,7 @@
 ---
 name: directory-analytics-scraping
 description: Pull listing analytics, ranking positions, and competitive data from software directories
-tool: G2 / Capterra / Product Hunt / Clay / n8n
+tool: G2
 difficulty: Config
 ---
 

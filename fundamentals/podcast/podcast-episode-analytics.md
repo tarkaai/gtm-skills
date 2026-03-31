@@ -1,7 +1,7 @@
 ---
 name: podcast-episode-analytics
 description: Pull episode download counts and listener metrics from podcast hosting platforms
-tool: Spotify for Podcasters / Buzzsprout / Transistor / RSS Analytics
+tool: Buzzsprout
 difficulty: Config
 ---
 

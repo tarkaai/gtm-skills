@@ -1,7 +1,7 @@
 ---
 name: creator-discovery-search
 description: Search for B2B creators and micro-influencers by audience, topic, and engagement metrics
-tool: SparkToro / Modash / Passionfroot / Clay
+tool: SparkToro
 difficulty: Setup
 ---
 

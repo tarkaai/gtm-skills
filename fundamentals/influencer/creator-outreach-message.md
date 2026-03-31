@@ -1,7 +1,7 @@
 ---
 name: creator-outreach-message
 description: Send a sponsorship inquiry to a B2B creator via email or platform DM
-tool: Instantly / Loops / Passionfroot / LinkedIn
+tool: Instantly
 difficulty: Config
 ---
 

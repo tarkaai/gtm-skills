@@ -1,7 +1,7 @@
 ---
 name: github-repo-create
 description: Create a public GitHub repository with description, topics, and initial structure via CLI or API
-tool: GitHub CLI / GitHub API
+tool: GitHub CLI
 difficulty: Setup
 ---
 

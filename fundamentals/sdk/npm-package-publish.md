@@ -1,7 +1,7 @@
 ---
 name: npm-package-publish
 description: Publish or update a package on the npm registry with metadata optimized for discoverability
-tool: npm CLI / npm API
+tool: npm CLI
 difficulty: Setup
 ---
 

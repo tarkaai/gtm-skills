@@ -1,7 +1,7 @@
 ---
 name: ringless-voicemail-drop
 description: Deliver pre-recorded or AI-generated voice messages directly to a prospect's voicemail without ringing their phone
-tool: VoiceDrop.ai / Slybroadcast / Drop Cowboy / PhoneBurner / Kixie
+tool: VoiceDrop.ai
 difficulty: Config
 ---
 

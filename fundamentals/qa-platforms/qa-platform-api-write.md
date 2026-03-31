@@ -1,7 +1,7 @@
 ---
 name: qa-platform-api-write
 description: Post answers on Q&A platforms (Stack Overflow, Dev.to) via their APIs
-tool: Stack Exchange API / Dev.to API
+tool: Stack Exchange API
 difficulty: Config
 ---
 

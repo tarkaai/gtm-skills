@@ -1,7 +1,7 @@
 ---
 name: twitter-x-ads-campaign-setup
 description: Create and configure promoted tweet campaigns via the Twitter/X Ads API
-tool: Twitter/X Ads
+tool: X Ads
 difficulty: Setup
 ---
 

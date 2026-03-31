@@ -1,7 +1,7 @@
 ---
 name: podcast-episode-repurposing
 description: Extract short clips, audiograms, show notes, and social posts from a podcast episode recording
-tool: Descript / Riverside / Opus Clip / Headliner
+tool: Descript
 difficulty: Config
 ---
 

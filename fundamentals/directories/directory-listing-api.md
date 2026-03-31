@@ -1,7 +1,7 @@
 ---
 name: directory-listing-api
 description: Create, update, and manage product listings on software directories via their APIs and vendor portals
-tool: G2 / Capterra / Product Hunt / GetApp / TrustRadius / SourceForge
+tool: G2
 difficulty: Setup
 ---
 

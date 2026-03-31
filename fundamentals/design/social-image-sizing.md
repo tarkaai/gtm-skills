@@ -1,7 +1,7 @@
 ---
 name: social-image-sizing
 description: Resize and optimize images for each social platform's dimensions and file size limits
-tool: Sharp (Node.js) / Pillow (Python)
+tool: Sharp
 difficulty: Setup
 ---
 

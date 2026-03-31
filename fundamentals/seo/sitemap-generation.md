@@ -1,7 +1,7 @@
 ---
 name: sitemap-generation
 description: Programmatically generate and submit XML sitemaps for bulk page indexation
-tool: CLI/API
+tool: Node.js
 difficulty: Setup
 ---
 

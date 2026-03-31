@@ -1,7 +1,7 @@
 ---
 name: template-catalog-api
 description: CRUD operations for a template catalog that lets users browse and install pre-built configurations
-tool: Product API / CMS
+tool: Product API
 difficulty: Config
 ---
 

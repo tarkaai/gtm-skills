@@ -1,7 +1,7 @@
 ---
 name: twitter-x-dms
 description: Send and monitor direct messages on Twitter/X via API or automation tools
-tool: Twitter/X
+tool: X
 difficulty: Config
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: directory-review-monitoring
 description: Monitor, fetch, and respond to product reviews across software directories via APIs and webhooks
-tool: G2 / Capterra / Product Hunt / TrustRadius / n8n
+tool: G2
 difficulty: Config
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: partner-marketplace-analytics-api
 description: Pull listing analytics (views, installs, conversions, rankings) from partner ecosystem marketplace developer portals
-tool: Salesforce AppExchange / HubSpot App Marketplace / Shopify App Store / Slack App Directory / Zapier
+tool: Salesforce AppExchange
 difficulty: Config
 ---
 

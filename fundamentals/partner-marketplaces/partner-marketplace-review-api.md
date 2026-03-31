@@ -1,7 +1,7 @@
 ---
 name: partner-marketplace-review-api
 description: Monitor, respond to, and request reviews on partner ecosystem marketplace listings
-tool: Salesforce AppExchange / HubSpot App Marketplace / Shopify App Store / Slack App Directory / G2
+tool: Salesforce AppExchange
 difficulty: Config
 ---
 

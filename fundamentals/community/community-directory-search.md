@@ -1,7 +1,7 @@
 ---
 name: community-directory-search
 description: Search community directories and aggregators to discover alumni, campus, and professional org groups
-tool: Clay / Web Search / LinkedIn API
+tool: Clay
 difficulty: Setup
 ---
 

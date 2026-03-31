@@ -1,7 +1,7 @@
 ---
 name: share-link-generation
 description: Generate unique, tracked share URLs with attribution for viral loop tracking
-tool: Custom API / Short.io / Dub.co
+tool: Dub.co
 difficulty: Setup
 ---
 

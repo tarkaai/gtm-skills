@@ -1,7 +1,7 @@
 ---
 name: qa-question-monitoring
 description: Monitor Q&A platforms for new questions matching target keywords and tags via polling or RSS
-tool: Stack Exchange API / n8n / SerpAPI
+tool: Stack Exchange API
 difficulty: Config
 ---
 

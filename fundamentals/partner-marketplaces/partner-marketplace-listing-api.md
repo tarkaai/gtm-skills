@@ -1,7 +1,7 @@
 ---
 name: partner-marketplace-listing-api
 description: Create, update, and manage app listings on partner ecosystem marketplaces via their APIs and developer portals
-tool: Salesforce AppExchange / HubSpot App Marketplace / Shopify App Store / Slack App Directory / Zapier / Make
+tool: Salesforce AppExchange
 difficulty: Setup
 ---
 

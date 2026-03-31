@@ -1,7 +1,7 @@
 ---
 name: podcast-sponsor-rate-negotiation
 description: Negotiate paid podcast sponsorship rates, packages, and terms with hosts or ad sales contacts
-tool: Email / CRM / Anthropic
+tool: Anthropic
 difficulty: Config
 ---
 

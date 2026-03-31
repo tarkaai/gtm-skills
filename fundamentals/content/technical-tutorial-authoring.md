@@ -1,7 +1,7 @@
 ---
 name: technical-tutorial-authoring
 description: Draft a developer tutorial with working code samples, repo links, and structured learning flow
-tool: AI (Claude / GPT)
+tool: Anthropic
 difficulty: Config
 ---
 

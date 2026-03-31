@@ -1,7 +1,7 @@
 ---
 name: sms-delivery-tracking
 description: Track SMS delivery status, read receipts, and response events via webhooks
-tool: Twilio / Salesmsg / OpenPhone (Quo)
+tool: Twilio
 difficulty: Config
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: newsletter-rate-negotiation
 description: Structure and negotiate paid newsletter sponsorship rates, packages, and terms
-tool: Email / CRM
+tool: Attio
 difficulty: Config
 ---
 

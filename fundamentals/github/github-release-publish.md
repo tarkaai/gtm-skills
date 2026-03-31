@@ -1,7 +1,7 @@
 ---
 name: github-release-publish
 description: Create a GitHub release with changelog, assets, and announcement body via CLI or API
-tool: GitHub CLI / GitHub API
+tool: GitHub CLI
 difficulty: Setup
 ---
 

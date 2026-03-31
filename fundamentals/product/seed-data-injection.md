@@ -1,7 +1,7 @@
 ---
 name: seed-data-injection
 description: Programmatically inject sample data records into a new user account via product API or database
-tool: Product API / Database
+tool: Product API
 difficulty: Advanced
 ---
 

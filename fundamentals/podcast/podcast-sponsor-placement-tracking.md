@@ -1,7 +1,7 @@
 ---
 name: podcast-sponsor-placement-tracking
 description: Build tracked landing pages, vanity URLs, promo codes, and PostHog events for podcast sponsorship attribution
-tool: PostHog / Dub.co / Rebrandly / Stripe
+tool: PostHog
 difficulty: Setup
 ---
 

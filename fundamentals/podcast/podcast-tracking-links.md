@@ -1,7 +1,7 @@
 ---
 name: podcast-tracking-links
 description: Create UTM-tagged tracking links and vanity URLs for podcast guest appearances
-tool: PostHog / Rebrandly / Dub.co
+tool: PostHog
 difficulty: Setup
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: twitter-x-engagement
 description: Engage with target prospects on Twitter/X through likes, replies, retweets, and quote posts
-tool: Twitter/X
+tool: X
 difficulty: Setup
 ---
 

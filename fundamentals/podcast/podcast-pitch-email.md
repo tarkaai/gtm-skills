@@ -1,7 +1,7 @@
 ---
 name: podcast-pitch-email
 description: Send personalized podcast guest pitch emails to hosts via Instantly or manual send
-tool: Instantly / Gmail
+tool: Instantly
 difficulty: Config
 ---
 

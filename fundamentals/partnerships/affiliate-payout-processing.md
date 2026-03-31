@@ -1,7 +1,7 @@
 ---
 name: affiliate-payout-processing
 description: Process, approve, and execute affiliate commission payouts
-tool: Rewardful / FirstPromoter / PartnerStack / PayPal / Wise
+tool: Rewardful
 difficulty: Config
 ---
 
