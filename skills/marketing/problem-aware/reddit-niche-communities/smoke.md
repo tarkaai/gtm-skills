@@ -8,7 +8,7 @@ stage: "Marketing > ProblemAware"
 motion: "CommunitiesForums"
 channels: "Social, Communities"
 level: "Smoke Test"
-time: "3 hours over 1 week"
+time: "4 hours over 1 week"
 outcome: "≥ 30 referral sessions or ≥ 5 signups in 1 week"
 kpis: ["Referral sessions from reddit.com", "Comment upvotes received", "Link clicks via UTM"]
 slug: "reddit-niche-communities"
