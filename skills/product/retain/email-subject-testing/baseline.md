@@ -1,80 +1,97 @@
 ---
 name: email-subject-testing-baseline
 description: >
-    Email Campaign A/B Tests — Baseline Run. A/B test email campaigns to improve open rates, CTR,
-  and conversion.
+  Email Subject-Line A/B Testing — Baseline Run. Run weekly automated subject-line tests across
+  all retention emails, targeting a 20% relative open-rate lift on tested emails over 2 weeks.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Email"
 level: "Baseline Run"
 time: "16 hours over 2 weeks"
-outcome: "≥20% open rate lift"
-kpis: ["Open rate", "CTR", "Conversion rate"]
+outcome: ">=20% relative open-rate lift on tested emails vs. pre-test baseline"
+kpis: ["Open rate lift (relative %)", "Click rate", "Unsubscribe rate", "Tests completed per week"]
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
 drills:
+  - email-subject-test-pipeline
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
----
-# Email Campaign A/B Tests — Baseline Run
-
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Email
-
-## Overview
-Email Campaign A/B Tests — Baseline Run. A/B test email campaigns to improve open rates, CTR, and conversion.
-
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ≥20% open rate lift
-
+  - email-subject-performance-monitor
+  - threshold-engine
 ---
 
-## Budget
+# Email Subject-Line A/B Testing — Baseline Run
 
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Email
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+## Outcomes
 
----
+Establish always-on subject-line testing across all retention email campaigns. Run at least 1 test per week. Achieve a >=20% relative open-rate lift (e.g., 25% baseline open rate -> 30% tested open rate) on emails that have been through the testing process. Build PostHog tracking and a monitoring dashboard.
+
+## Leading Indicators
+
+- PostHog events firing for every email send, open, click, and unsubscribe with test_id and variant properties
+- Weekly subject-line performance dashboard showing open-rate trends
+- At least 2 of the first 4 tests produce a clear winner (>3pp open-rate lift)
+- Subject-line pattern library has 4+ documented results
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `email-subject-testing_impression`, `email-subject-testing_engaged`, `email-subject-testing_converted`, `email-subject-testing_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Configure email event tracking
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Run the `posthog-gtm-events` drill to set up a complete event taxonomy for email subject testing. Implement these events via an n8n workflow that listens to Loops webhooks and forwards to PostHog:
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+- `email_subject_test_sent` — properties: test_id, variant (A|B), email_id, email_type, subject_line, segment
+- `email_subject_test_opened` — properties: test_id, variant, email_id, user_id
+- `email_subject_test_clicked` — properties: test_id, variant, email_id, user_id, link_url
+- `email_subject_test_unsubscribed` — properties: test_id, variant, email_id, user_id
 
-### 4. Evaluate against threshold
-Measure against: ≥20% open rate lift. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+Build PostHog funnels: sent -> opened -> clicked, filtered by test_id and variant. This gives you per-test conversion data.
 
----
+### 2. Run weekly subject-line tests
 
-## KPIs to track
-- Open rate
-- CTR
-- Conversion rate
+Run the `email-subject-test-pipeline` drill once per week on a different retention email each time. Prioritize emails with:
+- Highest send volume (tests need 200+ sends per variant for reliable data)
+- Below-average open rate (most room for improvement)
+- Direct retention impact (re-engagement, renewal, feature adoption)
 
----
+Each test follows the pipeline: select email, generate variant, configure split in Loops, instrument PostHog tracking, evaluate after 48 hours, roll out winner.
 
-## Pass threshold
-**≥20% open rate lift**
+### 3. Build the performance monitoring dashboard
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Run the `email-subject-performance-monitor` drill to create:
+- A PostHog dashboard showing open-rate trends across all retention emails
+- Weekly automated performance briefs posted to Slack
+- Anomaly detection for open-rate drops
+- A subject-line pattern library logging every test result
 
----
+### 4. Apply winning patterns to untested emails
 
-## How to run this skill
+After accumulating 4+ test results, identify which framing categories consistently win for which email types. Apply the winning patterns to emails that have not been tested yet. For example, if personalization consistently beats generic subjects for re-engagement emails, update all re-engagement email subjects to use personalization.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add product/retain/email-subject-testing`_
+Run the `threshold-engine` drill at the end of 2 weeks. Pass criteria: emails that went through subject-line testing show a >=20% relative open-rate lift compared to their pre-test baseline open rates. If PASS, proceed to Scalable. If FAIL, analyze which email types are not responding to testing and focus tests on higher-volume, lower-performing emails.
+
+## Time Estimate
+
+- 4 hours: Set up PostHog event tracking and n8n webhook workflow
+- 2 hours: Build PostHog dashboard and anomaly detection
+- 8 hours: Run 2 subject-line tests (4 hours each including setup, monitoring, evaluation)
+- 2 hours: Document patterns and apply winners to untested emails
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Loops | Send A/B test emails, manage sequences | Starter $49/mo for 5,000 contacts, unlimited sends — [loops.so/pricing](https://loops.so/pricing) |
+| PostHog | Track email events, build funnels and dashboards | Free up to 1M events/mo, 1M feature flag requests/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| n8n | Webhook listener, event forwarding, weekly cron reports | Self-hosted free; Cloud from ~$24/mo — [n8n.io/pricing](https://n8n.io/pricing) |
+
+**Estimated play-specific cost:** Loops Starter ~$49/mo
+
+## Drills Referenced
+
+- `email-subject-test-pipeline` — runs each individual subject-line A/B test end-to-end
+- `posthog-gtm-events` — configures the event taxonomy for email tracking in PostHog
+- `email-subject-performance-monitor` — builds the dashboard, anomaly alerts, and weekly performance briefs
+- `threshold-engine` — evaluates pass/fail against the 20% relative open-rate lift threshold
