@@ -1,81 +1,90 @@
 ---
 name: usage-based-pricing-smoke
 description: >
-    Consumption-Based Pricing — Smoke Test. Pricing that scales with value delivered to reduce
-  friction and align incentives.
+  Consumption-Based Pricing — Smoke Test. Analyze product usage data to identify the optimal value
+  metric and tier structure, then validate with a small cohort before committing to a pricing change.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Test usage pricing"
-kpis: ["ARPU", "Usage growth", "Churn rate"]
+outcome: "Identified value metric with ≥2x retention correlation between high and low usage bands"
+kpis: ["Value metric correlation to retention", "Usage distribution percentiles", "Churn rate by usage band"]
 slug: "usage-based-pricing"
 install: "npx gtm-skills add product/upsell/usage-based-pricing"
 drills:
-  - icp-definition
-  - onboarding-flow
-  - threshold-engine
+  - usage-pricing-model-analysis
+  - posthog-gtm-events
 ---
+
 # Consumption-Based Pricing — Smoke Test
 
-> **Stage:** Product → Upsell | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Upsell | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Consumption-Based Pricing — Smoke Test. Pricing that scales with value delivered to reduce friction and align incentives.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Test usage pricing
+A validated value metric (the unit customers pay for) backed by data showing that high-usage users retain at 2x+ the rate of low-usage users. A documented usage distribution with percentile breakpoints that define where tier boundaries should sit. Three modeled pricing scenarios (per-unit, tiered, hybrid) with projected revenue and churn impact.
 
----
+This is an analysis play — no pricing changes ship at Smoke. The agent runs the analysis, a human decides whether to proceed.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Usage event coverage: all candidate value metrics are instrumented in PostHog (API calls, seats, storage, messages, etc.)
+- Retention curve divergence: at least one candidate metric shows a clear separation between high and low usage cohorts
+- Usage distribution has identifiable cluster boundaries or natural breakpoints that map to tier thresholds
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Instrument usage events in PostHog
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `posthog-gtm-events` drill to ensure every candidate value metric emits events. For each metered resource your product tracks (API calls, seats, projects, storage, messages, integrations), verify that PostHog receives `resource_consumed` events with properties: `account_id`, `resource_type`, `current_count`, `plan_tier`.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+If any candidate metrics are missing, instrument them before proceeding. The analysis cannot run on incomplete data.
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Run the usage pricing model analysis
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Test usage pricing. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+Run the `usage-pricing-model-analysis` drill. This executes the full analysis pipeline:
 
----
+1. **Identify the value metric:** Query PostHog for all candidate usage events over the past 90 days. Cross-reference with Stripe billing data to find which usage event has the strongest positive correlation with retention and expansion revenue. Build retention curves segmented by each candidate metric using PostHog retention analysis.
 
-## KPIs to track
-- ARPU
-- Usage growth
-- Churn rate
+2. **Map the usage distribution:** Query the value metric distribution across all active customers. Identify P25, P50, P80, P95 percentiles. Look for natural cluster boundaries that suggest tier breakpoints.
 
----
+3. **Analyze churn by usage band:** Create PostHog cohorts for each usage quartile plus a P95+ power user band. Compute 30-day and 90-day churn rates per band. Identify bands where churn is highest and assess whether price is the cause.
 
-## Pass threshold
-**Test usage pricing**
+4. **Model three pricing scenarios:** Per-unit, tiered (graduated), and hybrid (base + overage). For each model, compute revenue at current usage levels, revenue change vs. current pricing, number of customers who would pay more vs. less, and projected churn impact.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+5. **Validate willingness to pay:** Check PostHog for behavioral price sensitivity signals — pricing page visits by active customers, users hitting plan limits without upgrading, trial-to-paid drop-off at payment step.
 
----
+6. **Document the recommendation:** Produce a pricing analysis report with the recommended value metric, pricing model, tier boundaries, expected revenue and churn impact, and implementation requirements.
 
-## How to run this skill
+**Human action required:** Review the pricing analysis report. Decide whether to proceed to Baseline with one of the three modeled scenarios. This decision changes what customers pay — it requires founder/pricing owner sign-off.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 3. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add product/upsell/usage-based-pricing`_
+The Smoke test passes if:
+- A single value metric was identified where high-usage users (P75+) retain at 2x+ the rate of low-usage users (P25 and below)
+- The usage distribution has identifiable breakpoints suitable for tier boundaries
+- At least one of the three pricing models projects revenue-neutral or positive impact without increasing churn in the highest-retention bands
+
+If PASS, proceed to Baseline with the recommended pricing model. If FAIL, the product may not have a clear value metric that correlates with usage — consider whether usage-based pricing is the right model, or instrument additional candidate metrics and re-run in 2 weeks.
+
+## Time Estimate
+
+- 1 hour: PostHog event audit and gap instrumentation
+- 2 hours: Running the `usage-pricing-model-analysis` drill (queries, cohort creation, scenario modeling)
+- 1 hour: Report compilation and review
+- 1 hour: Human review and go/no-go decision
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Usage event tracking, retention analysis, cohort creation | Free up to 1M events/mo; paid starts at $0.00005/event ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Stripe | Billing data for revenue correlation | 2.9% + $0.30/transaction; Billing at 0.5% of recurring revenue ([stripe.com/pricing](https://stripe.com/pricing)) |
+
+**Estimated play-specific cost at this level:** Free (analysis only, no new tools required beyond standard stack)
+
+## Drills Referenced
+
+- `usage-pricing-model-analysis` — Runs the full value metric identification, usage distribution mapping, churn analysis, and pricing scenario modeling pipeline
+- `posthog-gtm-events` — Ensures all candidate usage metrics are instrumented in PostHog with consistent event naming
