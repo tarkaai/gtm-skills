@@ -16,13 +16,13 @@ The GTM Skills repo is organized in three layers:
 
 - **Plays** (240) — The game plan. Each play tells the agent *what* to do for a specific GTM motion at a specific maturity level (Smoke through Durable). Example: "Cold Email Outreach - Smoke" or "Churn Prevention - Scalable".
 
-- **Drills** (~40) — Practiced routines that make plays work. These are composite workflows that combine multiple tools into a repeatable sequence. Example: `/build-prospect-list` chains Clay enrichment into Attio, `/cold-email-sequence` generates copy and sets up Instantly campaigns.
+- **Drills** (~670) — Practiced routines that make plays work. These are composite workflows that combine multiple tools into a repeatable sequence. Example: `/build-prospect-list` chains Clay enrichment into Attio, `/cold-email-sequence` generates copy and sets up Instantly campaigns.
 
-- **Fundamentals** (~25) — Tool-specific core skills the agent must master. Each one teaches the agent how to use a single tool deeply. Example: Clay enrichment waterfalls, Attio pipeline management, PostHog GTM event schemas.
+- **Fundamentals** (~375) — Tool-specific core skills the agent must master. Each one teaches the agent how to use a single tool deeply. Example: Clay enrichment waterfalls, Attio pipeline management, PostHog GTM event schemas.
 
 ```
   Plays  →  reference  →  Drills  →  reference  →  Fundamentals
- (240)                    (~40)                      (~25)
+ (240)                    (~670)                      (~375)
   what                  how to                    how to use
   to do                 combine                   each tool
 ```
