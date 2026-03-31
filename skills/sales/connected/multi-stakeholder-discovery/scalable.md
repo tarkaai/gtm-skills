@@ -1,85 +1,159 @@
 ---
 name: multi-stakeholder-discovery-scalable
 description: >
-    Multi-Stakeholder Discovery Process — Scalable Automation. Conduct discovery across all key
-  stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+  Multi-Stakeholder Discovery Process — Scalable Automation. Automated stakeholder engagement
+  orchestration across all deals: role-specific outreach sequencing, coverage dashboards,
+  intelligent gap alerting, and consensus-gated deal progression. The 10x multiplier is
+  engagement orchestration — reaching every stakeholder without proportional founder time.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Scalable Automation"
-time: "62 hours over 2 months"
-outcome: "Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building"
-kpis: ["Stakeholder coverage rate", "Consensus building success", "Multi-threading efficiency", "Close rate improvement", "Deal velocity"]
+time: "55 hours over 2 months"
+outcome: ">=75% of complex deals have >=4 stakeholder roles engaged, consensus score >=60, and automated engagement orchestration running over 2 months"
+kpis: ["Stakeholder engagement rate (outreach → reply)", "Average roles engaged per deal", "Consensus score at time of proposal", "Deal velocity (multi-threaded vs single-threaded)", "Discovery coverage completeness"]
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
-  - ab-test-orchestrator
+  - stakeholder-engagement-orchestration
+  - stakeholder-intelligence-reporting
+  - stakeholder-consensus-tracker
 ---
+
 # Multi-Stakeholder Discovery Process — Scalable Automation
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales → Connected | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-## Overview
-Multi-Stakeholder Discovery Process — Scalable Automation. Conduct discovery across all key stakeholders to understand diverse needs, priorities, and concerns before proposing solution.
+## Outcomes
 
-**Time commitment:** 62 hours over 2 months
-**Pass threshold:** Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building
+Find the 10x multiplier. At Baseline, the founder ran every discovery call. At Scalable, automated outreach sequences reach every stakeholder, the agent coordinates engagement timing to prevent collisions, coverage dashboards track multi-threading depth, and consensus-gated progression prevents premature proposals. The founder focuses only on high-value discovery calls — everything else is orchestrated.
 
----
+**Pass threshold:** >=75% of complex deals have >=4 stakeholder roles engaged, consensus score >=60, and automated engagement orchestration active over 2 months.
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Automated outreach sequences deployed for each stakeholder wave (priority-ordered by role)
+- Outreach reply rate >=15% across all stakeholder roles
+- Coverage dashboard shows improving multi-threading depth week over week
+- Gap alerts trigger <24 hours after a stakeholder engagement gap is detected
+- Pre-proposal gate blocks deals without adequate consensus (saves from late-stage surprises)
+- Deal velocity for multi-threaded deals is >=25% faster than single-threaded deals
+- Founder's time per deal decreases while coverage per deal increases
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Deploy Stakeholder Engagement Orchestration
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `stakeholder-engagement-orchestration` drill:
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+**Build the engagement priority queue:**
+1. Create an n8n workflow that triggers whenever `stakeholder-map-assembly` completes (i.e., a new deal is mapped)
+2. Query Attio for all unengaged stakeholders on the deal, sorted by influence score
+3. Group into 3 engagement waves:
+   - Wave 1: Champion and Economic Buyer (unlock access to others)
+   - Wave 2: Influencers and Technical Evaluators (engage once top-level priorities are understood)
+   - Wave 3: End Users and Gatekeepers (engage with targeted questions informed by earlier discovery)
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+**Generate role-specific outreach:**
+1. For each stakeholder in the queue, call Claude to generate a personalized meeting request
+2. The message references their specific role and what you are trying to understand (not a pitch)
+3. Example for an Economic Buyer: "We've been speaking with your engineering team about {topic}. Before we recommend anything, I want to understand how this aligns with your strategic priorities for {quarter}. Would 15 minutes be useful?"
+4. Example for a Technical Evaluator: "Your team mentioned {specific integration concern}. I'd like to walk through our architecture with someone who can evaluate the technical fit. Would a brief call make sense?"
 
-### 5. Evaluate against threshold
-Measure against: Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
+**Build outreach sequences in Instantly:**
+1. Create a 3-touch sequence per wave: initial request, follow-up with added context, final attempt with Cal.com booking link
+2. Tag each campaign with deal_id, stakeholder_role, wave_number
+3. Stagger waves: Wave 1 starts immediately, Wave 2 starts 5 days after Wave 1 reply or 10 days if no reply, Wave 3 starts after Wave 2
 
----
+**Build engagement tracking:**
+1. n8n workflow triggered by Instantly reply webhooks: update Attio (`engagement_status = Engaged`), log PostHog event, trigger calendar follow-up if positive
+2. n8n workflow triggered by Cal.com booking webhooks: update Attio (`discovery_status = Scheduled`), refresh discovery question bank
+3. n8n workflow for unresponsive stakeholders: after sequence completes with no reply, suggest alternative approach (champion introduction, LinkedIn, different angle)
 
-## KPIs to track
-- Stakeholder coverage rate
-- Consensus building success
-- Multi-threading efficiency
-- Close rate improvement
-- Deal velocity
+### 2. Build the Coverage Dashboard
 
----
+Run the `stakeholder-intelligence-reporting` drill:
 
-## Pass threshold
-**Multi-stakeholder discovery on ≥75% of complex deals at scale over 2 months with improved consensus building**
+**PostHog dashboard (6 panels):**
+1. Discovery Coverage Funnel: mapped → outreach sent → replied → scheduled → call completed
+2. Consensus Score Distribution: score distribution across all active deals, by stage
+3. Stakeholder Coverage Over Time: average engaged % per deal, trended weekly
+4. Discovery Impact on Win Rate: close rate for high-consensus (>=60) vs low-consensus (<60) deals
+5. Stakeholder Role Engagement Rates: reply rate by role — shows which roles are hardest to reach
+6. Time to Full Coverage: median days from deal creation to >=75% stakeholder engagement
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+**Attio saved views:**
+1. "Deals at Risk — Low Consensus": consensus <40, sorted by value
+2. "Discovery Gaps — Missing Key Roles": no Economic Buyer or Champion mapped
+3. "Stakeholder Outreach Pipeline": unengaged high-influence stakeholders awaiting outreach
+4. "Consensus Champions": deals with score >=80 ready for proposal
 
----
+**Weekly metrics snapshot (n8n cron):**
+- New stakeholders mapped, discovery calls completed, average consensus score trend
+- Outreach reply rate, coverage completeness trend
+- Top risks (consensus drops) and top wins (high-consensus deals)
+- Posted to Slack and stored in Attio
 
-## How to run this skill
+### 3. Strengthen Consensus Gating
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Extend the `stakeholder-consensus-tracker` drill with Scalable-level guardrails:
 
-_Install this skill: `npx gtm-skills add sales/connected/multi-stakeholder-discovery`_
+**Proposal gate:**
+- Deals cannot advance to Proposed if consensus_score < 60
+- If Economic Buyer has not had a direct conversation, flag as "proposal risk"
+- If any stakeholder with influence_score >= 7 is classified as Blocker, require a documented mitigation plan before proposal
+
+**Stale engagement detection:**
+- If a deal has been at Connected for >30 days and average stakeholder engagement is <50%, alert as stagnant
+- Recommend: "This deal needs re-engagement. Generate fresh outreach for Wave 1 stakeholders with updated context."
+
+**Consensus trajectory alerts:**
+- Twice-weekly monitoring with AI-generated intervention plans for degrading deals
+- Track which intervention types succeed across all deals
+
+### 4. Set Guardrails
+
+- Outreach volume: maximum 3 stakeholders contacted per day per deal to avoid overwhelming the prospect's organization
+- Sequence quality: if negative reply rate exceeds 10% on any sequence, pause and review messaging
+- Coverage completeness: deals must maintain >=75% of Baseline's discovery depth — if coverage drops, alert
+- Engagement orchestration must not contact anyone who has explicitly asked not to be contacted
+
+### 5. Run for 2 Months and Evaluate
+
+After 2 months, evaluate against the threshold:
+- Count complex deals with >=4 roles engaged AND consensus >=60 AND orchestration active
+- Compare deal velocity and close rates to Baseline benchmarks
+- Review the coverage dashboard for trends
+
+If PASS: Multi-stakeholder discovery is scaling. Proceed to Durable for autonomous optimization.
+If FAIL: Diagnose the bottleneck — outreach (stakeholders not replying?), discovery quality (calls happening but consensus not improving?), or orchestration (automation errors?).
+
+## Time Estimate
+
+- 10 hours: Build and test engagement orchestration workflows (n8n + Instantly + Cal.com)
+- 6 hours: Build intelligence reporting dashboards and Attio saved views
+- 4 hours: Configure consensus gating and guardrails
+- 3 hours: Test end-to-end with live deals
+- 25 hours: Run discovery calls over 2 months (founder's time, decreasing as orchestration handles more)
+- 7 hours: Weekly monitoring, iteration, and threshold evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — stakeholder data, deal tracking, consensus scores, saved views | $29/user/mo (Plus) — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — stakeholder mapping, org chart research | $185/mo (Launch) or $495/mo (Growth) — [clay.com/pricing](https://www.clay.com/pricing) |
+| Instantly | Cold email — stakeholder outreach sequences | $47/mo (Growth) or $97/mo (Hypergrowth) — [instantly.ai/pricing](https://instantly.ai/pricing) |
+| Cal.com | Scheduling — discovery call booking links | Free (1 user) or $15/user/mo (Teams) — [cal.com/pricing](https://cal.com/pricing) |
+| Fireflies | Transcription — discovery call recording | $10/user/mo (Pro, annual) — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| PostHog | Analytics — dashboards, funnels, consensus tracking | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+| n8n | Automation — orchestration, monitoring, reporting | $60/mo (Pro) — [n8n.io/pricing](https://n8n.io/pricing) |
+| Anthropic API | AI — outreach generation, sentiment extraction, question generation | Usage-based, ~$3/MTok input (Sonnet 4.6) — [claude.com/pricing](https://claude.com/pricing) |
+
+**Estimated play-specific cost this level:** ~$250-450/mo. Primary cost drivers: Clay ($185-495), Instantly ($47-97), n8n Pro ($60), Anthropic API (~$30-50/mo for extraction + outreach generation).
+
+## Drills Referenced
+
+- `stakeholder-engagement-orchestration` — automated role-specific outreach sequencing, engagement tracking, coverage monitoring, and gap alerting across all deals
+- `stakeholder-intelligence-reporting` — PostHog dashboards, Attio saved views, weekly metrics snapshots, and monthly ROI calculations for multi-stakeholder discovery effectiveness
+- `stakeholder-consensus-tracker` — consensus score computation, trajectory monitoring, degradation alerts, intervention plans, and pre-proposal gate enforcement
