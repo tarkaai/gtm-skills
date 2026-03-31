@@ -1,80 +1,104 @@
 ---
 name: personal-usage-analytics-baseline
 description: >
-    User Self-Service Analytics — Baseline Run. Show users their own usage data and insights to
-  increase engagement and demonstrate product value.
+  Personal Usage Analytics — Baseline Run. Roll out the analytics surface to all users with
+  engagement monitoring. First always-on deployment measuring view rate and retention lift.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Baseline Run"
-time: "16 hours over 2 weeks"
-outcome: "≥60%, ≥12pp retention"
-kpis: ["Analytics view rate", "Insight engagement", "Retention lift"]
+time: "20 hours over 3 weeks"
+outcome: "≥40% weekly analytics view rate across all active users AND ≥8pp 30-day retention lift for viewers vs. non-viewers"
+kpis: ["Weekly analytics view rate", "Engagement depth (metric click rate)", "30-day retention lift (viewers vs. non-viewers)", "CTA conversion rate"]
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
 drills:
+  - usage-analytics-engagement-monitor
+  - feature-adoption-monitor
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
----
-# User Self-Service Analytics — Baseline Run
-
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
-
-## Overview
-User Self-Service Analytics — Baseline Run. Show users their own usage data and insights to increase engagement and demonstrate product value.
-
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ≥60%, ≥12pp retention
-
 ---
 
-## Budget
+# Personal Usage Analytics — Baseline Run
 
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+## Outcomes
 
----
+Pass threshold: ≥40% of all active users view the analytics surface at least once per week, AND viewers show ≥8 percentage point higher 30-day retention than non-viewers.
+
+This proves the analytics surface works at full user base scale and that looking at personal stats correlates with better retention.
+
+## Leading Indicators
+
+- View rate ramp: week 1 view rate (novelty) vs. week 3 view rate (sustainable interest)
+- Engagement depth holds above 30% (users are not just glancing and leaving)
+- Discovery prompt click-through rate stays above 10%
+- Weekly email digest open rate (if enabled) stays above 25%
+- CTA clicks translate into downstream product actions within 24 hours
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `personal-usage-analytics_impression`, `personal-usage-analytics_engaged`, `personal-usage-analytics_converted`, `personal-usage-analytics_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Expand event tracking to full user base
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Run the `posthog-gtm-events` drill to verify all analytics surface events are firing correctly at full scale. Ensure the daily n8n aggregation workflow (from `usage-analytics-surface-build` at Smoke level) handles the full user base without timeouts. If the workflow exceeds 5 minutes, partition by user cohort and run in parallel batches.
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+### 2. Roll out the analytics surface to all users
 
-### 4. Evaluate against threshold
-Measure against: ≥60%, ≥12pp retention. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+Remove the feature flag restricting the analytics surface to the test group. Enable it for all active users. Configure the discovery prompts from the `usage-analytics-surface-build` drill for the full audience:
 
----
+- **First visit prompt**: Trigger for all users who have never viewed the analytics page and have 7+ days of activity
+- **Weekly digest prompt**: Every Monday for users active in the last 7 days
+- **Milestone prompt**: When n8n detects a user hit a new personal milestone
 
-## KPIs to track
-- Analytics view rate
-- Insight engagement
-- Retention lift
+### 3. Build the engagement monitoring system
 
----
+Run the `usage-analytics-engagement-monitor` drill. This creates:
 
-## Pass threshold
-**≥60%, ≥12pp retention**
+- The analytics engagement funnel in PostHog (viewed -> clicked metric -> clicked CTA -> product action)
+- Viewer vs. non-viewer retention comparison cohorts
+- The 7-panel engagement dashboard with threshold alerts
+- The weekly health report workflow in n8n
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Pay special attention to the retention lift measurement. Compare viewer cohort 30-day retention against non-viewer cohort. This is the primary Baseline metric.
 
----
+### 4. Track feature adoption from analytics CTAs
 
-## How to run this skill
+Run the `feature-adoption-monitor` drill configured for the features promoted by the analytics surface CTAs. Track whether the "have you tried [feature]" CTAs actually drive feature adoption. Measure: CTA shown -> feature first used within 7 days. If adoption rate from CTAs is below 5%, the CTA recommendations are too generic — personalize based on the user's actual usage patterns.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold after 3 weeks
 
-_Install this skill: `npx gtm-skills add product/retain/personal-usage-analytics`_
+Query PostHog at the end of week 3:
+
+- **Weekly view rate**: unique users who fired `usage_analytics_page_viewed` in the last 7 days / total active users in the last 7 days. Pass: ≥40%.
+- **Retention lift**: 30-day retention rate for the "analytics viewers" cohort minus the "non-viewers" cohort. Pass: ≥8 percentage points.
+
+If PASS: the analytics surface drives engagement at scale. Proceed to Scalable to establish causal impact via A/B testing.
+
+If FAIL on view rate: review discovery prompt performance. Which prompt type drives the most views? Test 2-3 new prompt variations (different copy, different trigger timing). Consider adding the weekly email digest if not yet enabled.
+
+If FAIL on retention lift: the analytics surface is viewed but not impactful. Review engagement depth — if users bounce quickly, the stats shown are not valuable enough. Survey 10 active users to understand what usage data they would actually find motivating. Rebuild the metric selection.
+
+## Time Estimate
+
+- 3 hours: full-scale rollout and aggregation pipeline scaling
+- 6 hours: engagement monitoring setup (drill execution + dashboard configuration)
+- 4 hours: feature adoption tracking from CTAs
+- 3 hours: weekly health report reviews (1 hour x 3 weeks)
+- 4 hours: threshold evaluation, cohort analysis, and diagnosis
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, funnels, cohort retention analysis | Free up to 1M events/mo — https://posthog.com/pricing |
+| Intercom | In-app discovery prompts, milestone notifications | From $39/mo — https://www.intercom.com/pricing |
+| n8n | Daily aggregation workflow, weekly health report | Free self-hosted or from $24/mo cloud — https://n8n.io/pricing |
+| Attio | Play health logging, optimization notes | From $29/seat/mo — https://attio.com/pricing |
+
+**Estimated play-specific cost:** ~$50-100/mo (primarily n8n compute for daily aggregation at full user base)
+
+## Drills Referenced
+
+- `usage-analytics-engagement-monitor` — monitors view rates, engagement depth, retention lift, and generates weekly health reports
+- `feature-adoption-monitor` — tracks whether analytics CTAs drive feature discovery and adoption
+- `posthog-gtm-events` — verifies and maintains the event taxonomy at full scale
