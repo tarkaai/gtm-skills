@@ -1,7 +1,8 @@
 ---
 name: co-marketing-shoutouts-baseline
 description: >
-  Partner Newsletter Shoutout — Baseline Run. Run a short co-marketing blurb in a partner newsletter to test awareness and lead flow before committing to bigger formats like LinkedIn Live.
+    Partner Newsletter Shoutout — Baseline Run. Run a short co-marketing blurb in a partner
+  newsletter to test awareness and lead flow before committing to bigger formats like LinkedIn Live.
 stage: "Marketing > Problem Aware"
 motion: "Partnerships & Warm Intros"
 channels: "Email"
@@ -13,16 +14,14 @@ slug: "co-marketing-shoutouts"
 install: "npx gtm-skills add marketing/problem-aware/co-marketing-shoutouts"
 drills:
   - warm-intro-request
-  - build-prospect-list
-  - linkedin-outreach
-  - threshold-engine
+  - posthog-gtm-events
 ---
 # Partner Newsletter Shoutout — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Email
 
 ## Overview
-Run a short co-marketing blurb in a partner newsletter to test awareness and lead flow before committing to bigger formats like LinkedIn Live.
+Partner Newsletter Shoutout — Baseline Run. Run a short co-marketing blurb in a partner newsletter to test awareness and lead flow before committing to bigger formats like LinkedIn Live.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 50 clicks and ≥ 3 leads over 2 weeks
@@ -31,39 +30,26 @@ Run a short co-marketing blurb in a partner newsletter to test awareness and lea
 
 ## Budget
 
-**Play-specific cost:** Free
+**Play-specific tools & costs**
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 50 clicks and ≥ 3 leads over 2 weeks).
+### 1. Formalize partner outreach
+Run the `warm-intro-request` drill to build a systematic intro request process: identify mutual connections in your network, craft personalized intro requests, and track request-to-intro conversion rates.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Configure partnership tracking
+Run the `posthog-gtm-events` drill to track: `co-marketing-shoutouts_partner_contacted`, `co-marketing-shoutouts_intro_received`, `co-marketing-shoutouts_collab_launched`, `co-marketing-shoutouts_lead_from_partner`. Attribute pipeline to specific partnerships.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Execute 5-10 partnerships over 2-4 weeks
+Run the collaborations: content swaps, co-promotions, intro exchanges, or joint webinars. Track results from each partnership individually to identify which partners and formats drive the most value.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Impressions, Click-through rate so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 50 clicks and ≥ 3 leads over 2 weeks. If PASS, proceed to Scalable. If FAIL, focus on the partnership format that showed the most promise and try different partners.
 
 ---
 
@@ -76,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 50 clicks and ≥ 3 leads over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: partner-newsletter-swaps-smoke
 description: >
-  Partner Newsletter Swaps — Smoke Test. Exchange newsletter mentions with complementary companies to reach new audiences and generate awareness with problem-aware and solution-aware subscribers.
+    Partner Newsletter Swaps — Smoke Test. Exchange newsletter mentions with complementary companies
+  to reach new audiences and generate awareness with problem-aware and solution-aware subscribers.
 stage: "Marketing > Problem Aware"
 motion: "Partnerships & Warm Intros"
 channels: "Email"
@@ -12,7 +13,8 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add marketing/problem-aware/partner-newsletter-swaps"
 drills:
-  - warm-intro-request
+  - icp-definition
+  - build-prospect-list
   - threshold-engine
 ---
 # Partner Newsletter Swaps — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Email
 
 ## Overview
-Exchange newsletter mentions with complementary companies to reach new audiences and generate awareness with problem-aware and solution-aware subscribers.
+Partner Newsletter Swaps — Smoke Test. Exchange newsletter mentions with complementary companies to reach new audiences and generate awareness with problem-aware and solution-aware subscribers.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥2 newsletter swaps and ≥100 new subscribers in 3 weeks
@@ -35,32 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this partner newsletter swaps play; document hypothesis and success criteria.
+### 1. Define partner ICP
+Run the `icp-definition` drill to define your ideal partner profile: complementary products, overlapping audiences, similar company stage, and shared values. Identify 10-20 potential partners.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Build a partner prospect list
+Run the `build-prospect-list` drill to research and enrich partner contacts: find the right person at each company (partnerships lead, founder, head of BD), get their email and LinkedIn, and add them to an Attio list.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Reach out to 10 partners personally. Use warm intros where possible. Propose a specific, low-commitment collaboration (content swap, co-promotion, intro exchange). Log all outreach in Attio.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track partner conversations
+Log every partner interaction in Attio: outreach sent, response received, meeting booked, collaboration agreed, results generated.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥2 newsletter swaps and ≥100 new subscribers in 3 weeks. If PASS, proceed to Baseline. If FAIL, adjust your partner ICP or value proposition.
 
 ---
 
@@ -74,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥2 newsletter swaps and ≥100 new subscribers in 3 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

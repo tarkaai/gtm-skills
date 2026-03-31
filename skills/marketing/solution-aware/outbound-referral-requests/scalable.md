@@ -1,7 +1,9 @@
 ---
 name: outbound-referral-requests-scalable
 description: >
-  Outbound Referral Requests — Scalable Automation. Ask existing customers and contacts for warm introductions to specific target accounts to generate high-quality solution-aware leads through trusted networks.
+    Outbound Referral Requests — Scalable Automation. Ask existing customers and contacts for warm
+  introductions to specific target accounts to generate high-quality solution-aware leads through
+  trusted networks.
 stage: "Marketing > Solution Aware"
 motion: "Partnerships & Warm Intros"
 channels: "Email, Direct"
@@ -12,19 +14,15 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
-  - warm-intro-request
-  - build-prospect-list
-  - linkedin-outreach
-  - crm-pipeline-setup
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
 ---
 # Outbound Referral Requests — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Email, Direct
 
 ## Overview
-Ask existing customers and contacts for warm introductions to specific target accounts to generate high-quality solution-aware leads through trusted networks.
+Outbound Referral Requests — Scalable Automation. Ask existing customers and contacts for warm introductions to specific target accounts to generate high-quality solution-aware leads through trusted networks.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥12% intro rate and ≥30 qualified intros/month over 4 months
@@ -34,43 +32,25 @@ Ask existing customers and contacts for warm introductions to specific target ac
 ## Budget
 
 **Play-specific tools & costs**
-- **Crossbeam (partner account mapping):** Free tier available; ~$0–200/mo
-
-_Total play-specific: Free tier available; ~$0–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Automate partner workflows
+Run the `follow-up-automation` drill to build n8n workflows: auto-track partner referrals via UTM parameters, auto-create Attio deals from partner-sourced leads, and auto-send partner performance reports monthly.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for outbound referral requests execution.
+### 2. Build partner ecosystem
+Run the `tool-sync-workflow` drill to connect: partner referral tracking to Attio deals, PostHog events to partner attribution, and Loops emails for partner nurture sequences.
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Scale partnerships
+Expand to 20+ active partnerships. Systematize the collaboration formats that worked. Create templates and playbooks for common partnership types.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥12% intro rate and ≥30 qualified intros/month over 4 months. If PASS, proceed to Durable. If FAIL, consolidate to the top 5 highest-performing partnerships.
 
 ---
 
@@ -86,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥12% intro rate and ≥30 qualified intros/month over 4 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

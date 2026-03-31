@@ -1,7 +1,8 @@
 ---
 name: list-swaps-adjacent-startups-scalable
 description: >
-  List Swap With Partner — Scalable Automation. Swap one email each with an adjacent startup partner to test cross-audience reach and whether clicks and a meeting justify more swaps.
+    List Swap With Partner — Scalable Automation. Swap one email each with an adjacent startup
+  partner to test cross-audience reach and whether clicks and a meeting justify more swaps.
 stage: "Marketing > Solution Aware"
 motion: "Partnerships & Warm Intros"
 channels: "Email"
@@ -12,19 +13,15 @@ kpis: ["Click-through rate", "Email open rate"]
 slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
 drills:
-  - warm-intro-request
-  - build-prospect-list
-  - linkedin-outreach
-  - crm-pipeline-setup
   - follow-up-automation
-  - posthog-gtm-events
+  - tool-sync-workflow
 ---
 # List Swap With Partner — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Email
 
 ## Overview
-Swap one email each with an adjacent startup partner to test cross-audience reach and whether clicks and a meeting justify more swaps.
+List Swap With Partner — Scalable Automation. Swap one email each with an adjacent startup partner to test cross-audience reach and whether clicks and a meeting justify more swaps.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 300 clicks and ≥ 8 meetings over 2 months
@@ -34,44 +31,25 @@ Swap one email each with an adjacent startup partner to test cross-audience reac
 ## Budget
 
 **Play-specific tools & costs**
-- **Crossbeam (partner account mapping):** Free tier available; ~$0–200/mo
-
-_Total play-specific: Free tier available; ~$0–200/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Instantly** (Email)
-- **Loops** (Email)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 300 clicks and ≥ 8 meetings over 2 months.
+### 1. Automate partner workflows
+Run the `follow-up-automation` drill to build n8n workflows: auto-track partner referrals via UTM parameters, auto-create Attio deals from partner-sourced leads, and auto-send partner performance reports monthly.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Build partner ecosystem
+Run the `tool-sync-workflow` drill to connect: partner referral tracking to Attio deals, PostHog events to partner attribution, and Loops emails for partner nurture sequences.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale partnerships
+Expand to 20+ active partnerships. Systematize the collaboration formats that worked. Create templates and playbooks for common partnership types.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Click-through rate, Email open rate in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 300 clicks and ≥ 8 meetings over 2 months. If PASS, proceed to Durable. If FAIL, consolidate to the top 5 highest-performing partnerships.
 
 ---
 
@@ -84,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 300 clicks and ≥ 8 meetings over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
