@@ -9,7 +9,7 @@ tools:
 fundamentals:
   - clay-table-setup
   - clay-enrichment-waterfall
-  - attio-list-management
+  - attio-lists
 ---
 
 # Build a Prospect List
@@ -43,7 +43,7 @@ Add a scoring formula column in Clay. Weight factors based on your ICP: company 
 
 ### 5. Push qualified prospects to Attio
 
-Use Clay's Attio integration to push qualified rows. Map Clay columns to Attio fields. Use the `attio-list-management` fundamental to create a named list for this batch. Tag each contact with the campaign name and source date.
+Use Clay's Attio integration to push qualified rows. Map Clay columns to Attio fields. Use the `attio-lists` fundamental to create a named list for this batch. Tag each contact with the campaign name and source date.
 
 ### 6. Verify and deduplicate
 

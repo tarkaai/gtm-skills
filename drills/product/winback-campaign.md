@@ -8,10 +8,10 @@ tools:
   - Attio
   - Intercom
 fundamentals:
-  - loops-broadcast-setup
-  - loops-transactional-emails
-  - posthog-cohort-analysis
-  - attio-list-management
+  - loops-broadcasts
+  - loops-transactional
+  - posthog-cohorts
+  - attio-lists
   - intercom-in-app-messages
 ---
 
@@ -30,14 +30,14 @@ This drill builds targeted campaigns to re-engage customers who have cancelled o
 
 ### 1. Segment churned customers
 
-Using the `attio-list-management` fundamental, pull all churned customers and segment by:
+Using the `attio-lists` fundamental, pull all churned customers and segment by:
 
 - **Churn reason**: Price, missing feature, switched to competitor, no longer needed, poor experience
 - **Churn recency**: Last 30 days, 30-90 days, 90+ days
 - **Previous engagement**: Power users who churned vs. users who never fully activated
 - **Account value**: High-value accounts get personal outreach, low-value get automated campaigns
 
-Using `posthog-cohort-analysis`, enrich each segment with pre-churn usage data: what features they used, when usage declined, and what their last actions were.
+Using `posthog-cohorts`, enrich each segment with pre-churn usage data: what features they used, when usage declined, and what their last actions were.
 
 ### 2. Design segment-specific campaigns
 
@@ -51,7 +51,7 @@ Each segment gets a different winback approach:
 
 ### 3. Build the email sequences
 
-Using `loops-broadcast-setup`, create a 3-email winback sequence per segment:
+Using `loops-broadcasts`, create a 3-email winback sequence per segment:
 
 - **Email 1 (30 days post-churn)**: Acknowledge their departure. Share what has changed since they left. No hard sell.
 - **Email 2 (45 days post-churn)**: Social proof from a customer in their segment. Specific results or testimonial.

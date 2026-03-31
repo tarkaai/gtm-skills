@@ -8,10 +8,10 @@ tools:
   - Google Ads
   - PostHog
 fundamentals:
-  - meta-ads-audience-setup
-  - linkedin-ads-audience-setup
-  - google-ads-remarketing
-  - posthog-event-tracking
+  - meta-ads-audiences
+  - linkedin-ads-audience-targeting
+  - google-ads-campaign-setup
+  - posthog-custom-events
 ---
 
 # Retargeting Setup
@@ -35,7 +35,7 @@ Install retargeting pixels on every page of your website:
 - **LinkedIn Insight Tag**: For LinkedIn retargeting
 - **Google Ads tag**: For Google Display and YouTube retargeting
 
-Use a tag manager or install directly. Verify each pixel fires correctly by using platform-specific debugging tools. Using `posthog-event-tracking`, also track pixel-fire events so you have a single source of truth for audience sizes.
+Use a tag manager or install directly. Verify each pixel fires correctly by using platform-specific debugging tools. Using `posthog-custom-events`, also track pixel-fire events so you have a single source of truth for audience sizes.
 
 ### 2. Define audience segments
 
@@ -46,7 +46,7 @@ Not all visitors are equal. Build audiences by intent level:
 - **Low intent**: Visited homepage once and bounced. Retarget with educational content or a compelling hook.
 - **Exclusions**: Current customers, people who already converted, and bot traffic. Always exclude these.
 
-Using the platform-specific audience fundamentals (`meta-ads-audience-setup`, `linkedin-ads-audience-setup`, `google-ads-remarketing`), create these segments in each platform.
+Using the platform-specific audience fundamentals (`meta-ads-audiences`, `linkedin-ads-audience-targeting`, `google-ads-campaign-setup`), create these segments in each platform.
 
 ### 3. Set audience windows
 
@@ -75,4 +75,4 @@ Retargeting budgets are typically 10-20% of total ad spend. Set frequency caps t
 
 ### 6. Measure retargeting attribution
 
-Using `posthog-event-tracking`, track view-through and click-through conversions separately. Retargeting often assists conversions attributed to other channels, so look at assisted conversions alongside direct. Compare cost per acquisition from retargeting versus cold campaigns. Healthy benchmark: retargeting CPA should be 50-70% lower than cold traffic CPA.
+Using `posthog-custom-events`, track view-through and click-through conversions separately. Retargeting often assists conversions attributed to other channels, so look at assisted conversions alongside direct. Compare cost per acquisition from retargeting versus cold campaigns. Healthy benchmark: retargeting CPA should be 50-70% lower than cold traffic CPA.

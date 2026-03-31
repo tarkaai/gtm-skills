@@ -9,9 +9,9 @@ tools:
   - PostHog
 fundamentals:
   - fireflies-transcription
-  - ghost-publishing
-  - attio-list-management
-  - posthog-event-tracking
+  - ghost-blog-publishing
+  - attio-lists
+  - posthog-custom-events
 ---
 
 # Case Study Creation
@@ -29,7 +29,7 @@ This drill covers the end-to-end process of creating a customer case study: iden
 
 ### 1. Identify case study candidates
 
-Pull your happiest customers from Attio using the `attio-list-management` fundamental. Look for: high NPS scores, strong product usage, measurable results they can share, recognizable company name or role title. Reach out personally — not a mass email. Explain the value to them: exposure, backlink, being seen as an industry leader.
+Pull your happiest customers from Attio using the `attio-lists` fundamental. Look for: high NPS scores, strong product usage, measurable results they can share, recognizable company name or role title. Reach out personally — not a mass email. Explain the value to them: exposure, backlink, being seen as an industry leader.
 
 ### 2. Prepare the interview
 
@@ -53,7 +53,7 @@ Structure the case study in three sections:
 - **The Solution** (200-250 words): How they implemented your product. Be specific about what they used and how.
 - **The Results** (150-200 words): Lead with the biggest metric. Use their exact numbers. Include a direct quote.
 
-Add a summary box at the top: company name, industry, company size, key metric, and a pull quote. Publish using the `ghost-publishing` fundamental.
+Add a summary box at the top: company name, industry, company size, key metric, and a pull quote. Publish using the `ghost-blog-publishing` fundamental.
 
 ### 5. Create derivative assets
 
@@ -61,4 +61,4 @@ From one case study interview, produce: the full written case study, a one-page 
 
 ### 6. Distribute strategically
 
-Do not just publish and hope. Send the case study to every active deal in Attio that matches the customer's profile (same industry, size, or use case). Arm your sales team with it. Share on social. Add it to your website's social proof section. Track views and influence on deals using `posthog-event-tracking`.
+Do not just publish and hope. Send the case study to every active deal in Attio that matches the customer's profile (same industry, size, or use case). Arm your sales team with it. Share on social. Add it to your website's social proof section. Track views and influence on deals using `posthog-custom-events`.

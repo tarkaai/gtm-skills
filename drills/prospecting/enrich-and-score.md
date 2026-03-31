@@ -8,7 +8,7 @@ tools:
   - People Data Labs
 fundamentals:
   - clay-enrichment-waterfall
-  - clay-scoring-model
+  - clay-scoring
   - clay-table-setup
 ---
 
@@ -38,7 +38,7 @@ Process rows in batches of 50-100 to monitor credit usage and catch errors early
 
 ### 4. Build the scoring model
 
-Create a formula column using the `clay-scoring-model` fundamental. Define your scoring rubric:
+Create a formula column using the `clay-scoring` fundamental. Define your scoring rubric:
 
 - **Company fit (40%)**: size range match, industry match, funding stage, revenue estimate
 - **Contact fit (35%)**: title seniority, department match, decision-making authority

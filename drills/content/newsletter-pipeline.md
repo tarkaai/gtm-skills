@@ -7,10 +7,10 @@ tools:
   - PostHog
   - Ghost
 fundamentals:
-  - loops-broadcast-setup
-  - loops-list-management
-  - posthog-event-tracking
-  - ghost-publishing
+  - loops-broadcasts
+  - loops-audience
+  - posthog-custom-events
+  - ghost-blog-publishing
 ---
 
 # Newsletter Pipeline
@@ -37,7 +37,7 @@ Pick one format and commit to it for at least 12 issues before changing.
 
 ### 2. Build and segment your audience
 
-Using the `loops-list-management` fundamental, organize your subscribers into segments: prospects (never purchased), active customers, churned customers, and partners. Tag subscribers by interest area and acquisition source. Each segment may get slightly different content or different CTAs within the same newsletter.
+Using the `loops-audience` fundamental, organize your subscribers into segments: prospects (never purchased), active customers, churned customers, and partners. Tag subscribers by interest area and acquisition source. Each segment may get slightly different content or different CTAs within the same newsletter.
 
 ### 3. Create a newsletter template
 
@@ -52,7 +52,7 @@ Follow this process for each issue:
 - Write a preview text that complements (not repeats) the subject line
 - Include one primary CTA: read an article, try a feature, book a call, or reply with feedback
 
-Using the `loops-broadcast-setup` fundamental, configure the send settings, preview the email across devices, and send a test to yourself first.
+Using the `loops-broadcasts` fundamental, configure the send settings, preview the email across devices, and send a test to yourself first.
 
 ### 5. Send and engage
 
@@ -60,4 +60,4 @@ Send on a consistent day and time. Tuesday-Thursday mornings typically perform b
 
 ### 6. Measure and optimize
 
-Track open rate, click rate, unsubscribe rate, and reply rate using `posthog-event-tracking`. Healthy benchmarks: 30%+ open rate, 3%+ click rate, under 0.5% unsubscribe rate per send. If open rates drop, test subject lines. If clicks drop, improve your CTA or content relevance. Publish newsletter content as blog posts using `ghost-publishing` for SEO value.
+Track open rate, click rate, unsubscribe rate, and reply rate using `posthog-custom-events`. Healthy benchmarks: 30%+ open rate, 3%+ click rate, under 0.5% unsubscribe rate per send. If open rates drop, test subject lines. If clicks drop, improve your CTA or content relevance. Publish newsletter content as blog posts using `ghost-blog-publishing` for SEO value.

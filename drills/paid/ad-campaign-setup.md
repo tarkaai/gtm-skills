@@ -11,7 +11,7 @@ fundamentals:
   - google-ads-campaign-setup
   - linkedin-ads-campaign-setup
   - meta-ads-campaign-setup
-  - posthog-event-tracking
+  - posthog-custom-events
 ---
 
 # Ad Campaign Setup
@@ -67,7 +67,7 @@ Create 3-5 variations with different hooks, benefits, and CTAs. Let the platform
 
 ### 5. Set up conversion tracking
 
-Using `posthog-event-tracking`, configure conversion events: page view, form submission, demo booked, trial started. Set up UTM parameters on every ad URL so you can track which campaign, ad group, and ad drove each conversion. Connect PostHog to your ad platform for conversion optimization.
+Using `posthog-custom-events`, configure conversion events: page view, form submission, demo booked, trial started. Set up UTM parameters on every ad URL so you can track which campaign, ad group, and ad drove each conversion. Connect PostHog to your ad platform for conversion optimization.
 
 ### 6. Launch and optimize weekly
 

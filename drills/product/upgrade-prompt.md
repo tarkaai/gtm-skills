@@ -8,11 +8,11 @@ tools:
   - Loops
   - Attio
 fundamentals:
-  - posthog-event-tracking
-  - posthog-cohort-analysis
+  - posthog-custom-events
+  - posthog-cohorts
   - intercom-in-app-messages
-  - loops-transactional-emails
-  - attio-deal-tracking
+  - loops-transactional
+  - attio-deals
 ---
 
 # Upgrade Prompt
@@ -30,7 +30,7 @@ This drill builds a system that identifies users approaching plan limits or demo
 
 ### 1. Define upgrade triggers
 
-Using the `posthog-event-tracking` fundamental, identify the usage patterns that correlate with upgrade readiness:
+Using the `posthog-custom-events` fundamental, identify the usage patterns that correlate with upgrade readiness:
 
 - **Limit proximity**: User is at 80%+ of a plan limit (seats, storage, API calls, projects)
 - **Feature discovery**: User tried a premium feature during a trial or repeatedly hit a feature gate
@@ -42,7 +42,7 @@ Each trigger should be validated against historical data: do users who hit this 
 
 ### 2. Build the trigger detection
 
-Using `posthog-cohort-analysis`, create cohorts for each upgrade trigger. Set up a daily check (via n8n or PostHog actions) that identifies users entering these cohorts. Score urgency: limit proximity is urgent (they will hit the wall soon), while growth signals are opportunity-based (upgrade would help them do more).
+Using `posthog-cohorts`, create cohorts for each upgrade trigger. Set up a daily check (via n8n or PostHog actions) that identifies users entering these cohorts. Score urgency: limit proximity is urgent (they will hit the wall soon), while growth signals are opportunity-based (upgrade would help them do more).
 
 ### 3. Design contextual prompts
 
@@ -56,11 +56,11 @@ Always include: what they get, the price difference, and a one-click upgrade pat
 
 ### 4. Set up email nudges
 
-Using `loops-transactional-emails`, send upgrade emails for non-urgent triggers. Time them 24-48 hours after the trigger event (not immediately — give users time to experience the need). Include a personalized usage summary: "You've created 47 projects this month and invited 5 teammates — sounds like your team is getting value."
+Using `loops-transactional`, send upgrade emails for non-urgent triggers. Time them 24-48 hours after the trigger event (not immediately — give users time to experience the need). Include a personalized usage summary: "You've created 47 projects this month and invited 5 teammates — sounds like your team is getting value."
 
 ### 5. Route high-value accounts to sales
 
-For accounts above a revenue threshold or with enterprise signals (large team, heavy API usage), do not self-serve the upgrade. Using `attio-deal-tracking`, create an expansion deal in Attio and assign it to the account owner. Include the usage data and trigger reason so sales can have an informed conversation.
+For accounts above a revenue threshold or with enterprise signals (large team, heavy API usage), do not self-serve the upgrade. Using `attio-deals`, create an expansion deal in Attio and assign it to the account owner. Include the usage data and trigger reason so sales can have an informed conversation.
 
 ### 6. Measure upgrade funnel
 

@@ -8,8 +8,8 @@ tools:
 fundamentals:
   - posthog-feature-flags
   - posthog-experiments
-  - posthog-event-tracking
-  - n8n-workflow-patterns
+  - posthog-custom-events
+  - n8n-workflow-basics
 ---
 
 # A/B Test Orchestrator
@@ -57,11 +57,11 @@ Using the `posthog-feature-flags` fundamental, create a feature flag for the tes
 
 ### 4. Implement the variants
 
-For email tests: create both versions in Instantly and use n8n with `n8n-workflow-patterns` to route prospects randomly. For landing page tests: use PostHog feature flags to show different page elements. For in-app tests: use PostHog flags in your product code. Ensure the randomization is user-level (each user always sees the same variant) not session-level.
+For email tests: create both versions in Instantly and use n8n with `n8n-workflow-basics` to route prospects randomly. For landing page tests: use PostHog feature flags to show different page elements. For in-app tests: use PostHog flags in your product code. Ensure the randomization is user-level (each user always sees the same variant) not session-level.
 
 ### 5. Monitor without peeking
 
-Do not check results daily and call winners early — this leads to false positives. Using `posthog-event-tracking`, track both variants but set a calendar reminder for the planned end date. The only reason to stop early: a guardrail metric (like unsubscribe rate or error rate) spikes, indicating the test is causing harm.
+Do not check results daily and call winners early — this leads to false positives. Using `posthog-custom-events`, track both variants but set a calendar reminder for the planned end date. The only reason to stop early: a guardrail metric (like unsubscribe rate or error rate) spikes, indicating the test is causing harm.
 
 ### 6. Analyze and decide
 

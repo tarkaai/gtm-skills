@@ -5,9 +5,9 @@ category: Measurement
 tools:
   - PostHog
 fundamentals:
-  - posthog-event-tracking
-  - posthog-funnel-tracking
-  - posthog-cohort-analysis
+  - posthog-custom-events
+  - posthog-funnels
+  - posthog-cohorts
 ---
 
 # PostHog GTM Events
@@ -34,7 +34,7 @@ Never use vague names like "event1" or platform-specific names like "instantly_w
 
 ### 2. Define standard event properties
 
-Using the `posthog-event-tracking` fundamental, attach consistent properties to every event:
+Using the `posthog-custom-events` fundamental, attach consistent properties to every event:
 
 - **Source**: Which drill or play triggered the event (e.g., "cold-email-sequence", "webinar-pipeline")
 - **Channel**: The communication channel (email, linkedin, phone, in-app, ad)
@@ -58,7 +58,7 @@ These properties enable cohort analysis and segmentation across all drills.
 
 ### 4. Build the core funnels
 
-Using `posthog-funnel-tracking`, create standard funnels that every GTM team needs:
+Using `posthog-funnels`, create standard funnels that every GTM team needs:
 
 - **Acquisition funnel**: page_viewed -> lead_created -> meeting_booked -> deal_created -> deal_won
 - **Activation funnel**: trial_started -> onboarding_step_completed (x N) -> activation_reached
@@ -67,7 +67,7 @@ Using `posthog-funnel-tracking`, create standard funnels that every GTM team nee
 
 ### 5. Set up cohort definitions
 
-Using `posthog-cohort-analysis`, create reusable cohorts:
+Using `posthog-cohorts`, create reusable cohorts:
 
 - Active users (session in last 7 days)
 - At-risk users (no session in 14+ days, previously active)

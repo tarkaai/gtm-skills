@@ -8,11 +8,11 @@ tools:
   - Attio
   - PostHog
 fundamentals:
-  - instantly-campaign-setup
+  - instantly-campaign
   - instantly-warmup
-  - cold-email-copywriting
+  - instantly-campaign
   - clay-enrichment-waterfall
-  - posthog-event-tracking
+  - posthog-custom-events
 ---
 
 # Cold Email Sequence
@@ -34,7 +34,7 @@ Before sending a single cold email, verify your sending domains are healthy. Use
 
 ### 2. Write the sequence copy
 
-Using the `cold-email-copywriting` fundamental, draft a 3-5 step sequence. Each email has a specific role:
+Using the `instantly-campaign` fundamental, draft a 3-5 step sequence. Each email has a specific role:
 
 - **Email 1 (Day 0)**: Problem-aware opener. Lead with a pain point specific to their role or industry. No pitching. Under 80 words.
 - **Email 2 (Day 3)**: Value angle. Share a relevant insight, data point, or mini case study. Still no hard ask.
@@ -49,7 +49,7 @@ Open your enriched Clay table and create template columns that map to Instantly 
 
 ### 4. Set up the campaign in Instantly
 
-Using the `instantly-campaign-setup` fundamental, create a new campaign. Upload your prospect list from Clay. Map merge fields to your email copy variables. Set the sending schedule: weekdays only, 8am-11am in the prospect's timezone. Set daily send limits per account. Enable open and click tracking.
+Using the `instantly-campaign` fundamental, create a new campaign. Upload your prospect list from Clay. Map merge fields to your email copy variables. Set the sending schedule: weekdays only, 8am-11am in the prospect's timezone. Set daily send limits per account. Enable open and click tracking.
 
 ### 5. Configure reply handling
 
@@ -61,4 +61,4 @@ Send to a test batch of 20-30 prospects first. Check deliverability, open rates,
 
 ### 7. Track results in PostHog
 
-Using the `posthog-event-tracking` fundamental, log campaign-level events: emails sent, opens, clicks, replies, meetings booked. Track the full funnel from send to meeting to deal. Feed results back to refine your scoring model and copy.
+Using the `posthog-custom-events` fundamental, log campaign-level events: emails sent, opens, clicks, replies, meetings booked. Track the full funnel from send to meeting to deal. Feed results back to refine your scoring model and copy.

@@ -5,9 +5,9 @@ category: Measurement
 tools:
   - PostHog
 fundamentals:
-  - posthog-event-tracking
-  - posthog-funnel-tracking
-  - posthog-cohort-analysis
+  - posthog-custom-events
+  - posthog-funnels
+  - posthog-cohorts
 ---
 
 # Dashboard Builder
@@ -35,7 +35,7 @@ Build one dashboard at a time, starting with the one your team checks most often
 
 ### 2. Choose the right metrics per dashboard
 
-Using `posthog-event-tracking`, select metrics that drive action. For each metric, define: what it measures, how it is calculated, what "good" looks like, and what action to take when it changes.
+Using `posthog-custom-events`, select metrics that drive action. For each metric, define: what it measures, how it is calculated, what "good" looks like, and what action to take when it changes.
 
 **Founder dashboard**: MRR, new customers this month, blended CAC, activation rate, net revenue retention, burn rate vs. revenue growth.
 
@@ -45,7 +45,7 @@ Using `posthog-event-tracking`, select metrics that drive action. For each metri
 
 ### 3. Build the visualizations
 
-Using `posthog-funnel-tracking`, create funnel charts for conversion flows. Use trend lines for metrics that should go up over time (revenue, users) or down (churn, CAC). Use tables for comparative data (channel performance side by side). Use cohort charts for retention analysis.
+Using `posthog-funnels`, create funnel charts for conversion flows. Use trend lines for metrics that should go up over time (revenue, users) or down (churn, CAC). Use tables for comparative data (channel performance side by side). Use cohort charts for retention analysis.
 
 Design principles:
 
@@ -60,7 +60,7 @@ Connect your dashboards to the `threshold-engine` drill. For each metric, displa
 
 ### 5. Set up alerts
 
-Using `posthog-cohort-analysis`, create cohort-based alerts for critical changes:
+Using `posthog-cohorts`, create cohort-based alerts for critical changes:
 
 - Activation rate drops below threshold for 3 consecutive days
 - Churn rate spikes above 2x normal

@@ -7,9 +7,9 @@ tools:
   - Apollo
   - LinkedIn
 fundamentals:
-  - clay-signal-triggers
+  - clay-claygent
   - clay-enrichment-waterfall
-  - attio-list-management
+  - attio-lists
 ---
 
 # Signal Detection
@@ -36,7 +36,7 @@ Map signals to your ICP. The most common high-intent signals:
 
 ### 2. Set up signal feeds in Clay
 
-Using the `clay-signal-triggers` fundamental, create Clay tables with automated enrichment that refresh on a schedule. For job changes: use LinkedIn or People Data Labs. For funding: use Crunchbase or PitchBook enrichment. For hiring: use job board scrapers. Set each to run daily or weekly depending on volume.
+Using the `clay-claygent` fundamental, create Clay tables with automated enrichment that refresh on a schedule. For job changes: use LinkedIn or People Data Labs. For funding: use Crunchbase or PitchBook enrichment. For hiring: use job board scrapers. Set each to run daily or weekly depending on volume.
 
 ### 3. Configure alert thresholds
 
@@ -44,7 +44,7 @@ Not every signal deserves action. Set thresholds: a single job posting is noise;
 
 ### 4. Route signals to action
 
-When a signal fires, route it: high-score signals go directly into your outreach queue in Attio tagged with the signal type. Medium-score signals get added to a watch list. Use the `attio-list-management` fundamental to create dynamic lists per signal type.
+When a signal fires, route it: high-score signals go directly into your outreach queue in Attio tagged with the signal type. Medium-score signals get added to a watch list. Use the `attio-lists` fundamental to create dynamic lists per signal type.
 
 ### 5. Craft signal-specific messaging
 

@@ -6,10 +6,10 @@ tools:
   - PostHog
   - n8n
 fundamentals:
-  - posthog-event-tracking
-  - posthog-funnel-tracking
-  - n8n-trigger-setup
-  - n8n-workflow-patterns
+  - posthog-custom-events
+  - posthog-funnels
+  - n8n-triggers
+  - n8n-workflow-basics
 ---
 
 # Threshold Engine
@@ -37,7 +37,7 @@ Thresholds must be specific numbers, not vague goals. "Good response rate" is no
 
 ### 2. Implement threshold checks in PostHog
 
-Using `posthog-funnel-tracking`, create saved insights for each threshold. For a cold email play at Smoke level:
+Using `posthog-funnels`, create saved insights for each threshold. For a cold email play at Smoke level:
 
 - Query: emails sent in last 14 days where source = "cold-email-sequence"
 - Funnel: email_sent -> email_opened -> email_replied -> meeting_booked
@@ -47,14 +47,14 @@ Save each insight with a clear name: "[Play Name] - [Level] - Threshold Check"
 
 ### 3. Build automated threshold checking
 
-Using the `n8n-trigger-setup` fundamental, create a workflow that runs at the end of each play's evaluation period. The workflow:
+Using the `n8n-triggers` fundamental, create a workflow that runs at the end of each play's evaluation period. The workflow:
 
 1. Queries PostHog for the relevant metrics
 2. Compares results against the threshold
 3. Generates a pass/fail verdict with the specific numbers
 4. Sends the result to the team (Slack, email, or Attio note)
 
-Using `n8n-workflow-patterns`, handle edge cases: insufficient data (not enough time or volume to judge), partial pass (some metrics hit but others missed), and external factors (holiday weeks, product outage).
+Using `n8n-workflow-basics`, handle edge cases: insufficient data (not enough time or volume to judge), partial pass (some metrics hit but others missed), and external factors (holiday weeks, product outage).
 
 ### 4. Define guardrails
 
@@ -65,7 +65,7 @@ Guardrails are "never exceed" limits that protect against damage even when a pla
 - **Quality guardrail**: If negative reply rate exceeds 5%, pause and review messaging
 - **Compliance guardrail**: Unsubscribe rate above 1% triggers immediate pause
 
-Guardrails fire n8n alerts using `n8n-trigger-setup` and can automatically pause campaigns when breached.
+Guardrails fire n8n alerts using `n8n-triggers` and can automatically pause campaigns when breached.
 
 ### 5. Build the progression decision tree
 
@@ -78,4 +78,4 @@ When a threshold check completes, the engine recommends one of four actions:
 
 ### 6. Track threshold results over time
 
-Using `posthog-event-tracking`, log every threshold check result as an event: play name, level, metrics achieved, threshold target, and verdict. Over time, this builds a dataset showing which plays work for your business and at which levels. This data informs future play selection and budget allocation.
+Using `posthog-custom-events`, log every threshold check result as an event: play name, level, metrics achieved, threshold target, and verdict. Over time, this builds a dataset showing which plays work for your business and at which levels. This data informs future play selection and budget allocation.

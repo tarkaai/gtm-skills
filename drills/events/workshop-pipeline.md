@@ -9,10 +9,10 @@ tools:
   - Attio
   - Intercom
 fundamentals:
-  - calcom-event-setup
-  - loops-broadcast-setup
-  - posthog-event-tracking
-  - attio-list-management
+  - calcom-event-types
+  - loops-broadcasts
+  - posthog-custom-events
+  - attio-lists
   - intercom-in-app-messages
 ---
 
@@ -44,13 +44,13 @@ The workshop should be genuinely useful even if someone never buys your product.
 
 ### 2. Build registration and prep
 
-Using `calcom-event-setup`, create a registration page with prerequisites (what attendees should prepare or install before the session). Using `loops-broadcast-setup`, send a confirmation email with prep instructions immediately after registration and a reminder email the day before with final setup steps.
+Using `calcom-event-types`, create a registration page with prerequisites (what attendees should prepare or install before the session). Using `loops-broadcasts`, send a confirmation email with prep instructions immediately after registration and a reminder email the day before with final setup steps.
 
-Cap attendance at 20-30 people. Larger groups make hands-on exercises impossible to facilitate. Track registrations in PostHog using `posthog-event-tracking`.
+Cap attendance at 20-30 people. Larger groups make hands-on exercises impossible to facilitate. Track registrations in PostHog using `posthog-custom-events`.
 
 ### 3. Promote strategically
 
-Use the same promotion channels as the `webinar-pipeline` drill, but emphasize the hands-on, practical nature. Workshop-specific messaging: "You will leave with [specific deliverable]." Target mid-funnel prospects in Attio using `attio-list-management` — workshops work well for prospects evaluating solutions. Offer existing customers spots too, via `intercom-in-app-messages`, as a retention and upsell play.
+Use the same promotion channels as the `webinar-pipeline` drill, but emphasize the hands-on, practical nature. Workshop-specific messaging: "You will leave with [specific deliverable]." Target mid-funnel prospects in Attio using `attio-lists` — workshops work well for prospects evaluating solutions. Offer existing customers spots too, via `intercom-in-app-messages`, as a retention and upsell play.
 
 ### 4. Deliver the workshop
 
@@ -58,7 +58,7 @@ Be over-prepared. Have a co-facilitator to handle chat questions and technical i
 
 ### 5. Post-workshop engagement
 
-Within 24 hours, send via `loops-broadcast-setup`:
+Within 24 hours, send via `loops-broadcasts`:
 
 - Recording and slides
 - A cheat sheet or one-page reference summarizing key takeaways
@@ -69,4 +69,4 @@ For attendees who were particularly engaged (asked questions, completed exercise
 
 ### 6. Measure workshop ROI
 
-Track the full funnel: registrations, attendance, engagement (exercise completion, questions asked), post-workshop CTA conversion, and pipeline generated. Workshops typically convert at 15-25% to meetings or trials, significantly higher than webinars. Using `attio-list-management`, tag workshop attendees and track their progression through your sales pipeline over 90 days.
+Track the full funnel: registrations, attendance, engagement (exercise completion, questions asked), post-workshop CTA conversion, and pipeline generated. Workshops typically convert at 15-25% to meetings or trials, significantly higher than webinars. Using `attio-lists`, tag workshop attendees and track their progression through your sales pipeline over 90 days.

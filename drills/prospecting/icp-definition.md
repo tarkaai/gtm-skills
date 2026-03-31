@@ -7,9 +7,9 @@ tools:
   - Clay
   - PostHog
 fundamentals:
-  - attio-list-management
-  - attio-pipeline-management
-  - posthog-cohort-analysis
+  - attio-lists
+  - attio-pipeline-config
+  - posthog-cohorts
 ---
 
 # ICP Definition
@@ -26,7 +26,7 @@ This drill walks you through defining a rigorous Ideal Customer Profile based on
 
 ### 1. Analyze your best customers
 
-Pull your closed-won deals from Attio using the `attio-pipeline-management` fundamental. Sort by deal value, time-to-close, expansion revenue, and retention. Identify the top 20% — these are your model customers.
+Pull your closed-won deals from Attio using the `attio-pipeline-config` fundamental. Sort by deal value, time-to-close, expansion revenue, and retention. Identify the top 20% — these are your model customers.
 
 ### 2. Extract firmographic patterns
 
@@ -42,7 +42,7 @@ Review deal notes and call recordings. What problem drove each customer to seek 
 
 ### 5. Validate with usage data
 
-If you have PostHog data, use the `posthog-cohort-analysis` fundamental to compare your best customers' product usage against churned accounts. Which features do high-value customers adopt? This refines your ICP beyond firmographics into behavioral fit.
+If you have PostHog data, use the `posthog-cohorts` fundamental to compare your best customers' product usage against churned accounts. Which features do high-value customers adopt? This refines your ICP beyond firmographics into behavioral fit.
 
 ### 6. Write your ICP document
 

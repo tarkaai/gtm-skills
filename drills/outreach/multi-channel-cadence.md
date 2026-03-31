@@ -9,11 +9,11 @@ tools:
   - n8n
   - PostHog
 fundamentals:
-  - instantly-campaign-setup
-  - linkedin-messaging-sequence
-  - n8n-workflow-patterns
-  - attio-deal-tracking
-  - posthog-event-tracking
+  - instantly-campaign
+  - linkedin-organic-engagement
+  - n8n-workflow-basics
+  - attio-deals
+  - posthog-custom-events
 ---
 
 # Multi-Channel Cadence
@@ -47,21 +47,21 @@ Each touch references or builds on the previous one without being repetitive.
 
 ### 2. Build the orchestration workflow
 
-Using the `n8n-workflow-patterns` fundamental, create a master workflow that coordinates timing across channels. The workflow should: trigger each step on schedule, check Attio for replies or status changes before proceeding (do not call someone who already replied to email), and pause the cadence instantly when a prospect engages positively on any channel.
+Using the `n8n-workflow-basics` fundamental, create a master workflow that coordinates timing across channels. The workflow should: trigger each step on schedule, check Attio for replies or status changes before proceeding (do not call someone who already replied to email), and pause the cadence instantly when a prospect engages positively on any channel.
 
 ### 3. Set up channel-specific sequences
 
 Configure each channel using its respective fundamental:
 
-- Email: Use `instantly-campaign-setup` to build the email steps
-- LinkedIn: Follow the `linkedin-messaging-sequence` fundamental for connection and message steps
+- Email: Use `instantly-campaign` to build the email steps
+- LinkedIn: Follow the `linkedin-organic-engagement` fundamental for connection and message steps
 - Phone: Use your call block schedule from `cold-call-framework`
 
 Ensure messaging is consistent across channels but not identical. Same core value proposition, different angles.
 
 ### 4. Configure cross-channel triggers
 
-Using the `attio-deal-tracking` fundamental, set up status updates that flow across channels. If a prospect opens email 3 times, bump up the phone call priority. If they accept a LinkedIn connection, adjust the email tone to be warmer. If they reply negatively on any channel, stop all channels immediately.
+Using the `attio-deals` fundamental, set up status updates that flow across channels. If a prospect opens email 3 times, bump up the phone call priority. If they accept a LinkedIn connection, adjust the email tone to be warmer. If they reply negatively on any channel, stop all channels immediately.
 
 ### 5. Add personalization layers
 
@@ -69,4 +69,4 @@ Each channel should reference the others subtly. Email: "I also sent you a conne
 
 ### 6. Measure channel attribution
 
-Track which channel drives the conversion using `posthog-event-tracking`. Log every touch with channel, step number, and timestamp. When a meeting books, attribute it to the last touch and the first touch. Review weekly: which channel combination produces the highest meeting rate? Adjust cadence timing and channel mix based on data.
+Track which channel drives the conversion using `posthog-custom-events`. Log every touch with channel, step number, and timestamp. When a meeting books, attribute it to the last touch and the first touch. Review weekly: which channel combination produces the highest meeting rate? Adjust cadence timing and channel mix based on data.

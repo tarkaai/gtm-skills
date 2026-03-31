@@ -7,8 +7,8 @@ tools:
   - Attio
   - Clay
 fundamentals:
-  - linkedin-connection-strategy
-  - attio-list-management
+  - linkedin-organic-engagement
+  - attio-lists
   - clay-enrichment-waterfall
 ---
 
@@ -48,7 +48,7 @@ Make it effortless for the connector. The harder you make it, the less likely th
 
 ### 5. Send and follow up
 
-Send intro requests via LinkedIn DM or email, depending on your relationship. If no response after 5 days, send one gentle follow-up. Never pressure. If they decline or ignore, thank them and move on. Track request status in Attio using the `attio-list-management` fundamental.
+Send intro requests via LinkedIn DM or email, depending on your relationship. If no response after 5 days, send one gentle follow-up. Never pressure. If they decline or ignore, thank them and move on. Track request status in Attio using the `attio-lists` fundamental.
 
 ### 6. Handle the introduction
 

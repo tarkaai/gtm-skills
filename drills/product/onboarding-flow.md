@@ -9,8 +9,8 @@ tools:
 fundamentals:
   - intercom-product-tours
   - intercom-in-app-messages
-  - loops-transactional-emails
-  - posthog-funnel-tracking
+  - loops-transactional
+  - posthog-funnels
 ---
 
 # Onboarding Flow
@@ -52,7 +52,7 @@ Using the `intercom-in-app-messages` fundamental, create targeted messages that 
 
 ### 4. Build the email onboarding sequence
 
-Using the `loops-transactional-emails` fundamental, create a 5-7 email sequence:
+Using the `loops-transactional` fundamental, create a 5-7 email sequence:
 
 - **Email 1 (immediate)**: Welcome email with one clear next step. Link directly to the action, not to the dashboard.
 - **Email 2 (Day 1)**: Quick-start guide. Show the fastest path to value with a short tutorial.
@@ -64,7 +64,7 @@ Each email should be skipped if the user has already completed the relevant mile
 
 ### 5. Instrument the funnel
 
-Using the `posthog-funnel-tracking` fundamental, build an onboarding funnel that tracks conversion between each milestone. Set up cohort analysis to compare onboarding performance across signup sources, plans, and time periods. Identify where users drop off most.
+Using the `posthog-funnels` fundamental, build an onboarding funnel that tracks conversion between each milestone. Set up cohort analysis to compare onboarding performance across signup sources, plans, and time periods. Identify where users drop off most.
 
 ### 6. Iterate based on data
 

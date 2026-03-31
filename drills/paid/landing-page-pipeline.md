@@ -7,10 +7,10 @@ tools:
   - PostHog
   - Loops
 fundamentals:
-  - webflow-page-builder
-  - posthog-event-tracking
-  - posthog-funnel-tracking
-  - loops-list-management
+  - webflow-landing-pages
+  - posthog-custom-events
+  - posthog-funnels
+  - loops-audience
 ---
 
 # Landing Page Pipeline
@@ -38,7 +38,7 @@ One page per offer. Never send paid traffic to your homepage.
 
 ### 2. Build the page structure
 
-Using the `webflow-page-builder` fundamental, construct the page following a proven layout:
+Using the `webflow-landing-pages` fundamental, construct the page following a proven layout:
 
 - **Hero section**: Headline (benefit-driven, under 10 words), subheadline (how you deliver the benefit), CTA button, and a visual (screenshot, demo video, or illustration)
 - **Social proof**: Customer logos, testimonial quote, or a specific metric ("Used by 500+ teams")
@@ -55,11 +55,11 @@ Keep the form as short as possible for the offer value. For a content download: 
 
 ### 4. Install tracking
 
-Using `posthog-event-tracking`, track: page view, scroll depth (25%, 50%, 75%, 100%), form focus, form submission, and thank-you page view. Set up UTM parameter capture so every conversion carries its source data. Using `posthog-funnel-tracking`, build a micro-funnel: page view to scroll to form focus to submission.
+Using `posthog-custom-events`, track: page view, scroll depth (25%, 50%, 75%, 100%), form focus, form submission, and thank-you page view. Set up UTM parameter capture so every conversion carries its source data. Using `posthog-funnels`, build a micro-funnel: page view to scroll to form focus to submission.
 
 ### 5. Connect to your lead pipeline
 
-Using `loops-list-management`, route form submissions to the appropriate email list and trigger sequence. For demo requests: also create a lead in Attio. For content downloads: deliver the asset immediately via email and add to a nurture sequence. Every lead should enter your system within seconds of submitting.
+Using `loops-audience`, route form submissions to the appropriate email list and trigger sequence. For demo requests: also create a lead in Attio. For content downloads: deliver the asset immediately via email and add to a nurture sequence. Every lead should enter your system within seconds of submitting.
 
 ### 6. Test and iterate
 

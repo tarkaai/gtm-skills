@@ -7,9 +7,9 @@ tools:
   - Intercom
   - Loops
 fundamentals:
-  - posthog-event-tracking
+  - posthog-custom-events
   - intercom-in-app-messages
-  - loops-transactional-emails
+  - loops-transactional
 ---
 
 # Usage Milestone Rewards
@@ -38,14 +38,14 @@ Example ladder: First action completed, 10 actions, 50 actions, 100 actions, 500
 
 ### 2. Instrument milestone detection
 
-Using `posthog-event-tracking`, set up events that fire when a user crosses each milestone threshold. Use PostHog's person properties to store cumulative counts and flag which milestones have been reached. Ensure each milestone fires only once per user.
+Using `posthog-custom-events`, set up events that fire when a user crosses each milestone threshold. Use PostHog's person properties to store cumulative counts and flag which milestones have been reached. Ensure each milestone fires only once per user.
 
 ### 3. Design milestone celebrations
 
 Create a celebration for each milestone tier:
 
 - **Early milestones (1-10)**: In-app confetti or badge using `intercom-in-app-messages`. Keep it light and fun. "You just created your 10th project — you're on a roll!"
-- **Mid milestones (50-100)**: In-app celebration plus an email from `loops-transactional-emails` with a usage summary. "You've processed 100 workflows this month — here's what you've accomplished."
+- **Mid milestones (50-100)**: In-app celebration plus an email from `loops-transactional` with a usage summary. "You've processed 100 workflows this month — here's what you've accomplished."
 - **Advanced milestones (500+)**: Personal congratulations from a team member. Offer exclusive access to beta features or a community badge. These users are your champions.
 
 ### 4. Attach strategic CTAs to milestones
@@ -60,7 +60,7 @@ Never make the CTA overshadow the celebration. The primary message is congratula
 
 ### 5. Build the notification pipeline
 
-Using `intercom-in-app-messages` for real-time celebrations and `loops-transactional-emails` for follow-up summaries, create a coordinated notification flow. The in-app message fires instantly when the milestone is reached. The email arrives 1-2 hours later with a recap and the CTA. Both should feel personal, not automated.
+Using `intercom-in-app-messages` for real-time celebrations and `loops-transactional` for follow-up summaries, create a coordinated notification flow. The in-app message fires instantly when the milestone is reached. The email arrives 1-2 hours later with a recap and the CTA. Both should feel personal, not automated.
 
 ### 6. Measure impact on retention
 

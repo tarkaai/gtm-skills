@@ -9,10 +9,10 @@ tools:
   - Loops
   - LinkedIn
 fundamentals:
-  - ghost-publishing
-  - linkedin-content-creation
+  - ghost-blog-publishing
+  - linkedin-organic-formats
   - descript-editing
-  - loops-broadcast-setup
+  - loops-broadcasts
 ---
 
 # Content Repurposing
@@ -45,7 +45,7 @@ List every atomic unit before creating anything.
 
 ### 3. Transform into social content
 
-Using the `linkedin-content-creation` fundamental, turn each key insight into a LinkedIn post. Rewrite for the format — do not just excerpt. A blog insight becomes a story-driven post with a hook and takeaway. A framework becomes a numbered list post. Create 5-8 social posts from one source piece.
+Using the `linkedin-organic-formats` fundamental, turn each key insight into a LinkedIn post. Rewrite for the format — do not just excerpt. A blog insight becomes a story-driven post with a hook and takeaway. A framework becomes a numbered list post. Create 5-8 social posts from one source piece.
 
 ### 4. Create video derivatives
 
@@ -53,11 +53,11 @@ If the source is written, record yourself explaining the key insight in 60-90 se
 
 ### 5. Build an email version
 
-Using the `loops-broadcast-setup` fundamental, adapt the core content for your newsletter. Newsletters want a different angle than the blog: more personal, more opinionated, with a conversational tone. Pull one insight and expand on it with your own experience.
+Using the `loops-broadcasts` fundamental, adapt the core content for your newsletter. Newsletters want a different angle than the blog: more personal, more opinionated, with a conversational tone. Pull one insight and expand on it with your own experience.
 
 ### 6. Republish and syndicate
 
-Using the `ghost-publishing` fundamental, turn derivative angles into standalone blog posts if they have enough depth. Republish on LinkedIn articles with a canonical link back. Guest-post adapted versions on industry publications. Each republished piece should have a unique angle — do not duplicate content across channels verbatim.
+Using the `ghost-blog-publishing` fundamental, turn derivative angles into standalone blog posts if they have enough depth. Republish on LinkedIn articles with a canonical link back. Guest-post adapted versions on industry publications. Each republished piece should have a unique angle — do not duplicate content across channels verbatim.
 
 ### 7. Schedule the rollout
 

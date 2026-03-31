@@ -9,9 +9,9 @@ tools:
   - PostHog
 fundamentals:
   - intercom-in-app-messages
-  - loops-broadcast-setup
-  - ghost-publishing
-  - posthog-event-tracking
+  - loops-broadcasts
+  - ghost-blog-publishing
+  - posthog-custom-events
 ---
 
 # Feature Announcement
@@ -54,12 +54,12 @@ Using the `intercom-in-app-messages` fundamental, create a targeted in-app messa
 
 ### 4. Send the email announcement
 
-Using the `loops-broadcast-setup` fundamental, send a feature announcement email to the relevant segment. For Tier 1: send to all active users. For Tier 2: send only to users of the related feature. Include the visual, a short explanation, and a direct link. Time the email to go out on the same day the in-app message activates.
+Using the `loops-broadcasts` fundamental, send a feature announcement email to the relevant segment. For Tier 1: send to all active users. For Tier 2: send only to users of the related feature. Include the visual, a short explanation, and a direct link. Time the email to go out on the same day the in-app message activates.
 
 ### 5. Publish the blog post and changelog
 
-Using the `ghost-publishing` fundamental, publish a detailed blog post for Tier 1 features. Include the backstory (why you built it), a walkthrough, and use cases. Update your changelog for all tiers. The blog post serves SEO and gives you a URL to share on social and in sales conversations.
+Using the `ghost-blog-publishing` fundamental, publish a detailed blog post for Tier 1 features. Include the backstory (why you built it), a walkthrough, and use cases. Update your changelog for all tiers. The blog post serves SEO and gives you a URL to share on social and in sales conversations.
 
 ### 6. Track adoption
 
-Using `posthog-event-tracking`, track feature adoption: how many users saw the announcement, how many clicked through, and how many actually used the feature within 7 days. Compare adoption rates across channels to learn which drives the most actual usage. If adoption is low despite high awareness, the feature may need better discoverability or onboarding.
+Using `posthog-custom-events`, track feature adoption: how many users saw the announcement, how many clicked through, and how many actually used the feature within 7 days. Compare adoption rates across channels to learn which drives the most actual usage. If adoption is low despite high awareness, the feature may need better discoverability or onboarding.

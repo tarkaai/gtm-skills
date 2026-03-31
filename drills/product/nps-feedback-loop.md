@@ -8,10 +8,10 @@ tools:
   - Loops
   - Attio
 fundamentals:
-  - intercom-surveys
-  - posthog-cohort-analysis
-  - loops-transactional-emails
-  - attio-list-management
+  - intercom-in-app-messages
+  - posthog-cohorts
+  - loops-transactional
+  - attio-lists
 ---
 
 # NPS Feedback Loop
@@ -29,7 +29,7 @@ This drill implements a Net Promoter Score survey system that goes beyond collec
 
 ### 1. Design the survey trigger
 
-Do not survey everyone at once. Using the `intercom-surveys` fundamental, trigger the NPS survey based on product milestones: after 30 days of active use, after completing a major workflow, or quarterly for long-term customers. Never survey during onboarding (too early) or right after a support ticket (biased). Show the survey in-app for highest response rates.
+Do not survey everyone at once. Using the `intercom-in-app-messages` fundamental, trigger the NPS survey based on product milestones: after 30 days of active use, after completing a major workflow, or quarterly for long-term customers. Never survey during onboarding (too early) or right after a support ticket (biased). Show the survey in-app for highest response rates.
 
 ### 2. Configure the two-question format
 
@@ -37,7 +37,7 @@ Question 1: "How likely are you to recommend [product] to a colleague?" (0-10 sc
 
 ### 3. Segment and analyze responses
 
-Using the `posthog-cohort-analysis` fundamental, cross-reference NPS scores with usage data. Group respondents:
+Using the `posthog-cohorts` fundamental, cross-reference NPS scores with usage data. Group respondents:
 
 - **Promoters (9-10)**: Who are they? What features do they use most? What plan are they on?
 - **Passives (7-8)**: What is holding them back from being promoters? What are they not using?
@@ -47,11 +47,11 @@ Look for trends: are detractors concentrated in a specific segment, plan, or sig
 
 ### 4. Close the loop with each segment
 
-Using `loops-transactional-emails`, send tailored follow-ups within 48 hours:
+Using `loops-transactional`, send tailored follow-ups within 48 hours:
 
 - **Promoters**: Thank them. Ask if they would be willing to leave a review, do a case study, or refer a colleague. Feed their names into the `referral-program` drill.
 - **Passives**: Acknowledge their feedback. Share a specific resource or feature that addresses their stated concern. Offer a call to understand what would make them a promoter.
-- **Detractors**: Respond personally (not automated). Apologize for the experience. Ask for a 15-minute call to understand the issue. Log their feedback in Attio using `attio-list-management` and assign follow-up to the account owner.
+- **Detractors**: Respond personally (not automated). Apologize for the experience. Ask for a 15-minute call to understand the issue. Log their feedback in Attio using `attio-lists` and assign follow-up to the account owner.
 
 ### 5. Route actionable feedback to product
 

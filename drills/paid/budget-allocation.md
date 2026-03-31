@@ -8,8 +8,8 @@ tools:
   - LinkedIn Ads
   - Meta Ads
 fundamentals:
-  - posthog-event-tracking
-  - posthog-funnel-tracking
+  - posthog-custom-events
+  - posthog-funnels
   - google-ads-campaign-setup
   - linkedin-ads-campaign-setup
   - meta-ads-campaign-setup
@@ -34,7 +34,7 @@ Define your monthly paid media budget and any constraints: minimum spend per pla
 
 ### 2. Audit current performance by channel
 
-Using `posthog-funnel-tracking`, pull conversion data for each channel. For every platform, calculate:
+Using `posthog-funnels`, pull conversion data for each channel. For every platform, calculate:
 
 - **Cost per click (CPC)**
 - **Click-through rate (CTR)**
@@ -64,7 +64,7 @@ Do not wait for monthly reviews to shift budget. Define triggers:
 
 ### 5. Account for full-funnel attribution
 
-Using `posthog-event-tracking`, track the full customer journey across channels. First-touch attribution overvalues awareness channels. Last-touch overvalues bottom-of-funnel. Use a multi-touch model: assign partial credit to each touchpoint. This prevents cutting awareness spending that actually feeds your retargeting and search campaigns.
+Using `posthog-custom-events`, track the full customer journey across channels. First-touch attribution overvalues awareness channels. Last-touch overvalues bottom-of-funnel. Use a multi-touch model: assign partial credit to each touchpoint. This prevents cutting awareness spending that actually feeds your retargeting and search campaigns.
 
 ### 6. Review and adjust monthly
 

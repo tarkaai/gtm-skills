@@ -7,11 +7,11 @@ tools:
   - Intercom
   - n8n
 fundamentals:
-  - posthog-funnel-tracking
-  - posthog-cohort-analysis
-  - posthog-event-tracking
+  - posthog-funnels
+  - posthog-cohorts
+  - posthog-custom-events
   - intercom-product-tours
-  - n8n-trigger-setup
+  - n8n-triggers
 ---
 
 # Activation Optimization
@@ -29,7 +29,7 @@ This drill helps you find your product's true activation metric, measure it accu
 
 ### 1. Find your activation metric
 
-Using the `posthog-cohort-analysis` fundamental, compare retained users (active at Day 30) to churned users (inactive by Day 30). Look for the actions that most clearly separate the two groups. Common activation metrics:
+Using the `posthog-cohorts` fundamental, compare retained users (active at Day 30) to churned users (inactive by Day 30). Look for the actions that most clearly separate the two groups. Common activation metrics:
 
 - Created their first [core object] within 48 hours
 - Completed a specific workflow end-to-end
@@ -41,7 +41,7 @@ The best activation metric has the highest correlation with 30-day retention and
 
 ### 2. Measure your current activation rate
 
-Using `posthog-funnel-tracking`, build a funnel from signup to activation. Break it down by: signup source, plan type, user role, and cohort week. Your activation rate is the percentage of signups that reach the activation metric within your time window (typically 7-14 days). Identify the biggest drop-off steps in the funnel.
+Using `posthog-funnels`, build a funnel from signup to activation. Break it down by: signup source, plan type, user role, and cohort week. Your activation rate is the percentage of signups that reach the activation metric within your time window (typically 7-14 days). Identify the biggest drop-off steps in the funnel.
 
 ### 3. Remove friction at drop-off points
 
@@ -54,7 +54,7 @@ For each major drop-off step, diagnose the friction:
 
 ### 4. Build activation nudges
 
-Using the `n8n-trigger-setup` fundamental, create workflows that nudge inactive users toward activation. If a user signs up but has not completed Step 2 of the funnel after 24 hours, trigger a help message via Intercom. If they completed Step 2 but stalled at Step 3, send a contextual email with a tutorial for that specific step.
+Using the `n8n-triggers` fundamental, create workflows that nudge inactive users toward activation. If a user signs up but has not completed Step 2 of the funnel after 24 hours, trigger a help message via Intercom. If they completed Step 2 but stalled at Step 3, send a contextual email with a tutorial for that specific step.
 
 ### 5. Run activation experiments
 

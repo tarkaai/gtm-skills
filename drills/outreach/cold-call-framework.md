@@ -7,9 +7,9 @@ tools:
   - Clay
   - PostHog
 fundamentals:
-  - attio-deal-tracking
+  - attio-deals
   - clay-enrichment-waterfall
-  - posthog-event-tracking
+  - posthog-custom-events
 ---
 
 # Cold Call Framework
@@ -49,8 +49,8 @@ Prepare responses for the top 5 objections: "not interested," "we already have s
 
 ### 5. Log every call in Attio
 
-Using the `attio-deal-tracking` fundamental, log call outcome immediately after hanging up: connected/voicemail/gatekeeper, duration, outcome (meeting set, follow-up requested, not interested, call back later), and any notes on their situation. Tag calls with the signal that triggered them.
+Using the `attio-deals` fundamental, log call outcome immediately after hanging up: connected/voicemail/gatekeeper, duration, outcome (meeting set, follow-up requested, not interested, call back later), and any notes on their situation. Tag calls with the signal that triggered them.
 
 ### 6. Track and improve
 
-Log call metrics in PostHog using the `posthog-event-tracking` fundamental: calls made, connect rate, conversation rate, meeting rate. Review weekly. Benchmark: 20% connect rate, 10% meaningful conversation rate, 3-5% meeting rate from cold calls.
+Log call metrics in PostHog using the `posthog-custom-events` fundamental: calls made, connect rate, conversation rate, meeting rate. Review weekly. Benchmark: 20% connect rate, 10% meaningful conversation rate, 3-5% meeting rate from cold calls.

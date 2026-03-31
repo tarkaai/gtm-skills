@@ -9,7 +9,7 @@ tools:
 fundamentals:
   - loom-recording
   - descript-editing
-  - posthog-event-tracking
+  - posthog-custom-events
 ---
 
 # Video Content Pipeline
@@ -54,4 +54,4 @@ Upload the full video to your website or blog. Post clips to LinkedIn and Twitte
 
 ### 6. Track engagement
 
-Using `posthog-event-tracking`, track video plays, watch time, completion rate, and CTA clicks. Videos with high drop-off in the first 10 seconds need better hooks. Videos with high completion but low CTA clicks need stronger calls to action. Iterate based on data.
+Using `posthog-custom-events`, track video plays, watch time, completion rate, and CTA clicks. Videos with high drop-off in the first 10 seconds need better hooks. Videos with high completion but low CTA clicks need stronger calls to action. Iterate based on data.

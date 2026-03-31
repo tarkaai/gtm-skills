@@ -8,10 +8,10 @@ tools:
   - Intercom
   - Attio
 fundamentals:
-  - posthog-event-tracking
-  - loops-transactional-emails
+  - posthog-custom-events
+  - loops-transactional
   - intercom-in-app-messages
-  - attio-list-management
+  - attio-lists
 ---
 
 # Referral Program
@@ -38,11 +38,11 @@ Keep the incentive simple to explain in one sentence. Complicated programs do no
 
 ### 2. Build the referral mechanism
 
-Create unique referral links or codes per user. Track referral events in PostHog using `posthog-event-tracking`: link shared, link clicked, referee signed up, referee activated, reward unlocked. The tracking chain must be airtight — users will not refer if rewards are not reliably delivered.
+Create unique referral links or codes per user. Track referral events in PostHog using `posthog-custom-events`: link shared, link clicked, referee signed up, referee activated, reward unlocked. The tracking chain must be airtight — users will not refer if rewards are not reliably delivered.
 
 ### 3. Identify and activate referrers
 
-Using the `attio-list-management` fundamental, pull your promoter list from NPS data and your most active users from PostHog. These are your seed referrers. Do not blast the referral program to everyone — start with users who already love the product. They will convert at higher rates and set social proof.
+Using the `attio-lists` fundamental, pull your promoter list from NPS data and your most active users from PostHog. These are your seed referrers. Do not blast the referral program to everyone — start with users who already love the product. They will convert at higher rates and set social proof.
 
 ### 4. Prompt referrals at the right moment
 
@@ -57,7 +57,7 @@ The prompt should be celebratory: "You've accomplished X — know someone who'd 
 
 ### 5. Automate the reward fulfillment
 
-Using `loops-transactional-emails`, send automated emails at each step: confirmation when someone uses their link, notification when the referee signs up, reward notification when the referee activates. Make the referrer feel appreciated at every stage. Include a running count of their referrals.
+Using `loops-transactional`, send automated emails at each step: confirmation when someone uses their link, notification when the referee signs up, reward notification when the referee activates. Make the referrer feel appreciated at every stage. Include a running count of their referrals.
 
 ### 6. Measure and optimize
 
