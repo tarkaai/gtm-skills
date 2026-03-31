@@ -1,80 +1,119 @@
 ---
 name: power-user-program-baseline
 description: >
-    Power User Identification — Baseline Run. Identify and nurture power users with advanced
-  features, exclusive access, and community recognition.
+  Power User Program — Baseline Run. Launch a tiered advocacy program (Insider,
+  Advocate, Ambassador) with automated enrollment, recognition, and first-action
+  activation. Run always-on for 4 weeks and measure advocate activation rate.
 stage: "Product > Referrals"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
 level: "Baseline Run"
-time: "16 hours over 2 weeks"
-outcome: "≥40% become advocates"
-kpis: ["Power user ID", "Advocacy rate", "Advanced usage"]
+time: "20 hours over 4 weeks"
+outcome: ">=40% of enrolled Insiders complete their first advocacy action within 30 days"
+kpis: ["Insider enrollment rate", "First-action activation rate (30-day)", "Referral submission rate", "Testimonial yield"]
 slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
 drills:
+  - advocacy-program-design
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
+  - advocacy-activation-pipeline
 ---
-# Power User Identification — Baseline Run
+
+# Power User Program — Baseline Run
 
 > **Stage:** Product → Referrals | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
-## Overview
-Power User Identification — Baseline Run. Identify and nurture power users with advanced features, exclusive access, and community recognition.
+## Outcomes
 
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** ≥40% become advocates
+A tiered advocacy program runs always-on: power users are automatically enrolled as Insiders when they cross score 60, they receive in-app recognition and exclusive access, and automated sequences guide them toward their first advocacy action. After 4 weeks, at least 40% of enrolled Insiders have completed a testimonial, referral, or review.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Enrollment celebration messages have a >60% view rate in Intercom (users are seeing the program)
+- Welcome email sequence has >40% open rate in Loops (messaging resonates)
+- At least 30% of enrolled users click a referral link or testimonial CTA within 14 days
+- At least 5 Insiders are promoted to Advocate within the first 4 weeks
+- Referral links are being shared (link-click events in PostHog)
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `power-user-program_impression`, `power-user-program_engaged`, `power-user-program_converted`, `power-user-program_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Design the advocacy program
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Run the `advocacy-program-design` drill to produce the full program specification:
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+- Define the 3-tier structure: Insider (score 60-79), Advocate (score 80-89), Ambassador (score 90+, sustained 3 months)
+- Design tier benefits: Insider gets early feature access + insider email + profile badge. Advocate adds roadmap preview + community channel + referral rewards. Ambassador adds advisory board + co-marketing + product leadership access.
+- Define advocacy asks per tier: Insider opts into testimonial list and surveys. Advocate provides a testimonial, refers 1 lead/quarter, participates in case study. Ambassador speaks at events, provides ongoing referrals, serves as sales reference.
+- Design the recognition system: in-app enrollment celebration, tier promotion modal, milestone thank-you messages
+- Build email sequences: Insider welcome (3 emails / 2 weeks), Advocate activation (4 emails / 3 weeks)
+- Define the event schema for all advocacy actions in PostHog
 
-### 4. Evaluate against threshold
-Measure against: ≥40% become advocates. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+**Human action required:** Review the program specification. Approve tier benefits (especially anything that requires engineering: feature flags, badges, early access). Confirm the advocacy asks are realistic for your user base. Approve email sequence copy.
 
----
+### 2. Instrument advocacy tracking
 
-## KPIs to track
-- Power user ID
-- Advocacy rate
-- Advanced usage
+Run the `posthog-gtm-events` drill to set up comprehensive tracking:
 
----
+- Implement all advocacy events: `advocacy_tier_enrolled`, `advocacy_action_completed`, `advocacy_referral_submitted`, `advocacy_tier_promoted`
+- Set person properties: `advocacy_tier`, `advocacy_enrolled_date`, `advocacy_actions_count`, `advocacy_referrals_count`
+- Build the advocacy funnel in PostHog: eligible -> enrolled -> first action -> active advocate
+- Create the advocacy dashboard: enrollment rate trend, activation funnel, referral pipeline, tier distribution
 
-## Pass threshold
-**≥40% become advocates**
+### 3. Launch the automated activation pipeline
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Run the `advocacy-activation-pipeline` drill to deploy the always-on automation:
 
----
+- Configure the daily recruitment workflow in n8n: query Attio for score-60+ users not yet enrolled, filter out ineligible users (too new, declined, open tickets), auto-enroll in Insider tier
+- Set up event-driven enrollment: when `power_user_score_computed` crosses a tier threshold, immediately trigger enrollment or promotion
+- Deploy tier enrollment automations: enable PostHog feature flags for perks, queue Intercom celebration messages, add to Loops welcome sequences, update Attio records
+- Configure the first-action nudge sequence: Day 7 in-app message, Day 14 email with pre-filled testimonial template, Day 21 alternative ask (referral link), Day 30 mark as enrolled-but-inactive
+- Set up referral tracking: validate submitted referrals, track the referral funnel (submitted -> signed up -> activated), notify referrers at each stage, trigger reward delivery
 
-## How to run this skill
+### 4. Monitor for 4 weeks
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Let the pipeline run without intervention for 4 weeks. Monitor the advocacy dashboard daily:
 
-_Install this skill: `npx gtm-skills add product/referrals/power-user-program`_
+- Is enrollment happening? (daily new Insiders count)
+- Are users seeing recognition messages? (Intercom delivery rates)
+- Are users opening advocacy emails? (Loops sequence metrics)
+- Are users completing advocacy actions? (PostHog funnel conversion)
+- Are referrals being submitted and converting? (referral pipeline metrics)
+
+Do not tweak the system during the first 4 weeks. Collect clean baseline data.
+
+### 5. Evaluate against threshold
+
+After 4 weeks, compute:
+
+- **First-action activation rate**: count of Insiders who completed at least one advocacy action within 30 days of enrollment / total Insiders enrolled in the first 2 weeks (use the first 2 weeks to allow 30-day measurement window)
+- **Pass threshold**: >=40%
+
+If PASS: the advocacy program activates power users at a rate that justifies scaling. Proceed to Scalable.
+If FAIL (30-39%): the program structure is sound but activation is slow. Diagnose where users drop off in the nudge sequence. Test different asks or timing. Re-run for 2 more weeks.
+If HARD FAIL (<30%): the program benefits may not be compelling enough, or the scoring model is surfacing users who are not actually advocacy-ready. Review the top 20 enrolled users manually and check if they match the Smoke test profile.
+
+## Time Estimate
+
+- 6 hours: advocacy program design and specification review
+- 4 hours: PostHog event instrumentation and dashboard setup
+- 6 hours: n8n automation pipeline configuration and testing
+- 2 hours: Intercom and Loops message/sequence creation
+- 2 hours: 4-week monitoring and final evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Scoring, cohorts, feature flags, funnels, dashboard | Free tier: 1M events/mo, 1M flag requests/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Intercom | In-app enrollment celebrations, nudge messages, recognition | Essential: $29/seat/mo ([intercom.com/pricing](https://intercom.com/pricing)) |
+| Loops | Welcome sequences, nudge emails, referral notifications | Starter: $49/mo up to 5,000 contacts ([loops.so/pricing](https://loops.so/pricing)) |
+| n8n | Recruitment automation, enrollment workflows, referral tracking | Self-hosted: free; Cloud: from $24/mo ([n8n.io/pricing](https://n8n.io/pricing)) |
+| Attio | Scored user records, advocacy tier tracking, pipeline management | Free tier: 3 seats ([attio.com/pricing](https://attio.com/pricing)) |
+
+**Estimated play-specific cost at this level:** $50-100/mo (Intercom seat + Loops starter; n8n self-hosted is free)
+
+## Drills Referenced
+
+- `advocacy-program-design` — designs the 3-tier advocacy program with benefits, asks, recognition, and email sequences
+- `posthog-gtm-events` — instruments all advocacy events and builds the measurement layer
+- `advocacy-activation-pipeline` — automates recruitment, enrollment, first-action nudges, and referral tracking
