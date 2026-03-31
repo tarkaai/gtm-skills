@@ -1,81 +1,95 @@
 ---
 name: habit-formation-features-smoke
 description: >
-    Habit-Building Features — Smoke Test. Design features to create daily/weekly habits through
-  streaks, reminders, and routine-based workflows.
+  Habit-Building Features — Smoke Test. Identify the 1-2 retention-critical actions, design a
+  minimal streak/reminder mechanic around them, ship to 10-20 users behind a feature flag, and
+  measure whether daily active rate reaches 30% within the first week.
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥30% daily in wk1"
-kpis: ["Daily active rate", "Streak length", "Habit formation"]
+outcome: "≥30% daily active rate among test cohort in week 1"
+kpis: ["Daily active rate", "Streak start rate", "Reminder open rate"]
 slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - gamification-system-design
+  - lead-capture-surface-setup
   - threshold-engine
 ---
+
 # Habit-Building Features — Smoke Test
 
 > **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
-## Overview
-Habit-Building Features — Smoke Test. Design features to create daily/weekly habits through streaks, reminders, and routine-based workflows.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥30% daily in wk1
+≥30% of the test cohort (10-20 users) performs the target action daily during week 1. This proves that the chosen habit mechanic creates a measurable pull-back signal before investing in automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Users view the streak counter or reminder UI within 24 hours of exposure
+- At least 50% of test users complete the target action on day 1
+- Streak start rate (users with a 2+ day streak by day 3) ≥40%
+- Reminder email open rate ≥35%
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Design the habit mechanic
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `gamification-system-design` drill scoped to a single mechanic. Do NOT build the full gamification system. Focus on:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+- Query PostHog to identify the 1-2 actions that most differentiate retained users (active 30+ days) from churned users (inactive 14+ days). These are your habit targets.
+- Select ONE mechanic: a daily streak counter tied to the top retention-critical action. Define the streak unit (daily), minimum qualifying action (1 per day), and the first 3 milestones (3-day, 7-day, 14-day).
+- Design a reminder trigger: if the user has not performed the action by 6pm local time, send a push/email nudge via Loops.
+- Document the event schema: `habit_action_completed`, `habit_streak_updated`, `habit_reminder_sent`, `habit_reminder_opened`.
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Build the in-product capture surface
+
+Run the `lead-capture-surface-setup` drill to build the habit UI surface:
+
+- Deploy a lightweight streak counter widget on the product's main screen. The widget shows: current streak count, next milestone, and a CTA to perform the target action.
+- Instrument PostHog events using `posthog-custom-events`: `habit_surface_impression` (widget enters viewport), `habit_surface_clicked` (user clicks the CTA), `habit_action_completed` (user performs the target action).
+- Gate the widget behind a PostHog feature flag targeting 10-20 specific users.
+
+**Human action required:** Review the streak counter UI and reminder email copy before enabling the feature flag. Ensure the mechanic is tied to a genuinely valuable action, not a vanity metric.
+
+### 3. Launch and observe for 7 days
+
+- Enable the feature flag for the test cohort.
+- Configure a Loops transactional email for the daily reminder: subject line referencing the user's current streak count, single CTA linking directly to the target action.
+- Monitor PostHog Live Events daily to verify events are firing correctly.
+- Log any user feedback or confusion signals (support tickets mentioning the streak, session recordings showing hesitation on the widget).
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥30% daily in wk1. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
----
+Run the `threshold-engine` drill to measure:
 
-## KPIs to track
-- Daily active rate
-- Streak length
-- Habit formation
+- **Primary metric:** Daily active rate among test cohort ≥30% averaged across days 2-7.
+- **Secondary metrics:** Streak start rate (2+ day streak) ≥40%, reminder open rate ≥35%.
+- If PASS: document which action was chosen, which mechanic worked, and proceed to Baseline.
+- If FAIL: examine PostHog funnel from `habit_surface_impression` → `habit_surface_clicked` → `habit_action_completed`. If the drop-off is at impression→click, the surface is not compelling. If at click→action, the action itself is too costly. Iterate on the weakest link and re-run.
 
----
+## Time Estimate
 
-## Pass threshold
-**≥30% daily in wk1**
+- 1 hour: PostHog analysis to identify retention-critical actions
+- 1 hour: design streak mechanic and event schema
+- 1 hour: build streak widget and instrument events
+- 0.5 hours: configure Loops reminder email and feature flag
+- 1.5 hours: daily monitoring over 7 days (15 min/day) + threshold evaluation
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Tools & Pricing
 
----
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, event tracking, cohort analysis | Free tier: 1M events/mo, 5K recordings ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Loops | Daily reminder emails | Free tier: 1,000 contacts, 2,000 sends/mo ([loops.so/pricing](https://loops.so/pricing)) |
 
-## How to run this skill
+**Estimated play-specific cost:** Free
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add product/retain/habit-formation-features`_
+- `gamification-system-design` — identify retention-critical actions and design the minimal streak mechanic
+- `lead-capture-surface-setup` — build and instrument the in-product streak widget
+- `threshold-engine` — evaluate daily active rate against the ≥30% pass threshold
