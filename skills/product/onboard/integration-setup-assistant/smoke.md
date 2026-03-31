@@ -1,81 +1,116 @@
 ---
 name: integration-setup-assistant-smoke
 description: >
-    Integration Setup Wizard — Smoke Test. Guided wizard for connecting critical integrations during
-  onboarding to unlock core functionality quickly.
+  Integration Setup Assistant -- Smoke Test. Build an AI-guided integration wizard
+  that helps new users connect their first integration during onboarding.
+  Run with 10-20 users to validate that guided setup produces higher integration
+  completion than unguided setup.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥55% complete 1 integration"
-kpis: ["Integration setup", "Integration success", "Post-integration activation"]
+outcome: ">=55% of test users complete at least 1 integration within 7 days"
+kpis: ["Integration setup start rate", "Integration setup success rate", "Time to first integration", "Post-integration activation rate"]
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - integration-wizard-build
+  - posthog-gtm-events
   - threshold-engine
 ---
-# Integration Setup Wizard — Smoke Test
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Product
+# Integration Setup Assistant -- Smoke Test
 
-## Overview
-Integration Setup Wizard — Smoke Test. Guided wizard for connecting critical integrations during onboarding to unlock core functionality quickly.
+> **Stage:** Product > Onboard | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥55% complete 1 integration
+## Outcomes
 
----
+>=55% of test users (10-20 users) complete at least 1 integration within 7 days of signup. This validates that an AI-guided integration wizard produces higher setup completion than the current unguided experience.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Wizard checklist open rate >80% (users see and engage with the wizard)
+- Integration setup attempt rate >60% (users click through to at least one integration)
+- Setup failure rate <30% (the guided flow reduces errors vs. unguided)
+- Rescue message engagement >20% (stalled users respond to contextual help)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Set up event tracking for the integration wizard
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `posthog-gtm-events` drill to define and implement the integration-specific event taxonomy in PostHog. At minimum, instrument these events:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+- `integration_wizard_started` -- user opens the integration setup checklist
+- `integration_step_started` -- user begins setting up a specific integration (properties: `integration_name`, `step_number`)
+- `integration_setup_attempted` -- user initiates the connection (clicks Connect, submits API key)
+- `integration_setup_succeeded` -- integration verified as connected (properties: `integration_name`, `time_to_connect_seconds`)
+- `integration_setup_failed` -- connection attempt failed (properties: `integration_name`, `error_type`, `error_message`)
+- `integration_wizard_completed` -- user finishes at least 1 integration
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Build a PostHog funnel: `integration_wizard_started` -> `integration_step_started` -> `integration_setup_attempted` -> `integration_setup_succeeded` -> `integration_wizard_completed`. Set the funnel window to 7 days.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥55% complete 1 integration. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Build the integration wizard
 
----
+Run the `integration-wizard-build` drill. For the Smoke test, limit scope to:
 
-## KPIs to track
-- Integration setup
-- Integration success
-- Post-integration activation
+- Select the top 3 integrations by activation impact (query PostHog retention data, or rank by core value delivery if no data exists)
+- Build the Intercom checklist with 3 integration steps plus a completion step
+- Build one contextual Intercom bot for the most common integration (the one with highest volume or highest failure rate)
+- Build the basic failure detection n8n workflow for the top 3 integrations
+- Build the stalled-user rescue workflow (6-hour check + 48-hour email fallback)
+- Skip persona-specific variants -- use one generic wizard for all users
 
----
+**Human action required:** Review the Intercom checklist copy before launching. Ensure each step's description clearly states what the integration does for the user and how long setup takes. Approve the bot conversation flow.
 
-## Pass threshold
-**≥55% complete 1 integration**
+### 3. Launch to a small test group
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Create a PostHog feature flag `integration-wizard-smoke` set to roll out to the next 10-20 new signups. Users in the flag group see the Intercom integration checklist on first login. Users outside the flag group get the existing unguided experience.
 
----
+**Human action required:** Enable the feature flag and monitor the first 2-3 users through the wizard. Watch PostHog Live Events to confirm all events fire correctly. Watch Intercom for bot conversations to confirm the guidance flow works. Fix any broken steps before continuing.
 
-## How to run this skill
+### 4. Monitor for 7 days
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Check PostHog daily during the test period:
+- Are users starting the wizard? (Check `integration_wizard_started` count)
+- Where are they dropping off? (Check the setup funnel step-by-step)
+- What errors are they hitting? (Check `integration_setup_failed` by `error_type`)
+- Are rescue messages working? (Check if stalled users return after receiving messages)
 
-_Install this skill: `npx gtm-skills add product/onboard/integration-setup-assistant`_
+Log observations in Attio as notes on the play record.
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill to measure against the pass criteria:
+
+- **Primary metric:** % of test users who completed at least 1 integration within 7 days
+- **Pass threshold:** >=55%
+- **Secondary metrics:** wizard start rate, per-integration success rate, average time to connect, rescue recovery rate
+
+If PASS (>=55%): Document what worked -- which integrations had highest/lowest success rates, what error types were most common, whether rescue messages were effective. Proceed to Baseline.
+
+If FAIL (<55%): Diagnose using the PostHog funnel. If users are not starting the wizard, the checklist is not visible enough or the copy is not compelling. If users start but fail, the setup guidance or error recovery needs improvement. Fix the biggest drop-off point and re-run with another 10-20 users.
+
+## Time Estimate
+
+- 2 hours: Event tracking setup and wizard build (Steps 1-2)
+- 0.5 hours: Feature flag setup and launch review (Step 3)
+- 1.5 hours: Daily monitoring over 7 days (Step 4)
+- 1 hour: Analysis and threshold evaluation (Step 5)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, funnels, feature flags | Free tier: 1M events/mo, unlimited feature flags ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Intercom | Checklists, bots, in-app messages | Essential: $29/seat/mo; Early Stage: up to 90% off year 1 ([intercom.com/pricing](https://www.intercom.com/pricing)) |
+| n8n | Failure detection and rescue workflows | Free self-hosted; Cloud Starter: $24/mo ([n8n.io/pricing](https://n8n.io/pricing/)) |
+| Loops | Fallback rescue emails | Free: 1,000 contacts, 4,000 emails/mo ([loops.so/pricing](https://loops.so/pricing)) |
+
+**Estimated play-specific cost at Smoke:** Free (all tools within free tier limits for 10-20 users)
+
+## Drills Referenced
+
+- `integration-wizard-build` -- builds the Intercom checklist, contextual bots, failure detection, and rescue workflows
+- `posthog-gtm-events` -- defines and implements the event taxonomy for integration tracking
+- `threshold-engine` -- evaluates pass/fail against the 55% completion threshold
