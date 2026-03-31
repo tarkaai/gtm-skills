@@ -16,7 +16,6 @@ slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
   - ab-test-orchestrator
-  - youtube-preroll-audience-builder
   - dashboard-builder
   - tool-sync-workflow
   - budget-allocation
@@ -48,7 +47,7 @@ At Scalable, the agent manages campaigns weekly. A human reviews the weekly repo
 
 If you ran 2 pain points in Baseline, add a third. For each pain point, run all 3 audience types:
 
-Run the `youtube-preroll-audience-builder` drill at scalable volume:
+Run the the youtube preroll audience builder workflow (see instructions below) drill at scalable volume:
 - **Placements:** 100-200 channels + 50 specific video placements. Use YouTube Data API to auto-discover new channels weekly: search for videos published in the last 30 days that match your pain point keywords, extract their channel IDs, filter by subscriber count.
 - **Custom intent:** 3 segments (one per pain point, 10-15 keywords each)
 - **Topics + Affinity:** Broader targeting as a discovery layer. Layer topic targeting with in-market audiences for "Business Software" or "IT Services."
@@ -204,7 +203,7 @@ Total: ~75 hours over 4 months (front-loaded in first 2 weeks, then ~4 hrs/week 
 
 - `ab-test-orchestrator` — systematic creative and audience testing with statistical rigor
 - the youtube preroll creative pipeline workflow (see instructions below) — bi-weekly creative brief generation and testing (30-50 variants over 4 months)
-- `youtube-preroll-audience-builder` — 100-200 placements with automated weekly discovery
+- the youtube preroll audience builder workflow (see instructions below) — 100-200 placements with automated weekly discovery
 - `dashboard-builder` — daily health checks, fatigue detection, weekly reports
 - `tool-sync-workflow` — sync CRM, PostHog, and Google Ads bidirectionally via n8n
 - `budget-allocation` — automated budget scaling with per-campaign CPqL guardrails

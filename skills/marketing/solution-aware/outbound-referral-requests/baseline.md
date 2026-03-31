@@ -14,7 +14,6 @@ kpis: ["Request-to-intro rate", "Intro-to-meeting rate", "Days from ask to intro
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
-  - referral-network-mapping
   - warm-intro-request
   - posthog-gtm-events
   - threshold-engine
@@ -41,7 +40,7 @@ Prove that outbound referral requests produce a repeatable intro rate at moderat
 
 ### 1. Scale the referral network map with Clay
 
-Run the `referral-network-mapping` drill with Clay enrichment enabled. At Baseline, you need 70+ viable connector-target pairs, which requires mapping a larger network:
+Run the the referral network mapping workflow (see instructions below) drill with Clay enrichment enabled. At Baseline, you need 70+ viable connector-target pairs, which requires mapping a larger network:
 
 1. Export all contacts from Attio: customers, advisors, investors, partners, former colleagues, peers. Target: 100-300 contacts.
 2. Create a Clay table "Referral Network — Baseline" and import your Attio contacts
@@ -171,7 +170,7 @@ Estimated time: 1.5 hours.
 
 ## Drills Referenced
 
-- `referral-network-mapping` — maps your network to targets using Clay enrichment, scores every connector-target pair
+- the referral network mapping workflow (see instructions below) — maps your network to targets using Clay enrichment, scores every connector-target pair
 - the referral ask copywriting workflow (see instructions below) — batch generates personalized ask messages (2 variants) and forwardable blurbs for all 70+ pairs
 - `warm-intro-request` — execution mechanics for sending asks, handling responses, and managing the intro handoff
 - `posthog-gtm-events` — configures PostHog tracking for the referral funnel events

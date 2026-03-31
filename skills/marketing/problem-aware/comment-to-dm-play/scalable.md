@@ -14,7 +14,6 @@ kpis: ["Comments per week", "Author reply rate by strategy", "DM-to-meeting conv
 slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
-  - prospect-content-discovery
   - ab-test-orchestrator
 ---
 
@@ -39,7 +38,7 @@ Find the 10x multiplier for the comment-to-DM motion. The Baseline proved the mo
 
 ### 1. Automate prospect discovery at scale
 
-Run the `prospect-content-discovery` drill (Option C -- Automated):
+Run the the prospect content discovery workflow (see instructions below) drill (Option C -- Automated):
 
 1. Build the n8n workflow that aggregates posts from Taplio CRM (now tracking 80-100 profiles) and Shield (tracking 10+ peer/competitor accounts)
 2. Implement relevance scoring: topic match (pain points from ICP) x author tier x post freshness x engagement level (sweet spot: 5-50 comments)
@@ -140,6 +139,6 @@ If PASS, proceed to Durable. If FAIL, the most common issue at Scalable is quali
 
 ## Drills Referenced
 
-- `prospect-content-discovery` — automated daily comment queue generation via n8n
+- the prospect content discovery workflow (see instructions below) — automated daily comment queue generation via n8n
 - the comment to dm cadence workflow (see instructions below) — cadence management at scale with 80-100 tracked prospects
 - `ab-test-orchestrator` — systematic testing of comment strategies, timing, and DM approaches

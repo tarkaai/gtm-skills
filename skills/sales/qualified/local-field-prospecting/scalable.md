@@ -14,7 +14,6 @@ kpis: ["Meetings booked per month", "Conversation-to-meeting rate", "Pipeline va
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
-  - field-contact-logging
   - enrich-and-score
   - ab-test-orchestrator
 ---
@@ -153,7 +152,7 @@ Total: ~50 hours over 2 months (~6 hours/week)
 ## Drills Referenced
 
 - the field visit planning workflow (see instructions below) — weekly venue research with pre-enriched target lists
-- `field-contact-logging` — structured CRM logging with A/B test variant tracking
+- the field contact logging workflow (see instructions below) — structured CRM logging with A/B test variant tracking
 - the field territory optimization workflow (see instructions below) — data-driven venue/territory/timing optimization
 - `enrich-and-score` — pre-enrich venue businesses so founder has targets before arriving
 - `ab-test-orchestrator` — systematically test pitch variants and follow-up approaches

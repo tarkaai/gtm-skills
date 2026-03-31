@@ -15,7 +15,6 @@ slug: "outbound-founder-email"
 install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
   - icp-definition
-  - founder-cold-email-copy
 ---
 
 # Outbound Founder-Led Email — Smoke Test
@@ -56,7 +55,7 @@ Use the `attio-contacts` fundamental to log each prospect in Attio with status "
 
 ### 3. Write the 3-step email sequence
 
-Run the `founder-cold-email-copy` drill to write a 3-step sequence. At Smoke level, you are sending manually, so the output is a Google Doc or text file with:
+Run the the founder cold email copy workflow (see instructions below) drill to write a 3-step sequence. At Smoke level, you are sending manually, so the output is a Google Doc or text file with:
 - Email 1 template (the founder intro — under 90 words)
 - Email 2 template (the proof point — under 70 words)
 - Email 3 template (the direct ask — under 60 words)
@@ -89,7 +88,7 @@ Count: total emails sent, positive replies, meetings booked. Compute positive re
 
 - ICP definition and competitive context: 1 hour
 - Prospect list building (manual): 1 hour
-- Email copywriting with `founder-cold-email-copy` drill: 1 hour
+- Email copywriting with the founder cold email copy workflow (see instructions below) drill: 1 hour
 - Sending, monitoring, and replying over 7 days: 1 hour total
 - Total: ~4 hours of active work spread over 1 week
 
@@ -106,4 +105,4 @@ Count: total emails sent, positive replies, meetings booked. Compute positive re
 ## Drills Referenced
 
 - `icp-definition` — define the target audience and competitive context for solution-aware messaging
-- `founder-cold-email-copy` — write the 3-step sequence in the founder's voice with solution-aware positioning
+- the founder cold email copy workflow (see instructions below) — write the 3-step sequence in the founder's voice with solution-aware positioning

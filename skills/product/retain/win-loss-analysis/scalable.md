@@ -14,8 +14,6 @@ kpis: ["Interview completion rate", "Win rate trend", "Insight implementation ra
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
-  - win-loss-interview-pipeline
-  - win-loss-insight-extraction
   - dashboard-builder
   - threshold-engine
 ---
@@ -100,7 +98,7 @@ Log impact measurements in PostHog as events: `winloss_change_impact` with prope
 
 As deal volume grows, the founder cannot conduct every interview personally:
 
-- Train 1-2 team members on the interview protocol from the `win-loss-interview-pipeline` drill
+- Train 1-2 team members on the interview protocol from the the win loss interview pipeline workflow (see instructions below) drill
 - Create a shared interview guide document that standardizes questions and probing techniques
 - Use Fireflies' team features so all interviewers' recordings flow into the same analysis pipeline
 - Implement a rotation: founder handles strategic/large deals, team handles standard deals
@@ -145,8 +143,8 @@ If FAIL: Diagnose. Low coverage = outreach optimization needed. No measurable im
 
 ## Drills Referenced
 
-- `win-loss-interview-pipeline` — Optimized outreach, scheduling, and recording at scale
-- `win-loss-insight-extraction` — Automated AI analysis of every transcript and survey
+- the win loss interview pipeline workflow (see instructions below) — Optimized outreach, scheduling, and recording at scale
+- the win loss insight extraction workflow (see instructions below) — Automated AI analysis of every transcript and survey
 - the win loss reporting workflow (see instructions below) — Monthly automated reports with trend analysis and recommendations
 - `dashboard-builder` — PostHog dashboard for real-time win/loss intelligence
 - `threshold-engine` — Evaluates results against the pass threshold

@@ -65,7 +65,7 @@ Fire these events via n8n webhooks triggered by CRM updates, or log them manuall
 Each business day:
 
 **Morning (20-30 min):**
-1. The agent runs `prospect-content-discovery` (Option B -- semi-automated via Taplio) to surface today's commentable posts
+1. The agent runs the prospect content discovery workflow (see instructions below) (Option B -- semi-automated via Taplio) to surface today's commentable posts
 2. The founder reviews the queue and selects 5-8 posts
 3. The agent drafts comments using the the comment crafting workflow (see instructions below) drill strategies
 4. The founder reviews, edits for voice, and posts each comment

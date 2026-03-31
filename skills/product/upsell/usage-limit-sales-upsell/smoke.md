@@ -15,7 +15,6 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - usage-threshold-detection
-  - expansion-signal-qualification
   - threshold-engine
 ---
 
@@ -78,7 +77,7 @@ Export the results. Classify each account by urgency tier: approaching (70-84%),
 
 ### 3. Manually qualify accounts for sales outreach
 
-Run the `expansion-signal-qualification` drill manually on the detected accounts:
+Run the the expansion signal qualification workflow (see instructions below) drill manually on the detected accounts:
 
 1. Pull account context from Attio: MRR, plan tier, days since signup, account owner, support ticket history
 2. Apply the qualification gates: MRR >= $100, active >= 30 days, no active expansion deal, no critical support tickets open
@@ -149,5 +148,5 @@ If PASS (1+ deal closed), proceed to Baseline. If FAIL, examine: were the accoun
 ## Drills Referenced
 
 - `usage-threshold-detection` — identifies accounts approaching plan limits by querying PostHog usage data (run manually for Smoke)
-- `expansion-signal-qualification` — qualifies detected accounts for sales outreach using CRM context and scoring criteria (run manually for Smoke)
+- the expansion signal qualification workflow (see instructions below) — qualifies detected accounts for sales outreach using CRM context and scoring criteria (run manually for Smoke)
 - `threshold-engine` — evaluates whether the expansion close rate meets the pass threshold

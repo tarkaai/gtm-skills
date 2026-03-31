@@ -14,7 +14,6 @@ kpis: ["Stakeholder mapping automation rate", "Post-call extraction completion r
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - stakeholder-discovery-call
   - threshold-engine
 ---
 
@@ -41,7 +40,7 @@ First always-on automation for multi-stakeholder discovery. The agent automatica
 
 ### 1. Deploy Automated Post-Call Extraction
 
-Run the `stakeholder-discovery-call` drill in always-on mode:
+Run the the stakeholder discovery call workflow (see instructions below) drill in always-on mode:
 
 **Set up the Fireflies webhook in n8n:**
 1. Create an n8n workflow triggered by the Fireflies `TRANSCRIPTION_COMPLETED` webhook
@@ -127,6 +126,6 @@ If FAIL: Diagnose — is the issue transcript quality (Fireflies missing speaker
 
 ## Drills Referenced
 
-- `stakeholder-discovery-call` — automated post-call workflow: transcript retrieval, per-stakeholder sentiment extraction, concern mapping, CRM updates, and follow-up routing
+- the stakeholder discovery call workflow (see instructions below) — automated post-call workflow: transcript retrieval, per-stakeholder sentiment extraction, concern mapping, CRM updates, and follow-up routing
 - the stakeholder consensus tracker workflow (see instructions below) — continuous consensus score computation, degradation detection, intervention recommendations, and pre-proposal gate checking
 - `threshold-engine` — evaluate automation effectiveness against the pass threshold

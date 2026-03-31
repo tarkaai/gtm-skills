@@ -16,7 +16,6 @@ slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
   - autonomous-optimization
-  - chatbot-resolution-monitor
 ---
 
 # AI In-App Support — Durable Intelligence
@@ -86,7 +85,7 @@ Run the `autonomous-optimization` drill to create the ongoing observability laye
 
 ### 3. Maintain chatbot performance monitoring
 
-Run the `chatbot-resolution-monitor` drill continuously:
+Run the the chatbot resolution monitor workflow (see instructions below) drill continuously:
 - Live dashboard tracking resolution rate, CSAT, escalation patterns, support load impact
 - Anomaly alerts feeding into the autonomous optimization loop
 - Weekly health reports comparing AI chatbot metrics to pre-chatbot baseline
@@ -143,4 +142,4 @@ Measure at 3-month and 6-month checkpoints:
 
 - `autonomous-optimization` — the core always-on loop: monitor → diagnose → experiment → evaluate → implement. Detects metric anomalies, generates improvement hypotheses, runs A/B experiments, and auto-implements winners. Converges when successive experiments produce <2% improvement.
 - `autonomous-optimization` — ongoing monitoring of support ticket trends, churn prediction accuracy, intervention effectiveness, and model drift
-- `chatbot-resolution-monitor` — live chatbot performance dashboard, anomaly alerts, weekly health reports, knowledge gap closure tracking
+- the chatbot resolution monitor workflow (see instructions below) — live chatbot performance dashboard, anomaly alerts, weekly health reports, knowledge gap closure tracking

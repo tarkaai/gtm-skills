@@ -15,7 +15,6 @@ slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
   - icp-definition
-  - youtube-keyword-research
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ Run the `icp-definition` drill. Document:
 
 ### 2. Research YouTube keyword demand
 
-Run the `youtube-keyword-research` drill with your ICP pain points as seed keywords.
+Run the the youtube keyword research workflow (see instructions below) drill with your ICP pain points as seed keywords.
 
 For the Smoke Test, limit scope:
 - Run autocomplete expansion on your top 10 seed keywords
@@ -119,6 +118,6 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `icp-definition` — define the target audience and their YouTube search behavior
-- `youtube-keyword-research` — find validated search queries with manageable competition
+- the youtube keyword research workflow (see instructions below) — find validated search queries with manageable competition
 - the youtube video publish workflow (see instructions below) — record, edit, optimize, and upload each video
 - `threshold-engine` — evaluate pass/fail against the smoke test threshold

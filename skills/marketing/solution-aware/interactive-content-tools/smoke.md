@@ -15,7 +15,6 @@ slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
   - icp-definition
-  - interactive-tool-build
   - threshold-engine
 ---
 
@@ -49,7 +48,7 @@ Pick ONE tool concept. Choose the concept where:
 
 ### 2. Build the interactive tool
 
-Run the `interactive-tool-build` drill to research the pain landscape, design the input fields and calculation logic, build the tool in Tally (free) or a simple web page, gate results behind email capture, and deploy on a landing page.
+Run the the interactive tool build workflow (see instructions below) drill to research the pain landscape, design the input fields and calculation logic, build the tool in Tally (free) or a simple web page, gate results behind email capture, and deploy on a landing page.
 
 At Smoke level, use Tally for the tool (zero cost, fast to build). Keep it to 5-7 input fields maximum. The tool should be completable in under 90 seconds.
 
@@ -110,5 +109,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `icp-definition` — define the target persona and identify the pain point the tool addresses
-- `interactive-tool-build` — build the interactive tool, deploy it, wire tracking and CRM routing
+- the interactive tool build workflow (see instructions below) — build the interactive tool, deploy it, wire tracking and CRM routing
 - `threshold-engine` — evaluate tool completions and email captures against the pass threshold

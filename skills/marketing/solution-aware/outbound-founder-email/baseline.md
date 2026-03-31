@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
   - build-prospect-list
   - enrich-and-score
-  - founder-cold-email-copy
   - cold-email-sequence
   - posthog-gtm-events
 ---
@@ -68,7 +67,7 @@ Target: 100+ verified, scored, enriched contacts with personalization data ready
 
 ### 3. Write and load the email sequence
 
-Run the `founder-cold-email-copy` drill to produce the 3-step sequence. Use the same competitive positioning that worked in Smoke, but update the proof points if you booked meetings in Smoke — those meetings may have given you sharper customer stories.
+Run the the founder cold email copy workflow (see instructions below) drill to produce the 3-step sequence. Use the same competitive positioning that worked in Smoke, but update the proof points if you booked meetings in Smoke — those meetings may have given you sharper customer stories.
 
 Using the `cold-email-sequence` drill, load the sequence into Instantly:
 - Map Clay personalization variables to Instantly merge fields: `{{firstName}}`, `{{companyName}}`, `{{personalization_line}}`, `{{likely_alternative}}`, `{{similar_customer}}`, `{{proof_metric}}`
@@ -144,6 +143,6 @@ Pull the PostHog funnel data. Compute:
 
 - `build-prospect-list` — source 150 contacts from Apollo/Clay matching the validated ICP
 - `enrich-and-score` — verify emails, enrich firmographics, score against ICP, add personalization data
-- `founder-cold-email-copy` — write the 3-step founder email sequence with solution-aware positioning
+- the founder cold email copy workflow (see instructions below) — write the 3-step founder email sequence with solution-aware positioning
 - `cold-email-sequence` — load the sequence into Instantly with proper configuration
 - `posthog-gtm-events` — set up event tracking to measure the email-to-meeting funnel

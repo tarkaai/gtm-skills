@@ -16,7 +16,6 @@ kpis: ["Qualified leads per conference", "Meetings booked per conference", "Cost
 slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
-  - conference-sponsorship-pipeline
   - ab-test-orchestrator
 ---
 
@@ -44,7 +43,7 @@ drills:
 
 ### 1. Build the quarterly conference program
 
-Run the `conference-sponsorship-pipeline` drill to evaluate 10-15 conferences for the next 6 months. Apply Baseline learnings to refine the scoring model:
+Run the the conference sponsorship pipeline workflow (see instructions below) drill to evaluate 10-15 conferences for the next 6 months. Apply Baseline learnings to refine the scoring model:
 
 - Increase weight on factors that predicted Baseline success (e.g., if ICP density was the strongest predictor, weight it 45% instead of 35%)
 - Decrease weight on factors that did not correlate with results
@@ -56,7 +55,7 @@ Plan budget allocation across conferences. Invest more in conferences that score
 
 ### 2. Automate pre-event targeting at scale
 
-For each conference, automate the pre-event sequence using the `conference-sponsorship-pipeline` drill's pre-event steps, now running as n8n workflows:
+For each conference, automate the pre-event sequence using the the conference sponsorship pipeline workflow (see instructions below) drill's pre-event steps, now running as n8n workflows:
 
 - **T-30 days**: n8n workflow triggers Clay to search for conference attendees, speakers, and sponsor employees. Enrichment waterfall runs automatically. Scored contacts land in Attio with a "Pre-Event Target" tag.
 - **T-21 days**: n8n triggers a Loops email sequence to top-scored targets: pre-event outreach offering booth meetings. Track open and reply rates in PostHog.
@@ -142,7 +141,7 @@ After 6 months (4-6 conferences), evaluate:
 
 ## Drills Referenced
 
-- `conference-sponsorship-pipeline` — quarterly conference program planning, scoring, and pre-event automation
+- the conference sponsorship pipeline workflow (see instructions below) — quarterly conference program planning, scoring, and pre-event automation
 - the booth lead capture workflow (see instructions below) — standardized booth execution with real-time lead qualification
 - the booth follow up nurture workflow (see instructions below) — automated tier-segmented follow-up sequences with optimization
 - `ab-test-orchestrator` — systematic testing of booth tactics, follow-up format, timing, and demo approach

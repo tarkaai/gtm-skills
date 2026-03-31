@@ -14,7 +14,6 @@ slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
   - icp-definition
-  - prospect-content-discovery
   - threshold-engine
 ---
 
@@ -41,7 +40,7 @@ Run the `icp-definition` drill to establish who you are targeting. For this play
 
 ### 2. Build your initial comment target list
 
-Run the `prospect-content-discovery` drill (Option A -- Manual) to build a list of 15-20 LinkedIn profiles:
+Run the the prospect content discovery workflow (see instructions below) drill (Option A -- Manual) to build a list of 15-20 LinkedIn profiles:
 - 10 direct ICP prospects (people who could buy your product and post on LinkedIn)
 - 5 industry peers whose audience contains your ICP
 - 5 big accounts (10K+ followers) in your space
@@ -110,6 +109,6 @@ If PASS, proceed to Baseline. If FAIL, diagnose: Was it comment quality (low rep
 ## Drills Referenced
 
 - `icp-definition` — define who to target with comments
-- `prospect-content-discovery` — find posts to comment on daily
+- the prospect content discovery workflow (see instructions below) — find posts to comment on daily
 - the comment crafting workflow (see instructions below) — write comments that build familiarity
 - `threshold-engine` — evaluate pass/fail against targets

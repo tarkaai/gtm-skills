@@ -68,7 +68,7 @@ Run the `build-prospect-list` drill to source 15-20 contacts matching your ICP. 
 
 1. Before each call: the agent reviews pre-enrichment data and generates a customized timing question guide targeting the biggest unknowns
 2. During the call: weave timing questions naturally into the conversation. Focus on the [MUST ASK] questions: "What's driving you to solve this now?", "When do you need this in place?", "What happens if you don't solve this by then?"
-3. After each call: the agent retrieves the Fireflies transcript, runs `call-transcript-timing-extraction` to extract timeline signals, scores the deal, and updates Attio
+3. After each call: the agent retrieves the Fireflies transcript, runs the call transcript timing extraction workflow (see instructions below) to extract timeline signals, scores the deal, and updates Attio
 
 The drill handles pre-call prep, post-call extraction, scoring, and CRM logging automatically. The only human step is conducting the actual call.
 

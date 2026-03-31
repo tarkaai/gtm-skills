@@ -14,7 +14,6 @@ kpis: ["Tool completion rate", "Email capture rate", "SQL conversion rate", "Cos
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
-  - interactive-tool-build
   - posthog-gtm-events
   - lead-capture-surface-setup
   - threshold-engine
@@ -42,7 +41,7 @@ Expand from 1 tool to 3-5 tools covering different buyer journey stages. Deploy 
 
 ### 1. Build 2-4 additional interactive tools
 
-Run the `interactive-tool-build` drill for each new tool. Choose tools that cover different stages of the buyer journey:
+Run the the interactive tool build workflow (see instructions below) drill for each new tool. Choose tools that cover different stages of the buyer journey:
 
 - **Awareness stage tool:** A benchmarking or assessment tool that helps the prospect discover they have a problem. Example: "How does your {metric} compare to industry benchmarks?"
 - **Consideration stage tool:** A cost estimator or ROI calculator that quantifies the problem. Example: "Calculate the true cost of {pain point} at your company"
@@ -131,7 +130,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Drills Referenced
 
-- `interactive-tool-build` — build each additional interactive tool with tracking and CRM routing
+- the interactive tool build workflow (see instructions below) — build each additional interactive tool with tracking and CRM routing
 - `posthog-gtm-events` — standardize event taxonomy across all tools for consistent measurement
 - `lead-capture-surface-setup` — optimize email gate, CRM routing, and mobile UX per tool
 - the interactive tool nurture pipeline workflow (see instructions below) — deploy result-personalized nurture sequences with n8n routing

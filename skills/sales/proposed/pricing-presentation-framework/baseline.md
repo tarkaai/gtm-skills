@@ -14,7 +14,6 @@ kpis: ["Pricing acceptance rate", "Average discount percentage", "Tier match rat
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
-  - pricing-outcome-tracking
   - price-objection-response
   - threshold-engine
 ---
@@ -40,7 +39,7 @@ Move from manual pricing proposal assembly (Smoke) to always-on instrumented pri
 
 ### 1. Set up pricing outcome tracking
 
-Run the `pricing-outcome-tracking` drill to instrument the full pricing lifecycle:
+Run the the pricing outcome tracking workflow (see instructions below) drill to instrument the full pricing lifecycle:
 
 1. Configure the PostHog event schema: `pricing_proposal_generated`, `pricing_presented`, `pricing_reaction_logged`, `pricing_discount_requested`, `pricing_discount_given`, `pricing_tier_selected`, `pricing_accepted`, `pricing_rejected`
 2. Add Attio custom attributes to the Deal object: `pricing_proposal_status`, `pricing_tiers_presented`, `pricing_recommended_tier`, `pricing_tier_selected`, `pricing_discount_pct`, `pricing_reaction`, `pricing_days_to_acceptance`, `pricing_presentation_score`
@@ -129,6 +128,6 @@ If FAIL: diagnose using the pricing dashboard:
 ## Drills Referenced
 
 - the pricing proposal assembly workflow (see instructions below) — generates Good/Better/Best proposals from deal pain data with value anchoring and discount guardrails
-- `pricing-outcome-tracking` — instruments the full pricing lifecycle in PostHog and Attio with funnels and dashboards
+- the pricing outcome tracking workflow (see instructions below) — instruments the full pricing lifecycle in PostHog and Attio with funnels and dashboards
 - `price-objection-response` — diagnoses objection root cause, selects response framework, generates tailored response, and logs outcome
 - `threshold-engine` — evaluates pass/fail against >=80% coverage / >=65% acceptance / <=12% discount targets

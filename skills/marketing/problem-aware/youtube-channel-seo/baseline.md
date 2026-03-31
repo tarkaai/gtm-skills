@@ -14,7 +14,6 @@ kpis: ["YT_SEARCH views/month", "Total views/month", "Average view percentage", 
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
-  - youtube-keyword-research
   - content-repurposing
   - posthog-gtm-events
 ---
@@ -39,7 +38,7 @@ Prove that YouTube search traffic is sustainable at a consistent publishing cade
 
 ### 1. Expand keyword research
 
-Run the `youtube-keyword-research` drill at full depth:
+Run the the youtube keyword research workflow (see instructions below) drill at full depth:
 - Expand autocomplete research to 20 seeds with alphabet-soup expansion
 - Validate search volume via Ahrefs YouTube keyword metrics or vidIQ
 - Analyze competition for the top 50 keywords
@@ -125,7 +124,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Drills Referenced
 
-- `youtube-keyword-research` — full keyword matrix and 8-week content calendar
+- the youtube keyword research workflow (see instructions below) — full keyword matrix and 8-week content calendar
 - the youtube video publish workflow (see instructions below) — weekly video production and upload pipeline
 - the youtube channel analytics workflow (see instructions below) — always-on PostHog dashboard, daily sync, and weekly reports
 - `content-repurposing` — turn each video into clips, posts, and threads

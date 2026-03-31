@@ -15,7 +15,6 @@ kpis: ["Admin setup completion rate", "User activation rate", "Team invite rate"
 slug: "admin-onboarding-flow"
 install: "npx gtm-skills add product/onboard/admin-onboarding-flow"
 drills:
-  - workspace-setup-flow
   - onboarding-flow
   - threshold-engine
 ---
@@ -52,7 +51,7 @@ For the Smoke test, classification can be simple: anyone who creates a new works
 
 ### 2. Build the admin workspace setup flow
 
-Run the `workspace-setup-flow` drill to create the admin onboarding path. Configure the Intercom Checklist with 6 setup steps: workspace creation, company profile, billing, permissions, integration connection, and first team invite. Set up auto-completion triggers for each step. Build the 5-email admin lifecycle sequence in Loops with behavioral skip logic.
+Run the the workspace setup flow workflow (see instructions below) drill to create the admin onboarding path. Configure the Intercom Checklist with 6 setup steps: workspace creation, company profile, billing, permissions, integration connection, and first team invite. Set up auto-completion triggers for each step. Build the 5-email admin lifecycle sequence in Loops with behavioral skip logic.
 
 For Smoke: use the simplest version of each step. Permissions can be a single "admin vs member" binary. Integration step can be optional. Focus on getting admins to billing + first team invite.
 
@@ -114,6 +113,6 @@ If FAIL: identify which path underperformed. If admin setup is low, simplify the
 ## Drills Referenced
 
 - the admin user role routing workflow (see instructions below) — classifies signups as admin or user and routes to the correct onboarding path
-- `workspace-setup-flow` — builds the admin workspace setup checklist, product tours, and email sequence
+- the workspace setup flow workflow (see instructions below) — builds the admin workspace setup checklist, product tours, and email sequence
 - `onboarding-flow` — builds the end-user onboarding path with product tours and email sequence
 - `threshold-engine` — evaluates admin setup completion and user activation against pass thresholds

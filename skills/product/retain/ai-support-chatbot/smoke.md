@@ -14,7 +14,6 @@ kpis: ["Chatbot engagement rate", "AI resolution rate", "CSAT for AI-resolved co
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
-  - ai-chatbot-deployment
   - threshold-engine
 ---
 
@@ -42,7 +41,7 @@ If fewer than 15 of the 20 questions have articles, write and publish the missin
 
 ### 2. Deploy the AI chatbot
 
-Run the `ai-chatbot-deployment` drill to:
+Run the the ai chatbot deployment workflow (see instructions below) drill to:
 - Enable Fin AI on your Intercom workspace
 - Connect your Help Center as the primary knowledge source
 - Add your docs site as an external URL source
@@ -91,5 +90,5 @@ If PASS on all three, proceed to Baseline. If engagement is low, the chatbot may
 
 ## Drills Referenced
 
-- `ai-chatbot-deployment` — deploys Fin AI, connects knowledge sources, instruments tracking, launches behind feature flag
+- the ai chatbot deployment workflow (see instructions below) — deploys Fin AI, connects knowledge sources, instruments tracking, launches behind feature flag
 - `threshold-engine` — evaluates engagement rate, resolution rate, and CSAT against pass thresholds

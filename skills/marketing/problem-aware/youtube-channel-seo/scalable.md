@@ -14,7 +14,6 @@ kpis: ["YT_SEARCH views/month", "Total views/month", "CTR (channel average)", "A
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
-  - youtube-keyword-research
   - ab-test-orchestrator
 ---
 
@@ -93,7 +92,7 @@ With templates and optimized workflows:
 
 ### 5. Expand keyword coverage
 
-Run `youtube-keyword-research` monthly to:
+Run the youtube keyword research workflow (see instructions below) monthly to:
 - Discover new keywords from YouTube search term data (what queries are people using that you haven't targeted?)
 - Identify keyword gaps: topics where competitors rank but you don't
 - Find long-tail opportunities: queries with low competition and clear commercial intent
@@ -145,6 +144,6 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - the youtube seo optimization workflow (see instructions below) — audit and optimize all existing video metadata, captions, and thumbnails
-- `youtube-keyword-research` — monthly keyword refresh and content series planning
+- the youtube keyword research workflow (see instructions below) — monthly keyword refresh and content series planning
 - the youtube video publish workflow (see instructions below) — templated video production at 2-3x cadence
 - `ab-test-orchestrator` — systematic thumbnail and title A/B testing

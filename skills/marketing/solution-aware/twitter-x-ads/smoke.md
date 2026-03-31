@@ -14,7 +14,6 @@ kpis: ["Impressions", "Click-through rate (CTR)", "Cost per click (CPC)", "Landi
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
 drills:
-  - twitter-x-ads-campaign-build
   - threshold-engine
 ---
 
@@ -45,7 +44,7 @@ Before touching X Ads, document:
 
 ### 2. Build the campaign
 
-Run the `twitter-x-ads-campaign-build` drill with these smoke-test-specific settings:
+Run the the twitter x ads campaign build workflow (see instructions below) drill with these smoke-test-specific settings:
 - **Budget**: $200 total, $30/day for 7 days
 - **Ad groups**: Create 2 (keyword targeting + follower-lookalike targeting)
 - **Creative**: 3 promoted tweet variants per ad group (data hook, question hook, social proof hook)
@@ -95,5 +94,5 @@ Decision tree:
 
 ## Drills Referenced
 
-- `twitter-x-ads-campaign-build` — Sets up the full campaign: audience targeting, creative variants, conversion tracking, and landing page pipeline
+- the twitter x ads campaign build workflow (see instructions below) — Sets up the full campaign: audience targeting, creative variants, conversion tracking, and landing page pipeline
 - `threshold-engine` — Evaluates final results against the >=15,000 impressions and >=5 qualified leads pass threshold

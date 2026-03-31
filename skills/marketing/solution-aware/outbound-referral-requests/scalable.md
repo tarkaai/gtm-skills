@@ -15,7 +15,6 @@ kpis: ["Monthly intro volume", "Request-to-intro rate", "Intro-to-meeting rate",
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
-  - referral-network-mapping
   - partner-relationship-scoring
 ---
 
@@ -80,7 +79,7 @@ Set up Crossbeam to systematically find new connectors beyond your personal netw
 2. Invite 3-5 complementary companies (non-competing, same buyer persona) to connect on Crossbeam. Prioritize companies whose customer base overlaps your target account list.
 3. Run overlap reports: identify which of your target accounts are customers of your Crossbeam partners. These partners can make introductions to their own customers — the strongest possible intro path.
 4. For each overlap, identify the right person at the partner company to request the intro (account manager, founder, partnerships lead). Add them to Attio as connectors with source "Crossbeam."
-5. Feed new Crossbeam-sourced connectors into the `referral-network-mapping` drill for scoring.
+5. Feed new Crossbeam-sourced connectors into the the referral network mapping workflow (see instructions below) drill for scoring.
 
 Repeat quarterly: invite new partners, re-run overlap reports, expand the connector pool.
 
@@ -88,7 +87,7 @@ Estimated time: 8 hours setup, 2 hours quarterly refresh.
 
 ### 3. Scale the referral network map
 
-Run the `referral-network-mapping` drill monthly at Scalable level, now with Clay automation:
+Run the the referral network mapping workflow (see instructions below) drill monthly at Scalable level, now with Clay automation:
 
 1. Set up a Clay workflow that automatically enriches new Attio contacts against target accounts (employment history, mutual connections, board seats)
 2. Auto-score new connector-target pairs using Clay formula columns
@@ -116,7 +115,7 @@ Estimated time: 5 hours setup, 1 hour/month maintenance.
 
 Run the the referral ask copywriting workflow (see instructions below) drill in batch mode monthly:
 
-1. Pull all new "Ask Ready" pairs from Attio (pairs scored by `referral-network-mapping` but without ask messages yet)
+1. Pull all new "Ask Ready" pairs from Attio (pairs scored by the referral network mapping workflow (see instructions below) but without ask messages yet)
 2. Batch-generate asks using Claude with context from Attio (connector relationship, target company/role, previous interaction history)
 3. Generate both variants (A and B) for continued A/B testing
 4. Auto-store in Attio as connector notes, tagged by target company
@@ -183,7 +182,7 @@ Estimated time: 2 hours/month.
 
 ## Drills Referenced
 
-- `referral-network-mapping` — monthly Clay-enriched network mapping with auto-scoring of connector-target pairs
+- the referral network mapping workflow (see instructions below) — monthly Clay-enriched network mapping with auto-scoring of connector-target pairs
 - the referral pipeline automation workflow (see instructions below) — n8n workflow suite: ask scheduling, follow-ups, intro tracking, meeting attribution, weekly summaries
 - `partner-relationship-scoring` — monthly connector scoring and tiering to optimize who gets asked for which targets
 - the referral ask copywriting workflow (see instructions below) — batch ask generation with A/B variants and quality sampling

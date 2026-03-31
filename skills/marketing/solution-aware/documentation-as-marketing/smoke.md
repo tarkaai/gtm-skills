@@ -14,7 +14,6 @@ kpis: ["Organic page views to docs", "Pages indexed in GSC", "Average position f
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
-  - docs-site-seo-audit
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ The first batch of 5-8 SEO-targeted docs pages collectively receives >= 100 orga
 
 ### 1. Audit your docs site for SEO readiness
 
-Run the `docs-site-seo-audit` drill. Provide your public docs URL, GSC access, and 2-3 competitor docs sites. The drill will:
+Run the the docs site seo audit workflow (see instructions below) drill. Provide your public docs URL, GSC access, and 2-3 competitor docs sites. The drill will:
 
 - Crawl your docs site structure and check indexation rates
 - Analyze current keyword coverage vs competitors
@@ -115,6 +114,6 @@ If PASS, proceed to Baseline. If FAIL, diagnose: are pages indexed? If indexed b
 
 ## Drills Referenced
 
-- `docs-site-seo-audit` — audit docs site SEO health, identify keyword gaps and technical issues
+- the docs site seo audit workflow (see instructions below) — audit docs site SEO health, identify keyword gaps and technical issues
 - the docs content production workflow (see instructions below) — generate, quality-check, and publish SEO-targeted docs pages
 - `threshold-engine` — evaluate 4-week results against pass threshold

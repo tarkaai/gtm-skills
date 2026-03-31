@@ -15,7 +15,6 @@ kpis: ["UGC pieces submitted (target >=5)", "Unique creators (target >=3)", "Pro
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
-  - ugc-prompt-design
   - threshold-engine
 ---
 
@@ -42,7 +41,7 @@ Fail: <5 pieces or <3 unique creators after 2 weeks of active prompting.
 
 ### 1. Design and deploy UGC prompts
 
-Run the `ugc-prompt-design` drill. For Smoke level, deploy 2-3 trigger-based prompts:
+Run the the ugc prompt design workflow (see instructions below) drill. For Smoke level, deploy 2-3 trigger-based prompts:
 
 **Post-activation prompt (highest priority):**
 Deploy an Intercom in-app message triggered 24-48 hours after the user's activation event. The message asks the user to share how they set things up. Provide a lightweight form: one text field for their tip or experience (280 characters), plus an optional longer text area. Auto-populate their name, email, and account from their session.
@@ -114,5 +113,5 @@ Count: total pieces submitted, total approved, unique creators, prompt-to-submis
 
 ## Drills Referenced
 
-- `ugc-prompt-design` — design and deploy in-product prompts at high-signal moments (post-activation, milestone, upgrade) with lightweight submission forms and frequency capping
+- the ugc prompt design workflow (see instructions below) — design and deploy in-product prompts at high-signal moments (post-activation, milestone, upgrade) with lightweight submission forms and frequency capping
 - `threshold-engine` — evaluate submission count and creator diversity against the pass threshold and recommend next action

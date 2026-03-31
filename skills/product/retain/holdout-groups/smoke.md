@@ -14,7 +14,6 @@ kpis: ["Holdout group size accuracy", "Assignment stability rate", "Baseline met
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
-  - holdout-group-setup
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ A `global-holdout` feature flag is live in PostHog, randomly assigning a fixed p
 
 ### 1. Determine holdout size and create the holdout group
 
-Run the `holdout-group-setup` drill. This will:
+Run the the holdout group setup workflow (see instructions below) drill. This will:
 - Calculate the appropriate holdout percentage based on your active user count (default 10%)
 - Create the `global-holdout` PostHog feature flag with `ensure_experience_continuity: true`
 - Create PostHog cohorts for "Holdout Group" and "Treatment Group (Non-Holdout)"
@@ -87,5 +86,5 @@ If PASS, proceed to Baseline. If FAIL, diagnose: is the flag misconfigured? Are 
 
 ## Drills Referenced
 
-- `holdout-group-setup` — provisions the holdout feature flag, creates cohorts, captures baseline
+- the holdout group setup workflow (see instructions below) — provisions the holdout feature flag, creates cohorts, captures baseline
 - `threshold-engine` — evaluates pass/fail against the smoke test criteria

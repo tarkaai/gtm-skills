@@ -14,7 +14,6 @@ kpis: ["Data quality score", "Duplicate rate", "Stale record rate", "Compliance 
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - crm-data-quality-rules
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ First always-on data quality enforcement. The agent configures stage-gate valida
 
 ### 1. Deploy Data Quality Rules
 
-Run the `crm-data-quality-rules` drill to encode your quality standards as automation:
+Run the the crm data quality rules workflow (see instructions below) drill to encode your quality standards as automation:
 
 1. Create custom attributes for all required fields across pipeline stages (the drill defines the full field matrix)
 2. Build the stage-gate enforcement n8n workflow: when a deal stage changes, validate required fields for the target stage. If fields are missing, revert the stage change, create an Attio note listing the gaps, and notify the deal owner
@@ -120,6 +119,6 @@ If FAIL: Diagnose — are reps bypassing quality rules? Is enrichment coverage t
 
 ## Drills Referenced
 
-- `crm-data-quality-rules` — define and enforce data quality rules as CRM configuration and stage-gate automation
+- the crm data quality rules workflow (see instructions below) — define and enforce data quality rules as CRM configuration and stage-gate automation
 - the crm enrichment sync workflow (see instructions below) — automatically enrich CRM records with missing data from Clay and sync updates back to Attio
 - `threshold-engine` — evaluate weekly audit results against pass thresholds

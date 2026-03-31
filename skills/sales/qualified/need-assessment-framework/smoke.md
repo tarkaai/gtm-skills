@@ -16,7 +16,6 @@ install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
   - icp-definition
   - build-prospect-list
-  - need-scorecard-setup
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ Prove that structured need assessment produces meaningful qualification signal. 
 
 ### 1. Define your ICP and need categories
 
-Run the `icp-definition` drill to document your Ideal Customer Profile. Then run the `need-scorecard-setup` drill to:
+Run the `icp-definition` drill to document your Ideal Customer Profile. Then run the the need scorecard setup workflow (see instructions below) drill to:
 
 - Define 5-7 business need categories your product addresses. Each category must be specific and tied to a measurable business outcome. Examples: "reducing manual data entry," "improving data accuracy across systems," "accelerating workflow execution," "eliminating cross-tool friction," "reducing operational cost," "improving reporting visibility," "scaling operations without adding headcount."
 - Create the scoring infrastructure in Attio: per-category severity fields (1-3 scale), aggregate total score, need tier classification, and qualification verdict
@@ -109,6 +108,6 @@ If FAIL, diagnose:
 
 - `icp-definition` — define ICP and identify which business problems your product solves
 - `build-prospect-list` — source and enrich 15-20 prospects from Clay/Apollo
-- `need-scorecard-setup` — create need assessment scoring infrastructure in Attio with categories, severity scales, and thresholds
+- the need scorecard setup workflow (see instructions below) — create need assessment scoring infrastructure in Attio with categories, severity scales, and thresholds
 - the need discovery call workflow (see instructions below) — structured need discovery call with transcript extraction and per-category scoring
 - `threshold-engine` — evaluate results against the pass threshold

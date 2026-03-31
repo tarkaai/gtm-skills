@@ -15,7 +15,6 @@ slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
 drills:
   - posthog-gtm-events
-  - marketplace-listing-optimization
   - lead-capture-surface-setup
 ---
 
@@ -62,7 +61,7 @@ Break down by `marketplace` and `template_slug`.
 
 ### 2. Optimize template listings
 
-Run the `marketplace-listing-optimization` drill. This covers:
+Run the the marketplace listing optimization workflow (see instructions below) drill. This covers:
 
 1. Researching marketplace-specific keywords using Clay Claygent
 2. Rewriting listing titles to include the highest-volume keyword
@@ -123,5 +122,5 @@ Review the full funnel data:
 ## Drills Referenced
 
 - `posthog-gtm-events` -- configures the marketplace-to-lead tracking events and funnel
-- `marketplace-listing-optimization` -- keyword research, listing A/B testing, and bi-weekly optimization cycles
+- the marketplace listing optimization workflow (see instructions below) -- keyword research, listing A/B testing, and bi-weekly optimization cycles
 - `lead-capture-surface-setup` -- builds the marketplace-specific landing page with conversion tracking and CRM routing

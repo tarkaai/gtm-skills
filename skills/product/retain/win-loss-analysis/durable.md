@@ -14,8 +14,6 @@ kpis: ["Win rate trend", "Agent-generated insight quality", "Competitive intelli
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
-  - win-loss-interview-pipeline
-  - win-loss-insight-extraction
   - dashboard-builder
   - threshold-engine
 ---
@@ -182,8 +180,8 @@ If all four pass, the play is durable. If any degrades, diagnose and correct usi
 
 ## Drills Referenced
 
-- `win-loss-interview-pipeline` — Self-healing interview pipeline with optimized outreach
-- `win-loss-insight-extraction` — Automated AI analysis with quality monitoring
+- the win loss interview pipeline workflow (see instructions below) — Self-healing interview pipeline with optimized outreach
+- the win loss insight extraction workflow (see instructions below) — Automated AI analysis with quality monitoring
 - the win loss reporting workflow (see instructions below) — Monthly automated reports + quarterly executive briefs
 - `dashboard-builder` — PostHog dashboard with alerts and trend detection
 - `threshold-engine` — Continuous evaluation against sustainability thresholds

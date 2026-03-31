@@ -16,7 +16,6 @@ slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
   - icp-definition
-  - conference-sponsorship-pipeline
   - threshold-engine
 ---
 
@@ -44,7 +43,7 @@ drills:
 
 Run the `icp-definition` drill to document the target attendee profile: which titles, company sizes, industries, and pain points should the conference audience have?
 
-Then run the `conference-sponsorship-pipeline` drill at minimum scope: identify 3-5 candidate conferences in the next 60-90 days. Score each on ICP density, attendee volume, sponsorship value, and logistics. Select the one highest-scoring conference.
+Then run the the conference sponsorship pipeline workflow (see instructions below) drill at minimum scope: identify 3-5 candidate conferences in the next 60-90 days. Score each on ICP density, attendee volume, sponsorship value, and logistics. Select the one highest-scoring conference.
 
 For the Smoke test, select the lowest-cost sponsorship tier that includes:
 - A booth or table (even a small one — you need a physical presence)
@@ -54,7 +53,7 @@ For the Smoke test, select the lowest-cost sponsorship tier that includes:
 
 ### 2. Prepare booth operations
 
-Run the `conference-sponsorship-pipeline` drill's pre-event preparation steps:
+Run the the conference sponsorship pipeline workflow (see instructions below) drill's pre-event preparation steps:
 
 - Prepare 3 demo tracks: 2-minute overview (for browsing visitors), 5-minute focused demo (for interested visitors), 15-minute deep dive (for high-intent prospects)
 - Configure the lead capture system using the `badge-scan-lead-import` fundamental: install the conference's lead retrieval app OR build a mobile Tally/Typeform form as fallback with fields: name, email, company, title, interest tier (1-4), pain point mentioned, agreed next step, demo given (y/n)
@@ -135,6 +134,6 @@ Also calculate (for baseline data, not pass/fail):
 ## Drills Referenced
 
 - `icp-definition` — define the target attendee profile to guide conference selection
-- `conference-sponsorship-pipeline` — evaluate, score, and select the conference to sponsor
+- the conference sponsorship pipeline workflow (see instructions below) — evaluate, score, and select the conference to sponsor
 - the booth lead capture workflow (see instructions below) — execute booth operations, capture and qualify leads, same-day enrichment
 - `threshold-engine` — evaluate pass/fail against badge scan, qualified lead, and meeting targets

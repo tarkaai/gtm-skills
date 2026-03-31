@@ -60,14 +60,14 @@ Build a second funnel for follow-up: `booth_followup_sent` -> `booth_followup_re
 
 ### 2. Select and prepare for 2-3 conferences
 
-Using the conference pipeline from Smoke (or running `conference-sponsorship-pipeline` again with updated scoring based on Smoke learnings), select 2-3 conferences spaced over 8-10 weeks.
+Using the conference pipeline from Smoke (or running the conference sponsorship pipeline workflow (see instructions below) again with updated scoring based on Smoke learnings), select 2-3 conferences spaced over 8-10 weeks.
 
 Apply learnings from Smoke:
 - If Smoke showed a specific demo track converted best, lead with that track at the next conference
 - If Smoke showed a specific pain point resonated, prepare more depth on that topic
 - If badge scan quality was low (too many Tier 3-4), select a more ICP-dense conference or upgrade the sponsorship tier to get a better booth location
 
-For each conference, run the full pre-event preparation from `conference-sponsorship-pipeline`:
+For each conference, run the full pre-event preparation from the conference sponsorship pipeline workflow (see instructions below):
 - Score and enrich attendees
 - Build target lists
 - Send pre-event outreach

@@ -82,7 +82,7 @@ Build an n8n workflow that tracks each variant's reply rate over a rolling 30-da
 3. Rotates in the next variant from the library
 4. Logs the rotation event in PostHog for analysis
 
-Run the `founder-cold-email-copy` drill to generate new variants as needed. The founder reviews and approves new variants once per month.
+Run the the founder cold email copy workflow (see instructions below) drill to generate new variants as needed. The founder reviews and approves new variants once per month.
 
 **Human action required:** Founder reviews and approves new copy variants once per month (~30 minutes). The agent drafts variants based on recent meeting conversations and market changes.
 

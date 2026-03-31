@@ -13,7 +13,6 @@ kpis: ["Engagement lift per page", "Experiment velocity (tests/month)", "Cumulat
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
-  - layout-variant-builder
   - ab-test-orchestrator
   - dashboard-builder
 ---
@@ -43,7 +42,7 @@ Identify the top 5 pages by retention impact. For each page, compute:
 - Current drop-off rate (from PostHog funnels)
 - Estimated days to reach statistical significance for a 12% lift
 
-Rank pages by `drop-off rate x traffic volume`. The top 3 become your Scalable test targets. Run the `layout-variant-builder` drill for each page to set up feature flags and instrumentation.
+Rank pages by `drop-off rate x traffic volume`. The top 3 become your Scalable test targets. Run the the layout variant builder workflow (see instructions below) drill for each page to set up feature flags and instrumentation.
 
 ### 2. Run parallel experiments across pages
 
@@ -114,7 +113,7 @@ After 2 months, measure:
 
 ## Drills Referenced
 
-- `layout-variant-builder` — creates feature flags and instrumentation for each page's layout experiment
+- the layout variant builder workflow (see instructions below) — creates feature flags and instrumentation for each page's layout experiment
 - `ab-test-orchestrator` — manages the A/B test lifecycle: sample size, duration, significance evaluation
 - the session recording friction analysis workflow (see instructions below) — mines session recordings for friction patterns that generate experiment hypotheses
 - `dashboard-builder` — automated guardrail monitoring, weekly reporting, and convergence detection

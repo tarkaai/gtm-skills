@@ -13,7 +13,6 @@ kpis: ["Click-through rate", "Cost per click", "Landing page conversion rate", "
 slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
-  - reddit-ads-campaign-build
   - threshold-engine
 ---
 
@@ -44,7 +43,7 @@ Skip the third cluster at Smoke level. Focus budget on proving the core thesis.
 
 ### 2. Build the campaign
 
-Run the `reddit-ads-campaign-build` drill with these Smoke-level parameters:
+Run the the reddit ads campaign build workflow (see instructions below) drill with these Smoke-level parameters:
 
 - **Budget:** $30-70/day for 7 days ($200-500 total)
 - **Objective:** CONVERSIONS
@@ -108,6 +107,6 @@ Pull the final numbers from PostHog (leads) and your CRM (meetings). Cross-refer
 
 ## Drills Referenced
 
-- `reddit-ads-campaign-build` — builds the full campaign (subreddit targeting, creative, landing page, tracking)
+- the reddit ads campaign build workflow (see instructions below) — builds the full campaign (subreddit targeting, creative, landing page, tracking)
 - the reddit ads subreddit targeting workflow (see instructions below) — discovers and scores subreddits for ad targeting
 - `threshold-engine` — evaluates pass/fail against the 2-lead / 1-meeting threshold

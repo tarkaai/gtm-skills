@@ -13,7 +13,6 @@ outcome: "≥10 active partners and ≥8 partner-sourced paid conversions in 6 w
 kpis: ["Partner activation rate", "Click-to-paid conversion rate", "Revenue per active partner", "Commission ROI"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
-drills:
 ---
 
 # Reseller & Affiliate Program — Baseline Run

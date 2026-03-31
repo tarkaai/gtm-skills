@@ -14,7 +14,6 @@ slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
 drills:
   - posthog-gtm-events
-  - integration-launch-campaign
   - warm-intro-request
 ---
 
@@ -62,7 +61,7 @@ Log all partner conversations in Attio. Move partners through statuses: Prospect
 
 ### 3. Build and launch integrations
 
-For each signed partner, run the `integration-launch-campaign` drill. This generates co-marketing assets (landing page copy, blog post, email announcements), configures PostHog tracking, sends your audience announcement, and provides the partner with their distribution package.
+For each signed partner, run the the integration launch campaign workflow (see instructions below) drill. This generates co-marketing assets (landing page copy, blog post, email announcements), configures PostHog tracking, sends your audience announcement, and provides the partner with their distribution package.
 
 Execute 3-5 integration launches over 4-6 weeks. Stagger launches by at least 1 week to avoid audience fatigue and to allow time for per-launch analysis.
 
@@ -102,5 +101,5 @@ Measure against: ≥3 integration partnerships signed AND ≥20 qualified leads 
 ## Drills Referenced
 
 - `posthog-gtm-events` — define and implement the integration partnership event taxonomy in PostHog
-- `integration-launch-campaign` — execute co-marketing launch for each new integration (assets, tracking, distribution)
+- the integration launch campaign workflow (see instructions below) — execute co-marketing launch for each new integration (assets, tracking, distribution)
 - `warm-intro-request` — find mutual connections and request introductions to partner contacts

@@ -15,7 +15,6 @@ kpis: ["Objection detection rate", "Resolution automation efficiency", "Timeline
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - timing-objection-detection-automation
   - ab-test-orchestrator
 ---
 
@@ -40,7 +39,7 @@ Remove manual objection detection entirely. Every sales call and email is monito
 
 ### 1. Deploy auto-detection across all calls and emails
 
-Run the `timing-objection-detection-automation` drill to build always-on monitoring:
+Run the the timing objection detection automation workflow (see instructions below) drill to build always-on monitoring:
 
 **Call transcript monitoring:**
 - Configure Fireflies webhook to notify n8n on every new transcript
@@ -139,6 +138,6 @@ After 2 months, evaluate:
 
 ## Drills Referenced
 
-- `timing-objection-detection-automation` — always-on monitoring of calls and emails for timing objections with auto-classification, smokescreen detection, and workflow triggering
+- the timing objection detection automation workflow (see instructions below) — always-on monitoring of calls and emails for timing objections with auto-classification, smokescreen detection, and workflow triggering
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on response strategies and follow-up sequences
 - the timing objection follow up sequence workflow (see instructions below) — automated multi-touch follow-ups scaled to handle increased volume from auto-detection

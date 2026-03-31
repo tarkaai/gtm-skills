@@ -17,7 +17,6 @@ slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
   - autonomous-optimization
-  - youtube-preroll-audience-builder
   - dashboard-builder
   - budget-allocation
   - threshold-engine
@@ -130,7 +129,7 @@ Extend the the youtube preroll creative pipeline workflow (see instructions belo
 
 ### 4. Build the autonomous audience management agent
 
-Extend the `youtube-preroll-audience-builder` for autonomous operation:
+Extend the the youtube preroll audience builder workflow (see instructions below) for autonomous operation:
 
 **Placement health check (bi-weekly):**
 1. For each placement campaign, pull per-channel performance from Google Ads
@@ -307,7 +306,7 @@ Total: ~180 hours over 12 months
 - `autonomous-optimization` — the core detect, diagnose, experiment, evaluate, implement loop that finds and maintains the local maximum
 - `autonomous-optimization` — daily health checks, fatigue detection, saturation alerts, weekly reports
 - the youtube preroll creative pipeline workflow (see instructions below) — autonomous creative brief generation on a bi-weekly cadence
-- `youtube-preroll-audience-builder` — automated placement discovery and audience refresh
+- the youtube preroll audience builder workflow (see instructions below) — automated placement discovery and audience refresh
 - `dashboard-builder` — build the YouTube pre-roll performance dashboard with alerts
 - `budget-allocation` — automated daily budget adjustments with CPqL guardrails
 - `threshold-engine` — monthly sustainability evaluation against Scalable baseline

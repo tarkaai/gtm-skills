@@ -14,7 +14,6 @@ kpis: ["Interview completion rate", "Insights per interview", "Actionable insigh
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
-  - win-loss-insight-extraction
   - threshold-engine
 ---
 # Win/Loss Analysis Program — Smoke Test
@@ -63,7 +62,7 @@ Take notes during the call even with Fireflies running — capture your immediat
 
 ### 4. Extract insights from each interview
 
-After each interview, run the `win-loss-insight-extraction` drill manually. Retrieve the Fireflies transcript, then use the Claude API (via the `transcript-insight-extraction` fundamental) to extract: outcome, primary reason, competitors mentioned, product feedback, sales process feedback, pricing feedback, decision criteria, actionable insights, sentiment score, and key quotes.
+After each interview, run the the win loss insight extraction workflow (see instructions below) drill manually. Retrieve the Fireflies transcript, then use the Claude API (via the `transcript-insight-extraction` fundamental) to extract: outcome, primary reason, competitors mentioned, product feedback, sales process feedback, pricing feedback, decision criteria, actionable insights, sentiment score, and key quotes.
 
 Store the structured insights as a tagged note on the deal in Attio. If you do not have the Anthropic API set up yet, do the extraction manually: read the transcript and fill in the same 10 fields by hand. The structure matters more than the automation at Smoke level.
 
@@ -107,5 +106,5 @@ If FAIL: Diagnose — was the issue low interview acceptance (outreach problem),
 ## Drills Referenced
 
 - the win loss interview pipeline workflow (see instructions below) — Identifies candidates, sends outreach, schedules and records interviews
-- `win-loss-insight-extraction` — Analyzes transcripts and extracts structured, categorized insights
+- the win loss insight extraction workflow (see instructions below) — Analyzes transcripts and extracts structured, categorized insights
 - `threshold-engine` — Evaluates results against the pass threshold

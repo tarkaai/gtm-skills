@@ -13,8 +13,6 @@ outcome: "≥3 active partners and ≥2 partner-sourced signups in 2 weeks"
 kpis: ["Partner recruitment rate", "Affiliate link clicks", "Click-to-signup conversion rate"]
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
-drills:
-  - affiliate-program-design
 ---
 
 # Reseller & Affiliate Program — Smoke Test
@@ -36,7 +34,7 @@ A configured affiliate tracking platform with 3-5 active partners from your exis
 
 ### 1. Design and configure the affiliate program
 
-Run the `affiliate-program-design` drill with a minimal scope:
+Run the the affiliate program design workflow (see instructions below) drill with a minimal scope:
 
 - Choose a commission model: start with 20% recurring for 12 months (standard B2B SaaS benchmark). You can adjust after the smoke test.
 - Set up Rewardful (if you use Stripe) or FirstPromoter. Both have free trials — no cost for the smoke test.
@@ -104,5 +102,5 @@ Total: ~6 hours of active work over 1-2 weeks (waiting for partner activation)
 
 ## Drills Referenced
 
-- `affiliate-program-design` — set up affiliate tracking platform, configure commissions, build onboarding kit
+- the affiliate program design workflow (see instructions below) — set up affiliate tracking platform, configure commissions, build onboarding kit
 - the affiliate recruitment outreach workflow (see instructions below) — source and recruit partners from your existing network (warm outreach only at this level)

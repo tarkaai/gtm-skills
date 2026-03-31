@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
   - icp-definition
   - build-prospect-list
-  - value-asset-creation
   - threshold-engine
 ---
 
@@ -56,7 +55,7 @@ Run the `build-prospect-list` drill to source and enrich 50-100 contacts matchin
 
 ### 3. Create the value asset
 
-Run the `value-asset-creation` drill. This is the core of the play. Produce a 1-5 page asset (checklist, benchmark, scorecard, or short report) that:
+Run the the value asset creation workflow (see instructions below) drill. This is the core of the play. Produce a 1-5 page asset (checklist, benchmark, scorecard, or short report) that:
 - Addresses the ICP pain point identified in step 1
 - Delivers standalone value without pitching your product
 - Contains at least one proprietary insight, data point, or framework
@@ -119,5 +118,5 @@ After 1 week, run the `threshold-engine` drill to evaluate: >=2 positive replies
 
 - `icp-definition` — define the target audience and pain point that drives the asset topic
 - `build-prospect-list` — source and enrich 50-100 prospects matching ICP
-- `value-asset-creation` — research, draft, and produce the value asset
+- the value asset creation workflow (see instructions below) — research, draft, and produce the value asset
 - `threshold-engine` — evaluate results against the pass threshold

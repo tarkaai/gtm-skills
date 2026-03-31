@@ -13,7 +13,6 @@ kpis: ["Click-through rate per layout variant", "Scroll depth per variant", "Tim
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
-  - layout-variant-builder
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ Example hypotheses for a dashboard page:
 
 ### 2. Build and instrument the 3 layout variants
 
-Run the `layout-variant-builder` drill for each of the 3 variants. For the Smoke level, create PostHog feature flags with low rollout percentages (10-20% per variant, remaining traffic stays on control). Instrument these events on every variant:
+Run the the layout variant builder workflow (see instructions below) drill for each of the 3 variants. For the Smoke level, create PostHog feature flags with low rollout percentages (10-20% per variant, remaining traffic stays on control). Instrument these events on every variant:
 
 - `layout_variant_viewed` — user saw this variant (with `variant` property)
 - `layout_cta_clicked` — user clicked the primary CTA
@@ -86,6 +85,6 @@ If none of the 3 variants move any metric, either the page is already well-optim
 
 ## Drills Referenced
 
-- `layout-variant-builder` — creates feature flags, instruments events, and wires up variant rendering for each layout test
+- the layout variant builder workflow (see instructions below) — creates feature flags, instruments events, and wires up variant rendering for each layout test
 - the session recording friction analysis workflow (see instructions below) — reviews session recordings to identify friction patterns and quantify their impact
 - `threshold-engine` — evaluates measured results against the pass/fail threshold

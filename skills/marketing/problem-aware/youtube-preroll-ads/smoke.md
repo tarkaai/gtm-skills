@@ -15,7 +15,6 @@ kpis: ["View rate (VTR)", "Cost per view (CPV)", "Click-through rate (CTR)", "Co
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
-  - youtube-preroll-audience-builder
   - ad-campaign-setup
   - landing-page-pipeline
   - threshold-engine
@@ -49,7 +48,7 @@ Do not split a smoke test across multiple pain points. Pick one.
 
 ### 2. Research and build your placement list
 
-Run the `youtube-preroll-audience-builder` drill in smoke mode:
+Run the the youtube preroll audience builder workflow (see instructions below) drill in smoke mode:
 - Use the YouTube Data API to search for channels related to your pain point
 - Manually curate a list of 20-50 YouTube channels your ICP watches
 - Add 1 custom intent segment with 5-10 search terms related to the pain point (people who recently Googled these terms)
@@ -157,7 +156,7 @@ Decision:
 
 ## Drills Referenced
 
-- `youtube-preroll-audience-builder` — research and build 20-50 channel placements + 1 custom intent segment
+- the youtube preroll audience builder workflow (see instructions below) — research and build 20-50 channel placements + 1 custom intent segment
 - the youtube preroll creative pipeline workflow (see instructions below) — generate 3 video ad scripts and creative briefs for the smoke test
 - `ad-campaign-setup` — configure the Google Ads Video campaign, ad groups, and tracking
 - `landing-page-pipeline` — build a landing page with form and PostHog tracking

@@ -14,7 +14,6 @@ kpis: ["Sample data interaction rate", "Time to first action", "Activation rate 
 slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
 drills:
-  - sample-data-seeding
   - onboarding-flow
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ Success at Smoke means: pre-populated accounts produce measurably higher interac
 
 ### 1. Design and build the sample data package
 
-Run the `sample-data-seeding` drill. For the Smoke test, focus on:
+Run the the sample data seeding workflow (see instructions below) drill. For the Smoke test, focus on:
 
 - **One persona only**: Pick your highest-volume ICP segment. If you serve multiple industries, pick the one with the most signups.
 - **Minimum viable data**: 3-5 primary objects in different states (one completed, one in-progress, one empty/not-started). Include enough supporting objects to make each primary object look realistic (comments, tags, assignments).
@@ -48,7 +47,7 @@ Run the `sample-data-seeding` drill. For the Smoke test, focus on:
 
 ### 2. Deploy to a small test group
 
-Implement the injection endpoint from the `sample-data-seeding` drill. For Smoke, use the simplest injection method:
+Implement the injection endpoint from the the sample data seeding workflow (see instructions below) drill. For Smoke, use the simplest injection method:
 
 - If your signup flow is code you control: add the seed call after account creation, gated behind a hardcoded list of test account IDs or a PostHog feature flag
 - Deploy to 10-50 new signups. Keep an equal-sized control group (empty accounts with no sample data) for comparison
@@ -101,6 +100,6 @@ If FAIL: Diagnose where users drop off. Common failures:
 
 ## Drills Referenced
 
-- `sample-data-seeding` — design the sample data schema, generate content, build injection and cleanup endpoints
+- the sample data seeding workflow (see instructions below) — design the sample data schema, generate content, build injection and cleanup endpoints
 - `onboarding-flow` — build the in-app orientation that guides users through sample data
 - `threshold-engine` — evaluate ≥70% interaction rate against the pass threshold

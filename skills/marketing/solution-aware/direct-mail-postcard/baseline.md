@@ -15,7 +15,6 @@ slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
 drills:
   - postcard-campaign-send
-  - postcard-response-tracking
   - posthog-gtm-events
   - follow-up-automation
 ---
@@ -50,7 +49,7 @@ Run the `posthog-gtm-events` drill to configure a standardized event taxonomy fo
 
 ### 2. Configure delivery tracking and attribution
 
-Run the `postcard-response-tracking` drill to set up:
+Run the the postcard response tracking workflow (see instructions below) drill to set up:
 - Lob webhook integration with n8n for real-time delivery updates
 - Automated CRM updates when postcards are delivered or returned
 - Response attribution linking URL visits and meetings to specific postcards
@@ -124,6 +123,6 @@ If FAIL: Diagnose by funnel stage — delivery issues (bad addresses), awareness
 ## Drills Referenced
 
 - `postcard-campaign-send` — Verify addresses, create templates, and send 100-200 postcards/month
-- `postcard-response-tracking` — Lob webhook integration, delivery tracking, response attribution
+- the postcard response tracking workflow (see instructions below) — Lob webhook integration, delivery tracking, response attribution
 - `posthog-gtm-events` — Set up standardized direct mail event taxonomy in PostHog
 - `follow-up-automation` — Digital follow-up sequence triggered by postcard delivery

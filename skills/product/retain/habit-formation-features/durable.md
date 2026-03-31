@@ -16,7 +16,6 @@ slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
 drills:
   - autonomous-optimization
-  - gamification-health-monitor
 ---
 
 # Habit-Building Features — Durable Intelligence
@@ -105,7 +104,7 @@ Run the `autonomous-optimization` drill to detect when habit milestone celebrati
 
 ### 3. Monitor gamification health
 
-Run the `gamification-health-monitor` drill for habit-specific health signals the generic optimization loop would miss:
+Run the the gamification health monitor workflow (see instructions below) drill for habit-specific health signals the generic optimization loop would miss:
 
 - Monitor participation rate: % of active users earning streak points this week. Alert if below 30%.
 - Monitor streak distribution: healthy distribution has a long tail (many users at 7+ days). If distribution shifts toward 1-2 day streaks, the habit is not forming.
@@ -151,4 +150,4 @@ If at any point DAU drops below 30% for 2 consecutive weeks despite intervention
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners → weekly briefs
 - `autonomous-optimization` — detect when habit milestone celebrations lose effectiveness and feed decay signals to the optimization loop
-- `gamification-health-monitor` — monitor streak distribution, recovery rates, reminder channel health, and trigger habit-specific interventions
+- the gamification health monitor workflow (see instructions below) — monitor streak distribution, recovery rates, reminder channel health, and trigger habit-specific interventions

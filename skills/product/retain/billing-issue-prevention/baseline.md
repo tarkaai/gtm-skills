@@ -13,8 +13,6 @@ outcome: "≥70% recovery rate sustained over 2 weeks with automated dunning"
 kpis: ["Recovery rate", "Involuntary churn rate", "Median time to recovery", "Dunning email open rate"]
 slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
-drills:
-  - payment-failure-detection
 ---
 
 # Payment Failure Recovery — Baseline Run
@@ -37,7 +35,7 @@ The first always-on automation. Payment failures are detected in real time via S
 
 ### 1. Deploy real-time payment failure detection
 
-Run the `payment-failure-detection` drill in production. This sets up:
+Run the the payment failure detection workflow (see instructions below) drill in production. This sets up:
 
 - Stripe webhook listener in n8n for `invoice.payment_failed` events
 - Failure classification (expired card, insufficient funds, auth required, etc.)
@@ -121,6 +119,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose using the recovery funnel — fi
 
 ## Drills Referenced
 
-- `payment-failure-detection` — real-time detection, classification, and scoring of payment failures from Stripe webhooks
+- the payment failure detection workflow (see instructions below) — real-time detection, classification, and scoring of payment failures from Stripe webhooks
 - the dunning sequence automation workflow (see instructions below) — multi-channel recovery sequence: in-app banners, 4-email ladder, human routing
 - the proactive card expiry detection workflow (see instructions below) — daily scan for expiring cards with pre-failure update prompts

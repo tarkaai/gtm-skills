@@ -15,7 +15,6 @@ slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
 drills:
   - map-auto-generation
-  - map-milestone-tracking
   - posthog-gtm-events
 ---
 
@@ -63,7 +62,7 @@ The workflow:
 
 ### 2. Deploy milestone tracking automation
 
-Run the `map-milestone-tracking` drill to build the monitoring and communication system.
+Run the the map milestone tracking workflow (see instructions below) drill to build the monitoring and communication system.
 
 **Daily milestone checker (n8n cron, 9 AM):**
 - Queries all deals where `map_status` = "Active"
@@ -171,5 +170,5 @@ If **FAIL:** Diagnose:
 ## Drills Referenced
 
 - `map-auto-generation` — Auto-generate personalized MAPs when deals reach Proposed stage, classify deal type, personalize milestones, and deliver for rep review
-- `map-milestone-tracking` — Daily milestone health checks, weekly prospect updates, 3-level escalation system for overdue milestones
+- the map milestone tracking workflow (see instructions below) — Daily milestone health checks, weekly prospect updates, 3-level escalation system for overdue milestones
 - `posthog-gtm-events` — Configure MAP event taxonomy for tracking creation, completion, delays, and stalls

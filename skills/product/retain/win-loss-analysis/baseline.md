@@ -14,8 +14,6 @@ kpis: ["Interview completion rate", "Insights identified", "Changes implemented"
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
-  - win-loss-interview-pipeline
-  - win-loss-insight-extraction
   - threshold-engine
 ---
 # Win/Loss Analysis Program — Baseline Run
@@ -40,7 +38,7 @@ Move from manual interviews to an always-on system. Every deal that closes (won 
 
 ### 1. Deploy the automated interview pipeline
 
-Run the full `win-loss-interview-pipeline` drill to build the always-on system:
+Run the full the win loss interview pipeline workflow (see instructions below) drill to build the always-on system:
 
 - Configure the n8n workflow that triggers on Attio deal stage changes to Closed Won or Closed Lost
 - Set up the Loops email sequences (won path and lost path) with Cal.com booking links and Typeform survey fallbacks
@@ -49,7 +47,7 @@ Run the full `win-loss-interview-pipeline` drill to build the always-on system:
 
 ### 2. Deploy automated insight extraction
 
-Run the `win-loss-insight-extraction` drill with the automation workflow enabled:
+Run the the win loss insight extraction workflow (see instructions below) drill with the automation workflow enabled:
 
 - Build the n8n workflow that triggers on Fireflies transcript-ready webhook
 - Build the parallel n8n workflow that triggers on Typeform submission webhook
@@ -124,7 +122,7 @@ If FAIL: Diagnose which metric fell short. Low interview count = outreach/accept
 
 ## Drills Referenced
 
-- `win-loss-interview-pipeline` — Automated outreach, scheduling, recording for every closed deal
-- `win-loss-insight-extraction` — AI-powered analysis of transcripts and surveys into structured insights
+- the win loss interview pipeline workflow (see instructions below) — Automated outreach, scheduling, recording for every closed deal
+- the win loss insight extraction workflow (see instructions below) — AI-powered analysis of transcripts and surveys into structured insights
 - the win loss reporting workflow (see instructions below) — Aggregate insights into a periodic report with patterns and recommendations
 - `threshold-engine` — Evaluates results against the pass threshold

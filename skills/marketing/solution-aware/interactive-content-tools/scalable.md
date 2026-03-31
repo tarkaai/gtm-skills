@@ -14,7 +14,6 @@ kpis: ["Tool completion rate", "Email capture rate", "SQL conversion rate", "Rev
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
-  - interactive-tool-build
   - ab-test-orchestrator
   - threshold-engine
 ---
@@ -47,7 +46,7 @@ Build a reusable tool template that accelerates new tool production:
 2. Document the formula patterns that work: for ROI tools, the standard formula structure; for assessments, the scoring rubric structure; for graders, the tier-threshold structure
 3. Build an n8n workflow template for tool lead routing: webhook → segment by result tier → create Attio records → enroll in Loops sequence
 
-Run the `interactive-tool-build` drill 4-8 more times using this template. Target: each new tool ships in under 3 hours of active work.
+Run the the interactive tool build workflow (see instructions below) drill 4-8 more times using this template. Target: each new tool ships in under 3 hours of active work.
 
 Expand tool types to include:
 - **Industry-specific tools:** Same calculator concept, customized for different verticals (SaaS, ecommerce, agency)
@@ -154,7 +153,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Drills Referenced
 
-- `interactive-tool-build` — build additional tools using the templatized workflow
+- the interactive tool build workflow (see instructions below) — build additional tools using the templatized workflow
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on tool elements
 - the interactive tool nurture pipeline workflow (see instructions below) — refine and expand nurture sequences based on Baseline learnings
 - `threshold-engine` — evaluate monthly completions and SQL rate against the pass threshold

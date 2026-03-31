@@ -16,7 +16,6 @@ slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
 drills:
   - posthog-gtm-events
-  - invite-acceptance-optimization
   - activation-optimization
 ---
 
@@ -62,7 +61,7 @@ Build PostHog cohorts:
 
 ### 2. Optimize the acceptance funnel
 
-Run the `invite-acceptance-optimization` drill. This is the highest-leverage work at Baseline — every percentage point of acceptance rate improvement multiplies across all invitations sent.
+Run the the invite acceptance optimization workflow (see instructions below) drill. This is the highest-leverage work at Baseline — every percentage point of acceptance rate improvement multiplies across all invitations sent.
 
 Focus areas based on Smoke test data:
 - **If email click-through is below 50%:** Optimize the invitation email subject line and body. Test personalization (inviter name, team context, shared resource name).
@@ -105,7 +104,7 @@ Evaluate against threshold at week 4:
 
 If PASS: Invite mechanism works at scale with repeatable results. Proceed to Scalable.
 If FAIL on invite rate: Users are not finding or using the invite surface. Add more entry points or more contextual prompts at delight moments.
-If FAIL on acceptance rate: The invite email or signup flow still has too much friction. Run another optimization cycle with the `invite-acceptance-optimization` drill.
+If FAIL on acceptance rate: The invite email or signup flow still has too much friction. Run another optimization cycle with the the invite acceptance optimization workflow (see instructions below) drill.
 
 ## Time Estimate
 
@@ -130,5 +129,5 @@ If FAIL on acceptance rate: The invite email or signup flow still has too much f
 ## Drills Referenced
 
 - `posthog-gtm-events` — standardizes invite event tracking to the GTM taxonomy for cross-play dashboards
-- `invite-acceptance-optimization` — systematically improves conversion at every step of the invite-to-acceptance funnel
+- the invite acceptance optimization workflow (see instructions below) — systematically improves conversion at every step of the invite-to-acceptance funnel
 - `activation-optimization` — identifies and improves the activation metric for invited users specifically

@@ -15,7 +15,6 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - usage-threshold-detection
-  - expansion-signal-qualification
   - posthog-gtm-events
 ---
 
@@ -53,7 +52,7 @@ Verify the pipeline works by comparing first daily run output against your manua
 
 ### 2. Deploy automated qualification
 
-Run the `expansion-signal-qualification` drill with automation:
+Run the the expansion signal qualification workflow (see instructions below) drill with automation:
 
 1. Build an n8n workflow that receives the daily detection webhook
 2. For each flagged account, pull CRM context from Attio: MRR, plan tier, signup date, support history, existing deals
@@ -158,6 +157,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose the funnel: detection working bu
 ## Drills Referenced
 
 - `usage-threshold-detection` — daily pipeline identifying accounts approaching limits, classifying urgency tiers, storing data in Attio
-- `expansion-signal-qualification` — automated qualification scoring to filter detected accounts into sales-ready opportunities
+- the expansion signal qualification workflow (see instructions below) — automated qualification scoring to filter detected accounts into sales-ready opportunities
 - the expansion outreach sequence workflow (see instructions below) — 4-touch personalized outreach cadence with stop conditions and CRM logging
 - `posthog-gtm-events` — configures the event tracking and funnel measuring the full expansion pipeline

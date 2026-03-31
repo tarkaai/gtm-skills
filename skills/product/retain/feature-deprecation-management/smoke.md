@@ -14,7 +14,6 @@ kpis: ["Notice acknowledgement rate", "Migration start rate", "Churn from sunset
 slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
-  - deprecation-communication-setup
   - threshold-engine
 ---
 
@@ -50,7 +49,7 @@ From the full cohort, select 10-50 users as your test cohort. Include at least 2
 
 ### 2. Build the deprecation communication system
 
-Run the `deprecation-communication-setup` drill, but scope it to the test cohort only. This builds:
+Run the the deprecation communication setup workflow (see instructions below) drill, but scope it to the test cohort only. This builds:
 
 - Tier-segmented in-app deprecation banners (persistent for critical/high, tooltip for medium)
 - A guided migration product tour for critical-tier users
@@ -106,5 +105,5 @@ If FAIL: Diagnose where the funnel breaks. If acknowledgement is low, the notice
 ## Drills Referenced
 
 - the deprecation impact assessment workflow (see instructions below) — quantifies which users are affected and how heavily, produces the deprecation brief
-- `deprecation-communication-setup` — builds tiered in-app and email deprecation notifications segmented by user dependency
+- the deprecation communication setup workflow (see instructions below) — builds tiered in-app and email deprecation notifications segmented by user dependency
 - `threshold-engine` — evaluates notice acknowledgement and migration start rates against pass/fail thresholds

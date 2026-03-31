@@ -14,7 +14,6 @@ kpis: ["Pages audited", "Messaging consistency score (1-5)", "Conversion path ga
 slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
 drills:
-  - brand-audit-analysis
   - threshold-engine
 ---
 
@@ -45,7 +44,7 @@ Before running the audit, document:
 
 ### 2. Run the brand audit
 
-Run the `brand-audit-analysis` drill with your scope inputs. The drill executes:
+Run the the brand audit analysis workflow (see instructions below) drill with your scope inputs. The drill executes:
 
 **Website crawl:** Programmatically crawls all marketing pages and extracts every headline (H1, H2), CTA (text + destination), meta description, above-fold screenshot, and color/font usage. Also crawls 3-5 competitor sites.
 
@@ -118,5 +117,5 @@ Decision tree:
 
 ## Drills Referenced
 
-- `brand-audit-analysis` — Runs the full audit: website crawl, messaging analysis, conversion path analysis, competitive positioning, and produces the structured audit report
+- the brand audit analysis workflow (see instructions below) — Runs the full audit: website crawl, messaging analysis, conversion path analysis, competitive positioning, and produces the structured audit report
 - `threshold-engine` — Evaluates completeness of the audit report and positioning concepts against pass criteria

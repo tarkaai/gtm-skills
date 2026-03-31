@@ -15,7 +15,6 @@ kpis: ["Storytelling adoption rate", "Demo-to-proposal conversion lift", "Story 
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
 drills:
-  - story-matched-demo-prep
   - posthog-gtm-events
 ---
 
@@ -65,7 +64,7 @@ Before launching automation, ensure the library is ready for broader use:
 
 ### 3. Deploy Automated Story-Matched Demo Prep
 
-Run the `story-matched-demo-prep` drill and configure it to auto-trigger:
+Run the the story matched demo prep workflow (see instructions below) drill and configure it to auto-trigger:
 
 - Create an Attio automation: when a deal stage changes to "Demo Scheduled" (or when a Cal.com booking fires), send a webhook to n8n.
 - n8n workflow: receive webhook -> pull deal context from Attio -> pull discovery transcript from Fireflies -> extract pains -> pull story library from Attio -> run story matching -> run narrative generation -> assemble prep doc -> store in Attio -> notify the founder via Slack with a link to the prep doc.
@@ -129,5 +128,5 @@ After 2 weeks, measure:
 
 ## Drills Referenced
 
-- `story-matched-demo-prep` — auto-select the best customer story for each prospect and generate a complete story-driven demo preparation document
+- the story matched demo prep workflow (see instructions below) — auto-select the best customer story for each prospect and generate a complete story-driven demo preparation document
 - `posthog-gtm-events` — configure PostHog event tracking for the storytelling program

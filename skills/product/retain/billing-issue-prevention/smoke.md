@@ -14,7 +14,6 @@ kpis: ["Recovery rate", "Involuntary churn count", "Time to recovery (median day
 slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
 drills:
-  - payment-failure-detection
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ Prove the concept: can you detect failed payments, classify the failure reason, 
 
 ### 1. Pull your current failed payments from Stripe
 
-Query the Stripe API for all currently past-due subscriptions and open invoices. The `payment-failure-detection` drill walks you through this in detail, but for the Smoke test, run it manually:
+Query the Stripe API for all currently past-due subscriptions and open invoices. The the payment failure detection workflow (see instructions below) drill walks you through this in detail, but for the Smoke test, run it manually:
 
 ```bash
 curl "https://api.stripe.com/v1/subscriptions?status=past_due&limit=100&expand[]=data.latest_invoice&expand[]=data.default_payment_method" \
@@ -50,7 +49,7 @@ For each past-due subscription, extract: customer ID, failure code, card last 4,
 
 ### 2. Classify each failure
 
-Using the classification table from the `payment-failure-detection` drill, categorize each failure:
+Using the classification table from the the payment failure detection workflow (see instructions below) drill, categorize each failure:
 
 | Failure Code | Action |
 |-------------|--------|
@@ -120,5 +119,5 @@ If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `payment-failure-detection` — extracts payment failures from Stripe, classifies by type, and scores recovery likelihood
+- the payment failure detection workflow (see instructions below) — extracts payment failures from Stripe, classifies by type, and scores recovery likelihood
 - `threshold-engine` — evaluates whether recovery rate meets the 60% pass threshold

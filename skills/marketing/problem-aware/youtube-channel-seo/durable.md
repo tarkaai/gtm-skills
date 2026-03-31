@@ -15,7 +15,6 @@ slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
   - autonomous-optimization
-  - youtube-channel-analytics
 ---
 
 # YouTube Channel SEO — Durable Intelligence
@@ -45,7 +44,7 @@ Run the `autonomous-optimization` drill configured for the YouTube Channel SEO p
 
 **Phase 1 — Monitor (daily via n8n cron):**
 
-The agent checks the YouTube channel's primary KPIs daily using the `youtube-channel-analytics` drill data in PostHog:
+The agent checks the YouTube channel's primary KPIs daily using the the youtube channel analytics workflow (see instructions below) drill data in PostHog:
 - Pull last 14 days of YT_SEARCH views, CTR, average view percentage, and subscriber growth
 - Compare against 4-week rolling average
 - Classify each metric: **normal** (within +/-10%), **plateau** (+/-2% for 3+ weeks), **drop** (>20% decline), **spike** (>50% increase)
@@ -104,7 +103,7 @@ Deliver the brief to Slack and store in Attio.
 ### 2. Maintain content production with agent-driven topic selection
 
 The agent uses analytics data to select what to produce next:
-1. Weekly, the agent reviews the search term report from `youtube-channel-analytics`
+1. Weekly, the agent reviews the search term report from the youtube channel analytics workflow (see instructions below)
 2. Identifies search queries that drove views but have no dedicated video (content gap)
 3. Identifies which content series have the highest retention and subscriber conversion
 4. Generates the next 2-week content brief: topics, titles, target keywords, format, and duration
@@ -162,5 +161,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor > diagnose > experiment > evaluate > implement loop that makes Durable fundamentally different from Scalable
-- `youtube-channel-analytics` — daily data sync, dashboards, and anomaly alerts feeding the optimization loop
+- the youtube channel analytics workflow (see instructions below) — daily data sync, dashboards, and anomaly alerts feeding the optimization loop
 - the youtube seo optimization workflow (see instructions below) — monthly metadata and caption maintenance run as part of the optimization cycle

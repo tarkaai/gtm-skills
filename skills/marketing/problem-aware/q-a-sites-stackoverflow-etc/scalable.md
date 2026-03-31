@@ -16,7 +16,6 @@ drills:
   - qa-question-discovery
   - dashboard-builder
   - qa-answer-crafting
-  - qa-authority-performance-monitor
   - ab-test-orchestrator
 ---
 
@@ -105,7 +104,7 @@ Track milestone progress in the weekly report.
 
 ### 5. Deploy comprehensive performance monitoring
 
-Run the `qa-authority-performance-monitor` drill:
+Run the the qa authority performance monitor workflow (see instructions below) drill:
 
 1. Daily tracking: answer upvotes, acceptance rate, reputation delta, new comments requiring follow-up.
 2. PostHog dashboard: Q&A referral traffic trend, conversion funnel (visit -> signup), platform breakdown, top-performing answers by referral sessions.
@@ -151,5 +150,5 @@ Estimated play-specific cost: $50-165/mo
 - `qa-question-discovery` -- expanded search across additional platforms and tags
 - `dashboard-builder` -- always-on monitoring with expanded platform coverage
 - `qa-answer-crafting` -- batch answer drafting with human review workflow
-- `qa-authority-performance-monitor` -- full-funnel tracking from answers to pipeline
+- the qa authority performance monitor workflow (see instructions below) -- full-funnel tracking from answers to pipeline
 - `ab-test-orchestrator` -- test answer formats, link placement, and response timing

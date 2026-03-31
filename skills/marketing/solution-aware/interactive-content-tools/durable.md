@@ -107,7 +107,7 @@ Configure an n8n workflow (monthly cron) that surfaces new tool ideas:
    - Target keyword cluster
    - Expected conversion funnel based on similar tools in the portfolio
 
-4. **Route for decision**: Post the concept brief to Slack for human review. If approved, the agent builds the tool using the `interactive-tool-build` drill template.
+4. **Route for decision**: Post the concept brief to Slack for human review. If approved, the agent builds the tool using the the interactive tool build workflow (see instructions below) drill template.
 
 **Human action required:** Review tool concept briefs monthly. Approve or reject new tool ideas. Verify that proposed calculations are accurate and the tool concept aligns with current product strategy.
 

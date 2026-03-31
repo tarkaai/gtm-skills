@@ -14,7 +14,6 @@ kpis: ["Answers posted", "Average upvote score per answer", "Profile views", "Ac
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
-  - so-tag-reconnaissance
   - threshold-engine
 ---
 # Stack Overflow Presence — Smoke Test
@@ -43,7 +42,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ### 1. Identify target tags
 
-Run the `so-tag-reconnaissance` drill to discover and rank Stack Overflow tags where your expertise is relevant. Produce a ranked list of 10-15 target tags with engagement profiles. Focus on tags where:
+Run the the so tag reconnaissance workflow (see instructions below) drill to discover and rank Stack Overflow tags where your expertise is relevant. Produce a ranked list of 10-15 target tags with engagement profiles. Focus on tags where:
 - Unanswered question ratio is above 30%
 - Average views on unanswered questions exceed 100
 - Your team has genuine deep expertise

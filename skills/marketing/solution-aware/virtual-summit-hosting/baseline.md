@@ -14,7 +14,6 @@ kpis: ["Registration count per summit", "Show rate", "Multi-session attendance r
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
 drills:
-  - summit-attendee-nurture
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -69,7 +68,7 @@ Run the the summit pipeline workflow (see instructions below) drill for the firs
 
 ### 3. Execute structured post-summit nurture
 
-Run the `summit-attendee-nurture` drill. This builds on the basic follow-up from Smoke with a full 5-tier segmentation and differentiated nurture sequences:
+Run the the summit attendee nurture workflow (see instructions below) drill. This builds on the basic follow-up from Smoke with a full 5-tier segmentation and differentiated nurture sequences:
 
 - Tier 1 (power attendees): 4-email sequence over 10 days with personalized video responses to their questions.
 - Tier 2 (engaged attendees): 3-email sequence with session-specific resources.
@@ -100,7 +99,7 @@ Run the the summit pipeline workflow (see instructions below) drill again with t
 - Summit 2: Change theme OR speaker lineup OR promotion channels (not all three)
 - Summit 3 (if needed): Change the next variable
 
-For each summit, run the `summit-attendee-nurture` drill with the same tier structure but updated messaging based on what worked in the previous summit's nurture.
+For each summit, run the the summit attendee nurture workflow (see instructions below) drill with the same tier structure but updated messaging based on what worked in the previous summit's nurture.
 
 ### 6. Evaluate against threshold
 
@@ -142,6 +141,6 @@ Run the `threshold-engine` drill after the final summit's 14-day nurture window 
 ## Drills Referenced
 
 - the summit pipeline workflow (see instructions below) — full summit lifecycle: speaker recruitment, registration, promotion, production, follow-up. Run once per summit.
-- `summit-attendee-nurture` — post-summit 5-tier segmentation and differentiated nurture sequences. Converts attendees into pipeline.
+- the summit attendee nurture workflow (see instructions below) — post-summit 5-tier segmentation and differentiated nurture sequences. Converts attendees into pipeline.
 - `posthog-gtm-events` — establishes the full summit event taxonomy in PostHog for consistent measurement across all summits.
 - `threshold-engine` — evaluates aggregate metrics across all summits and recommends advance, iterate, or pivot.

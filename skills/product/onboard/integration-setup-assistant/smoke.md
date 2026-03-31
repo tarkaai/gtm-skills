@@ -15,7 +15,6 @@ kpis: ["Integration setup start rate", "Integration setup success rate", "Time t
 slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
 drills:
-  - integration-wizard-build
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -52,7 +51,7 @@ Build a PostHog funnel: `integration_wizard_started` -> `integration_step_starte
 
 ### 2. Build the integration wizard
 
-Run the `integration-wizard-build` drill. For the Smoke test, limit scope to:
+Run the the integration wizard build workflow (see instructions below) drill. For the Smoke test, limit scope to:
 
 - Select the top 3 integrations by activation impact (query PostHog retention data, or rank by core value delivery if no data exists)
 - Build the Intercom checklist with 3 integration steps plus a completion step
@@ -111,6 +110,6 @@ If FAIL (<55%): Diagnose using the PostHog funnel. If users are not starting the
 
 ## Drills Referenced
 
-- `integration-wizard-build` -- builds the Intercom checklist, contextual bots, failure detection, and rescue workflows
+- the integration wizard build workflow (see instructions below) -- builds the Intercom checklist, contextual bots, failure detection, and rescue workflows
 - `posthog-gtm-events` -- defines and implements the event taxonomy for integration tracking
 - `threshold-engine` -- evaluates pass/fail against the 55% completion threshold

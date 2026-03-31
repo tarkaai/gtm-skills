@@ -15,7 +15,6 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - tech-stack-discovery
-  - technical-discovery-call
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -61,7 +60,7 @@ The agent:
 
 ### 3. Conduct technical discovery calls
 
-**Human action required:** For each researched deal, schedule a technical discovery call within 1 week of qualification. Use the `technical-discovery-call` drill:
+**Human action required:** For each researched deal, schedule a technical discovery call within 1 week of qualification. Use the the technical discovery call workflow (see instructions below) drill:
 
 1. Before each call: review the agent-generated call prep brief. Add any context from prior conversations.
 2. Conduct the call with the prospect's technical stakeholder.
@@ -126,7 +125,7 @@ If PASS, document the process as your standard technical discovery playbook and 
 ## Drills Referenced
 
 - `tech-stack-discovery` — pre-call tech stack research from public signals
-- `technical-discovery-call` — structured discovery call with transcript extraction
+- the technical discovery call workflow (see instructions below) — structured discovery call with transcript extraction
 - the technical fit scoring workflow (see instructions below) — apply 5-category scoring rubric and route deals
 - the technical collateral matching workflow (see instructions below) — match requirements to documentation and generate follow-up
 - `posthog-gtm-events` — define and implement the technical discovery event taxonomy

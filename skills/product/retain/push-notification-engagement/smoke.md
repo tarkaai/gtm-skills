@@ -14,7 +14,6 @@ kpis: ["Push CTR", "Opt-in rate", "DAU lift"]
 slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
 drills:
-  - push-notification-setup
   - threshold-engine
 ---
 
@@ -35,7 +34,7 @@ A single push notification campaign sent to 20-50 real users produces a click-th
 ## Instructions
 
 ### 1. Set up push infrastructure
-Run the `push-notification-setup` drill. For Smoke, use OneSignal's free tier. Configure the SDK on your web or mobile app, build a custom soft opt-in prompt, and instrument PostHog events for the full push lifecycle. Verify the integration by sending a test push to yourself.
+Run the the push notification setup workflow (see instructions below) drill. For Smoke, use OneSignal's free tier. Configure the SDK on your web or mobile app, build a custom soft opt-in prompt, and instrument PostHog events for the full push lifecycle. Verify the integration by sending a test push to yourself.
 
 **Human action required:** Review the opt-in prompt copy and placement before deploying to real users. The prompt should appear after a meaningful user action (not on page load) and clearly state what notifications the user will receive.
 
@@ -75,6 +74,6 @@ Iterate on copy and timing, then re-send to the same cohort.
 | n8n | Subscription sync workflow | Standard stack — excluded |
 
 ## Drills Referenced
-- `push-notification-setup` — configure push SDK, opt-in prompt, and PostHog event tracking
+- the push notification setup workflow (see instructions below) — configure push SDK, opt-in prompt, and PostHog event tracking
 - the push notification campaign workflow (see instructions below) — design and send the targeted push campaign
 - `threshold-engine` — evaluate CTR and DAU lift against pass criteria

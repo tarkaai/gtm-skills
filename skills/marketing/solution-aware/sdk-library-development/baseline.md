@@ -14,7 +14,6 @@ kpis: ["Downloads per month (per registry)", "README CTA click-through rate", "S
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
 drills:
-  - sdk-registry-distribution
   - posthog-gtm-events
 ---
 # SDK & Library Development — Baseline Run
@@ -45,7 +44,7 @@ Run the `posthog-gtm-events` drill to define SDK-specific events in your PostHog
 Add person properties: `sdk_source_registry`, `sdk_source_language`, `first_touch_channel = sdk`.
 
 ### 2. Build the distribution tracking pipeline
-Run the `sdk-registry-distribution` drill to:
+Run the the sdk registry distribution workflow (see instructions below) drill to:
 - Configure n8n to collect download counts from all registries weekly
 - Build PostHog funnels: downloads -> CTA clicks -> signups -> activation
 - Set up automated release cadence with conversion-tracked release notes
@@ -89,5 +88,5 @@ If FAIL: Diagnose the funnel stage where drop-off occurs. Low downloads = discov
 | Attio | SDK-sourced lead tracking | Free for small teams (https://attio.com/pricing) |
 
 ## Drills Referenced
-- `sdk-registry-distribution` -- builds the always-on tracking pipeline across registries with download collection, conversion funnels, release automation, and CRM attribution
+- the sdk registry distribution workflow (see instructions below) -- builds the always-on tracking pipeline across registries with download collection, conversion funnels, release automation, and CRM attribution
 - `posthog-gtm-events` -- defines the event taxonomy and person properties for SDK-specific tracking

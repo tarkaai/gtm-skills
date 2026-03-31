@@ -14,7 +14,6 @@ kpis: ["Request-to-intro rate", "Days from ask to intro", "Intro-to-meeting conv
 slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
-  - referral-network-mapping
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ Estimated time: 30 minutes.
 
 ### 2. Map your network to targets
 
-Run the `referral-network-mapping` drill manually. For each of the 15 targets:
+Run the the referral network mapping workflow (see instructions below) drill manually. For each of the 15 targets:
 
 1. Export your Attio contacts (customers, advisors, investors, peers, former colleagues)
 2. For each target, manually check LinkedIn for mutual connections between your network and the target contact
@@ -147,6 +146,6 @@ Estimated time: 30 minutes.
 
 ## Drills Referenced
 
-- `referral-network-mapping` — maps your existing network to target accounts, scores each connector-target pair by intro likelihood and willingness
+- the referral network mapping workflow (see instructions below) — maps your existing network to target accounts, scores each connector-target pair by intro likelihood and willingness
 - the referral ask copywriting workflow (see instructions below) — generates personalized ask messages and forwardable blurbs for each connector-target pair
 - `threshold-engine` — evaluates results against the pass/fail threshold and recommends next action

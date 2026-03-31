@@ -15,7 +15,6 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - tech-stack-discovery
-  - technical-discovery-call
   - threshold-engine
 ---
 
@@ -55,7 +54,7 @@ Review each call prep brief before the discovery call. Note which predictions se
 
 ### 3. Conduct technical discovery calls
 
-**Human action required:** Schedule and conduct technical discovery calls with each prospect's technical stakeholder (IT lead, engineering manager, CTO, or security lead). Use the `technical-discovery-call` drill for each call:
+**Human action required:** Schedule and conduct technical discovery calls with each prospect's technical stakeholder (IT lead, engineering manager, CTO, or security lead). Use the the technical discovery call workflow (see instructions below) drill for each call:
 
 1. Before each call: review the tech stack research and generated question guide. Customize questions for this specific prospect.
 2. During the call: work through integration, security, infrastructure, performance, and data migration questions naturally. Do not interrogate — frame questions as "helping us scope the implementation correctly."
@@ -107,6 +106,6 @@ If PASS (>=5 scored, >=1 blocker found), proceed to Baseline. If FAIL, diagnose:
 ## Drills Referenced
 
 - `tech-stack-discovery` — research prospect tech stack, integrations, and security posture from public signals before the call
-- `technical-discovery-call` — structured technical discovery call with transcript extraction and fit scoring
+- the technical discovery call workflow (see instructions below) — structured technical discovery call with transcript extraction and fit scoring
 - the technical fit scoring workflow (see instructions below) — set up and apply the 5-category technical scoring rubric
 - `threshold-engine` — evaluate results against the pass threshold

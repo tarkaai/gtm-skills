@@ -15,7 +15,6 @@ slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
 drills:
   - posthog-gtm-events
-  - template-gallery-setup
 ---
 
 # Sample Data Acceleration — Baseline Run
@@ -52,7 +51,7 @@ Build PostHog funnels:
 
 ### 2. Build the template gallery
 
-Run the `template-gallery-setup` drill. For Baseline, build:
+Run the the template gallery setup workflow (see instructions below) drill. For Baseline, build:
 
 - **8-12 templates** across 3 categories matching your top ICP segments
 - **Three surfaces**: dedicated gallery page, empty-state template suggestions, and a template selection step in the onboarding flow
@@ -115,4 +114,4 @@ If FAIL: Diagnose by cohort. If interaction rate is high but activation lift is 
 ## Drills Referenced
 
 - `posthog-gtm-events` — comprehensive event taxonomy for sample data and template interactions
-- `template-gallery-setup` — build the browseable template catalog across 3 product surfaces
+- the template gallery setup workflow (see instructions below) — build the browseable template catalog across 3 product surfaces

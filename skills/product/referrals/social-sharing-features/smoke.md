@@ -15,7 +15,6 @@ kpis: ["Share initiation rate (share_widget_opened / prompted users)", "Share co
 slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
 drills:
-  - social-share-surface-build
   - threshold-engine
 ---
 
@@ -39,7 +38,7 @@ Deploy a working share button on one shareable resource type (achievements, dash
 
 ### 1. Build the share surface on one resource type
 
-Run the `social-share-surface-build` drill to deploy the complete sharing infrastructure:
+Run the the social share surface build workflow (see instructions below) drill to deploy the complete sharing infrastructure:
 
 **Step 1 — Choose the shareable resource type:**
 Audit your product for the resource most likely to be shared. Rank candidates by share motivation:
@@ -64,7 +63,7 @@ Configure PostHog events: `share_widget_opened`, `share_channel_selected`, `shar
 
 ### 2. Deploy share prompts to a test group
 
-Using the contextual share prompts from `social-share-surface-build`:
+Using the contextual share prompts from the social share surface build workflow (see instructions below):
 
 - Identify 20-50 active users who have recently interacted with the target resource type
 - Deploy an Intercom in-app message to this cohort: "You created [resource] — share it with your network?"
@@ -114,5 +113,5 @@ If HARD FAIL (no shares at all): the chosen resource type may not be shareable. 
 
 ## Drills Referenced
 
-- `social-share-surface-build` — deploys the share button, share links, OG cards, and tracking layer
+- the social share surface build workflow (see instructions below) — deploys the share button, share links, OG cards, and tracking layer
 - `threshold-engine` — evaluates pass/fail and recommends next action

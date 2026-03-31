@@ -13,7 +13,6 @@ outcome: ">=5 live marketplace listings, >=50 marketplace-sourced signups/month,
 kpis: ["Total installs across all marketplaces per week", "Marketplace-sourced signups per month", "Install-to-paid conversion rate per marketplace", "Marketplace-attributed MRR", "Review velocity (new reviews/month)", "Average rating across portfolio"]
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
-drills:
 ---
 
 # Partner Marketplace Listings — Scalable Automation

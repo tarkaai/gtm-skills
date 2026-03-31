@@ -15,7 +15,6 @@ slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
   - icp-definition
-  - field-contact-logging
   - threshold-engine
 ---
 
@@ -78,7 +77,7 @@ Before the visit, the agent prepares:
 
 ### 5. Log all conversations to CRM
 
-Within 1 hour of finishing the session (while details are fresh), run the `field-contact-logging` drill:
+Within 1 hour of finishing the session (while details are fresh), run the the field contact logging workflow (see instructions below) drill:
 
 - Provide the agent with your raw notes (text or voice memo transcript)
 - The agent creates structured CRM records in Attio for every person you spoke with
@@ -129,5 +128,5 @@ Total: ~4 hours over 1 week
 
 - `icp-definition` — define who you are looking for in the field
 - the field visit planning workflow (see instructions below) — research venues, build route, prepare intel
-- `field-contact-logging` — log in-person conversations as structured CRM records
+- the field contact logging workflow (see instructions below) — log in-person conversations as structured CRM records
 - `threshold-engine` — evaluate pass/fail against the meeting threshold

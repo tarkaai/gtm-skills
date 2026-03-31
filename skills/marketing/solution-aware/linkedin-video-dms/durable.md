@@ -16,7 +16,6 @@ slug: "linkedin-video-dms"
 install: "npx gtm-skills add marketing/solution-aware/linkedin-video-dms"
 drills:
   - autonomous-optimization
-  - dm-performance-monitor
 ---
 
 # LinkedIn Video DMs — Durable Intelligence
@@ -110,7 +109,7 @@ This drill's output is the structured data the `autonomous-optimization` drill c
 
 ### 3. Deploy the DM performance monitor
 
-Run the `dm-performance-monitor` drill to track DM-specific metrics alongside video metrics:
+Run the the dm performance monitor workflow (see instructions below) drill to track DM-specific metrics alongside video metrics:
 
 - DM delivery and read rate tracking (LinkedIn does not expose read receipts via API, so this is inferred from response timing)
 - DM copy variant performance comparison
@@ -187,4 +186,4 @@ Even after convergence, external conditions change. The monitoring system detect
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
 - `autonomous-optimization` — PostHog dashboard, anomaly alerts, and weekly video performance briefs feeding the optimization loop
-- `dm-performance-monitor` — DM-specific funnel tracking, send-time heatmaps, and monthly channel health reports
+- the dm performance monitor workflow (see instructions below) — DM-specific funnel tracking, send-time heatmaps, and monthly channel health reports

@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/outbound-founder-email"
 drills:
   - build-prospect-list
   - enrich-and-score
-  - founder-cold-email-copy
   - cold-email-sequence
   - follow-up-automation
   - tool-sync-workflow
@@ -71,7 +70,7 @@ At Baseline you ran one campaign to one ICP segment. At Scalable, split into 2-3
 - **Segment by likely alternative:** Prospects using Competitor A get different proof points than prospects using spreadsheets. Create separate Instantly campaigns per alternative, each with tailored Email 1 personalization and Email 2 proof points.
 - **Segment by company size or stage:** Series A companies have different urgency than Series C. Adjust the tone — earlier-stage companies respond to speed/scrappiness, later-stage to risk reduction.
 
-Run the `founder-cold-email-copy` drill once per segment to produce tailored 3-step sequences.
+Run the the founder cold email copy workflow (see instructions below) drill once per segment to produce tailored 3-step sequences.
 
 ### 4. Build automated reply routing
 
@@ -168,7 +167,7 @@ Compute over the full 2-month period:
 
 - `build-prospect-list` — automated weekly list sourcing from Apollo/Clay
 - `enrich-and-score` — enrichment waterfall, email verification, ICP scoring
-- `founder-cold-email-copy` — segment-specific email sequences in the founder's voice
+- the founder cold email copy workflow (see instructions below) — segment-specific email sequences in the founder's voice
 - `cold-email-sequence` — campaign setup and configuration in Instantly
 - `follow-up-automation` — n8n workflows for automated reply routing and classification
 - `tool-sync-workflow` — connect Instantly, Attio, Clay, and PostHog into a unified data pipeline

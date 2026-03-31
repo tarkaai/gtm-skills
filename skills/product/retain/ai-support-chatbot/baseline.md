@@ -13,7 +13,6 @@ outcome: "≥50% AI resolution rate; ≥4.0 CSAT for AI-resolved; human ticket v
 kpis: ["AI resolution rate", "CSAT (AI-resolved)", "Human ticket volume reduction", "Escalation routing accuracy"]
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
-drills:
 ---
 
 # AI In-App Support — Baseline Run

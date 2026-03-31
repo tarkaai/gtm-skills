@@ -15,7 +15,6 @@ kpis: ["Cost per qualified lead (CPqL)", "View rate (VTR)", "View-to-lead conver
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
-  - youtube-preroll-audience-builder
   - retargeting-setup
   - budget-allocation
   - posthog-gtm-events
@@ -73,7 +72,7 @@ Run the the youtube preroll creative pipeline workflow (see instructions below) 
 
 ### 4. Expand audience targeting
 
-Run the `youtube-preroll-audience-builder` drill at baseline volume:
+Run the the youtube preroll audience builder workflow (see instructions below) drill at baseline volume:
 - Expand placement list from 20-50 to 50-100 channels
 - Add 20 specific high-performing video placements (individual videos, not just channels)
 - Create a second custom intent segment for the new pain point
@@ -164,7 +163,7 @@ Decision:
 ## Drills Referenced
 
 - the youtube preroll creative pipeline workflow (see instructions below) — expand winning smoke creative to 6-9 variants across 2 pain points
-- `youtube-preroll-audience-builder` — expand to 50-100 placements, 2 custom intent segments, and topic targeting
+- the youtube preroll audience builder workflow (see instructions below) — expand to 50-100 placements, 2 custom intent segments, and topic targeting
 - the youtube preroll lead routing workflow (see instructions below) — automate lead flow from landing page form to CRM with enrichment and nurture
 - `retargeting-setup` — capture 75%+ viewers and landing page visitors for bumper ad and display retargeting
 - `budget-allocation` — distribute budget across 3 campaign types and retargeting
