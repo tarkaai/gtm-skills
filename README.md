@@ -10,13 +10,15 @@ Each play covers Marketing, Sales, and Product stages — from a quick **Smoke T
 
 ## Install
 
+### Option 1: CLI (Recommended)
+
 ```bash
 npx gtm-skills install
 ```
 
 This copies all skills to `~/.claude/skills/` and creates a config file for your stack.
 
-Or install selectively:
+Install selectively:
 
 ```bash
 # One stage
@@ -27,6 +29,61 @@ npx gtm-skills install --play outbound-founder-email
 
 # One specific level
 npx gtm-skills install --play outbound-founder-email --level baseline
+```
+
+### Option 2: Claude Code Plugin
+
+Install via Claude Code's built-in plugin system:
+
+```bash
+/plugin marketplace add tarkaai/gtm-skills
+/plugin install gtm-skills
+```
+
+### Option 3: Clone and Copy
+
+Clone the repo and copy the skills folder into your agent's skills directory:
+
+```bash
+git clone https://github.com/tarkaai/gtm-skills.git
+cp -r gtm-skills/skills/* .agents/skills/
+```
+
+### Option 4: Git Submodule
+
+Add as a submodule for easy updates:
+
+```bash
+git submodule add https://github.com/tarkaai/gtm-skills.git .agents/gtm-skills
+```
+
+Then reference skills from `.agents/gtm-skills/skills/`.
+
+To update later:
+
+```bash
+git submodule update --remote .agents/gtm-skills
+```
+
+### Option 5: Fork and Customize
+
+1. Fork this repository on GitHub
+2. Customize plays for your specific ICP, stack, or motion
+3. Clone your fork and point your agent at it
+
+### Option 6: SkillKit (Multi-Agent)
+
+Use [SkillKit](https://github.com/rohitg00/skillkit) to install plays across multiple AI agents (Claude Code, Cursor, Copilot, etc.):
+
+```bash
+# Install all plays
+npx skillkit install tarkaai/gtm-skills
+
+# Install specific plays
+npx skillkit install tarkaai/gtm-skills --skill outbound-founder-email
+
+# List available plays
+npx skillkit install tarkaai/gtm-skills --list
 ```
 
 ---

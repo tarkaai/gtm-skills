@@ -126,6 +126,33 @@ async function main() {
       }
       break;
     }
+    case 'list': {
+      // npx gtm-skills list [--stage <stage>]
+      const stageIdx = args.indexOf('--stage');
+      const stageFilter = stageIdx > -1 ? args[stageIdx + 1].toLowerCase() : null;
+      const stages = fs.readdirSync(SKILLS_DIR).filter(s => {
+        if (stageFilter && s !== stageFilter) return false;
+        return fs.statSync(path.join(SKILLS_DIR, s)).isDirectory();
+      });
+      console.log('\nAvailable GTM plays:\n');
+      for (const stageName of stages) {
+        const stagePath = path.join(SKILLS_DIR, stageName);
+        const subStages = fs.readdirSync(stagePath).filter(s =>
+          fs.statSync(path.join(stagePath, s)).isDirectory()
+        );
+        for (const subStageName of subStages) {
+          const subStagePath = path.join(stagePath, subStageName);
+          const plays = fs.readdirSync(subStagePath).filter(p =>
+            fs.statSync(path.join(subStagePath, p)).isDirectory()
+          );
+          for (const playName of plays) {
+            console.log(`  ${stageName}/${subStageName}/${playName}`);
+          }
+        }
+      }
+      console.log('');
+      break;
+    }
     default:
       console.log(`
 gtm-skills — GTM play skills for AI agents
@@ -137,12 +164,16 @@ Commands:
   install --play <slug>         Install one play (all 4 levels)
   install --level <level>       Combined with --play: install one level only
   add <stage/sub-stage/play>    Shorthand to add one play
+  list                          List all available plays
+  list --stage <stage>          List plays in one stage
 
 Examples:
   npx gtm-skills init
   npx gtm-skills install
   npx gtm-skills install --stage marketing
   npx gtm-skills add marketing/solution-aware/outbound-founder-email
+  npx gtm-skills list
+  npx gtm-skills list --stage sales
 `);
   }
 }
