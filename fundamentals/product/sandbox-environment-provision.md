@@ -1,7 +1,8 @@
 ---
 name: sandbox-environment-provision
 description: Programmatically provision an isolated sandbox environment for a prospect via product API or infrastructure automation
-tool: Product API
+tool: Product
+product: Product API
 difficulty: Advanced
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: reddit-api-read
 description: Read subreddit posts, comments, and search Reddit via the Reddit API (OAuth2)
-tool: Reddit API
+tool: Reddit
+product: Reddit API
 difficulty: Setup
 ---
 

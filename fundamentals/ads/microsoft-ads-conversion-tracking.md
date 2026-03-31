@@ -1,7 +1,8 @@
 ---
 name: microsoft-ads-conversion-tracking
 description: Set up Universal Event Tracking (UET) and conversion goals for Microsoft Advertising campaigns
-tool: Microsoft Advertising
+tool: Microsoft
+product: Microsoft Ads
 difficulty: Config
 ---
 

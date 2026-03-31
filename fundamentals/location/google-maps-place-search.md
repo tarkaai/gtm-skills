@@ -1,7 +1,8 @@
 ---
 name: google-maps-place-search
 description: Search Google Maps Places API for business locations by type and geography
-tool: Google Maps
+tool: Google
+product: Google Maps
 difficulty: Setup
 ---
 

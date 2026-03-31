@@ -2,6 +2,7 @@
 name: linkedin-organic-feed-search
 description: Search and browse LinkedIn feeds to find ICP-relevant posts worth commenting on
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Config
 ---
 

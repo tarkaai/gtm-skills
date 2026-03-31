@@ -1,7 +1,8 @@
 ---
 name: google-ads-campaign-setup
 description: Create a Google Ads campaign with proper structure via the Google Ads API
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Intermediate
 ---
 

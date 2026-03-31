@@ -1,7 +1,8 @@
 ---
 name: registry-download-tracking
 description: Query download/install counts from package registries via their public APIs
-tool: Registry APIs (npm, PyPI, crates.io, NuGet, RubyGems)
+tool: Dev Tools
+product: Registry APIs
 difficulty: Setup
 ---
 

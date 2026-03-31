@@ -2,6 +2,7 @@
 name: talk-proposal-generation
 description: Use Claude to generate conference talk proposals tailored to specific CFP requirements and audience
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

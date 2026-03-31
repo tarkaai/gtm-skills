@@ -2,6 +2,7 @@
 name: story-narrative-generation
 description: Generate a prospect-specific demo narrative that weaves product capabilities through a customer story matching the prospect's context
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

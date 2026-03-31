@@ -1,7 +1,8 @@
 ---
 name: google-ads-youtube-creative
 description: Create and manage YouTube video ad creatives (skippable in-stream, bumper, companion banners) via Google Ads API
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

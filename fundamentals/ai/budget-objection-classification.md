@@ -2,6 +2,7 @@
 name: budget-objection-classification
 description: Classify a budget objection by root cause — distinguishing genuine budget constraints from proxy objections — and score urgency and navigability
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

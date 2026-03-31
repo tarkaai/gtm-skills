@@ -2,6 +2,7 @@
 name: creator-discovery-search
 description: Search for B2B creators and micro-influencers by audience, topic, and engagement metrics
 tool: SparkToro
+product: Audience Research
 difficulty: Setup
 ---
 

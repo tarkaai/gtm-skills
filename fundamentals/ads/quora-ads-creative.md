@@ -1,7 +1,8 @@
 ---
 name: quora-ads-creative
 description: Create Quora ad copy and image assets optimized for question-page context and problem-aware audiences
-tool: Quora Ads
+tool: Quora
+product: Quora Ads
 difficulty: Config
 ---
 

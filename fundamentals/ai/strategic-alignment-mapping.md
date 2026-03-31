@@ -2,6 +2,7 @@
 name: strategic-alignment-mapping
 description: Use LLM to map product value propositions to a prospect's known strategic initiatives, generating alignment narratives for executive stakeholders
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: web-push-service-worker
 description: Set up browser push notifications using the Web Push API with VAPID keys and a service worker
-tool: Web Push API
+tool: Browser
+product: Web Push API
 difficulty: Advanced
 ---
 

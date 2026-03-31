@@ -1,7 +1,8 @@
 ---
 name: google-search-console-api
 description: Query Google Search Console API for indexation status, search queries, CTR, and position data
-tool: Google Search Console
+tool: Google
+product: Search Console
 difficulty: Setup
 ---
 

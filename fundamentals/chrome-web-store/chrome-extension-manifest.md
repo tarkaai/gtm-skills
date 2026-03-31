@@ -1,7 +1,8 @@
 ---
 name: chrome-extension-manifest
 description: Build and configure a Chrome extension manifest.json with proper permissions, icons, and metadata
-tool: Chrome Extension Platform
+tool: Google
+product: Chrome Extensions
 difficulty: Setup
 ---
 

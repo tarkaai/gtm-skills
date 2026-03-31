@@ -1,7 +1,8 @@
 ---
 name: youtube-analytics-api
 description: Pull channel and video performance metrics via the YouTube Analytics API
-tool: YouTube Analytics API
+tool: YouTube
+product: Analytics API
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-bidding
 description: Configure and optimize your LinkedIn Ads bidding strategy to control costs and maximize ROI.
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Advanced
 ---
 

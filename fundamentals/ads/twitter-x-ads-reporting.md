@@ -1,7 +1,8 @@
 ---
 name: twitter-x-ads-reporting
 description: Pull campaign metrics, cost data, and conversion attribution from the X Ads API
-tool: X Ads
+tool: X
+product: X Ads
 difficulty: Config
 ---
 

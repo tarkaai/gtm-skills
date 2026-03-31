@@ -2,6 +2,7 @@
 name: change-resistance-diagnosis
 description: Use Claude to classify change management objection root causes from call transcripts or CRM notes and assess organizational change readiness
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

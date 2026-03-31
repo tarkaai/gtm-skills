@@ -2,6 +2,7 @@
 name: linkedin-automation-sequence
 description: Automate LinkedIn connection requests and follow-up message sequences via LinkedIn automation tools
 tool: Expandi
+product: LinkedIn Automation
 difficulty: Config
 ---
 

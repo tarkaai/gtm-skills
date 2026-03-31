@@ -2,6 +2,7 @@
 name: cost-of-delay-calculation
 description: Use Claude to calculate the monthly and annual cost of delaying a purchase decision based on quantified pain data and timeline context
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

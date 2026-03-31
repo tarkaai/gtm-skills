@@ -1,7 +1,8 @@
 ---
 name: chrome-web-store-api
 description: Interact with the Chrome Web Store API to publish, update, and query extension listings
-tool: Chrome Web Store API
+tool: Google
+product: Chrome Web Store
 difficulty: Advanced
 ---
 

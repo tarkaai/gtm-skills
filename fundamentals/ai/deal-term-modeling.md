@@ -2,6 +2,7 @@
 name: deal-term-modeling
 description: Generate multi-year deal structures with discount tiers, payment terms, and incentive packages tailored to a specific prospect's profile
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

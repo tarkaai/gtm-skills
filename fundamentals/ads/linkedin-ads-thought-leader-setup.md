@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-thought-leader-setup
 description: Configure LinkedIn Thought Leader Ads to promote personal profile posts as sponsored content via Campaign Manager
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Config
 ---
 

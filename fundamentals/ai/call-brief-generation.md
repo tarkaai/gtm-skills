@@ -2,6 +2,7 @@
 name: call-brief-generation
 description: Use Claude to generate a structured meeting preparation brief from assembled account intelligence
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

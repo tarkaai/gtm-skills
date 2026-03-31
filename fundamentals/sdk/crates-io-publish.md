@@ -1,7 +1,8 @@
 ---
 name: crates-io-publish
 description: Publish or update a Rust crate on crates.io with metadata optimized for discoverability
-tool: cargo CLI
+tool: Dev Tools
+product: Cargo
 difficulty: Setup
 ---
 

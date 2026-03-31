@@ -2,6 +2,7 @@
 name: data-visualization-rendering
 description: Render data charts, graphs, and statistical visualizations as static images suitable for infographic embedding
 tool: Plotly
+product: Charts
 difficulty: Config
 ---
 

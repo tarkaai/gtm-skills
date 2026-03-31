@@ -2,6 +2,7 @@
 name: newsletter-blurb-copywriting
 description: Write a short co-marketing blurb optimized for placement in a partner's newsletter
 tool: Anthropic
+product: Claude API
 difficulty: Setup
 ---
 

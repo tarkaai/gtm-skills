@@ -1,7 +1,8 @@
 ---
 name: google-ads-display-campaign
 description: Create and configure Google Display Network campaigns for banner ads on industry sites and publications
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

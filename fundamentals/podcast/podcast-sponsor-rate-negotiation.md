@@ -2,6 +2,7 @@
 name: podcast-sponsor-rate-negotiation
 description: Negotiate paid podcast sponsorship rates, packages, and terms with hosts or ad sales contacts
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

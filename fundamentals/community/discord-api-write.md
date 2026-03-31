@@ -1,7 +1,8 @@
 ---
 name: discord-api-write
 description: Post messages, replies, and reactions in Discord channels via the Discord API
-tool: Discord API
+tool: Discord
+product: API
 difficulty: Setup
 ---
 

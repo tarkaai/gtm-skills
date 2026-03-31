@@ -2,6 +2,7 @@
 name: pricing-tier-generation
 description: Generate Good/Better/Best pricing tier structures with value anchoring, discount guidelines, and presentation framing tailored to a specific prospect
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

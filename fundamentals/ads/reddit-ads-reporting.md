@@ -1,7 +1,8 @@
 ---
 name: reddit-ads-reporting
 description: Pull campaign performance metrics from Reddit Ads API for reporting and optimization
-tool: Reddit Ads API
+tool: Reddit
+product: Reddit Ads
 difficulty: Setup
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: heygen-personalized-video
 description: Generate personalized AI avatar videos at scale via HeyGen API
-tool: HeyGen
+tool: Voice AI
+product: Video API
 difficulty: Config
 ---
 

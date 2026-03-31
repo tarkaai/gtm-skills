@@ -2,6 +2,7 @@
 name: objection-response-generation
 description: Use Claude to generate tailored price objection responses based on objection root cause, deal context, and winning framework patterns
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

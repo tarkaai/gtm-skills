@@ -2,6 +2,7 @@
 name: list-swap-email-authoring
 description: Generate a full standalone email to send to a partner's email list as part of a list swap
 tool: Anthropic
+product: Claude API
 difficulty: Setup
 ---
 

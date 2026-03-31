@@ -1,7 +1,8 @@
 ---
 name: reddit-ads-conversion-tracking
 description: Set up Reddit Pixel and Conversions API (CAPI) for server-side conversion tracking
-tool: Reddit Ads
+tool: Reddit
+product: Reddit Ads
 difficulty: Config
 ---
 

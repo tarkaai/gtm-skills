@@ -2,6 +2,7 @@
 name: champion-engagement-scoring
 description: Use Claude to analyze champion interactions and compute an engagement health score from CRM and email data
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

@@ -2,6 +2,7 @@
 name: anthropic-agent-building
 description: Build autonomous GTM agents using Claude that monitor metrics and execute plays
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: cross-platform-retargeting-sync
 description: Sync retargeting audiences, exclusion lists, and conversion data across Meta, LinkedIn, and Google Ads via their APIs
-tool: Meta Ads, LinkedIn Ads, Google Ads
+tool: Meta
+product: Meta Ads
 difficulty: Advanced
 ---
 

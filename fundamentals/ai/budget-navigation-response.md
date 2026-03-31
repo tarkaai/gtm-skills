@@ -2,6 +2,7 @@
 name: budget-navigation-response
 description: Generate a tailored budget navigation response matched to the objection root cause — find budget, restructure payment, or build internal justification
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

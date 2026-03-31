@@ -2,6 +2,7 @@
 name: pricing-presentation-scoring
 description: Score a completed pricing presentation's effectiveness using deal outcome data, prospect engagement signals, and conversation analysis
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

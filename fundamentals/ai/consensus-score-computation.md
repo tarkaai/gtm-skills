@@ -2,6 +2,7 @@
 name: consensus-score-computation
 description: Compute a weighted consensus score across all stakeholders in a deal based on sentiment, influence, and alignment
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

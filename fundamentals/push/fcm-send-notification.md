@@ -1,7 +1,8 @@
 ---
 name: fcm-send-notification
 description: Send push notifications to mobile and web clients via Firebase Cloud Messaging HTTP v1 API
-tool: Firebase
+tool: Google
+product: Firebase
 difficulty: Setup
 ---
 

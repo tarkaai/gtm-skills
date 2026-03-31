@@ -1,7 +1,8 @@
 ---
 name: quora-ads-conversion-tracking
 description: Install the Quora Pixel, configure conversion events, and set up server-side Conversion API (CAPI) for Quora Ads attribution
-tool: Quora Ads
+tool: Quora
+product: Quora Ads
 difficulty: Setup
 ---
 

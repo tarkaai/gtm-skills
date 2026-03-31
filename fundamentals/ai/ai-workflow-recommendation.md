@@ -2,6 +2,7 @@
 name: ai-workflow-recommendation
 description: Use Claude API to generate personalized workflow optimization suggestions from user behavior data
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

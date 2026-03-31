@@ -2,6 +2,7 @@
 name: press-release-distribution
 description: Distribute press releases via wire services to reach journalists and publications at scale
 tool: PR Newswire
+product: Wire Service
 difficulty: Config
 ---
 

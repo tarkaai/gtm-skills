@@ -2,6 +2,7 @@
 name: bundle-pricing-model
 description: Generate bundle pricing structures that create joint value for both partners and their shared customers
 tool: Anthropic
+product: Claude API
 difficulty: Setup
 ---
 

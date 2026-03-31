@@ -2,6 +2,7 @@
 name: technical-demo-script-generation
 description: Generate a prospect-tailored technical demo script covering architecture, APIs, security, and integration patterns
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

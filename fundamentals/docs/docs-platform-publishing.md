@@ -2,6 +2,7 @@
 name: docs-platform-publishing
 description: Create, update, and publish documentation pages via docs platform APIs (Mintlify, GitBook, ReadMe, Docusaurus, Fumadocs)
 tool: Mintlify
+product: Docs
 difficulty: Setup
 ---
 

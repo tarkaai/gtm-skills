@@ -1,7 +1,8 @@
 ---
 name: github-traffic-api
 description: Fetch repository traffic data (views, clones, referrers, paths) via GitHub API
-tool: GitHub API
+tool: GitHub
+product: API
 difficulty: Setup
 ---
 

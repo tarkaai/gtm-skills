@@ -1,7 +1,8 @@
 ---
 name: partner-marketplace-analytics-api
 description: Pull listing analytics (views, installs, conversions, rankings) from partner ecosystem marketplace developer portals
-tool: Salesforce AppExchange
+tool: Salesforce
+product: AppExchange
 difficulty: Config
 ---
 

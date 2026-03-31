@@ -1,7 +1,8 @@
 ---
 name: pagespeed-insights-api
 description: Measure Core Web Vitals and Lighthouse scores via the Google PageSpeed Insights API
-tool: Google PageSpeed Insights
+tool: Google
+product: PageSpeed Insights
 difficulty: Setup
 ---
 

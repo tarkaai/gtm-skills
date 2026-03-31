@@ -2,6 +2,7 @@
 name: podcast-sponsor-marketplace-search
 description: Search podcast advertising marketplaces to find shows accepting paid sponsorships matching your ICP
 tool: AdvertiseCast
+product: Marketplace
 difficulty: Setup
 ---
 

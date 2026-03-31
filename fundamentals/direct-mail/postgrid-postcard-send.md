@@ -1,7 +1,7 @@
 ---
 name: postgrid-postcard-send
 description: Send a physical postcard to a recipient via the PostGrid Print & Mail API
-tool: PostGrid
+tool: Lob
 difficulty: Setup
 ---
 

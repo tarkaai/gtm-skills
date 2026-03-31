@@ -1,7 +1,8 @@
 ---
 name: brand-audit-scrape
 description: Programmatically crawl and analyze a website's brand presentation including messaging, visual consistency, and conversion paths
-tool: Playwright
+tool: Microsoft
+product: Playwright
 difficulty: Setup
 ---
 

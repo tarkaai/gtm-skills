@@ -2,6 +2,7 @@
 name: roi-narrative-generation
 description: Generate persona-specific ROI narratives that frame product value in the language of the target executive's role and priorities
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

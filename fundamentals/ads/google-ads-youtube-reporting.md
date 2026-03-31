@@ -1,7 +1,8 @@
 ---
 name: google-ads-youtube-reporting
 description: Pull YouTube video campaign performance metrics (views, VTR, CPV, conversions) via Google Ads API
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

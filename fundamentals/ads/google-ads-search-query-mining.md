@@ -1,7 +1,8 @@
 ---
 name: google-ads-search-query-mining
 description: Extract and analyze actual search queries from Google Ads to find converting terms and new negative keywords
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

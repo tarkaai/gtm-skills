@@ -1,7 +1,8 @@
 ---
 name: partner-marketplace-listing-api
 description: Create, update, and manage app listings on partner ecosystem marketplaces via their APIs and developer portals
-tool: Salesforce AppExchange
+tool: Salesforce
+product: AppExchange
 difficulty: Setup
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: google-ads-youtube-audience-targeting
 description: Configure YouTube video campaign audience targeting via Google Ads API (topics, placements, custom segments, affinity)
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

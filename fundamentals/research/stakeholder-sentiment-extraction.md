@@ -2,6 +2,7 @@
 name: stakeholder-sentiment-extraction
 description: Extract per-stakeholder sentiment, priorities, and concerns from discovery call transcripts using Claude API
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

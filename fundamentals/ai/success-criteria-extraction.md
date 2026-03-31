@@ -2,6 +2,7 @@
 name: success-criteria-extraction
 description: Use Claude to extract and generate measurable success criteria from discovery call transcripts, deal context, and product capabilities
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

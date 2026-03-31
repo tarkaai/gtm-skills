@@ -2,6 +2,7 @@
 name: gift-selection-scoring
 description: Use Claude to score and select the optimal gift type, value, and personalization for a prospect based on enrichment data
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

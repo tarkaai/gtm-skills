@@ -1,7 +1,8 @@
 ---
 name: google-ads-conversion-tracking
 description: Implement conversion tracking for Google Ads to measure which actions lead to sign-ups, demos, and purchases
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Intermediate
 ---
 

@@ -2,6 +2,7 @@
 name: knock-push-workflow
 description: Send push notifications through Knock notification workflows with cross-channel orchestration
 tool: Knock
+product: Notifications
 difficulty: Config
 ---
 

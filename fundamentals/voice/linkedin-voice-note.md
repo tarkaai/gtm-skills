@@ -1,7 +1,8 @@
 ---
 name: linkedin-voice-note
 description: Send personalized voice notes via LinkedIn messaging using automation tools or API integrations
-tool: lemlist
+tool: Voice AI
+product: Outreach
 difficulty: Config
 ---
 

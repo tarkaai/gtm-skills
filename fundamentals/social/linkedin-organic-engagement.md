@@ -2,6 +2,7 @@
 name: linkedin-organic-engagement
 description: Build engagement habits on LinkedIn to grow reach and generate pipeline
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Beginner
 ---
 

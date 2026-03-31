@@ -1,7 +1,8 @@
 ---
 name: chrome-web-store-listing-optimization
 description: Optimize a Chrome Web Store listing for search visibility, install rate, and lead generation
-tool: Chrome Web Store
+tool: Google
+product: Chrome Web Store
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: briefing-document-creation
 description: Generate a structured one-pager briefing document for analyst or consultant meetings using the Anthropic API
-tool: Anthropic Claude API
+tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

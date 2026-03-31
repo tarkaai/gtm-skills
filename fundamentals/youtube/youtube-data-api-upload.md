@@ -1,7 +1,8 @@
 ---
 name: youtube-data-api-upload
 description: Upload a video to YouTube via the Data API v3 resumable upload endpoint
-tool: YouTube Data API v3
+tool: YouTube
+product: Data API
 difficulty: Config
 ---
 

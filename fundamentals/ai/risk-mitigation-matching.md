@@ -2,6 +2,7 @@
 name: risk-mitigation-matching
 description: Match identified deal risks to the best mitigation asset (case study, security doc, ROI proof, reference) using LLM analysis
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

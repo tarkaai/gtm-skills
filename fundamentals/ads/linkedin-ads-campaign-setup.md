@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-campaign-setup
 description: Create a LinkedIn advertising campaign via the Marketing API with proper structure and tracking
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Intermediate
 ---
 

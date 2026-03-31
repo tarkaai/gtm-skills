@@ -1,7 +1,8 @@
 ---
 name: ai-content-ghostwriting
 description: Use an LLM API to generate social media posts in a founder's authentic voice
-tool: Anthropic Claude API
+tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

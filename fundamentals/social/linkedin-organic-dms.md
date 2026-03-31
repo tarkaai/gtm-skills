@@ -2,6 +2,7 @@
 name: linkedin-organic-dms
 description: Monitor LinkedIn DMs and connection requests to capture inbound leads from content
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Config
 ---
 

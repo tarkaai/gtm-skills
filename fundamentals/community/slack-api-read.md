@@ -1,7 +1,8 @@
 ---
 name: slack-api-read
 description: Read messages, channels, and user profiles from Slack workspaces via the Slack Web API
-tool: Slack API
+tool: Slack
+product: API
 difficulty: Setup
 ---
 

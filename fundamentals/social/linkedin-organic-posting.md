@@ -2,6 +2,7 @@
 name: linkedin-organic-posting
 description: Publish text, image, and document posts to LinkedIn via API or scheduling tools
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Setup
 ---
 

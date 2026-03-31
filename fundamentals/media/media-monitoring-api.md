@@ -2,6 +2,7 @@
 name: media-monitoring-api
 description: Monitor media mentions, journalist requests, and PR opportunities via monitoring APIs and HARO-style platforms
 tool: Mention
+product: Monitoring
 difficulty: Config
 ---
 

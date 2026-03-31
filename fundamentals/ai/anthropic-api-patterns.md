@@ -2,6 +2,7 @@
 name: anthropic-api-patterns
 description: Use the Claude API for GTM automation — content generation, lead scoring, and agent workflows
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

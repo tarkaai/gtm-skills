@@ -1,7 +1,8 @@
 ---
 name: quora-ads-reporting
 description: Pull Quora Ads performance data for campaign analysis, budget decisions, and optimization
-tool: Quora Ads
+tool: Quora
+product: Quora Ads
 difficulty: Config
 ---
 

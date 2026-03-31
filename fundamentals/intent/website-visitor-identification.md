@@ -2,6 +2,7 @@
 name: website-visitor-identification
 description: Identify anonymous website visitors at the company or contact level using reverse-IP and pixel-based identification tools
 tool: RB2B
+product: Visitor ID
 difficulty: Setup
 ---
 

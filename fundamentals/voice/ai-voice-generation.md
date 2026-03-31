@@ -1,7 +1,8 @@
 ---
 name: ai-voice-generation
 description: Clone a voice from audio samples and generate personalized voice messages at scale via TTS APIs
-tool: ElevenLabs
+tool: Voice AI
+product: Voice API
 difficulty: Setup
 ---
 

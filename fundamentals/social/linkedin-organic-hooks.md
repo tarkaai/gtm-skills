@@ -2,6 +2,7 @@
 name: linkedin-organic-hooks
 description: Write scroll-stopping hooks for LinkedIn posts
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Intermediate
 ---
 

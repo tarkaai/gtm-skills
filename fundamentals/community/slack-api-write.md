@@ -1,7 +1,8 @@
 ---
 name: slack-api-write
 description: Post messages, replies, and reactions in Slack channels via the Slack Web API
-tool: Slack API
+tool: Slack
+product: API
 difficulty: Setup
 ---
 

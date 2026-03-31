@@ -2,6 +2,7 @@
 name: linkedin-organic-formats
 description: Master LinkedIn post formats that drive engagement and pipeline
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Intermediate
 ---
 

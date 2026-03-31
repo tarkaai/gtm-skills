@@ -1,7 +1,8 @@
 ---
 name: quora-ads-campaign-setup
 description: Create and configure Quora Ads campaigns, ad sets, and ads via Quora Ads Manager and Conversion API
-tool: Quora Ads
+tool: Quora
+product: Quora Ads
 difficulty: Setup
 ---
 

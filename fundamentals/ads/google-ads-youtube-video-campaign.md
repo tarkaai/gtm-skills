@@ -1,7 +1,8 @@
 ---
 name: google-ads-youtube-video-campaign
 description: Create a YouTube Video campaign in Google Ads with proper ad group structure and bidding
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: share-widget-embed
 description: Build and embed in-product share buttons and share cards with channel-specific formatting
-tool: Custom UI Component
+tool: Product
+product: UI Component
 difficulty: Config
 ---
 

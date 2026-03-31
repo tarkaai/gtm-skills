@@ -2,6 +2,7 @@
 name: hypothesis-generation
 description: Use Claude to generate ranked improvement hypotheses from metric data and play context
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

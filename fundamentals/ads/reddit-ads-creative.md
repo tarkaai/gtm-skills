@@ -1,7 +1,8 @@
 ---
 name: reddit-ads-creative
 description: Create Reddit ad creative (promoted posts) optimized for authenticity and community norms
-tool: Reddit Ads API
+tool: Reddit
+product: Reddit Ads
 difficulty: Config
 ---
 

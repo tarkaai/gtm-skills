@@ -2,6 +2,7 @@
 name: experiment-evaluation
 description: Use Claude to evaluate A/B test results and decide whether to adopt, iterate, or revert
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

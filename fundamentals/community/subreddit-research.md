@@ -1,7 +1,8 @@
 ---
 name: subreddit-research
 description: Discover and evaluate subreddits where your ICP is active using Reddit API and web research
-tool: Reddit API
+tool: Reddit
+product: Reddit API
 difficulty: Setup
 ---
 

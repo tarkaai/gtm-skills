@@ -1,7 +1,8 @@
 ---
 name: google-maps-route-planning
 description: Plan optimized multi-stop routes for field visits using Google Maps Routes API
-tool: Google Maps
+tool: Google
+product: Google Maps
 difficulty: Setup
 ---
 

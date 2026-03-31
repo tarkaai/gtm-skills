@@ -2,6 +2,7 @@
 name: event-platform-management
 description: Create, configure, and manage events on virtual and hybrid event platforms via API
 tool: Luma
+product: Events
 difficulty: Config
 ---
 

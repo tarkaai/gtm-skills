@@ -2,6 +2,7 @@
 name: status-quo-cost-analysis
 description: Use Claude to generate a comprehensive cost-of-staying analysis comparing total cost of current solution vs total cost of switching
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

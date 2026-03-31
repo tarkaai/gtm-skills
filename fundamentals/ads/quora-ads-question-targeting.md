@@ -1,7 +1,8 @@
 ---
 name: quora-ads-question-targeting
 description: Configure Quora Ads question, topic, and keyword targeting to reach problem-aware audiences on specific question pages
-tool: Quora Ads
+tool: Quora
+product: Quora Ads
 difficulty: Config
 ---
 

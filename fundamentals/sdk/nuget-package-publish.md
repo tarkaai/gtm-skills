@@ -1,7 +1,8 @@
 ---
 name: nuget-package-publish
 description: Publish or update a .NET package on NuGet.org with metadata optimized for discoverability
-tool: dotnet CLI
+tool: Dev Tools
+product: NuGet
 difficulty: Setup
 ---
 

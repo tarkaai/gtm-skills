@@ -2,6 +2,7 @@
 name: podcast-sponsor-ad-copy
 description: Write host-read podcast ad scripts and talking points for paid sponsorship placements
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

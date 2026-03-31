@@ -1,7 +1,8 @@
 ---
 name: reddit-ads-campaign-setup
 description: Create and configure Reddit Ads campaigns, ad groups, and ads via the Reddit Ads API v3
-tool: Reddit Ads API
+tool: Reddit
+product: Reddit Ads
 difficulty: Setup
 ---
 

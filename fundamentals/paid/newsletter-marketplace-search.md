@@ -2,6 +2,7 @@
 name: newsletter-marketplace-search
 description: Search newsletter advertising marketplaces to find paid sponsorship opportunities matching your ICP
 tool: Paved
+product: Newsletter Marketplace
 difficulty: Setup
 ---
 

@@ -2,6 +2,7 @@
 name: churn-score-computation
 description: Use Claude to compute weighted churn risk scores from behavioral signals and usage patterns
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: meta-ads-lead-forms
 description: Create and manage Meta Instant Forms (Lead Ads) via the Marketing API for in-feed lead capture
-tool: Meta Ads
+tool: Meta
+product: Meta Ads
 difficulty: Intermediate
 ---
 

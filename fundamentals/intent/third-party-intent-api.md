@@ -2,6 +2,7 @@
 name: third-party-intent-api
 description: Ingest third-party buyer intent data from Bombora, G2, and other intent providers via API
 tool: Bombora
+product: Intent Data
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: meta-ads-pixel-capi
 description: Install Meta Pixel and configure the Conversions API for accurate tracking and attribution
-tool: Meta Ads
+tool: Meta
+product: Meta Ads
 difficulty: Intermediate
 ---
 

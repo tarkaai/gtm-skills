@@ -1,7 +1,8 @@
 ---
 name: social-image-sizing
 description: Resize and optimize images for each social platform's dimensions and file size limits
-tool: Sharp
+tool: Dev Tools
+product: Sharp
 difficulty: Setup
 ---
 

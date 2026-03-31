@@ -2,6 +2,7 @@
 name: competitive-positioning-generation
 description: Use Claude to generate tailored competitive positioning responses based on competitor identity, prospect pain profile, and historical win patterns
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

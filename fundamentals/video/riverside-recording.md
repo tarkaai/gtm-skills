@@ -1,7 +1,8 @@
 ---
 name: riverside-recording
 description: Use Riverside.fm for high-quality remote recording of interviews, podcasts, and webinars with separate audio/video tracks.
-tool: Riverside
+tool: Video
+product: Recording
 difficulty: Setup
 ---
 

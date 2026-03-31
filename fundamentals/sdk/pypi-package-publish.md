@@ -1,7 +1,8 @@
 ---
 name: pypi-package-publish
 description: Publish or update a Python package on PyPI with metadata optimized for discoverability
-tool: twine
+tool: Dev Tools
+product: PyPI
 difficulty: Setup
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: meta-ads-creative-optimization
 description: Design and iterate on Meta ad creative — images, videos, and copy — to improve click-through rates and conversion rates.
-tool: Meta Ads
+tool: Meta
+product: Meta Ads
 difficulty: Advanced
 ---
 

@@ -2,6 +2,7 @@
 name: discovery-question-generation
 description: Generate role-specific discovery questions for each stakeholder type using Claude API
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

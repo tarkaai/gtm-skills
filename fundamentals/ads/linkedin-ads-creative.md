@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-creative
 description: Design effective LinkedIn ad creatives — images, copy, and CTAs — that resonate with B2B audiences and drive action.
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Config
 ---
 

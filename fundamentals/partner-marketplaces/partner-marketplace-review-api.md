@@ -1,7 +1,8 @@
 ---
 name: partner-marketplace-review-api
 description: Monitor, respond to, and request reviews on partner ecosystem marketplace listings
-tool: Salesforce AppExchange
+tool: Salesforce
+product: AppExchange
 difficulty: Config
 ---
 

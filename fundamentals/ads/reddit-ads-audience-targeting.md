@@ -1,7 +1,8 @@
 ---
 name: reddit-ads-audience-targeting
 description: Configure subreddit, interest, keyword, and custom audience targeting for Reddit Ads campaigns
-tool: Reddit Ads API
+tool: Reddit
+product: Reddit Ads
 difficulty: Config
 ---
 

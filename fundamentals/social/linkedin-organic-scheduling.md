@@ -2,6 +2,7 @@
 name: linkedin-organic-scheduling
 description: Schedule LinkedIn posts for consistent publishing cadence
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Beginner
 ---
 

@@ -2,6 +2,7 @@
 name: contract-comparison-generation
 description: Generate a buyer-facing comparison document showing annual vs multi-year contract options with total cost, savings, and risk analysis
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

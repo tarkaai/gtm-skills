@@ -2,6 +2,7 @@
 name: roi-accuracy-scoring
 description: Compare projected ROI from sales cycle against realized ROI from customer data to calibrate model accuracy
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

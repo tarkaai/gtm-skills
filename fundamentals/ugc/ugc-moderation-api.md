@@ -2,6 +2,7 @@
 name: ugc-moderation-api
 description: Score and classify user-generated content for quality, relevance, and brand safety using AI
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

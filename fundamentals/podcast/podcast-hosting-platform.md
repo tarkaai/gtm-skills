@@ -2,6 +2,7 @@
 name: podcast-hosting-platform
 description: Create, configure, and publish podcast episodes via hosting platform APIs (Buzzsprout, Transistor, RSS.com)
 tool: Buzzsprout
+product: Hosting
 difficulty: Setup
 ---
 

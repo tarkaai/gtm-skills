@@ -2,6 +2,7 @@
 name: pain-quantification-prompt
 description: LLM prompt to estimate the annual dollar cost of a prospect's pain point using contextual clues from calls and enrichment data
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

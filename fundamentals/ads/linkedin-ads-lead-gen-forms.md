@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-lead-gen-forms
 description: Create and manage LinkedIn Lead Gen Forms via the Marketing API to capture leads without a landing page
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Intermediate
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: google-ads-display-audiences
 description: Build and manage audience segments for Google Display Network campaigns via the Google Ads API
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Intermediate
 ---
 

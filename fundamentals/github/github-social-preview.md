@@ -1,7 +1,8 @@
 ---
 name: github-social-preview
 description: Upload a custom social preview image (Open Graph) for a GitHub repository
-tool: GitHub API
+tool: GitHub
+product: API
 difficulty: Setup
 ---
 

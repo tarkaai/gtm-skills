@@ -1,7 +1,8 @@
 ---
 name: account-brief-generation
 description: Generate an outreach-ready account brief with personalization hooks using an LLM
-tool: Anthropic Claude API
+tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: share-link-generation
 description: Generate unique, tracked share URLs with attribution for viral loop tracking
-tool: Dub.co
+tool: Dub
+product: Link Shortener
 difficulty: Setup
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: youtube-search-seo
 description: Research YouTube search keywords and analyze competitor video SEO using the Data API and third-party tools
-tool: YouTube Data API v3
+tool: YouTube
+product: Data API
 difficulty: Config
 ---
 

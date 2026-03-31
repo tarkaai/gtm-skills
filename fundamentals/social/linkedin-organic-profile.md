@@ -2,6 +2,7 @@
 name: linkedin-organic-profile
 description: Optimize your LinkedIn profile as a GTM channel for founder-led growth
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Setup
 ---
 

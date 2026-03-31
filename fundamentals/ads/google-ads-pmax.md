@@ -1,7 +1,8 @@
 ---
 name: google-ads-pmax
 description: Create Performance Max campaigns that use Google's AI to serve ads across Search, Display, YouTube, Gmail, and Maps from a single campaign.
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Advanced
 ---
 

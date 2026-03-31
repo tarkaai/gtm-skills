@@ -1,7 +1,8 @@
 ---
 name: google-ads-search-campaigns
 description: Create and optimize Google Search campaigns that capture high-intent buyers actively searching for your solution.
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 

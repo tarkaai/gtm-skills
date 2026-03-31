@@ -2,6 +2,7 @@
 name: competitor-page-scraping
 description: Scrape competitor product pages, pricing pages, and feature lists to extract structured competitive data
 tool: Firecrawl
+product: Web Scraping
 difficulty: Config
 ---
 

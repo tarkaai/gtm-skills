@@ -2,6 +2,7 @@
 name: poc-success-criteria-template
 description: Generate a structured POC success criteria document with measurable outcomes, timeline, stakeholder responsibilities, and decision framework
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

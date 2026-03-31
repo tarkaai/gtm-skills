@@ -2,6 +2,7 @@
 name: media-database-search
 description: Search journalist, newsletter, and publication databases to find media targets matching topic and audience criteria
 tool: Muck Rack
+product: PR Database
 difficulty: Setup
 ---
 

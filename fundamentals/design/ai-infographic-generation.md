@@ -1,7 +1,8 @@
 ---
 name: ai-infographic-generation
 description: Use an LLM to generate structured infographic content and render it as a shareable image via code
-tool: Anthropic Claude API
+tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

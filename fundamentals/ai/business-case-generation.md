@@ -2,6 +2,7 @@
 name: business-case-generation
 description: Generate a structured business case document from quantified pain data, ROI projections, and competitive context
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

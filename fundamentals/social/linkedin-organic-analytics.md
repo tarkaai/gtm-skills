@@ -2,6 +2,7 @@
 name: linkedin-organic-analytics
 description: Pull LinkedIn post and profile analytics via API or analytics tools
 tool: LinkedIn
+product: LinkedIn Organic
 difficulty: Config
 ---
 

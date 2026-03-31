@@ -2,6 +2,7 @@
 name: story-matching-scoring
 description: Score and rank customer stories against a prospect profile to select the highest-resonance story for a demo
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

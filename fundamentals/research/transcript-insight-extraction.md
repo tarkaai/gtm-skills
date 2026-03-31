@@ -2,6 +2,7 @@
 name: transcript-insight-extraction
 description: Use Claude API to extract structured win/loss insights from interview transcripts and survey responses
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

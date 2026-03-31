@@ -1,7 +1,8 @@
 ---
 name: ai-guest-post-drafting
 description: Generate guest article drafts via Anthropic API tailored to a target blog's style, audience, and editorial guidelines
-tool: Anthropic Claude API
+tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

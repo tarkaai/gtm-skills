@@ -1,7 +1,8 @@
 ---
 name: twitter-x-ads-audience-targeting
 description: Build and refine X Ads audiences using keywords, interests, follower lookalikes, and custom audiences
-tool: X Ads
+tool: X
+product: X Ads
 difficulty: Config
 ---
 

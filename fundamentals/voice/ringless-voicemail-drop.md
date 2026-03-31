@@ -1,7 +1,8 @@
 ---
 name: ringless-voicemail-drop
 description: Deliver pre-recorded or AI-generated voice messages directly to a prospect's voicemail without ringing their phone
-tool: VoiceDrop.ai
+tool: Voice AI
+product: Ringless VM
 difficulty: Config
 ---
 

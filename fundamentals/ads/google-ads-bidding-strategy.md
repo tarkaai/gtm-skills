@@ -1,7 +1,8 @@
 ---
 name: google-ads-bidding-strategy
 description: Choose and optimize Google Ads bidding strategies to maximize conversions within your budget.
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Advanced
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: microsoft-ads-campaign-setup
 description: Create and manage Microsoft Advertising (Bing) search campaigns via the Microsoft Advertising API
-tool: Microsoft Advertising
+tool: Microsoft
+product: Microsoft Ads
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: discord-api-read
 description: Read messages, channels, and member profiles from Discord servers via the Discord API
-tool: Discord API
+tool: Discord
+product: API
 difficulty: Setup
 ---
 

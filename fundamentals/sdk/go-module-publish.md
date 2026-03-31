@@ -1,7 +1,8 @@
 ---
 name: go-module-publish
 description: Publish a Go module by tagging a release on GitHub and triggering the Go module proxy
-tool: Go CLI
+tool: Dev Tools
+product: Go Modules
 difficulty: Setup
 ---
 

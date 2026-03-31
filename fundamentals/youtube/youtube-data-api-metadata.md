@@ -1,7 +1,8 @@
 ---
 name: youtube-data-api-metadata
 description: Read and update video metadata (title, description, tags, thumbnails) via YouTube Data API v3
-tool: YouTube Data API v3
+tool: YouTube
+product: Data API
 difficulty: Config
 ---
 

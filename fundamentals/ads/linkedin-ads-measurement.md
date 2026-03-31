@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-measurement
 description: Set up conversion tracking and analyze LinkedIn Ads performance via the Marketing API
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Intermediate
 ---
 

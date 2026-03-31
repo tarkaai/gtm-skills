@@ -2,6 +2,7 @@
 name: behavior-cluster-computation
 description: Use Claude to cluster users into behavioral segments from feature-usage vectors and session patterns
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

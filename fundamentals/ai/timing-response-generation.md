@@ -2,6 +2,7 @@
 name: timing-response-generation
 description: Use Claude to generate tailored timing objection responses based on objection subtype, deal context, and urgency driver analysis
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

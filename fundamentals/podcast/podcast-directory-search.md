@@ -2,6 +2,7 @@
 name: podcast-directory-search
 description: Search podcast directories to find shows matching topic, audience size, and guest format criteria
 tool: ListenNotes
+product: API
 difficulty: Setup
 ---
 

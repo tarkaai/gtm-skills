@@ -1,7 +1,8 @@
 ---
 name: sendspark-personalized-video
 description: Generate personalized prospect videos at scale via Sendspark API with dynamic name/company insertion
-tool: Sendspark
+tool: Voice AI
+product: Video API
 difficulty: Config
 ---
 

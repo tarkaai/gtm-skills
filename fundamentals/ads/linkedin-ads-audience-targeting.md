@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-audience-targeting
 description: Build precise LinkedIn ad audiences using the Marketing API for B2B targeting
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Intermediate
 ---
 

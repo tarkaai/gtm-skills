@@ -2,6 +2,7 @@
 name: technical-tutorial-authoring
 description: Draft a developer tutorial with working code samples, repo links, and structured learning flow
 tool: Anthropic
+product: Claude API
 difficulty: Config
 ---
 

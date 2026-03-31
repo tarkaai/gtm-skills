@@ -1,7 +1,8 @@
 ---
 name: structured-data-validation
 description: Validate and test Schema.org structured data (JSON-LD) for rich result eligibility
-tool: Google Rich Results Test API
+tool: Google
+product: Rich Results Test
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: roi-model-generation
 description: Generate a structured ROI model from prospect pain data, product pricing, and industry benchmarks
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

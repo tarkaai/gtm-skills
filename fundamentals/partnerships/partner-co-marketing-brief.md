@@ -2,6 +2,7 @@
 name: partner-co-marketing-brief
 description: Generate a joint landing page, blog post, and email announcement for an integration launch with a partner
 tool: Anthropic
+product: Claude API
 difficulty: Setup
 ---
 

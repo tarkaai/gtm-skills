@@ -1,7 +1,8 @@
 ---
 name: sample-data-schema-design
 description: Design realistic sample data schemas that demonstrate product value for new user accounts
-tool: Product API
+tool: Product
+product: Product API
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: payment-structure-generation
 description: Generate creative payment structures that help prospects fit a purchase into budget constraints without discounting
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

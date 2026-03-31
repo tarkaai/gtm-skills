@@ -2,6 +2,7 @@
 name: change-support-plan-generation
 description: Use Claude to generate a tailored change management support plan matched to the prospect's diagnosed resistance factors and organizational profile
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

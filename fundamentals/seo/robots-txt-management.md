@@ -1,7 +1,8 @@
 ---
 name: robots-txt-management
 description: Audit, generate, and validate robots.txt rules for proper crawl control
-tool: Node.js
+tool: Dev Tools
+product: Runtime
 difficulty: Setup
 ---
 

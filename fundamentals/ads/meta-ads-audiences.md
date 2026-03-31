@@ -1,7 +1,8 @@
 ---
 name: meta-ads-audiences
 description: Create custom, lookalike, and interest-based audiences via the Meta Marketing API
-tool: Meta Ads
+tool: Meta
+product: Meta Ads
 difficulty: Intermediate
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: youtube-captions-api
 description: Upload, update, and manage closed captions and subtitles via YouTube Data API v3
-tool: YouTube Data API v3
+tool: YouTube
+product: Data API
 difficulty: Config
 ---
 

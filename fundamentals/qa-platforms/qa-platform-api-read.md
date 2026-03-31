@@ -1,7 +1,8 @@
 ---
 name: qa-platform-api-read
 description: Read questions, answers, tags, and user profiles from Q&A platforms (Stack Overflow, Quora, Dev.to)
-tool: Stack Exchange API
+tool: Stack Exchange
+product: API
 difficulty: Setup
 ---
 

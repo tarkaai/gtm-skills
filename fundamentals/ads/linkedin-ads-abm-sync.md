@@ -1,7 +1,8 @@
 ---
 name: linkedin-ads-abm-sync
 description: Upload ABM target company lists to LinkedIn via the Marketing API for precision-targeted advertising
-tool: LinkedIn Ads
+tool: LinkedIn
+product: LinkedIn Ads
 difficulty: Intermediate
 ---
 

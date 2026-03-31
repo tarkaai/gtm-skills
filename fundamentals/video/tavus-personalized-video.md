@@ -1,7 +1,8 @@
 ---
 name: tavus-personalized-video
 description: Generate personalized AI videos at scale via Tavus record-once-personalize-many API
-tool: Tavus
+tool: Voice AI
+product: Video API
 difficulty: Config
 ---
 

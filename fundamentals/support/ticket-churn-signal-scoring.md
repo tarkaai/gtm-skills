@@ -2,6 +2,7 @@
 name: ticket-churn-signal-scoring
 description: Score accounts for churn risk based on support ticket patterns using LLM analysis
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

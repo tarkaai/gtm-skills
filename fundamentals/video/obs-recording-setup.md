@@ -1,7 +1,8 @@
 ---
 name: obs-recording-setup
 description: Configure OBS Studio for recording webinars, demos, and content via command-line and config files
-tool: OBS
+tool: Video
+product: Studio
 difficulty: Setup
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: github-topics-seo
 description: Optimize repository topics, description, and URL for GitHub search and Google indexing
-tool: GitHub CLI
+tool: GitHub
+product: CLI
 difficulty: Config
 ---
 

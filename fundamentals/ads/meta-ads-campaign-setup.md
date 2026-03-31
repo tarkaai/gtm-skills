@@ -1,7 +1,8 @@
 ---
 name: meta-ads-campaign-setup
 description: Create a Meta (Facebook/Instagram) ad campaign via the Marketing API
-tool: Meta Ads
+tool: Meta
+product: Meta Ads
 difficulty: Intermediate
 ---
 

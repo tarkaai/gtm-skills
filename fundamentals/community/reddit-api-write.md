@@ -1,7 +1,8 @@
 ---
 name: reddit-api-write
 description: Submit posts and comments to Reddit via the Reddit API (OAuth2)
-tool: Reddit API
+tool: Reddit
+product: Reddit API
 difficulty: Config
 ---
 

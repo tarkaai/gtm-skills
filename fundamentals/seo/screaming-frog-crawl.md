@@ -1,7 +1,8 @@
 ---
 name: screaming-frog-crawl
 description: Crawl a website to discover broken links, redirect chains, missing metadata, and indexation issues
-tool: Screaming Frog SEO Spider
+tool: Screaming Frog
+product: SEO Spider
 difficulty: Config
 ---
 

@@ -2,6 +2,7 @@
 name: reddit-keyword-monitoring
 description: Monitor Reddit for keyword mentions using Syften, n8n Reddit node, or direct API polling
 tool: Syften
+product: Monitoring
 difficulty: Config
 ---
 

@@ -1,7 +1,8 @@
 ---
 name: twitter-x-ads-creative
 description: Create and manage promoted tweet copy, media cards, and creative variants for X Ads campaigns
-tool: X Ads
+tool: X
+product: X Ads
 difficulty: Config
 ---
 

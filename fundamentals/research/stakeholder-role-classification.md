@@ -2,6 +2,7 @@
 name: stakeholder-role-classification
 description: Classify contacts into buying committee roles (Champion, Economic Buyer, Influencer, Blocker, End User) using AI
 tool: Anthropic
+product: Claude API
 difficulty: Advanced
 ---
 

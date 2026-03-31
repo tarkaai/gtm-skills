@@ -1,7 +1,8 @@
 ---
 name: google-ads-keyword-research
 description: Find and organize high-intent keywords for Google Ads campaigns using keyword tools and competitive analysis.
-tool: Google Ads
+tool: Google
+product: Google Ads
 difficulty: Config
 ---
 
