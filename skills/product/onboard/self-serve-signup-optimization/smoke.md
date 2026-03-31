@@ -1,81 +1,89 @@
 ---
 name: self-serve-signup-optimization-smoke
 description: >
-    Signup Funnel Optimization — Smoke Test. Reduce friction in signup flow through testing and
-  optimization to increase conversion rate.
+  Signup Funnel Optimization — Smoke Test. Instrument the signup funnel with field-level
+  tracking, identify the primary conversion bottleneck, and establish baseline metrics.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Website, Product"
 level: "Smoke Test"
-time: "5 hours over 1 week"
-outcome: "≥30% signup CVR"
-kpis: ["Signup conversion", "Form completion", "Drop-off points"]
+time: "6 hours over 1 week"
+outcome: "Signup funnel fully instrumented with baseline CVR measured and primary bottleneck identified"
+kpis: ["Signup page CVR", "Form start rate", "Form completion rate", "Form error rate"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - signup-funnel-audit
+  - posthog-gtm-events
   - threshold-engine
 ---
+
 # Signup Funnel Optimization — Smoke Test
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Website, Product
+> **Stage:** Product > Onboard | **Motion:** LeadCaptureSurface | **Channels:** Website, Product
 
-## Overview
-Signup Funnel Optimization — Smoke Test. Reduce friction in signup flow through testing and optimization to increase conversion rate.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥30% signup CVR
+Signup funnel fully instrumented with field-level tracking. Every step from page view through email verification has a PostHog event. Baseline metrics recorded. Primary bottleneck identified with session recording evidence of why users drop off. This is a measurement and diagnosis pass -- no changes to the funnel yet.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- All signup funnel events firing in PostHog Live Events within 2 hours of instrumentation
+- Session recording playlists created for drop-off behavior at each funnel step
+- Field-level error tracking revealing which form fields cause the most abandonment
+- Baseline metric table populated with 7+ days of data
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Instrument the signup funnel
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `signup-funnel-audit` drill. This instruments every step of the signup flow with PostHog events: page view, form focus, field completion, field errors, form submission, account creation, email verification, and initial setup completion. Implement field-level tracking so you know exactly which form field causes users to abandon.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+**Human action required:** Deploy the tracking code to your signup pages. Verify events appear in PostHog Live Events by completing one test signup yourself.
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Set up the event taxonomy
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥30% signup CVR. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+Run the `posthog-gtm-events` drill to ensure signup events follow the standard naming convention and have consistent properties (source, channel, stage, device_type). Map signup events to the broader product funnel so signup data connects to downstream activation and retention analysis.
 
----
+### 3. Wait for data collection
 
-## KPIs to track
-- Signup conversion
-- Form completion
-- Drop-off points
+Allow 7 days of data collection to establish statistically meaningful baselines. During this period, do not change the signup flow -- you need clean baseline data.
 
----
+### 4. Analyze the funnel and identify the primary bottleneck
 
-## Pass threshold
-**≥30% signup CVR**
+Complete the analysis steps of `signup-funnel-audit`: build the PostHog funnel, identify the step with the largest absolute drop-off, review 15-20 session recordings of users who dropped off at that step, and categorize the friction (form confusion, validation blocking, mobile friction, trust concerns, or distraction).
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+### 5. Record baseline metrics
 
----
+Document baseline metrics from `signup-funnel-audit`:
+- Signup page CVR (signup_completed / signup_page_viewed)
+- Form start rate (signup_form_focused / signup_page_viewed)
+- Form completion rate (signup_form_submitted / signup_form_focused)
+- Form success rate (signup_completed / signup_form_submitted)
+- Email verification rate
+- Median time to complete signup
+- Mobile CVR vs Desktop CVR
 
-## How to run this skill
+### 6. Evaluate against threshold
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `threshold-engine` drill to evaluate: is the baseline data clean, are all events firing, and is the primary bottleneck clearly identified? The Smoke test passes when you have reliable baseline metrics and a prioritized list of friction points with evidence. If events are missing or data is noisy, fix instrumentation and re-run the 7-day collection.
 
-_Install this skill: `npx gtm-skills add product/onboard/self-serve-signup-optimization`_
+## Time Estimate
+
+- 2 hours: Instrument signup funnel events and deploy tracking code
+- 1 hour: Configure event taxonomy and verify events
+- 7 days: Data collection (passive)
+- 2 hours: Funnel analysis, session recording review, baseline documentation
+- 1 hour: Threshold evaluation and bottleneck prioritization
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, funnels, session recordings | Free tier: 1M events + 5K recordings/mo. Paid: usage-based from $0.00005/event. [posthog.com/pricing](https://posthog.com/pricing) |
+
+## Drills Referenced
+
+- `signup-funnel-audit` — instruments the signup funnel, builds funnels, identifies bottlenecks, establishes baselines
+- `posthog-gtm-events` — sets up standard event taxonomy so signup data integrates with the broader analytics system
+- `threshold-engine` — evaluates whether the Smoke test produced usable data and clear findings

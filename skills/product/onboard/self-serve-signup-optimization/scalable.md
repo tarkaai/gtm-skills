@@ -1,81 +1,103 @@
 ---
 name: self-serve-signup-optimization-scalable
 description: >
-    Signup Funnel Optimization — Scalable Automation. Reduce friction in signup flow through testing
-  and optimization to increase conversion rate.
+  Signup Funnel Optimization — Scalable Automation. Personalize signup flows by segment, run
+  systematic A/B tests on copy and layout, and recover abandoned signups across all channels.
 stage: "Product > Onboard"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Website, Product"
 level: "Scalable Automation"
-time: "60 hours over 2 months"
-outcome: "≥35% at 500+"
-kpis: ["Signup conversion", "Form completion", "Drop-off points", "Segment metrics"]
+time: "40 hours over 2 months"
+outcome: "≥50% signup CVR across 500+ monthly signups with per-segment personalization live"
+kpis: ["Overall signup CVR", "Per-segment CVR", "Experiment win rate", "Abandoned signup recovery rate"]
 slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
   - ab-test-orchestrator
-  - churn-prevention
-  - upgrade-prompt
+  - signup-flow-personalization
 ---
+
 # Signup Funnel Optimization — Scalable Automation
 
-> **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Website, Product
+> **Stage:** Product > Onboard | **Motion:** LeadCaptureSurface | **Channels:** Website, Product
 
-## Overview
-Signup Funnel Optimization — Scalable Automation. Reduce friction in signup flow through testing and optimization to increase conversion rate.
+## Outcomes
 
-**Time commitment:** 60 hours over 2 months
-**Pass threshold:** ≥35% at 500+
+Signup flow automatically adapts to the visitor: mobile users see a mobile-optimized flow, paid traffic visitors see copy matched to the ad, content readers see a softer entry point. A/B testing runs continuously on form copy, layout, and CTA placement. Abandoned signups are recovered via segment-specific nurture. Overall signup CVR reaches 50%+ across 500+ monthly signups.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Per-segment CVR converging upward as personalized variants win
+- At least 2 A/B tests completed per month with clear winners or learnings
+- Abandoned signup recovery emails generating measurable re-entries
+- No segment converting at less than 50% of the overall average
+- Experiment documentation accumulating a knowledge base of what works
 
 ## Instructions
 
-### 1. Launch systematic testing
-Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
+### 1. Launch systematic A/B testing
 
-### 2. Build churn prevention
-Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
+Run the `ab-test-orchestrator` drill to set up a continuous testing program for the signup flow. Test these elements in priority order:
 
-### 3. Set up expansion prompts
-Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
+1. **Headline copy**: Test 3 variants of the signup page headline (benefit-focused, social-proof-focused, action-focused). Use PostHog experiments with the `signup_completed` event as the primary metric.
+2. **Form layout**: Test reduced-field form (email only) vs standard form (email + name + company). Measure both signup CVR and downstream activation rate to catch quality trade-offs.
+3. **CTA button copy**: Test action-specific CTAs ("Start building free" vs "Create account" vs "Get started in 60 seconds").
+4. **Social proof placement**: Test customer logos above vs below the form, or a real-time counter ("X teams signed up this week").
+
+Rules from `ab-test-orchestrator`: run one test at a time, require 200+ samples per variant, do not peek at results early, and document every test outcome regardless of whether it won.
+
+### 2. Personalize by segment
+
+Run the `signup-flow-personalization` drill. Analyze PostHog cohorts to find segments where conversion diverges significantly from the mean:
+
+- **Mobile visitors**: if mobile CVR < 60% of desktop, deploy the mobile-optimized variant (single-column, OAuth-first, minimal fields)
+- **Paid traffic**: if paid CVR < organic CVR, deploy message-matched landing pages with simplified forms
+- **Blog/content readers**: if content CVR < direct CVR, deploy a softer entry (free tool or template before full signup)
+- **Referral visitors**: deploy pre-filled referral badges and incentive offers
+
+Each personalized variant runs as a PostHog experiment. After 14+ days with 200+ conversions per variant, promote winners and retire losers.
+
+### 3. Build abandoned signup recovery
+
+Using the partial-signup nurture from `signup-flow-personalization`:
+
+- Configure n8n to detect users who focused the signup form but did not complete within 24 hours
+- If the user entered an email (captured via partial form data or PostHog person properties), enroll them in a segment-specific Loops recovery sequence:
+  - Mobile abandoned: email with deep link to mobile-optimized page
+  - Paid abandoned: email with simplified value prop matching original ad
+  - Generic abandoned: email with social proof and direct signup link
+- Track recovery rate: what percentage of abandoned signups return and complete
 
 ### 4. Evaluate against threshold
-Measure against: ≥35% at 500+. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
----
+Measure against the pass criteria:
 
-## KPIs to track
-- Signup conversion
-- Form completion
-- Drop-off points
-- Segment metrics
+- Overall signup CVR >= 50% (calculated as signup_completed / signup_page_viewed across all segments)
+- Monthly signup volume >= 500
+- Per-segment personalization deployed for at least 2 underperforming segments
+- At least 4 A/B tests completed with documented outcomes
 
----
+If CVR is below 50% at 500+ volume, focus testing on the segment with the lowest absolute conversion contribution (largest segment x lowest CVR = biggest opportunity).
 
-## Pass threshold
-**≥35% at 500+**
+## Time Estimate
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+- 8 hours: Set up A/B testing infrastructure and first 2 experiments
+- 12 hours: Build and deploy 2-4 personalized signup variants
+- 6 hours: Configure abandoned signup recovery workflows
+- 8 weeks: Run experiments and personalization variants (mostly passive)
+- 4 hours: Analyze segment results, promote winners
+- 2 hours: Final threshold evaluation and documentation
 
----
+## Tools & Pricing
 
-## How to run this skill
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, experiments, cohorts, funnels | Free tier: 1M events + 1M flag requests/mo. Paid: usage-based. [posthog.com/pricing](https://posthog.com/pricing) |
+| Intercom | Segment-specific help bots on signup pages | Essential: $29/seat/mo. Advanced: $85/seat/mo. [intercom.com/pricing](https://www.intercom.com/pricing) |
+| n8n | A/B test routing, recovery workflows, monitoring | Community (self-hosted): Free. Cloud Pro: ~$60/mo for 10K executions. [n8n.io/pricing](https://n8n.io/pricing/) |
+| Loops | Abandoned signup recovery email sequences | Free tier: 1,000 contacts. Growth: from $49/mo. [loops.so/pricing](https://loops.so/pricing) |
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add product/onboard/self-serve-signup-optimization`_
+- `ab-test-orchestrator` — designs, runs, and analyzes A/B tests with statistical rigor on signup flow elements
+- `signup-flow-personalization` — builds segment-specific signup variants, deploys via feature flags, and recovers abandoned signups
