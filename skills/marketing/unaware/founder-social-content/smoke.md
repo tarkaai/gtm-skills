@@ -1,81 +1,128 @@
 ---
 name: founder-social-content-smoke
 description: >
-    Founder Social & Content — Smoke Test. Publish a few posts per week with a clear CTA to see if
-  founder-led content drives inbound leads or DMs before scaling.
+  Founder Social & Content — Smoke Test. Founder creates 5-7 LinkedIn posts with agent assistance,
+  posts manually, engages with commenters, and measures whether content drives inbound leads or DMs.
 stage: "Marketing > Unaware"
-motion: "Founder Social Content"
+motion: "FounderSocialContent"
 channels: "Social"
 level: "Smoke Test"
-time: "3 hours over 1 week"
+time: "5 hours over 1 week"
 outcome: "≥ 3 leads or ≥ 2 meetings in 1 week"
-kpis: ["Impressions", "Engagement rate", "Profile visits"]
+kpis: ["Impressions per post", "Engagement rate", "Profile visits", "DMs received", "Leads captured"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
 drills:
   - icp-definition
-  - social-content-pipeline
+  - founder-linkedin-content-batch
+  - linkedin-engagement-workflow
   - threshold-engine
 ---
+
 # Founder Social & Content — Smoke Test
 
-> **Stage:** Marketing → Unaware | **Motion:** Founder Social Content | **Channels:** Social
+> **Stage:** Marketing → Unaware | **Motion:** FounderSocialContent | **Channels:** Social
 
-## Overview
-Founder Social & Content — Smoke Test. Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
+## Outcomes
 
-**Time commitment:** 3 hours over 1 week
-**Pass threshold:** ≥ 3 leads or ≥ 2 meetings in 1 week
+Prove that founder-led social content produces inbound interest. The founder publishes 5-7 LinkedIn posts over one week with agent-drafted content, engages personally with commenters, and captures leads from DMs and profile visits. Success = at least 3 inbound leads or 2 meetings booked from content-driven engagement.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Posts published (target: 5-7 over the week)
+- Average impressions per post (target: 500+ for accounts under 5K followers)
+- Engagement rate per post (target: 2-5% is good, 5%+ is excellent)
+- Profile views during the posting week (target: 50+ weekly)
+- DMs received referencing content (target: 1-3 per week)
+- Connection requests received with relevant notes
 
 ## Instructions
 
 ### 1. Define your content ICP
-Run the `icp-definition` drill to define who you are creating content for. Document: target audience job titles, pain points they search for, platforms they use, content formats they engage with.
 
-### 2. Create a content batch
-Run the `social-content-pipeline` drill to create 5-10 pieces of social content. Use the LinkedIn hook frameworks and content templates. Write posts targeting the pain points from your ICP definition. Prepare content for manual posting.
+Run the `icp-definition` drill to define who you are creating content for. For this play, focus on:
+- Target audience job titles and seniority levels
+- Pain points they actively search for solutions to
+- LinkedIn usage patterns (are they active on the platform?)
+- Content formats they engage with (text, video, carousels, polls)
 
-**Human action required:** Post the content manually on LinkedIn/Twitter over 1-2 weeks. Engage with comments and replies personally.
+Document 3-5 content pillars — topic areas where the founder has genuine expertise that overlaps with ICP pain points. Example pillars: "lessons from scaling engineering teams," "why most B2B pricing is wrong," "what we learned burning money on X."
 
-### 3. Track engagement
-Log each post's performance: impressions, likes, comments, profile views, DMs received, link clicks. Note which topics and formats got the most engagement.
+### 2. Generate a week of content drafts
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure results against: ≥ 3 leads or ≥ 2 meetings in 1 week. If PASS, proceed to Baseline. If FAIL, adjust your content topics, hooks, or posting frequency and re-run.
+Run the `founder-linkedin-content-batch` drill to produce 5-7 LinkedIn post drafts:
 
----
+1. Provide the agent with: content pillars, founder voice examples (10+ pieces of existing writing), and ICP pain points.
+2. For each post, specify the format: text-only (best for first-time posters), story post, list post, or contrarian take.
+3. Each draft must include: a hook that creates curiosity in the first line, a body that delivers a specific insight or experience, and a CTA that invites comments or DMs.
 
-## KPIs to track
-- Impressions
-- Engagement rate
-- Profile visits
+**Human action required:** The founder reviews every draft. Read each hook aloud — does it make you want to read more? Replace any generic advice with specific numbers, names, or experiences from your actual work. Approve, edit, or reject each draft. Target: 80%+ approval on first pass.
 
----
+### 3. Publish and engage daily
 
-## Pass threshold
-**≥ 3 leads or ≥ 2 meetings in 1 week**
+**Human action required:** Post content manually on LinkedIn. Publish 1 post per day, Tuesday through Saturday, between 7:30-9:30am in your ICP's primary timezone.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Run the `linkedin-engagement-workflow` drill daily:
 
----
+**Before posting (15 minutes):**
+- Engage with 5-10 posts from ICP-relevant accounts in your feed. Leave substantive comments that add value — not "great post" but a real insight, counterpoint, or follow-up question.
 
-## How to run this skill
+**After posting (check at 30 min, 2 hours, end of day):**
+- Reply to every comment on your post within the same business day.
+- Ask follow-up questions to keep comment threads active.
+- For anyone who comments with a buying signal (describing a problem your product solves), view their profile and prepare a DM.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**DM follow-up for high-intent signals:**
+- When someone comments describing a problem you solve, DMs you about the post, or sends a connection request referencing your content, send a DM.
+- First DM: reference their specific comment, ask about their situation. Do NOT pitch your product.
+- Log every DM conversation in a spreadsheet: name, company, title, signal type, post URL, status.
 
-_Install this skill: `npx gtm-skills add marketing/unaware/founder-social-content`_
+### 4. Track results manually
+
+Log each post's performance daily:
+- Impressions (from LinkedIn native analytics or Creator Mode dashboard)
+- Likes, comments, shares
+- Profile views (from LinkedIn Analytics tab)
+- DMs received
+- Connection requests with relevant notes
+- Leads identified (anyone who showed buying intent)
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill at the end of the week:
+
+**Pass threshold:** ≥ 3 leads or ≥ 2 meetings in 1 week
+
+Count leads as: anyone who (a) DMed asking about your product/approach, (b) commented describing a problem you solve and responded positively to your DM, (c) booked a meeting through your content's CTA, or (d) was referred to you by someone who saw your content.
+
+If PASS: document which content pillars and formats produced the leads. Proceed to Baseline.
+
+If FAIL: diagnose —
+- Low impressions? Hooks are weak. Rewrite using the `linkedin-organic-hooks` fundamental patterns.
+- High impressions but low engagement? Content is broad, not targeted. Narrow to ICP-specific pain points.
+- High engagement but no leads? Content is entertaining but not attracting buyers. Shift pillars toward problems your product solves.
+- Good engagement but no DMs? CTA is weak. Replace "thoughts?" with specific action requests: "DM me 'playbook' and I'll send you the template."
+
+Re-run with adjustments.
+
+## Time Estimate
+
+- ICP definition and content pillars: 1 hour
+- Content batch generation and founder review: 1.5 hours
+- Daily posting and engagement (5 days x 30 min): 2.5 hours
+- Evaluation: 15 minutes
+- **Total: ~5 hours over 1 week**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| LinkedIn (free account) | Publishing, engagement, DMs | Free |
+| Anthropic Claude API | Content draft generation | ~$0.05/week (https://www.anthropic.com/pricing) |
+
+## Drills Referenced
+
+- `icp-definition` — define who the content targets and which pain points to address
+- `founder-linkedin-content-batch` — generate, review, and prepare a week of LinkedIn posts
+- `linkedin-engagement-workflow` — daily pre-post and post-publish engagement routine
+- `threshold-engine` — evaluate pass/fail against the 3-lead / 2-meeting target
