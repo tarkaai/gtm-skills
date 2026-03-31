@@ -1,15 +1,16 @@
 ---
 name: outbound-email-li-calls-smoke
 description: >
-    Outbound Email/LI/Calls — Smoke Test. Send a short founder-sent sequence to 100 ICP contacts
-  with Calendly to see if you get a positive reply rate or a couple of meetings in 7–10 days.
+  Outbound Email/LI/Calls — Smoke Test. Manually run a founder-sent multi-channel
+  outreach sequence (email + LinkedIn + phone) to 50-100 ICP contacts to validate
+  whether this channel combination produces meetings within 7-10 days.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email, Social, Direct"
 level: "Smoke Test"
 time: "3 hours over 1 week"
-outcome: "≥ 2 meetings in 1 week"
-kpis: ["Reply rate", "Time to first reply"]
+outcome: "≥ 2 meetings booked in 1 week"
+kpis: ["Reply rate", "Time to first reply", "Meetings booked"]
 slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
 drills:
@@ -17,66 +18,99 @@ drills:
   - build-prospect-list
   - threshold-engine
 ---
+
 # Outbound Email/LI/Calls — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social, Direct
+> **Stage:** Marketing > Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social, Direct
 
-## Overview
-Outbound Email/LI/Calls — Smoke Test. Send a short founder-sent sequence to 100 ICP contacts with Calendly to see if you get a positive reply rate or a couple of meetings in 7–10 days.
+## Outcomes
 
-**Time commitment:** 3 hours over 1 week
-**Pass threshold:** ≥ 2 meetings in 1 week
+The Smoke Test proves that multi-channel outbound (email + LinkedIn + calls) can book meetings with solution-aware prospects. Success means at least 2 meetings booked from a manually executed sequence of 50-100 contacts within 1 week. No automation, no budget — just the founder reaching out with prepared messaging across three channels.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Positive email replies within 48 hours of first send
+- LinkedIn connection acceptance rate above 30%
+- At least 1 phone conversation lasting over 2 minutes
+- Prospects referencing your email or LinkedIn message during calls
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for outbound-email-li-calls. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Define your ICP for outbound
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your outbound-email-li-calls materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Run the `icp-definition` drill. Document the firmographic criteria (company size, industry, funding stage), buyer persona (title, seniority, department), top 3 pain points, and 3 triggering events that make outbound timely. Write disqualification criteria so you do not waste outreach on poor fits.
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+Output: a one-page ICP document saved to your project's `docs/` directory and scoring criteria loaded into Clay.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Build a prospect list of 50-100 contacts
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥ 2 meetings in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+Run the `build-prospect-list` drill. Source contacts from Apollo matching your ICP. Import into Clay, run the enrichment waterfall to fill email addresses, LinkedIn URLs, and phone numbers. Score each contact. Filter to the top 50-100 by score. Push to Attio with tags `play:outbound-email-li-calls` and `level:smoke`.
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Requirements per contact: verified email, LinkedIn profile URL, and phone number (at least 70% phone coverage — exclude the rest from call steps).
 
----
+### 3. Write outreach copy for each channel
 
-## KPIs to track
-- Reply rate
-- Time to first reply
+Prepare messaging for the 3-channel sequence. Write it yourself — this is a Smoke Test, not a template library exercise. The copy must be:
 
----
+**Email (3-step sequence):**
+- Email 1 (Day 1): Problem-aware opener from the founder. Under 80 words. Reference a specific pain point. No pitch. Soft question as CTA.
+- Email 2 (Day 4): One proof point or data point from a similar customer. Under 70 words. Ask for 15 minutes.
+- Email 3 (Day 7): Direct breakup email. Acknowledge you might be wrong. Include Cal.com booking link.
 
-## Pass threshold
-**≥ 2 meetings in 1 week**
+**LinkedIn (2-step):**
+- Connection request (Day 2): Under 200 characters. Reference something specific about the prospect. No pitch.
+- Follow-up message (Day 5, if connected): Share something useful. Ask a question about their current setup.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Phone (1-2 attempts):**
+- Call script: Opener referencing your email. One question about their current approach. Bridge to a 15-minute follow-up if interested.
 
----
+### 4. Execute the multi-channel sequence manually
 
-## How to run this skill
+**Human action required:** Send all emails from your personal email client (Gmail, Outlook). Send LinkedIn connection requests and messages manually from your LinkedIn account. Make phone calls from your phone or Google Voice. This is NOT automated — you are proving the channel combination works before investing in tools.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Follow this timing across 7 days:
+- Day 1: Send Email 1 to all prospects
+- Day 2: Send LinkedIn connection requests to all prospects
+- Day 3: Make phone calls to top 20 prospects
+- Day 4: Send Email 2 to prospects who did not reply to Email 1
+- Day 5: Send LinkedIn follow-up to those who accepted connections
+- Day 6: Make phone calls to remaining top prospects
+- Day 7: Send Email 3 (breakup) to all remaining non-responders
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/outbound-email-li-calls`_
+Log every touchpoint in Attio immediately: channel, step, response, and sentiment.
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill. Pull logged data from Attio. Count meetings booked. Compare against the pass threshold: **≥ 2 meetings booked in 1 week**.
+
+- **PASS**: Proceed to Baseline. Document which channel drove each meeting (first touch and last touch), which messaging resonated, and which ICP segments responded.
+- **FAIL**: Diagnose — was it targeting (wrong ICP), messaging (no replies), or channel (replies but no meetings)? Adjust and re-run Smoke.
+
+Also record: reply rate by channel, time to first reply, and qualitative notes on objections heard.
+
+## Time Estimate
+
+- ICP definition and list building: 1 hour
+- Copy writing: 30 minutes
+- Manual outreach execution across 7 days: 1 hour total (10-15 min/day)
+- Logging and evaluation: 30 minutes
+
+Total: ~3 hours of active work spread over 1 week.
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Clay | Prospect enrichment and list building | Free tier: 100 credits/mo; Pro: $149/mo (https://www.clay.com/pricing) |
+| Apollo | Contact sourcing | Free tier: 50 emails/mo; Basic: $49/mo (https://www.apollo.io/pricing) |
+| Attio | CRM for logging outreach | Free tier: 3 users; Plus: $29/user/mo (https://attio.com/pricing) |
+| Cal.com | Booking link in breakup email | Free tier available (https://cal.com/pricing) |
+| PostHog | Event tracking | Free tier: 1M events/mo (https://posthog.com/pricing) |
+
+**Estimated play-specific cost: $0 (free tiers sufficient for Smoke)**
+
+## Drills Referenced
+
+- `icp-definition` — define ideal customer profile with scoring criteria
+- `build-prospect-list` — source, enrich, and qualify 50-100 contacts in Clay
+- `threshold-engine` — evaluate pass/fail against ≥ 2 meetings threshold
