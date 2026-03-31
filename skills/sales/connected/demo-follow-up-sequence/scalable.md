@@ -14,6 +14,7 @@ kpis: ["Automation coverage rate", "Response rate", "Next step conversion rate",
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
+  - follow-up-automation
 ---
 
 # Demo Follow-Up Sequence — Scalable Automation

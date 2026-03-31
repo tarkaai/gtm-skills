@@ -14,6 +14,7 @@ kpis: ["Data quality score", "Automation coverage", "Manual cleanup time reducti
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
+  - tool-sync-workflow
 ---
 
 # CRM Hygiene & Data Quality — Scalable Automation

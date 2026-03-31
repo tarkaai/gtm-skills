@@ -14,7 +14,6 @@ kpis: ["Call booking rate", "Call completion rate", "Post-call 7-day activation 
 slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
 drills:
-  - onboarding-call-follow-up
   - onboarding-sequence-design
 ---
 # High-Touch Onboarding Calls — Baseline Run
