@@ -99,10 +99,10 @@ Build an n8n workflow that monitors email content freshness:
 
 1. Track the "birth date" of each email's current content as a variable
 2. Every 90 days, or when an email's click rate drops 20%+ from its historical peak, flag it for refresh
-3. The agent drafts new content: updated social proof (recent customer examples), refreshed screenshots, current statistics
+3. The agent drafts new content: updated social proof (recent customer examples), current usage statistics, and refreshed copy
 4. The refresh follows the same structure and tone as the original — it is not a redesign, just updated facts and examples
 
-**Human action required:** Review refreshed email content before deployment. Verify customer examples are accurate and screenshots are current.
+**Human action required:** Review refreshed email content before deployment. Verify customer examples are accurate. If the email references product UI screenshots, update them manually — the agent cannot capture screenshots.
 
 ### 5. Launch NPS-driven improvements
 
