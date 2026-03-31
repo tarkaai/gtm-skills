@@ -1,81 +1,118 @@
 ---
 name: github-project-promotion-smoke
 description: >
-    GitHub Project Promotion — Smoke Test. Promote open-source projects on GitHub to build developer
-  awareness, drive repository stars, and generate inbound technical leads.
-stage: "Marketing > Solution Aware"
-motion: "Directories & Marketplaces"
+  GitHub Project Promotion — Smoke Test. Set up one GitHub sample repo with
+  optimized README, topics SEO, social preview, and launch promotion across
+  developer channels to validate that GitHub presence generates stars and leads.
+stage: "Marketing > SolutionAware"
+motion: "DirectoriesMarketplaces"
 channels: "Communities, Social"
 level: "Smoke Test"
-time: "6 hours over 1 week"
-outcome: "≥100 GitHub stars and ≥5 inbound developer leads in 3 weeks"
-kpis: ["Response rate", "Engagement quality", "Time to response"]
+time: "8 hours over 2 weeks"
+outcome: "≥50 GitHub stars and ≥3 inbound developer leads (demo bookings or signups via README CTA) in 3 weeks"
+kpis: ["GitHub stars gained", "README CTA click-through rate", "Inbound leads from GitHub UTM", "Repo clone count"]
 slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
 drills:
-  - icp-definition
-  - blog-seo-pipeline
-  - threshold-engine
+  - github-repo-setup
+  - github-repo-promotion
 ---
+
 # GitHub Project Promotion — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Directories & Marketplaces | **Channels:** Communities, Social
+> **Stage:** Marketing → SolutionAware | **Motion:** DirectoriesMarketplaces | **Channels:** Communities, Social
 
-## Overview
-GitHub Project Promotion — Smoke Test. Promote open-source projects on GitHub to build developer awareness, drive repository stars, and generate inbound technical leads.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** ≥100 GitHub stars and ≥5 inbound developer leads in 3 weeks
+Prove that a well-optimized GitHub sample repo generates developer attention (stars, clones) and converts visitors into leads (demo bookings or signups via README CTA links). Pass threshold: ≥50 GitHub stars and ≥3 inbound developer leads within 3 weeks of launch.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Repository indexed by Google within 48 hours of creation (search `site:github.com/<org>/<repo>`)
+- At least 10 stars within the first 72 hours of launch promotion
+- README CTA receives ≥1 click within the first week (tracked via UTM parameters in PostHog)
+- At least 1 community post (Reddit, HN, Discord) generates ≥5 upvotes or reactions
+- Repo clones >20 in the first 2 weeks (indicates developers are actually trying the code)
 
 ## Instructions
 
-### 1. Identify target directories
-Run the `icp-definition` drill to map where your ICP discovers products: G2, Capterra, Product Hunt, industry-specific directories, GitHub, Chrome Web Store, marketplace listings. Prioritize by relevance and traffic.
+### 1. Choose the sample project
 
-### 2. Create optimized listings
-Run the `blog-seo-pipeline` drill to research keywords your ICP uses when searching directories. Use these keywords in your listing titles, descriptions, and feature lists. Write compelling copy that differentiates you from competitors on the same platform.
+Select one code sample, tool, or library that solves a specific problem your ICP faces. The sample must:
+- Run without errors from a fresh `git clone` (test on a clean machine)
+- Not require paid API keys or services to run the basic example
+- Solve a pain point your ICP actively searches for on GitHub (validate by running `gh search repos "<problem keyword>" --limit 20 --json fullName,stargazersCount --sort stars`)
+- Be small enough to understand in 15 minutes but useful enough to star
 
-**Human action required:** Create or update your listings on 3-5 directories. Submit for review. Ask 5-10 existing customers to leave reviews. Log all listings in Attio.
+If you do not have a sample ready, build a minimal one: a CLI tool, a webhook handler, an API client, a framework integration, or a config generator targeting your ICP's stack.
 
-### 3. Track listing performance
-Monitor: page views, clicks to your website, reviews received, leads generated from each directory. Use UTM parameters on all listing links.
+### 2. Set up the repository
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥100 GitHub stars and ≥5 inbound developer leads in 3 weeks. If PASS, proceed to Baseline. If FAIL, improve listing copy or target different directories.
+Run the `github-repo-setup` drill:
 
----
+- Research competing repos in the space: `gh search repos "<problem domain>" --limit 20 --json fullName,description,stargazersCount,repositoryTopics --sort stars`
+- Create the repo with a keyword-optimized name (e.g., `webhook-tester` not `cool-project-v2`)
+- Write the README following the exact section order: Title + Badges, Problem Statement, Quick Start, What It Does, Architecture (optional), CTA Block, Contributing, License
+- All CTA links must include UTM parameters: `?utm_source=github&utm_medium=readme&utm_campaign=<repo-slug>`
+- Set 8-12 topics based on keyword research using `gh repo edit --add-topic`
+- Set the homepage URL to your product site with UTM: `?utm_source=github&utm_medium=repo_homepage&utm_campaign=<repo>`
+- Upload a 1280x640 social preview image
 
-## KPIs to track
-- Response rate
-- Engagement quality
-- Time to response
+**Human action required:** Upload the social preview image via GitHub repo settings UI. Verify the Quick Start instructions run without errors on a clean machine.
 
----
+### 3. Launch promotion
 
-## Pass threshold
-**≥100 GitHub stars and ≥5 inbound developer leads in 3 weeks**
+Run the `github-repo-promotion` drill:
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+- **Day 1 — Social:** Post on LinkedIn (problem-first framing, link to repo) and Twitter/X (hook + code screenshot + link). Use UTM: `?utm_source=<platform>&utm_medium=social&utm_campaign=<repo>-launch`
+- **Day 1 — Communities:** Post in 2-3 relevant subreddits and Discord/Slack dev communities. Format: describe the problem, mention you open-sourced a solution, share the link. Follow each community's self-promotion rules.
+- **Day 2 — Hacker News / dev.to:** Submit as `Show HN: <repo> — <one-line description>`. Publish a dev.to article explaining the problem and solution with repo link.
+- **Day 3 — Email:** If you have an existing email list, send a one-time broadcast via Loops: "We open-sourced [thing] — here's the repo." Tag clicks with `source: github-sample-launch`.
+- **Week 1 — First release:** Publish a `v1.0.0` release via `gh release create` with CTA in release notes. This notifies all stargazers.
 
----
+### 4. Track results
 
-## How to run this skill
+Set up manual tracking (no always-on automation at Smoke level):
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- Check GitHub traffic daily for the first week: `gh api repos/<org>/<repo>/traffic/views` and `gh api repos/<org>/<repo>/traffic/clones`
+- Check star count: `gh api repos/<org>/<repo> --jq '.stargazers_count'`
+- Check referral sources: `gh api repos/<org>/<repo>/traffic/popular/referrers`
+- Check PostHog for events with `utm_source=github` to count CTA clicks, demo bookings, and signups
+- Log all metrics in a spreadsheet or Attio note on the campaign record
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/github-project-promotion`_
+### 5. Evaluate against threshold
+
+After 3 weeks, measure:
+
+- Total GitHub stars (target: ≥50)
+- Inbound leads — demo bookings or signups where `utm_source=github` (target: ≥3)
+- Top referral sources (which launch channel drove the most traffic)
+- Clone count (signal of developer engagement depth)
+- README CTA click-through rate (clicks / views from PostHog)
+
+If PASS: proceed to Baseline. Document which launch channels drove the most stars and which drove the most leads — they may differ.
+If FAIL: diagnose — are people finding the repo but not starring? (README quality issue.) Are people starring but not clicking the CTA? (CTA positioning or copy issue.) Is traffic low overall? (Promotion channels or keyword targeting issue.)
+
+## Time Estimate
+
+- 2 hours: sample project selection, keyword research, competitive repo analysis
+- 3 hours: repo setup — README, topics, social preview, code polish, Quick Start testing
+- 2 hours: launch promotion — writing social posts, community posts, HN submission, email broadcast
+- 1 hour: daily traffic checks over 3 weeks, final evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| GitHub | Repository hosting and traffic analytics | Free for public repos — https://github.com/pricing |
+| GitHub CLI (`gh`) | Repo creation, topic management, traffic API | Free — https://cli.github.com/ |
+| PostHog | Track CTA clicks and signups via UTM | Free up to 1M events/mo — https://posthog.com/pricing |
+| Anthropic (Claude) | README content generation, social post drafting | Pay-per-use ~$0.50-2 total — https://anthropic.com/pricing |
+| Loops | Email broadcast to existing list (optional) | Free up to 1,000 contacts — https://loops.so/pricing |
+
+**Smoke budget: Free** (all tools have free tiers that cover Smoke-level usage)
+
+## Drills Referenced
+
+- `github-repo-setup` — scaffold the public repo with keyword-optimized name, README with CTA, topics SEO, social preview, and analytics links
+- `github-repo-promotion` — distribute the repo across developer channels (social, communities, HN, dev.to, email) with tracked UTM links
