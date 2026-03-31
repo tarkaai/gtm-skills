@@ -1,81 +1,174 @@
 ---
 name: support-issue-tracking-durable
 description: >
-    Support Ticket Churn Signals — Durable Intelligence. Monitor support tickets as leading churn
-  indicator; trigger CS outreach for high-ticket accounts.
+  Support Ticket Churn Signals — Durable Intelligence. Always-on AI agents autonomously optimize
+  churn scoring thresholds, intervention messaging, and routing rules. The autonomous-optimization
+  loop detects when save rates plateau, generates hypotheses, runs experiments, and auto-implements
+  winners. Weekly optimization briefs. Converges at local maximum.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Durable Intelligence"
 time: "150 hours over 6 months"
-outcome: "Sustained or improving identification ≥55% over 6 months via AI"
-kpis: ["Ticket correlation", "At-risk ID rate", "Intervention success", "Experiment velocity", "AI lift"]
+outcome: "Sustained or improving save rate ≥55% and recall ≥65% over 6 months, with autonomous experimentation producing measurable lift"
+kpis: ["Churn save rate (sustained ≥55%)", "Churn prediction recall (sustained ≥65%)", "Experiment velocity (≥2 experiments per month)", "AI lift (measurable improvement from at least 1 auto-implemented change per quarter)", "Revenue saved (total MRR retained through interventions)"]
 slug: "support-issue-tracking"
 install: "npx gtm-skills add product/retain/support-issue-tracking"
 drills:
-  - dashboard-builder
-  - nps-feedback-loop
+  - autonomous-optimization
+  - support-health-monitor
 ---
+
 # Support Ticket Churn Signals — Durable Intelligence
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Support Ticket Churn Signals — Durable Intelligence. Monitor support tickets as leading churn indicator; trigger CS outreach for high-ticket accounts.
+## Outcomes
 
-**Time commitment:** 150 hours over 6 months
-**Pass threshold:** Sustained or improving identification ≥55% over 6 months via AI
+The system runs itself. At Scalable, humans tuned scoring thresholds, wrote intervention messages, and decided which product issues to escalate. At Durable, the AI agent continuously monitors all support-retention metrics, detects when any metric plateaus or drops, generates hypotheses for improvement, runs A/B experiments, and auto-implements winners. Human involvement reduces to reviewing weekly briefs and approving high-risk changes.
 
----
+Pass: Save rate and recall sustain at or above Scalable targets (≥55% and ≥65%) for 6 continuous months. At least 1 auto-implemented experiment produces measurable lift per quarter. Revenue saved from interventions is tracked and growing.
+Fail: Metrics decay below Scalable thresholds for 2+ consecutive months despite active experimentation, or the optimization loop stalls (zero experiments for 4+ weeks).
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Ongoing tool costs:** ~$100-500/mo
-- **Agent compute costs:** Variable based on monitoring frequency
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- The autonomous-optimization loop runs its daily monitoring without errors for 14 consecutive days
+- First anomaly is detected and diagnosed within 30 days of entering Durable
+- First experiment is designed and launched within 6 weeks
+- Weekly optimization briefs are generated and delivered on schedule
+- Save rate does not drop more than 5% when transitioning from human-tuned to agent-tuned operation
 
 ## Instructions
 
-### 1. Build product dashboards
-Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
+### 1. Deploy the autonomous optimization loop
 
-### 2. Launch feedback loops
-Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
+Run the `autonomous-optimization` drill. Configure it for the support-issue-tracking play with these specifics:
 
-### 3. Autonomous product optimization
-Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
+**Metrics to monitor (daily via n8n cron):**
+- Churn save rate (rolling 30-day)
+- Churn prediction recall (rolling 30-day)
+- Churn prediction precision (rolling 30-day)
+- Mean time from alert to CS action
+- Intervention response rate by tier
+- CSAT on resolved tickets (rolling 30-day)
+- Repeat issue count for top 5 categories
 
-### 4. Evaluate sustainability
-Measure against: Sustained or improving identification ≥55% over 6 months via AI. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
+**Anomaly classification:**
+- Normal: metric within +/-10% of 4-week rolling average
+- Plateau: metric varies <2% for 3+ consecutive weeks (optimization opportunity)
+- Drop: metric declines >15% vs 4-week average (intervention needed)
+- Spike: metric improves >25% vs 4-week average (investigate and reinforce)
 
----
+**Experiment candidates the agent can test without human approval:**
+- Intervention message copy variations (subject lines, body text, CTA)
+- Scoring threshold adjustments (+/-5 points on tier boundaries)
+- Intervention timing (e.g., send in-app message 1 hour vs 4 hours vs 24 hours after score exceeds threshold)
+- Email vs in-app message as primary medium for Tier 1 interventions
+- NPS survey timing (24h vs 48h vs 72h after ticket close)
 
-## KPIs to track
-- Ticket correlation
-- At-risk ID rate
-- Intervention success
-- Experiment velocity
-- AI lift
+**Experiments requiring human approval (high risk):**
+- Changing which signals are included in the churn scoring model
+- Adjusting tier thresholds by more than 10 points
+- Changing the retention offer structure
+- Modifying the product feedback report format or delivery cadence
 
----
+For each experiment, the agent uses PostHog feature flags to split accounts between control and variant. Minimum 7 days or 50 accounts per variant, whichever takes longer. The `experiment-evaluation` fundamental decides: adopt, iterate, revert, or extend.
 
-## Pass threshold
-**Sustained or improving identification ≥55% over 6 months via AI**
+### 2. Deploy the support health monitor
 
-This level runs continuously. Review monthly: what improved, what to retire, what new experiments to run.
+Run the `support-health-monitor` drill. This creates the observability layer the optimization loop depends on:
 
----
+- Real-time PostHog dashboard tracking all support-retention KPIs
+- Anomaly alerts that feed into Phase 1 of the optimization loop
+- Weekly support health reports generated by Claude and posted to Slack
+- Product feedback signals aggregated by impact for the product team
+- Monthly model drift checks that trigger automatic recalibration when precision or recall degrade
 
-## How to run this skill
+The health monitor runs independently of the optimization loop. Even when no experiments are active, it provides continuous visibility and early warning.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 3. Configure the weekly optimization brief
 
-_Install this skill: `npx gtm-skills add product/retain/support-issue-tracking`_
+The `autonomous-optimization` drill generates weekly briefs. For this play, configure the brief template:
+
+```
+Support-Churn Optimization Brief — Week of {date}
+
+1. METRICS SNAPSHOT
+   - Save rate: {current} (target: ≥55%, trend: {up/down/flat})
+   - Recall: {current} (target: ≥65%, trend: {up/down/flat})
+   - Precision: {current} (target: ≥40%, trend: {up/down/flat})
+   - Revenue saved this month: ${amount}
+   - Active experiments: {count}
+
+2. ANOMALIES DETECTED
+   - {anomaly_description} on {date} — diagnosed as {cause}
+
+3. EXPERIMENTS
+   - Active: {experiment_name} — testing {what}, started {date}, expected completion {date}
+   - Completed: {experiment_name} — result: {adopt/revert/iterate}, impact: {metric_change}
+
+4. AUTO-IMPLEMENTED CHANGES
+   - {change_description} — adopted on {date}, net impact: {metric_change}
+
+5. PRODUCT SIGNALS
+   - Top issue this week: {category} ({count} tickets, ${mrr_at_risk} at risk)
+   - Trending up: {category} (+{%} vs last week)
+
+6. RECOMMENDATION
+   - {one specific action for this week}
+```
+
+Post to Slack every Monday. Store in Attio as a note on the support-retention campaign record.
+
+### 4. Monitor for convergence
+
+The optimization loop converges when successive experiments produce diminishing returns. Track:
+- Last 3 experiments: what was the absolute improvement of each?
+- If all 3 produced <2% improvement, the play has reached its local maximum.
+
+At convergence:
+1. Reduce monitoring frequency from daily to weekly
+2. Reduce experiment cadence from 2/month to 1/month (maintenance mode)
+3. Generate a convergence report: "Support-churn play has reached local maximum. Current performance: save rate {X}%, recall {Y}%, precision {Z}%. Revenue saved: ${amount}/month. Further improvement requires strategic changes: new intervention channels, product architecture changes, or pricing model updates."
+4. The agent continues monitoring for metric decay. If a metric drops >15% from the converged state, re-enter active optimization.
+
+### 5. Evaluate sustainability
+
+After 6 months, evaluate the full Durable period:
+- Did save rate sustain ≥55% for 6 months? (Allow 1 month below threshold if recovered.)
+- Did recall sustain ≥65%?
+- How many experiments were run? (Target: ≥12 over 6 months.)
+- How many produced measurable lift? (Target: ≥3.)
+- Total revenue saved by interventions over 6 months.
+- Did the system converge? If so, at what performance level?
+
+This level runs continuously. The 6-month mark is a review point, not an endpoint.
+
+## Time Estimate
+
+- Autonomous optimization loop setup: 20 hours
+- Support health monitor deployment: 15 hours
+- Weekly brief configuration and testing: 5 hours
+- Monthly reviews and human oversight: 6 hours/month x 6 months = 36 hours
+- Experiment design and approval: 4 hours/month x 6 months = 24 hours
+- Convergence analysis and documentation: 10 hours
+- Total: ~150 hours over 6 months (front-loaded: ~40 hours in month 1, ~20 hours/month thereafter)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Intercom | Ticket source + in-app interventions + NPS | Advanced $85/seat/mo ([intercom.com/pricing](https://intercom.com/pricing)) |
+| Anthropic (Claude Sonnet) | Hypothesis generation + experiment evaluation + weekly briefs | ~$20-40/mo ([anthropic.com/pricing](https://anthropic.com/pricing)) |
+| Anthropic (Claude Haiku) | Real-time ticket classification | ~$10-20/mo at scale ([anthropic.com/pricing](https://anthropic.com/pricing)) |
+| PostHog | Dashboards + experiments (feature flags) + anomaly detection | Free tier or Growth usage-based ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Loops | Triggered retention emails (A/B variants) | Starter $25/mo ([loops.so/pricing](https://loops.so/pricing)) |
+| n8n | Orchestration: daily monitoring + weekly scoring + experiment management | Free self-hosted or Starter 24 EUR/mo ([n8n.io/pricing](https://n8n.io/pricing)) |
+| Attio | CRM + intervention tracking + brief storage | Plus $29/user/mo ([attio.com/pricing](https://attio.com/pricing)) |
+
+**Estimated monthly cost for Durable:** $150-300/mo (Intercom seat + LLM compute + Loops + n8n)
+
+## Drills Referenced
+
+- `autonomous-optimization` — the core always-on loop that monitors metrics, diagnoses anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners
+- `support-health-monitor` — continuous observability of support ticket trends, churn prediction accuracy, intervention effectiveness, and product feedback signals
