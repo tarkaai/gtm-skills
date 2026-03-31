@@ -1,7 +1,9 @@
 ---
 name: ai-content-generation-scale-smoke
 description: >
-  AI Content Generation — Smoke Test. Use AI to create high-quality blog posts, guides, and educational content at scale, from manual prompt refinement through structured content pipelines to agent-driven continuous content strategy optimization.
+    AI Content Generation — Smoke Test. Use AI to create high-quality blog posts, guides, and
+  educational content at scale, from manual prompt refinement through structured content pipelines
+  to agent-driven continuous content strategy optimization.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Content"
@@ -12,6 +14,7 @@ kpis: ["Page views", "Time on page", "Conversion rate", "Content production velo
 slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
 drills:
+  - icp-definition
   - social-content-pipeline
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Content
 
 ## Overview
-Use AI to create high-quality blog posts, guides, and educational content at scale, from manual prompt refinement through structured content pipelines to agent-driven continuous content strategy optimization.
+AI Content Generation — Smoke Test. Use AI to create high-quality blog posts, guides, and educational content at scale, from manual prompt refinement through structured content pipelines to agent-driven continuous content strategy optimization.
 
 **Time commitment:** 6 hours over 3 weeks
 **Pass threshold:** ≥300 page views and ≥3 conversions in 3 weeks
@@ -35,34 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Ghost** (Content)
-
----
-
 ## Instructions
 
-1. Define 5 content topics aligned with your ICP's problems; research top-performing articles on each topic using Ahrefs or BuzzSumo to understand what resonates.
+### 1. Define your content ICP
+Run the `icp-definition` drill to define who you are creating content for. Document: target audience job titles, pain points they search for, platforms they use, content formats they engage with.
 
-2. Create a prompt template for Claude or GPT-4 that includes: target audience, topic, key points to cover, desired tone, word count (800-1,200 words); test the prompt with 3 variations to find the best structure.
+### 2. Create a content batch
+Run the `social-content-pipeline` drill to create 5-10 pieces of social content. Use the LinkedIn hook frameworks and content templates. Write posts targeting the pain points from your ICP definition. Prepare content for manual posting.
 
-3. Generate 5 blog posts using your refined prompt; for each post, review and edit for accuracy, brand voice, and SEO optimization (include target keyword in title, H1, and body).
+**Human action required:** Post the content manually on LinkedIn/Twitter over 1-2 weeks. Engage with comments and replies personally.
 
-4. Publish the 5 posts on your blog or Ghost; add relevant images, internal links, and clear CTAs; ensure each post is optimized for Core Web Vitals.
+### 3. Track engagement
+Log each post's performance: impressions, likes, comments, profile views, DMs received, link clicks. Note which topics and formats got the most engagement.
 
-5. Set up PostHog to track page views, time on page, scroll depth, and conversions (signup, download) for each AI-generated post.
-
-6. Set pass threshold: ≥300 total page views and ≥3 conversions from the 5 posts within 3 weeks.
-
-7. Share each post on LinkedIn and Twitter; track social referral traffic in PostHog to measure distribution effectiveness.
-
-8. After 3 weeks, analyze performance in PostHog: identify top-performing post by traffic and conversions; note what made it successful (topic, format, CTA placement).
-
-9. Compare AI editing time vs. writing from scratch; document time savings and quality trade-offs.
-
-10. If you hit the threshold, document the prompt template and editing process and proceed to Baseline; if not, refine prompts or topic selection and retest.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure results against: ≥300 page views and ≥3 conversions in 3 weeks. If PASS, proceed to Baseline. If FAIL, adjust your content topics, hooks, or posting frequency and re-run.
 
 ---
 
@@ -77,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥300 page views and ≥3 conversions in 3 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

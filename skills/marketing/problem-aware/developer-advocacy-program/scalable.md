@@ -1,7 +1,9 @@
 ---
 name: developer-advocacy-program-scalable
 description: >
-  Developer Advocacy Program — Scalable Automation. Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
+    Developer Advocacy Program — Scalable Automation. Build developer relations function to create
+  technical content, speak at events, and engage developer communities for brand awareness and lead
+  generation.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Content, Events, Communities"
@@ -12,18 +14,15 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - content-repurposing
-  - newsletter-pipeline
-  - posthog-gtm-events
+  - follow-up-automation
+  - ab-test-orchestrator
 ---
 # Developer Advocacy Program — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Content, Events, Communities
 
 ## Overview
-Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
+Developer Advocacy Program — Scalable Automation. Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥40 content pieces, ≥8 talks, and ≥60 qualified leads over 6 months
@@ -33,45 +32,25 @@ Build developer relations function to create technical content, speak at events,
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn scheduling + AI assist):** ~$50/mo
-- **Buffer or Typefully (cross-platform scheduling):** ~$10–20/mo
-- **Descript or Riverside (video/podcast production):** ~$25–50/mo
-
-_Total play-specific: ~$10–50/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Automate content distribution
+Run the `follow-up-automation` drill to build n8n workflows that: schedule posts across platforms, auto-DM new followers who match ICP criteria, and notify you when high-engagement posts deserve a follow-up or repurpose.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for developer advocacy program execution.
+### 2. Launch content A/B testing
+Run the `ab-test-orchestrator` drill to systematically test: hook styles (question vs statistic vs story), content length (short vs long-form), posting times, CTAs (comment vs DM vs link). Run each test over 10+ posts before declaring winners.
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Scale to daily publishing
+Increase to daily posting with automated scheduling. Use the repurposing pipeline to generate 5+ pieces from each original piece of content. Monitor engagement rates to ensure quality doesn't drop with volume.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥40 content pieces, ≥8 talks, and ≥60 qualified leads over 6 months. If PASS, proceed to Durable. If FAIL, focus on the content pillars and formats that showed the best results and cut the rest.
 
 ---
 
@@ -87,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥40 content pieces, ≥8 talks, and ≥60 qualified leads over 6 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

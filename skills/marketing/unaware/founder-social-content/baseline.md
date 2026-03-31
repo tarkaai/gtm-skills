@@ -1,7 +1,8 @@
 ---
 name: founder-social-content-baseline
 description: >
-  Founder Social & Content — Baseline Run. Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
+    Founder Social & Content — Baseline Run. Publish a few posts per week with a clear CTA to see if
+  founder-led content drives inbound leads or DMs before scaling.
 stage: "Marketing > Unaware"
 motion: "Founder Social Content"
 channels: "Social"
@@ -12,16 +13,15 @@ kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - threshold-engine
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Founder Social & Content — Baseline Run
 
 > **Stage:** Marketing → Unaware | **Motion:** Founder Social Content | **Channels:** Social
 
 ## Overview
-Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
+Founder Social & Content — Baseline Run. Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 1 meeting per week over 2 weeks
@@ -31,40 +31,25 @@ Publish a few posts per week with a clear CTA to see if founder-led content driv
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn analytics + scheduling):** ~$50/mo
-
-_Total play-specific: ~$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 1 meeting per week over 2 weeks).
+### 1. Set up content repurposing
+Run the `content-repurposing` drill to build a system that takes each piece of content and adapts it across formats: LinkedIn post to Twitter thread, blog post to newsletter, video clip to social post. This multiplies your content output without multiplying effort.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Configure analytics tracking
+Run the `posthog-gtm-events` drill to track content performance events: `founder-social-content_post_published`, `founder-social-content_engagement_received`, `founder-social-content_profile_visit`, `founder-social-content_dm_received`, `founder-social-content_lead_captured`. Connect social platform analytics to PostHog via n8n webhooks.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Execute a 2-week content calendar
+Publish 3-5 pieces per week across platforms using the repurposed content system. Track all engagement in PostHog. Identify which content pillars (topics) drive the most qualified engagement.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Impressions, Engagement rate, Profile visits so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Review PostHog data against: ≥ 1 meeting per week over 2 weeks. If PASS, proceed to Scalable. If FAIL, pivot content topics or try different formats (video, carousels, threads vs single posts).
 
 ---
 
@@ -78,8 +63,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 1 meeting per week over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

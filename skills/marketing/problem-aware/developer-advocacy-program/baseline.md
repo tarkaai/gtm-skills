@@ -1,7 +1,9 @@
 ---
 name: developer-advocacy-program-baseline
 description: >
-  Developer Advocacy Program — Baseline Run. Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
+    Developer Advocacy Program — Baseline Run. Build developer relations function to create
+  technical content, speak at events, and engage developer communities for brand awareness and lead
+  generation.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Content, Events, Communities"
@@ -12,16 +14,15 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - threshold-engine
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Developer Advocacy Program — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Content, Events, Communities
 
 ## Overview
-Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
+Developer Advocacy Program — Baseline Run. Build developer relations function to create technical content, speak at events, and engage developer communities for brand awareness and lead generation.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥10 content pieces, ≥2 conference talks, and ≥20 qualified leads in 8 weeks
@@ -31,42 +32,25 @@ Build developer relations function to create technical content, speak at events,
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn analytics + scheduling):** ~$50/mo
-
-_Total play-specific: ~$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week developer advocacy program experiment; define detailed ICP criteria.
+### 1. Set up content repurposing
+Run the `content-repurposing` drill to build a system that takes each piece of content and adapts it across formats: LinkedIn post to Twitter thread, blog post to newsletter, video clip to social post. This multiplies your content output without multiplying effort.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Configure analytics tracking
+Run the `posthog-gtm-events` drill to track content performance events: `developer-advocacy-program_post_published`, `developer-advocacy-program_engagement_received`, `developer-advocacy-program_profile_visit`, `developer-advocacy-program_dm_received`, `developer-advocacy-program_lead_captured`. Connect social platform analytics to PostHog via n8n webhooks.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Execute a 2-week content calendar
+Publish 3-5 pieces per week across platforms using the repurposed content system. Track all engagement in PostHog. Identify which content pillars (topics) drive the most qualified engagement.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Review PostHog data against: ≥10 content pieces, ≥2 conference talks, and ≥20 qualified leads in 8 weeks. If PASS, proceed to Scalable. If FAIL, pivot content topics or try different formats (video, carousels, threads vs single posts).
 
 ---
 
@@ -81,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥10 content pieces, ≥2 conference talks, and ≥20 qualified leads in 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

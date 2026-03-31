@@ -1,7 +1,8 @@
 ---
 name: founder-social-content-scalable
 description: >
-  Founder Social & Content — Scalable Automation. Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
+    Founder Social & Content — Scalable Automation. Publish a few posts per week with a clear CTA to
+  see if founder-led content drives inbound leads or DMs before scaling.
 stage: "Marketing > Unaware"
 motion: "Founder Social Content"
 channels: "Social"
@@ -12,18 +13,15 @@ kpis: ["Impressions", "Engagement rate", "Profile visits"]
 slug: "founder-social-content"
 install: "npx gtm-skills add marketing/unaware/founder-social-content"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - content-repurposing
-  - newsletter-pipeline
-  - posthog-gtm-events
+  - follow-up-automation
+  - ab-test-orchestrator
 ---
 # Founder Social & Content — Scalable Automation
 
 > **Stage:** Marketing → Unaware | **Motion:** Founder Social Content | **Channels:** Social
 
 ## Overview
-Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
+Founder Social & Content — Scalable Automation. Publish a few posts per week with a clear CTA to see if founder-led content drives inbound leads or DMs before scaling.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 30 leads or ≥ 16 meetings over 2 months
@@ -33,47 +31,25 @@ Publish a few posts per week with a clear CTA to see if founder-led content driv
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn scheduling + AI assist):** ~$50/mo
-- **Buffer or Typefully (cross-platform scheduling):** ~$10–20/mo
-
-_Total play-specific: ~$10–50/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Typefully** (Channel)
-- **Buffer** (Channel)
-- **Loom** (Video)
-- **Descript** (Video)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 30 leads or ≥ 16 meetings over 2 months.
+### 1. Automate content distribution
+Run the `follow-up-automation` drill to build n8n workflows that: schedule posts across platforms, auto-DM new followers who match ICP criteria, and notify you when high-engagement posts deserve a follow-up or repurpose.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Launch content A/B testing
+Run the `ab-test-orchestrator` drill to systematically test: hook styles (question vs statistic vs story), content length (short vs long-form), posting times, CTAs (comment vs DM vs link). Run each test over 10+ posts before declaring winners.
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale to daily publishing
+Increase to daily posting with automated scheduling. Use the repurposing pipeline to generate 5+ pieces from each original piece of content. Monitor engagement rates to ensure quality doesn't drop with volume.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Impressions, Engagement rate, Profile visits in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 30 leads or ≥ 16 meetings over 2 months. If PASS, proceed to Durable. If FAIL, focus on the content pillars and formats that showed the best results and cut the rest.
 
 ---
 
@@ -87,8 +63,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 30 leads or ≥ 16 meetings over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

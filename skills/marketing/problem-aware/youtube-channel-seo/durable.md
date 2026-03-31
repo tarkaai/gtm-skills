@@ -1,7 +1,9 @@
 ---
 name: youtube-channel-seo-durable
 description: >
-  YouTube Channel and SEO — Durable Intelligence. Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
+    YouTube Channel and SEO — Durable Intelligence. Create video content optimized for YouTube
+  search and discovery to reach visual learners and build brand authority, from manual uploads to
+  automated production and AI-driven optimization.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Content, Social"
@@ -12,20 +14,14 @@ kpis: ["Video views trend", "Watch time trend", "CTR on thumbnails", "Conversion
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - content-repurposing
-  - newsletter-pipeline
-  - video-content-pipeline
   - dashboard-builder
-  - ab-test-orchestrator
 ---
 # YouTube Channel and SEO — Durable Intelligence
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Content, Social
 
 ## Overview
-Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
+YouTube Channel and SEO — Durable Intelligence. Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
 
 **Time commitment:** 100 hours over 6 months
 **Pass threshold:** Sustained or improving video views and conversion rate over 6 months via continuous AI-driven content optimization and adaptation to platform trends
@@ -35,46 +31,26 @@ Create video content optimized for YouTube search and discovery to reach visual 
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (analytics + AI content engine):** ~$50/mo
-- **Buffer or Typefully:** ~$10–20/mo
-- **Descript or Loom (repurposing content to video):** ~$15–30/mo
-
-_Total play-specific: ~$10–50/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Descript** (Video)
-- **Riverside** (Video)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams that trigger n8n AI agents when: video performance deviates from benchmarks, new trending topics emerge, or viewer drop-off patterns change.
+### 1. Build performance dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard tracking: weekly impressions trend, engagement rate by content pillar, follower growth rate, DMs and leads from content, content-attributed pipeline value. Set alerts for engagement rate drops.
 
-2. Build n8n AI content strategist for YouTube that analyzes video performance weekly: identifies underperforming videos, trending topics in your niche, and optimal video formats by watch time.
+### 2. Autonomous content optimization
+Configure the agent to: monitor which content pillars are trending up or down, suggest retirement of underperforming topics, propose new topics based on ICP pain point research, and auto-generate content briefs for the next week based on what performed best.
 
-3. Implement continuous video experimentation: AI agent tests different thumbnail styles, title formats, video lengths, and intro hooks; automatically promotes winning patterns to future videos.
+### 3. Run monthly content reviews
+The agent generates a monthly report: top-performing posts, engagement trends, audience growth, content-to-pipeline attribution. Review and approve the next month's content strategy.
 
-4. Create market adaptation system: AI agent monitors YouTube trends, competitor channels, and search demand shifts; adjusts content calendar to capitalize on emerging topics within 48 hours.
-
-5. Build learning loop: PostHog tracks complete viewer journey from video view to conversion; AI agent analyzes which video topics, CTAs, and link placements drive highest conversion rates; optimizes accordingly.
-
-6. Deploy AI video refresh agent: identifies videos with declining views or outdated content; generates updated scripts with fresh examples and data; schedules re-recordings or annotation updates.
-
-7. Implement automatic A/B testing for thumbnails and titles: AI agent generates variants for new uploads; YouTube's built-in A/B test tool tests them; agent analyzes results and applies winning principles to future videos.
-
-8. Create competitor intelligence system: n8n monitors top competitor channels via YouTube API; AI agent identifies content gaps and high-performing video types; generates video briefs for differentiated counter-content.
-
-9. Set guardrails: if video views drop >20% for 2+ weeks or conversion rate falls below Scalable threshold, n8n alerts team and pauses automatic content changes pending review.
-
-10. Establish monthly review cycle: analyze which video experiments succeeded, which topics to expand, which formats to retire; refine AI agent prompts and content strategy based on performance data.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving video views and conversion rate over 6 months via continuous AI-driven content optimization and adaptation to platform trends. This level runs continuously. If engagement sustains or grows, the play is durable. If engagement decays, test new content formats or platforms.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: youtube-channel-seo-scalable
 description: >
-  YouTube Channel and SEO — Scalable Automation. Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
+    YouTube Channel and SEO — Scalable Automation. Create video content optimized for YouTube search
+  and discovery to reach visual learners and build brand authority, from manual uploads to automated
+  production and AI-driven optimization.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Content, Social"
@@ -12,18 +14,15 @@ kpis: ["Video views", "Watch time", "CTR on thumbnails", "Referral traffic", "Co
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - content-repurposing
-  - newsletter-pipeline
-  - posthog-gtm-events
+  - follow-up-automation
+  - ab-test-orchestrator
 ---
 # YouTube Channel and SEO — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Content, Social
 
 ## Overview
-Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
+YouTube Channel and SEO — Scalable Automation. Create video content optimized for YouTube search and discovery to reach visual learners and build brand authority, from manual uploads to automated production and AI-driven optimization.
 
 **Time commitment:** 65 hours over 2 months
 **Pass threshold:** ≥10,000 views/month and conversion rate ≥0.8%
@@ -33,46 +32,25 @@ Create video content optimized for YouTube search and discovery to reach visual 
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn scheduling + AI assist):** ~$50/mo
-- **Buffer or Typefully (cross-platform scheduling):** ~$10–20/mo
-- **Descript or Riverside (video/podcast production):** ~$25–50/mo
-
-_Total play-specific: ~$10–50/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Descript** (Video)
-- **Riverside** (Video)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Scale to 40-60 videos over 2 months; build video production pipeline with repeatable templates for different content types (tutorials, case studies, product demos).
+### 1. Automate content distribution
+Run the `follow-up-automation` drill to build n8n workflows that: schedule posts across platforms, auto-DM new followers who match ICP criteria, and notify you when high-engagement posts deserve a follow-up or repurpose.
 
-2. Create n8n workflow to automate video optimization: generate SEO-optimized titles and descriptions using AI based on video transcripts; suggest tags and thumbnail text.
+### 2. Launch content A/B testing
+Run the `ab-test-orchestrator` drill to systematically test: hook styles (question vs statistic vs story), content length (short vs long-form), posting times, CTAs (comment vs DM vs link). Run each test over 10+ posts before declaring winners.
 
-3. Use Descript or similar tool for batch editing: auto-remove filler words, add captions, and create social media clips from longer videos.
+### 3. Scale to daily publishing
+Increase to daily posting with automated scheduling. Use the repurposing pipeline to generate 5+ pieces from each original piece of content. Monitor engagement rates to ensure quality doesn't drop with volume.
 
-4. Implement systematic keyword research: n8n workflow fetches trending keywords from YouTube API and TubeBuddy; AI agent generates video topic ideas aligned with search demand.
-
-5. Build content repurposing automation in n8n: when a video is published, automatically generate LinkedIn posts, Twitter threads, and blog post summaries from the transcript.
-
-6. Set up PostHog to track viewer journey: youtube_view → website_visit → signup; create cohorts for viewers who convert vs. those who don't.
-
-7. Connect YouTube Analytics API to PostHog via n8n; create unified dashboard showing views, watch time, referral traffic, and conversions by video.
-
-8. Set guardrails: conversion rate must stay within 20% of Baseline rate; if average view duration drops below 35%, review content pacing and engagement tactics.
-
-9. Use PostHog to identify which video topics and formats drive highest engagement and conversions; prioritize those topics in future production.
-
-10. After 2 months, evaluate total views, watch time, subscriber growth, and conversion ROI; if metrics hold, document the production pipeline and prepare for Durable AI-driven optimization; if metrics decline, reduce production velocity or improve content quality.
+### 4. Evaluate against threshold
+Measure against: ≥10,000 views/month and conversion rate ≥0.8%. If PASS, proceed to Durable. If FAIL, focus on the content pillars and formats that showed the best results and cut the rest.
 
 ---
 
@@ -90,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥10,000 views/month and conversion rate ≥0.8%**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: infographics-visual-content-smoke
 description: >
-  Infographics & Visual Content — Smoke Test. Create shareable data visualizations and infographics to drive social engagement, backlinks, and brand awareness with problem-aware audiences.
+    Infographics & Visual Content — Smoke Test. Create shareable data visualizations and
+  infographics to drive social engagement, backlinks, and brand awareness with problem-aware
+  audiences.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Social, Content"
@@ -12,6 +14,7 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
 drills:
+  - icp-definition
   - social-content-pipeline
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Social, Content
 
 ## Overview
-Create shareable data visualizations and infographics to drive social engagement, backlinks, and brand awareness with problem-aware audiences.
+Infographics & Visual Content — Smoke Test. Create shareable data visualizations and infographics to drive social engagement, backlinks, and brand awareness with problem-aware audiences.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥100 impressions and ≥10 shares in 3 days
@@ -35,32 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this infographics & visual content play; document hypothesis and success criteria.
+### 1. Define your content ICP
+Run the `icp-definition` drill to define who you are creating content for. Document: target audience job titles, pain points they search for, platforms they use, content formats they engage with.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Create a content batch
+Run the `social-content-pipeline` drill to create 5-10 pieces of social content. Use the LinkedIn hook frameworks and content templates. Write posts targeting the pain points from your ICP definition. Prepare content for manual posting.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Post the content manually on LinkedIn/Twitter over 1-2 weeks. Engage with comments and replies personally.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track engagement
+Log each post's performance: impressions, likes, comments, profile views, DMs received, link clicks. Note which topics and formats got the most engagement.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure results against: ≥100 impressions and ≥10 shares in 3 days. If PASS, proceed to Baseline. If FAIL, adjust your content topics, hooks, or posting frequency and re-run.
 
 ---
 
@@ -74,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥100 impressions and ≥10 shares in 3 days**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

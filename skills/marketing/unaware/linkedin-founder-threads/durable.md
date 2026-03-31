@@ -1,7 +1,9 @@
 ---
 name: linkedin-founder-threads-durable
 description: >
-  Founder LinkedIn content — Durable Intelligence. Founder-led LinkedIn posts and short video with clear CTAs to build awareness and inbound leads, from a one-week smoke test through scaled content and agent-driven optimization that sustains or improves lead volume over time.
+    Founder LinkedIn content — Durable Intelligence. Founder-led LinkedIn posts and short video with
+  clear CTAs to build awareness and inbound leads, from a one-week smoke test through scaled content
+  and agent-driven optimization that sustains or improves lead volume over time.
 stage: "Marketing > Unaware"
 motion: "Founder Social Content"
 channels: "Social"
@@ -12,20 +14,14 @@ kpis: ["Impressions", "Engagement rate", "Profile visits", "CTA clicks"]
 slug: "linkedin-founder-threads"
 install: "npx gtm-skills add marketing/unaware/linkedin-founder-threads"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - content-repurposing
-  - newsletter-pipeline
-  - video-content-pipeline
   - dashboard-builder
-  - ab-test-orchestrator
 ---
 # Founder LinkedIn content — Durable Intelligence
 
 > **Stage:** Marketing → Unaware | **Motion:** Founder Social Content | **Channels:** Social
 
 ## Overview
-Founder-led LinkedIn posts and short video with clear CTAs to build awareness and inbound leads, from a one-week smoke test through scaled content and agent-driven optimization that sustains or improves lead volume over time.
+Founder LinkedIn content — Durable Intelligence. Founder-led LinkedIn posts and short video with clear CTAs to build awareness and inbound leads, from a one-week smoke test through scaled content and agent-driven optimization that sustains or improves lead volume over time.
 
 **Time commitment:** 200 hours over 6 months
 **Pass threshold:** Sustained or improving inbound leads over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.
@@ -35,50 +31,26 @@ Founder-led LinkedIn posts and short video with clear CTAs to build awareness an
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (analytics + AI content engine):** ~$50/mo
-- **Buffer or Typefully:** ~$10–20/mo
-- **Descript or Loom (repurposing content to video):** ~$15–30/mo
-
-_Total play-specific: ~$10–50/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **LinkedIn** (Channel)
-- **Taplio** (Analytics)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Typefully** (Channel)
-- **Buffer** (Channel)
-- **Loom** (Video)
-- **Descript** (Video)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Ensure PostHog receives all LinkedIn-sourced lead events and content events (impressions, engagement) so you have a single view of lead volume and content performance over time.
+### 1. Build performance dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard tracking: weekly impressions trend, engagement rate by content pillar, follower growth rate, DMs and leads from content, content-attributed pipeline value. Set alerts for engagement rate drops.
 
-2. In n8n, add AI-powered workflows triggered by PostHog: e.g. when lead volume drops week-over-week, trigger an analysis that suggests content or CTA changes.
+### 2. Autonomous content optimization
+Configure the agent to: monitor which content pillars are trending up or down, suggest retirement of underperforming topics, propose new topics based on ICP pain point research, and auto-generate content briefs for the next week based on what performed best.
 
-3. Configure an AI agent to review weekly metrics: compare leads, engagement, and profile visits to prior weeks and to Scalable baseline; output recommendations (e.g. try different hook style, test video vs text, adjust posting time).
+### 3. Run monthly content reviews
+The agent generates a monthly report: top-performing posts, engagement trends, audience growth, content-to-pipeline attribution. Review and approve the next month's content strategy.
 
-4. Run A/B tests on one variable at a time: e.g. CTA "DM me" vs "Link in comments"; or post length short vs long; use PostHog to segment by variant and measure leads per variant.
-
-5. Have the agent recommend the winning variant and update your content template or calendar; document the change and date.
-
-6. Continuously test new topics and formats; log each experiment in PostHog and retire underperformers so the content mix evolves with what drives leads.
-
-7. Set a guardrail: if lead volume falls more than 20% below Scalable baseline for two consecutive weeks, trigger an alert and have the agent suggest corrective actions (e.g. revert CTA, increase frequency).
-
-8. Use the agent to monitor seasonal or platform changes (e.g. LinkedIn algorithm updates) and suggest adaptations to keep lead flow stable or growing.
-
-9. Monthly: review which experiments improved or maintained lead volume; double down on winning patterns.
-
-10. Sustain or improve inbound lead volume over 6 months by repeating measure-recommend-test-apply so the system adapts to market and stays aligned with or above Scalable results.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving inbound leads over 6 months via continuous agent-driven experiments and adaptation to market changes; agents learn and tune workflows to stay aligned with or exceed Scalable baseline.. This level runs continuously. If engagement sustains or grows, the play is durable. If engagement decays, test new content formats or platforms.
 
 ---
 

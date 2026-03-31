@@ -1,7 +1,9 @@
 ---
 name: thought-leadership-program-baseline
 description: >
-  Thought Leadership Program — Baseline Run. Systematic approach to building founder or executive as recognized thought leader to attract inbound interest from problem-aware and solution-aware audiences.
+    Thought Leadership Program — Baseline Run. Systematic approach to building founder or executive
+  as recognized thought leader to attract inbound interest from problem-aware and solution-aware
+  audiences.
 stage: "Marketing > Problem Aware"
 motion: "Founder Social Content"
 channels: "Social, Content, Events"
@@ -12,16 +14,15 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
 drills:
-  - social-content-pipeline
-  - blog-seo-pipeline
-  - threshold-engine
+  - content-repurposing
+  - posthog-gtm-events
 ---
 # Thought Leadership Program — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Founder Social Content | **Channels:** Social, Content, Events
 
 ## Overview
-Systematic approach to building founder or executive as recognized thought leader to attract inbound interest from problem-aware and solution-aware audiences.
+Thought Leadership Program — Baseline Run. Systematic approach to building founder or executive as recognized thought leader to attract inbound interest from problem-aware and solution-aware audiences.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥15 thought pieces, ≥2 speaking slots, and ≥20 qualified leads in 8 weeks
@@ -31,42 +32,25 @@ Systematic approach to building founder or executive as recognized thought leade
 ## Budget
 
 **Play-specific tools & costs**
-- **Taplio (LinkedIn analytics + scheduling):** ~$50/mo
-
-_Total play-specific: ~$50/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week thought leadership program experiment; define detailed ICP criteria.
+### 1. Set up content repurposing
+Run the `content-repurposing` drill to build a system that takes each piece of content and adapts it across formats: LinkedIn post to Twitter thread, blog post to newsletter, video clip to social post. This multiplies your content output without multiplying effort.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Configure analytics tracking
+Run the `posthog-gtm-events` drill to track content performance events: `thought-leadership-program_post_published`, `thought-leadership-program_engagement_received`, `thought-leadership-program_profile_visit`, `thought-leadership-program_dm_received`, `thought-leadership-program_lead_captured`. Connect social platform analytics to PostHog via n8n webhooks.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Execute a 2-week content calendar
+Publish 3-5 pieces per week across platforms using the repurposed content system. Track all engagement in PostHog. Identify which content pillars (topics) drive the most qualified engagement.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Review PostHog data against: ≥15 thought pieces, ≥2 speaking slots, and ≥20 qualified leads in 8 weeks. If PASS, proceed to Scalable. If FAIL, pivot content topics or try different formats (video, carousels, threads vs single posts).
 
 ---
 
@@ -81,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥15 thought pieces, ≥2 speaking slots, and ≥20 qualified leads in 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
