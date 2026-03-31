@@ -127,10 +127,10 @@ If FAIL: Diagnose whether the issue is scale-related (activation rate was fine a
 
 | Tool | Purpose | Pricing |
 |------|---------|---------|
-| Intercom | Segment-specific product tours and in-app messages | Essential $39/seat/mo; Advanced $99/seat/mo — https://www.intercom.com/pricing |
-| Loops | Segment-specific behavioral email sequences | Growth $99/mo for 5K contacts — https://loops.so/pricing |
-| Loom | Onboarding video content for specific segments | Business $15/user/mo — https://www.loom.com/pricing |
-| PostHog | Feature flags, experiments, funnels, dashboards | Free up to 1M events; Growth from $0 usage-based — https://posthog.com/pricing |
+| Intercom | Segment-specific product tours and in-app messages | Essential $29/seat/mo (annual); Advanced $85/seat/mo (annual) — https://www.intercom.com/pricing |
+| Loops | Segment-specific behavioral email sequences | Paid from $49/mo, scales with contacts — https://loops.so/pricing |
+| Loom | Onboarding video content for specific segments | Business $12.50/creator/mo (annual) — https://www.atlassian.com/software/loom/pricing |
+| PostHog | Feature flags, experiments, funnels, dashboards | Free up to 1M events/mo; usage-based after — https://posthog.com/pricing |
 
 ## Drills Referenced
 

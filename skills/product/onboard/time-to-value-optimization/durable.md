@@ -155,11 +155,11 @@ If external conditions change (product redesign, new market segment, competitor 
 
 | Tool | Purpose | Pricing |
 |------|---------|---------|
-| PostHog | Anomaly detection, experiments, feature flags, dashboards | Growth usage-based from $0; typically $50-150/mo at scale — https://posthog.com/pricing |
-| Intercom | In-app NPS surveys, contextual messages, product tours | Advanced $99/seat/mo — https://www.intercom.com/pricing |
-| Loops | Behavioral email sequences with variant support | Growth $99/mo for 5K contacts — https://loops.so/pricing |
-| Anthropic API | Hypothesis generation, experiment evaluation, brief generation | Claude Sonnet ~$3/M input, $15/M output tokens — https://www.anthropic.com/pricing |
-| n8n | Orchestration of all automation workflows | Self-hosted free; Cloud from $24/mo — https://n8n.io/pricing |
+| PostHog | Anomaly detection, experiments, feature flags, dashboards | Free up to 1M events/mo; usage-based after — https://posthog.com/pricing |
+| Intercom | In-app NPS surveys, contextual messages, product tours | Advanced $85/seat/mo (annual) — https://www.intercom.com/pricing |
+| Loops | Behavioral email sequences with variant support | Paid from $49/mo, scales with contacts — https://loops.so/pricing |
+| Anthropic API | Hypothesis generation, experiment evaluation, brief generation | Sonnet 4.6: $3/M input, $15/M output tokens — https://platform.claude.com/docs/en/about-claude/pricing |
+| n8n | Orchestration of all automation workflows | Self-hosted free; Cloud Starter EUR 24/mo — https://n8n.io/pricing |
 
 ## Drills Referenced
 

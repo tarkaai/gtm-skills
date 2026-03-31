@@ -136,9 +136,9 @@ If FAIL: Identify whether the issue is TTV (users activate but slowly) or activa
 
 | Tool | Purpose | Pricing |
 |------|---------|---------|
-| Loops | Behavioral onboarding email sequences | Free up to 1K contacts; Starter $49/mo — https://loops.so/pricing |
-| Intercom | In-app product tours and contextual messages | Starter $39/seat/mo — https://www.intercom.com/pricing |
-| Cal.com | Booking link for personal help offers in emails | Free for individuals — https://cal.com/pricing |
+| Loops | Behavioral onboarding email sequences | Free up to 1K contacts/4K sends; paid from $49/mo — https://loops.so/pricing |
+| Intercom | In-app product tours and contextual messages | Essential $29/seat/mo (annual) — https://www.intercom.com/pricing |
+| Cal.com | Booking link for personal help offers in emails | Free for individuals; Teams $15/user/mo — https://cal.com/pricing |
 
 ## Drills Referenced
 
