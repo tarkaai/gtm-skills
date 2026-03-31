@@ -16,7 +16,6 @@ install: "npx gtm-skills add OutboundFounderLed/Marketing/SolutionAware/outbound
 drills:
   - icp-definition
   - build-prospect-list
-  - gift-campaign-send
   - threshold-engine
 ---
 
@@ -59,7 +58,7 @@ Export to Attio with tag `gift_campaign_smoke_1`.
 
 ### 3. Select gifts using AI
 
-For each of the 20 contacts, run the `gift-campaign-send` drill's AI gift selection step. At Smoke level, you have two viable approaches:
+For each of the 20 contacts, run the the gift campaign send workflow (see instructions below) drill's AI gift selection step. At Smoke level, you have two viable approaches:
 
 **Approach A — eGift cards via Tremendous (lowest cost, fastest):**
 Send $25-50 digital gift cards (coffee, Amazon, or "recipient's choice"). No physical address needed. Delivery is instant. Total cost: $500-$1,000 for 20 gifts. Use `tremendous-send-reward` fundamental.
@@ -76,7 +75,7 @@ For each contact, the AI generates a personalized note. Review every note before
 
 ### 4. Send the gifts
 
-Execute the `gift-campaign-send` drill:
+Execute the the gift campaign send workflow (see instructions below) drill:
 
 1. For eGift cards: Call `tremendous-send-reward` for each recipient. Include the personalized note. Track the Tremendous reward ID.
 2. For physical gifts: Call `sendoso-send-gift` (or purchase books directly and ship via Amazon/bookshop with a handwritten note). Track the send ID.
@@ -164,5 +163,5 @@ Record qualitative notes: Which gifts got the best reactions? Did anyone mention
 
 - `icp-definition` — Define the ideal customer profile for gift campaign targeting
 - `build-prospect-list` — Source and enrich 20 high-value prospects with signal data
-- `gift-campaign-send` — Select gifts via AI, send via platform, and log in CRM
+- the gift campaign send workflow (see instructions below) — Select gifts via AI, send via platform, and log in CRM
 - `threshold-engine` — Evaluate results against the 20% response rate pass threshold

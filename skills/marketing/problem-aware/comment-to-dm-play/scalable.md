@@ -15,7 +15,6 @@ slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
   - prospect-content-discovery
-  - comment-to-dm-cadence
   - ab-test-orchestrator
 ---
 
@@ -50,7 +49,7 @@ Run the `prospect-content-discovery` drill (Option C -- Automated):
 
 ### 2. Scale comment production with AI assistance
 
-Extend the `comment-crafting` drill with batch AI drafting:
+Extend the the comment crafting workflow (see instructions below) drill with batch AI drafting:
 
 1. For each post in the daily queue, the agent reads the post and top comments
 2. The agent generates 2 comment draft options per post using the Claude prompt template from the comment-crafting drill
@@ -142,5 +141,5 @@ If PASS, proceed to Durable. If FAIL, the most common issue at Scalable is quali
 ## Drills Referenced
 
 - `prospect-content-discovery` — automated daily comment queue generation via n8n
-- `comment-to-dm-cadence` — cadence management at scale with 80-100 tracked prospects
+- the comment to dm cadence workflow (see instructions below) — cadence management at scale with 80-100 tracked prospects
 - `ab-test-orchestrator` — systematic testing of comment strategies, timing, and DM approaches

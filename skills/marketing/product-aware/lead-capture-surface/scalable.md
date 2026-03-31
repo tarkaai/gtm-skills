@@ -16,7 +16,7 @@ slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
 drills:
   - ab-test-orchestrator
-  - cta-conversion-monitor
+  - dashboard-builder
   - lead-capture-surface-setup
 ---
 
@@ -37,7 +37,7 @@ Fail: Conversion rate drops below 4% on the majority of surfaces, or lead volume
 - At least 1 A/B test reaches statistical significance within the first month
 - The best-performing surface exceeds 8% conversion rate (proving optimization headroom exists)
 - Mobile conversion rate reaches ≥ 60% of desktop rate across all surfaces (mobile optimization is working)
-- The `cta-conversion-monitor` drill fires zero Critical alerts for 2+ consecutive weeks (all surfaces are healthy)
+- The `dashboard-builder` drill fires zero Critical alerts for 2+ consecutive weeks (all surfaces are healthy)
 - Per-surface breakdown reveals which pages convert best, enabling prioritization
 
 ## Instructions
@@ -58,7 +58,7 @@ For each surface:
 
 ### 2. Launch the always-on conversion monitor
 
-Run the `cta-conversion-monitor` drill to build the monitoring system across all surfaces. Configure:
+Run the `dashboard-builder` drill to build the monitoring system across all surfaces. Configure:
 
 - Daily funnel monitoring per surface (PostHog funnel broken down by `page`)
 - Baseline conversion rates per surface (established after 2 weeks of data per surface)
@@ -105,7 +105,7 @@ After each successful A/B test, roll out the winning variant to all applicable s
 
 ### 5. Evaluate after 2 months
 
-Review the `cta-conversion-monitor` weekly reports and PostHog funnels for the full 2-month period:
+Review the `dashboard-builder` weekly reports and PostHog funnels for the full 2-month period:
 
 - Overall conversion rate across all surfaces (weighted by traffic volume)
 - Per-surface conversion rates: which pages perform best and worst?
@@ -146,5 +146,5 @@ Review the `cta-conversion-monitor` weekly reports and PostHog funnels for the f
 ## Drills Referenced
 
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on CTA copy, surface type, placement, and form length using PostHog feature flags and experiments
-- `cta-conversion-monitor` — always-on monitoring for all lead capture surface funnels with per-page breakdown, anomaly alerts, form abandonment analysis, and device split tracking
+- `dashboard-builder` — always-on monitoring for all lead capture surface funnels with per-page breakdown, anomaly alerts, form abandonment analysis, and device split tracking
 - `lead-capture-surface-setup` — deploy additional surfaces on new pages with full tracking, CRM routing, and nurture enrollment

@@ -14,7 +14,6 @@ kpis: ["Total installs across all marketplaces per week", "Marketplace-sourced s
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
-  - partner-marketplace-review-generation
 ---
 
 # Partner Marketplace Listings — Scalable Automation
@@ -103,7 +102,7 @@ Extend the n8n workflows from Baseline to manage the full portfolio:
 
 ### 5. Scale the review generation system
 
-Continue running the `partner-marketplace-review-generation` drill across all marketplaces:
+Continue running the the partner marketplace review generation workflow (see instructions below) drill across all marketplaces:
 
 - Rotate review requests across marketplaces (different marketplace each week)
 - Increase candidate pool as customer base grows
@@ -161,4 +160,4 @@ If PASS, proceed to Durable. If FAIL, consolidate to the 3 highest-ROI marketpla
 ## Drills Referenced
 
 - the partner marketplace scaling workflow (see instructions below) -- expands from 1-2 to 5+ marketplaces with automated management, landing pages, and Zap templates
-- `partner-marketplace-review-generation` -- continues the review generation cadence across the expanded marketplace portfolio
+- the partner marketplace review generation workflow (see instructions below) -- continues the review generation cadence across the expanded marketplace portfolio

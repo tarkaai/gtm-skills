@@ -18,7 +18,7 @@ drills:
   - creator-outreach-pipeline
   - creator-campaign-execution
   - ab-test-orchestrator
-  - creator-performance-reporting
+  - dashboard-builder
   - tool-sync-workflow
 ---
 
@@ -97,7 +97,7 @@ If a new creator's first post CPL is within 20% of the Tier 1 average, promote t
 
 ### 6. Run performance reporting at scale
 
-Run `creator-performance-reporting` with expanded scope:
+Run `dashboard-builder` with expanded scope:
 - Weekly automated report via n8n: leads this week, CPL trend, top creator, experiment results
 - Monthly deep-dive: full-funnel attribution from creator click to pipeline value, creator program ROI, format effectiveness ranking
 - Attio scorecard: all-time creator rankings by CPL, leads, and rebooking history
@@ -147,5 +147,5 @@ At Scalable, also evaluate:
 - `creator-outreach-pipeline` — automated outreach, negotiation, and recurring booking
 - `creator-campaign-execution` — manage 10-20 posts per month with automated tracking
 - `ab-test-orchestrator` — A/B test messaging angles, formats, and CTAs
-- `creator-performance-reporting` — weekly automated reports, creator scorecards, ROI analysis
+- `dashboard-builder` — weekly automated reports, creator scorecards, ROI analysis
 - `tool-sync-workflow` — connect Attio, PostHog, n8n, and Instantly into automated workflows

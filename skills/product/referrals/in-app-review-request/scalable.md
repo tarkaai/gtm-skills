@@ -16,7 +16,7 @@ slug: "in-app-review-request"
 install: "npx gtm-skills add product/referrals/in-app-review-request"
 drills:
   - ab-test-orchestrator
-  - review-velocity-monitor
+  - dashboard-builder
 ---
 
 # G2/Capterra Review Requests — Scalable Automation
@@ -118,7 +118,7 @@ Instead of one prompt for all eligible users, tailor the ask by engagement tier 
 
 ### 4. Deploy review velocity monitoring
 
-Run the `review-velocity-monitor` drill to build the real-time monitoring layer:
+Run the `dashboard-builder` drill to build the real-time monitoring layer:
 
 - Create the PostHog "Review Velocity & Attribution" dashboard with all 5 panels: velocity, ask-to-review funnel, rating trends, review-to-lead attribution, ask channel effectiveness
 - Build the weekly automated velocity report via n8n (Monday 8am)
@@ -164,4 +164,4 @@ Document: winning A/B test results, final trigger type distribution, platform ba
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B experiments on prompt copy, CTA wording, timing, thresholds, and platform routing
-- `review-velocity-monitor` — builds real-time dashboard, weekly velocity reports, anomaly alerts, and candidate pipeline health tracking
+- `dashboard-builder` — builds real-time dashboard, weekly velocity reports, anomaly alerts, and candidate pipeline health tracking

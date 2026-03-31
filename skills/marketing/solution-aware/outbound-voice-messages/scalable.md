@@ -16,7 +16,7 @@ slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
 drills:
   - voice-message-delivery
-  - voice-message-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
   - follow-up-automation
 ---
@@ -107,7 +107,7 @@ Use PostHog feature flags to randomly assign prospects to test groups.
 
 ### 4. Set up performance monitoring
 
-Run the `voice-message-performance-monitor` drill to build:
+Run the `dashboard-builder` drill to build:
 
 - Live PostHog dashboard tracking daily volume, delivery rates, response rates, and meeting conversions
 - Weekly automated briefs comparing channel performance, script variants, and delivery timing
@@ -187,6 +187,6 @@ Total: ~75 hours over 3 months.
 ## Drills Referenced
 
 - `voice-message-delivery` -- automated multi-channel delivery pipeline (phone VM + LinkedIn voice notes + follow-up emails)
-- `voice-message-performance-monitor` -- dashboards, weekly briefs, anomaly alerts, and script decay tracking
+- `dashboard-builder` -- dashboards, weekly briefs, anomaly alerts, and script decay tracking
 - `ab-test-orchestrator` -- A/B testing across scripts, delivery timing, and channel mix
 - `follow-up-automation` -- automated follow-up email sequences coordinated with voice delivery

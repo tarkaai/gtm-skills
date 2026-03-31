@@ -14,7 +14,6 @@ kpis: ["Technical objection resolution rate", "Workaround acceptance rate", "Dea
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - technical-gap-assessment
   - threshold-engine
 ---
 
@@ -52,7 +51,7 @@ Log these 5 deals as the test cohort. Identify 3-5 comparable deals as the contr
 
 ### 2. Run Technical Gap Assessment
 
-Run the `technical-gap-assessment` drill for each of the 5 test deals:
+Run the the technical gap assessment workflow (see instructions below) drill for each of the 5 test deals:
 
 - Pull all technical requirements from call transcripts, emails, and deal notes
 - If call transcripts exist, run `call-transcript-tech-requirements-extraction` to get structured requirements
@@ -134,5 +133,5 @@ If FAIL: Diagnose — was the issue gap classification accuracy (wrong response 
 
 ## Drills Referenced
 
-- `technical-gap-assessment` — assess prospect technical requirements against product capabilities, classify gaps by severity, and generate response strategies per gap type
+- the technical gap assessment workflow (see instructions below) — assess prospect technical requirements against product capabilities, classify gaps by severity, and generate response strategies per gap type
 - `threshold-engine` — evaluate test results against the pass threshold using Attio and PostHog data

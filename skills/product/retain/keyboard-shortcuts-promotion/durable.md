@@ -16,7 +16,6 @@ slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
   - autonomous-optimization
-  - shortcut-adoption-monitor
   - dashboard-builder
 ---
 
@@ -185,5 +184,5 @@ The agent generates a monthly strategic review (distinct from the weekly optimiz
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-report loop that makes Durable fundamentally different; detects metric anomalies, generates improvement hypotheses, runs A/B experiments, auto-implements winners, and produces weekly optimization briefs
-- `shortcut-adoption-monitor` — ongoing adoption funnel tracking, stalled-user detection, efficiency gain calculations feeding into the optimization loop
+- `autonomous-optimization` — ongoing adoption funnel tracking, stalled-user detection, efficiency gain calculations feeding into the optimization loop
 - `dashboard-builder` — executive dashboard with convergence indicator, experiment timeline, and retention delta tracking

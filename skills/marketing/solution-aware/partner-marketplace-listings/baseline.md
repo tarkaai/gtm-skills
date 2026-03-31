@@ -15,8 +15,6 @@ slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
   - posthog-gtm-events
-  - partner-marketplace-review-generation
-  - partner-marketplace-listing-setup
 ---
 
 # Partner Marketplace Listings — Baseline Run
@@ -60,7 +58,7 @@ Set up a PostHog dashboard with:
 
 ### 2. Expand to 3+ marketplace listings
 
-Run the `partner-marketplace-listing-setup` drill to add 1-2 more marketplace listings beyond the Smoke test listing(s). Apply lessons from the Smoke test:
+Run the the partner marketplace listing setup workflow (see instructions below) drill to add 1-2 more marketplace listings beyond the Smoke test listing(s). Apply lessons from the Smoke test:
 
 - Which keywords drove the most impressions? Use them in the new listings.
 - What listing format converted best? Mirror that structure.
@@ -68,7 +66,7 @@ Run the `partner-marketplace-listing-setup` drill to add 1-2 more marketplace li
 
 ### 3. Launch the review generation system
 
-Run the `partner-marketplace-review-generation` drill to build a systematic review pipeline:
+Run the the partner marketplace review generation workflow (see instructions below) drill to build a systematic review pipeline:
 
 1. Build review candidate lists in Attio (customers using each specific integration, 30+ days tenure, no recent review ask)
 2. Create the 2-touch review request email sequence in Loops
@@ -142,5 +140,5 @@ If PASS, proceed to Scalable. If FAIL, focus investment on the 1-2 marketplaces 
 ## Drills Referenced
 
 - `posthog-gtm-events` -- instruments the full marketplace-to-revenue funnel in PostHog
-- `partner-marketplace-review-generation` -- builds the systematic review request and response workflow
-- `partner-marketplace-listing-setup` -- creates additional marketplace listings with optimized copy
+- the partner marketplace review generation workflow (see instructions below) -- builds the systematic review request and response workflow
+- the partner marketplace listing setup workflow (see instructions below) -- creates additional marketplace listings with optimized copy

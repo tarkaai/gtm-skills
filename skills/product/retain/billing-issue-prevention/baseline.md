@@ -15,8 +15,6 @@ slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
 drills:
   - payment-failure-detection
-  - dunning-sequence-automation
-  - payment-recovery-health-monitor
 ---
 
 # Payment Failure Recovery — Baseline Run
@@ -53,7 +51,7 @@ Verify the pipeline end-to-end: create a test subscription in Stripe test mode, 
 
 ### 2. Deploy the automated dunning sequence
 
-Run the `dunning-sequence-automation` drill. This builds:
+Run the the dunning sequence automation workflow (see instructions below) drill. This builds:
 
 - Immediate in-app recovery banner via Intercom (shows on next login with one-click update link)
 - 4-email dunning sequence via Loops (Day 0, Day 3, Day 7, Day 12) with escalating urgency
@@ -124,6 +122,5 @@ If PASS, proceed to Scalable. If FAIL, diagnose using the recovery funnel — fi
 ## Drills Referenced
 
 - `payment-failure-detection` — real-time detection, classification, and scoring of payment failures from Stripe webhooks
-- `dunning-sequence-automation` — multi-channel recovery sequence: in-app banners, 4-email ladder, human routing
+- the dunning sequence automation workflow (see instructions below) — multi-channel recovery sequence: in-app banners, 4-email ladder, human routing
 - the proactive card expiry detection workflow (see instructions below) — daily scan for expiring cards with pre-failure update prompts
-- `payment-recovery-health-monitor` — dashboard, funnel tracking, alerts, and weekly health reports

@@ -15,7 +15,7 @@ slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
   - partner-pipeline-automation
-  - affiliate-performance-reporting
+  - dashboard-builder
 ---
 
 # Reseller & Affiliate Program — Scalable Automation
@@ -90,7 +90,7 @@ Build an n8n workflow for monthly commission payouts:
 
 ### 4. Deploy per-partner performance tracking
 
-Run the `affiliate-performance-reporting` drill:
+Run the `dashboard-builder` drill:
 
 - Build the PostHog dashboard: referrals by partner, revenue by partner, conversion rates, commission ROI, funnel by tier
 - Create performance cohorts: star partners, volume drivers, declining partners, dormant partners
@@ -158,4 +158,4 @@ Total: ~75 hours over 3 months (front-loaded; automation handles most ongoing wo
 ## Drills Referenced
 
 - `partner-pipeline-automation` — continuous recruitment, automated outreach, scheduling, and partner lifecycle management
-- `affiliate-performance-reporting` — per-partner dashboards, weekly briefs, ROI tracking, and alerts
+- `dashboard-builder` — per-partner dashboards, weekly briefs, ROI tracking, and alerts

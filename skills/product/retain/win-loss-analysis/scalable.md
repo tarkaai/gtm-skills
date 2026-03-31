@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
   - win-loss-interview-pipeline
   - win-loss-insight-extraction
-  - win-loss-reporting
   - dashboard-builder
   - threshold-engine
 ---
@@ -53,7 +52,7 @@ Analyze Baseline outreach data to improve conversion:
 
 ### 2. Build the competitive intelligence database
 
-Run the `competitive-intel-aggregation` fundamental (referenced by the `win-loss-reporting` drill) to build a living competitive database:
+Run the `competitive-intel-aggregation` fundamental (referenced by the the win loss reporting workflow (see instructions below) drill) to build a living competitive database:
 
 - Create the Competitors object in Attio with win/loss rates, strengths, weaknesses, and objection handling
 - Process all historical win/loss insights to populate competitor records
@@ -79,7 +78,7 @@ Set up alerts:
 
 ### 4. Automate monthly reporting
 
-Run the `win-loss-reporting` drill with the automated scheduling workflow:
+Run the the win loss reporting workflow (see instructions below) drill with the automated scheduling workflow:
 
 - Deploy the n8n cron workflow that generates monthly reports automatically
 - Report includes: aggregate metrics, pattern analysis, competitive landscape update, recommended actions, and impact measurement of previously implemented changes
@@ -148,6 +147,6 @@ If FAIL: Diagnose. Low coverage = outreach optimization needed. No measurable im
 
 - `win-loss-interview-pipeline` — Optimized outreach, scheduling, and recording at scale
 - `win-loss-insight-extraction` — Automated AI analysis of every transcript and survey
-- `win-loss-reporting` — Monthly automated reports with trend analysis and recommendations
+- the win loss reporting workflow (see instructions below) — Monthly automated reports with trend analysis and recommendations
 - `dashboard-builder` — PostHog dashboard for real-time win/loss intelligence
 - `threshold-engine` — Evaluates results against the pass threshold

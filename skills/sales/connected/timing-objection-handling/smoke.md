@@ -15,7 +15,6 @@ kpis: ["Timing objection resolution rate", "Timeline acceleration rate", "Cost o
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - timing-objection-response
   - threshold-engine
 ---
 
@@ -51,9 +50,9 @@ For each deal, pull from Attio:
 - Economic buyer engagement status
 - Competitor evaluation status
 
-### 2. Run the `timing-objection-response` drill for each objection
+### 2. Run the the timing objection response workflow (see instructions below) drill for each objection
 
-For each of the 5 deals, execute the `timing-objection-response` drill:
+For each of the 5 deals, execute the the timing objection response workflow (see instructions below) drill:
 
 1. Classify the timing objection root cause (competing_priority, no_urgency, budget_cycle, organizational_change, risk_aversion, smokescreen_budget, smokescreen_authority, smokescreen_fit, or genuine_constraint)
 2. Determine whether the objection is a genuine constraint or a smokescreen masking a deeper concern (budget, authority, or fit)
@@ -113,5 +112,5 @@ If FAIL (<3 resolved): analyze why. Common failure modes:
 
 ## Drills Referenced
 
-- `timing-objection-response` — classifies each timing objection by root cause, determines genuine vs smokescreen, generates cost-of-delay analysis, produces a strategy-matched response, and logs outcomes
+- the timing objection response workflow (see instructions below) — classifies each timing objection by root cause, determines genuine vs smokescreen, generates cost-of-delay analysis, produces a strategy-matched response, and logs outcomes
 - `threshold-engine` — evaluates pass/fail against the >=3/5 acceleration target at week's end

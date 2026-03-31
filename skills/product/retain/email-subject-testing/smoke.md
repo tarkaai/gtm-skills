@@ -13,7 +13,6 @@ kpis: ["Open rate per variant", "Click rate per variant", "Unsubscribe rate per 
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
 drills:
-  - email-subject-test-pipeline
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ For each email, record the current subject line and its historical open rate fro
 
 ### 2. Generate 1 subject-line variant per email
 
-For each control subject, write 1 variant using a different framing dimension. Run the `email-subject-test-pipeline` drill for each test. Use these framing categories across your 5 tests to learn which approach works for your audience:
+For each control subject, write 1 variant using a different framing dimension. Run the the email subject test pipeline workflow (see instructions below) drill for each test. Use these framing categories across your 5 tests to learn which approach works for your audience:
 
 - Test 1: **Personalization** — add the user's name or usage data to the subject
 - Test 2: **Curiosity gap** — tease a benefit without revealing it
@@ -99,5 +98,5 @@ Run the `threshold-engine` drill. Pass criteria: 5 tests completed with open-rat
 
 ## Drills Referenced
 
-- `email-subject-test-pipeline` — runs each individual subject-line A/B test: variant generation, send split, metric collection, winner selection
+- the email subject test pipeline workflow (see instructions below) — runs each individual subject-line A/B test: variant generation, send split, metric collection, winner selection
 - `threshold-engine` — evaluates pass/fail against the 5-test completion threshold

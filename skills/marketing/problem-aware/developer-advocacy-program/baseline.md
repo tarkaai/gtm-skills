@@ -14,7 +14,6 @@ kpis: ["Content-to-lead conversion rate", "Cost per developer lead", "CFP submis
 slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
 drills:
-  - technical-content-creation
   - content-repurposing
   - conference-cfp-pipeline
   - posthog-gtm-events
@@ -130,7 +129,7 @@ Run the `threshold-engine` drill to measure results against: ≥10 content piece
 
 ## Drills Referenced
 
-- `technical-content-creation` — produce tutorials, GitHub repos, and social derivatives at weekly cadence
+- the technical content creation workflow (see instructions below) — produce tutorials, GitHub repos, and social derivatives at weekly cadence
 - `content-repurposing` — automate cross-platform content distribution from each tutorial
 - `conference-cfp-pipeline` — discover, score, and submit to conference speaking opportunities
 - `posthog-gtm-events` — configure event tracking for all devrel activities

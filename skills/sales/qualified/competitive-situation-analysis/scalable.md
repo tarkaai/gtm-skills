@@ -14,9 +14,8 @@ kpis: ["Competitive discovery rate at scale", "Win rate by competitor (trending 
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - competitive-intelligence-automation
   - ab-test-orchestrator
-  - competitive-win-loss-reporting
+  - dashboard-builder
 ---
 
 # Competitive Situation Assessment — Scalable Automation
@@ -40,7 +39,7 @@ Competitive intelligence operates as a fully automated system: competitor change
 
 ### 1. Deploy the competitive intelligence automation stack
 
-Run the `competitive-intelligence-automation` drill to build three automated loops:
+Run the the competitive intelligence automation workflow (see instructions below) drill to build three automated loops:
 
 **Loop 1 — Competitor change monitoring (n8n weekly cron):**
 1. Fetch all tracked competitors from Attio Competitors object
@@ -83,7 +82,7 @@ Run the `ab-test-orchestrator` drill to test positioning effectiveness against e
 
 ### 3. Build the competitive intelligence dashboard
 
-Create a PostHog dashboard with these panels (as defined in the `competitive-intelligence-automation` drill):
+Create a PostHog dashboard with these panels (as defined in the the competitive intelligence automation workflow (see instructions below) drill):
 
 | Panel | Query | Purpose |
 |-------|-------|---------|
@@ -98,7 +97,7 @@ Create a PostHog dashboard with these panels (as defined in the `competitive-int
 
 ### 4. Generate monthly competitive reports
 
-Run the `competitive-win-loss-reporting` drill on a monthly cron (first Monday of each month):
+Run the `dashboard-builder` drill on a monthly cron (first Monday of each month):
 
 1. Aggregate all competitive deal outcomes from the past 30 days
 2. Calculate per-competitor metrics: win rate, deal count, avg deal value, velocity, battlecard lift
@@ -109,7 +108,7 @@ Run the `competitive-win-loss-reporting` drill on a monthly cron (first Monday o
 
 ### 5. Set guardrails and evaluate
 
-Configure guardrail alerts (from the `competitive-intelligence-automation` drill):
+Configure guardrail alerts (from the the competitive intelligence automation workflow (see instructions below) drill):
 - **New competitor spike:** 3+ mentions in one week without a battlecard → alert to build one
 - **Win rate drop:** Win rate against any competitor drops below 35% over 4 weeks → strategy review
 - **Discovery gap:** Competitive discovery rate drops below 60% for 2 weeks → process alert
@@ -152,6 +151,6 @@ If FAIL: diagnose:
 
 ## Drills Referenced
 
-- `competitive-intelligence-automation` — the three automated loops: competitor monitoring, battlecard delivery, web behavior triggers
+- the competitive intelligence automation workflow (see instructions below) — the three automated loops: competitor monitoring, battlecard delivery, web behavior triggers
 - `ab-test-orchestrator` — A/B testing competitive positioning frameworks
-- `competitive-win-loss-reporting` — monthly competitive reports with per-competitor scorecards
+- `dashboard-builder` — monthly competitive reports with per-competitor scorecards

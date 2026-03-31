@@ -16,7 +16,6 @@ slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
 drills:
   - onboarding-flow
-  - ai-coach-conversation-design
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ If your onboarding flow is already running, verify these PostHog events fire cor
 
 ### 2. Design and deploy the AI coach
 
-Run the `ai-coach-conversation-design` drill. For the smoke test, focus on the minimum viable coach:
+Run the the ai coach conversation design workflow (see instructions below) drill. For the smoke test, focus on the minimum viable coach:
 
 1. **Knowledge base**: Audit your Intercom Help Center. Ensure articles exist for every onboarding step. Write custom Fin answers for the 10 most common onboarding questions (pull from Intercom conversation history or support tickets).
 
@@ -103,5 +102,5 @@ _CRM (Attio), automation (n8n), and PostHog are standard stack — not counted a
 ## Drills Referenced
 
 - `onboarding-flow` — confirms the onboarding milestones, product tours, email sequence, and funnel tracking are in place before layering the coach on top
-- `ai-coach-conversation-design` — designs the coach knowledge base, Fin configuration, proactive triggers, conversation flows, and analytics instrumentation
+- the ai coach conversation design workflow (see instructions below) — designs the coach knowledge base, Fin configuration, proactive triggers, conversation flows, and analytics instrumentation
 - `threshold-engine` — measures coach engagement rate against the 45% threshold and recommends pass/iterate/fail

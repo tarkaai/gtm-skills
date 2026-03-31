@@ -16,7 +16,7 @@ install: "npx gtm-skills add Marketing/ProblemAware/quora-ads-targeting"
 drills:
   - ab-test-orchestrator
   - budget-allocation
-  - quora-ads-performance-monitor
+  - dashboard-builder
 ---
 
 # Quora Ads — Scalable
@@ -146,7 +146,7 @@ Run the `budget-allocation` drill adapted for Quora:
 
 ### 5. Deploy Performance Monitoring
 
-Run the `quora-ads-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog dashboard (8 panels: spend/reach, click performance, conversion funnel, CPA trend, creative performance, targeting comparison, lead quality, full-funnel attribution)
 2. Build Attio saved views (Quora-sourced contacts, Quora pipeline, Quora ROI by targeting type)
@@ -193,4 +193,4 @@ At the end of each month:
 
 - `ab-test-orchestrator` — systematic A/B testing framework for Quora creative, targeting, bidding, and audience experiments with hypothesis-driven methodology and statistical rigor
 - `budget-allocation` — data-driven weekly budget rebalancing across targeting types (topic, question, keyword, retargeting, lookalike) using the 70/20/10 framework
-- `quora-ads-performance-monitor` — PostHog dashboards, Attio views, weekly reports, anomaly alerts, and question/topic performance tracking for continuous campaign visibility
+- `dashboard-builder` — PostHog dashboards, Attio views, weekly reports, anomaly alerts, and question/topic performance tracking for continuous campaign visibility

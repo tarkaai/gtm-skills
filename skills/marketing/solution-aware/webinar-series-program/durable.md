@@ -16,7 +16,6 @@ slug: "webinar-series-program"
 install: "npx gtm-skills add marketing/solution-aware/webinar-series-program"
 drills:
   - autonomous-optimization
-  - webinar-performance-monitor
 ---
 
 # Educational Webinar Series — Durable Intelligence
@@ -39,7 +38,7 @@ Deploy always-on AI agents that autonomously monitor webinar series health, dete
 
 ### 1. Deploy the webinar performance monitor
 
-Run the `webinar-performance-monitor` drill. This builds the always-on monitoring layer that watches every part of the webinar funnel and surfaces problems before they compound.
+Run the `autonomous-optimization` drill. This builds the always-on monitoring layer that watches every part of the webinar funnel and surfaces problems before they compound.
 
 **Metric categories the monitor tracks:**
 
@@ -171,4 +170,4 @@ Measure against threshold monthly. The play is durable when:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners. Runs the always-on cycle that finds the local maximum.
-- `webinar-performance-monitor` — the always-on monitoring layer: tracks 5 metric categories across the webinar funnel, generates post-event post-mortems, detects anomalies, and produces monthly series health reports. Feeds data to the autonomous optimization loop.
+- `autonomous-optimization` — the always-on monitoring layer: tracks 5 metric categories across the webinar funnel, generates post-event post-mortems, detects anomalies, and produces monthly series health reports. Feeds data to the autonomous optimization loop.

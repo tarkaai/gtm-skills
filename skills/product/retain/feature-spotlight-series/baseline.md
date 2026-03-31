@@ -15,7 +15,6 @@ slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
 drills:
   - posthog-gtm-events
-  - spotlight-content-pipeline
   - feature-adoption-monitor
 ---
 
@@ -56,7 +55,7 @@ Build PostHog funnels:
 
 ### 2. Launch the weekly content pipeline
 
-Run the `spotlight-content-pipeline` drill to establish the recurring production and delivery system:
+Run the the spotlight content pipeline workflow (see instructions below) drill to establish the recurring production and delivery system:
 
 **Week 1 setup:**
 1. Build the feature usage matrix in PostHog — query adoption rates for every trackable feature
@@ -117,5 +116,5 @@ Measure the 4-week results:
 ## Drills Referenced
 
 - `posthog-gtm-events` — establish the full spotlight event taxonomy and build conversion funnels
-- `spotlight-content-pipeline` — the weekly system for selecting features, producing content, and delivering spotlights
+- the spotlight content pipeline workflow (see instructions below) — the weekly system for selecting features, producing content, and delivering spotlights
 - `feature-adoption-monitor` — track per-feature adoption, detect stalled users, and measure spotlight impact

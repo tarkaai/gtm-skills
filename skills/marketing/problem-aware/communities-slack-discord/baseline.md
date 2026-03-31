@@ -14,7 +14,6 @@ kpis: ["Referral sessions from communities", "Threads responded to per week", "D
 slug: "communities-slack-discord"
 install: "npx gtm-skills add marketing/problem-aware/communities-slack-discord"
 drills:
-  - slack-discord-monitoring-automation
   - posthog-gtm-events
   - slack-discord-content-posting
 ---
@@ -142,6 +141,5 @@ If FAIL: Diagnose by checking each stage:
 
 ## Drills Referenced
 
-- `slack-discord-monitoring-automation` — automated keyword monitoring across Slack/Discord with prioritized alerts
 - `posthog-gtm-events` — event taxonomy and tracking for community attribution
 - `slack-discord-content-posting` — create and publish original value-first content in communities

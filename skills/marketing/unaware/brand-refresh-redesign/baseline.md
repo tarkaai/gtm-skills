@@ -14,7 +14,6 @@ kpis: ["Homepage bounce rate (new vs. old)", "Homepage-to-pricing click rate", "
 slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
 drills:
-  - brand-refresh-implementation
   - posthog-gtm-events
   - lead-capture-surface-setup
   - threshold-engine
@@ -61,7 +60,7 @@ Run the `lead-capture-surface-setup` drill to ensure conversion infrastructure i
 
 ### 3. Implement the brand refresh
 
-Run the `brand-refresh-implementation` drill with the winning positioning concept from Smoke:
+Run the the brand refresh implementation workflow (see instructions below) drill with the winning positioning concept from Smoke:
 
 **Pages to update (in priority order):**
 1. **Homepage**: New H1, H2, primary CTA, social proof section
@@ -123,7 +122,7 @@ Decision tree:
 
 ## Drills Referenced
 
-- `brand-refresh-implementation` — Executes all website copy and visual updates behind feature flags with A/B test configuration and conversion tracking
+- the brand refresh implementation workflow (see instructions below) — Executes all website copy and visual updates behind feature flags with A/B test configuration and conversion tracking
 - `posthog-gtm-events` — Configures the baseline snapshot and all brand-refresh-specific tracking events
 - `lead-capture-surface-setup` — Ensures all conversion forms are working, tracked, and routing leads to CRM
 - `threshold-engine` — Evaluates the A/B test results against the >=20% conversion improvement threshold with statistical significance check

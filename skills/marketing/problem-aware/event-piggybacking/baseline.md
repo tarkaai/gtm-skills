@@ -14,7 +14,6 @@ kpis: ["Total RSVPs", "Attendance rate", "Meetings booked", "Pipeline created ($
 slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
 drills:
-  - piggyback-event-promotion
   - posthog-gtm-events
   - meetup-pipeline
 ---
@@ -62,7 +61,7 @@ Build a PostHog funnel: invite_sent -> rsvp_registered -> attended -> meeting_bo
 
 ### 3. Run the first piggyback event with structured promotion
 
-Select the next conference from your event-scouting pipeline. Run the `piggyback-event-promotion` drill:
+Select the next conference from your event-scouting pipeline. Run the the piggyback event promotion workflow (see instructions below) drill:
 
 - Build the target attendee list via Clay enrichment (aim for 150-200 contacts)
 - Launch email outreach at T-21 days via Instantly
@@ -129,6 +128,6 @@ If FAIL: diagnose by event:
 
 ## Drills Referenced
 
-- `piggyback-event-promotion` — structured promotion campaign targeting conference attendees via email, LinkedIn, and community channels
+- the piggyback event promotion workflow (see instructions below) — structured promotion campaign targeting conference attendees via email, LinkedIn, and community channels
 - `posthog-gtm-events` — implement the piggyback event taxonomy for full funnel tracking
 - `meetup-pipeline` — repeatable event operations: registration, confirmations, attendee management

@@ -19,7 +19,6 @@ slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
 drills:
   - autonomous-optimization
-  - trade-show-performance-monitor
 ---
 
 # Trade Show Presence — Durable Intelligence
@@ -48,7 +47,7 @@ drills:
 
 ### 1. Deploy continuous trade show funnel monitoring
 
-Run the `trade-show-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - **Post-show automated health checks**: After each show, the agent runs immediate health checks within 48 hours: booth conversation volume vs target, demo rate vs target, Tier 1 lead volume vs target, and on-site meeting bookings vs target. Alerts fire if any metric falls below critical thresholds (demo rate <15%, Tier 1 leads <5).
 - **Nurture window monitoring**: During the 30-day post-show nurture window, the agent tracks daily: emails sent, opens, replies, meetings booked from nurture. If Tier 2 reply rate drops below 5% at the midpoint (day 15), flag for sequence review.
@@ -199,4 +198,4 @@ Note: Annual show-specific costs at Durable: $40,000-100,000+ (8-12 shows x $4,0
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics across shows, diagnose anomalies, generate hypotheses, run experiments on show selection, booth execution, nurture sequences, and content strategy, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `trade-show-performance-monitor` — continuous monitoring, post-show post-mortems, quarterly motion reports, cross-show comparison, and show selection intelligence that feeds data into the optimization loop
+- `autonomous-optimization` — continuous monitoring, post-show post-mortems, quarterly motion reports, cross-show comparison, and show selection intelligence that feeds data into the optimization loop

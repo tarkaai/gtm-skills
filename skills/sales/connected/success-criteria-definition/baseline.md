@@ -15,7 +15,6 @@ kpis: ["Success criteria definition rate", "Mutual agreement rate", "Average cri
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
-  - success-criteria-workshop
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -147,6 +146,6 @@ If FAIL: diagnose bottleneck — is it scheduling (prospects won't book), extrac
 
 ## Drills Referenced
 
-- `success-criteria-workshop` — end-to-end workflow for auto-extracting, scheduling, conducting, and documenting success criteria conversations
+- the success criteria workshop workflow (see instructions below) — end-to-end workflow for auto-extracting, scheduling, conducting, and documenting success criteria conversations
 - `posthog-gtm-events` — configure the success criteria event taxonomy in PostHog
 - `threshold-engine` — evaluate results against pass/fail threshold

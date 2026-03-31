@@ -16,7 +16,6 @@ slug: "habit-formation-features"
 install: "npx gtm-skills add product/retain/habit-formation-features"
 drills:
   - autonomous-optimization
-  - milestone-retention-monitor
   - gamification-health-monitor
 ---
 
@@ -96,7 +95,7 @@ Run the `autonomous-optimization` drill to create the always-on agent loop for h
 
 ### 2. Monitor milestone retention decay
 
-Run the `milestone-retention-monitor` drill to detect when habit milestone celebrations lose effectiveness:
+Run the `autonomous-optimization` drill to detect when habit milestone celebrations lose effectiveness:
 
 - Build paired cohorts: users who engaged with milestone celebrations vs users who dismissed them. Compare 7-day, 14-day, and 30-day retention.
 - Create the milestone effectiveness dashboard: celebration engagement rate by streak milestone, retention lift trend, CTA conversion at milestones, celebration fatigue index.
@@ -151,5 +150,5 @@ If at any point DAU drops below 30% for 2 consecutive weeks despite intervention
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners → weekly briefs
-- `milestone-retention-monitor` — detect when habit milestone celebrations lose effectiveness and feed decay signals to the optimization loop
+- `autonomous-optimization` — detect when habit milestone celebrations lose effectiveness and feed decay signals to the optimization loop
 - `gamification-health-monitor` — monitor streak distribution, recovery rates, reminder channel health, and trigger habit-specific interventions

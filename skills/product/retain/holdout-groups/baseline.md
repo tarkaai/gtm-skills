@@ -14,8 +14,6 @@ kpis: ["Cumulative lift %", "Lift statistical significance", "Holdout integrity 
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
-  - holdout-lift-measurement
-  - holdout-integrity-monitor
   - posthog-gtm-events
 ---
 
@@ -45,7 +43,7 @@ Run the `posthog-gtm-events` drill to add holdout-specific events to your taxono
 
 ### 2. Launch weekly lift measurement
 
-Run the `holdout-lift-measurement` drill to set up automated weekly measurement. This creates an n8n workflow that:
+Run the the holdout lift measurement workflow (see instructions below) drill to set up automated weekly measurement. This creates an n8n workflow that:
 - Queries PostHog for holdout vs treatment metrics every Monday
 - Computes cumulative lift percentage for each primary metric
 - Assesses statistical significance (p-value)
@@ -104,6 +102,5 @@ If PASS, proceed to Scalable. If FAIL:
 
 ## Drills Referenced
 
-- `holdout-lift-measurement` — weekly automated comparison of holdout vs treatment metrics with statistical significance
-- `holdout-integrity-monitor` — weekly validation of group size, contamination, and demographic parity
+- the holdout lift measurement workflow (see instructions below) — weekly automated comparison of holdout vs treatment metrics with statistical significance
 - `posthog-gtm-events` — holdout-specific event taxonomy setup

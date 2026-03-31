@@ -16,7 +16,6 @@ slug: "in-product-upgrade-flow"
 install: "npx gtm-skills add product/upsell/in-product-upgrade-flow"
 drills:
   - usage-threshold-detection
-  - pricing-page-conversion-monitor
   - upgrade-prompt
 ---
 
@@ -154,5 +153,4 @@ At the end of 2 weeks:
 ## Drills Referenced
 
 - `usage-threshold-detection` — detect per-account usage approaching plan limits, classify urgency tiers, and wire threshold events to upgrade surface triggers
-- `pricing-page-conversion-monitor` — monitor pricing page and checkout funnel health with anomaly detection and weekly digest
 - `upgrade-prompt` — configure contextual upgrade surfaces across 3 trigger types with suppression rules and email follow-up

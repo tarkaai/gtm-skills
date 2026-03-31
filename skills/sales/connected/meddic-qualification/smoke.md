@@ -14,8 +14,6 @@ kpis: ["MEDDIC completeness score", "Elements per call", "Time to complete MEDDI
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - meddic-scorecard-setup
-  - meddic-discovery-call
   - threshold-engine
 ---
 
@@ -38,7 +36,7 @@ Prove that structured MEDDIC scoring produces better deal visibility than gut-fe
 
 ### 1. Set up MEDDIC infrastructure in your CRM
 
-Run the `meddic-scorecard-setup` drill. This creates 20+ custom attributes on the Deals object in Attio:
+Run the the meddic scorecard setup workflow (see instructions below) drill. This creates 20+ custom attributes on the Deals object in Attio:
 - Score fields (0-100) for each of the 6 MEDDIC elements: Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion
 - Status fields for each element (e.g., Metrics: Quantified/Directional/Vague/Absent)
 - Evidence fields to store key quotes and findings
@@ -56,7 +54,7 @@ For each deal, manually review everything you know and score each MEDDIC element
 
 ### 3. Run MEDDIC discovery calls
 
-Run the `meddic-discovery-call` drill for each selected deal that has a call scheduled:
+Run the the meddic discovery call workflow (see instructions below) drill for each selected deal that has a call scheduled:
 
 1. The drill pulls the deal's current MEDDIC scores and identifies the weakest elements
 2. It generates a tailored question guide targeting the gaps (e.g., if Economic Buyer score is below 50, it generates questions like "Who ultimately signs off on the budget for tools in this area?")
@@ -108,6 +106,6 @@ If PASS, proceed to Baseline. If FAIL, review: Were the deals too early-stage fo
 
 ## Drills Referenced
 
-- `meddic-scorecard-setup` — creates CRM infrastructure with all MEDDIC fields and pipeline stages
-- `meddic-discovery-call` — full discovery call lifecycle with element-targeted questions, transcript extraction, and CRM logging
+- the meddic scorecard setup workflow (see instructions below) — creates CRM infrastructure with all MEDDIC fields and pipeline stages
+- the meddic discovery call workflow (see instructions below) — full discovery call lifecycle with element-targeted questions, transcript extraction, and CRM logging
 - `threshold-engine` — evaluates results against pass/fail threshold and recommends next action

@@ -80,7 +80,7 @@ The churn prevention system runs continuously alongside the migration tracker. A
 
 With the routing and testing infrastructure in place, add new deprecations without rebuilding the system:
 
-1. For each new deprecation, run the `deprecation-impact-assessment` drill (from Smoke)
+1. For each new deprecation, run the the deprecation impact assessment workflow (see instructions below) drill (from Smoke)
 2. The communication templates are parameterized by `feature_slug` — create new instances, do not rebuild from scratch
 3. The routing workflow evaluates all active deprecations in a single daily run
 4. The migration dashboard shows all active deprecations side by side

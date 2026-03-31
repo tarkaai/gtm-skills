@@ -15,7 +15,6 @@ slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
 drills:
   - lead-capture-surface-setup
-  - multiyear-offer-engine
 ---
 
 # Multi-Year Deal Incentives — Smoke Test
@@ -47,7 +46,7 @@ Configure:
 
 ### 2. Build the first annual offer
 
-Run the `multiyear-offer-engine` drill — but only Steps 1 and 2 (readiness scoring and Stripe price creation). Skip the automation workflows for this level. Execute manually:
+Run the the multiyear offer engine workflow (see instructions below) drill — but only Steps 1 and 2 (readiness scoring and Stripe price creation). Skip the automation workflows for this level. Execute manually:
 
 1. Query PostHog for accounts with tenure > 6 months, no churn risk signals, and positive usage trend. Select 20 accounts manually.
 2. Create ONE annual price in Stripe: 2 months free (17% discount). Tag with `metadata[commitment_type]=annual` and `metadata[experiment]=smoke_v1`.
@@ -111,4 +110,4 @@ Iterate and re-run before moving to Baseline.
 ## Drills Referenced
 
 - `lead-capture-surface-setup` — builds the Stripe Checkout surface with PostHog tracking and Attio routing
-- `multiyear-offer-engine` — Steps 1-2 only: readiness signal identification and Stripe price creation
+- the multiyear offer engine workflow (see instructions below) — Steps 1-2 only: readiness signal identification and Stripe price creation

@@ -14,7 +14,6 @@ kpis: ["Data quality score", "Critical error rate", "Duplicate rate", "Stale rec
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - crm-data-audit
   - threshold-engine
 ---
 
@@ -39,7 +38,7 @@ Prove that auditing CRM records against explicit quality rules produces a measur
 
 ### 1. Define Data Quality Rules
 
-Before auditing, define what "quality" means. Create custom attributes in Attio using the `attio-custom-attributes` fundamental (called by the `crm-data-audit` drill):
+Before auditing, define what "quality" means. Create custom attributes in Attio using the `attio-custom-attributes` fundamental (called by the the crm data audit workflow (see instructions below) drill):
 
 - `data_quality_score` (number, 0-100) on People, Companies, and Deals objects
 - `stale_flag` (checkbox) on Deals
@@ -61,7 +60,7 @@ Store these rules as an Attio note on a "Data Quality Standards" record for futu
 
 ### 2. Run the Initial Audit
 
-Run the `crm-data-audit` drill with scope = 50 records:
+Run the the crm data audit workflow (see instructions below) drill with scope = 50 records:
 
 1. Query Attio for 50 active deal records and their associated contacts and companies
 2. For each record, evaluate every rule and compute the quality score
@@ -94,7 +93,7 @@ Log time spent on each fix type. This baseline establishes the manual effort tha
 
 ### 4. Re-Audit and Measure Improvement
 
-Run the `crm-data-audit` drill again on the same 50 records:
+Run the the crm data audit workflow (see instructions below) drill again on the same 50 records:
 
 1. Recalculate all quality scores
 2. Compare against baseline metrics from Step 2
@@ -139,5 +138,5 @@ Calculate the value of this cleanup:
 
 ## Drills Referenced
 
-- `crm-data-audit` — audit CRM records against data quality rules, score completeness and accuracy, produce a prioritized remediation report
+- the crm data audit workflow (see instructions below) — audit CRM records against data quality rules, score completeness and accuracy, produce a prioritized remediation report
 - `threshold-engine` — evaluate audit results against the pass threshold using PostHog event comparison

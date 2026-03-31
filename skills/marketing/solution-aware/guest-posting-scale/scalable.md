@@ -14,9 +14,8 @@ kpis: ["Pitch acceptance rate (≥15%)", "Articles published per month", "Referr
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
-  - guest-post-outreach-automation
   - guest-post-article-pipeline
-  - guest-post-performance-monitor
+  - dashboard-builder
   - content-repurposing
 ---
 
@@ -39,7 +38,7 @@ Automate the discovery-to-publication pipeline so guest posting runs at 10x the 
 
 ### 1. Deploy the automated outreach pipeline
 
-Run the `guest-post-outreach-automation` drill to build four n8n workflows:
+Run the the guest post outreach automation workflow (see instructions below) drill to build four n8n workflows:
 
 **Workflow 1 — Weekly Blog Discovery:**
 - n8n cron triggers every Monday at 6am UTC
@@ -99,7 +98,7 @@ This extends the content lifecycle and drives additional traffic to the guest po
 
 ### 4. Deploy performance monitoring
 
-Run the `guest-post-performance-monitor` drill to create always-on tracking:
+Run the `dashboard-builder` drill to create always-on tracking:
 
 - Daily n8n workflow checks Ahrefs for new and lost backlinks from guest posts
 - Weekly referral traffic analysis in PostHog with anomaly alerts
@@ -152,7 +151,7 @@ If FAIL: Identify the bottleneck. If discovery is fine but acceptance is low, re
 
 ## Drills Referenced
 
-- `guest-post-outreach-automation` — four n8n workflows automating discovery, pitching, reply routing, and competitor monitoring
+- the guest post outreach automation workflow (see instructions below) — four n8n workflows automating discovery, pitching, reply routing, and competitor monitoring
 - `guest-post-article-pipeline` — AI-assisted article writing and submission at 5+/week velocity
-- `guest-post-performance-monitor` — always-on backlink, referral traffic, and conversion monitoring
+- `dashboard-builder` — always-on backlink, referral traffic, and conversion monitoring
 - `content-repurposing` — turn high-performing guest posts into LinkedIn, newsletter, and social content

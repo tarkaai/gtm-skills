@@ -15,7 +15,6 @@ slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
 drills:
   - posthog-gtm-events
-  - winback-offer-personalization
   - winback-campaign
   - threshold-engine
 ---
@@ -53,7 +52,7 @@ Build a PostHog funnel: `winback_email_sent` -> `winback_engaged` -> `winback_re
 
 ### 2. Build automated segment-specific sequences
 
-Run the `winback-offer-personalization` drill to create the full segmentation and offer system. Configure Loops sequences for each churn reason segment:
+Run the the winback offer personalization workflow (see instructions below) drill to create the full segmentation and offer system. Configure Loops sequences for each churn reason segment:
 
 **Sequence trigger:** n8n workflow fires when an Attio record transitions to "churned" status. The workflow reads the churn reason, assigns the user to a segment, and enrolls them in the matching Loops sequence.
 
@@ -131,6 +130,6 @@ Run the `threshold-engine` drill at the end of week 2 and again at the end of we
 ## Drills Referenced
 
 - `posthog-gtm-events` — winback lifecycle event tracking and core conversion funnel
-- `winback-offer-personalization` — segment-specific offer design and sequence configuration
+- the winback offer personalization workflow (see instructions below) — segment-specific offer design and sequence configuration
 - `winback-campaign` — email sequence templates and in-app welcome-back flow
 - `threshold-engine` — evaluate reactivation rate against the ≥15% pass threshold

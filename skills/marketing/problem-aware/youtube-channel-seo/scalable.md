@@ -14,9 +14,7 @@ kpis: ["YT_SEARCH views/month", "Total views/month", "CTR (channel average)", "A
 slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
-  - youtube-seo-optimization
   - youtube-keyword-research
-  - youtube-video-publish
   - ab-test-orchestrator
 ---
 
@@ -40,7 +38,7 @@ Find the 10x multiplier: scale YouTube search traffic without proportionally sca
 
 ### 1. Audit and optimize all existing videos
 
-Run the `youtube-seo-optimization` drill across the entire channel:
+Run the the youtube seo optimization workflow (see instructions below) drill across the entire channel:
 
 1. Pull the complete video inventory with metadata and analytics
 2. Score each video's SEO health (0-100 scale based on title, description, tags, captions, CTR, retention)
@@ -146,7 +144,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Drills Referenced
 
-- `youtube-seo-optimization` — audit and optimize all existing video metadata, captions, and thumbnails
+- the youtube seo optimization workflow (see instructions below) — audit and optimize all existing video metadata, captions, and thumbnails
 - `youtube-keyword-research` — monthly keyword refresh and content series planning
-- `youtube-video-publish` — templated video production at 2-3x cadence
+- the youtube video publish workflow (see instructions below) — templated video production at 2-3x cadence
 - `ab-test-orchestrator` — systematic thumbnail and title A/B testing

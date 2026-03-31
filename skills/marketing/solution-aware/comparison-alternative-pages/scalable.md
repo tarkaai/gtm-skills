@@ -15,7 +15,6 @@ slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
   - programmatic-page-generator
-  - competitive-intelligence-pipeline
   - content-refresh-pipeline
   - seo-performance-monitor
 ---
@@ -45,7 +44,7 @@ Run the `programmatic-page-generator` drill adapted for comparison pages:
 - Use the expanded keyword matrix (from Baseline) as input
 - Design a Webflow CMS collection template for comparison pages with fields: `h1-heading`, `meta-title`, `meta-description`, `body-content`, `feature-table-html`, `cta-text`, `competitor-name`, `page-type`, `last-updated`, `internal-links`
 - For each new keyword in the matrix, generate comparison page content via Claude:
-  - Scrape competitor data using `competitor-page-scraping` from the `competitive-intelligence-pipeline` drill
+  - Scrape competitor data using `competitor-page-scraping` from the the competitive intelligence pipeline workflow (see instructions below) drill
   - Generate unique body content, feature table, and FAQ per page
   - Quality check: verify uniqueness (no two pages >40% similar), keyword inclusion, minimum 800 words
 - Publish pages via Webflow CMS API in batches of 10-20
@@ -60,7 +59,7 @@ Scale targets:
 
 ### 2. Deploy competitive intelligence automation
 
-Run the `competitive-intelligence-pipeline` drill:
+Run the the competitive intelligence pipeline workflow (see instructions below) drill:
 
 - Set up weekly competitor page snapshots: scrape pricing, features, and changelog pages for all competitors with published comparison pages
 - Configure change detection: when a competitor updates pricing, features, or positioning, auto-generate updated content for the affected comparison page
@@ -122,6 +121,6 @@ If FAIL: diagnose — is the issue traffic (pages not ranking?) or conversion (p
 ## Drills Referenced
 
 - `programmatic-page-generator` — batch-generate and publish comparison pages via Webflow CMS API from the keyword matrix
-- `competitive-intelligence-pipeline` — automated competitor monitoring, change detection, and comparison page auto-updating
+- the competitive intelligence pipeline workflow (see instructions below) — automated competitor monitoring, change detection, and comparison page auto-updating
 - `content-refresh-pipeline` — detect and refresh underperforming comparison pages based on ranking, traffic, and content freshness signals
 - `seo-performance-monitor` — expanded monitoring across the full 50-80 page portfolio with per-page and portfolio-level dashboards

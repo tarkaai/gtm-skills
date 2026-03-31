@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
   - win-loss-interview-pipeline
   - win-loss-insight-extraction
-  - win-loss-reporting
   - threshold-engine
 ---
 # Win/Loss Analysis Program — Baseline Run
@@ -74,7 +73,7 @@ If any step breaks, diagnose and fix. Common issues: Fireflies fails to join (ca
 
 ### 5. Generate your first win/loss report
 
-After accumulating 10+ analyzed interviews, run the `win-loss-reporting` drill manually:
+After accumulating 10+ analyzed interviews, run the the win loss reporting workflow (see instructions below) drill manually:
 
 - Pull all "win-loss-insight" tagged notes from Attio for the 2-week period
 - Calculate aggregate metrics: win rate, top win/loss reasons, competitor frequency, insight category distribution
@@ -127,5 +126,5 @@ If FAIL: Diagnose which metric fell short. Low interview count = outreach/accept
 
 - `win-loss-interview-pipeline` — Automated outreach, scheduling, recording for every closed deal
 - `win-loss-insight-extraction` — AI-powered analysis of transcripts and surveys into structured insights
-- `win-loss-reporting` — Aggregate insights into a periodic report with patterns and recommendations
+- the win loss reporting workflow (see instructions below) — Aggregate insights into a periodic report with patterns and recommendations
 - `threshold-engine` — Evaluates results against the pass threshold

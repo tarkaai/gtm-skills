@@ -15,8 +15,7 @@ kpis: ["Stakeholder engagement rate (outreach → reply)", "Average roles engage
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - stakeholder-intelligence-reporting
-  - stakeholder-consensus-tracker
+  - dashboard-builder
 ---
 
 # Multi-Stakeholder Discovery Process — Scalable Automation
@@ -71,7 +70,7 @@ Run the the stakeholder engagement orchestration workflow (see instructions belo
 
 ### 2. Build the Coverage Dashboard
 
-Run the `stakeholder-intelligence-reporting` drill:
+Run the `dashboard-builder` drill:
 
 **PostHog dashboard (6 panels):**
 1. Discovery Coverage Funnel: mapped → outreach sent → replied → scheduled → call completed
@@ -95,7 +94,7 @@ Run the `stakeholder-intelligence-reporting` drill:
 
 ### 3. Strengthen Consensus Gating
 
-Extend the `stakeholder-consensus-tracker` drill with Scalable-level guardrails:
+Extend the the stakeholder consensus tracker workflow (see instructions below) drill with Scalable-level guardrails:
 
 **Proposal gate:**
 - Deals cannot advance to Proposed if consensus_score < 60
@@ -154,5 +153,5 @@ If FAIL: Diagnose the bottleneck — outreach (stakeholders not replying?), disc
 ## Drills Referenced
 
 - the stakeholder engagement orchestration workflow (see instructions below) — automated role-specific outreach sequencing, engagement tracking, coverage monitoring, and gap alerting across all deals
-- `stakeholder-intelligence-reporting` — PostHog dashboards, Attio saved views, weekly metrics snapshots, and monthly ROI calculations for multi-stakeholder discovery effectiveness
-- `stakeholder-consensus-tracker` — consensus score computation, trajectory monitoring, degradation alerts, intervention plans, and pre-proposal gate enforcement
+- `dashboard-builder` — PostHog dashboards, Attio saved views, weekly metrics snapshots, and monthly ROI calculations for multi-stakeholder discovery effectiveness
+- the stakeholder consensus tracker workflow (see instructions below) — consensus score computation, trajectory monitoring, degradation alerts, intervention plans, and pre-proposal gate enforcement

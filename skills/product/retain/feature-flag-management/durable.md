@@ -15,7 +15,6 @@ slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
 drills:
   - autonomous-optimization
-  - flag-rollout-health-monitor
   - dashboard-builder
 ---
 # Feature Flag System -- Durable Intelligence
@@ -60,7 +59,7 @@ The optimization loop operates as follows:
 **Report (weekly):** Generate a weekly optimization brief covering: anomalies detected, hypotheses generated, experiments running, decisions made, net metric change, estimated distance from local maximum.
 
 ### 2. Maintain flag health monitoring at Durable cadence
-Run the `flag-rollout-health-monitor` drill at elevated monitoring frequency:
+Run the `autonomous-optimization` drill at elevated monitoring frequency:
 - Daily health checks (upgraded from weekly at Scalable)
 - Real-time anomaly alerts for critical metrics (rollback rate spike, flag evaluation errors)
 - Monthly comprehensive report with 6-month trend analysis
@@ -115,5 +114,5 @@ The agent monitors its own effectiveness. When 3 consecutive experiments produce
 
 ## Drills Referenced
 - `autonomous-optimization` -- the core Durable loop: monitor anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `flag-rollout-health-monitor` -- daily/weekly flag health measurement feeding into the optimization loop
+- `autonomous-optimization` -- daily/weekly flag health measurement feeding into the optimization loop
 - `dashboard-builder` -- builds the intelligence dashboard showing optimization status, experiment history, and convergence

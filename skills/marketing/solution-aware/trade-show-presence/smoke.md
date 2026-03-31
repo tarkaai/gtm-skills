@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
 drills:
   - icp-definition
   - event-scouting
-  - trade-show-booth-operations
   - threshold-engine
 ---
 
@@ -57,12 +56,12 @@ Run the `event-scouting` drill to identify a trade show worth testing. Score can
 Run the `icp-definition` drill to document who you want to attract at the booth. Then design your demo approach:
 
 - Write a one-sentence booth hook: the problem you solve, stated in terms the visitor recognizes. This goes on your booth signage and is the opening line for every conversation.
-- Prepare 3 demo paths (60-second elevator, 3-minute guided, 10-minute deep dive) as defined in the `trade-show-booth-operations` drill. Each path should address a specific ICP pain point and end with a clear next step.
+- Prepare 3 demo paths (60-second elevator, 3-minute guided, 10-minute deep dive) as defined in the the trade show booth operations workflow (see instructions below) drill. Each path should address a specific ICP pain point and end with a clear next step.
 - Define your qualification criteria: what makes someone a Tier 1 (hot) vs Tier 2 (warm) vs Tier 3 (curious) lead? Write it down so every booth staff member applies the same standard.
 
 ### 3. Prepare booth infrastructure
 
-Run the `trade-show-booth-operations` drill to set up:
+Run the the trade show booth operations workflow (see instructions below) drill to set up:
 
 - **Pre-show target list**: Extract the attendee list, enrich with Clay, and identify the top 25-50 ICP-match targets. Send personal outreach inviting them to the booth.
 - **Lead capture**: Create a mobile-friendly Tally form for booth staff to log every conversation. Fields: name, email, company, title, interest level (1-5), demo path given, key pain point, agreed next step, notes.
@@ -75,13 +74,13 @@ Run the `trade-show-booth-operations` drill to set up:
 
 **Human action required:** You and your team work the booth.
 
-Follow the execution framework from the `trade-show-booth-operations` drill:
+Follow the execution framework from the the trade show booth operations workflow (see instructions below) drill:
 
 - Station a qualifier at the booth entrance. Their job: greet, ask one qualifying question, and route to the right demo path or politely disengage.
 - Demo-givers run the appropriate demo path based on the visitor's pain point.
 - Log every conversation in the Tally form within 5 minutes of it ending. Do not batch at end of day.
 - Between traffic peaks, proactively seek out pre-identified targets on the show floor.
-- At end of each day, run the same-day lead import from the `trade-show-booth-operations` drill: sync Tally form submissions and badge scan exports to Attio.
+- At end of each day, run the same-day lead import from the the trade show booth operations workflow (see instructions below) drill: sync Tally form submissions and badge scan exports to Attio.
 
 ### 5. Execute basic follow-up (within 48 hours)
 
@@ -139,5 +138,5 @@ Note: Booth rental, travel, and materials are show-specific costs not included a
 
 - `icp-definition` — define who you want to attract at the booth and what pain points to address
 - `event-scouting` — research and score candidate trade shows by ICP density, size, and cost
-- `trade-show-booth-operations` — pre-show target research, lead capture setup, demo prep, and show-day execution
+- the trade show booth operations workflow (see instructions below) — pre-show target research, lead capture setup, demo prep, and show-day execution
 - `threshold-engine` — evaluate pass/fail against conversation, demo, and meeting targets

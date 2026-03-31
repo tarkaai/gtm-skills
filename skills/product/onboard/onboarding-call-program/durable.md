@@ -16,7 +16,6 @@ slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
 drills:
   - autonomous-optimization
-  - onboarding-call-performance-monitor
   - onboarding-health-monitor
 ---
 # High-Touch Onboarding Calls — Durable Intelligence
@@ -93,7 +92,7 @@ Run the `autonomous-optimization` drill to set up the core optimization cycle fo
 
 ### 2. Configure call-program-specific monitoring
 
-Run the `onboarding-call-performance-monitor` drill to maintain the detailed funnel dashboard and daily anomaly detection built at the Scalable level. Ensure:
+Run the `autonomous-optimization` drill to maintain the detailed funnel dashboard and daily anomaly detection built at the Scalable level. Ensure:
 
 - The full funnel dashboard (eligible → invited → booked → completed → activated) is current
 - Daily anomaly checks use the thresholds defined at Scalable level
@@ -173,5 +172,5 @@ At 6 months:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, weekly briefs
-- `onboarding-call-performance-monitor` — full funnel dashboard, daily anomaly detection, weekly reports, monthly cohort analysis feeding into the optimization loop
+- `autonomous-optimization` — full funnel dashboard, daily anomaly detection, weekly reports, monthly cohort analysis feeding into the optimization loop
 - `onboarding-health-monitor` — per-segment health monitoring, cohort drift detection, and anomaly alerts that trigger the optimization loop for segment-specific issues

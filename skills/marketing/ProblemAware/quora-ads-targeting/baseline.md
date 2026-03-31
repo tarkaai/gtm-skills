@@ -14,7 +14,6 @@ kpis: ["Impressions", "CTR", "CPC", "Conversions", "Cost per qualified lead", "L
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add Marketing/ProblemAware/quora-ads-targeting"
 drills:
-  - quora-ads-campaign-build
   - paid-social-lead-routing
   - posthog-gtm-events
 ---
@@ -43,7 +42,7 @@ First always-on Quora Ads campaigns. The agent builds multi-targeting campaigns 
 
 ### 1. Expand Campaign Structure
 
-Run the `quora-ads-campaign-build` drill with expanded scope:
+Run the the quora ads campaign build workflow (see instructions below) drill with expanded scope:
 
 1. Create a new campaign: `quora-ads-targeting-baseline-{date}`, objective `Conversions`, daily budget $55-90/day
 2. Build 3 ad sets using all three contextual targeting types:
@@ -165,6 +164,6 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `quora-ads-campaign-build` — expanded campaign construction with 3 targeting types (topic, question, keyword), retargeting audiences, and refreshed creative
+- the quora ads campaign build workflow (see instructions below) — expanded campaign construction with 3 targeting types (topic, question, keyword), retargeting audiences, and refreshed creative
 - `paid-social-lead-routing` — automated lead pipeline from Quora conversion through Clay enrichment, Attio CRM, and Loops nurture sequences
 - `posthog-gtm-events` — standardized event taxonomy for Quora Ads tracking with full-funnel PostHog events and UTM attribution

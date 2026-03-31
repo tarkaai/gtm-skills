@@ -14,9 +14,8 @@ kpis: ["Open rate lift by segment", "Click rate by segment", "Test velocity (tes
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
 drills:
-  - email-subject-test-pipeline
   - ab-test-orchestrator
-  - email-subject-performance-monitor
+  - dashboard-builder
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ Scale subject-line A/B testing from individual tests to systematic coverage of a
 
 ### 1. Build segment-aware test scheduling
 
-Extend the `email-subject-test-pipeline` to operate per-segment. Using Loops audience segments (via the `loops-audience` fundamental referenced in the drill), split tests by:
+Extend the the email subject test pipeline workflow (see instructions below) to operate per-segment. Using Loops audience segments (via the `loops-audience` fundamental referenced in the drill), split tests by:
 
 - **Plan type:** Free vs. paid users respond differently to subject-line framing
 - **Usage level:** Power users vs. low-usage users have different attention triggers
@@ -62,7 +61,7 @@ The agent writes the variant subject line directly. **Human action required:** R
 
 ### 3. Scale monitoring to per-segment reporting
 
-Run the `email-subject-performance-monitor` drill with expanded scope:
+Run the `dashboard-builder` drill with expanded scope:
 
 - Dashboard panels broken down by segment (plan type, usage level, tenure)
 - Per-segment open-rate trend lines with threshold indicators
@@ -104,7 +103,7 @@ Run the `threshold-engine` drill at 2 months. Pass criteria: emails that have be
 
 ## Drills Referenced
 
-- `email-subject-test-pipeline` — runs each individual subject-line A/B test, now extended with segment awareness
+- the email subject test pipeline workflow (see instructions below) — runs each individual subject-line A/B test, now extended with segment awareness
 - `ab-test-orchestrator` — provides the hypothesis framework and automated variant generation
-- `email-subject-performance-monitor` — tracks per-segment performance, generates weekly briefs, and fires anomaly alerts
+- `dashboard-builder` — tracks per-segment performance, generates weekly briefs, and fires anomaly alerts
 - `threshold-engine` — evaluates pass/fail against the 15% lift at 500+ recipients threshold

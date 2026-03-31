@@ -15,7 +15,6 @@ slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
 drills:
   - ab-test-orchestrator
-  - collaboration-network-effects
   - engagement-score-computation
 ---
 
@@ -73,7 +72,7 @@ Estimated time: 20 hours over 2 months (5 hours per experiment cycle).
 
 ### 2. Build and activate network-effect amplification
 
-Run the `collaboration-network-effects` drill to find and amplify organic viral loops:
+Run the the collaboration network effects workflow (see instructions below) drill to find and amplify organic viral loops:
 
 **Map existing loops:**
 Query PostHog for the invite loop, share loop, and co-editing loop. For each loop, compute:
@@ -181,5 +180,5 @@ Estimated time: 15 hours (analysis and documentation).
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on invite timing, invite mechanism, invitee onboarding, and share landing pages
-- `collaboration-network-effects` — maps viral loops, identifies bottlenecks, builds the amplification engine, measures viral coefficient, and tracks network-effect attribution
+- the collaboration network effects workflow (see instructions below) — maps viral loops, identifies bottlenecks, builds the amplification engine, measures viral coefficient, and tracks network-effect attribution
 - `engagement-score-computation` — adds collaboration dimension to engagement scores, feeds churn prevention with team-aware risk signals, creates Attio lists for champions and at-risk teams

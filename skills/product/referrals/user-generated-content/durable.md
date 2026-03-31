@@ -17,7 +17,6 @@ slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
   - autonomous-optimization
-  - ugc-health-monitor
   - dashboard-builder
 ---
 
@@ -49,7 +48,7 @@ Run the `autonomous-optimization` drill configured specifically for the UGC pipe
 
 **Configure the monitoring phase (daily via n8n cron):**
 
-Use the `ugc-health-monitor` drill's 8 metrics as the primary KPIs for anomaly detection. The agent checks daily:
+Use the `autonomous-optimization` drill's 8 metrics as the primary KPIs for anomaly detection. The agent checks daily:
 
 - Submission rate (weekly rolling vs 4-week rolling average)
 - Approval rate (trailing 30-day)
@@ -72,7 +71,7 @@ If anomaly detected on any metric: trigger the diagnosis phase.
 
 The agent gathers context:
 1. Pull current UGC system configuration from Attio: active prompt variants, contest status, tier distribution, amplification schedule
-2. Pull 8-week metric history from PostHog via the `ugc-health-monitor` dashboard
+2. Pull 8-week metric history from PostHog via the `autonomous-optimization` dashboard
 3. Pull creator behavior breakdown: are new creators declining, or are existing creators stopping?
 4. Pull amplification channel performance: did a specific channel stop driving traffic?
 5. Run `hypothesis-generation` with the anomaly data + context
@@ -138,7 +137,7 @@ Run the `dashboard-builder` drill to create the Durable-level PostHog dashboard:
 
 ### 3. Deploy the UGC-specific monitoring layer
 
-Run the `ugc-health-monitor` drill as the play-specific complement to `autonomous-optimization`. This provides the 8 UGC health metrics, diagnostic triggers, automated interventions, and weekly health reports that feed the optimization loop.
+Run the `autonomous-optimization` drill as the play-specific complement to `autonomous-optimization`. This provides the 8 UGC health metrics, diagnostic triggers, automated interventions, and weekly health reports that feed the optimization loop.
 
 Configure the interventions:
 - **Prompt fatigue:** auto-rotate to next prompt variant when conversion drops below 2% for 2 weeks
@@ -249,5 +248,5 @@ Compute over the full 6-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect anomalies in UGC submission rates, creator engagement, and amplification performance; generate improvement hypotheses; run A/B experiments on prompts, incentives, and channels via PostHog; evaluate results; auto-implement winners; and produce weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `ugc-health-monitor` — play-specific monitoring for the UGC pipeline: 8 health metrics (submission rate, approval rate, prompt conversion, creator diversity, repeat rate, amplification throughput, referral traffic, quality trend) with diagnostics, automated interventions, and weekly reports that feed the optimization loop
+- `autonomous-optimization` — play-specific monitoring for the UGC pipeline: 8 health metrics (submission rate, approval rate, prompt conversion, creator diversity, repeat rate, amplification throughput, referral traffic, quality trend) with diagnostics, automated interventions, and weekly reports that feed the optimization loop
 - `dashboard-builder` — build the Durable PostHog dashboard with full pipeline funnel, creator ecosystem heatmap, channel performance, experiment status, quality trends, and cost-per-piece tracking

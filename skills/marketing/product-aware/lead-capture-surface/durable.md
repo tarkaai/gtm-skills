@@ -17,7 +17,6 @@ slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
 drills:
   - autonomous-optimization
-  - cta-conversion-monitor
   - dashboard-builder
 ---
 
@@ -49,7 +48,7 @@ Run the `autonomous-optimization` drill configured specifically for the lead cap
 
 **Configure the monitoring phase (daily via n8n cron):**
 
-Use the `cta-conversion-monitor` drill's funnel stages as the primary KPIs for anomaly detection. The agent checks daily:
+Use the `autonomous-optimization` drill's funnel stages as the primary KPIs for anomaly detection. The agent checks daily:
 
 - Overall conversion rate across all surfaces (7-day rolling vs 4-week rolling average)
 - Per-surface conversion rates (each page with a lead capture element)
@@ -70,7 +69,7 @@ If anomaly detected on any metric or any surface: trigger the diagnosis phase.
 
 The agent gathers context:
 1. Pull current surface configuration from Attio campaign record: CTA copy per page, surface type, form fields, placement
-2. Pull 8-week metric history from PostHog via the `cta-conversion-monitor` funnel
+2. Pull 8-week metric history from PostHog via the `autonomous-optimization` funnel
 3. Pull traffic source breakdown: did the anomaly correlate with a traffic source change?
 4. Pull device breakdown: did the anomaly affect mobile only, desktop only, or both?
 5. Run `hypothesis-generation` with the anomaly data + context
@@ -133,7 +132,7 @@ Run the `dashboard-builder` drill to create the Durable-level PostHog dashboard:
 
 ### 3. Deploy the lead-capture-specific monitoring layer
 
-Run the `cta-conversion-monitor` drill to add the monitoring layer specific to lead capture surfaces. This runs alongside `autonomous-optimization` and provides the play-specific data that feeds the optimization loop.
+Run the `autonomous-optimization` drill to add the monitoring layer specific to lead capture surfaces. This runs alongside `autonomous-optimization` and provides the play-specific data that feeds the optimization loop.
 
 Configure:
 - Daily funnel monitoring with per-surface and per-page breakdown
@@ -245,5 +244,5 @@ Compute over the full 6-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies per lead capture surface, generate improvement hypotheses, run A/B experiments via PostHog, evaluate results, auto-implement winners, and produce weekly optimization briefs. Converges when successive experiments produce < 2% improvement.
-- `cta-conversion-monitor` — play-specific monitoring for lead capture surface funnels: per-page health checks, form abandonment analysis, device split tracking, traffic source attribution, and weekly surface rankings that feed the optimization loop
+- `autonomous-optimization` — play-specific monitoring for lead capture surface funnels: per-page health checks, form abandonment analysis, device split tracking, traffic source attribution, and weekly surface rankings that feed the optimization loop
 - `dashboard-builder` — build the Durable PostHog dashboard with per-surface conversion rates, experiment status, lead quality trends, CTA fatigue tracking, and cost-per-lead monitoring

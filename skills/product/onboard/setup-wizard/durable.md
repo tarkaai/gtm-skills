@@ -16,7 +16,6 @@ slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
 drills:
   - autonomous-optimization
-  - wizard-completion-monitor
   - onboarding-health-monitor
 ---
 
@@ -121,7 +120,7 @@ Run the `autonomous-optimization` drill to create the always-on agent loop for t
 
 ### 2. Deploy wizard-specific health monitoring
 
-Run the `wizard-completion-monitor` drill at Durable depth:
+Run the `autonomous-optimization` drill at Durable depth:
 - All dashboards and funnels from Scalable continue running
 - Add experiment tracking panels: active experiments, historical win/loss rate, cumulative lift chart
 - Add convergence tracking: chart showing improvement size of each successive experiment
@@ -184,5 +183,5 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor, diagnose, experiment, evaluate, implement, report
-- `wizard-completion-monitor` -- continuous wizard health tracking with anomaly detection feeding into the optimization loop
+- `autonomous-optimization` -- continuous wizard health tracking with anomaly detection feeding into the optimization loop
 - `onboarding-health-monitor` -- cross-metric monitoring ensuring wizard optimization does not harm broader onboarding health

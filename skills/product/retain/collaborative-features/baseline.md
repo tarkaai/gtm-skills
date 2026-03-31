@@ -44,7 +44,7 @@ Run the `posthog-gtm-events` drill to ensure the full collaboration event set is
 - Add co-editing events that were skipped at Smoke: `concurrent_session_started`, `concurrent_edit_made`, `concurrent_session_ended`
 - Add team growth events: `workspace_created`, `team_member_added`, `team_member_removed`
 - Add reaction events: `reaction_added`
-- Verify all events from `collaboration-instrumentation` are firing correctly with complete properties
+- Verify all events from the collaboration instrumentation workflow (see instructions below) are firing correctly with complete properties
 
 Build PostHog funnels showing the complete collaboration journey:
 

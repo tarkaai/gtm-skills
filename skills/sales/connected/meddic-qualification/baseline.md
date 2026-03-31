@@ -14,8 +14,6 @@ kpis: ["MEDDIC completeness rate", "Deal velocity", "Close rate by MEDDIC score"
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - meddic-discovery-call
-  - meddic-scorecard-setup
   - posthog-gtm-events
 ---
 
@@ -47,7 +45,7 @@ Run the the play's scoring criteria drill. This creates an n8n workflow that:
 5. Pushes scores back to Attio with element-level evidence
 6. Routes: Qualified (70+) triggers Slack alert with booking link, Needs Work (40-69) gets prioritized, Disqualified (<40) goes to nurture
 
-If `meddic-scorecard-setup` was not already run at Smoke, run it first — the auto-scoring drill depends on the CRM fields being configured.
+If the meddic scorecard setup workflow (see instructions below) was not already run at Smoke, run it first — the auto-scoring drill depends on the CRM fields being configured.
 
 Estimated time: 4 hours setup.
 
@@ -67,7 +65,7 @@ Estimated time: 2 hours.
 
 ### 3. Run MEDDIC discovery calls on all new deals
 
-For every deal that enters the pipeline during the 2-week run, run the `meddic-discovery-call` drill:
+For every deal that enters the pipeline during the 2-week run, run the the meddic discovery call workflow (see instructions below) drill:
 
 1. Before each call, the agent pulls the deal's auto-scored MEDDIC profile and generates a targeted question guide focusing on the weakest elements
 2. Fireflies records and transcribes the call
@@ -133,6 +131,6 @@ Estimated time: 3 hours analysis.
 ## Drills Referenced
 
 - the play's scoring criteria — automated pre-qualification pipeline via Clay enrichment for all 6 MEDDIC elements
-- `meddic-discovery-call` — full discovery call lifecycle with element-targeted questions and transcript extraction
-- `meddic-scorecard-setup` — CRM infrastructure (run at Smoke, verify it is active)
+- the meddic discovery call workflow (see instructions below) — full discovery call lifecycle with element-targeted questions and transcript extraction
+- the meddic scorecard setup workflow (see instructions below) — CRM infrastructure (run at Smoke, verify it is active)
 - `posthog-gtm-events` — event tracking configuration for MEDDIC qualification milestones

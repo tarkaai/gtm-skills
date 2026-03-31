@@ -18,7 +18,6 @@ slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
 drills:
   - autonomous-optimization
-  - behavior-segmentation-pipeline
 ---
 # AI Behavior Segmentation -- Durable Intelligence
 
@@ -170,4 +169,4 @@ This level runs continuously. If retention lift decays below 10% and the agent c
 
 - `autonomous-optimization` -- The core Durable loop: monitor -> diagnose -> experiment -> evaluate -> implement. Runs daily. Finds and maintains the local maximum.
 - `autonomous-optimization` -- Watches segment quality, detects drift, triggers corrective cluster refreshes. Runs weekly.
-- `behavior-segmentation-pipeline` -- The underlying weekly segmentation pipeline that the drift monitor and optimization loop depend on.
+- the behavior segmentation pipeline workflow (see instructions below) -- The underlying weekly segmentation pipeline that the drift monitor and optimization loop depend on.

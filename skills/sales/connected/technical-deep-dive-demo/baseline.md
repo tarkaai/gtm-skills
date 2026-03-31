@@ -15,7 +15,6 @@ slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
   - posthog-gtm-events
-  - technical-demo-content-assembly
   - sandbox-provisioning-workflow
 ---
 # Technical Deep-Dive Demo — Baseline Run
@@ -51,11 +50,11 @@ Run the `posthog-gtm-events` drill to define and implement the event taxonomy fo
 Connect PostHog to Attio via n8n webhook so deal stage changes from technical demo outcomes are tracked automatically.
 
 ### 2. Automate demo prep generation
-Configure the `technical-demo-content-assembly` drill to run automatically when a technical deep-dive demo is scheduled. Set up an n8n workflow triggered by Cal.com booking webhooks:
+Configure the the technical demo content assembly workflow (see instructions below) drill to run automatically when a technical deep-dive demo is scheduled. Set up an n8n workflow triggered by Cal.com booking webhooks:
 
 1. Cal.com fires webhook when a booking tagged `technical-demo` is confirmed
 2. n8n matches the booking to an Attio deal record (by attendee email)
-3. n8n triggers `technical-demo-content-assembly` with the deal ID
+3. n8n triggers the technical demo content assembly workflow (see instructions below) with the deal ID
 4. The drill generates the full demo script, integration code, and follow-up package
 5. n8n stores all outputs as Attio notes on the deal
 6. n8n sends a Slack notification to the founder: "Demo prep ready for {company_name} — review before {demo_date}"
@@ -126,5 +125,5 @@ If PASS, document the winning patterns (best module order, optimal attendee mix,
 
 ## Drills Referenced
 - `posthog-gtm-events` — defines and implements the event taxonomy for the technical demo funnel in PostHog
-- `technical-demo-content-assembly` — auto-generates prospect-customized demo scripts, integration code, and follow-up packages from discovery data and tech stack enrichment
+- the technical demo content assembly workflow (see instructions below) — auto-generates prospect-customized demo scripts, integration code, and follow-up packages from discovery data and tech stack enrichment
 - `sandbox-provisioning-workflow` — provisions sandbox environments with industry-relevant data, sends access with onboarding materials, and schedules follow-up touchpoints

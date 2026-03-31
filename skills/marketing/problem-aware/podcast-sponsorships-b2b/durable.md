@@ -16,7 +16,6 @@ slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
 drills:
   - autonomous-optimization
-  - podcast-sponsor-performance-monitor
   - podcast-sponsor-research
 ---
 
@@ -93,7 +92,7 @@ Run the `autonomous-optimization` drill configured for the podcast sponsorship p
 
 ### 2. Run continuous podcast portfolio management
 
-Run the `podcast-sponsor-performance-monitor` drill as the always-on monitoring layer:
+Run the `autonomous-optimization` drill as the always-on monitoring layer:
 
 - PostHog dashboard updated in real-time across all placements
 - Automated 14-day performance collection for every placement
@@ -176,5 +175,5 @@ This level runs continuously. The autonomous optimization loop detects and corre
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: monitor metrics daily, diagnose anomalies, generate hypotheses, run experiments across placements, evaluate results, auto-implement winners, report weekly
-- `podcast-sponsor-performance-monitor` — always-on multi-signal attribution dashboard, automated performance collection, biweekly reports, podcast scoring model
+- `autonomous-optimization` — always-on multi-signal attribution dashboard, automated performance collection, biweekly reports, podcast scoring model
 - `podcast-sponsor-research` — quarterly pipeline refresh to discover new podcasts and maintain portfolio health

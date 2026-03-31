@@ -18,7 +18,7 @@ drills:
   - signal-detection
   - follow-up-automation
   - ab-test-orchestrator
-  - call-performance-reporting
+  - dashboard-builder
   - tool-sync-workflow
 ---
 
@@ -125,7 +125,7 @@ Estimated time: 4 hours setup, then ~30 hours/month of founder calling time.
 
 ### 5. Build performance reporting
 
-Run the `call-performance-reporting` drill to create:
+Run the `dashboard-builder` drill to create:
 
 - Live PostHog dashboard: call volume, connect rate, meeting rate, cost per meeting, pipeline value
 - Weekly automated brief: per-signal performance, best call windows, script variant winners, cadence effectiveness, channel attribution (which touch in the multi-channel sequence triggered the meeting)
@@ -140,7 +140,7 @@ Estimated time: 3 hours.
 
 Measure against: >=2.5% call-to-meeting rate sustained at 500+ calls/month for 3 months.
 
-Monthly evaluation via the `call-performance-reporting` dashboard:
+Monthly evaluation via the `dashboard-builder` dashboard:
 - Call-to-meeting rate: meetings / total attempts (target: >=2.5% = 12-13 meetings/month from 500 calls)
 - Cost per meeting: (Aircall/Orum + Clay + Instantly + Fireflies) / meetings
 - Signal ROI: which signals produce the highest meeting rate per credit spent
@@ -189,5 +189,5 @@ If FAIL: Use the weekly briefs and A/B test data to diagnose:
 - `signal-detection` — always-on buying signal monitoring via Clay with tier-based routing
 - `follow-up-automation` — multi-channel cadence orchestration (email, LinkedIn, call, follow-up)
 - `ab-test-orchestrator` — experiment lifecycle management for scripts, timing, signals, voicemails
-- `call-performance-reporting` — live dashboard, weekly briefs, anomaly detection, monthly trends
+- `dashboard-builder` — live dashboard, weekly briefs, anomaly detection, monthly trends
 - `tool-sync-workflow` — bidirectional sync between Instantly, LinkedIn, Aircall, Attio, and PostHog

@@ -18,7 +18,7 @@ install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
   - follow-up-automation
   - ab-test-orchestrator
-  - timing-qualification-reporting
+  - dashboard-builder
 ---
 
 # Timing Qualification Process — Scalable Automation
@@ -100,7 +100,7 @@ All new leads, regardless of source, enter the same auto-scoring pipeline. No ma
 
 ### 5. Build scaled reporting
 
-Run the `timing-qualification-reporting` drill to extend Baseline dashboards with:
+Run the `dashboard-builder` drill to extend Baseline dashboards with:
 
 - **Auto-score accuracy panel:** Prediction accuracy over time (auto-predicted category vs human-validated)
 - **A/B experiment tracker:** Active experiments, their status, and cumulative wins
@@ -151,4 +151,4 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 - the play's scoring criteria — automated pre-qualification pipeline: CRM trigger > Clay enrichment > Claude scoring > Attio routing
 - `follow-up-automation` — n8n workflows for score-based outreach, cadence management, and re-scoring alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, cadence timing, and urgency messaging
-- `timing-qualification-reporting` — dashboards with prediction accuracy, experiment tracking, and cost analysis
+- `dashboard-builder` — dashboards with prediction accuracy, experiment tracking, and cost analysis

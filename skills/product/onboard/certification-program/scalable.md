@@ -37,7 +37,7 @@ The certification program serves multiple user personas across multiple tiers. C
 
 ### 1. Expand the curriculum to all tiers
 
-Using the curriculum spec from `certification-curriculum-design`, build Tiers 2-4:
+Using the curriculum spec from the certification curriculum design workflow (see instructions below), build Tiers 2-4:
 - **Tier 2 (Practitioner):** 4-5 modules covering intermediate features — automations, integrations, team collaboration
 - **Tier 3 (Expert):** 4-5 modules covering advanced features — custom configurations, API usage, advanced reporting
 - **Tier 4 (Power User):** 3-4 modules covering cross-feature orchestration, performance tuning, and workflow optimization

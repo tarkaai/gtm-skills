@@ -17,7 +17,6 @@ drills:
   - creator-outreach-pipeline
   - creator-campaign-execution
   - posthog-gtm-events
-  - creator-performance-reporting
   - threshold-engine
 ---
 
@@ -132,5 +131,4 @@ Deep analysis:
 - `creator-outreach-pipeline` — outreach to 10-15 creators, book 3-5 deals
 - `creator-campaign-execution` — brief, manage, and track each creator post
 - `posthog-gtm-events` — configure end-to-end tracking with per-creator attribution
-- `creator-performance-reporting` — dashboards, scorecards, and creator comparison
 - `threshold-engine` — evaluate Baseline results against pass threshold

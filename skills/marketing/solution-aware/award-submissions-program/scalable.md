@@ -14,9 +14,8 @@ kpis: ["Submissions per quarter", "Win rate by category", "PR placements from aw
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
 drills:
-  - award-submission-pipeline
   - media-pitch-outreach
-  - award-performance-monitor
+  - dashboard-builder
 ---
 
 # Industry Award Submissions — Scalable
@@ -56,7 +55,7 @@ Build an n8n workflow for continuous award discovery:
 
 ### 2. Scale Submission Volume
 
-Run the `award-submission-pipeline` drill at Scalable volume (30+ submissions over 6 months):
+Run the the award submission pipeline workflow (see instructions below) drill at Scalable volume (30+ submissions over 6 months):
 
 1. Maintain a rolling pipeline of 40+ awards across all categories
 2. Batch submission preparation: each month, identify all awards with deadlines in the next 30-60 days
@@ -84,7 +83,7 @@ Automate post-win amplification via n8n:
 
 ### 4. Deploy Award Performance Monitoring
 
-Run the `award-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog award dashboard (4 panels: submission pipeline, win tracking, social proof distribution, pipeline attribution)
 2. Implement the award event taxonomy in PostHog
@@ -105,7 +104,7 @@ Systematize how awards are used in the sales cycle:
 
 Monthly review cycle:
 
-1. Pull the quarterly report from the `award-performance-monitor` drill
+1. Pull the quarterly report from the `dashboard-builder` drill
 2. Analyze:
    - Which award categories have the highest win rate?
    - Which wins generate the most PR amplification?
@@ -146,6 +145,6 @@ Monthly review cycle:
 
 ## Drills Referenced
 
-- `award-submission-pipeline` — automated award discovery, batch submission preparation, and rolling pipeline management
+- the award submission pipeline workflow (see instructions below) — automated award discovery, batch submission preparation, and rolling pipeline management
 - `media-pitch-outreach` — amplify award wins through targeted media outreach to journalists and newsletter editors
-- `award-performance-monitor` — continuous monitoring of submission pipeline, win rates, social proof impact, and award-to-pipeline attribution
+- `dashboard-builder` — continuous monitoring of submission pipeline, win rates, social proof impact, and award-to-pipeline attribution

@@ -14,7 +14,6 @@ kpis: ["Cross-sell surface CTR", "Surface dismissal rate", "Trigger accuracy (% 
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
 drills:
-  - cross-sell-catalog-mapping
   - addon-discovery-surface-build
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ One in-product cross-sell surface is live for your highest-opportunity related p
 
 ### 1. Map your product catalog to triggers
 
-Run the `cross-sell-catalog-mapping` drill scoped to your top 3 cross-sell products. Specifically:
+Run the the cross sell catalog mapping workflow (see instructions below) drill scoped to your top 3 cross-sell products. Specifically:
 
 - Complete Step 1 (build adopter vs. non-adopter cohorts in PostHog for each product)
 - Complete Step 2 (identify the behavioral predictors that separate multi-product users from single-product users)
@@ -97,6 +96,6 @@ Run the `threshold-engine` drill to measure: >=15% CTR on the cross-sell surface
 
 ## Drills Referenced
 
-- `cross-sell-catalog-mapping` — analyzes product usage data to map which products to recommend to which users and what behavior triggers readiness
+- the cross sell catalog mapping workflow (see instructions below) — analyzes product usage data to map which products to recommend to which users and what behavior triggers readiness
 - `addon-discovery-surface-build` — builds the in-product surface that shows users the cross-sell product at the trigger moment
 - `threshold-engine` — evaluates whether CTR hit the 15% pass threshold

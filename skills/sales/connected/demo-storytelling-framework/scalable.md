@@ -16,7 +16,7 @@ kpis: ["Storytelling adoption rate at scale", "Demo-to-proposal conversion lift 
 slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
 drills:
-  - story-intelligence-reporting
+  - dashboard-builder
   - demo-performance-monitor
   - ab-test-orchestrator
 ---
@@ -43,7 +43,7 @@ Find the 10x multiplier. At Baseline, each demo gets an auto-generated story pre
 
 ### 1. Deploy Story Intelligence Reporting
 
-Run the `story-intelligence-reporting` drill:
+Run the `dashboard-builder` drill:
 
 - Build the PostHog storytelling dashboard (8 panels: story usage distribution, story-to-conversion funnel, engagement by story, story connection rate, emotional connection rate, match score vs outcome, story gap tracker, weekly volume)
 - Configure the weekly story effectiveness ranking workflow in n8n
@@ -162,6 +162,6 @@ After 2 months, measure:
 
 ## Drills Referenced
 
-- `story-intelligence-reporting` — track story effectiveness, build performance dashboards, generate weekly intelligence briefs, and detect story fatigue and gaps
+- `dashboard-builder` — track story effectiveness, build performance dashboards, generate weekly intelligence briefs, and detect story fatigue and gaps
 - `demo-performance-monitor` — monitor the full discovery-to-demo-to-deal funnel and detect conversion degradation patterns
 - `ab-test-orchestrator` — run controlled experiments on story selection, narrative structure, and closing techniques

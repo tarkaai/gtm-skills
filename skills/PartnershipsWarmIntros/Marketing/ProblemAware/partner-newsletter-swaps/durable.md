@@ -15,7 +15,6 @@ slug: "partner-newsletter-swaps"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/partner-newsletter-swaps"
 drills:
   - autonomous-optimization
-  - list-swap-performance-reporting
 ---
 # Partner Newsletter Swaps — Durable Intelligence
 
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for the list swap program. Th
 
 ### 2. Build the list swap performance monitoring layer
 
-Run the `list-swap-performance-reporting` drill to create the monitoring and reporting infrastructure specific to this play:
+Run the `autonomous-optimization` drill to create the monitoring and reporting infrastructure specific to this play:
 
 1. **PostHog dashboard** ("List Swaps — Partner Performance"):
    - Clicks by partner (bar chart, last 30 days)
@@ -175,4 +174,4 @@ If market conditions change (new competitor enters, partner landscape shifts, yo
 
 ## Drills Referenced
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> diagnose anomalies -> generate hypotheses -> run experiments -> evaluate results -> auto-implement winners -> report weekly
-- `list-swap-performance-reporting` — play-specific monitoring: per-partner dashboards, swap cohorts, weekly briefs, ROI tracking, and performance alerts that feed the optimization loop
+- `autonomous-optimization` — play-specific monitoring: per-partner dashboards, swap cohorts, weekly briefs, ROI tracking, and performance alerts that feed the optimization loop

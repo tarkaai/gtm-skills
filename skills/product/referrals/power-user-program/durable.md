@@ -16,7 +16,6 @@ slug: "power-user-program"
 install: "npx gtm-skills add product/referrals/power-user-program"
 drills:
   - autonomous-optimization
-  - advocacy-health-monitor
 ---
 
 # Power User Program — Durable Intelligence
@@ -93,7 +92,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the advocacy health monitor
 
-Run the `advocacy-health-monitor` drill for play-specific monitoring that complements the generic optimization loop:
+Run the `autonomous-optimization` drill for play-specific monitoring that complements the generic optimization loop:
 
 - Configure daily health checks for all 8 advocacy metrics: recruitment rate, activation rate, Insider-to-Advocate conversion, referral yield, referral conversion, advocate retention, power user score stability, testimonial/content yield
 - Implement diagnostic triggers for each declining metric:
@@ -161,4 +160,4 @@ After structural changes are implemented, reset the optimization baseline and re
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `advocacy-health-monitor` — play-specific monitoring for 8 advocacy metrics with diagnostic triggers, automated interventions, and escalation rules
+- `autonomous-optimization` — play-specific monitoring for 8 advocacy metrics with diagnostic triggers, automated interventions, and escalation rules

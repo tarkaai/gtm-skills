@@ -16,7 +16,6 @@ slug: "sample-data-templates"
 install: "npx gtm-skills add product/onboard/sample-data-templates"
 drills:
   - autonomous-optimization
-  - sample-data-engagement-monitor
   - nps-feedback-loop
 ---
 
@@ -117,7 +116,7 @@ Post the brief to Slack and store in Attio.
 
 ### 2. Maintain continuous engagement monitoring
 
-Run the `sample-data-engagement-monitor` drill in continuous mode:
+Run the `autonomous-optimization` drill in continuous mode:
 
 - Daily: interaction rate checks, template health scores, persona-level metrics
 - Weekly: full cohort comparison reports, template lifecycle analysis (new installs, edits, deletions, archives)
@@ -186,5 +185,5 @@ At convergence, the agent reports: "Sample data optimization has converged. Curr
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: monitor → diagnose → experiment → evaluate → implement. Runs daily monitoring, triggers experiments on anomalies, auto-implements winners, generates weekly briefs. Converges when successive experiments produce <2% improvement.
-- `sample-data-engagement-monitor` — continuous tracking of interaction rates, template health, persona metrics, and activation funnel performance feeding data into the optimization loop
+- `autonomous-optimization` — continuous tracking of interaction rates, template health, persona metrics, and activation funnel performance feeding data into the optimization loop
 - `nps-feedback-loop` — quarterly NPS for recently onboarded users, with detractor feedback routed into the optimization loop's hypothesis generation

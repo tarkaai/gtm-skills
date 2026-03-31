@@ -14,9 +14,8 @@ kpis: ["Cumulative CTR lift (all surfaces)", "Experiment velocity (tests/month)"
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
 drills:
-  - cta-variant-pipeline
   - ab-test-orchestrator
-  - cta-conversion-monitor
+  - dashboard-builder
   - threshold-engine
 ---
 
@@ -39,7 +38,7 @@ CTA testing runs continuously across all 5 instrumented surfaces at a velocity o
 
 ### 1. Build the experiment backlog
 
-Run the `cta-variant-pipeline` drill for each of the 5 instrumented surfaces. For each surface, generate 3-5 variant hypotheses and rank them. This produces a backlog of 15-25 hypotheses across all surfaces.
+Run the the cta variant pipeline workflow (see instructions below) drill for each of the 5 instrumented surfaces. For each surface, generate 3-5 variant hypotheses and rank them. This produces a backlog of 15-25 hypotheses across all surfaces.
 
 Prioritize the backlog by:
 1. **Surface traffic:** higher-traffic surfaces produce faster results and bigger absolute impact
@@ -83,7 +82,7 @@ At Baseline, you tested copy changes on one surface. Now systematically test acr
 
 ### 4. Monitor cross-surface health
 
-Run the `cta-conversion-monitor` drill with expanded scope: monitor all 5 surfaces simultaneously. Configure alerts for:
+Run the `dashboard-builder` drill with expanded scope: monitor all 5 surfaces simultaneously. Configure alerts for:
 
 - Any surface CTR drops > 20% vs its post-optimization baseline (regression detection)
 - Any experiment variant performs > 30% worse than control after 3 days (auto-revert trigger)
@@ -124,7 +123,7 @@ If FAIL: diagnose.
 
 ## Drills Referenced
 
-- `cta-variant-pipeline` -- generates variant hypotheses for each surface and provides the deployment/measurement framework
+- the cta variant pipeline workflow (see instructions below) -- generates variant hypotheses for each surface and provides the deployment/measurement framework
 - `ab-test-orchestrator` -- configures the automated experiment queuing pipeline in n8n and enforces statistical rigor
-- `cta-conversion-monitor` -- monitors all 5 surfaces simultaneously with regression detection and guardrail alerts
+- `dashboard-builder` -- monitors all 5 surfaces simultaneously with regression detection and guardrail alerts
 - `threshold-engine` -- evaluates cumulative lift and velocity thresholds monthly

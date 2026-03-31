@@ -15,7 +15,6 @@ slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
 drills:
   - ab-test-orchestrator
-  - ai-content-prompt-optimization
   - churn-prevention
   - upgrade-prompt
 ---
@@ -43,11 +42,11 @@ Pass threshold: >=35% AI content adoption sustained at 500+ active users, AND ac
 
 ### 1. Launch systematic content quality testing
 
-Run the `ab-test-orchestrator` drill in combination with the `ai-content-prompt-optimization` drill to systematically improve output quality:
+Run the `ab-test-orchestrator` drill in combination with the the ai content prompt optimization workflow (see instructions below) drill to systematically improve output quality:
 
 **Month 1 experiment plan:**
 1. Identify the 3 content types with the highest generation volume from Baseline data
-2. For each, run the `ai-content-prompt-optimization` drill to analyze rejection patterns and generate improvement hypotheses
+2. For each, run the the ai content prompt optimization workflow (see instructions below) drill to analyze rejection patterns and generate improvement hypotheses
 3. Pick the top hypothesis for the highest-volume content type. Design and launch the first prompt A/B test:
    - Control: current system prompt
    - Variant: modified system prompt based on the hypothesis
@@ -142,6 +141,6 @@ If PASS: proceed to Durable. If adoption PASS but acceptance FAIL: content quali
 ## Drills Referenced
 
 - `ab-test-orchestrator` -- framework for running rigorous A/B tests on prompts and UX with proper sample sizing and statistical evaluation
-- `ai-content-prompt-optimization` -- analyzes rejection patterns, generates prompt improvement hypotheses, and runs prompt A/B tests
+- the ai content prompt optimization workflow (see instructions below) -- analyzes rejection patterns, generates prompt improvement hypotheses, and runs prompt A/B tests
 - `churn-prevention` -- detects AI content usage drop-off signals and triggers tiered re-engagement interventions
 - `upgrade-prompt` -- configures expansion triggers for AI power users based on usage patterns and plan limits

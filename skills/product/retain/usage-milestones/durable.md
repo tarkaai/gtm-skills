@@ -16,7 +16,6 @@ slug: "usage-milestones"
 install: "npx gtm-skills add product/retain/usage-milestones"
 drills:
   - autonomous-optimization
-  - milestone-retention-monitor
   - dashboard-builder
 ---
 
@@ -32,7 +31,7 @@ An autonomous agent loop monitors milestone celebration performance, detects whe
 
 - The autonomous optimization loop runs at least 2 experiments per month
 - No single month shows a celebration engagement rate below 60%
-- Celebration fatigue index (from `milestone-retention-monitor`) stays below 0.4 across all persona segments
+- Celebration fatigue index (from `autonomous-optimization`) stays below 0.4 across all persona segments
 - Retention lift (celebrated vs. uncelebrated historical baseline) is stable or improving
 - Weekly optimization briefs are generated and posted automatically
 
@@ -40,7 +39,7 @@ An autonomous agent loop monitors milestone celebration performance, detects whe
 
 ### 1. Deploy the milestone retention monitor
 
-Run the `milestone-retention-monitor` drill to build the always-on measurement layer:
+Run the `autonomous-optimization` drill to build the always-on measurement layer:
 
 - Build milestone-retention cohort comparisons for every tier (celebrated vs. uncelebrated, 7/14/30-day retention)
 - Create the 7-panel effectiveness dashboard in PostHog (milestone funnel, engagement by tier, retention lift trend, CTA conversion, milestone velocity, churned-despite-milestone, celebration fatigue index)
@@ -144,5 +143,5 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that monitors, diagnoses, experiments, evaluates, and reports on celebration performance
-- `milestone-retention-monitor` — tracks celebration-to-retention causality, detects engagement decay, surfaces churned-despite-milestone users, and computes celebration fatigue scores
+- `autonomous-optimization` — tracks celebration-to-retention causality, detects engagement decay, surfaces churned-despite-milestone users, and computes celebration fatigue scores
 - `dashboard-builder` — creates the Durable executive dashboard with 6-month trend visibility and convergence tracking

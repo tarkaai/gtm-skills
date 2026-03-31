@@ -17,7 +17,6 @@ install: "npx gtm-skills add product/onboard/freemium-model"
 drills:
   - autonomous-optimization
   - freemium-conversion-health-report
-  - pricing-page-conversion-monitor
 ---
 
 # Freemium Tier Strategy — Durable Intelligence
@@ -110,7 +109,7 @@ The health report feeds data to the autonomous optimization loop. When it detect
 
 ### 4. Monitor the pricing page conversion surface
 
-Run the `pricing-page-conversion-monitor` drill to track the self-serve upgrade path:
+Run the `autonomous-optimization` drill to track the self-serve upgrade path:
 
 - Build the pricing page conversion dashboard: visitor trend, plan selection distribution, checkout abandonment, ARPU for new conversions, annual vs. monthly selection rate
 - Build the pricing page funnel: `pricing_page_viewed` -> `plan_card_clicked` -> `checkout_started` -> `payment_method_entered` -> `subscription_created`
@@ -179,4 +178,4 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 
 - `autonomous-optimization` -- the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum of free-to-paid conversion
 - `freemium-conversion-health-report` -- monitors free-to-paid pipeline health at Durable cadence with daily lifecycle tracking, weekly briefs, and monthly deep analysis
-- `pricing-page-conversion-monitor` -- monitors the self-serve upgrade path (pricing page -> checkout -> subscription) and feeds anomalies into the optimization loop
+- `autonomous-optimization` -- monitors the self-serve upgrade path (pricing page -> checkout -> subscription) and feeds anomalies into the optimization loop

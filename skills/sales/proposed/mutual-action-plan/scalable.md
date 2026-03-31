@@ -14,7 +14,6 @@ kpis: ["MAP adoption rate", "Milestone completion rate", "Deal velocity improvem
 slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
 drills:
-  - map-risk-scoring
   - map-auto-generation
   - ab-test-orchestrator
   - dashboard-builder
@@ -44,7 +43,7 @@ Fail: Adoption below 70%, velocity improvement below 35%, or MAP-based forecasts
 
 ### 1. Deploy predictive risk scoring
 
-Run the `map-risk-scoring` drill to build the deal health prediction system.
+Run the the map risk scoring workflow (see instructions below) drill to build the deal health prediction system.
 
 **Build the historical pattern database:**
 Query Attio for all deals from the last 12 months with MAP data. For each deal, extract the milestone-by-milestone timeline, outcome, and any stall events. This requires >= 20 completed MAPs from the Baseline run.
@@ -232,7 +231,7 @@ If **FAIL:** Diagnose:
 
 ## Drills Referenced
 
-- `map-risk-scoring` — Predictive risk scores based on milestone adherence patterns, win probability estimates, and intervention recommendations for at-risk deals
+- the map risk scoring workflow (see instructions below) — Predictive risk scores based on milestone adherence patterns, win probability estimates, and intervention recommendations for at-risk deals
 - `map-auto-generation` — Scaled MAP generation with conditional milestone logic, industry-specific templates, and error handling for high-volume pipelines
 - `ab-test-orchestrator` — Run controlled experiments on MAP template structure, update cadence, escalation timing, and delivery format
 - `dashboard-builder` — Build the MAP health dashboard with risk distribution, velocity comparison, forecast accuracy, and stall analysis

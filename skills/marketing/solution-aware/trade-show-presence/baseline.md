@@ -15,9 +15,7 @@ kpis: ["Booth conversations per show", "Qualified lead rate", "Meetings booked",
 slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
 drills:
-  - trade-show-booth-operations
   - posthog-gtm-events
-  - trade-show-lead-nurture
   - threshold-engine
 ---
 
@@ -63,7 +61,7 @@ Build a PostHog funnel: `trade_show_booth_visit` -> `trade_show_demo_given` -> `
 
 ### 2. Upgrade booth operations for repeatability
 
-Run the `trade-show-booth-operations` drill with these Baseline-level enhancements:
+Run the the trade show booth operations workflow (see instructions below) drill with these Baseline-level enhancements:
 
 - **Standardized pre-show playbook**: Create a templated timeline that you clone for each show: T-4 weeks (select show, book booth), T-3 weeks (extract attendee list, enrich, score), T-2 weeks (launch pre-show outreach), T-1 week (finalize demo prep, brief staff), T-0 (execute). Store in Attio as a campaign checklist.
 - **Enriched lead capture**: Upgrade from basic Tally form to an n8n-connected workflow: Tally submission -> n8n webhook -> Clay enrichment (fill in missing company data, LinkedIn URL, tech stack) -> Attio contact creation with full profile. This eliminates the manual same-day import from Smoke.
@@ -72,7 +70,7 @@ Run the `trade-show-booth-operations` drill with these Baseline-level enhancemen
 
 ### 3. Build post-show nurture automation
 
-Run the `trade-show-lead-nurture` drill to create the full tiered follow-up system:
+Run the the trade show lead nurture workflow (see instructions below) drill to create the full tiered follow-up system:
 
 - **Tier 1 (hot, interest 4-5)**: Personalized Loom video follow-up within 12 hours. The booth staff member records a 60-90 second video referencing the specific conversation. Agent drafts talking points and email template. Sent from the staff member's personal email.
 - **Tier 2 (warm, interest 3-4)**: 3-touch automated Loops sequence over 8 days. Each email references the show and includes a relevant resource. n8n trigger: if Tier 2 replies, auto-create Attio deal and escalate to personal follow-up.
@@ -148,7 +146,7 @@ Note: Booth rental, travel, and materials are show-specific costs. Budget $3,000
 
 ## Drills Referenced
 
-- `trade-show-booth-operations` — pre-show research, lead capture automation, demo prep, show-day execution, and same-day enrichment
+- the trade show booth operations workflow (see instructions below) — pre-show research, lead capture automation, demo prep, show-day execution, and same-day enrichment
 - `posthog-gtm-events` — implement standard trade show event taxonomy for full-funnel measurement
-- `trade-show-lead-nurture` — tiered post-show follow-up: Loom for Tier 1, automated sequences for Tier 2-3, escalation triggers
+- the trade show lead nurture workflow (see instructions below) — tiered post-show follow-up: Loom for Tier 1, automated sequences for Tier 2-3, escalation triggers
 - `threshold-engine` — evaluate pass/fail against conversation, qualified lead, and meeting targets

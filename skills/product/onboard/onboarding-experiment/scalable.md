@@ -15,7 +15,6 @@ slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
 drills:
   - experiment-pipeline-automation
-  - onboarding-experiment-orchestration
   - onboarding-persona-scaling
   - ab-test-orchestrator
 ---
@@ -61,7 +60,7 @@ With per-persona paths in place, the experiment pipeline can now test variations
 
 ### 3. Run per-persona experiments
 
-Using the `onboarding-experiment-orchestration` drill, configure experiments scoped to specific personas:
+Using the the onboarding experiment orchestration workflow (see instructions below) drill, configure experiments scoped to specific personas:
 - PostHog feature flag filters: only users with `persona_type = [target persona]` are enrolled
 - Hypothesis targets the specific persona's activation path (e.g., "If we change the Team Lead tour to show team activity feed before task creation, team lead activation will increase by 15%")
 - Sample size calculations use persona-specific signup volume, not total volume
@@ -116,6 +115,6 @@ After 2 months and >= 6 completed experiments:
 ## Drills Referenced
 
 - `experiment-pipeline-automation` — automates the full experiment lifecycle: backlog prioritization, PostHog experiment creation, completion monitoring, result collection, and next-experiment queuing
-- `onboarding-experiment-orchestration` — designs and runs each individual onboarding A/B test with per-variant tracking and evaluation criteria
+- the onboarding experiment orchestration workflow (see instructions below) — designs and runs each individual onboarding A/B test with per-variant tracking and evaluation criteria
 - `onboarding-persona-scaling` — scales from 2-3 personas to 5+ with automated classification, per-persona tours/emails/messages, and comparative activation funnels
 - `ab-test-orchestrator` — provides the statistical framework for multi-surface experiments: sample size calculation, significance testing, and peeking discipline

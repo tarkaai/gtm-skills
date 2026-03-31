@@ -16,9 +16,8 @@ kpis: ["Exec demo conversion rate", "Exec engagement score", "Deal velocity by e
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
 drills:
-  - exec-demo-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
-  - exec-demo-prep
 ---
 
 # Executive-Focused Demo — Scalable Automation
@@ -42,7 +41,7 @@ Maintain >=75% exec demo-to-nextstep conversion and achieve >=35% faster close t
 
 ### 1. Deploy the exec demo performance monitoring system
 
-Run the `exec-demo-performance-monitor` drill to build the always-on monitoring infrastructure:
+Run the `dashboard-builder` drill to build the always-on monitoring infrastructure:
 
 1. **Full funnel tracking by persona**: Configure PostHog to capture every stage from `exec_demo_scheduled` through `deal_closed_won` with properties for exec persona, ROI narrative type, demo duration, and sentiment score
 2. **Persona effectiveness dashboard**: Build a PostHog dashboard with panels for conversion rates by persona, deal velocity comparison (exec vs non-exec), ROI narrative effectiveness by persona, demo quality scores, multi-exec alignment outcomes, and weekly volume trends
@@ -83,7 +82,7 @@ Use PostHog feature flags to randomly assign each exec demo to a variant. Run ea
 
 ### 3. Scale exec demo prep automation
 
-Run the `exec-demo-prep` drill with enhancements for scale:
+Run the the exec demo prep workflow (see instructions below) drill with enhancements for scale:
 
 1. **Auto-persona detection**: The agent classifies each exec into a persona from their Attio record and loads the persona template as the starting point. No manual persona assignment needed.
 2. **Research freshness check**: Before generating a prep doc, the agent checks if exec research is older than 14 days. If stale, re-run `exec-research-enrichment` before proceeding.
@@ -168,6 +167,6 @@ If PASS, proceed to Durable. If FAIL, focus on the lowest-performing funnel stag
 
 ## Drills Referenced
 
-- `exec-demo-performance-monitor` -- always-on monitoring of exec demo funnel with per-persona breakdown, deal velocity impact, and ROI narrative effectiveness reports
+- `dashboard-builder` -- always-on monitoring of exec demo funnel with per-persona breakdown, deal velocity impact, and ROI narrative effectiveness reports
 - `ab-test-orchestrator` -- design, run, and analyze A/B tests on exec demo structure, ROI depth, follow-up format, and multi-exec coordination
-- `exec-demo-prep` -- auto-generate persona-specific exec demo prep docs (enhanced with historical learning, case study matching, and multi-exec alignment)
+- the exec demo prep workflow (see instructions below) -- auto-generate persona-specific exec demo prep docs (enhanced with historical learning, case study matching, and multi-exec alignment)

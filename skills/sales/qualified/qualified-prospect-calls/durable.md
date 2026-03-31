@@ -17,7 +17,6 @@ slug: "qualified-prospect-calls"
 install: "npx gtm-skills add sales/qualified/qualified-prospect-calls"
 drills:
   - autonomous-optimization
-  - call-performance-reporting
   - signal-detection
 ---
 
@@ -110,7 +109,7 @@ Post to Slack, store in Attio.
 
 ### 2. Configure play-specific performance monitoring
 
-Run the `call-performance-reporting` drill to build the reporting layer specific to phone-based outreach:
+Run the `autonomous-optimization` drill to build the reporting layer specific to phone-based outreach:
 
 - **Live PostHog dashboard**: weekly call volume, connect rate trend, meeting conversion trend, best call windows heatmap, signal effectiveness breakdown, pipeline value from calls, average call duration
 - **Anomaly alerts**: connect rate < 15% for 3 days, meeting conversion < 5% for 1 week, call volume < 50% of average, call duration < 60 seconds
@@ -182,5 +181,5 @@ If market conditions change (new competitor enters, major industry shift, produc
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> report loop that finds and sustains the local maximum
-- `call-performance-reporting` — play-specific dashboards, weekly call quality reports, monthly trends, and anomaly alerts for phone outreach
+- `autonomous-optimization` — play-specific dashboards, weekly call quality reports, monthly trends, and anomaly alerts for phone outreach
 - `signal-detection` — continuous discovery and deprecation of buying signals that drive call targeting

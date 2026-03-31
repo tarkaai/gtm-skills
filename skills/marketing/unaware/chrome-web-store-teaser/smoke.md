@@ -14,7 +14,6 @@ kpis: ["Store listing views", "Install rate", "Popup open rate", "Waitlist signu
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
 drills:
-  - chrome-extension-listing-setup
   - landing-page-pipeline
   - threshold-engine
 ---
@@ -37,7 +36,7 @@ Prove that your ICP discovers browser extensions when searching for solutions to
 
 ### 1. Define extension scope and keywords
 
-Run the `chrome-extension-listing-setup` drill, Step 1. Before scaffolding, research the Chrome Web Store:
+Run the the chrome extension listing setup workflow (see instructions below) drill, Step 1. Before scaffolding, research the Chrome Web Store:
 - Search 10 terms your ICP would use to find a tool like yours
 - Record how many competing extensions appear for each term
 - Identify 3 underserved keywords (meaningful intent, fewer than 30 competitors)
@@ -46,7 +45,7 @@ Run the `chrome-extension-listing-setup` drill, Step 1. Before scaffolding, rese
 
 ### 2. Build the teaser extension
 
-Run the `chrome-extension-listing-setup` drill, Steps 1-4. Build a minimal Manifest V3 extension with:
+Run the the chrome extension listing setup workflow (see instructions below) drill, Steps 1-4. Build a minimal Manifest V3 extension with:
 - A popup (350px wide) containing: headline, 2-sentence value prop, 3 "coming soon" feature bullets, email capture form, link to your website
 - Background script that fires `extension_installed` event to PostHog on install
 - Popup script that fires `popup_opened` on load and `waitlist_form_submitted` on form submit
@@ -66,7 +65,7 @@ Run the `landing-page-pipeline` drill to create a landing page at `yoursite.com/
 
 ### 4. Publish and submit for review
 
-Run the `chrome-extension-listing-setup` drill, Step 6:
+Run the the chrome extension listing setup workflow (see instructions below) drill, Step 6:
 - Package the extension as a zip
 - Upload via Chrome Web Store API
 - Complete the store listing: detailed description (keyword-optimized), 3 screenshots (1280x800), category selection
@@ -103,6 +102,6 @@ Run the `threshold-engine` drill after 1 week:
 
 ## Drills Referenced
 
-- `chrome-extension-listing-setup` — scaffolds, instruments, and publishes the teaser extension
+- the chrome extension listing setup workflow (see instructions below) — scaffolds, instruments, and publishes the teaser extension
 - `landing-page-pipeline` — builds the landing page that extension traffic lands on
 - `threshold-engine` — evaluates install count and lead count against pass threshold

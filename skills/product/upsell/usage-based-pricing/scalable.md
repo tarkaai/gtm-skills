@@ -17,7 +17,7 @@ drills:
   - auto-upgrade-execution
   - upgrade-prompt
   - ab-test-orchestrator
-  - pricing-page-conversion-monitor
+  - dashboard-builder
 ---
 
 # Consumption-Based Pricing — Scalable Automation
@@ -84,7 +84,7 @@ Run the `ab-test-orchestrator` drill to test variations that improve the pricing
 
 ### 4. Monitor pricing page health
 
-Run the `pricing-page-conversion-monitor` drill to establish always-on monitoring of the pricing page:
+Run the `dashboard-builder` drill to establish always-on monitoring of the pricing page:
 
 1. **Build the pricing page dashboard in PostHog:** Visitor volume, conversion rate by traffic source, plan selection distribution, checkout abandonment rate, annual vs. monthly selection rate.
 
@@ -129,4 +129,4 @@ If PASS, proceed to Durable. If FAIL, identify the bottleneck: is auto-upgrade a
 - `auto-upgrade-execution` — Automatically upgrades Stripe subscriptions when usage exceeds plan limits, with opt-out grace period and rollback safety
 - `upgrade-prompt` — Detects usage patterns that signal upgrade readiness and triggers contextual upsell prompts via Intercom and Loops
 - `ab-test-orchestrator` — Designs, runs, and analyzes A/B tests for pricing page, alert copy, and tier boundaries using PostHog experiments
-- `pricing-page-conversion-monitor` — Always-on monitoring of pricing page conversion funnel with anomaly detection and weekly digests
+- `dashboard-builder` — Always-on monitoring of pricing page conversion funnel with anomaly detection and weekly digests

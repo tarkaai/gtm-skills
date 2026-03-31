@@ -16,7 +16,6 @@ install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/joint
 drills:
   - icp-definition
   - partner-prospect-research
-  - joint-content-production
   - threshold-engine
 ---
 # Joint Content Campaigns -- Smoke Test
@@ -44,7 +43,7 @@ Run the `partner-prospect-research` drill to identify 10-20 candidate partners. 
 **Human action required:** Reach out to the selected partner personally. Propose a specific co-creation project: "We co-author a [format] on [topic], gate it behind a shared form, each promote to our lists. Both keep the leads." Use warm intros where possible. Log all outreach in Attio.
 
 ### 3. Co-create the content asset
-Run the `joint-content-production` drill to:
+Run the the joint content production workflow (see instructions below) drill to:
 - Select the topic using Clay research on the shared ICP
 - Generate a structured outline with section assignments
 - Draft your sections using Claude
@@ -92,5 +91,5 @@ If FAIL: analyze the failure mode:
 ## Drills Referenced
 - `icp-definition` -- define what makes an ideal content partner
 - `partner-prospect-research` -- find, audit, and score partner candidates
-- `joint-content-production` -- end-to-end co-creation from topic selection through publication
+- the joint content production workflow (see instructions below) -- end-to-end co-creation from topic selection through publication
 - `threshold-engine` -- evaluate pass/fail against the 10-lead threshold

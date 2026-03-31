@@ -15,8 +15,7 @@ slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
 drills:
   - ab-test-orchestrator
-  - spotlight-content-pipeline
-  - spotlight-series-health-monitor
+  - dashboard-builder
 ---
 
 # Weekly Feature Spotlights — Scalable Automation
@@ -64,7 +63,7 @@ Measure: trial rate (primary), adoption rate (secondary). Adopt the winner.
 
 ### 2. Scale the content pipeline with segment personalization
 
-Run the `spotlight-content-pipeline` drill with these Scalable-level enhancements:
+Run the the spotlight content pipeline workflow (see instructions below) drill with these Scalable-level enhancements:
 
 **Multi-segment targeting:** Instead of one cohort per spotlight, create 2-3 segments for each feature based on usage patterns:
 - **Power users of related features**: They will see the most value. Message: "Level up your [related feature] workflow with [spotlight feature]."
@@ -81,7 +80,7 @@ Each segment gets a tailored headline and body copy while sharing the same visua
 
 ### 3. Monitor series health and detect scaling problems
 
-Run the `spotlight-series-health-monitor` drill to build the measurement infrastructure that keeps the series healthy at scale:
+Run the `dashboard-builder` drill to build the measurement infrastructure that keeps the series healthy at scale:
 
 - Deploy the per-spotlight performance funnel and series-level dashboard
 - Configure fatigue detection: declining open rates, rising dismiss rates, or shrinking target audiences are the signals that the series is wearing out
@@ -123,5 +122,5 @@ After 8 weeks, measure:
 ## Drills Referenced
 
 - `ab-test-orchestrator` — systematic testing of spotlight formats, timing, and personalization depth
-- `spotlight-content-pipeline` — scaled weekly production with multi-segment targeting and auto-generated content
-- `spotlight-series-health-monitor` — series-level dashboard, fatigue detection, and audience saturation tracking
+- the spotlight content pipeline workflow (see instructions below) — scaled weekly production with multi-segment targeting and auto-generated content
+- `dashboard-builder` — series-level dashboard, fatigue detection, and audience saturation tracking

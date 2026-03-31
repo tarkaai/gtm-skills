@@ -15,7 +15,6 @@ slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
 drills:
   - autonomous-optimization
-  - usage-analytics-engagement-monitor
   - dashboard-builder
 ---
 
@@ -96,7 +95,7 @@ Set alerts:
 
 ### 3. Run the engagement monitor as a continuous health check
 
-Run the `usage-analytics-engagement-monitor` drill in continuous mode. The weekly health report it generates feeds into the autonomous optimization loop as input. When the health report flags WARNING or CRITICAL status, the optimization agent prioritizes that metric for its next hypothesis.
+Run the `autonomous-optimization` drill in continuous mode. The weekly health report it generates feeds into the autonomous optimization loop as input. When the health report flags WARNING or CRITICAL status, the optimization agent prioritizes that metric for its next hypothesis.
 
 Specifically:
 - If view rate declining: the agent hypothesizes and tests new discovery prompts or analytics surface changes
@@ -148,5 +147,5 @@ If after convergence a metric drops significantly (>15% below converged baseline
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `usage-analytics-engagement-monitor` — continuous health monitoring feeding engagement data into the optimization loop
+- `autonomous-optimization` — continuous health monitoring feeding engagement data into the optimization loop
 - `dashboard-builder` — builds the long-term health dashboard tracking retention lift, experiment outcomes, and convergence

@@ -17,7 +17,6 @@ slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
 drills:
   - autonomous-optimization
-  - collaboration-network-effects
 ---
 
 # Multiplayer Product Features — Durable Intelligence
@@ -146,7 +145,7 @@ Estimated time: 10 hours enhancement, then always-on.
 
 ### 3. Sustain and extend network-effect amplification
 
-Continue running the `collaboration-network-effects` drill from Scalable. At Durable level, enhance:
+Continue running the the collaboration network effects workflow (see instructions below) drill from Scalable. At Durable level, enhance:
 
 - **Dynamic amplification:** Instead of static messages to power collaborators, personalize based on their specific impact data. "Your shared dashboard was forked by 8 teams this month — you're one of our top contributors" performs better than generic engagement numbers.
 - **Cross-pollination:** When the agent detects that two workspaces are working on similar content types but are not connected, suggest collaboration between them (for products where inter-workspace collaboration is appropriate). This creates new network effect paths that did not exist organically.
@@ -169,7 +168,7 @@ The autonomous optimization loop must respect these constraints:
   - Any change the hypothesis generator flags as "high risk"
 - **Cooldown:** After a failed experiment, wait 7 days before testing a new hypothesis on the same dimension.
 - **Maximum experiments per month:** 4. If all 4 fail, pause optimization and flag for human strategic review.
-- **Never optimize what is not measured:** If a collaboration metric does not have PostHog tracking, fix tracking first (use `collaboration-instrumentation` drill) before running experiments on it.
+- **Never optimize what is not measured:** If a collaboration metric does not have PostHog tracking, fix tracking first (use the collaboration instrumentation workflow (see instructions below) drill) before running experiments on it.
 - **Protect the viral loop:** Never run an experiment that could break an existing positive viral loop. Always include the viral coefficient as a guardrail metric in every experiment.
 
 ### 5. Convergence detection
@@ -229,4 +228,4 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 
 - `autonomous-optimization` — the core always-on loop: monitor collaboration metrics daily, diagnose anomalies, generate hypotheses, run experiments on invite flows and sharing surfaces, evaluate results, auto-implement winners, generate weekly optimization briefs
 - `autonomous-optimization` — enhanced at Durable with cross-workspace pattern detection, seasonal pattern learning, cohort lifecycle tracking, and predictive workspace health scoring
-- `collaboration-network-effects` — enhanced at Durable with dynamic amplification, cross-pollination suggestions, deep referral attribution, and viral coefficient decomposition
+- the collaboration network effects workflow (see instructions below) — enhanced at Durable with dynamic amplification, cross-pollination suggestions, deep referral attribution, and viral coefficient decomposition

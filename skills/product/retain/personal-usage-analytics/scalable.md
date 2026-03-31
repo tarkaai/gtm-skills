@@ -14,7 +14,7 @@ slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
 drills:
   - ab-test-orchestrator
-  - usage-analytics-engagement-monitor
+  - dashboard-builder
   - churn-prevention
 ---
 
@@ -55,7 +55,7 @@ Enroll NEW users only (users already exposed to analytics at Baseline would cont
 
 ### 2. Personalize analytics by user segment
 
-While the A/B test runs, improve the treatment group experience. Using the `usage-analytics-engagement-monitor` drill data, identify which user segments have the lowest view rates or engagement depth. For each segment, customize:
+While the A/B test runs, improve the treatment group experience. Using the `dashboard-builder` drill data, identify which user segments have the lowest view rates or engagement depth. For each segment, customize:
 
 - **Power users** (top 20% by activity): Show percentile ranking ("You're in the top 5% of users"), comparative benchmarks, and advanced metrics (API calls, integration usage). CTA: promote advanced features or beta programs.
 - **Regular users** (middle 60%): Show growth trends and streaks. Highlight weekly momentum: "You completed 12 workflows this week, up 20% from last week." CTA: suggest underused features based on their usage pattern.
@@ -68,7 +68,7 @@ Implement segment-specific analytics surfaces using PostHog cohorts for segmenta
 
 Run the `churn-prevention` drill integrated with the analytics surface. For users whose analytics data shows declining engagement:
 
-1. The n8n aggregation workflow (from `usage-analytics-surface-build`) detects declining trends in the user's metrics
+1. The n8n aggregation workflow (from the usage analytics surface build workflow (see instructions below)) detects declining trends in the user's metrics
 2. Flag these users in PostHog as "analytics-declining" cohort
 3. Trigger a targeted Intercom in-app message on their analytics page: "We noticed your [metric] is down this week. Here's what might help: [contextual recommendation]"
 4. If the user does not re-engage within 7 days, escalate to the standard churn prevention flow (email outreach, personal touch for high-value accounts)
@@ -123,5 +123,5 @@ If FAIL (no lift or negative): The analytics surface does not cause retention im
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs and runs the causal A/B test proving retention impact, plus segment-level experiments
-- `usage-analytics-engagement-monitor` — provides segment-level engagement data for personalization decisions
+- `dashboard-builder` — provides segment-level engagement data for personalization decisions
 - `churn-prevention` — integrates declining analytics trends with automated churn interventions

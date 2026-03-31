@@ -15,7 +15,6 @@ kpis: ["Recap delivery speed (hours after demo)", "Follow-up completion rate", "
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
-  - demo-recap-assembly
   - threshold-engine
 ---
 
@@ -47,7 +46,7 @@ If Fireflies is not configured, set it up: connect to your calendar, enable auto
 
 ### 2. Run Demo Recap Assembly for Each Demo
 
-After each demo call, run the `demo-recap-assembly` drill:
+After each demo call, run the the demo recap assembly workflow (see instructions below) drill:
 
 1. Wait for the Fireflies transcript to become available (typically 10-30 minutes post-call)
 2. The agent fetches the transcript, extracts demo signals (features shown, questions asked, concerns raised, interest signals, stakeholders mentioned, suggested next step)
@@ -126,5 +125,5 @@ If FAIL: Diagnose — was the issue recap quality (prospects not engaging with c
 
 ## Drills Referenced
 
-- `demo-recap-assembly` — extract demo signals from Fireflies transcript and generate a personalized recap email with resources and next steps
+- the demo recap assembly workflow (see instructions below) — extract demo signals from Fireflies transcript and generate a personalized recap email with resources and next steps
 - `threshold-engine` — evaluate follow-up results against the pass threshold using Attio and PostHog data

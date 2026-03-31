@@ -15,9 +15,8 @@ slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
 drills:
   - ab-test-orchestrator
-  - push-notification-segmentation
   - churn-prevention
-  - push-notification-health-monitor
+  - dashboard-builder
 ---
 
 # Push Notification Strategy — Scalable Automation
@@ -38,7 +37,7 @@ Push notification program reaches 500+ active subscribers across multiple segmen
 ## Instructions
 
 ### 1. Scale segmentation to feature-level targeting
-Run the `push-notification-segmentation` drill at scale. Beyond the 4 engagement segments from Baseline, add:
+Run the the push notification segmentation workflow (see instructions below) drill at scale. Beyond the 4 engagement segments from Baseline, add:
 
 **Feature-usage segments**: For each of your top 5 product features, create:
 - "Uses X actively" (used in last 14 days)
@@ -85,7 +84,7 @@ Run the `churn-prevention` drill and add push as an intervention channel:
 4. Compare push save rate vs email save rate for the same churn risk tier.
 
 ### 5. Deploy health monitoring
-Run the `push-notification-health-monitor` drill. At Scalable, the monitoring system should:
+Run the `dashboard-builder` drill. At Scalable, the monitoring system should:
 
 - Track all metrics from the drill's dashboard spec
 - Alert on anomalies daily
@@ -119,6 +118,6 @@ After 2 months, evaluate:
 
 ## Drills Referenced
 - `ab-test-orchestrator` — run systematic A/B tests on push copy, timing, and deep links
-- `push-notification-segmentation` — scale to feature-level and enrichment-enhanced segments
+- the push notification segmentation workflow (see instructions below) — scale to feature-level and enrichment-enhanced segments
 - `churn-prevention` — integrate push as a churn intervention channel
-- `push-notification-health-monitor` — deploy always-on monitoring, alerting, and weekly health digests
+- `dashboard-builder` — deploy always-on monitoring, alerting, and weekly health digests

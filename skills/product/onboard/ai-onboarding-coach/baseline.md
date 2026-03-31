@@ -16,7 +16,6 @@ slug: "ai-onboarding-coach"
 install: "npx gtm-skills add product/onboard/ai-onboarding-coach"
 drills:
   - posthog-gtm-events
-  - ai-coach-conversation-design
   - activation-optimization
 ---
 
@@ -57,7 +56,7 @@ Build PostHog funnels:
 
 ### 2. Deploy the full AI coach with proactive engine
 
-Run the `ai-coach-conversation-design` drill at full scope:
+Run the the ai coach conversation design workflow (see instructions below) drill at full scope:
 
 1. **Expand the knowledge base**: Based on Smoke test data, add custom Fin answers for every question pattern that appeared 2+ times. Fill any content gaps identified during the Smoke monitoring.
 
@@ -122,5 +121,5 @@ _CRM (Attio), automation (n8n), and PostHog are standard stack — not counted a
 ## Drills Referenced
 
 - `posthog-gtm-events` — sets up the detailed event schema for coach impressions, engagements, resolutions, and proactive suggestion tracking
-- `ai-coach-conversation-design` — deploys the full coach: expanded knowledge base, n8n proactive suggestion engine, all trigger categories, and conversation flows
+- the ai coach conversation design workflow (see instructions below) — deploys the full coach: expanded knowledge base, n8n proactive suggestion engine, all trigger categories, and conversation flows
 - `activation-optimization` — identifies activation funnel drop-offs in the treatment group and systematically improves the coach's ability to convert engagement into activation

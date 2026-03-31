@@ -16,8 +16,6 @@ slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
   - posthog-gtm-events
-  - booth-lead-capture
-  - booth-follow-up-nurture
   - threshold-engine
 ---
 
@@ -77,7 +75,7 @@ For each conference, run the full pre-event preparation from `conference-sponsor
 
 ### 3. Execute booth operations at each conference
 
-Run the `booth-lead-capture` drill at each conference with the same process as Smoke, but now with PostHog tracking firing on every interaction:
+Run the the booth lead capture workflow (see instructions below) drill at each conference with the same process as Smoke, but now with PostHog tracking firing on every interaction:
 
 - Scan every badge, qualify every conversation, log notes in real time
 - Give demos to Tier 1-2 visitors using the demo track that performed best at Smoke
@@ -86,7 +84,7 @@ Run the `booth-lead-capture` drill at each conference with the same process as S
 
 ### 4. Deploy automated follow-up nurture
 
-Run the `booth-follow-up-nurture` drill to replace the manual follow-up from Smoke with automated sequences:
+Run the the booth follow up nurture workflow (see instructions below) drill to replace the manual follow-up from Smoke with automated sequences:
 
 - **Tier 1 (Hot)**: Agent drafts personalized emails referencing booth conversation notes, rep reviews and sends within 12 hours. If rep has Loom, include a 60-second personalized video.
 - **Tier 2 (Warm)**: Automated 3-email Loops sequence fires within 24 hours. Emails reference the conference and include relevant resources. Sequence runs over 8 days.
@@ -155,6 +153,6 @@ Identify:
 ## Drills Referenced
 
 - `posthog-gtm-events` — implement the conference booth event taxonomy for full funnel measurement
-- `booth-lead-capture` — execute booth operations with structured lead capture at each conference
-- `booth-follow-up-nurture` — automated post-conference tier-segmented follow-up sequences
+- the booth lead capture workflow (see instructions below) — execute booth operations with structured lead capture at each conference
+- the booth follow up nurture workflow (see instructions below) — automated post-conference tier-segmented follow-up sequences
 - `threshold-engine` — evaluate pass/fail against badge scan, qualified lead, meeting, and cost targets

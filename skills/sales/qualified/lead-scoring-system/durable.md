@@ -16,7 +16,6 @@ slug: "lead-scoring-system"
 install: "npx gtm-skills add sales/qualified/lead-scoring-system"
 drills:
   - autonomous-optimization
-  - scoring-model-performance-monitor
 ---
 
 # Lead Scoring System — Durable Intelligence
@@ -39,7 +38,7 @@ The lead scoring system runs autonomously with an AI agent that monitors model a
 
 ### 1. Deploy the scoring model performance monitor
 
-Run the `scoring-model-performance-monitor` drill. Build:
+Run the `autonomous-optimization` drill. Build:
 
 **PostHog dashboard — "Lead Scoring Model Health":**
 - Conversion rate by tier (primary accuracy metric, target: Hot >=4x Cold)
@@ -210,4 +209,4 @@ This level runs continuously for 6+ months. Monthly check:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `scoring-model-performance-monitor` — builds the accuracy dashboard, weekly reports, drift detection, and criteria contribution analysis specific to lead scoring
+- `autonomous-optimization` — builds the accuracy dashboard, weekly reports, drift detection, and criteria contribution analysis specific to lead scoring

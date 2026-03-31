@@ -16,7 +16,6 @@ slug: "usage-based-upsell"
 install: "npx gtm-skills add product/upsell/usage-based-upsell"
 drills:
   - autonomous-optimization
-  - usage-alert-health-monitor
   - dashboard-builder
 ---
 
@@ -65,7 +64,7 @@ Set PostHog alerts for the `autonomous-optimization` loop to consume:
 
 ### 2. Connect the usage-alert health monitor to the optimization loop
 
-Run the `usage-alert-health-monitor` drill, Step 6. Build the webhook endpoint that the `autonomous-optimization` drill calls to retrieve current health metrics. Return a structured payload:
+Run the `autonomous-optimization` drill, Step 6. Build the webhook endpoint that the `autonomous-optimization` drill calls to retrieve current health metrics. Return a structured payload:
 
 ```json
 {
@@ -212,5 +211,5 @@ After 6 months, the play passes if:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics daily, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `usage-alert-health-monitor` — provides the structured health payload the optimization loop consumes for anomaly detection
+- `autonomous-optimization` — provides the structured health payload the optimization loop consumes for anomaly detection
 - `dashboard-builder` — creates the 10-panel PostHog dashboard that visualizes the complete auto-upgrade system health

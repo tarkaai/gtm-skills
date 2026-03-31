@@ -16,7 +16,6 @@ slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
 drills:
   - autonomous-optimization
-  - referral-health-monitor
 ---
 
 # Referral Rewards Program — Durable Intelligence
@@ -88,7 +87,7 @@ Run the `autonomous-optimization` drill configured for the referral program:
 
 ### 2. Deploy the referral health monitor
 
-Run the `referral-health-monitor` drill to build the play-specific monitoring layer that complements the generic optimization loop:
+Run the `autonomous-optimization` drill to build the play-specific monitoring layer that complements the generic optimization loop:
 
 - Configure the 8 referral health metrics with healthy/warning/critical thresholds
 - Build the daily health check workflow (independent of the optimization loop's anomaly detection — this is a parallel safety net)
@@ -149,4 +148,4 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core Durable loop: monitor metrics for anomalies, generate improvement hypotheses via Claude, run A/B experiments in PostHog, evaluate results, auto-implement winners, generate weekly optimization briefs
-- `referral-health-monitor` — play-specific monitoring layer: 8 referral health metrics, diagnostic triggers for each failure mode, 5 automated interventions, weekly health reports, and escalation rules for human handoff
+- `autonomous-optimization` — play-specific monitoring layer: 8 referral health metrics, diagnostic triggers for each failure mode, 5 automated interventions, weekly health reports, and escalation rules for human handoff

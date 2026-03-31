@@ -15,7 +15,6 @@ slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
 drills:
   - posthog-gtm-events
-  - slack-discord-monitoring-automation
   - slack-discord-response-crafting
   - threshold-engine
 ---
@@ -114,6 +113,5 @@ Run the `threshold-engine` drill at week 6 to measure:
 ## Drills Referenced
 
 - `posthog-gtm-events` — set up community-specific event tracking and attribution funnels
-- `slack-discord-monitoring-automation` — build automated keyword monitoring and alert routing
 - `slack-discord-response-crafting` — craft value-first responses to high-opportunity community threads
 - `threshold-engine` — evaluate 6-week results against pass criteria

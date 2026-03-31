@@ -14,7 +14,6 @@ kpis: ["Shortcut hint-to-trial conversion rate", "Shortcut ratio (shortcut actio
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
-  - shortcut-discovery-promotion
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ At least 20% of the 10-20 test users try a promoted keyboard shortcut within 7 d
 
 ### 1. Map your top 3 shortcuts
 
-Run the first step of the `shortcut-discovery-promotion` drill: build the shortcut action map. For the Smoke test, identify only the **top 3 highest-impact shortcuts** — the ones that correspond to the most frequently performed mouse actions. Rank by `frequency_of_mouse_action * estimated_seconds_saved`.
+Run the first step of the the shortcut discovery promotion workflow (see instructions below) drill: build the shortcut action map. For the Smoke test, identify only the **top 3 highest-impact shortcuts** — the ones that correspond to the most frequently performed mouse actions. Rank by `frequency_of_mouse_action * estimated_seconds_saved`.
 
 Example output:
 | Shortcut | Keys | Mouse equivalent | Est. daily uses per active user |
@@ -50,7 +49,7 @@ Example output:
 
 ### 2. Instrument shortcut tracking
 
-Run step 2 of the `shortcut-discovery-promotion` drill: add PostHog events for the 3 selected shortcuts. Implement these events in your product code:
+Run step 2 of the the shortcut discovery promotion workflow (see instructions below) drill: add PostHog events for the 3 selected shortcuts. Implement these events in your product code:
 
 - `action_via_mouse` with properties: `action_id`, `shortcut_equivalent`, `page`
 - `action_via_shortcut` with properties: `action_id`, `shortcut_key`, `page`
@@ -61,7 +60,7 @@ Run step 2 of the `shortcut-discovery-promotion` drill: add PostHog events for t
 
 ### 3. Build contextual hints for 3 shortcuts
 
-Run step 4 of the `shortcut-discovery-promotion` drill to create Intercom tooltip messages for each of the 3 shortcuts. For Smoke, use simple rules:
+Run step 4 of the the shortcut discovery promotion workflow (see instructions below) drill to create Intercom tooltip messages for each of the 3 shortcuts. For Smoke, use simple rules:
 
 - **Trigger:** User performs `action_via_mouse` for a shortcut-eligible action
 - **Message:** "Pro tip: Press `{keys}` to do this instantly."
@@ -126,5 +125,5 @@ Iterate and re-run Smoke. Do not proceed to Baseline until signal is proven.
 
 ## Drills Referenced
 
-- `shortcut-discovery-promotion` — builds the shortcut map, tracking events, contextual hints, and progressive education system
+- the shortcut discovery promotion workflow (see instructions below) — builds the shortcut map, tracking events, contextual hints, and progressive education system
 - `threshold-engine` — evaluates the 20% trial rate pass/fail threshold and recommends next action

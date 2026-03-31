@@ -15,7 +15,6 @@ kpis: ["Total registrations", "Show rate", "Engagement rate", "Qualified leads g
 slug: "co-webinar-series"
 install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
 drills:
-  - co-webinar-partner-matching
   - webinar-pipeline
   - threshold-engine
 ---
@@ -42,7 +41,7 @@ One complete co-webinar executed with one adjacent, non-competing partner. Both 
 
 ### 1. Research and select one co-webinar partner
 
-Run the `co-webinar-partner-matching` drill with a reduced scope: identify 5 candidate companies that meet these criteria:
+Run the the co webinar partner matching workflow (see instructions below) drill with a reduced scope: identify 5 candidate companies that meet these criteria:
 
 - **Adjacent, not competing**: They serve the same buyer persona but solve a different problem. Example: if you sell analytics, partner with a feature flagging tool. If you sell a CRM, partner with an email deliverability tool.
 - **Similar audience size**: Their email list or LinkedIn following should be within 0.5x-2x of yours. A massive size mismatch means one side carries all the promotional burden.
@@ -164,6 +163,6 @@ Total: ~8 hours of active work over 2 weeks (including partner coordination wait
 
 ## Drills Referenced
 
-- `co-webinar-partner-matching` — find and score adjacent companies whose audiences overlap your ICP for co-webinar partnerships
+- the co webinar partner matching workflow (see instructions below) — find and score adjacent companies whose audiences overlap your ICP for co-webinar partnerships
 - `webinar-pipeline` — plan, promote, execute, and follow up on the webinar lifecycle
 - `threshold-engine` — evaluate registrations and qualified leads against the pass threshold

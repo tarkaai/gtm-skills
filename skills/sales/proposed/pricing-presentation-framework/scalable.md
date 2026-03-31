@@ -17,7 +17,7 @@ install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
   - roi-auto-generation
   - deal-term-ab-testing
-  - pricing-intelligence-monitor
+  - dashboard-builder
   - threshold-engine
 ---
 
@@ -105,7 +105,7 @@ Create an n8n workflow that fires when `pricing_discount_requested = true` on an
 
 ### 4. Deploy the pricing intelligence monitor
 
-Run the `pricing-intelligence-monitor` drill to generate weekly reports:
+Run the `dashboard-builder` drill to generate weekly reports:
 
 1. Aggregate all pricing metrics from the past 7 days (volume, acceptance, discount, tier mix, latency)
 2. Detect trends: compare against 4-week rolling average
@@ -158,5 +158,5 @@ If FAIL: identify the bottleneck:
 
 - `roi-auto-generation` — auto-generates ROI calculators and business cases when deals enter Proposed stage with qualifying pain data
 - `deal-term-ab-testing` — runs controlled experiments on pricing variables (format, tier count, value anchoring depth) using PostHog feature flags
-- `pricing-intelligence-monitor` — weekly report on pricing effectiveness with trends, anomalies, and experiment recommendations
+- `dashboard-builder` — weekly report on pricing effectiveness with trends, anomalies, and experiment recommendations
 - `threshold-engine` — monthly evaluation against acceptance rate, discount, and volume targets

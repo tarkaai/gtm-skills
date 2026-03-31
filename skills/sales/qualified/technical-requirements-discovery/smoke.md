@@ -16,7 +16,6 @@ install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - tech-stack-discovery
   - technical-discovery-call
-  - technical-fit-scoring
   - threshold-engine
 ---
 
@@ -39,7 +38,7 @@ Prove that structured technical discovery surfaces deal-critical requirements an
 
 ### 1. Set up technical scoring infrastructure
 
-Run the `technical-fit-scoring` drill to create technical scoring custom attributes on your Attio Deals object. This creates:
+Run the the technical fit scoring workflow (see instructions below) drill to create technical scoring custom attributes on your Attio Deals object. This creates:
 - Score fields (0-100) for each of 5 technical categories: integrations, security/compliance, infrastructure, performance, data migration
 - Composite fit score with weighted formula
 - Verdict field: Strong Fit (>=75), Moderate Fit (50-74), Weak Fit (25-49), No Fit (<25)
@@ -109,5 +108,5 @@ If PASS (>=5 scored, >=1 blocker found), proceed to Baseline. If FAIL, diagnose:
 
 - `tech-stack-discovery` — research prospect tech stack, integrations, and security posture from public signals before the call
 - `technical-discovery-call` — structured technical discovery call with transcript extraction and fit scoring
-- `technical-fit-scoring` — set up and apply the 5-category technical scoring rubric
+- the technical fit scoring workflow (see instructions below) — set up and apply the 5-category technical scoring rubric
 - `threshold-engine` — evaluate results against the pass threshold

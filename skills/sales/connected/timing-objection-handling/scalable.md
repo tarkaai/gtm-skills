@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
   - timing-objection-detection-automation
   - ab-test-orchestrator
-  - timing-objection-follow-up-sequence
 ---
 
 # Timing Objection Handling — Scalable Automation
@@ -46,8 +45,8 @@ Run the `timing-objection-detection-automation` drill to build always-on monitor
 **Call transcript monitoring:**
 - Configure Fireflies webhook to notify n8n on every new transcript
 - n8n workflow: fetch transcript -> match to Attio deal -> run timing extraction via Claude -> detect timing objections -> classify root cause and smokescreen status -> route by severity
-- For severity >= 7: send Slack alert AND trigger `timing-objection-response` drill
-- For severity < 7: trigger `timing-objection-response` drill silently
+- For severity >= 7: send Slack alert AND trigger the timing objection response workflow (see instructions below) drill
+- For severity < 7: trigger the timing objection response workflow (see instructions below) drill silently
 
 **Email timing objection detection:**
 - Configure Attio webhook to notify n8n on new email activity logged to deals in Connected or later stages
@@ -79,7 +78,7 @@ For each experiment:
 
 ### 3. Scale the follow-up sequences
 
-Ensure the `timing-objection-follow-up-sequence` drill's n8n workflows handle increased volume without manual intervention:
+Ensure the the timing objection follow up sequence workflow (see instructions below) drill's n8n workflows handle increased volume without manual intervention:
 - Verify Instantly sending limits can handle follow-up volume (upgrade to Hypergrowth at $97/mo if exceeding 5,000 emails/mo)
 - Monitor n8n workflow execution logs for failures — set up error alerting
 - Confirm Attio webhook delivery is reliable (check n8n execution history for missed triggers)
@@ -142,4 +141,4 @@ After 2 months, evaluate:
 
 - `timing-objection-detection-automation` — always-on monitoring of calls and emails for timing objections with auto-classification, smokescreen detection, and workflow triggering
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on response strategies and follow-up sequences
-- `timing-objection-follow-up-sequence` — automated multi-touch follow-ups scaled to handle increased volume from auto-detection
+- the timing objection follow up sequence workflow (see instructions below) — automated multi-touch follow-ups scaled to handle increased volume from auto-detection

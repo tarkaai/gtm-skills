@@ -16,7 +16,6 @@ slug: "retention-cohort-analysis"
 install: "npx gtm-skills add product/retain/retention-cohort-analysis"
 drills:
   - autonomous-optimization
-  - cohort-retention-health-monitor
   - cohort-insight-generation
 ---
 
@@ -60,7 +59,7 @@ It compares the last 2 weeks against the 4-week rolling average using `posthog-a
 The agent gathers context:
 - Current retention intervention configurations (which Intercom messages, Loops sequences, and feature flags are active)
 - The retention lift ledger showing all past experiment outcomes
-- The latest `cohort-retention-health-monitor` weekly brief
+- The latest `autonomous-optimization` weekly brief
 - 8-week metric history per dimension from PostHog
 
 It runs `hypothesis-generation` with this context to produce 3 ranked hypotheses. Examples of hypotheses the agent might generate for this play:
@@ -111,7 +110,7 @@ In addition to the standard `autonomous-optimization` guardrails, add retention-
 
 ### 3. Enhance the health monitor for Durable cadence
 
-Run the `cohort-retention-health-monitor` drill with Durable-level enhancements:
+Run the `autonomous-optimization` drill with Durable-level enhancements:
 
 - Health check frequency: daily instead of weekly (the autonomous loop needs faster feedback)
 - Calibration drift detection: daily comparison of predicted cohort performance vs. actual outcomes
@@ -178,5 +177,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for cohort retention
-- `cohort-retention-health-monitor` — daily health checks, convergence tracking, and anomaly detection feeding the optimization loop
+- `autonomous-optimization` — daily health checks, convergence tracking, and anomaly detection feeding the optimization loop
 - `cohort-insight-generation` — automated insight pipeline feeding the experiment queue with priority-gated entries

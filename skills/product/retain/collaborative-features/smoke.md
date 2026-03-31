@@ -14,7 +14,6 @@ kpis: ["Collaboration ratio (7d)", "Invite acceptance rate", "Retention lift (te
 slug: "collaborative-features"
 install: "npx gtm-skills add product/retain/collaborative-features"
 drills:
-  - collaboration-instrumentation
   - onboarding-flow
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ At least 30% of users in a small test cohort (10-50 accounts) use a collaboratio
 
 ### 1. Instrument collaboration events
 
-Run the `collaboration-instrumentation` drill. Focus on the minimum viable event set for Smoke:
+Run the the collaboration instrumentation workflow (see instructions below) drill. Focus on the minimum viable event set for Smoke:
 
 - `team_invite_sent` and `team_invite_accepted`
 - `content_shared` and `shared_content_viewed`
@@ -118,6 +117,6 @@ Estimated time: 0.5 hours.
 
 ## Drills Referenced
 
-- `collaboration-instrumentation` — instruments collaboration events, builds the Solo-to-Multiplayer funnel, creates collaboration cohorts, and computes the collaboration ratio
+- the collaboration instrumentation workflow (see instructions below) — instruments collaboration events, builds the Solo-to-Multiplayer funnel, creates collaboration cohorts, and computes the collaboration ratio
 - `onboarding-flow` — configures the in-app product tour and follow-up messages that prompt collaboration adoption in the test cohort
 - `threshold-engine` — evaluates the test results against the 30% collaboration ratio threshold and recommends pass/iterate/fail

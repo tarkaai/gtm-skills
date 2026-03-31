@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/onboard/sample-data-templates"
 drills:
   - posthog-gtm-events
   - template-gallery-setup
-  - sample-data-engagement-monitor
 ---
 
 # Sample Data Acceleration — Baseline Run
@@ -117,4 +116,3 @@ If FAIL: Diagnose by cohort. If interaction rate is high but activation lift is 
 
 - `posthog-gtm-events` — comprehensive event taxonomy for sample data and template interactions
 - `template-gallery-setup` — build the browseable template catalog across 3 product surfaces
-- `sample-data-engagement-monitor` — dashboard, cohort analysis, automated alerts, and weekly reports

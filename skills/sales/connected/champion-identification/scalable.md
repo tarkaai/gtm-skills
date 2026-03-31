@@ -15,7 +15,7 @@ kpis: ["Champion rate across all deals", "Win rate lift (champion vs non-champio
 slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
-  - champion-health-monitoring
+  - dashboard-builder
   - ab-test-orchestrator
 ---
 
@@ -41,7 +41,7 @@ Find the 10x multiplier. At Baseline, each champion is a single contact who migh
 
 ### 1. Deploy Champion Health Monitoring
 
-Run the `champion-health-monitoring` drill:
+Run the `dashboard-builder` drill:
 - Build the daily health check n8n workflow that scores all active champions using AI engagement scoring
 - Configure alert routing: at-risk alerts to Slack, dark alerts trigger replacement profiling
 - Build the PostHog champion health dashboard (6 panels: health distribution, score trend, deals without champions, recruitment funnel, at-risk volume, enablement effectiveness)
@@ -141,6 +141,6 @@ If multi-threading depth is low: champions may not be comfortable making introdu
 
 ## Drills Referenced
 
-- `champion-health-monitoring` — daily automated health checks with AI engagement scoring, disengagement alerts, and weekly digests
+- `dashboard-builder` — daily automated health checks with AI engagement scoring, disengagement alerts, and weekly digests
 - the champion multi thread expansion workflow (see instructions below) — leverage champions to map buying committees and create multi-threaded deal engagement
 - `ab-test-orchestrator` — run controlled experiments on recruitment messaging, enablement format, and multi-threading approach

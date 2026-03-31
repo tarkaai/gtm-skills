@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/onboard/trial-to-paid-conversion"
 drills:
   - posthog-gtm-events
   - onboarding-sequence-automation
-  - trial-activation-scoring
 ---
 
 # Trial-to-Paid Conversion — Baseline Run
@@ -90,7 +89,7 @@ Run the `onboarding-sequence-automation` drill to wire the touchpoint sequence f
 
 ### 3. Build and deploy trial health scoring
 
-Run the `trial-activation-scoring` drill to create the real-time scoring model:
+Run the the trial activation scoring workflow (see instructions below) drill to create the real-time scoring model:
 
 1. Configure the four scoring dimensions with weights calibrated to Smoke test data:
    - Activation progress (40%): milestones completed / total milestones
@@ -148,4 +147,4 @@ If FAIL: pull the PostHog funnel to find the highest drop-off step. Review sessi
 
 - `posthog-gtm-events` — deploys the full event taxonomy and builds funnels/cohorts for the trial conversion pipeline
 - `onboarding-sequence-automation` — wires the behavioral email sequence to PostHog events via n8n, with milestone-based branching and skip logic
-- `trial-activation-scoring` — builds the daily-refreshed 0-100 health score that segments trial users into Hot/Warm/Cold for targeted interventions
+- the trial activation scoring workflow (see instructions below) — builds the daily-refreshed 0-100 health score that segments trial users into Hot/Warm/Cold for targeted interventions

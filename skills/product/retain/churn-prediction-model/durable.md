@@ -15,7 +15,6 @@ slug: "churn-prediction-model"
 install: "npx gtm-skills add product/retain/churn-prediction-model"
 drills:
   - autonomous-optimization
-  - churn-model-health-monitor
   - churn-intervention-routing
 ---
 
@@ -85,7 +84,7 @@ In addition to the standard `autonomous-optimization` guardrails, add churn-spec
 
 ### 3. Deploy the model health monitor at Durable cadence
 
-Run the `churn-model-health-monitor` drill with enhanced frequency:
+Run the `autonomous-optimization` drill with enhanced frequency:
 - Health check: runs weekly (same as Scalable)
 - Calibration drift detection: runs weekly instead of monthly (Durable needs faster feedback)
 - Intelligence brief: integrates with the `autonomous-optimization` weekly report
@@ -140,5 +139,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum
-- `churn-model-health-monitor` — monitors prediction accuracy, save rates, and calibration drift at Durable cadence
+- `autonomous-optimization` — monitors prediction accuracy, save rates, and calibration drift at Durable cadence
 - `churn-intervention-routing` — executes the current best intervention configuration, updated by the optimization loop

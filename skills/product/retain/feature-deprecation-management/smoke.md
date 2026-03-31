@@ -14,7 +14,6 @@ kpis: ["Notice acknowledgement rate", "Migration start rate", "Churn from sunset
 slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
-  - deprecation-impact-assessment
   - deprecation-communication-setup
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ Prove that you can identify affected users, communicate a deprecation clearly, a
 
 ### 1. Assess the deprecation blast radius
 
-Run the `deprecation-impact-assessment` drill against the feature you plan to deprecate. This produces:
+Run the the deprecation impact assessment workflow (see instructions below) drill against the feature you plan to deprecate. This produces:
 
 - A PostHog cohort of all affected users segmented by dependency tier (critical, high, medium, low)
 - Revenue exposure by tier
@@ -106,6 +105,6 @@ If FAIL: Diagnose where the funnel breaks. If acknowledgement is low, the notice
 
 ## Drills Referenced
 
-- `deprecation-impact-assessment` — quantifies which users are affected and how heavily, produces the deprecation brief
+- the deprecation impact assessment workflow (see instructions below) — quantifies which users are affected and how heavily, produces the deprecation brief
 - `deprecation-communication-setup` — builds tiered in-app and email deprecation notifications segmented by user dependency
 - `threshold-engine` — evaluates notice acknowledgement and migration start rates against pass/fail thresholds

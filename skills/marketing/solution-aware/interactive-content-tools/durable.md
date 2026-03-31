@@ -16,7 +16,6 @@ slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
   - autonomous-optimization
-  - interactive-tool-nurture-pipeline
 ---
 
 # Interactive Content Tools — Durable Intelligence
@@ -114,7 +113,7 @@ Configure an n8n workflow (monthly cron) that surfaces new tool ideas:
 
 ### 4. Optimize nurture sequences autonomously
 
-Extend the `interactive-tool-nurture-pipeline` to be optimized by the autonomous loop:
+Extend the the interactive tool nurture pipeline workflow (see instructions below) to be optimized by the autonomous loop:
 
 - The agent monitors nurture email performance (open rates, click rates, reply rates, meeting conversion) per sequence and per email step
 - When a nurture email underperforms its 4-week average, the agent generates a new subject line and body variant using Anthropic API
@@ -181,4 +180,4 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate results → auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
 - `autonomous-optimization` — play-specific monitoring: tool funnel dashboard, field-level drop-off heatmap, per-tool health scoring, anomaly detection, and weekly AI-generated briefs
-- `interactive-tool-nurture-pipeline` — nurture sequences that the autonomous loop continuously optimizes for open rate, click rate, and meeting conversion
+- the interactive tool nurture pipeline workflow (see instructions below) — nurture sequences that the autonomous loop continuously optimizes for open rate, click rate, and meeting conversion

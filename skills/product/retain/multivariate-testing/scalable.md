@@ -15,9 +15,7 @@ slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
 drills:
   - ab-test-orchestrator
-  - mvt-experiment-design
-  - mvt-results-analysis
-  - mvt-experiment-health-monitor
+  - dashboard-builder
 ---
 
 # Multivariate Experiments — Scalable Automation
@@ -48,13 +46,13 @@ Run the `ab-test-orchestrator` drill adapted for multivariate tests. Create an n
 
 **Automated launch:** When an experiment slot opens, the agent:
 1. Pulls the next hypothesis from the queue
-2. Runs `mvt-experiment-design` to configure the matrix and feature flags
+2. Runs the mvt experiment design workflow (see instructions below) to configure the matrix and feature flags
 3. Verifies implementation by checking that all cell experiences render correctly (via PostHog flag evaluation)
 4. Launches and logs the start in Attio
 
 ### 2. Deploy continuous health monitoring
 
-Run the `mvt-experiment-health-monitor` drill. Configure:
+Run the `dashboard-builder` drill. Configure:
 
 - Daily traffic balance checks for all active experiments
 - Real-time guardrail monitoring with automatic cell-level pausing if harm is detected
@@ -81,7 +79,7 @@ The same variable combination may perform differently across segments. Segment-l
 
 ### 4. Automate results analysis and winner deployment
 
-Run the `mvt-results-analysis` drill as an automated workflow:
+Run the the mvt results analysis workflow (see instructions below) drill as an automated workflow:
 
 1. When the health monitor detects experiment completion, trigger analysis automatically
 2. Compute per-cell conversion, main effects, and interaction effects
@@ -137,6 +135,6 @@ Measure against: at least 5 MVTs completed per 2-month cycle with automated moni
 ## Drills Referenced
 
 - `ab-test-orchestrator` — manages experiment lifecycle, concurrent scheduling, and statistical rigor
-- `mvt-experiment-design` — designs test matrices and configures PostHog feature flags for each experiment
-- `mvt-results-analysis` — computes main effects, interaction effects, and combination rankings
-- `mvt-experiment-health-monitor` — daily health checks, guardrail monitoring, and completion detection
+- the mvt experiment design workflow (see instructions below) — designs test matrices and configures PostHog feature flags for each experiment
+- the mvt results analysis workflow (see instructions below) — computes main effects, interaction effects, and combination rankings
+- `dashboard-builder` — daily health checks, guardrail monitoring, and completion detection

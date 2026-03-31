@@ -13,11 +13,9 @@ kpis: ["Downloads per episode (30-day)", "Content pieces per episode", "Cross-pr
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
-  - podcast-episode-production
   - content-repurposing
-  - podcast-guest-booking
   - ab-test-orchestrator
-  - podcast-performance-monitor
+  - dashboard-builder
 ---
 # Branded Podcast Launch — Scalable Automation
 
@@ -60,7 +58,7 @@ Schedule recording days:
 - **Week 1, Tuesday**: Record episodes for weeks 1-2 (2 episodes back-to-back, 30 min each with 15 min break)
 - **Week 3, Tuesday**: Record episodes for weeks 3-4
 
-Run the `podcast-episode-production` drill for each episode, but with batch optimizations:
+Run the the podcast episode production workflow (see instructions below) drill for each episode, but with batch optimizations:
 - Keep Riverside studio configured and ready (no setup time per episode)
 - Prepare all talking points for the batch in one session
 - Edit all episodes in a single Descript project for consistency
@@ -81,7 +79,7 @@ Build this as an n8n workflow: when an episode enters "published" status in Atti
 
 ### 3. Scale the guest booking pipeline
 
-Expand the `podcast-guest-booking` drill to higher volume:
+Expand the the podcast guest booking workflow (see instructions below) drill to higher volume:
 - Maintain a prospect list of 100+ potential guests in Clay (refresh monthly)
 - Send 10-15 invitations per week via Instantly (Tier 2-3 use automated sequences, Tier 1 get personal emails)
 - Target: book 2 months of episodes ahead at all times
@@ -96,7 +94,7 @@ Identify 3-5 podcasts with complementary (not competing) audiences. Propose mutu
 - **Guest swap**: You appear on their show, they appear on yours. Each show's audience discovers the other.
 - **Newsletter cross-promotion**: Mention each other's episodes in your respective newsletters.
 
-Use `podcast-performance-monitor` to track which cross-promotion partnerships drive the most new subscribers and attribute leads by source.
+Use `dashboard-builder` to track which cross-promotion partnerships drive the most new subscribers and attribute leads by source.
 
 ### 5. A/B test episode and promotion variables
 
@@ -117,7 +115,7 @@ Run each test for at least 4 episodes (2 control, 2 variant) before declaring a 
 
 ### 6. Build the podcast performance monitoring system
 
-Run the `podcast-performance-monitor` drill to create comprehensive analytics:
+Run the `dashboard-builder` drill to create comprehensive analytics:
 
 1. PostHog dashboard: downloads by episode, traffic by promotion channel, lead funnel (visit -> signup -> meeting), episode long-tail value curve
 2. Weekly automated report via n8n: episode performance vs benchmark, top-performing promotion assets, guest amplification rate
@@ -173,8 +171,8 @@ Setup: 14 hours. Ongoing: ~15 hours/month.
 ---
 
 ## Drills Referenced
-- `podcast-episode-production` -- batch recording and publishing workflow
+- the podcast episode production workflow (see instructions below) -- batch recording and publishing workflow
 - `content-repurposing` -- transform each episode into 15+ derivative assets
-- `podcast-guest-booking` -- scaled guest pipeline with Tier 1 targeting
+- the podcast guest booking workflow (see instructions below) -- scaled guest pipeline with Tier 1 targeting
 - `ab-test-orchestrator` -- test episode formats, promotion channels, and CTAs
-- `podcast-performance-monitor` -- comprehensive analytics, reporting, and pattern analysis
+- `dashboard-builder` -- comprehensive analytics, reporting, and pattern analysis

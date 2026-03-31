@@ -17,7 +17,7 @@ drills:
   - media-target-research
   - media-pitch-outreach
   - media-relationship-automation
-  - pr-performance-monitor
+  - dashboard-builder
 ---
 
 # PR Campaign Launch — Scalable
@@ -73,7 +73,7 @@ Run the `media-relationship-automation` drill:
 
 ### 4. Deploy PR Performance Monitoring
 
-Run the `pr-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog PR dashboard (5 panels: outreach pipeline, placement tracking, referral traffic, placement-to-pipeline attribution, media relationship health)
 2. Implement the PR event taxonomy in PostHog
@@ -93,7 +93,7 @@ Run the `pr-performance-monitor` drill:
 
 Monthly review cycle:
 
-1. Pull the monthly deep-dive from the `pr-performance-monitor` drill
+1. Pull the monthly deep-dive from the `dashboard-builder` drill
 2. Analyze:
    - Which outlet types produce the most pipeline value per pitch?
    - Which pitch angles have the highest placement rate?
@@ -136,4 +136,4 @@ Monthly review cycle:
 - `media-target-research` — monthly media list refresh with 75+ targets, Clay enrichment, and scoring
 - `media-pitch-outreach` — quarterly launch campaign execution with tiered personalization via Instantly
 - `media-relationship-automation` — always-on opportunity detection, reactive pitching, journalist relationship tracking, and post-placement amplification
-- `pr-performance-monitor` — continuous monitoring of outreach pipeline, placements, referral traffic, attribution, and relationship health
+- `dashboard-builder` — continuous monitoring of outreach pipeline, placements, referral traffic, attribution, and relationship health

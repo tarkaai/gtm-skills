@@ -15,7 +15,6 @@ slug: "winback-campaign"
 install: "npx gtm-skills add product/winback/winback-campaign"
 drills:
   - ab-test-orchestrator
-  - winback-offer-personalization
   - winback-campaign
 ---
 
@@ -77,7 +76,7 @@ Global cap: No churned user receives more than 5 winback touches in a 90-day win
 
 ### 3. Expand and refine segments
 
-Run the `winback-offer-personalization` drill monthly to:
+Run the the winback offer personalization workflow (see instructions below) drill monthly to:
 
 1. Enroll newly churned users into the appropriate segment
 2. Re-evaluate stale segments: move users from "fresh" to "mid" to "stale" as time passes
@@ -136,5 +135,5 @@ After 4 weeks at scale, measure against the pass threshold:
 ## Drills Referenced
 
 - `ab-test-orchestrator` — A/B test winback offers, timing, and messaging per segment with statistical rigor
-- `winback-offer-personalization` — monthly segment refresh, new micro-segments, offer updates based on product changes
+- the winback offer personalization workflow (see instructions below) — monthly segment refresh, new micro-segments, offer updates based on product changes
 - `winback-campaign` — multi-channel winback sequence templates and in-app welcome-back flows

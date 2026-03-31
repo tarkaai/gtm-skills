@@ -16,7 +16,6 @@ slug: "developer-advocacy-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-advocacy-program"
 drills:
   - icp-definition
-  - technical-content-creation
   - social-content-pipeline
   - threshold-engine
 ---
@@ -66,7 +65,7 @@ Examples:
 
 ### 3. Create 3 technical content pieces
 
-Run the `technical-content-creation` drill for each topic:
+Run the the technical content creation workflow (see instructions below) drill for each topic:
 
 1. **Draft the tutorial** with working code samples. Every code block must be copy-pasteable and tested.
 2. **Create a companion GitHub repo** with the complete working code, a README with quick start instructions and a CTA linking to your product.
@@ -126,6 +125,6 @@ Run the `threshold-engine` drill to measure results against: ≥3 pieces of tech
 ## Drills Referenced
 
 - `icp-definition` — define the target developer audience and their pain points
-- `technical-content-creation` — produce tutorials with code samples, GitHub repos, and social derivatives
+- the technical content creation workflow (see instructions below) — produce tutorials with code samples, GitHub repos, and social derivatives
 - `social-content-pipeline` — create social media posts derived from tutorials
 - `threshold-engine` — evaluate results against the pass threshold

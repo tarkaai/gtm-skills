@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
 drills:
   - posthog-gtm-events
   - feature-announcement
-  - tooltip-performance-monitor
 ---
 
 # Contextual Feature Tooltips — Baseline Run
@@ -129,4 +128,3 @@ If FAIL: Rewrite underperforming tooltip copy, adjust targeting criteria, or rep
 
 - `posthog-gtm-events` -- expand tooltip and feature usage event tracking
 - `feature-announcement` -- configure each Intercom tooltip with targeting rules
-- `tooltip-performance-monitor` -- build the measurement dashboard and weekly health reports

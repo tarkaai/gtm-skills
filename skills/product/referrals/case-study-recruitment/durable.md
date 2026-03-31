@@ -17,7 +17,6 @@ slug: "case-study-recruitment"
 install: "npx gtm-skills add product/referrals/case-study-recruitment"
 drills:
   - autonomous-optimization
-  - case-study-recruitment-health-monitor
 ---
 
 # Customer Story Pipeline — Durable Intelligence
@@ -98,7 +97,7 @@ Post to Slack and store in Attio.
 
 ### 2. Configure play-specific monitoring
 
-Run the `case-study-recruitment-health-monitor` drill at Durable level:
+Run the `autonomous-optimization` drill at Durable level:
 
 1. Tighten health metric thresholds to reflect the optimized pipeline's higher baseline:
    - Outreach acceptance rate healthy: 35%+ (up from 25%)
@@ -178,4 +177,4 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that makes this level self-improving
-- `case-study-recruitment-health-monitor` — play-specific health metrics, diagnostics, and interventions tuned for Durable thresholds
+- `autonomous-optimization` — play-specific health metrics, diagnostics, and interventions tuned for Durable thresholds

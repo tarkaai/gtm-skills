@@ -48,7 +48,7 @@ Build the integration funnel: `integration_landing_page_viewed` -> `integration_
 
 ### 2. Expand partner outreach
 
-Using the partner list from Smoke level (or re-running `integration-partner-discovery` for fresh candidates), run the `warm-intro-request` drill for the next batch of 10-15 partners. Target partners where:
+Using the partner list from Smoke level (or re-running the integration partner discovery workflow (see instructions below) for fresh candidates), run the `warm-intro-request` drill for the next batch of 10-15 partners. Target partners where:
 - Smoke level showed the integration type works (similar product category, similar integration complexity)
 - The partner has a distribution channel with ≥1,000 reach (email list, active blog, social following)
 

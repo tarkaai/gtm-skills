@@ -14,7 +14,6 @@ kpis: ["Referral sessions per AMA (avg)", "Signups per AMA (avg)", "Questions pe
 slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
 drills:
-  - ama-session-planning
   - community-monitoring-automation
   - community-health-scoring
   - content-repurposing
@@ -57,7 +56,7 @@ Using data from the Baseline series and the `community-health-scoring` drill:
 
 ### 2. Automate the AMA preparation pipeline
 
-Build an n8n workflow that automates the majority of `ama-session-planning` prep work:
+Build an n8n workflow that automates the majority of the ama session planning workflow (see instructions below) prep work:
 
 ```
 Schedule Trigger (14 days before next AMA)
@@ -219,7 +218,7 @@ At the end of 3 months, measure:
 
 ## Drills Referenced
 
-- `ama-session-planning` — automated AMA preparation pipeline (topic selection, post drafting, Q&A bank)
+- the ama session planning workflow (see instructions below) — automated AMA preparation pipeline (topic selection, post drafting, Q&A bank)
 - `community-monitoring-automation` — catch AMA-related engagement between sessions
 - `community-health-scoring` — weekly subreddit health tracking to drive rotation decisions
 - `content-repurposing` — automated pipeline transforming AMA Q&A into blog, social, and newsletter content

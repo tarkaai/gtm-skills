@@ -15,7 +15,6 @@ slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
   - autonomous-optimization
-  - reddit-ads-performance-monitor
   - dashboard-builder
 ---
 
@@ -107,7 +106,7 @@ Run the `dashboard-builder` drill to create a Durable-level PostHog dashboard:
 
 ### 3. Configure the Reddit Ads performance monitor for Durable
 
-Run the `reddit-ads-performance-monitor` drill with Durable-level settings:
+Run the `autonomous-optimization` drill with Durable-level settings:
 
 - Reduce daily health check to a lightweight status check (is the loop running? any critical errors?)
 - The autonomous-optimization loop handles the heavy analysis now
@@ -177,5 +176,5 @@ If an external shock causes CPA to spike >20% from the converged baseline, the s
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor -> diagnose -> experiment -> evaluate -> implement
-- `reddit-ads-performance-monitor` — lightweight health checks and audit trail at Durable level
+- `autonomous-optimization` — lightweight health checks and audit trail at Durable level
 - `dashboard-builder` — Durable-level PostHog dashboard with experiment tracking and convergence visualization

@@ -17,7 +17,7 @@ install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
   - follow-up-automation
   - ab-test-orchestrator
-  - need-assessment-reporting
+  - dashboard-builder
 ---
 
 # Need Assessment Framework — Scalable Automation
@@ -99,7 +99,7 @@ All new leads, regardless of source, enter the same need hypothesis pipeline. No
 
 ### 5. Build need assessment reporting
 
-Run the `need-assessment-reporting` drill to create:
+Run the `dashboard-builder` drill to create:
 
 - **PostHog dashboard:** Assessment volume by week, need category heatmap, score distribution, hypothesis accuracy trend
 - **Pipeline velocity funnel:** Hypothesis > Assessment > Qualified > Demo > Proposal > Won
@@ -152,4 +152,4 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 - the play's scoring criteria — automated pre-call need hypothesis pipeline: CRM trigger > Clay enrichment > Claude hypothesis > Attio routing
 - `follow-up-automation` — n8n workflows for need-tier-based outreach, nurture, and re-hypothesis alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, discovery question sequences, and qualification thresholds
-- `need-assessment-reporting` — dashboards, funnel analytics, accuracy cohorts, need pattern analysis, and weekly reports
+- `dashboard-builder` — dashboards, funnel analytics, accuracy cohorts, need pattern analysis, and weekly reports

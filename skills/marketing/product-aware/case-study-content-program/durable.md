@@ -18,7 +18,6 @@ slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
 drills:
   - autonomous-optimization
-  - case-study-recruitment-health-monitor
   - dashboard-builder
 ---
 
@@ -36,7 +35,7 @@ Fail: Close rate lift drops below 10% for 3 consecutive weeks despite automated 
 ## Leading Indicators
 
 - The `autonomous-optimization` loop produces a winning experiment at least once per month for the first 3 months (the system is still finding improvements to case study format, placement, or distribution)
-- Recruitment pipeline health stays in the "healthy" range on all 7 metrics tracked by the `case-study-recruitment-health-monitor` (the input side of the program is stable)
+- Recruitment pipeline health stays in the "healthy" range on all 7 metrics tracked by the `autonomous-optimization` (the input side of the program is stable)
 - Case study refresh cycle keeps the top 5 case studies updated with the customer's latest metrics at least once per quarter (stories stay current and credible)
 - The deal matching engine's forward rate (sales reps actually using the matched case studies) stays above 30% for 6 months (the matching remains relevant)
 - Successive experiments produce diminishing returns after month 4 (convergence toward local maximum -- this is the goal, not a failure)
@@ -113,7 +112,7 @@ The agent pulls PostHog results and runs `experiment-evaluation`:
 
 ### 2. Deploy the recruitment health monitor
 
-Run the `case-study-recruitment-health-monitor` drill. This provides the play-specific monitoring layer that keeps the input side of the program healthy. It tracks 7 recruitment metrics daily:
+Run the `autonomous-optimization` drill. This provides the play-specific monitoring layer that keeps the input side of the program healthy. It tracks 7 recruitment metrics daily:
 
 | Metric | Healthy | Warning | Critical |
 |--------|---------|---------|----------|
@@ -259,5 +258,5 @@ Compute over the full 6-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies across case study pages and distribution channels, generate improvement hypotheses, run A/B experiments via PostHog, evaluate results, auto-implement winners, and produce weekly optimization briefs. Converges when successive experiments produce < 2% improvement.
-- `case-study-recruitment-health-monitor` — play-specific monitoring for the recruitment pipeline: 7 daily health metrics (candidate pool, acceptance rate, response rate, interview completion, case study completion, time to publish, pipeline velocity), diagnostic triggers for each declining metric, automated interventions for common failure modes, and escalation rules for human handoff.
+- `autonomous-optimization` — play-specific monitoring for the recruitment pipeline: 7 daily health metrics (candidate pool, acceptance rate, response rate, interview completion, case study completion, time to publish, pipeline velocity), diagnostic triggers for each declining metric, automated interventions for common failure modes, and escalation rules for human handoff.
 - `dashboard-builder` — build the Durable PostHog dashboard with per-case-study conversion heatmap, deal influence tracker, close rate lift trend, recruitment pipeline funnel, content freshness tracking, coverage gap map, and experiment status.

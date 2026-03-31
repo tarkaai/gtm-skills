@@ -16,7 +16,6 @@ kpis: ["Exec demo-to-nextstep conversion", "Deal velocity (exec vs non-exec)", "
 slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
 drills:
-  - exec-demo-prep
   - posthog-gtm-events
   - follow-up-automation
 ---
@@ -42,7 +41,7 @@ drills:
 
 ### 1. Configure automated exec demo prep
 
-Run the `exec-demo-prep` drill to set up the automation pipeline. When an executive demo is scheduled:
+Run the the exec demo prep workflow (see instructions below) drill to set up the automation pipeline. When an executive demo is scheduled:
 
 1. The agent pulls exec contact data from Attio and runs `exec-research-enrichment` to gather priorities, news, and competitive context
 2. If a prior discovery call exists, the agent runs BANT extraction on the Fireflies transcript
@@ -170,6 +169,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `exec-demo-prep` -- auto-generate persona-specific exec demo prep docs with research, ROI narratives, and strategic talking points
+- the exec demo prep workflow (see instructions below) -- auto-generate persona-specific exec demo prep docs with research, ROI narratives, and strategic talking points
 - `posthog-gtm-events` -- configure event tracking for the exec demo funnel and deal velocity measurement
 - `follow-up-automation` -- automated post-demo follow-up with persona-specific executive summaries and materials

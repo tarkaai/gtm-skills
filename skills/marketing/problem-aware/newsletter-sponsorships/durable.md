@@ -16,7 +16,6 @@ slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
 drills:
   - autonomous-optimization
-  - newsletter-sponsor-performance-monitor
   - newsletter-sponsor-research
 ---
 
@@ -88,7 +87,7 @@ Run the `autonomous-optimization` drill configured for the newsletter sponsorshi
 
 ### 2. Run the newsletter portfolio health monitor
 
-Run the `newsletter-sponsor-performance-monitor` drill on an enhanced cadence for Durable:
+Run the `autonomous-optimization` drill on an enhanced cadence for Durable:
 
 - Daily: check for click anomalies (zero clicks from a scheduled placement = investigate immediately)
 - Weekly: update newsletter tier assignments based on rolling 30-day CPL
@@ -142,5 +141,5 @@ Total: ~8 hours/month of human oversight (the agent handles the rest autonomousl
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners
-- `newsletter-sponsor-performance-monitor` — enhanced daily/weekly/monthly portfolio monitoring and tier management
+- `autonomous-optimization` — enhanced daily/weekly/monthly portfolio monitoring and tier management
 - `newsletter-sponsor-research` — quarterly pipeline refresh to discover new newsletters and prevent portfolio stagnation

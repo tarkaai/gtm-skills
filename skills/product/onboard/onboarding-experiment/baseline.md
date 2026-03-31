@@ -14,7 +14,6 @@ kpis: ["Activation rate by variant", "Statistical significance (p < 0.05)", "Tim
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
 drills:
-  - onboarding-experiment-orchestration
   - experiment-hypothesis-design
   - posthog-gtm-events
   - activation-optimization
@@ -59,7 +58,7 @@ Ensure each hypothesis targets a different onboarding surface or a different asp
 
 ### 3. Run experiment 1
 
-Run the `onboarding-experiment-orchestration` drill for the top-ranked hypothesis. This produces:
+Run the the onboarding experiment orchestration workflow (see instructions below) drill for the top-ranked hypothesis. This produces:
 - PostHog experiment with feature flag, primary/secondary/guardrail metrics
 - Variant implemented in Intercom (tour), Loops (email), or product code (empty state)
 - Tracking with experiment_variant property on all onboarding events
@@ -69,7 +68,7 @@ Let the experiment run until it reaches the required sample size or 14 days, whi
 ### 4. Evaluate experiment 1 and launch experiment 2
 
 When experiment 1 completes:
-1. Evaluate using the criteria from the `onboarding-experiment-orchestration` drill
+1. Evaluate using the criteria from the the onboarding experiment orchestration workflow (see instructions below) drill
 2. If the treatment won: implement permanently, update the baseline activation rate
 3. If inconclusive or treatment lost: revert, log the learning
 4. Immediately launch experiment 2 from the backlog (the next highest-priority hypothesis)
@@ -122,7 +121,7 @@ Decision:
 
 ## Drills Referenced
 
-- `onboarding-experiment-orchestration` — designs, instruments, runs, and evaluates each A/B test on the onboarding flow with PostHog experiments and per-variant tracking
+- the onboarding experiment orchestration workflow (see instructions below) — designs, instruments, runs, and evaluates each A/B test on the onboarding flow with PostHog experiments and per-variant tracking
 - `experiment-hypothesis-design` — generates ranked hypotheses from funnel drop-off data and calculates sample sizes for each
 - `posthog-gtm-events` — establishes the event taxonomy covering the full onboarding funnel from signup to activation
 - `activation-optimization` — identifies the true activation metric, measures current rates, and builds nudges for stalled users

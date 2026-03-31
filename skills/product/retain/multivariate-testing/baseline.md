@@ -15,8 +15,6 @@ slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
 drills:
   - posthog-gtm-events
-  - mvt-experiment-design
-  - mvt-results-analysis
 ---
 
 # Multivariate Experiments — Baseline Run
@@ -51,7 +49,7 @@ Build PostHog funnels: `mvt_cell_assigned` -> `mvt_impression` -> `mvt_engaged` 
 
 ### 2. Design and launch 3 experiments
 
-Run the `mvt-experiment-design` drill for each experiment. Target different retention surfaces to maximize learning:
+Run the the mvt experiment design workflow (see instructions below) drill for each experiment. Target different retention surfaces to maximize learning:
 
 **Experiment 1: Upgrade prompt optimization**
 - Variable A: copy framing (2 levels: benefit-focused vs. loss-aversion)
@@ -72,7 +70,7 @@ Stagger launches so experiments do not compete for the same users. If user overl
 
 ### 3. Analyze results with interaction effect detection
 
-Run the `mvt-results-analysis` drill for each completed experiment. For each experiment, produce:
+Run the the mvt results analysis workflow (see instructions below) drill for each completed experiment. For each experiment, produce:
 
 - Per-cell conversion rates with confidence intervals
 - Main effect per variable (which variable matters more)
@@ -112,5 +110,5 @@ Measure against: at least 3 MVTs completed, at least 1 statistically significant
 ## Drills Referenced
 
 - `posthog-gtm-events` — establishes the standardized event taxonomy for all MVT tracking
-- `mvt-experiment-design` — designs each experiment's matrix, configures feature flags, and computes sample sizes
-- `mvt-results-analysis` — analyzes per-cell results, computes main effects and interaction effects, ranks combinations
+- the mvt experiment design workflow (see instructions below) — designs each experiment's matrix, configures feature flags, and computes sample sizes
+- the mvt results analysis workflow (see instructions below) — analyzes per-cell results, computes main effects and interaction effects, ranks combinations

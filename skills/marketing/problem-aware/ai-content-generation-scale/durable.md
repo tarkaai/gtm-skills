@@ -16,7 +16,6 @@ slug: "ai-content-generation-scale"
 install: "npx gtm-skills add marketing/problem-aware/ai-content-generation-scale"
 drills:
   - autonomous-optimization
-  - social-content-performance-monitor
   - content-refresh-pipeline
 ---
 
@@ -120,7 +119,7 @@ POST https://api.anthropic.com/v1/messages
 
 ### 2. Deploy the content performance monitor
 
-Run the `social-content-performance-monitor` drill to build the always-on monitoring dashboard:
+Run the `autonomous-optimization` drill to build the always-on monitoring dashboard:
 
 **Dashboard panels:**
 1. **Publishing Cadence:** posts per week by platform, posts by content pillar, target overlay
@@ -225,5 +224,5 @@ This review takes 30-60 minutes per month. All other operations are autonomous.
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds and maintains the local maximum for content performance
-- `social-content-performance-monitor` — real-time dashboard with 5 panels, anomaly detection, content-to-pipeline attribution, and automated weekly/monthly reports
+- `autonomous-optimization` — real-time dashboard with 5 panels, anomaly detection, content-to-pipeline attribution, and automated weekly/monthly reports
 - `content-refresh-pipeline` — detect underperforming blog posts, diagnose issues, generate refreshed content, and track refresh impact

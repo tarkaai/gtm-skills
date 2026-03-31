@@ -14,7 +14,7 @@ slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
 drills:
   - ab-test-orchestrator
-  - advocacy-health-monitor
+  - dashboard-builder
 ---
 
 # Formal Advocacy Program — Scalable Automation
@@ -91,7 +91,7 @@ Implement personalization via PostHog person properties and Intercom user segmen
 
 ### 3. Deploy the advocacy health monitor
 
-Run the `advocacy-health-monitor` drill to build always-on health tracking for 8 metrics:
+Run the `dashboard-builder` drill to build always-on health tracking for 8 metrics:
 
 - Recruitment rate (new Insiders / eligible users)
 - Activation rate (first action within 30 days)
@@ -151,4 +151,4 @@ If PASS, proceed to Durable.
 ## Drills Referenced
 
 - `ab-test-orchestrator` — design, run, and evaluate 4 sequential experiments on enrollment messaging, first-ask type, referral incentives, and nudge cadence
-- `advocacy-health-monitor` — track 8 advocacy-specific health metrics with diagnostic triggers, automated interventions, and escalation rules
+- `dashboard-builder` — track 8 advocacy-specific health metrics with diagnostic triggers, automated interventions, and escalation rules

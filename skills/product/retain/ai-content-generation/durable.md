@@ -17,7 +17,6 @@ slug: "ai-content-generation"
 install: "npx gtm-skills add product/retain/ai-content-generation"
 drills:
   - autonomous-optimization
-  - ai-content-prompt-optimization
 ---
 
 # AI Content Assistant — Durable Intelligence
@@ -71,7 +70,7 @@ Run the `autonomous-optimization` drill configured for the AI content generation
 6. If low or medium risk, proceed to Phase 3
 
 **Phase 3 -- Experiment (triggered by hypothesis acceptance):**
-1. If the hypothesis targets content quality: run the `ai-content-prompt-optimization` drill to design a prompt A/B test
+1. If the hypothesis targets content quality: run the the ai content prompt optimization workflow (see instructions below) drill to design a prompt A/B test
    - Create a PostHog feature flag splitting generations between current prompt (control) and modified prompt (variant)
    - Primary metric: clean acceptance rate for the affected content type
    - Minimum 100 generations per variant, minimum 7 days
@@ -118,7 +117,7 @@ This dashboard is the agent's primary observation layer. Every Phase 1 monitorin
 
 ### 3. Maintain the prompt optimization pipeline
 
-Run the `ai-content-prompt-optimization` drill in maintenance mode:
+Run the the ai content prompt optimization workflow (see instructions below) drill in maintenance mode:
 
 1. Keep the prompt version registry up to date: every adopted prompt change gets a new entry with content type, change description, before/after acceptance rate, and date
 2. When new content types are added to the product, the agent proactively generates baseline prompts using existing high-performing prompts as templates, then runs an initial optimization cycle
@@ -179,5 +178,5 @@ If metrics decay despite agent optimization, the system needs strategic input:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core detect-diagnose-experiment-evaluate-report loop that makes Durable fundamentally different from Scalable
-- `ai-content-prompt-optimization` -- analyzes rejection patterns, generates prompt improvement hypotheses, runs prompt A/B tests, and maintains the prompt version registry
+- the ai content prompt optimization workflow (see instructions below) -- analyzes rejection patterns, generates prompt improvement hypotheses, runs prompt A/B tests, and maintains the prompt version registry
 - `autonomous-optimization` -- the measurement layer providing the dashboards, cohorts, and alerts the optimization loop reads from

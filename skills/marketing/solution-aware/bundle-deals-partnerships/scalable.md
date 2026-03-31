@@ -16,7 +16,6 @@ slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
 drills:
   - partner-pipeline-automation
-  - bundle-deal-structuring
   - tool-sync-workflow
 ---
 
@@ -66,7 +65,7 @@ Run the `partner-pipeline-automation` drill adapted for bundle partnerships. Bui
 
 ### 2. Templatize bundle creation
 
-Run the `bundle-deal-structuring` drill one final time to build the reusable template system:
+Run the the bundle deal structuring workflow (see instructions below) drill one final time to build the reusable template system:
 
 - **Landing page template**: A Webflow page template with dynamic fields for partner branding, pricing tiers, and CTAs. New bundles should require only: partner logo, partner product description, finalized pricing, and checkout link. Everything else (layout, tracking, UTM structure) is standardized.
 - **Pricing model template**: A Claude prompt template that takes partner pricing as input and outputs a 3-tier bundle model in <30 seconds. The agent can run this for new partners without custom prompt engineering.
@@ -143,5 +142,5 @@ Total: ~60 hours over 3 months (front-loaded; automation handles most ongoing wo
 ## Drills Referenced
 
 - `partner-pipeline-automation` — automate partner onboarding, deal routing, performance reporting, and nurture sequences across the bundle portfolio
-- `bundle-deal-structuring` — build the reusable template system for landing pages, pricing models, and partner pitches
+- the bundle deal structuring workflow (see instructions below) — build the reusable template system for landing pages, pricing models, and partner pitches
 - `tool-sync-workflow` — wire PostHog, Attio, n8n, Loops, and Stripe into a unified bundle operations stack

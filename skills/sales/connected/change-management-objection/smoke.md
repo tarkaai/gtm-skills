@@ -15,7 +15,6 @@ kpis: ["Change objection resolution rate", "Root cause diagnosis accuracy", "Sta
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
-  - change-objection-call-prep
   - threshold-engine
 ---
 
@@ -52,7 +51,7 @@ If you have fewer than 5 deals with explicit change resistance, include deals wh
 
 ### 2. Prepare for each conversation
 
-Run the `change-objection-call-prep` drill for each deal. The drill:
+Run the the change objection call prep workflow (see instructions below) drill for each deal. The drill:
 - Pulls deal context and current solution info from Attio
 - Enriches the incumbent via Clay (pricing, switching barriers, common complaints)
 - Predicts likely resistance root causes based on company profile
@@ -149,5 +148,5 @@ Re-run the Smoke test with adjustments.
 
 ## Drills Referenced
 
-- `change-objection-call-prep` — Research the incumbent, predict resistance root causes, generate status quo cost estimate and discovery questions
+- the change objection call prep workflow (see instructions below) — Research the incumbent, predict resistance root causes, generate status quo cost estimate and discovery questions
 - `threshold-engine` — Evaluate results against pass/fail criteria

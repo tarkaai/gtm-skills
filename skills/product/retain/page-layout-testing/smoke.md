@@ -14,7 +14,6 @@ slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
   - layout-variant-builder
-  - session-recording-friction-analysis
   - threshold-engine
 ---
 
@@ -58,7 +57,7 @@ Run the `layout-variant-builder` drill for each of the 3 variants. For the Smoke
 
 ### 3. Review session recordings for friction signals
 
-Run the `session-recording-friction-analysis` drill on the target page. Review 10-15 recordings of the current layout (before variants go live) to establish a baseline friction profile. Document:
+Run the the session recording friction analysis workflow (see instructions below) drill on the target page. Review 10-15 recordings of the current layout (before variants go live) to establish a baseline friction profile. Document:
 
 - Where users hesitate or scroll back and forth
 - Which elements get rage-clicked
@@ -88,5 +87,5 @@ If none of the 3 variants move any metric, either the page is already well-optim
 ## Drills Referenced
 
 - `layout-variant-builder` — creates feature flags, instruments events, and wires up variant rendering for each layout test
-- `session-recording-friction-analysis` — reviews session recordings to identify friction patterns and quantify their impact
+- the session recording friction analysis workflow (see instructions below) — reviews session recordings to identify friction patterns and quantify their impact
 - `threshold-engine` — evaluates measured results against the pass/fail threshold

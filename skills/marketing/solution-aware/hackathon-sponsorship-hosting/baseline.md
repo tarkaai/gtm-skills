@@ -14,8 +14,6 @@ kpis: ["Registration-to-submission rate", "Qualified leads per hackathon", "Post
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosting"
 drills:
-  - hackathon-challenge-pipeline
-  - hackathon-attendee-nurture
   - threshold-engine
 ---
 
@@ -42,7 +40,7 @@ Prove that hackathons produce repeatable qualified leads at a sustainable cost. 
 
 Design two hackathons with different challenge themes that showcase different product capabilities. This tests whether your hackathon appeal is broad or limited to one use case.
 
-Run the `hackathon-challenge-pipeline` drill, Step 1, for both hackathons:
+Run the the hackathon challenge pipeline workflow (see instructions below) drill, Step 1, for both hackathons:
 
 - **Hackathon 1** (Week 1-4): Use a challenge theme adjacent to what worked in the Smoke test. Iterate on the challenge design based on Smoke learnings: if participants found workarounds that avoided your product, tighten the requirements. If submissions were low quality, simplify the challenge.
 - **Hackathon 2** (Week 5-8): Use a different challenge theme that exercises a different product feature set. This tests breadth of developer appeal.
@@ -55,7 +53,7 @@ Estimated time: 4 hours (2 hours per challenge design).
 
 Expand recruitment beyond free channels. For each hackathon:
 
-Using Clay (referenced in the `hackathon-challenge-pipeline` drill, Step 3):
+Using Clay (referenced in the the hackathon challenge pipeline workflow (see instructions below) drill, Step 3):
 
 1. Build a Clay table of developers matching the challenge theme:
    - Search for contributors to open-source projects in the relevant tech stack via `clay-people-search`
@@ -73,7 +71,7 @@ Estimated time: 3 hours per hackathon (6 hours total).
 
 ### 3. Execute both hackathons
 
-Run each hackathon following the full `hackathon-challenge-pipeline` drill (Steps 2-5):
+Run each hackathon following the full the hackathon challenge pipeline workflow (see instructions below) drill (Steps 2-5):
 
 - Virtual format, 1-week duration with live kickoff and demo day
 - Mentor office hours via Cal.com (5 slots per hackathon)
@@ -91,7 +89,7 @@ Estimated time: 8 hours per hackathon (16 hours total).
 
 ### 4. Deploy automated post-hackathon nurture
 
-Run the `hackathon-attendee-nurture` drill for each hackathon. This is the first always-on automation for this play:
+Run the the hackathon attendee nurture workflow (see instructions below) drill for each hackathon. This is the first always-on automation for this play:
 
 Set up the automated tier segmentation and nurture sequences:
 
@@ -160,6 +158,6 @@ If PASS, proceed to Scalable. If FAIL, review: Are the challenges compelling eno
 
 ## Drills Referenced
 
-- `hackathon-challenge-pipeline` -- complete hackathon lifecycle from challenge design through judging and lead capture
-- `hackathon-attendee-nurture` -- tiered post-hackathon nurture with automated segmentation and sequence enrollment
+- the hackathon challenge pipeline workflow (see instructions below) -- complete hackathon lifecycle from challenge design through judging and lead capture
+- the hackathon attendee nurture workflow (see instructions below) -- tiered post-hackathon nurture with automated segmentation and sequence enrollment
 - `threshold-engine` -- evaluates results against pass/fail threshold and recommends next action

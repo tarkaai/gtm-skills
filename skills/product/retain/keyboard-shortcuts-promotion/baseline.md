@@ -15,8 +15,6 @@ kpis: ["Shortcut trial rate", "Shortcut ratio (treatment vs control)", "Hint-to-
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
-  - shortcut-discovery-promotion
-  - shortcut-adoption-monitor
   - posthog-gtm-events
 ---
 
@@ -40,13 +38,13 @@ Shortcut hints running always-on for 50% of eligible users. Treatment group achi
 
 ### 1. Expand shortcut coverage to top 6-8 shortcuts
 
-Run the full shortcut mapping from the `shortcut-discovery-promotion` drill. Expand beyond the Smoke test's 3 shortcuts to include 6-8 shortcuts covering the most frequent mouse actions. Add tracking events for each new shortcut.
+Run the full shortcut mapping from the the shortcut discovery promotion workflow (see instructions below) drill. Expand beyond the Smoke test's 3 shortcuts to include 6-8 shortcuts covering the most frequent mouse actions. Add tracking events for each new shortcut.
 
 Instrument all new shortcut events using the `posthog-gtm-events` drill. Verify each event fires correctly in PostHog before proceeding.
 
 ### 2. Build the command palette product tour
 
-Run step 5 of the `shortcut-discovery-promotion` drill to create the Intercom product tour for command palette discovery. This 3-step interactive tour triggers once for users who have never opened the command palette and have been active for 5+ sessions.
+Run step 5 of the the shortcut discovery promotion workflow (see instructions below) drill to create the Intercom product tour for command palette discovery. This 3-step interactive tour triggers once for users who have never opened the command palette and have been active for 5+ sessions.
 
 **Human action required:** Review the tour flow in Intercom preview. Walk through it as a test user. Ensure the interactive step (pressing Cmd+K) registers correctly and advances the tour.
 
@@ -61,7 +59,7 @@ Define eligibility criteria in PostHog:
 
 ### 4. Deploy always-on hint delivery
 
-Run step 6 of the `shortcut-discovery-promotion` drill to build the progressive education pipeline in n8n. The daily workflow:
+Run step 6 of the the shortcut discovery promotion workflow (see instructions below) drill to build the progressive education pipeline in n8n. The daily workflow:
 
 1. Queries PostHog for users in the treatment group
 2. Assigns each user to a shortcut-readiness cohort (beginner, intermediate, power, dormant)
@@ -136,6 +134,5 @@ If FAIL on both: Revisit the shortcut selection. The shortcuts being promoted ma
 
 ## Drills Referenced
 
-- `shortcut-discovery-promotion` — expanded shortcut map, command palette tour, progressive education pipeline
-- `shortcut-adoption-monitor` — adoption funnel, shortcut ratio tracking, stalled-user detection, dashboard, weekly report
+- the shortcut discovery promotion workflow (see instructions below) — expanded shortcut map, command palette tour, progressive education pipeline
 - `posthog-gtm-events` — event instrumentation for all new shortcut tracking events

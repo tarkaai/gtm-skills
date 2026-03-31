@@ -16,7 +16,6 @@ kpis: ["Total server members (target ≥ 200)", "Daily active users averaged ove
 slug: "discord-community-building"
 install: "npx gtm-skills add marketing/product-aware/discord-community-building"
 drills:
-  - slack-discord-monitoring-automation
   - slack-discord-response-crafting
   - posthog-gtm-events
 ---
@@ -197,6 +196,5 @@ Evaluation:
 
 ## Drills Referenced
 
-- `slack-discord-monitoring-automation` — build n8n workflows that poll Discord channels for keyword matches and route prioritized alerts to an internal engagement queue
 - `slack-discord-response-crafting` — draft authentic, value-first responses to Discord threads that build authority and drive inbound interest
 - `posthog-gtm-events` — define and implement the Discord community event taxonomy in PostHog for funnels, cohorts, and lead attribution

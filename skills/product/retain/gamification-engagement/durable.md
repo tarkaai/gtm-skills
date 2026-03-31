@@ -15,7 +15,6 @@ slug: "gamification-engagement"
 install: "npx gtm-skills add product/retain/gamification-engagement"
 drills:
   - autonomous-optimization
-  - gamification-health-monitor
 ---
 
 # Gamified Product Experience — Durable Intelligence
@@ -90,7 +89,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the gamification health monitor
 
-Run the `gamification-health-monitor` drill for play-specific monitoring that complements the generic optimization loop:
+Run the `autonomous-optimization` drill for play-specific monitoring that complements the generic optimization loop:
 
 - Configure daily health checks for all 8 gamification health metrics: participation rate, streak survival, badge velocity, leaderboard view rate, level-up rate, gamified user retention, streak break rate, challenge completion rate
 - Implement diagnostic triggers for each declining metric:
@@ -155,4 +154,4 @@ After structural changes are implemented, reset the optimization baseline and re
 ## Drills Referenced
 
 - `autonomous-optimization` — the core loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `gamification-health-monitor` — play-specific monitoring for gamification metrics with diagnostic triggers, automated interventions, and escalation rules
+- `autonomous-optimization` — play-specific monitoring for gamification metrics with diagnostic triggers, automated interventions, and escalation rules

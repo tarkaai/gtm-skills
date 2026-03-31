@@ -18,7 +18,6 @@ slug: "trigger-based-outreach"
 install: "npx gtm-skills add marketing/solution-aware/trigger-based-outreach"
 drills:
   - autonomous-optimization
-  - intent-signal-health-monitor
   - threshold-engine
 ---
 
@@ -107,7 +106,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy signal source health monitoring
 
-Run the `intent-signal-health-monitor` drill to build the monitoring layer for all signal sources:
+Run the `autonomous-optimization` drill to build the monitoring layer for all signal sources:
 
 **Signal pipeline dashboard (PostHog):**
 - Panel 1: Signal volume by source and type (trend, last 30 days). Alert if any source drops below 50% of its 4-week average.
@@ -259,5 +258,5 @@ Compute over the full 12-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core detect-diagnose-experiment-evaluate-implement loop that finds and maintains the local maximum for trigger-based outreach
-- `intent-signal-health-monitor` — signal source monitoring, scoring accuracy audits, and signal pipeline health reporting
+- `autonomous-optimization` — signal source monitoring, scoring accuracy audits, and signal pipeline health reporting
 - `threshold-engine` — guardrails for signal volume, outreach quality, deliverability, and budget that auto-pause and auto-recover when breached

@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorsh
 drills:
   - icp-definition
   - conference-sponsorship-pipeline
-  - booth-lead-capture
   - threshold-engine
 ---
 
@@ -66,7 +65,7 @@ Run the `conference-sponsorship-pipeline` drill's pre-event preparation steps:
 
 ### 3. Execute booth lead capture
 
-Run the `booth-lead-capture` drill on each day of the conference:
+Run the the booth lead capture workflow (see instructions below) drill on each day of the conference:
 
 - Scan every visitor's badge (or log via manual form)
 - Qualify each conversation using the 4-tier framework during the conversation, not after
@@ -78,7 +77,7 @@ Run the `booth-lead-capture` drill on each day of the conference:
 
 ### 4. Execute same-day enrichment and basic follow-up
 
-Run the `booth-lead-capture` drill's same-day enrichment steps each evening:
+Run the the booth lead capture workflow (see instructions below) drill's same-day enrichment steps each evening:
 
 - Export badge scan data and import to Attio
 - Tag all contacts with conference name, date, and interest tier
@@ -137,5 +136,5 @@ Also calculate (for baseline data, not pass/fail):
 
 - `icp-definition` — define the target attendee profile to guide conference selection
 - `conference-sponsorship-pipeline` — evaluate, score, and select the conference to sponsor
-- `booth-lead-capture` — execute booth operations, capture and qualify leads, same-day enrichment
+- the booth lead capture workflow (see instructions below) — execute booth operations, capture and qualify leads, same-day enrichment
 - `threshold-engine` — evaluate pass/fail against badge scan, qualified lead, and meeting targets

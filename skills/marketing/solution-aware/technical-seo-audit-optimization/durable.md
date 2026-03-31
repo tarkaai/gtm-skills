@@ -16,7 +16,6 @@ slug: "technical-seo-audit-optimization"
 install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimization"
 drills:
   - autonomous-optimization
-  - technical-seo-regression-monitor
   - seo-performance-monitor
 ---
 
@@ -95,7 +94,7 @@ Run the `autonomous-optimization` drill configured for technical SEO metrics. Th
 
 ### 2. Maintain regression defense
 
-The `technical-seo-regression-monitor` drill continues running at full coverage:
+The `autonomous-optimization` drill continues running at full coverage:
 
 1. All monitors from Scalable level remain active (robots.txt, indexation, CWV, sitemap, deployment-triggered)
 2. Add experiment-aware monitoring: the regression monitor knows which experiments are active and excludes those pages from regression alerts (to avoid false positives during experiments)
@@ -155,5 +154,5 @@ When the agent detects a sudden ranking or traffic change that doesn't correlate
 ## Drills Referenced
 
 - `autonomous-optimization` — the core detect-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `technical-seo-regression-monitor` — always-on regression defense with experiment-aware filtering
+- `autonomous-optimization` — always-on regression defense with experiment-aware filtering
 - `seo-performance-monitor` — organic performance tracking with conversion attribution

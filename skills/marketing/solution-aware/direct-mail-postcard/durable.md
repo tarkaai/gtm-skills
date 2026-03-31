@@ -15,7 +15,6 @@ slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
 drills:
   - autonomous-optimization
-  - postcard-ab-testing
   - dashboard-builder
 ---
 
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-The direct mail channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs postcard A/B experiments, runs them through the `postcard-ab-testing` drill, evaluates results, and auto-implements winners. The system converges when successive experiments produce less than 2% improvement — meaning the play has reached its optimal performance given current market conditions.
+The direct mail channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs postcard A/B experiments, runs them through the the postcard ab testing workflow (see instructions below) drill, evaluates results, and auto-implements winners. The system converges when successive experiments produce less than 2% improvement — meaning the play has reached its optimal performance given current market conditions.
 
 ## Leading Indicators
 
@@ -86,7 +85,7 @@ Run the `autonomous-optimization` drill configured for direct mail. This is the 
 4. **Timing variables:** Send day of week (to control approximate delivery day), frequency (weekly vs. biweekly), follow-up timing (3 days vs. 5 days after delivery)
 5. **Follow-up variables:** Email subject line, email copy, LinkedIn vs. email first, number of follow-up touches
 
-**Experiment execution:** When the optimization loop selects a hypothesis, it runs the `postcard-ab-testing` drill:
+**Experiment execution:** When the optimization loop selects a hypothesis, it runs the the postcard ab testing workflow (see instructions below) drill:
 1. Creates the variant template in Lob
 2. Splits the next send batch into control and treatment
 3. Sends both variants
@@ -173,5 +172,5 @@ Even after convergence, the agent should:
 ## Drills Referenced
 
 - `autonomous-optimization` — The core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly
-- `postcard-ab-testing` — Execute the A/B experiments proposed by the optimization loop
+- the postcard ab testing workflow (see instructions below) — Execute the A/B experiments proposed by the optimization loop
 - `dashboard-builder` — Build the PostHog dashboard for real-time direct mail performance monitoring

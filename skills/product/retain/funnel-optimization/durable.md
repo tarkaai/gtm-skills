@@ -16,7 +16,6 @@ slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
   - autonomous-optimization
-  - funnel-optimization-health-monitor
   - dashboard-builder
   - threshold-engine
 ---
@@ -81,7 +80,7 @@ Run the `autonomous-optimization` drill configured for funnel metrics. This is t
 
 ### 2. Configure funnel-specific monitoring
 
-Extend the `funnel-optimization-health-monitor` drill for Durable-level operation:
+Extend the `autonomous-optimization` drill for Durable-level operation:
 
 **Per-funnel anomaly baselines:**
 - Signup funnel: baseline = Scalable-level conversion rate. Anomaly = >10% sustained deviation.
@@ -215,6 +214,6 @@ If all pass: the play is durable. If any degrades, use the agent's own analytica
 ## Drills Referenced
 
 - `autonomous-optimization` — The core always-on loop: monitor > diagnose > experiment > evaluate > implement. Finds the local maximum and detects convergence.
-- `funnel-optimization-health-monitor` — Extended for Durable with per-funnel/per-segment monitoring and convergence-aware alerting
+- `autonomous-optimization` — Extended for Durable with per-funnel/per-segment monitoring and convergence-aware alerting
 - `dashboard-builder` — Durable-level dashboard with autonomous loop health, convergence tracking, and cumulative impact
 - `threshold-engine` — Continuous evaluation of sustainability over 6 months

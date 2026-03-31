@@ -15,7 +15,6 @@ slug: "newsletter-sponsorships"
 install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
 drills:
   - newsletter-sponsor-booking
-  - newsletter-sponsor-performance-monitor
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -133,6 +132,5 @@ Total: ~10 hours of active work over 4 weeks
 ## Drills Referenced
 
 - `newsletter-sponsor-booking` — book, write, track, and collect results for each placement
-- `newsletter-sponsor-performance-monitor` — dashboard, automated collection, and weekly reporting
 - `posthog-gtm-events` — set up standardized event taxonomy for newsletter sponsorship tracking
 - `threshold-engine` — evaluate aggregate performance against pass thresholds

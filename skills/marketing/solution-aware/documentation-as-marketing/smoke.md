@@ -15,7 +15,6 @@ slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
   - docs-site-seo-audit
-  - docs-content-production
   - threshold-engine
 ---
 
@@ -56,7 +55,7 @@ Act on the critical issues first:
 
 ### 2. Produce and publish 5-8 targeted docs pages
 
-Run the `docs-content-production` drill with the top 5-8 keyword opportunities from the audit. For each keyword:
+Run the the docs content production workflow (see instructions below) drill with the top 5-8 keyword opportunities from the audit. For each keyword:
 
 - Classify the page type (getting started, how-to, integration guide, API reference, troubleshooting)
 - Generate the page content via Anthropic API with proper keyword targeting, code examples, and structured format
@@ -117,5 +116,5 @@ If PASS, proceed to Baseline. If FAIL, diagnose: are pages indexed? If indexed b
 ## Drills Referenced
 
 - `docs-site-seo-audit` — audit docs site SEO health, identify keyword gaps and technical issues
-- `docs-content-production` — generate, quality-check, and publish SEO-targeted docs pages
+- the docs content production workflow (see instructions below) — generate, quality-check, and publish SEO-targeted docs pages
 - `threshold-engine` — evaluate 4-week results against pass threshold

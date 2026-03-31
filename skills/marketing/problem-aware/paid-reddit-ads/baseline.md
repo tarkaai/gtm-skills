@@ -13,7 +13,6 @@ kpis: ["Click-through rate", "Cost per click", "Cost per acquisition", "Landing 
 slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
-  - reddit-ads-performance-monitor
   - posthog-gtm-events
   - budget-allocation
 ---
@@ -138,6 +137,5 @@ Document the full Baseline report:
 
 ## Drills Referenced
 
-- `reddit-ads-performance-monitor` — daily health checks, PostHog dashboard, weekly optimization reports
 - `posthog-gtm-events` — full event taxonomy for tracking the Reddit Ads funnel
 - `budget-allocation` — data-driven budget distribution across subreddit clusters

@@ -15,8 +15,6 @@ slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
 drills:
   - autonomous-optimization
-  - payment-recovery-health-monitor
-  - dunning-sequence-automation
 ---
 
 # Payment Failure Recovery — Durable Intelligence
@@ -93,7 +91,7 @@ In addition to the standard `autonomous-optimization` guardrails, add recovery-s
 
 ### 3. Deploy the health monitor at Durable cadence
 
-Run the `payment-recovery-health-monitor` drill with enhanced frequency:
+Run the `autonomous-optimization` drill with enhanced frequency:
 - Health check: runs daily (not just weekly)
 - Recovery funnel analysis: runs per-segment daily to detect segment-specific degradation early
 - Weekly health report: integrates with the `autonomous-optimization` weekly brief into a single combined report
@@ -103,7 +101,7 @@ The health monitor feeds data to the autonomous optimization loop. When it detec
 
 ### 4. Maintain the dunning system
 
-The `dunning-sequence-automation` drill continues to run at Durable level. The autonomous optimization loop may modify:
+The the dunning sequence automation workflow (see instructions below) drill continues to run at Durable level. The autonomous optimization loop may modify:
 - Email templates (subject lines, copy, CTA placement)
 - Sequence cadence (timing between steps)
 - Segment routing rules (which failure types get which paths)
@@ -166,5 +164,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum
-- `payment-recovery-health-monitor` — monitors recovery rates, failure types, and dunning effectiveness at Durable cadence with daily segment analysis
-- `dunning-sequence-automation` — executes the current best dunning configuration, updated by the optimization loop
+- `autonomous-optimization` — monitors recovery rates, failure types, and dunning effectiveness at Durable cadence with daily segment analysis
+- the dunning sequence automation workflow (see instructions below) — executes the current best dunning configuration, updated by the optimization loop

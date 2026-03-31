@@ -16,8 +16,6 @@ slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
   - autonomous-optimization
-  - competitive-intelligence-automation
-  - competitive-win-loss-reporting
 ---
 
 # Competitive Situation Assessment — Durable Intelligence
@@ -101,7 +99,7 @@ Run the `autonomous-optimization` drill configured for competitive situation ana
 
 ### 2. Keep competitive intelligence fresh
 
-Continue running the `competitive-intelligence-automation` drill (from Scalable) with these Durable-level enhancements:
+Continue running the the competitive intelligence automation workflow (see instructions below) drill (from Scalable) with these Durable-level enhancements:
 
 - **Increase competitor monitoring frequency** from weekly to twice-weekly for top 3 competitors
 - **Feed competitor changes into the optimization loop:** When a competitor ships a product change with `competitive_impact` ≥ 3, automatically trigger Phase 2 (Diagnose) for that competitor's positioning strategy
@@ -110,7 +108,7 @@ Continue running the `competitive-intelligence-automation` drill (from Scalable)
 
 ### 3. Generate monthly deep-dive competitive reports
 
-Continue running the `competitive-win-loss-reporting` drill (from Scalable) with Durable-level additions:
+Continue running the `autonomous-optimization` drill (from Scalable) with Durable-level additions:
 
 - **Include optimization experiment results:** which experiments were run, which were adopted, and their measured impact
 - **Convergence tracking per competitor:** for each competitor, are experiments still producing meaningful improvement or has the play reached its local maximum?
@@ -166,5 +164,5 @@ The optimization loop runs indefinitely. However, it detects **convergence** per
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum of competitive win rates
-- `competitive-intelligence-automation` — competitor change monitoring, battlecard delivery, and web behavior triggers (enhanced for Durable frequency)
-- `competitive-win-loss-reporting` — monthly deep-dive competitive reports with optimization experiment results and convergence tracking
+- the competitive intelligence automation workflow (see instructions below) — competitor change monitoring, battlecard delivery, and web behavior triggers (enhanced for Durable frequency)
+- `autonomous-optimization` — monthly deep-dive competitive reports with optimization experiment results and convergence tracking

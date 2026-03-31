@@ -15,7 +15,6 @@ slug: "founder-guest-podcasts"
 install: "npx gtm-skills add marketing/unaware/founder-guest-podcasts"
 drills:
   - autonomous-optimization
-  - podcast-performance-monitor
   - dashboard-builder
 ---
 
@@ -83,7 +82,7 @@ Run the `autonomous-optimization` drill configured for the podcast guesting play
 
 ### 2. Monitor long-tail episode value
 
-Run the `podcast-performance-monitor` drill with Durable-level automation:
+Run the `autonomous-optimization` drill with Durable-level automation:
 - Track lifetime traffic curves for every episode
 - Identify evergreen episodes (still driving traffic after 90 days) — these inform which topics to prioritize for future appearances
 - Detect episodes that drove zero conversions despite traffic — flag CTA or landing page issues
@@ -140,5 +139,5 @@ The `autonomous-optimization` drill detects convergence when 3 consecutive exper
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum for podcast guesting
-- `podcast-performance-monitor` — long-tail episode tracking, lifetime ROI analysis, monthly best-performers report
+- `autonomous-optimization` — long-tail episode tracking, lifetime ROI analysis, monthly best-performers report
 - `dashboard-builder` — executive-level strategic dashboard for podcast channel health

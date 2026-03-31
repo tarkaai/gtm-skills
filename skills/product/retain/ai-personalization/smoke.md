@@ -13,8 +13,6 @@ kpis: ["Personalization surface engagement rate", "Personalized vs control reten
 slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
 drills:
-  - user-behavior-segmentation
-  - personalization-rule-engine
   - threshold-engine
 ---
 
@@ -37,7 +35,7 @@ At least 40% of users in the test group interact with the personalized surface (
 
 ### 1. Build behavioral segments from existing data
 
-Run the `user-behavior-segmentation` drill. Focus on the minimum viable version:
+Run the the user behavior segmentation workflow (see instructions below) drill. Focus on the minimum viable version:
 
 1. Query PostHog for 21 days of per-user event data
 2. Compute the three behavioral dimensions: primary workflow, session pattern, collaboration level
@@ -49,7 +47,7 @@ Do NOT build the full n8n daily pipeline yet. Run the segmentation as a one-time
 
 ### 2. Configure one personalized surface per segment
 
-Run the `personalization-rule-engine` drill. For the smoke test, pick ONE surface to personalize — the highest-traffic surface in your product (typically the dashboard or home screen). For each segment:
+Run the the personalization rule engine workflow (see instructions below) drill. For the smoke test, pick ONE surface to personalize — the highest-traffic surface in your product (typically the dashboard or home screen). For each segment:
 
 1. Create a PostHog feature flag `personalization-smoke-dashboard` with multivariate variants matching your segments
 2. Design a variant per segment: different hero content, CTA, or highlighted feature
@@ -102,6 +100,6 @@ If FAIL, diagnose: which segments engaged vs which did not? Was the surface choi
 
 ## Drills Referenced
 
-- `user-behavior-segmentation` — classify users into behavioral segments from PostHog data
-- `personalization-rule-engine` — configure personalized surfaces and messages per segment
+- the user behavior segmentation workflow (see instructions below) — classify users into behavioral segments from PostHog data
+- the personalization rule engine workflow (see instructions below) — configure personalized surfaces and messages per segment
 - `threshold-engine` — evaluate engagement rate against pass/fail threshold

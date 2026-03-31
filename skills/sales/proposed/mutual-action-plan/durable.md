@@ -18,7 +18,6 @@ slug: "mutual-action-plan"
 install: "npx gtm-skills add sales/proposed/mutual-action-plan"
 drills:
   - autonomous-optimization
-  - map-risk-scoring
   - dashboard-builder
 ---
 
@@ -113,7 +112,7 @@ The agent pulls PostHog experiment results and runs `experiment-evaluation`:
 
 ### 2. Deploy continuous risk model calibration
 
-Extend the `map-risk-scoring` drill with autonomous recalibration.
+Extend the the map risk scoring workflow (see instructions below) drill with autonomous recalibration.
 
 **Monthly model calibration (n8n cron, 1st of each month):**
 1. Pull all deals that closed in the last 30 days with MAP data
@@ -266,5 +265,5 @@ Compute over the full 6-month period:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect MAP performance anomalies, generate improvement hypotheses, run A/B experiments on templates and cadences, evaluate results, auto-implement winners, and produce weekly optimization briefs. Converges when successive experiments produce < 2% improvement.
-- `map-risk-scoring` — continuous risk model calibration: monthly accuracy tracking, automatic weight adjustment, deal-type-specific scoring, and intervention effectiveness feedback loop
+- the map risk scoring workflow (see instructions below) — continuous risk model calibration: monthly accuracy tracking, automatic weight adjustment, deal-type-specific scoring, and intervention effectiveness feedback loop
 - `dashboard-builder` — build the Durable PostHog dashboard with velocity lift trends, risk prediction accuracy, forecast tracking, experiment history, convergence indicators, and model drift alerts

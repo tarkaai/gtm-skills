@@ -16,7 +16,6 @@ kpis: ["Registrations per workshop", "Show rate", "Exercise completion rate", "N
 slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
 drills:
-  - workshop-pipeline
   - posthog-gtm-events
 ---
 
@@ -64,7 +63,7 @@ Build a PostHog funnel: `workshop_page_viewed` -> `workshop_registered` -> `work
 
 ### 2. Upgrade workshop operations
 
-Run the `workshop-pipeline` drill with these Baseline-level enhancements:
+Run the the workshop pipeline workflow (see instructions below) drill with these Baseline-level enhancements:
 
 - Move to Riverside ($19/mo Standard) for recording capability. Every session gets recorded for replay distribution and future content repurposing.
 - Build automated email sequences in Loops: confirmation with prerequisites on registration, prep check 3 days before ("Have you set up [tool/account]?"), reminder 1 day before with setup verification, and "starting in 1 hour" reminder with join link. Each prep email re-sells the outcome: "Tomorrow you will build [deliverable]."
@@ -144,6 +143,6 @@ Identify: Which topic drove the most registrations? Which difficulty level had t
 
 ## Drills Referenced
 
-- `workshop-pipeline` -- registration, curriculum design, delivery, and follow-up operations
+- the workshop pipeline workflow (see instructions below) -- registration, curriculum design, delivery, and follow-up operations
 - `posthog-gtm-events` -- implement standard workshop event taxonomy for measurement
 - the workshop attendee nurture workflow (see instructions below) -- automated post-workshop segmented nurture based on participation depth

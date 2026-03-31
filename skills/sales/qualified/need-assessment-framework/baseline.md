@@ -16,7 +16,6 @@ install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
   - cold-email-sequence
   - linkedin-outreach
-  - need-discovery-call
   - enrich-and-score
   - posthog-gtm-events
 ---
@@ -94,10 +93,10 @@ Connect PostHog to Attio via n8n webhook so deal stage changes fire the correspo
 
 **Human action required:** Conduct discovery calls as they get booked from outreach replies.
 
-For each call, run the `need-discovery-call` drill:
+For each call, run the the need discovery call workflow (see instructions below) drill:
 1. Pre-call: review enrichment data and need hypothesis, generate tailored questions focused on unexplored or uncertain categories
 2. During the call: probe each need category for severity, business impact, prior solution attempts, and urgency
-3. Post-call: extract need signals from Fireflies transcript using `call-transcript-need-extraction`, assign per-category severity scores, update Attio
+3. Post-call: extract need signals from Fireflies transcript using the call transcript need extraction workflow (see instructions below), assign per-category severity scores, update Attio
 4. Route: move deal to the correct pipeline stage based on total score and Critical need count
 
 Track the delta between pre-enrichment hypothesis scores and post-call scores for each prospect. This calibrates your enrichment model.
@@ -154,6 +153,6 @@ If FAIL, diagnose:
 
 - `cold-email-sequence` — 4-step cold email sequence in Instantly with need-signal-personalized copy
 - `linkedin-outreach` — parallel LinkedIn connection + message sequence for need validation
-- `need-discovery-call` — structured need discovery call lifecycle with LLM-based need extraction
+- the need discovery call workflow (see instructions below) — structured need discovery call lifecycle with LLM-based need extraction
 - `enrich-and-score` — Clay enrichment with need-relevant signal scoring
 - `posthog-gtm-events` — event tracking for the full need assessment funnel

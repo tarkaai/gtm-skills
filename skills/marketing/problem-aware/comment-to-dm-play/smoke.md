@@ -15,7 +15,6 @@ install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
   - icp-definition
   - prospect-content-discovery
-  - comment-crafting
   - threshold-engine
 ---
 
@@ -51,7 +50,7 @@ Turn on LinkedIn bell notifications for each Tier 1 prospect. Follow all Tier 2 
 
 ### 3. Execute 5 days of commenting
 
-Run the `comment-crafting` drill daily for 5 business days:
+Run the the comment crafting workflow (see instructions below) drill daily for 5 business days:
 
 **Each morning (20-30 minutes):**
 1. Check LinkedIn notifications for new posts from your target list
@@ -112,5 +111,5 @@ If PASS, proceed to Baseline. If FAIL, diagnose: Was it comment quality (low rep
 
 - `icp-definition` — define who to target with comments
 - `prospect-content-discovery` — find posts to comment on daily
-- `comment-crafting` — write comments that build familiarity
+- the comment crafting workflow (see instructions below) — write comments that build familiarity
 - `threshold-engine` — evaluate pass/fail against targets

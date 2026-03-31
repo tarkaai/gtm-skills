@@ -15,7 +15,6 @@ slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
   - affiliate-program-design
-  - affiliate-recruitment-outreach
 ---
 
 # Reseller & Affiliate Program — Smoke Test
@@ -49,7 +48,7 @@ Run the `affiliate-program-design` drill with a minimal scope:
 
 ### 2. Recruit 5 partners from your network
 
-Run the `affiliate-recruitment-outreach` drill with a reduced scope — warm outreach only, no cold:
+Run the the affiliate recruitment outreach workflow (see instructions below) drill with a reduced scope — warm outreach only, no cold:
 
 - Source 5-10 candidates from your existing network: current customers who are consultants or agency owners, founders of complementary products you have a relationship with, advisors or investors with relevant audiences.
 - Personalize each outreach. Reference your existing relationship and explain the specific value prop: "You already know [product] — now earn [commission%] for every customer you refer."
@@ -106,4 +105,4 @@ Total: ~6 hours of active work over 1-2 weeks (waiting for partner activation)
 ## Drills Referenced
 
 - `affiliate-program-design` — set up affiliate tracking platform, configure commissions, build onboarding kit
-- `affiliate-recruitment-outreach` — source and recruit partners from your existing network (warm outreach only at this level)
+- the affiliate recruitment outreach workflow (see instructions below) — source and recruit partners from your existing network (warm outreach only at this level)

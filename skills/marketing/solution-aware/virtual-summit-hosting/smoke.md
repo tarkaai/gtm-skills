@@ -15,7 +15,6 @@ slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
 drills:
   - icp-definition
-  - summit-pipeline
   - threshold-engine
 ---
 
@@ -51,7 +50,7 @@ Document in Attio:
 
 ### 2. Build the summit and registration funnel
 
-Run the `summit-pipeline` drill. This creates:
+Run the the summit pipeline workflow (see instructions below) drill. This creates:
 
 - A registration landing page with: summit theme and value proposition, full agenda with session titles and speaker bios, date/time with timezone, registration form (name, email, company, role, company size), and social proof (speaker company logos).
 - Cal.com event scheduling for speaker prep calls.
@@ -65,11 +64,11 @@ Configure 4-6 sessions across a half-day format (4 hours including breaks):
 - Session 4: Workshop or live demo (40 min) — show solutions in action
 - Sessions 5-6 (optional): Lightning talks or AMA
 
-Recruit 6-10 speakers following the `summit-pipeline` drill's speaker recruitment process. Prioritize: 2-3 customer speakers (most credible), 2-3 industry experts (draw registrations), 1-2 internal speakers (your unique perspective).
+Recruit 6-10 speakers following the the summit pipeline workflow (see instructions below) drill's speaker recruitment process. Prioritize: 2-3 customer speakers (most credible), 2-3 industry experts (draw registrations), 1-2 internal speakers (your unique perspective).
 
 ### 3. Promote the summit
 
-Execute the `summit-pipeline` drill's promotion engine:
+Execute the the summit pipeline workflow (see instructions below) drill's promotion engine:
 
 1. Send a targeted email via Loops to your subscriber list, segmented by ICP relevance. Lead with the pain point, not the event logistics.
 2. Post on LinkedIn: announcement post with the registration link. Write a hook that leads with the problem the summit addresses.
@@ -81,7 +80,7 @@ Execute the `summit-pipeline` drill's promotion engine:
 
 ### 4. Execute post-summit follow-up
 
-Within 4 hours of the summit closing, execute the post-summit nurture steps from the `summit-pipeline` drill:
+Within 4 hours of the summit closing, execute the post-summit nurture steps from the the summit pipeline workflow (see instructions below) drill:
 
 1. Export session-level attendance data from the event platform (Riverside, Zoom).
 2. Tag all registrants in Attio by tier: Tier 1 (attended 4+ sessions + engaged), Tier 2 (2-3 sessions + engaged), Tier 3 (1-2 sessions passive), Tier 4 (no-show).
@@ -134,5 +133,5 @@ Run the `threshold-engine` drill 14 days after the summit. Measure:
 ## Drills Referenced
 
 - `icp-definition` — defines the target audience and pain points that determine summit theme selection
-- `summit-pipeline` — builds the full summit lifecycle: speaker recruitment, registration, promotion, production, follow-up
+- the summit pipeline workflow (see instructions below) — builds the full summit lifecycle: speaker recruitment, registration, promotion, production, follow-up
 - `threshold-engine` — evaluates final metrics against pass/fail criteria and recommends next action

@@ -15,9 +15,7 @@ kpis: ["Cost per qualified lead (CPqL)", "View rate (VTR)", "View-to-lead conver
 slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
-  - youtube-preroll-creative-pipeline
   - youtube-preroll-audience-builder
-  - youtube-preroll-lead-routing
   - retargeting-setup
   - budget-allocation
   - posthog-gtm-events
@@ -59,14 +57,14 @@ Tag every event with properties: `campaign_type` (placement/custom-intent/topic)
 
 ### 2. Build lead routing automation
 
-Run the `youtube-preroll-lead-routing` drill to set up the full pipeline:
+Run the the youtube preroll lead routing workflow (see instructions below) drill to set up the full pipeline:
 - n8n workflow on form submission webhook: deduplicate against Attio, enrich via Clay, score against ICP, create contact in Attio, trigger Loops nurture sequence
 - High-value lead alert (ICP score >= 80): Slack notification with name, company, title, which ad variant they responded to
 - Target: form submission to CRM entry in under 5 minutes
 
 ### 3. Expand creative from smoke test winners
 
-Run the `youtube-preroll-creative-pipeline` drill at baseline volume:
+Run the the youtube preroll creative pipeline workflow (see instructions below) drill at baseline volume:
 - Take the winning hook type from smoke (stat/question/proof) and create 3 new scripts with different supporting data or angles
 - Add a second pain point: create 3 scripts for it (one per hook type)
 - Total: 6-9 active video ad variants across 2 pain points
@@ -165,9 +163,9 @@ Decision:
 
 ## Drills Referenced
 
-- `youtube-preroll-creative-pipeline` — expand winning smoke creative to 6-9 variants across 2 pain points
+- the youtube preroll creative pipeline workflow (see instructions below) — expand winning smoke creative to 6-9 variants across 2 pain points
 - `youtube-preroll-audience-builder` — expand to 50-100 placements, 2 custom intent segments, and topic targeting
-- `youtube-preroll-lead-routing` — automate lead flow from landing page form to CRM with enrichment and nurture
+- the youtube preroll lead routing workflow (see instructions below) — automate lead flow from landing page form to CRM with enrichment and nurture
 - `retargeting-setup` — capture 75%+ viewers and landing page visitors for bumper ad and display retargeting
 - `budget-allocation` — distribute budget across 3 campaign types and retargeting
 - `posthog-gtm-events` — set up end-to-end event tracking for the YouTube pre-roll funnel

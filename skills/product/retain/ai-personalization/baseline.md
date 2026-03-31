@@ -62,7 +62,7 @@ Run the `engagement-score-computation` drill:
 3. Write scores to Attio custom attributes and PostHog person properties
 4. Create PostHog cohorts for each engagement tier (Power User, Engaged, Casual, At Risk, Dormant)
 
-The behavioral segmentation pipeline (from `user-behavior-segmentation`, set up at Smoke) should now also run daily via n8n cron at 06:00 UTC. Verify both pipelines run in sequence: segmentation at 06:00, scoring at 07:00.
+The behavioral segmentation pipeline (from the user behavior segmentation workflow (see instructions below), set up at Smoke) should now also run daily via n8n cron at 06:00 UTC. Verify both pipelines run in sequence: segmentation at 06:00, scoring at 07:00.
 
 ### 3. Expand personalization to multiple surfaces and channels
 
@@ -75,7 +75,7 @@ Run the `onboarding-personalization` drill to add persona-specific onboarding to
 
 Extend the personalization rule engine from Smoke:
 1. Add a second personalized surface (e.g., sidebar recommendations, feature discovery tooltips, or contextual help)
-2. Add segment-specific Loops email sequences (5 emails over 21 days per segment — see `personalization-rule-engine` drill for the structure)
+2. Add segment-specific Loops email sequences (5 emails over 21 days per segment — see the personalization rule engine workflow (see instructions below) drill for the structure)
 3. Configure the n8n orchestration workflow that handles segment transitions: removes users from old sequences, enrolls in new ones, updates Intercom properties
 
 ### 4. Run the baseline with a proper control group

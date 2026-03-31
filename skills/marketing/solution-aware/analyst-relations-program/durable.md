@@ -16,7 +16,6 @@ slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
 drills:
   - autonomous-optimization
-  - analyst-briefing-monitor
 ---
 
 # Analyst Relations Program — Durable Intelligence
@@ -101,7 +100,7 @@ Run the `autonomous-optimization` drill configured for the analyst relations pro
 
 ### 2. Deploy Analyst Briefing Monitoring
 
-Run the `analyst-briefing-monitor` drill at full scale:
+Run the `autonomous-optimization` drill at full scale:
 
 1. Maintain the PostHog dashboard (briefing pipeline, report tracking, pipeline influence, relationship health)
 2. Keep anomaly detection thresholds calibrated quarterly
@@ -184,4 +183,4 @@ The optimizer should detect external shifts:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in analyst relations KPIs, generate hypotheses (briefing template effectiveness, nurture format, sales integration, relationship re-engagement), run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `analyst-briefing-monitor` — continuous monitoring of briefing pipeline, report mentions, analyst-influenced pipeline, and relationship health. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — continuous monitoring of briefing pipeline, report mentions, analyst-influenced pipeline, and relationship health. Provides the data layer the optimization loop reads from.

@@ -14,7 +14,6 @@ kpis: ["Activation rate (control vs treatment)", "Tour completion rate by varian
 slug: "onboarding-experiment"
 install: "npx gtm-skills add product/onboard/onboarding-experiment"
 drills:
-  - onboarding-experiment-orchestration
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ Run one structured A/B test on the single highest-drop-off onboarding surface. T
 
 ### 1. Identify the test target and design the experiment
 
-Run the `onboarding-experiment-orchestration` drill. This produces:
+Run the the onboarding experiment orchestration workflow (see instructions below) drill. This produces:
 - A PostHog funnel analysis of your current onboarding flow showing per-step drop-off rates
 - The single highest-drop-off surface identified (product tour, email, empty state, or checklist)
 - A structured hypothesis: "If we [change X], then [metric Y] will [improve by Z], because [data-supported reasoning]"
@@ -97,5 +96,5 @@ Decision tree:
 
 ## Drills Referenced
 
-- `onboarding-experiment-orchestration` — identifies the highest-drop-off onboarding surface, structures the hypothesis, sets up the PostHog experiment with feature flag splitting and per-variant tracking
+- the onboarding experiment orchestration workflow (see instructions below) — identifies the highest-drop-off onboarding surface, structures the hypothesis, sets up the PostHog experiment with feature flag splitting and per-variant tracking
 - `threshold-engine` — evaluates treatment vs control activation rates against pass/fail criteria and recommends next action

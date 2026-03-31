@@ -16,7 +16,6 @@ slug: "feature-discovery-tooltips"
 install: "npx gtm-skills add product/retain/feature-discovery-tooltips"
 drills:
   - autonomous-optimization
-  - tooltip-performance-monitor
   - tooltip-targeting-automation
 ---
 
@@ -92,7 +91,7 @@ Run the `autonomous-optimization` drill to configure the always-on monitor-diagn
 
 ### 2. Configure tooltip lifecycle management
 
-Run the `tooltip-performance-monitor` drill with Durable-level configuration:
+Run the `autonomous-optimization` drill with Durable-level configuration:
 
 - **Auto-retirement**: Tooltips that meet any of these criteria are automatically disabled:
   - Active 60+ days AND CTR below 10%
@@ -140,5 +139,5 @@ This level runs continuously. Monthly review criteria:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core monitor-diagnose-experiment-evaluate-implement loop that makes this level self-optimizing
-- `tooltip-performance-monitor` -- measurement layer with auto-retirement pipeline and fatigue detection
+- `autonomous-optimization` -- measurement layer with auto-retirement pipeline and fatigue detection
 - `tooltip-targeting-automation` -- personalized tooltip delivery pipeline running in maintenance mode

@@ -16,7 +16,6 @@ slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
 drills:
   - icp-definition
-  - conference-planning-pipeline
   - threshold-engine
 ---
 
@@ -51,7 +50,7 @@ Run the `icp-definition` drill scoped to your conference audience. For this smok
 
 ### 2. Plan the conference structure
 
-Run the `conference-planning-pipeline` drill for a virtual half-day conference:
+Run the the conference planning pipeline workflow (see instructions below) drill for a virtual half-day conference:
 
 - **Format**: Virtual, half-day (3-4 hours including breaks). Use Zoom (free for 40-min sessions, $13.33/mo Pro for longer) or Google Meet (free with Workspace) for the live sessions.
 - **Agenda**: Plan 4-5 sessions:
@@ -62,7 +61,7 @@ Run the `conference-planning-pipeline` drill for a virtual half-day conference:
   - Closing + roadmap preview (15 min): What is coming next. End with a clear CTA.
 - **Breaks**: 10-minute breaks between sessions. These reduce drop-off and give people time to process.
 
-Using `conference-planning-pipeline`, set up registration via Luma (free) with a Tally form for detailed attendee data capture. Configure the registration webhook to create contacts in Attio and enroll them in the conference email sequence in Loops.
+Using the conference planning pipeline workflow (see instructions below), set up registration via Luma (free) with a Tally form for detailed attendee data capture. Configure the registration webhook to create contacts in Attio and enroll them in the conference email sequence in Loops.
 
 ### 3. Recruit speakers
 
@@ -155,5 +154,5 @@ Run the `threshold-engine` drill to measure:
 ## Drills Referenced
 
 - `icp-definition` -- define who should attend and what theme to build around
-- `conference-planning-pipeline` -- set up registration, agenda, speaker coordination, promotion, and follow-up operations
+- the conference planning pipeline workflow (see instructions below) -- set up registration, agenda, speaker coordination, promotion, and follow-up operations
 - `threshold-engine` -- evaluate pass/fail against registration, attendance, and expansion conversation targets

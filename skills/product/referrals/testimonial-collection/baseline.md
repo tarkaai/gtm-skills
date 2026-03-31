@@ -15,7 +15,6 @@ slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
 drills:
   - posthog-gtm-events
-  - testimonial-request-pipeline
   - nps-feedback-loop
 ---
 # Systematic Testimonial Collection — Baseline Run
@@ -46,7 +45,7 @@ Run the `posthog-gtm-events` drill to set up the full event taxonomy for this pl
 Build a PostHog funnel: `testimonial_requested` → `testimonial_form_opened` → `testimonial_submitted` → `testimonial_published`. This funnel is the core measurement for all optimization going forward.
 
 ### 2. Automate the request pipeline
-Run the full `testimonial-request-pipeline` drill (all 6 steps). This converts the manual Smoke process into always-on automation:
+Run the full the testimonial request pipeline workflow (see instructions below) drill (all 6 steps). This converts the manual Smoke process into always-on automation:
 
 - PostHog cohort auto-identifies eligible candidates daily
 - n8n workflow listens for trigger events (workflow_success, milestone_reached, nps_submitted, subscription_renewed, team_expanded)
@@ -93,7 +92,7 @@ Measure against: ≥25 testimonials with average quality ≥3.5 and ≥40% submi
 
 ## Drills Referenced
 - `posthog-gtm-events` — full testimonial event taxonomy and funnel setup
-- `testimonial-request-pipeline` — automated candidate identification, trigger-based requests, response processing, quality scoring
+- the testimonial request pipeline workflow (see instructions below) — automated candidate identification, trigger-based requests, response processing, quality scoring
 - `nps-feedback-loop` — feed NPS promoters into the testimonial pipeline as high-priority candidates
 
 ---

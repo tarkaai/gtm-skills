@@ -17,7 +17,7 @@ install: "npx gtm-skills add product/referrals/case-study-recruitment"
 drills:
   - case-study-candidate-pipeline
   - case-study-content-scaling
-  - case-study-recruitment-health-monitor
+  - dashboard-builder
 ---
 
 # Customer Story Pipeline — Scalable
@@ -65,7 +65,7 @@ Validate: after the first 2 case studies flow through the scaling pipeline, audi
 
 ### 3. Monitor pipeline health
 
-Run the `case-study-recruitment-health-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Configure the 7 health metrics with Scalable-level targets (pipeline velocity target: 6/month)
 2. Deploy the daily health check workflow
@@ -131,4 +131,4 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 - `case-study-candidate-pipeline` — segmented scoring and vertical-specific outreach
 - `case-study-content-scaling` — derivative asset production and automated deal-matched distribution
-- `case-study-recruitment-health-monitor` — daily health checks, diagnostics, interventions, and weekly reporting
+- `dashboard-builder` — daily health checks, diagnostics, interventions, and weekly reporting

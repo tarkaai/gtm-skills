@@ -14,7 +14,7 @@ slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
 drills:
   - qa-question-discovery
-  - qa-monitoring-automation
+  - dashboard-builder
   - qa-answer-crafting
   - qa-authority-performance-monitor
   - ab-test-orchestrator
@@ -55,7 +55,7 @@ Run `qa-question-discovery` with expanded scope:
 
 3. **Increase Quora keyword coverage**: Expand from 5-10 keywords to 20-30. Add long-tail variants and competitor comparison queries.
 
-Update the `qa-monitoring-automation` workflows to include new platforms and keywords.
+Update the `dashboard-builder` workflows to include new platforms and keywords.
 
 ### 2. Automate answer drafting at scale
 
@@ -149,7 +149,7 @@ Estimated play-specific cost: $50-165/mo
 ## Drills Referenced
 
 - `qa-question-discovery` -- expanded search across additional platforms and tags
-- `qa-monitoring-automation` -- always-on monitoring with expanded platform coverage
+- `dashboard-builder` -- always-on monitoring with expanded platform coverage
 - `qa-answer-crafting` -- batch answer drafting with human review workflow
 - `qa-authority-performance-monitor` -- full-funnel tracking from answers to pipeline
 - `ab-test-orchestrator` -- test answer formats, link placement, and response timing

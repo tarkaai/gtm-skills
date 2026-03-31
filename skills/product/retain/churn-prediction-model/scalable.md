@@ -16,7 +16,7 @@ drills:
   - churn-signal-extraction
   - churn-intervention-routing
   - ab-test-orchestrator
-  - churn-model-health-monitor
+  - dashboard-builder
 ---
 
 # AI Churn Prediction — Scalable Automation
@@ -72,7 +72,7 @@ For each test, use PostHog feature flags to split traffic and measure save rate 
 
 ### 4. Deploy the model health monitor
 
-Run the `churn-model-health-monitor` drill to set up ongoing monitoring:
+Run the `dashboard-builder` drill to set up ongoing monitoring:
 
 - PostHog dashboard with prediction accuracy, intervention effectiveness, model calibration, and population distribution panels
 - Weekly automated health check that alerts if false negative rate exceeds 15% or save rate drops below 10%
@@ -127,4 +127,4 @@ If PASS, proceed to Durable. If FAIL, identify the weakest segment, run targeted
 - `churn-signal-extraction` — persona-segmented daily scoring with per-segment baselines
 - `churn-intervention-routing` — persona-specific intervention templates and routing logic
 - `ab-test-orchestrator` — systematic A/B testing of intervention variations
-- `churn-model-health-monitor` — ongoing monitoring of prediction accuracy, save rates, and calibration drift
+- `dashboard-builder` — ongoing monitoring of prediction accuracy, save rates, and calibration drift

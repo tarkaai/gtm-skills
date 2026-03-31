@@ -15,7 +15,6 @@ slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
   - posthog-gtm-events
-  - docs-content-production
   - seo-performance-monitor
   - threshold-engine
 ---
@@ -55,7 +54,7 @@ Build PostHog funnels:
 
 ### 2. Expand docs content to 20-30 pages
 
-Run the `docs-content-production` drill to produce the next 15-22 docs pages. Use the keyword gap list from the Smoke-level audit, plus new gaps identified from 4 weeks of GSC impression data.
+Run the the docs content production workflow (see instructions below) drill to produce the next 15-22 docs pages. Use the keyword gap list from the Smoke-level audit, plus new gaps identified from 4 weeks of GSC impression data.
 
 Prioritize page types that convert best at Solution Aware stage:
 - **Integration guides** (highest intent — "how to connect {your product} to {their tool}")
@@ -142,7 +141,7 @@ If PASS, proceed to Scalable. If FAIL, diagnose the weakest point: if traffic is
 ## Drills Referenced
 
 - `posthog-gtm-events` — set up standard event taxonomy and funnels for docs tracking
-- `docs-content-production` — generate, quality-check, and publish the next 15-22 docs pages
+- the docs content production workflow (see instructions below) — generate, quality-check, and publish the next 15-22 docs pages
 - `seo-performance-monitor` — always-on tracking of rankings, traffic, indexation with anomaly alerts
 - the docs lead capture setup workflow (see instructions below) — deploy CTAs, lead routing, nurture sequences, and lead scoring for docs traffic
 - `threshold-engine` — evaluate 8-week results against pass threshold

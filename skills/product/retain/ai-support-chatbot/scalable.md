@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
   - support-ticket-analysis
   - support-churn-correlation
-  - chatbot-knowledge-pipeline
 ---
 
 # AI In-App Support — Scalable Automation
@@ -60,7 +59,7 @@ This creates a feedback loop: the chatbot generates structured support data, whi
 
 ### 3. Scale the knowledge pipeline
 
-Upgrade the `chatbot-knowledge-pipeline` drill from weekly to twice-weekly runs:
+Upgrade the the chatbot knowledge pipeline workflow (see instructions below) drill from weekly to twice-weekly runs:
 - Monday and Thursday at 6am
 - Reduce the gap threshold from 3 occurrences to 2 (catch gaps faster)
 - Add a "product launch" trigger: when a new feature ships, proactively generate help articles from the feature's documentation before users start asking questions
@@ -123,4 +122,4 @@ If all PASS, proceed to Durable. If resolution rate plateaus, run a deep analysi
 
 - `support-ticket-analysis` — classifies all support tickets by category/severity/sentiment, aggregates by account for churn analysis
 - `support-churn-correlation` — identifies which ticket patterns predict churn, scores accounts, routes alerts to CS
-- `chatbot-knowledge-pipeline` — twice-weekly gap detection and article generation, now with proactive coverage for product launches
+- the chatbot knowledge pipeline workflow (see instructions below) — twice-weekly gap detection and article generation, now with proactive coverage for product launches

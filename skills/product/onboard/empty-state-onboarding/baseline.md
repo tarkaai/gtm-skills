@@ -14,7 +14,6 @@ kpis: ["Empty state CTR per surface", "Activation rate (treatment vs control)", 
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
 drills:
-  - empty-state-design
   - onboarding-sequence-design
   - activation-optimization
 ---
@@ -38,7 +37,7 @@ All P0 empty state surfaces have been redesigned and deployed. An onboarding ema
 
 ### 1. Expand empty state design to all P0 surfaces
 
-Run the `empty-state-design` drill for every remaining P0 empty state identified in the Smoke audit. For each surface:
+Run the the empty state design workflow (see instructions below) drill for every remaining P0 empty state identified in the Smoke audit. For each surface:
 1. Design the contextual CTA, templates or sample data, and secondary help link
 2. Implement PostHog tracking (`empty_state_viewed`, `empty_state_cta_clicked`, `first_item_created`)
 3. Deploy behind the same PostHog feature flag used at Smoke, so all P0 surfaces are treated together
@@ -118,6 +117,6 @@ If FAIL: Identify the weakest P0 surface (lowest CTR) and the weakest email (low
 
 ## Drills Referenced
 
-- `empty-state-design` — design and implement P0 empty states with tracking
+- the empty state design workflow (see instructions below) — design and implement P0 empty states with tracking
 - `onboarding-sequence-design` — build the 3-email bridge sequence for non-converting users
 - `activation-optimization` — identify and fix the biggest drop-off between CTA click and activation

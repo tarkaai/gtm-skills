@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
   - win-loss-interview-pipeline
   - win-loss-insight-extraction
-  - win-loss-reporting
   - dashboard-builder
   - threshold-engine
 ---
@@ -53,7 +52,7 @@ Build an n8n mega-workflow (or set of coordinated workflows) that runs the entir
 - Friday: Run a mini-report: this week's interviews, new insights, any alerts. Post to #winloss Slack channel.
 
 **Monthly cycle (automated):**
-- Generate the full monthly win/loss report via the `win-loss-reporting` drill
+- Generate the full monthly win/loss report via the the win loss reporting workflow (see instructions below) drill
 - Compare current month's metrics to the previous 3 months. Flag any metric that degraded >15%.
 - For each degrading metric, use Claude API to generate a root cause hypothesis and 2-3 recommended countermeasures
 - Post the monthly report with recommendations to leadership
@@ -100,7 +99,7 @@ Set up agent-driven optimization of the interview pipeline itself:
 
 Create a quarterly executive brief that synthesizes 3 months of win/loss intelligence:
 
-Using the `win-loss-reporting` drill output for each month, plus the strategic drift detector output, generate:
+Using the the win loss reporting workflow (see instructions below) drill output for each month, plus the strategic drift detector output, generate:
 
 ```markdown
 # Quarterly Win/Loss Intelligence Brief — {Quarter}
@@ -185,6 +184,6 @@ If all four pass, the play is durable. If any degrades, diagnose and correct usi
 
 - `win-loss-interview-pipeline` — Self-healing interview pipeline with optimized outreach
 - `win-loss-insight-extraction` — Automated AI analysis with quality monitoring
-- `win-loss-reporting` — Monthly automated reports + quarterly executive briefs
+- the win loss reporting workflow (see instructions below) — Monthly automated reports + quarterly executive briefs
 - `dashboard-builder` — PostHog dashboard with alerts and trend detection
 - `threshold-engine` — Continuous evaluation against sustainability thresholds

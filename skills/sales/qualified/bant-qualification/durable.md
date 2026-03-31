@@ -17,7 +17,6 @@ slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
   - autonomous-optimization
-  - bant-qualification-reporting
   - signal-detection
 ---
 
@@ -109,7 +108,7 @@ When a signal fires, automatically:
 
 ### 3. Build durable qualification reporting
 
-Run the `bant-qualification-reporting` drill with Durable-level additions:
+Run the `autonomous-optimization` drill with Durable-level additions:
 
 - **Scoring model drift dashboard:** Track how the scoring model's accuracy changes over time. If the model that was 80% accurate in month 1 drops to 65% in month 3, the autonomous optimization loop should have detected and addressed this — if it hasn't, flag for strategic review.
 - **Experiment performance tracking:** Cumulative impact of all experiments. How much has the model improved since Scalable level?
@@ -175,5 +174,5 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on optimization loop: monitor > diagnose > experiment > evaluate > implement
-- `bant-qualification-reporting` — durable-level dashboards with model drift tracking, experiment impact, and signal decay analysis
+- `autonomous-optimization` — durable-level dashboards with model drift tracking, experiment impact, and signal decay analysis
 - `signal-detection` — always-on monitoring for BANT buying signals that trigger re-scoring or new lead creation

@@ -17,7 +17,6 @@ slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
 drills:
   - autonomous-optimization
-  - voice-message-performance-monitor
   - signal-detection
 ---
 
@@ -124,7 +123,7 @@ Feed signals into the automated prospect pipeline. The autonomous optimization l
 
 ### 4. Build the voice message performance monitor for Durable
 
-Run the `voice-message-performance-monitor` drill with Durable-level additions:
+Run the `autonomous-optimization` drill with Durable-level additions:
 
 **Additional dashboard panels:**
 - Experiment portfolio: active experiments, completed this month, win rate
@@ -212,5 +211,5 @@ Note: Cost per meeting should trend downward as optimization improves conversion
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Convergence detection.
-- `voice-message-performance-monitor` -- enhanced dashboards with experiment portfolio tracking, script lifecycle, convergence tracker, and monthly trend reports
+- `autonomous-optimization` -- enhanced dashboards with experiment portfolio tracking, script lifecycle, convergence tracker, and monthly trend reports
 - `signal-detection` -- real-time buying signal monitoring feeding the automated prospect pipeline with optimizable signal weighting

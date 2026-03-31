@@ -15,7 +15,6 @@ slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
 drills:
   - autonomous-optimization
-  - integration-pipeline-health-monitor
   - partner-relationship-scoring
 ---
 
@@ -73,7 +72,7 @@ Minimum 7 days or 100 samples per variant, whichever is longer.
 
 ### 2. Monitor integration pipeline health
 
-Run the `integration-pipeline-health-monitor` drill at Durable configuration:
+Run the `autonomous-optimization` drill at Durable configuration:
 - All dashboards and alerts from Scalable level remain active
 - Add `posthog-anomaly-detection` integration for automated partner performance anomaly detection
 - Weekly briefs now include the autonomous optimization report alongside the standard metrics
@@ -143,5 +142,5 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `integration-pipeline-health-monitor` — dashboards, weekly briefs, per-partner ROI, anomaly detection, and reliability monitoring
+- `autonomous-optimization` — dashboards, weekly briefs, per-partner ROI, anomaly detection, and reliability monitoring
 - `partner-relationship-scoring` — monthly partner scoring and tiering to optimize portfolio investment allocation

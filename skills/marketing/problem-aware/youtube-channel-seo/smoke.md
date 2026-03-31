@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
   - icp-definition
   - youtube-keyword-research
-  - youtube-video-publish
   - threshold-engine
 ---
 
@@ -58,7 +57,7 @@ For the Smoke Test, limit scope:
 
 ### 3. Set up recording environment
 
-Using the `obs-recording-setup` fundamental (referenced within `youtube-video-publish`):
+Using the `obs-recording-setup` fundamental (referenced within the youtube video publish workflow (see instructions below)):
 - Install OBS and configure for 1080p screen + webcam recording
 - Test audio quality: record 30 seconds, play back, ensure no echo or background noise
 - Create a basic scene: screen capture for tutorials, webcam-only for thought leadership
@@ -67,7 +66,7 @@ Using the `obs-recording-setup` fundamental (referenced within `youtube-video-pu
 
 ### 4. Produce and publish 4 videos
 
-Run the `youtube-video-publish` drill once per week for 4 weeks. For each video:
+Run the the youtube video publish workflow (see instructions below) drill once per week for 4 weeks. For each video:
 
 1. Agent writes the video script based on the keyword matrix entry
 2. **Human action required:** Founder records the video following the script outline
@@ -121,5 +120,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 - `icp-definition` — define the target audience and their YouTube search behavior
 - `youtube-keyword-research` — find validated search queries with manageable competition
-- `youtube-video-publish` — record, edit, optimize, and upload each video
+- the youtube video publish workflow (see instructions below) — record, edit, optimize, and upload each video
 - `threshold-engine` — evaluate pass/fail against the smoke test threshold

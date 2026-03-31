@@ -15,7 +15,6 @@ slug: "annual-upgrade-incentive"
 install: "npx gtm-skills add product/upsell/annual-upgrade-incentive"
 drills:
   - autonomous-optimization
-  - annual-conversion-health-monitor
 ---
 
 # Monthly to Annual Conversion — Durable Intelligence
@@ -74,7 +73,7 @@ Using the `autonomous-optimization` drill Phase 1, build an n8n workflow (daily 
 1. Queries PostHog for each trigger type's conversion rate over the last 7 days
 2. Queries PostHog for each discount tier's conversion rate over the last 7 days
 3. Compares both against their respective 4-week rolling averages
-4. Checks the offer fatigue cohort size from the `annual-conversion-health-monitor` drill
+4. Checks the offer fatigue cohort size from the `autonomous-optimization` drill
 5. Checks net annual conversion revenue trend: is revenue flat, growing, or declining
 6. Queries Stripe for annual-to-monthly revert count in the last 7 days (regret signal)
 7. Checks annual cohort retention: compare 90-day retention for users who converted to annual in the last 6 months vs monthly users in the same period
@@ -130,7 +129,7 @@ Post the brief to Slack and store in Attio as a note on the annual-upgrade-incen
 
 ### 5. Maintain the health monitor
 
-The `annual-conversion-health-monitor` drill (deployed at Baseline) continues running in parallel. It provides the data layer that the autonomous optimization loop queries. Ensure:
+The `autonomous-optimization` drill (deployed at Baseline) continues running in parallel. It provides the data layer that the autonomous optimization loop queries. Ensure:
 
 - Degradation alerts still fire (redundant check — the optimization loop also monitors, but the health monitor catches issues during experiment cooldown periods)
 - Revenue attribution is accurate (monthly spot-check: does the sum of annual conversion revenue match actual Stripe annual subscription revenue for the period?)
@@ -176,4 +175,4 @@ When ALL trigger types and segments converge, the play is at its local maximum. 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop that makes Durable fundamentally different from Scalable
-- `annual-conversion-health-monitor` — provides the per-trigger funnel data, degradation alerts, fatigue cohorts, retention comparison, and revenue attribution that the optimization loop queries
+- `autonomous-optimization` — provides the per-trigger funnel data, degradation alerts, fatigue cohorts, retention comparison, and revenue attribution that the optimization loop queries

@@ -16,7 +16,6 @@ slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
   - youtube-preroll-audience-builder
-  - youtube-preroll-creative-pipeline
   - ad-campaign-setup
   - landing-page-pipeline
   - threshold-engine
@@ -60,7 +59,7 @@ Run placement channels and custom intent as two separate ad groups so you can co
 
 ### 3. Create 3 video ad variants
 
-Run the `youtube-preroll-creative-pipeline` drill in smoke mode. Produce 3 creative briefs for one pain point:
+Run the the youtube preroll creative pipeline workflow (see instructions below) drill in smoke mode. Produce 3 creative briefs for one pain point:
 - Variant A: Stat hook (lead with a surprising data point about the problem)
 - Variant B: Question hook (ask a question they will answer "yes" to)
 - Variant C: Proof hook (lead with a specific customer/team result)
@@ -159,7 +158,7 @@ Decision:
 ## Drills Referenced
 
 - `youtube-preroll-audience-builder` — research and build 20-50 channel placements + 1 custom intent segment
-- `youtube-preroll-creative-pipeline` — generate 3 video ad scripts and creative briefs for the smoke test
+- the youtube preroll creative pipeline workflow (see instructions below) — generate 3 video ad scripts and creative briefs for the smoke test
 - `ad-campaign-setup` — configure the Google Ads Video campaign, ad groups, and tracking
 - `landing-page-pipeline` — build a landing page with form and PostHog tracking
 - `threshold-engine` — evaluate smoke test results against the pass threshold

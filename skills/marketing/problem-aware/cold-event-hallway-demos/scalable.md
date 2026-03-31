@@ -15,7 +15,6 @@ slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
 drills:
   - event-scouting
-  - hallway-demo-operations
   - follow-up-automation
   - ab-test-orchestrator
   - signal-detection
@@ -55,7 +54,7 @@ Run the `signal-detection` drill to add signal-based event prioritization: if a 
 
 For each event you plan to attend, run pre-event outreach 7-10 days before the event:
 
-Using `hallway-demo-operations` (pre-event step), identify the top 10 targets per event. Then send a personalized LinkedIn message or email:
+Using the hallway demo operations workflow (see instructions below) (pre-event step), identify the top 10 targets per event. Then send a personalized LinkedIn message or email:
 - Reference the specific event and something about their role or company
 - Mention you will be there and would love to grab 5 minutes to show them something relevant to [their pain point]
 - Do NOT pitch the product in the message -- the goal is to schedule an in-person touchpoint, not a remote demo
@@ -133,7 +132,7 @@ If FAIL: review experiment results. If certain event types consistently perform,
 ## Drills Referenced
 
 - `event-scouting` — continuous 90-day event calendar with auto-scoring and enrichment
-- `hallway-demo-operations` — per-event execution with pre-event outreach addition
+- the hallway demo operations workflow (see instructions below) — per-event execution with pre-event outreach addition
 - `follow-up-automation` — n8n workflows for tiered post-event follow-up
 - `ab-test-orchestrator` — systematic testing of demo approaches, openers, CTAs, and timing
 - `signal-detection` — prioritize events where signal-hot accounts will be present

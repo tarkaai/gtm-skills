@@ -15,7 +15,6 @@ slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
   - posthog-gtm-events
-  - deprecation-communication-setup
 ---
 
 # Feature Sunset Communication — Baseline Run
@@ -66,7 +65,7 @@ The tracker runs as a daily n8n workflow starting from the day communication goe
 
 ### 3. Activate full-scale communication
 
-Run the `deprecation-communication-setup` drill at full scale (remove the test cohort feature flag restriction from Smoke). All affected users now receive tier-appropriate communication:
+Run the the deprecation communication setup workflow (see instructions below) drill at full scale (remove the test cohort feature flag restriction from Smoke). All affected users now receive tier-appropriate communication:
 
 - Critical tier: Persistent in-app banner + 3-email sequence + guided migration tour
 - High tier: Persistent in-app banner + 2-email sequence
@@ -124,4 +123,4 @@ If FAIL: Identify whether the failure is in communication (users did not know), 
 
 - `posthog-gtm-events` — instruments the full deprecation event lifecycle for tracking and funnel analysis
 - the deprecation migration tracker workflow (see instructions below) — scores per-user migration progress daily, detects stalls, routes interventions, and generates migration dashboards
-- `deprecation-communication-setup` — deploys tiered in-app and email notifications to all affected users at full scale
+- the deprecation communication setup workflow (see instructions below) — deploys tiered in-app and email notifications to all affected users at full scale

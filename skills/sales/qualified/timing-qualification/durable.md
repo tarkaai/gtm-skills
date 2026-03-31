@@ -17,7 +17,6 @@ slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
   - autonomous-optimization
-  - timing-qualification-reporting
   - signal-detection
 ---
 
@@ -114,7 +113,7 @@ When a signal fires, automatically:
 
 ### 3. Build durable timing intelligence reporting
 
-Run the `timing-qualification-reporting` drill with Durable-level additions:
+Run the `autonomous-optimization` drill with Durable-level additions:
 
 - **Scoring model drift dashboard:** Track how the auto-scoring model's prediction accuracy changes over time. If the model that was 70% accurate in month 1 drops to 55% in month 3, the autonomous optimization loop should have detected and addressed this. If it hasn't, flag for strategic review.
 - **Experiment performance tracking:** Cumulative impact of all experiments. How much has forecast accuracy improved since Scalable level?
@@ -183,5 +182,5 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on optimization loop: monitor > diagnose > experiment > evaluate > implement
-- `timing-qualification-reporting` — durable-level dashboards with model drift tracking, experiment impact, signal decay, and seasonal analysis
+- `autonomous-optimization` — durable-level dashboards with model drift tracking, experiment impact, signal decay, and seasonal analysis
 - `signal-detection` — always-on monitoring for timing-relevant buying signals that trigger re-scoring or new lead creation

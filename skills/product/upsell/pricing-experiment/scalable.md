@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/upsell/pricing-experiment"
 drills:
   - ab-test-orchestrator
   - pricing-experiment-runner
-  - pricing-page-conversion-monitor
+  - dashboard-builder
 ---
 
 # Pricing Tests — Scalable Automation
@@ -75,7 +75,7 @@ For each segment, define specific guardrails calibrated to that segment's baseli
 
 ### 3. Monitor the pricing page conversion funnel
 
-Run the `pricing-page-conversion-monitor` drill to build always-on monitoring of the self-serve conversion path:
+Run the `dashboard-builder` drill to build always-on monitoring of the self-serve conversion path:
 
 - Build the "Pricing Page Health" PostHog dashboard: visitors, conversion rate, plan selection distribution, checkout abandonment, ARPU of new subscribers
 - Build the multi-step pricing funnel: pricing_page_viewed > plan_card_clicked > checkout_started > payment_method_entered > subscription_created
@@ -119,4 +119,4 @@ If PASS: the experiment infrastructure is proven. Proceed to Durable where the A
 
 - `ab-test-orchestrator` — build and manage the systematic experiment pipeline with automated hypothesis queuing, launch, monitoring, and evaluation
 - `pricing-experiment-runner` — execute individual pricing experiments with Stripe price creation, PostHog flag targeting, n8n migration, and guardrail enforcement
-- `pricing-page-conversion-monitor` — monitor self-serve pricing page conversion funnel, detect anomalies, and maintain behavioral cohorts for experiment targeting
+- `dashboard-builder` — monitor self-serve pricing page conversion funnel, detect anomalies, and maintain behavioral cohorts for experiment targeting

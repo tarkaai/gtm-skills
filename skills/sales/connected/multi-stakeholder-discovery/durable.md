@@ -17,7 +17,6 @@ slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
   - autonomous-optimization
-  - stakeholder-intelligence-reporting
 ---
 
 # Multi-Stakeholder Discovery Process — Durable Intelligence
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill configured for the multi-stakeholder dis
 
 ### 2. Deploy Enhanced Reporting
 
-Run the `stakeholder-intelligence-reporting` drill with Durable-level additions:
+Run the `autonomous-optimization` drill with Durable-level additions:
 
 **Monthly ROI calculation:**
 - Compare close rates: deals with comprehensive multi-stakeholder discovery (>=4 roles engaged, consensus >=60) vs deals without
@@ -197,4 +196,4 @@ When external conditions change (new product launch, entering a new market segme
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `stakeholder-intelligence-reporting` — comprehensive reporting on discovery effectiveness: coverage funnels, consensus distributions, win rate correlation, role engagement rates, program ROI. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on discovery effectiveness: coverage funnels, consensus distributions, win rate correlation, role engagement rates, program ROI. Provides the data layer the optimization loop reads from.

@@ -15,7 +15,6 @@ slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - stakeholder-research
-  - authority-discovery-call
   - threshold-engine
 ---
 
@@ -50,7 +49,7 @@ Budget approximately 30 minutes per deal for this research step.
 
 ### 2. Prepare and run authority discovery calls
 
-For each deal, run the `authority-discovery-call` drill:
+For each deal, run the the authority discovery call workflow (see instructions below) drill:
 
 1. Review the stakeholder map from step 1 — identify what authority questions remain unanswered
 2. Generate authority-focused questions using Claude: who controls the budget, what the approval process looks like, whether the contact can sign unilaterally, who else must be involved
@@ -110,5 +109,5 @@ Org chart research and call prep overlap with scheduling wait times. Actual focu
 ## Drills Referenced
 
 - `stakeholder-research` — manually research and classify all stakeholders at each target account's buying committee
-- `authority-discovery-call` — structured discovery call focused on verifying decision-making authority with transcript extraction
+- the authority discovery call workflow (see instructions below) — structured discovery call focused on verifying decision-making authority with transcript extraction
 - `threshold-engine` — evaluate results against the pass threshold and recommend next action

@@ -14,7 +14,7 @@ kpis: ["Monthly account volume", "Account-to-meeting conversion rate", "Champion
 slug: "champion-driven-outbound"
 install: "npx gtm-skills add marketing/solution-aware/champion-driven-outbound"
 drills:
-  - champion-health-monitoring
+  - dashboard-builder
   - follow-up-automation
   - ab-test-orchestrator
 ---
@@ -48,7 +48,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Instructions
 
 ### 1. Deploy champion health monitoring
-Run the `champion-health-monitoring` drill. This creates an always-on system that:
+Run the `dashboard-builder` drill. This creates an always-on system that:
 - Runs daily health checks for all active and recruited champions
 - Scores each champion on a composite engagement metric (email opens, replies, material forwards, meeting activity)
 - Detects disengagement early: if a champion's score drops >15 points or they go dark for 14+ days, the system alerts via Slack and creates re-engagement tasks in Attio
@@ -157,7 +157,7 @@ If not, iterate on your approach and re-run this level.
 ---
 
 ## Drills Referenced
-- `champion-health-monitoring` — daily health checks, disengagement alerts, and replacement champion triggers
+- `dashboard-builder` — daily health checks, disengagement alerts, and replacement champion triggers
 - `follow-up-automation` — self-healing workflows that re-engage stalled champions across channels
 - `ab-test-orchestrator` — A/B tests on recruitment framing, enablement format, and cadence timing
 

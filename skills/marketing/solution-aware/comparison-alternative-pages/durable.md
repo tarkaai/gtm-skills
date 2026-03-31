@@ -16,7 +16,6 @@ slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
   - autonomous-optimization
-  - competitive-intelligence-pipeline
 ---
 
 # Comparison and Alternative Pages — Durable Intelligence
@@ -52,7 +51,7 @@ Run the `autonomous-optimization` drill configured for comparison pages:
 **Diagnose phase (triggered by anomaly):**
 - Pull 8-week metric history for the anomalous page from PostHog
 - Pull current ranking position and position history from GSC data
-- Check if the competitor's data has changed recently (from `competitive-intelligence-pipeline`)
+- Check if the competitor's data has changed recently (from the competitive intelligence pipeline workflow (see instructions below))
 - Run hypothesis generation with Claude: given the anomaly data, page content, and competitive context, generate 3 ranked hypotheses for what to change
 - Example hypotheses:
   - "H1 headline does not match the dominant search query — rewrite to match GSC's top impression query"
@@ -93,7 +92,7 @@ The health monitor feeds signals to the autonomous optimization loop. When the h
 
 ### 3. Maintain competitive intelligence freshness
 
-Continue running the `competitive-intelligence-pipeline` drill from Scalable, with tighter parameters at Durable:
+Continue running the the competitive intelligence pipeline workflow (see instructions below) drill from Scalable, with tighter parameters at Durable:
 
 - Increase competitor scraping frequency from weekly to twice-weekly for top 10 competitors
 - Auto-update comparison pages within 48 hours of detecting a competitor change (still with pricing-change human review guardrail)
@@ -149,4 +148,4 @@ If metrics decay despite optimization, the root cause is likely external: algori
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics daily, diagnose anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
 - `autonomous-optimization` — dedicated monitoring layer for comparison pages tracking rankings, traffic, conversions, and content freshness with anomaly alerts
-- `competitive-intelligence-pipeline` — twice-weekly competitor monitoring with auto-update of comparison pages when competitor data changes
+- the competitive intelligence pipeline workflow (see instructions below) — twice-weekly competitor monitoring with auto-update of comparison pages when competitor data changes

@@ -15,7 +15,6 @@ slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
   - icp-definition
-  - field-visit-planning
   - field-contact-logging
   - threshold-engine
 ---
@@ -48,7 +47,7 @@ Run the `icp-definition` drill. For field prospecting specifically, add these cr
 
 ### 2. Plan your first field visit
 
-Run the `field-visit-planning` drill. For the Smoke test, keep scope small:
+Run the the field visit planning workflow (see instructions below) drill. For the Smoke test, keep scope small:
 
 - Use `google-maps-place-search` to find 2-3 coworking spaces or business hubs within your target area
 - Check opening hours and pick a weekday mid-morning (10-11am) when foot traffic is highest
@@ -129,6 +128,6 @@ Total: ~4 hours over 1 week
 ## Drills Referenced
 
 - `icp-definition` — define who you are looking for in the field
-- `field-visit-planning` — research venues, build route, prepare intel
+- the field visit planning workflow (see instructions below) — research venues, build route, prepare intel
 - `field-contact-logging` — log in-person conversations as structured CRM records
 - `threshold-engine` — evaluate pass/fail against the meeting threshold

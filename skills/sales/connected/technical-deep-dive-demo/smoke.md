@@ -15,7 +15,6 @@ slug: "technical-deep-dive-demo"
 install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
   - account-research-brief
-  - technical-demo-content-assembly
   - threshold-engine
 ---
 # Technical Deep-Dive Demo — Smoke Test
@@ -47,8 +46,8 @@ Review the output. Verify that the brief includes:
 - Attendee profiles with role classifications
 - Recommended technical topics based on their architecture
 
-### 3. Run the `technical-demo-content-assembly` drill for each opportunity
-For each deal, run the `technical-demo-content-assembly` drill. This detects the prospect's tech stack, generates a structured demo script with ordered modules (architecture, API walkthrough, integration demo, security review), prepares live API call payloads, generates integration code targeting their actual tools, and assembles a technical follow-up package.
+### 3. Run the the technical demo content assembly workflow (see instructions below) drill for each opportunity
+For each deal, run the the technical demo content assembly workflow (see instructions below) drill. This detects the prospect's tech stack, generates a structured demo script with ordered modules (architecture, API walkthrough, integration demo, security review), prepares live API call payloads, generates integration code targeting their actual tools, and assembles a technical follow-up package.
 
 Review each demo script. Verify:
 - Live API calls reference real product endpoints
@@ -103,5 +102,5 @@ If PASS, proceed to Baseline. If FAIL, analyze which step broke:
 
 ## Drills Referenced
 - `account-research-brief` — assembles account intelligence and generates a structured meeting brief from CRM data, Clay enrichment, and prior call transcripts
-- `technical-demo-content-assembly` — generates prospect-customized demo script with live API calls, integration code, architecture talking points, and technical follow-up package
+- the technical demo content assembly workflow (see instructions below) — generates prospect-customized demo script with live API calls, integration code, architecture talking points, and technical follow-up package
 - `threshold-engine` — evaluates play results against the pass threshold and recommends next action

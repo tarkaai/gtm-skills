@@ -17,7 +17,6 @@ slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
   - autonomous-optimization
-  - brief-quality-monitor
 ---
 
 # AI-Powered Meeting Preparation — Durable Intelligence
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill configured for the meeting prep play. Th
 
 ### 2. Deploy Enhanced Brief Quality Monitor
 
-Extend the `brief-quality-monitor` drill for Durable-level depth:
+Extend the `autonomous-optimization` drill for Durable-level depth:
 
 **Add these dashboard panels:**
 - **Experiment tracker**: Current experiments running, their hypotheses, and time remaining
@@ -202,4 +201,4 @@ In these cases: alert the founder that tactical optimization is insufficient and
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in brief quality and call outcomes, generate hypotheses about prompt and data source changes, run A/B experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `brief-quality-monitor` — enhanced monitoring with experiment tracking, optimization history, convergence plotting, and predictive accuracy trends. Provides the data substrate the optimization loop reads from.
+- `autonomous-optimization` — enhanced monitoring with experiment tracking, optimization history, convergence plotting, and predictive accuracy trends. Provides the data substrate the optimization loop reads from.

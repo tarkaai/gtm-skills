@@ -95,7 +95,7 @@ Run the `autonomous-optimization` drill. Configure the 5-phase loop for SMS outb
 **Phase 3 — Experiment (triggered by hypothesis acceptance):**
 1. Design the experiment using `posthog-experiments` fundamental: feature flag splitting prospects between control (current) and variant (hypothesis change)
 2. Implement the variant:
-   - For copy changes: generate new message variants via `sms-copy-generation` drill and assign to the variant group
+   - For copy changes: generate new message variants via the sms copy generation workflow (see instructions below) drill and assign to the variant group
    - For timing changes: update n8n cron schedule for the variant group
    - For targeting changes: adjust Clay scoring thresholds or ICP filters for the variant group
    - For sequence changes: modify step timing (Day 1/3/6 vs Day 1/2/5) for the variant group
@@ -130,7 +130,7 @@ Run the `signal-detection` drill to keep the SMS prospect pipeline fresh:
 1. Configure Clay tables with automated daily enrichment: monitor for job changes at target accounts (new VP/C-level = outreach opportunity), funding events in last 90 days (new budget), hiring signals (3+ roles in your domain = building a team), technology signals (adopted/dropped competitor tool).
 2. Score signals by recency (last 30 days strongest) and intensity (multiple signals from one account).
 3. Route high-score signals directly into the SMS sequence queue in Attio. Verify mobile phone number before adding to queue. Medium-score signals go to a watch list.
-4. Craft signal-specific SMS openers: funding signal gets a congratulations angle, job change gets a "welcome to the role" angle, hiring signal gets a "building your team" angle. Store as templates in the `sms-copy-generation` pipeline.
+4. Craft signal-specific SMS openers: funding signal gets a congratulations angle, job change gets a "welcome to the role" angle, hiring signal gets a "building your team" angle. Store as templates in the the sms copy generation workflow (see instructions below) pipeline.
 5. The autonomous optimization loop monitors signal-to-reply rate and adjusts signal thresholds weekly. If a signal type produces below-average response rates, reduce its priority. If a new signal type emerges, add it.
 
 ### 4. Configure guardrails

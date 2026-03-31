@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/upsell/seat-expansion-triggers"
 drills:
   - ab-test-orchestrator
   - upgrade-prompt
-  - seat-expansion-health-monitor
+  - dashboard-builder
 ---
 
 # Team Growth Upsell — Scalable Automation
@@ -97,7 +97,7 @@ Run the `upgrade-prompt` drill to build differentiated expansion paths by accoun
 
 ### 4. Deploy the health monitor
 
-Run the `seat-expansion-health-monitor` drill to build the monitoring layer:
+Run the `dashboard-builder` drill to build the monitoring layer:
 
 1. Create the PostHog "Seat Expansion Health" dashboard with all 6 panels
 2. Configure anomaly alerts for conversion drops, signal spikes, and prompt fatigue
@@ -147,4 +147,4 @@ After 2 months, pull the comprehensive expansion data:
 
 - `ab-test-orchestrator` — design and run A/B tests on prompt timing, copy, format, and channel mix
 - `upgrade-prompt` — build segment-specific expansion paths by plan tier, team size, and use case
-- `seat-expansion-health-monitor` — monitor expansion funnel health, generate weekly reports, alert on anomalies
+- `dashboard-builder` — monitor expansion funnel health, generate weekly reports, alert on anomalies

@@ -14,7 +14,6 @@ kpis: ["POC completion rate", "Success criteria achievement rate", "POC-to-propo
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - poc-scoping-workshop
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ Review your Attio pipeline for deals at the Aligned stage where the prospect req
 
 ### 2. Scope each POC
 
-For each deal, run the `poc-scoping-workshop` drill. This extracts discovery context from Fireflies transcripts, generates a structured POC success criteria document using Claude, maps stakeholders, determines POC duration, and schedules the kickoff call.
+For each deal, run the the poc scoping workshop workflow (see instructions below) drill. This extracts discovery context from Fireflies transcripts, generates a structured POC success criteria document using Claude, maps stakeholders, determines POC duration, and schedules the kickoff call.
 
 Review each generated success criteria document before sending to the prospect. Verify:
 - Every must-have criterion maps to a stated pain point from discovery
@@ -122,5 +121,5 @@ If FAIL, diagnose: Was the issue scoping (criteria too ambitious), execution (pr
 
 ## Drills Referenced
 
-- `poc-scoping-workshop` — generates POC success criteria, milestones, stakeholder map, and decision framework from discovery data
+- the poc scoping workshop workflow (see instructions below) — generates POC success criteria, milestones, stakeholder map, and decision framework from discovery data
 - `threshold-engine` — evaluates POC results against pass/fail threshold

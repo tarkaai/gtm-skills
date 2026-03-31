@@ -65,7 +65,7 @@ Test by creating a new contact with only name and email. Verify that within 1 ho
 
 ### 3. Expand Audit Scope to All Active Records
 
-Modify the `crm-data-audit` drill configuration to audit all active records (not just 50):
+Modify the the crm data audit workflow (see instructions below) drill configuration to audit all active records (not just 50):
 
 1. Query Attio for all records where deal stage is not Closed Lost or Archived
 2. Run the full audit: completeness, validity, freshness, duplicates

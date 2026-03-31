@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
   - interactive-tool-build
   - ab-test-orchestrator
-  - interactive-tool-nurture-pipeline
   - threshold-engine
 ---
 
@@ -157,5 +156,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 - `interactive-tool-build` — build additional tools using the templatized workflow
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on tool elements
-- `interactive-tool-nurture-pipeline` — refine and expand nurture sequences based on Baseline learnings
+- the interactive tool nurture pipeline workflow (see instructions below) — refine and expand nurture sequences based on Baseline learnings
 - `threshold-engine` — evaluate monthly completions and SQL rate against the pass threshold

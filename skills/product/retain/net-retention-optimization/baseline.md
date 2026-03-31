@@ -85,7 +85,7 @@ After 2 weeks of both systems running, measure:
 
 ### 5. Evaluate against threshold
 
-At 4 weeks, compute NDR using the `ndr-baseline-measurement` drill. Compare to the Smoke baseline.
+At 4 weeks, compute NDR using the the ndr baseline measurement workflow (see instructions below) drill. Compare to the Smoke baseline.
 
 If PASS (NDR improved 3+ points): the automation is working. Document which intervention type had the highest save rate and which expansion trigger had the highest conversion rate. Proceed to Scalable.
 If FAIL (NDR improved <3 points): diagnose. Check whether the problem is detection (risk scoring not catching real churners), intervention (messages not compelling enough), or expansion (prompts not converting). Adjust the weakest link and run for another 2-week cycle.

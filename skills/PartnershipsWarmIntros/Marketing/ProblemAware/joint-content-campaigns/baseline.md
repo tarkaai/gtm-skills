@@ -15,7 +15,6 @@ slug: "joint-content-campaigns"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/joint-content-campaigns"
 drills:
   - warm-intro-request
-  - joint-content-production
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -52,7 +51,7 @@ Run the `posthog-gtm-events` drill to implement standardized tracking for this p
 Ensure UTM parameters propagate from email clicks through form submissions to downstream conversion events.
 
 ### 3. Co-produce 3+ assets over 8 weeks
-Run the `joint-content-production` drill once per partner collaboration. Stagger production so you are working on multiple assets simultaneously at different stages:
+Run the the joint content production workflow (see instructions below) drill once per partner collaboration. Stagger production so you are working on multiple assets simultaneously at different stages:
 - Week 1-2: Partner A -- topic research and outline
 - Week 2-4: Partner A -- drafting and assembly; Partner B -- topic research and outline
 - Week 4-6: Partner A -- publication and promotion; Partner B -- drafting; Partner C -- topic research
@@ -100,6 +99,6 @@ If FAIL: analyze:
 
 ## Drills Referenced
 - `warm-intro-request` -- systematic warm intro process to reach content partners
-- `joint-content-production` -- end-to-end co-creation per partner asset
+- the joint content production workflow (see instructions below) -- end-to-end co-creation per partner asset
 - `posthog-gtm-events` -- standardized event tracking for joint content funnel
 - `threshold-engine` -- evaluate pass/fail against the 30-lead threshold

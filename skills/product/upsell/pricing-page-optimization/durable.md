@@ -16,7 +16,6 @@ slug: "pricing-page-optimization"
 install: "npx gtm-skills add product/upsell/pricing-page-optimization"
 drills:
   - autonomous-optimization
-  - pricing-page-conversion-monitor
   - pricing-health-monitor
 ---
 
@@ -40,7 +39,7 @@ An always-on AI agent continuously monitors pricing page performance, detects wh
 
 ### 1. Deploy the pricing page conversion monitor
 
-Run the `pricing-page-conversion-monitor` drill to build the always-on observation layer:
+Run the `autonomous-optimization` drill to build the always-on observation layer:
 
 1. Build the PostHog "Pricing Page Health" dashboard with visitor, conversion, and revenue panels
 2. Create the multi-step pricing funnel: `pricing_page_viewed` → `plan_card_clicked` → `checkout_started` → `payment_method_entered` → `subscription_created`
@@ -166,5 +165,5 @@ If post-convergence monitoring detects a >10% metric shift, re-enter the full da
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `pricing-page-conversion-monitor` — always-on pricing page funnel monitoring with anomaly detection, session recording context, and dynamic behavioral cohorts
+- `autonomous-optimization` — always-on pricing page funnel monitoring with anomaly detection, session recording context, and dynamic behavioral cohorts
 - `pricing-health-monitor` — broader pricing health observation (ARPU, NRR, churn by plan, usage-to-revenue) that provides macro context for the optimization loop

@@ -15,7 +15,6 @@ slug: "free-trial-optimization"
 install: "npx gtm-skills add product/onboard/free-trial-optimization"
 drills:
   - autonomous-optimization
-  - trial-conversion-health-monitor
   - dashboard-builder
 ---
 
@@ -55,7 +54,7 @@ Set dashboard alerts for: conversion rate drops >15% below 4-week average, activ
 
 ### 2. Deploy continuous health monitoring
 
-Run the `trial-conversion-health-monitor` drill to establish the daily and weekly monitoring cadence:
+Run the `autonomous-optimization` drill to establish the daily and weekly monitoring cadence:
 
 **Daily monitoring (n8n cron, 08:00 UTC):**
 - Query PostHog for all trial conversion KPIs from the last 7 days
@@ -164,5 +163,5 @@ The optimization loop tracks experiment yields over time. When three consecutive
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners. Converges when successive experiments yield <2% lift.
-- `trial-conversion-health-monitor` — continuous daily/weekly monitoring of trial conversion funnel with anomaly alerts, cohort drift detection, and structured health reports that feed into the optimization loop
+- `autonomous-optimization` — continuous daily/weekly monitoring of trial conversion funnel with anomaly alerts, cohort drift detection, and structured health reports that feed into the optimization loop
 - `dashboard-builder` — builds the PostHog dashboard that serves as the agent's primary data source for monitoring and diagnosis

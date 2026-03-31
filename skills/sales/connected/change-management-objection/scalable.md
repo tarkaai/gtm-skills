@@ -52,7 +52,7 @@ The drill creates an n8n workflow that:
 1. Scores every active deal daily (7 AM)
 2. Assigns a readiness tier: "ready" / "moderate" / "high_risk" / "critical"
 3. Sends Slack alerts when deals cross tier boundaries
-4. Auto-triggers `change-objection-call-prep` for deals entering "high_risk"
+4. Auto-triggers the change objection call prep workflow (see instructions below) for deals entering "high_risk"
 5. Auto-generates draft pilot proposals for deals entering "critical"
 
 **Act on proactive scores:**

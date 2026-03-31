@@ -14,7 +14,6 @@ kpis: ["Wizard completion rate", "Median time to complete (minutes)", "Config su
 slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
 drills:
-  - wizard-step-builder
   - onboarding-flow
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ drills:
 
 ### 1. Define the wizard steps for your primary persona
 
-Choose your highest-volume persona (the one most new signups match). Define 4-6 setup steps using the `wizard-step-builder` drill. Each step must have:
+Choose your highest-volume persona (the one most new signups match). Define 4-6 setup steps using the the wizard step builder workflow (see instructions below) drill. Each step must have:
 - A clear action the user takes
 - A binary validation (done or not done)
 - A PostHog event that fires on completion
@@ -49,7 +48,7 @@ For the Smoke test, build ONE wizard variant for ONE persona. Do not build perso
 
 ### 2. Build the wizard using Intercom Checklists
 
-Run the `wizard-step-builder` drill to create:
+Run the the wizard step builder workflow (see instructions below) drill to create:
 - An Intercom Checklist with the steps from Step 1
 - Auto-completion rules tied to your app's user attribute updates
 - PostHog event tracking for every step: `wizard_step_started`, `wizard_step_completed`, `wizard_step_failed`
@@ -101,6 +100,6 @@ If FAIL: Identify the step with the worst dropoff. Simplify that step (fewer fie
 
 ## Drills Referenced
 
-- `wizard-step-builder` -- builds the Intercom Checklist with step validation and PostHog tracking
+- the wizard step builder workflow (see instructions below) -- builds the Intercom Checklist with step validation and PostHog tracking
 - `onboarding-flow` -- configures welcome messaging and email around the wizard
 - `threshold-engine` -- evaluates wizard completion rate against the 65% pass threshold

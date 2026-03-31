@@ -15,7 +15,6 @@ slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
   - signup-funnel-audit
-  - funnel-drop-off-diagnosis
   - threshold-engine
 ---
 
@@ -58,7 +57,7 @@ If your critical funnel is activation or upgrade rather than signup, adapt the a
 
 ### 3. Diagnose the bottleneck
 
-Run the `funnel-drop-off-diagnosis` drill against the primary bottleneck step identified in step 2. This produces:
+Run the the funnel drop off diagnosis workflow (see instructions below) drill against the primary bottleneck step identified in step 2. This produces:
 
 - Segment-level conversion breakdown (device, source, user type)
 - Path analysis comparing completers vs droppers
@@ -114,5 +113,5 @@ If FAIL: Review the hypothesis ranking from step 3. Was the #1 fix actually addr
 ## Drills Referenced
 
 - `signup-funnel-audit` — Instruments the funnel, builds PostHog funnels, identifies the primary bottleneck with baseline metrics
-- `funnel-drop-off-diagnosis` — Diagnoses root cause of the bottleneck using segment analysis, path comparison, and session recording review
+- the funnel drop off diagnosis workflow (see instructions below) — Diagnoses root cause of the bottleneck using segment analysis, path comparison, and session recording review
 - `threshold-engine` — Evaluates whether the >=10% improvement threshold was met

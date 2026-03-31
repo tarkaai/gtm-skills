@@ -16,7 +16,6 @@ slug: "product-qualified-lead-scoring"
 install: "npx gtm-skills add product/onboard/product-qualified-lead-scoring"
 drills:
   - autonomous-optimization
-  - scoring-model-performance-monitor
 ---
 
 # PQL Scoring System — Durable Intelligence
@@ -95,7 +94,7 @@ Generate a weekly PQL optimization brief:
 
 ### 2. Deploy scoring model health monitoring
 
-Run the `scoring-model-performance-monitor` drill to build the always-on dashboard and alerting layer:
+Run the `autonomous-optimization` drill to build the always-on dashboard and alerting layer:
 
 **PostHog dashboard — "PQL Scoring Model Health":**
 - Conversion rate by tier (Hot vs Warm vs Cold) — primary accuracy metric
@@ -171,4 +170,4 @@ Convergence detection: when 3 consecutive experiments produce <2% accuracy impro
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `scoring-model-performance-monitor` — builds the accuracy dashboard, weekly health reports, drift alerts, and criteria contribution analysis specific to lead scoring models
+- `autonomous-optimization` — builds the accuracy dashboard, weekly health reports, drift alerts, and criteria contribution analysis specific to lead scoring models

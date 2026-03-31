@@ -14,8 +14,6 @@ kpis: ["AI resolution rate", "CSAT (AI-resolved)", "Human ticket volume reductio
 slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
-  - chatbot-knowledge-pipeline
-  - chatbot-resolution-monitor
 ---
 
 # AI In-App Support — Baseline Run
@@ -41,7 +39,7 @@ Remove the PostHog feature flag gate (or set it to 100% rollout). All users now 
 
 ### 2. Launch the knowledge gap pipeline
 
-Run the `chatbot-knowledge-pipeline` drill to set up the always-on knowledge improvement loop:
+Run the the chatbot knowledge pipeline workflow (see instructions below) drill to set up the always-on knowledge improvement loop:
 - Configure an n8n workflow that runs every Monday at 6am
 - The workflow pulls all chatbot escalation conversations from the past 7 days
 - Classifies questions by topic using Claude Haiku
@@ -100,6 +98,5 @@ If all PASS, proceed to Scalable. If resolution rate is low, check knowledge pip
 
 ## Drills Referenced
 
-- `chatbot-knowledge-pipeline` — weekly detection of knowledge gaps from escalation data, auto-generates draft articles
+- the chatbot knowledge pipeline workflow (see instructions below) — weekly detection of knowledge gaps from escalation data, auto-generates draft articles
 - the chatbot escalation routing workflow (see instructions below) — priority-based routing with CRM enrichment and context notes for human agents
-- `chatbot-resolution-monitor` — PostHog dashboard, anomaly alerts, and weekly health reports

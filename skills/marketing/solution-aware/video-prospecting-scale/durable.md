@@ -16,7 +16,6 @@ slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
 drills:
   - autonomous-optimization
-  - video-outreach-performance-monitor
   - signal-detection
 ---
 
@@ -43,7 +42,7 @@ Deploy an always-on AI agent loop that autonomously monitors AI video outreach p
 
 ### 1. Deploy the video outreach performance monitor
 
-Run the `video-outreach-performance-monitor` drill to build the monitoring layer:
+Run the `autonomous-optimization` drill to build the monitoring layer:
 
 1. **Dashboard:** Create the PostHog "Video Prospecting at Scale -- Performance" dashboard with all video-specific panels: AI video engagement funnel, completion rate distribution, AI vs Loom comparison (if running both), engagement quality by ICP segment, pipeline impact, and cost efficiency trends.
 
@@ -182,5 +181,5 @@ As experiments run and winners are adopted, maintain the template library:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, and detect convergence
-- `video-outreach-performance-monitor` — PostHog dashboard, anomaly alerts, and weekly briefs for AI video outreach metrics
+- `autonomous-optimization` — PostHog dashboard, anomaly alerts, and weekly briefs for AI video outreach metrics
 - `signal-detection` — continuous buying signal monitoring to refresh the prospect pipeline and prevent audience exhaustion

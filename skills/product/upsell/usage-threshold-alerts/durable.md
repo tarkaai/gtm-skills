@@ -16,7 +16,6 @@ slug: "usage-threshold-alerts"
 install: "npx gtm-skills add product/upsell/usage-threshold-alerts"
 drills:
   - autonomous-optimization
-  - usage-alert-health-monitor
   - usage-alert-delivery
 ---
 
@@ -44,7 +43,7 @@ The alert system operates autonomously. An always-on agent loop monitors detecti
 Run the `autonomous-optimization` drill configured for the usage threshold alerts play. The optimization loop has 5 phases:
 
 **Phase 1 — Monitor (daily via n8n cron):**
-The agent queries the `usage-alert-health-monitor` drill's webhook endpoint to retrieve current metrics: upgrade conversion rate, detection true positive rate, false positive rate, revenue impact, alert volume, and upgrade retention. It compares the last 2 weeks against the 4-week rolling average and classifies each metric as normal (within +/-10%), plateau (+/-2% for 3+ weeks), drop (>20% decline), or spike (>50% increase). If any anomaly is detected, the loop triggers Phase 2.
+The agent queries the `autonomous-optimization` drill's webhook endpoint to retrieve current metrics: upgrade conversion rate, detection true positive rate, false positive rate, revenue impact, alert volume, and upgrade retention. It compares the last 2 weeks against the 4-week rolling average and classifies each metric as normal (within +/-10%), plateau (+/-2% for 3+ weeks), drop (>20% decline), or spike (>50% increase). If any anomaly is detected, the loop triggers Phase 2.
 
 **Phase 2 — Diagnose (triggered by anomaly):**
 The agent gathers context: current detection thresholds, alert templates, routing rules, A/B test history from Scalable, 8-week metric trends. It runs `hypothesis-generation` to produce 3 ranked hypotheses. Examples specific to this play:
@@ -98,7 +97,7 @@ In addition to the standard `autonomous-optimization` guardrails, add alert-syst
 
 ### 3. Deploy the alert health monitor at Durable cadence
 
-Run the `usage-alert-health-monitor` drill with Durable-level configuration:
+Run the `autonomous-optimization` drill with Durable-level configuration:
 
 - Health check: runs daily (detection accuracy, delivery success, conversion funnel)
 - Detection accuracy recalibration: runs weekly instead of monthly (the autonomous loop needs faster feedback)
@@ -171,5 +170,5 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for alert conversion and revenue
-- `usage-alert-health-monitor` — monitors detection accuracy, conversion rates, upgrade retention, and system health; feeds metrics to the optimization loop
+- `autonomous-optimization` — monitors detection accuracy, conversion rates, upgrade retention, and system health; feeds metrics to the optimization loop
 - `usage-alert-delivery` — executes the current best alert configuration, updated by the optimization loop as experiments produce winners

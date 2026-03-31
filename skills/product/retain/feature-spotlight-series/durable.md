@@ -15,7 +15,6 @@ slug: "feature-spotlight-series"
 install: "npx gtm-skills add product/retain/feature-spotlight-series"
 drills:
   - autonomous-optimization
-  - spotlight-series-health-monitor
   - nps-feedback-loop
 ---
 
@@ -81,7 +80,7 @@ Run the `autonomous-optimization` drill to create the always-on monitor-diagnose
 
 ### 2. Generate weekly health reports with series-specific signals
 
-Run the `spotlight-series-health-monitor` drill at Durable depth. In addition to the standard series dashboard and fatigue detection, configure these Durable-specific monitors:
+Run the `autonomous-optimization` drill at Durable depth. In addition to the standard series dashboard and fatigue detection, configure these Durable-specific monitors:
 
 **Optimization progress tracking:**
 - Log every experiment result with its net impact on the primary KPI
@@ -120,7 +119,7 @@ Run the `nps-feedback-loop` drill targeted at users who adopted features through
 
 - Survey users who adopted a spotlighted feature 30+ days ago: "How useful is [feature] to your workflow?" (1-10 scale) + open text
 - Route responses:
-  - **Promoters (9-10):** Their success story becomes social proof in future spotlights for the same feature. "Join [N] users who discovered [feature] this month." Also feed into the `spotlight-content-pipeline` as testimonial content for that feature.
+  - **Promoters (9-10):** Their success story becomes social proof in future spotlights for the same feature. "Join [N] users who discovered [feature] this month." Also feed into the the spotlight content pipeline workflow (see instructions below) as testimonial content for that feature.
   - **Passives (7-8):** Ask what would make the feature a 10. Feed responses to the product team and into the optimization loop as hypothesis inputs (e.g., "passives say the feature is hard to find after initial use — test adding a persistent shortcut after first try").
   - **Detractors (0-6):** Personal outreach. If a feature is not delivering value after adoption, the spotlight is driving trial of something that does not stick. Flag for product team review. If a feature consistently produces detractors, deprioritize it in the spotlight backlog.
 
@@ -170,5 +169,5 @@ If any metric degrades for 2 consecutive months despite optimization, escalate t
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that finds the local maximum for the spotlight series
-- `spotlight-series-health-monitor` — series-level dashboard with optimization tracking, fatigue detection, and longevity signals
+- `autonomous-optimization` — series-level dashboard with optimization tracking, fatigue detection, and longevity signals
 - `nps-feedback-loop` — collect and act on feedback from spotlight adopters to validate the series is driving real feature value

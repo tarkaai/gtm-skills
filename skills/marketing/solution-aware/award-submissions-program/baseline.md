@@ -14,7 +14,6 @@ kpis: ["Submissions per quarter", "Win rate", "Award categories won", "Social pr
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
 drills:
-  - award-submission-pipeline
   - media-pitch-outreach
   - threshold-engine
 ---
@@ -41,7 +40,7 @@ The first systematic award submissions program. A rolling pipeline of awards is 
 
 ### 1. Build the Full Award Pipeline
 
-Run the `award-submission-pipeline` drill at Baseline scale (20-30 awards tracked):
+Run the the award submission pipeline workflow (see instructions below) drill at Baseline scale (20-30 awards tracked):
 
 1. Expand beyond Smoke: include paid awards (entry fees $100-500) with high ICP visibility
 2. Add categories you did not target at Smoke: workplace awards, regional awards, founder awards
@@ -134,6 +133,6 @@ Run the `threshold-engine` drill after 10 weeks:
 
 ## Drills Referenced
 
-- `award-submission-pipeline` — systematic discovery, scoring, content preparation, and submission of industry awards
+- the award submission pipeline workflow (see instructions below) — systematic discovery, scoring, content preparation, and submission of industry awards
 - `media-pitch-outreach` — amplify award wins through targeted media outreach for press coverage
 - `threshold-engine` — evaluate Baseline results against the pass threshold and recommend next action

@@ -15,8 +15,7 @@ slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
 drills:
   - conference-cfp-pipeline
-  - speaking-lead-capture
-  - speaking-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
 ---
 
@@ -71,7 +70,7 @@ Run the `ab-test-orchestrator` drill on proposal writing:
 
 ### 3. Scale content repurposing for every talk
 
-After each delivered talk, run `speaking-lead-capture` with full content repurposing:
+After each delivered talk, run the speaking lead capture workflow (see instructions below) with full content repurposing:
 
 1. When the talk recording is available, use the `talk-content-repurposing` fundamental:
    - Produce a blog post from the transcript (publish within 7 days of the talk)
@@ -89,7 +88,7 @@ Target: each talk generates content that produces leads for 3-4 weeks after the 
 
 ### 4. Deploy always-on performance monitoring
 
-Run the `speaking-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog speaking program dashboard with: CFP funnel, lead yield per talk, acceptance rate trend, content repurposing multiplier, cost per lead
 2. Set up automated alerts:
@@ -140,6 +139,6 @@ Using data from the performance monitor, refine which conferences to target:
 ## Drills Referenced
 
 - `conference-cfp-pipeline` — fully automated CFP discovery, scoring, proposal generation, and submission tracking
-- `speaking-lead-capture` — lead capture infrastructure with full content repurposing for every talk
-- `speaking-performance-monitor` — always-on dashboard, alerts, and quarterly analysis of speaking program ROI
+- the speaking lead capture workflow (see instructions below) — lead capture infrastructure with full content repurposing for every talk
+- `dashboard-builder` — always-on dashboard, alerts, and quarterly analysis of speaking program ROI
 - `ab-test-orchestrator` — A/B test proposal styles to maximize acceptance rates

@@ -16,9 +16,8 @@ slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
   - ab-test-orchestrator
-  - youtube-preroll-creative-pipeline
   - youtube-preroll-audience-builder
-  - youtube-preroll-performance-monitor
+  - dashboard-builder
   - tool-sync-workflow
   - budget-allocation
   - threshold-engine
@@ -104,7 +103,7 @@ Run the `tool-sync-workflow` drill to connect YouTube data to other channels:
 - Also run YouTube bumper ads (6s) to 50%+ viewers who did not click
 
 **YouTube lead to Email nurture sync:**
-- When a lead converts from YouTube, the `youtube-preroll-lead-routing` drill already triggers Loops nurture
+- When a lead converts from YouTube, the the youtube preroll lead routing workflow (see instructions below) drill already triggers Loops nurture
 - Sync converted leads back to Google Ads as a Customer Match exclusion list (do not retarget people who already converted)
 
 **CRM to Google Ads feedback loop:**
@@ -133,7 +132,7 @@ Build a workflow that runs every Monday:
 
 ### 6. Produce creative at scale
 
-Run the `youtube-preroll-creative-pipeline` drill on a 2-week cadence:
+Run the the youtube preroll creative pipeline workflow (see instructions below) drill on a 2-week cadence:
 - Every 2 weeks: agent generates 5-8 new creative briefs using Anthropic API
 - Use winning patterns from A/B tests: if stat hooks on pain point 2 are winning, generate more stat hooks with different data points for that pain point
 - Test at least one entirely new angle each cycle (new pain point, new format, new length)
@@ -145,7 +144,7 @@ Over 4 months, you should produce and test 30-50 unique video ad variants. Your 
 
 ### 7. Set up performance monitoring
 
-Run the `youtube-preroll-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 - Daily automated health checks with alerts on VTR drops, CPqL spikes, budget pacing issues
 - Creative fatigue detection: auto-pause variants with 30%+ VTR decay after 14 days
 - Audience saturation detection: flag campaigns where frequency exceeds 4 and CPqL is rising
@@ -204,9 +203,9 @@ Total: ~75 hours over 4 months (front-loaded in first 2 weeks, then ~4 hrs/week 
 ## Drills Referenced
 
 - `ab-test-orchestrator` — systematic creative and audience testing with statistical rigor
-- `youtube-preroll-creative-pipeline` — bi-weekly creative brief generation and testing (30-50 variants over 4 months)
+- the youtube preroll creative pipeline workflow (see instructions below) — bi-weekly creative brief generation and testing (30-50 variants over 4 months)
 - `youtube-preroll-audience-builder` — 100-200 placements with automated weekly discovery
-- `youtube-preroll-performance-monitor` — daily health checks, fatigue detection, weekly reports
+- `dashboard-builder` — daily health checks, fatigue detection, weekly reports
 - `tool-sync-workflow` — sync CRM, PostHog, and Google Ads bidirectionally via n8n
 - `budget-allocation` — automated budget scaling with per-campaign CPqL guardrails
 - `threshold-engine` — evaluate at monthly checkpoints and month 4 final

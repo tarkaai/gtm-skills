@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/referrals/social-sharing-features"
 drills:
   - posthog-gtm-events
   - feature-announcement
-  - share-content-generator
 ---
 
 # Built-In Social Sharing — Baseline Run
@@ -75,7 +74,7 @@ Deploy the share button to ALL users (remove the test-group restriction from Smo
 
 ### 3. Deploy auto-generated share content
 
-Run the `share-content-generator` drill to improve share quality:
+Run the the share content generator workflow (see instructions below) drill to improve share quality:
 
 - Configure the content generation pipeline: when a user opens the share widget, auto-generate channel-specific share text based on their resource data
 - Deploy dynamic OG images for every shareable resource (not just the single type from Smoke — extend to all resource types that have share buttons)
@@ -133,4 +132,4 @@ If FAIL on K-factor only (people share but nobody clicks/signs up): the share co
 
 - `posthog-gtm-events` — instruments the complete viral funnel from share impression through referred-user activation
 - `feature-announcement` — coordinates the multi-channel launch of sharing features to all users
-- `share-content-generator` — auto-generates channel-specific share text and dynamic OG images
+- the share content generator workflow (see instructions below) — auto-generates channel-specific share text and dynamic OG images

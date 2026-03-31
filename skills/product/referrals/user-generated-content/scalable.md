@@ -16,7 +16,7 @@ slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
   - ab-test-orchestrator
-  - ugc-health-monitor
+  - dashboard-builder
 ---
 
 # UGC Campaign — Scalable Automation
@@ -81,7 +81,7 @@ For each test: form hypothesis, calculate sample size, run to significance, docu
 
 ### 3. Scale amplification to 3+ channels
 
-Expand the `ugc-amplification-pipeline` from Baseline:
+Expand the the ugc amplification pipeline workflow (see instructions below) from Baseline:
 
 **LinkedIn (2-3 UGC posts per week):**
 Increase from 1 to 2-3 posts per week. Alternate between: full user stories, quick tips/quotes, and contest winner spotlights. Use creator tags for reach.
@@ -100,7 +100,7 @@ Share UGC in your Slack/Discord community with creator attribution. Pin the best
 
 ### 4. Deploy the UGC health monitor
 
-Run the `ugc-health-monitor` drill to build always-on monitoring for the scaled system:
+Run the `dashboard-builder` drill to build always-on monitoring for the scaled system:
 
 Configure the 8 health metrics: submission rate, approval rate, prompt conversion, creator diversity, repeat rate, amplification throughput, referral traffic, and content quality trend. Set healthy/warning/critical thresholds. Enable automated interventions for prompt fatigue, repeat rate stalls, amplification backlogs, and quality declines.
 
@@ -108,7 +108,7 @@ The health monitor runs daily via n8n and generates a weekly report with trends,
 
 ### 5. Evaluate after 2 months
 
-Review the `ugc-health-monitor` weekly reports and PostHog dashboards for the full 2-month period:
+Review the `dashboard-builder` weekly reports and PostHog dashboards for the full 2-month period:
 
 - Monthly approved UGC pieces (month 1 and month 2)
 - Monthly unique creators
@@ -152,4 +152,4 @@ Review the `ugc-health-monitor` weekly reports and PostHog dashboards for the fu
 
 - the ugc incentive scaling workflow (see instructions below) — design and automate the 3-tier creator program, monthly contest framework, social proof loops, and reward delivery system that multiply UGC production
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on prompt copy, form length, trigger timing, incentive structures, and social proof elements using PostHog feature flags
-- `ugc-health-monitor` — monitor 8 UGC health metrics daily with diagnostics, automated interventions for prompt fatigue and repeat rate stalls, and weekly health reports
+- `dashboard-builder` — monitor 8 UGC health metrics daily with diagnostics, automated interventions for prompt fatigue and repeat rate stalls, and weekly health reports

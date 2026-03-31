@@ -13,7 +13,6 @@ kpis: ["Weekly analytics view rate", "Engagement depth (metric click rate)", "30
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
 drills:
-  - usage-analytics-engagement-monitor
   - feature-adoption-monitor
   - posthog-gtm-events
 ---
@@ -40,11 +39,11 @@ This proves the analytics surface works at full user base scale and that looking
 
 ### 1. Expand event tracking to full user base
 
-Run the `posthog-gtm-events` drill to verify all analytics surface events are firing correctly at full scale. Ensure the daily n8n aggregation workflow (from `usage-analytics-surface-build` at Smoke level) handles the full user base without timeouts. If the workflow exceeds 5 minutes, partition by user cohort and run in parallel batches.
+Run the `posthog-gtm-events` drill to verify all analytics surface events are firing correctly at full scale. Ensure the daily n8n aggregation workflow (from the usage analytics surface build workflow (see instructions below) at Smoke level) handles the full user base without timeouts. If the workflow exceeds 5 minutes, partition by user cohort and run in parallel batches.
 
 ### 2. Roll out the analytics surface to all users
 
-Remove the feature flag restricting the analytics surface to the test group. Enable it for all active users. Configure the discovery prompts from the `usage-analytics-surface-build` drill for the full audience:
+Remove the feature flag restricting the analytics surface to the test group. Enable it for all active users. Configure the discovery prompts from the the usage analytics surface build workflow (see instructions below) drill for the full audience:
 
 - **First visit prompt**: Trigger for all users who have never viewed the analytics page and have 7+ days of activity
 - **Weekly digest prompt**: Every Monday for users active in the last 7 days
@@ -99,6 +98,5 @@ If FAIL on retention lift: the analytics surface is viewed but not impactful. Re
 
 ## Drills Referenced
 
-- `usage-analytics-engagement-monitor` — monitors view rates, engagement depth, retention lift, and generates weekly health reports
 - `feature-adoption-monitor` — tracks whether analytics CTAs drive feature discovery and adoption
 - `posthog-gtm-events` — verifies and maintains the event taxonomy at full scale

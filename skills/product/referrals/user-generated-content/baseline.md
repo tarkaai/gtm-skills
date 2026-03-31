@@ -16,7 +16,6 @@ slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
   - posthog-gtm-events
-  - ugc-amplification-pipeline
 ---
 
 # UGC Campaign — Baseline Run
@@ -78,7 +77,7 @@ Test end-to-end: submit a test piece through the form, verify the webhook proces
 
 ### 3. Launch the amplification pipeline
 
-Run the `ugc-amplification-pipeline` drill. This deploys:
+Run the the ugc amplification pipeline workflow (see instructions below) drill. This deploys:
 
 **Weekly content selection:** An n8n workflow that runs every Monday, queries the UGC Library for approved-but-not-amplified content, ranks by amplification score, and queues the top 3-5 pieces for the week.
 
@@ -136,4 +135,4 @@ Review the PostHog funnels and Attio UGC Library:
 
 - `posthog-gtm-events` — establish the UGC event taxonomy with standard event names and properties for submission, moderation, amplification, and referral tracking
 - the ugc collection automation workflow (see instructions below) — deploy the always-on pipeline: submission webhook, AI moderation, CRM cataloging, external content detection, and creator engagement sequences
-- `ugc-amplification-pipeline` — format approved UGC for LinkedIn, email, and in-product channels; schedule weekly amplification; track per-piece and per-channel performance
+- the ugc amplification pipeline workflow (see instructions below) — format approved UGC for LinkedIn, email, and in-product channels; schedule weekly amplification; track per-piece and per-channel performance

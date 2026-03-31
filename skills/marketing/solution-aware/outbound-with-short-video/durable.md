@@ -16,7 +16,6 @@ slug: "outbound-with-short-video"
 install: "npx gtm-skills add marketing/solution-aware/outbound-with-short-video"
 drills:
   - autonomous-optimization
-  - video-outreach-performance-monitor
   - signal-detection
 ---
 
@@ -43,7 +42,7 @@ Deploy an always-on AI agent loop that autonomously monitors video outreach perf
 
 ### 1. Deploy the video outreach performance monitor
 
-Run the `video-outreach-performance-monitor` drill to build the monitoring layer:
+Run the `autonomous-optimization` drill to build the monitoring layer:
 
 1. **Dashboard:** Create the PostHog "Video Outreach -- Performance" dashboard with all video-specific panels: engagement funnel, completion rate distribution, video vs text comparison, engagement quality by segment, and pipeline impact.
 
@@ -175,5 +174,5 @@ As experiments run and winners are adopted, maintain the segment video library:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, and detect convergence
-- `video-outreach-performance-monitor` — PostHog dashboard, anomaly alerts, and weekly briefs for video-specific metrics
+- `autonomous-optimization` — PostHog dashboard, anomaly alerts, and weekly briefs for video-specific metrics
 - `signal-detection` — continuous buying signal monitoring to refresh the prospect pipeline and prevent audience exhaustion

@@ -13,7 +13,6 @@ kpis: ["Primary engagement metric lift %", "Statistical significance level", "Co
 slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
-  - layout-variant-builder
   - ab-test-orchestrator
   - posthog-gtm-events
 ---
@@ -52,7 +51,7 @@ Run the `ab-test-orchestrator` drill. Take the winning variant direction from Sm
 
 1. **Calculate required sample size.** Using the Smoke data as your baseline conversion rate and 15% lift as the minimum detectable effect, compute the sample size needed for 95% significance / 80% power. If your page gets 100 visitors/day and you need 400 per variant, the test runs for 8 days.
 
-2. **Create the PostHog experiment.** Link it to the feature flag from the `layout-variant-builder` drill. Set the primary metric (the engagement event that showed the strongest signal in Smoke). Add secondary metrics: bounce rate, error rate, and conversion rate as guardrails.
+2. **Create the PostHog experiment.** Link it to the feature flag from the the layout variant builder workflow (see instructions below) drill. Set the primary metric (the engagement event that showed the strongest signal in Smoke). Add secondary metrics: bounce rate, error rate, and conversion rate as guardrails.
 
 3. **Set traffic allocation to 50/50.** At Baseline, you need statistical power — allocate half of all traffic to each variant. No holdout group at this stage.
 
@@ -60,7 +59,7 @@ Run the `ab-test-orchestrator` drill. Take the winning variant direction from Sm
 
 ### 3. Build the refined layout variant
 
-Run the `layout-variant-builder` drill to create the production-quality variant:
+Run the the layout variant builder workflow (see instructions below) drill to create the production-quality variant:
 
 - Polish the layout change from Smoke into a production-ready implementation
 - Ensure responsive behavior across desktop, tablet, and mobile
@@ -101,6 +100,6 @@ At the end of the test period, evaluate:
 
 ## Drills Referenced
 
-- `layout-variant-builder` — creates the production-quality layout variant with full instrumentation
+- the layout variant builder workflow (see instructions below) — creates the production-quality layout variant with full instrumentation
 - `ab-test-orchestrator` — designs the experiment, calculates sample size, sets significance criteria, and manages the test lifecycle
 - `posthog-gtm-events` — sets up comprehensive event tracking for the experiment

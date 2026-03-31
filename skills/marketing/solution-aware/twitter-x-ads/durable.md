@@ -15,7 +15,6 @@ slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
 drills:
   - autonomous-optimization
-  - twitter-x-ads-performance-monitor
   - dashboard-builder
 ---
 
@@ -121,7 +120,7 @@ Post to Slack and store in Attio.
 
 ### 3. Configure always-on monitoring
 
-Run the `twitter-x-ads-performance-monitor` drill at Durable intensity:
+Run the `autonomous-optimization` drill at Durable intensity:
 - Daily cron monitoring continues from Scalable level
 - Creative fatigue detection auto-triggers new variant production
 - Audience exhaustion detection auto-triggers new audience research
@@ -167,5 +166,5 @@ If metrics decay despite optimization, investigate: market saturation, competiti
 ## Drills Referenced
 
 - `autonomous-optimization` — The core Durable loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `twitter-x-ads-performance-monitor` — Daily monitoring for creative fatigue, audience exhaustion, budget guardrails, and performance alerts
+- `autonomous-optimization` — Daily monitoring for creative fatigue, audience exhaustion, budget guardrails, and performance alerts
 - `dashboard-builder` — Creates the PostHog intelligence dashboard with performance, optimization, and health layers

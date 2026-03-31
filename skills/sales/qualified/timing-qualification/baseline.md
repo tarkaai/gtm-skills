@@ -15,10 +15,8 @@ kpis: ["Timeline qualification rate", "Timeline accuracy (predicted vs actual cl
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
-  - timing-discovery-call
   - posthog-gtm-events
   - follow-up-automation
-  - timing-qualification-reporting
 ---
 
 # Timing Qualification Process — Baseline Run
@@ -41,7 +39,7 @@ Scale timing qualification from a one-time smoke test to an always-on process. E
 
 ### 1. Expand timing qualification to all new opportunities
 
-Continue using the `timing-discovery-call` drill from Smoke, but now apply it to every new opportunity:
+Continue using the the timing discovery call workflow (see instructions below) drill from Smoke, but now apply it to every new opportunity:
 
 1. Every discovery call gets timing questions woven in — not as a separate "timing call" but as a standard part of the qualification flow
 2. After each call, the agent auto-extracts timing signals and scores the deal
@@ -94,7 +92,7 @@ Run the `timing-qualification-reporting` drill to create:
 
 After 2 weeks, examine:
 
-- **Which timing questions worked best?** Compare effective question data from `timing-discovery-call` across all calls. Identify the top 3 questions that consistently produce timeline clarity.
+- **Which timing questions worked best?** Compare effective question data from the timing discovery call workflow (see instructions below) across all calls. Identify the top 3 questions that consistently produce timeline clarity.
 - **Which urgency drivers are most common?** If "budget expiration" appears 5x more than any other driver, build your outreach messaging around it.
 - **Which ICP segments have the most urgency?** If funded startups are 80% Immediate/Near-term but enterprise is 80% Long-term, adjust your prospecting to weight funded startups more heavily.
 - **Are timelines accurate?** For any deals that have closed, compare predicted vs actual close date.
@@ -132,7 +130,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `timing-discovery-call` — structured discovery call with timing extraction on every new opportunity
+- the timing discovery call workflow (see instructions below) — structured discovery call with timing extraction on every new opportunity
 - `posthog-gtm-events` — set up event tracking for all timing qualification events
 - `follow-up-automation` — n8n workflows for timeline-specific engagement cadences
-- `timing-qualification-reporting` — dashboards, weekly reports, and anomaly alerts

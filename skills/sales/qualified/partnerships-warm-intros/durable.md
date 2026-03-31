@@ -16,7 +16,6 @@ slug: "partnerships-warm-intros"
 install: "npx gtm-skills add sales/qualified/partnerships-warm-intros"
 drills:
   - autonomous-optimization
-  - warm-intro-performance-reporting
   - partner-relationship-scoring
 ---
 
@@ -43,7 +42,7 @@ Pass threshold: **Sustained or improving intro volume and meeting rate over 6 mo
 
 ### 1. Build the warm intro performance dashboard and reporting
 
-Run the `warm-intro-performance-reporting` drill to create:
+Run the `autonomous-optimization` drill to create:
 
 **PostHog Dashboard — "Warm Intros — Durable Performance":**
 - Intro requests sent by connector (bar chart, last 30 days)
@@ -208,5 +207,5 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — core optimization loop: monitor -> diagnose -> experiment -> evaluate -> implement
-- `warm-intro-performance-reporting` — per-connector dashboards, weekly briefs, performance alerts
+- `autonomous-optimization` — per-connector dashboards, weekly briefs, performance alerts
 - `partner-relationship-scoring` — 5-dimension connector scoring with tier classification and monthly portfolio reports

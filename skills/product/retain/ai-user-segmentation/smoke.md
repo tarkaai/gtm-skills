@@ -14,7 +14,6 @@ kpis: ["Segment count", "Segment stability", "Retention spread across segments",
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
 drills:
-  - behavior-segmentation-pipeline
   - threshold-engine
 ---
 # AI Behavior Segmentation -- Smoke Test
@@ -54,7 +53,7 @@ You need at least 100 active users and 5+ distinct custom events to produce mean
 
 ### 2. Extract behavior vectors manually
 
-Run the `behavior-segmentation-pipeline` drill's step 1 (extract behavior vectors) manually. Execute the HogQL query against your PostHog project. Replace the placeholder feature event names (`feature_a_used`, etc.) with your actual tracked events. Export the results as JSON.
+Run the the behavior segmentation pipeline workflow (see instructions below) drill's step 1 (extract behavior vectors) manually. Execute the HogQL query against your PostHog project. Replace the placeholder feature event names (`feature_a_used`, etc.) with your actual tracked events. Export the results as JSON.
 
 **Human action required:** Map your product's feature events to the vector schema. List your 5-10 core features by event name. Decide what counts as a "collaboration action" for your product. If your product has no collaboration features, set collaboration score to 0 for all users and note that this dimension will not contribute to clustering.
 
@@ -135,5 +134,5 @@ If FAIL -- retention spread <15pp: The segments are distinct in behavior but not
 
 ## Drills Referenced
 
-- `behavior-segmentation-pipeline` -- Extracts behavior vectors, runs LLM clustering, assigns users to segments
+- the behavior segmentation pipeline workflow (see instructions below) -- Extracts behavior vectors, runs LLM clustering, assigns users to segments
 - `threshold-engine` -- Evaluates results against the pass threshold

@@ -16,7 +16,6 @@ kpis: ["Re-engagement rate (target ≥ 4%)", "Meetings booked per month from bre
 slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
 drills:
-  - breakup-email-copy
   - follow-up-automation
   - ab-test-orchestrator
 ---
@@ -78,7 +77,7 @@ When a signal is detected during the cool-off period, ACCELERATE the breakup: re
 
 ### 3. Expand the breakup copy library
 
-At Baseline you had 2 variants (signal and no-signal). At Scalable, expand to test multiple angles within each segment. Run the `breakup-email-copy` drill to create:
+At Baseline you had 2 variants (signal and no-signal). At Scalable, expand to test multiple angles within each segment. Run the the breakup email copy workflow (see instructions below) drill to create:
 
 **No-signal variants (4 Email 1 variants):**
 - Variant A: "Closing your file" — the original loss-aversion framing
@@ -185,7 +184,7 @@ Compute over the full 2-month period:
 
 - Automated silent-prospect pipeline in n8n: 8 hours (Week 1)
 - Scaled signal detection in Clay: 4 hours (Week 1)
-- Expanded copy library with `breakup-email-copy` drill: 3 hours (Week 1)
+- Expanded copy library with the breakup email copy workflow (see instructions below) drill: 3 hours (Week 1)
 - A/B test setup with `ab-test-orchestrator` drill: 4 hours (Week 2)
 - Reply routing automation: 5 hours (Week 2)
 - Performance reporting pipeline: 3 hours (Week 2)
@@ -213,6 +212,6 @@ Compute over the full 2-month period:
 
 ## Drills Referenced
 
-- `breakup-email-copy` — expanded copy library with 4 no-signal variants, 3 signal variants, and 3 asset types for A/B testing
+- the breakup email copy workflow (see instructions below) — expanded copy library with 4 no-signal variants, 3 signal variants, and 3 asset types for A/B testing
 - `follow-up-automation` — automated pipeline from silent-prospect detection through cool-off, enrichment, send, and reply routing
 - `ab-test-orchestrator` — structured A/B testing on subject lines, breakup angles, signal framing, and asset types

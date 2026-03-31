@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/co-webinar-series"
 drills:
   - posthog-gtm-events
   - webinar-attendee-nurture
-  - co-webinar-partner-matching
 ---
 
 # Co-Webinar Series — Baseline Run
@@ -58,7 +57,7 @@ Build a PostHog insight: bar chart of registrations per event grouped by `regist
 
 ### 2. Expand partner outreach
 
-Run the `co-webinar-partner-matching` drill with a larger scope: identify 10-15 candidates. From these, secure 3 confirmed co-webinar partners for the next 6 weeks. Select partners that represent different audience segments so you can test which partner archetype converts best:
+Run the the co webinar partner matching workflow (see instructions below) drill with a larger scope: identify 10-15 candidates. From these, secure 3 confirmed co-webinar partners for the next 6 weeks. Select partners that represent different audience segments so you can test which partner archetype converts best:
 
 - 1 partner from a closely adjacent product category (e.g., complementary tool in the same workflow)
 - 1 partner from a slightly different vertical but with the same buyer persona
@@ -158,4 +157,4 @@ Total: ~20 hours of active work over 6 weeks
 
 - `posthog-gtm-events` — set up standardized event tracking with per-partner attribution
 - `webinar-attendee-nurture` — post-event tiered nurture sequences that convert attendees into pipeline
-- `co-webinar-partner-matching` — find and qualify co-webinar partners (run with expanded scope to secure 3 partners)
+- the co webinar partner matching workflow (see instructions below) — find and qualify co-webinar partners (run with expanded scope to secure 3 partners)

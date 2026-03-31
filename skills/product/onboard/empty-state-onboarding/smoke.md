@@ -14,7 +14,6 @@ kpis: ["Empty state CTR", "CTA click-to-creation rate", "Time from empty state v
 slug: "empty-state-onboarding"
 install: "npx gtm-skills add product/onboard/empty-state-onboarding"
 drills:
-  - empty-state-design
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -48,7 +47,7 @@ Verify events are flowing by checking PostHog Live Events after deploying to sta
 
 ### 2. Audit and design the primary empty state
 
-Run the `empty-state-design` drill. Focus exclusively on the single highest-priority empty state surface — the one on the direct path to your product's activation metric.
+Run the the empty state design workflow (see instructions below) drill. Focus exclusively on the single highest-priority empty state surface — the one on the direct path to your product's activation metric.
 
 Specifically:
 1. Watch 10-20 new user session recordings in PostHog to identify which empty state users hit first and where they stall
@@ -100,6 +99,6 @@ Iterate and re-test with another 20-user cohort. You can run up to 3 iterations 
 
 ## Drills Referenced
 
-- `empty-state-design` — audit empty states, design the P0 surface with CTA, templates, and tracking
+- the empty state design workflow (see instructions below) — audit empty states, design the P0 surface with CTA, templates, and tracking
 - `posthog-gtm-events` — define the event taxonomy for empty state tracking
 - `threshold-engine` — evaluate the 40% CTR pass/fail threshold

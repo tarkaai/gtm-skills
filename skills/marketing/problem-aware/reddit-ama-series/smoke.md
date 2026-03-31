@@ -15,7 +15,6 @@ slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
 drills:
   - community-reconnaissance
-  - ama-session-planning
   - community-content-posting
 ---
 
@@ -59,7 +58,7 @@ If top AMAs in the subreddit get 50+ upvotes and 20+ questions, it is a viable A
 
 ### 2. Plan the AMA session
 
-Run the `ama-session-planning` drill. This produces:
+Run the the ama session planning workflow (see instructions below) drill. This produces:
 
 1. **Topic and angle:** A specific, value-first AMA topic based on what the community is discussing and what the host can uniquely contribute. Frame around expertise and experience, not company promotion.
 
@@ -109,7 +108,7 @@ Rules for the live session:
 
 ### 5. Post-AMA follow-up
 
-Within 24 hours, run the post-AMA follow-up from the `ama-session-planning` drill:
+Within 24 hours, run the post-AMA follow-up from the the ama session planning workflow (see instructions below) drill:
 
 1. Fetch all questions and answers from the AMA post
 2. Calculate metrics: total questions, response rate, total upvotes, average upvotes per answer
@@ -155,5 +154,5 @@ After 7 days, check PostHog and the AMA post:
 ## Drills Referenced
 
 - `community-reconnaissance` — discover and rank target subreddits for AMA hosting
-- `ama-session-planning` — end-to-end AMA preparation: topic selection, post drafting, Q&A bank, live support
+- the ama session planning workflow (see instructions below) — end-to-end AMA preparation: topic selection, post drafting, Q&A bank, live support
 - `community-content-posting` — format guidelines for Reddit-native content

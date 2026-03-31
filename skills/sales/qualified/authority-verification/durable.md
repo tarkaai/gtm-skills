@@ -16,7 +16,6 @@ slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - autonomous-optimization
-  - stakeholder-intelligence-monitor
 ---
 
 # Authority Verification — Durable
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-The authority verification system runs autonomously at its local maximum. The `autonomous-optimization` drill monitors KPIs daily, detects when metrics plateau or drop, generates hypotheses for improvement, runs A/B experiments, and auto-implements winners. The `stakeholder-intelligence-monitor` catches org changes (Champion departures, new Economic Buyers, reorgs) before they derail deals. Weekly optimization briefs report what changed and why. The system converges when successive experiments produce <2% improvement for 3 consecutive experiments — meaning the play has reached its best possible performance given current market conditions.
+The authority verification system runs autonomously at its local maximum. The `autonomous-optimization` drill monitors KPIs daily, detects when metrics plateau or drop, generates hypotheses for improvement, runs A/B experiments, and auto-implements winners. The `autonomous-optimization` catches org changes (Champion departures, new Economic Buyers, reorgs) before they derail deals. Weekly optimization briefs report what changed and why. The system converges when successive experiments produce <2% improvement for 3 consecutive experiments — meaning the play has reached its best possible performance given current market conditions.
 
 ## Leading Indicators
 
@@ -84,7 +83,7 @@ Run the `autonomous-optimization` drill to create the always-on improvement cycl
 
 ### 2. Deploy stakeholder intelligence monitoring
 
-Run the `stakeholder-intelligence-monitor` drill for always-on awareness of org changes:
+Run the `autonomous-optimization` drill for always-on awareness of org changes:
 
 1. **Weekly org change scan**: compare Clay enrichment results against stored stakeholder maps. Detect new arrivals, departures, and title changes at every active account.
 2. **Impact classification**: for each change, assess deal impact using Claude:
@@ -153,5 +152,5 @@ After setup, the system runs autonomously. Human involvement is limited to weekl
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum of authority verification performance
-- `stakeholder-intelligence-monitor` — always-on monitoring of org changes, sentiment shifts, and engagement decay across all active deals
+- `autonomous-optimization` — always-on monitoring of org changes, sentiment shifts, and engagement decay across all active deals
 - `autonomous-optimization` — weekly reporting on verification coverage, accuracy, and deal impact with real-time alerts for stale and high-value unverified deals

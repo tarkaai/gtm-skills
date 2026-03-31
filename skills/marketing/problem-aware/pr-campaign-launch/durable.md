@@ -16,7 +16,6 @@ slug: "pr-campaign-launch"
 install: "npx gtm-skills add marketing/problem-aware/pr-campaign-launch"
 drills:
   - autonomous-optimization
-  - pr-performance-monitor
 ---
 
 # PR Campaign Launch — Durable Intelligence
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill configured for the PR program.
 
 ### 2. Deploy PR Performance Reporting
 
-Run the `pr-performance-monitor` drill at full scale:
+Run the `autonomous-optimization` drill at full scale:
 
 1. Maintain the 5-panel PostHog dashboard (outreach pipeline, placements, referral traffic, attribution, relationships)
 2. Keep anomaly detection thresholds recalibrated monthly
@@ -186,4 +185,4 @@ The optimizer should detect external shifts:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in PR KPIs, generate hypotheses (pitch angle fatigue, outlet tier mix, source request prioritization, competitor response), run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `pr-performance-monitor` — continuous monitoring of outreach pipeline, placements, referral traffic, placement-to-pipeline attribution, and media relationship health. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — continuous monitoring of outreach pipeline, placements, referral traffic, placement-to-pipeline attribution, and media relationship health. Provides the data layer the optimization loop reads from.

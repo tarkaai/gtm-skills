@@ -14,7 +14,6 @@ kpis: ["Registration count", "Submission rate", "Qualified leads generated", "Pr
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosting"
 drills:
-  - hackathon-challenge-pipeline
   - threshold-engine
 ---
 
@@ -38,7 +37,7 @@ Prove that hackathons generate qualified developer leads who actually engage wit
 
 ### 1. Design the hackathon challenge
 
-Run the `hackathon-challenge-pipeline` drill, Step 1 only. Define a challenge that:
+Run the the hackathon challenge pipeline workflow (see instructions below) drill, Step 1 only. Define a challenge that:
 
 - Forces participants to use your product's core API or platform for a meaningful part of their project (not a superficial integration)
 - Targets a problem domain your ICP cares about (e.g., if you sell a data API, the challenge should involve building something that processes real data, not a toy demo)
@@ -62,7 +61,7 @@ For the smoke test, run a **virtual hackathon** to maximize reach with minimal l
 - **Platform**: Devpost (free for organizers, handles registration, team formation, and submission collection) or Luma (free tier, good for developer events)
 - **Prize budget**: $500-1,000 total. Structure: 1st place $300, 2nd place $150, 3rd place $50. All submitters get extended free-tier product access.
 
-Set up the event on the chosen platform. Follow `hackathon-challenge-pipeline` drill, Step 2.
+Set up the event on the chosen platform. Follow the hackathon challenge pipeline workflow (see instructions below) drill, Step 2.
 
 Track registration with PostHog: fire `hackathon_page_viewed` and `hackathon_registered` events.
 
@@ -86,7 +85,7 @@ Estimated time: 2 hours.
 
 ### 4. Execute the hackathon
 
-Follow `hackathon-challenge-pipeline` drill, Steps 4 and 5:
+Follow the hackathon challenge pipeline workflow (see instructions below) drill, Steps 4 and 5:
 
 - Host a 30-minute live kickoff: introduce the challenge, walk through the quickstart guide, demo a sample project, and answer questions
 - Keep the support channel active during the event. Respond to questions within 2 hours during business hours.
@@ -105,7 +104,7 @@ After the hackathon closes:
 
 - Extract all participant data from the platform
 - Score each participant's product usage depth by checking API logs: how many endpoints did they call, how many features did they use, how much data did they process?
-- Classify participants into tiers (see `hackathon-attendee-nurture` drill for tier definitions)
+- Classify participants into tiers (see the hackathon attendee nurture workflow (see instructions below) drill for tier definitions)
 - Send a personal thank-you email to all submitters with: the demo day recording, winning project highlights, and an offer of extended free-tier access
 - For the top 5-10 participants (winners + strong submitters): send a personal email referencing their specific project, offering a 1-on-1 call to discuss their use case
 
@@ -153,5 +152,5 @@ If PASS, proceed to Baseline. If FAIL, review: Was the challenge too hard or too
 
 ## Drills Referenced
 
-- `hackathon-challenge-pipeline` -- complete hackathon lifecycle from challenge design through judging and lead capture
+- the hackathon challenge pipeline workflow (see instructions below) -- complete hackathon lifecycle from challenge design through judging and lead capture
 - `threshold-engine` -- evaluates results against pass/fail threshold and recommends next action

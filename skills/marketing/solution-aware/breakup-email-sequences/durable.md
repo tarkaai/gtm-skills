@@ -84,7 +84,7 @@ Store hypotheses in Attio. If risk = "high" (e.g., major targeting change), aler
 1. Take the top-ranked hypothesis
 2. Design the experiment using `posthog-experiments`: create a feature flag that splits breakup traffic between control (current) and variant (hypothesis change)
 3. Implement the variant:
-   - For copy changes: use the `breakup-email-copy` drill to generate a new variant and load into Instantly
+   - For copy changes: use the the breakup email copy workflow (see instructions below) drill to generate a new variant and load into Instantly
    - For timing changes: adjust the n8n cool-off workflow for the variant cohort
    - For signal changes: update Clay enrichment thresholds for the variant
    - For asset changes: swap the Email 2 asset for the variant cohort
@@ -150,7 +150,7 @@ Create a copy library with a rotation system:
 - Maintain at least 3 active Email 2 asset variants
 - When any variant's reply rate drops below 60% of its peak over a 30-day window, the n8n workflow:
   1. Pauses the variant
-  2. Triggers the `breakup-email-copy` drill to generate a replacement
+  2. Triggers the the breakup email copy workflow (see instructions below) drill to generate a replacement
   3. Rotates in the next variant from the library
   4. Logs the rotation event in PostHog
 

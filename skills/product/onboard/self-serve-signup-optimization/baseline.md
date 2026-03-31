@@ -15,7 +15,6 @@ install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
   - signup-friction-reduction
   - lead-capture-surface-setup
-  - cta-conversion-monitor
 ---
 
 # Signup Funnel Optimization — Baseline Run
@@ -93,4 +92,3 @@ If the 10pp lift is not achieved after deploying all 3 fixes, diagnose which fix
 
 - `signup-friction-reduction` — implements targeted fixes for the signup bottleneck behind feature flags with per-variant tracking
 - `lead-capture-surface-setup` — optimizes the signup form as a conversion surface with proper tracking and CRM routing
-- `cta-conversion-monitor` — creates always-on monitoring of signup funnel health with daily anomaly detection

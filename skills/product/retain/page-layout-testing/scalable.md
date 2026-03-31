@@ -15,8 +15,7 @@ install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
   - layout-variant-builder
   - ab-test-orchestrator
-  - session-recording-friction-analysis
-  - ux-experiment-health-monitor
+  - dashboard-builder
 ---
 
 # UI/UX Experimentation — Scalable Automation
@@ -68,7 +67,7 @@ For each experiment, break results down by these segments. If a variant wins ove
 
 ### 4. Automate experiment monitoring and reporting
 
-Run the `ux-experiment-health-monitor` drill to set up always-on monitoring:
+Run the `dashboard-builder` drill to set up always-on monitoring:
 
 - Every 6 hours: check all active experiments for guardrail breaches
 - Weekly: generate an experiment health report showing velocity, cumulative lift, and pipeline
@@ -78,7 +77,7 @@ The agent runs these monitoring workflows continuously via n8n. Human review is 
 
 ### 5. Mine friction for the next experiment
 
-Run the `session-recording-friction-analysis` drill monthly on each page in the pipeline. This generates a ranked backlog of layout hypotheses for future experiments. The cycle becomes:
+Run the the session recording friction analysis workflow (see instructions below) drill monthly on each page in the pipeline. This generates a ranked backlog of layout hypotheses for future experiments. The cycle becomes:
 
 1. Session recording analysis identifies friction patterns
 2. Friction patterns generate layout hypotheses
@@ -117,5 +116,5 @@ After 2 months, measure:
 
 - `layout-variant-builder` — creates feature flags and instrumentation for each page's layout experiment
 - `ab-test-orchestrator` — manages the A/B test lifecycle: sample size, duration, significance evaluation
-- `session-recording-friction-analysis` — mines session recordings for friction patterns that generate experiment hypotheses
-- `ux-experiment-health-monitor` — automated guardrail monitoring, weekly reporting, and convergence detection
+- the session recording friction analysis workflow (see instructions below) — mines session recordings for friction patterns that generate experiment hypotheses
+- `dashboard-builder` — automated guardrail monitoring, weekly reporting, and convergence detection

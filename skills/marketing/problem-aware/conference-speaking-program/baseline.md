@@ -15,7 +15,6 @@ slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
 drills:
   - conference-cfp-pipeline
-  - speaking-lead-capture
   - posthog-gtm-events
 ---
 
@@ -70,7 +69,7 @@ Build a PostHog funnel: submitted → accepted → delivered → leads_captured 
 
 ### 3. Deploy lead capture for every accepted talk
 
-Run the `speaking-lead-capture` drill for each accepted talk:
+Run the the speaking lead capture workflow (see instructions below) drill for each accepted talk:
 
 1. Create companion resource page with UTM-tagged links, Cal.com embed, and email capture form
 2. Generate QR code for final talk slide
@@ -118,5 +117,5 @@ Execute the bi-weekly rhythm:
 ## Drills Referenced
 
 - `conference-cfp-pipeline` — always-on CFP discovery, scoring, proposal drafting, and submission tracking
-- `speaking-lead-capture` — post-talk lead capture infrastructure, follow-up sequences, and attribution
+- the speaking lead capture workflow (see instructions below) — post-talk lead capture infrastructure, follow-up sequences, and attribution
 - `posthog-gtm-events` — speaking event taxonomy and funnel tracking in PostHog

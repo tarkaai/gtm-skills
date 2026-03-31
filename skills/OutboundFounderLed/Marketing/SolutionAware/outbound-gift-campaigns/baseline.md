@@ -14,7 +14,6 @@ kpis: ["Response rate", "Cost per response", "Cost per meeting", "Meetings booke
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add OutboundFounderLed/Marketing/SolutionAware/outbound-gift-campaigns"
 drills:
-  - gift-campaign-send
   - posthog-gtm-events
   - follow-up-automation
   - threshold-engine
@@ -101,7 +100,7 @@ Run the `follow-up-automation` drill to create an n8n workflow triggered by gift
 
 ### 4. Scale to 50 gifts per month
 
-Run the `gift-campaign-send` drill at Baseline volume:
+Run the the gift campaign send workflow (see instructions below) drill at Baseline volume:
 
 - Source 50 new signal-detected prospects per month via Clay and push to Attio
 - Run AI gift selection for each prospect (review in batches of 10-15 rather than individually)
@@ -169,7 +168,7 @@ If FAIL: Diagnose by funnel stage:
 
 ## Drills Referenced
 
-- `gift-campaign-send` — AI-powered gift selection, batch sending, and CRM logging for 50 gifts/month
+- the gift campaign send workflow (see instructions below) — AI-powered gift selection, batch sending, and CRM logging for 50 gifts/month
 - `posthog-gtm-events` — Set up standardized gift campaign event taxonomy in PostHog
 - `follow-up-automation` — Multi-channel follow-up sequence triggered by gift delivery
 - `threshold-engine` — Evaluate results against the 25% response rate pass threshold

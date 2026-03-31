@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/proposed/budget-objection-handling"
 drills:
   - budget-detection-automation
   - ab-test-orchestrator
-  - budget-follow-up-sequence
 ---
 
 # Budget Objection Handling — Scalable Automation
@@ -80,7 +79,7 @@ For each experiment:
 
 ### 3. Scale the follow-up sequences
 
-Ensure the `budget-follow-up-sequence` drill's n8n workflows handle increased volume:
+Ensure the the budget follow up sequence workflow (see instructions below) drill's n8n workflows handle increased volume:
 - Verify Instantly sending limits can handle follow-up volume (upgrade to Hypergrowth at $97/mo if needed)
 - Monitor n8n workflow execution logs for failures — set up error alerting
 - Confirm Attio webhook delivery is reliable
@@ -148,4 +147,4 @@ After 2 months, evaluate:
 
 - `budget-detection-automation` — always-on monitoring of calls and emails for budget objections with budget/price distinction, auto-classification, and workflow triggering
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on navigation frameworks and payment structures
-- `budget-follow-up-sequence` — automated multi-touch follow-ups with budget-cycle-aware timing scaled to handle increased volume from auto-detection
+- the budget follow up sequence workflow (see instructions below) — automated multi-touch follow-ups with budget-cycle-aware timing scaled to handle increased volume from auto-detection

@@ -16,7 +16,6 @@ slug: "conference-speaking-program"
 install: "npx gtm-skills add marketing/problem-aware/conference-speaking-program"
 drills:
   - autonomous-optimization
-  - speaking-performance-monitor
   - conference-cfp-pipeline
 ---
 
@@ -101,7 +100,7 @@ Run the `autonomous-optimization` drill configured for the speaking program:
 
 ### 2. Maintain the speaking performance monitor
 
-The `speaking-performance-monitor` drill continues running from Scalable:
+The `autonomous-optimization` drill continues running from Scalable:
 
 1. Dashboard stays live and auto-updates
 2. Automated alerts continue firing (acceptance rate drops, lead capture failures, sequence underperformance)
@@ -169,5 +168,5 @@ The optimization loop runs indefinitely until it detects convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics → detect anomalies → generate hypotheses → run experiments → evaluate → auto-implement winners → report weekly
-- `speaking-performance-monitor` — dashboard, alerts, quarterly analysis, and talk topic lifecycle tracking
+- `autonomous-optimization` — dashboard, alerts, quarterly analysis, and talk topic lifecycle tracking
 - `conference-cfp-pipeline` — continuous CFP discovery and proposal generation, updated by optimization experiments

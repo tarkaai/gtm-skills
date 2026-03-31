@@ -17,7 +17,6 @@ slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
   - autonomous-optimization
-  - need-assessment-reporting
   - signal-detection
 ---
 
@@ -114,7 +113,7 @@ When a signal fires, automatically:
 
 ### 3. Build durable need intelligence reporting
 
-Run the `need-assessment-reporting` drill with Durable-level additions:
+Run the `autonomous-optimization` drill with Durable-level additions:
 
 - **Scoring model drift dashboard:** Track how the need scoring model's accuracy changes over time. If the model that was 80% accurate in month 1 drops to 60% in month 3, the autonomous optimization loop should have detected and addressed this — if it hasn't, flag for strategic review.
 - **Need category evolution tracker:** Which need categories are gaining relevance (more prospects scoring Critical) and which are fading? This is a market intelligence signal — your customers' problems are shifting.
@@ -183,5 +182,5 @@ This level runs continuously. Monthly review:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on optimization loop: monitor > diagnose > experiment > evaluate > implement
-- `need-assessment-reporting` — durable-level dashboards with scoring model drift tracking, need category evolution, experiment impact, and signal decay analysis
+- `autonomous-optimization` — durable-level dashboards with scoring model drift tracking, need category evolution, experiment impact, and signal decay analysis
 - `signal-detection` — always-on monitoring for need-relevant buying signals that trigger re-hypothesis or new lead creation

@@ -15,7 +15,6 @@ slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
   - so-tag-reconnaissance
-  - so-answer-crafting
   - threshold-engine
 ---
 # Stack Overflow Presence — Smoke Test
@@ -67,7 +66,7 @@ Identify 15-20 candidate questions that meet all of these criteria:
 
 ### 3. Answer 10 questions
 
-Run the `so-answer-crafting` drill for each question. Target 2 answers per day over 5 days. For each answer:
+Run the the so answer crafting workflow (see instructions below) drill for each question. Target 2 answers per day over 5 days. For each answer:
 - Follow the answer crafting rules precisely (working code, explanations, no self-promotion)
 - Log the interaction: question ID, tags, answer type, word count, time spent
 - Track the answer URL for follow-up monitoring

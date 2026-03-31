@@ -16,7 +16,6 @@ slug: "customer-success-playbooks"
 install: "npx gtm-skills add product/retain/customer-success-playbooks"
 drills:
   - autonomous-optimization
-  - churn-model-health-monitor
 ---
 
 # CS Intervention Playbooks -- Durable Intelligence
@@ -115,7 +114,7 @@ The health monitor's daily anomaly classifications feed directly into the optimi
 
 ### 3. Deploy churn model health monitoring
 
-Run the `churn-model-health-monitor` drill to ensure the prediction machinery itself stays accurate. The optimization loop optimizes playbook performance, but if the underlying churn model drifts out of calibration, the entire system degrades:
+Run the `autonomous-optimization` drill to ensure the prediction machinery itself stays accurate. The optimization loop optimizes playbook performance, but if the underlying churn model drifts out of calibration, the entire system degrades:
 
 - Monitor prediction accuracy: true positive rate, false negative rate (most dangerous -- missed churners)
 - Detect calibration drift caused by product changes, seasonal effects, or audience shifts
@@ -187,4 +186,4 @@ If any metric degrades for 2 consecutive months, the system should self-diagnose
 
 - `autonomous-optimization` -- the core optimization loop that detects anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
 - `autonomous-optimization` -- play-specific monitoring that tracks per-playbook performance, scenario coverage, and step drop-off. Feeds signals to the optimization loop.
-- `churn-model-health-monitor` -- monitors prediction accuracy and calibration drift to ensure the churn scoring model stays reliable under the optimization loop.
+- `autonomous-optimization` -- monitors prediction accuracy and calibration drift to ensure the churn scoring model stays reliable under the optimization loop.

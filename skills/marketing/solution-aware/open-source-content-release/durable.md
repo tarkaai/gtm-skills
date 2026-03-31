@@ -16,7 +16,6 @@ slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
 drills:
   - autonomous-optimization
-  - github-repo-performance-monitor
 ---
 
 # Open Source Content Release — Durable Intelligence
@@ -39,7 +38,7 @@ An always-on agent loop monitors all OSS repo metrics, detects when performance 
 
 ### 1. Deploy the performance monitoring system
 
-Run the `github-repo-performance-monitor` drill to build a comprehensive monitoring layer for all OSS repos. This produces:
+Run the `autonomous-optimization` drill to build a comprehensive monitoring layer for all OSS repos. This produces:
 
 **PostHog dashboard ("OSS Content Release - Performance"):**
 - Line chart: daily repo views (total + unique) per repo, last 90 days
@@ -123,7 +122,7 @@ The optimization loop runs indefinitely. However, it detects convergence -- when
 - Reduce monitoring frequency from daily to weekly
 - Generate a convergence report: "This repo is optimized. Current performance: [stars/week], [CTA conversion %], [leads/month]. Further gains require strategic changes (new repo targeting different keywords, product changes that unlock new OSS assets, or expansion to new developer communities) rather than tactical optimization."
 
-When convergence is reached, shift optimization effort to other repos in the portfolio or re-run `oss-content-selection` to identify the next asset to release.
+When convergence is reached, shift optimization effort to other repos in the portfolio or re-run the oss content selection workflow (see instructions below) to identify the next asset to release.
 
 ### 5. Sustain and compound
 
@@ -159,4 +158,4 @@ _Your CRM, PostHog, and automation platform are not included -- standard stack p
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `github-repo-performance-monitor` -- comprehensive monitoring dashboard, anomaly detection alerts, and weekly digest that feeds anomalies into the optimization loop
+- `autonomous-optimization` -- comprehensive monitoring dashboard, anomaly detection alerts, and weekly digest that feeds anomalies into the optimization loop

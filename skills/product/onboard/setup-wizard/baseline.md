@@ -16,9 +16,7 @@ slug: "setup-wizard"
 install: "npx gtm-skills add product/onboard/setup-wizard"
 drills:
   - posthog-gtm-events
-  - wizard-step-builder
   - activation-optimization
-  - wizard-completion-monitor
 ---
 
 # Guided Setup Wizard — Baseline Run
@@ -59,7 +57,7 @@ Build PostHog funnels:
 
 ### 2. Upgrade the wizard for production
 
-Run the `wizard-step-builder` drill again, upgrading from Smoke:
+Run the the wizard step builder workflow (see instructions below) drill again, upgrading from Smoke:
 - Add Product Tour stops for the 2-3 most complex steps (the ones with the highest dropoff or longest time-on-step from Smoke data)
 - Add stall detection: the n8n workflow that nudges users who get stuck at a step for >4 hours
 - Add the Loops email sequence: Day 1 nudge if wizard not started, Day 3 nudge if wizard not completed, Day 5 offer to help
@@ -122,6 +120,5 @@ If FAIL: Focus on the step with the highest dropoff. Run one more optimization c
 ## Drills Referenced
 
 - `posthog-gtm-events` -- standardizes the wizard event taxonomy across all tracking
-- `wizard-step-builder` -- upgrades the wizard with Product Tours, stall detection, and email nudges
+- the wizard step builder workflow (see instructions below) -- upgrades the wizard with Product Tours, stall detection, and email nudges
 - `activation-optimization` -- diagnoses and fixes the highest-dropoff wizard step
-- `wizard-completion-monitor` -- builds always-on dashboard and anomaly detection

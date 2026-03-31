@@ -76,7 +76,7 @@ After each round, implement the winning variant and document the results. Each t
 
 Run the `advocacy-activation-pipeline` drill to build the promoter-to-advocate conversion path:
 
-1. When `nps-response-routing` tags a promoter as `advocacy_ready` (score 9-10, power user, tenure >90 days), automatically enroll them in the advocacy pipeline
+1. When the nps response routing workflow (see instructions below) tags a promoter as `advocacy_ready` (score 9-10, power user, tenure >90 days), automatically enroll them in the advocacy pipeline
 2. The pipeline delivers: a personalized thank-you, a specific advocacy ask (review, testimonial, referral, case study), and a reward (early feature access, account credit, or swag)
 3. Track the full funnel: promoter identified > advocacy ask sent > action started > action completed
 4. Target: ≥10% of promoters complete an advocacy action within 30 days of their NPS response

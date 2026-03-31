@@ -16,7 +16,6 @@ slug: "github-project-promotion"
 install: "npx gtm-skills add marketing/solution-aware/github-project-promotion"
 drills:
   - autonomous-optimization
-  - github-repo-performance-monitor
 ---
 
 # GitHub Project Promotion — Durable Intelligence
@@ -40,7 +39,7 @@ The agent autonomously monitors the full GitHub repo portfolio, detects when met
 
 ### 1. Deploy the performance monitoring system
 
-Run the `github-repo-performance-monitor` drill to build comprehensive monitoring for the full repo portfolio:
+Run the `autonomous-optimization` drill to build comprehensive monitoring for the full repo portfolio:
 
 **PostHog dashboard — "GitHub Project Promotion — Durable":**
 
@@ -193,4 +192,4 @@ This level runs continuously. Monthly review: which repos are driving leads, whi
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum. Detects metric anomalies, generates improvement hypotheses via Claude, runs A/B experiments, evaluates results, and auto-implements winners. Produces weekly optimization briefs. Converges when successive experiments yield <2% improvement.
-- `github-repo-performance-monitor` — comprehensive PostHog dashboard and anomaly detection system for the full repo portfolio: traffic, conversion, referral, and engagement metrics with weekly digests and anomaly-to-optimization pipeline
+- `autonomous-optimization` — comprehensive PostHog dashboard and anomaly detection system for the full repo portfolio: traffic, conversion, referral, and engagement metrics with weekly digests and anomaly-to-optimization pipeline

@@ -17,7 +17,6 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - autonomous-optimization
-  - expansion-outreach-sequence
 ---
 
 # Usage-Based Upsell — Durable Intelligence
@@ -113,7 +112,7 @@ The health monitor feeds data to the autonomous optimization loop via its webhoo
 
 ### 4. Maintain outreach delivery at Durable level
 
-The `expansion-outreach-sequence` drill continues to run for every qualified account. The autonomous optimization loop may modify:
+The the expansion outreach sequence workflow (see instructions below) drill continues to run for every qualified account. The autonomous optimization loop may modify:
 - Outreach email copy (subject lines, body content, CTAs)
 - Sequence timing (days between touches, behavioral triggers)
 - Offer structure (tier upgrade, annual discount, limit extension, custom bundle)
@@ -188,4 +187,4 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 
 - `autonomous-optimization` — the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for expansion close rate and revenue
 - `autonomous-optimization` — monitors scoring accuracy, outreach conversion, pipeline velocity, expansion retention, and system health; feeds metrics to the optimization loop
-- `expansion-outreach-sequence` — executes the current best outreach configuration, updated by the optimization loop as experiments produce winners
+- the expansion outreach sequence workflow (see instructions below) — executes the current best outreach configuration, updated by the optimization loop as experiments produce winners

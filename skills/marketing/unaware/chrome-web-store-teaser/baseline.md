@@ -15,7 +15,6 @@ slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
 drills:
   - posthog-gtm-events
-  - chrome-extension-listing-setup
   - landing-page-pipeline
   - threshold-engine
 ---
@@ -55,7 +54,7 @@ Build a PostHog funnel: `extension_installed` > `popup_opened` > `waitlist_form_
 
 ### 2. Update the extension with improved tracking
 
-Using the `chrome-extension-listing-setup` drill, update the extension:
+Using the the chrome extension listing setup workflow (see instructions below) drill, update the extension:
 - Add `feature_preview_clicked` tracking for each feature bullet in the popup
 - Add session counting (increment a counter in `chrome.storage.local` on each popup open)
 - Improve the uninstall survey page: add 4-5 multiple-choice reasons and a free-text field
@@ -122,6 +121,6 @@ Run the `threshold-engine` drill after 2 weeks:
 ## Drills Referenced
 
 - `posthog-gtm-events` — establishes the event taxonomy and funnels for CWS tracking
-- `chrome-extension-listing-setup` — updates the extension with improved tracking
+- the chrome extension listing setup workflow (see instructions below) — updates the extension with improved tracking
 - `landing-page-pipeline` — optimizes the landing page based on Smoke data
 - `threshold-engine` — evaluates install and lead counts against pass threshold

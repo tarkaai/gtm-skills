@@ -19,7 +19,6 @@ slug: "executive-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/executive-roundtables"
 drills:
   - autonomous-optimization
-  - roundtable-performance-monitor
 ---
 
 # Executive Roundtables — Durable Intelligence
@@ -48,7 +47,7 @@ drills:
 
 ### 1. Deploy continuous roundtable funnel monitoring
 
-Run the `roundtable-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 **Post-event automated checks (triggered 2 hours after each roundtable):**
 - Show rate vs target (>=75%): if <60%, fire alert: "Show rate critically low — review confirmation cadence, attendee commitment signals, and exclusivity framing"
@@ -239,4 +238,4 @@ The play is durable when the agent maintains meetings-per-event at or above the 
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs. This is the drill that makes Durable fundamentally different from Scalable.
-- `roundtable-performance-monitor` — continuous monitoring, post-event post-mortems, rolling trend analysis, and monthly series health reports that feed data into the optimization loop
+- `autonomous-optimization` — continuous monitoring, post-event post-mortems, rolling trend analysis, and monthly series health reports that feed data into the optimization loop

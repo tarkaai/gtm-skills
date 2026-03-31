@@ -16,7 +16,6 @@ slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
   - autonomous-optimization
-  - intent-signal-health-monitor
   - dashboard-builder
 ---
 
@@ -109,7 +108,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy play-specific health monitoring
 
-Run the `intent-signal-health-monitor` drill to build:
+Run the `autonomous-optimization` drill to build:
 
 - **Signal pipeline dashboard** in PostHog with 6 panels: signal volume by source, score distribution, signal-to-outreach time, outreach funnel by tier, scoring accuracy comparison, and decay impact
 - **Weekly health check** n8n workflow that compares all metrics to rolling averages and flags anomalies
@@ -178,5 +177,5 @@ Intent signals degrade over time as markets evolve. The autonomous agent must de
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `intent-signal-health-monitor` — play-specific monitoring for signal pipeline health, scoring accuracy, and conversion tracking
+- `autonomous-optimization` — play-specific monitoring for signal pipeline health, scoring accuracy, and conversion tracking
 - `dashboard-builder` — executive ROI dashboard showing intent signal pipeline value

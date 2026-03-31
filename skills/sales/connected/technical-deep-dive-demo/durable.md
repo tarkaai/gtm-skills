@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/connected/technical-deep-dive-demo"
 drills:
   - autonomous-optimization
   - demo-performance-monitor
-  - technical-demo-content-assembly
 ---
 # Technical Deep-Dive Demo — Durable Intelligence
 
@@ -59,7 +58,7 @@ If the top hypothesis has risk = "high" (e.g., changing the entire demo structur
 **Phase 3 — Experiment (triggered by hypothesis acceptance):**
 Design and run the experiment:
 - Use `posthog-experiments` to create a feature flag splitting demos between control and variant
-- Implement the variant by modifying the relevant input to `technical-demo-content-assembly` (e.g., change module ordering, add a new integration demo, adjust the security review depth)
+- Implement the variant by modifying the relevant input to the technical demo content assembly workflow (see instructions below) (e.g., change module ordering, add a new integration demo, adjust the security review depth)
 - Minimum duration: 7 days or 15 demos per variant, whichever is longer
 - Log experiment start in Attio with hypothesis, start date, expected duration, success criteria
 
@@ -90,7 +89,7 @@ Keep the `demo-performance-monitor` drill (deployed at Scalable) running as the 
 The autonomous optimization loop reads from these monitoring outputs. Do not disable or modify the monitor without updating the optimization loop's data source configuration.
 
 ### 3. Evolve technical demo content based on experiment outcomes
-As the `autonomous-optimization` drill implements winners, the `technical-demo-content-assembly` drill's behavior changes:
+As the `autonomous-optimization` drill implements winners, the the technical demo content assembly workflow (see instructions below) drill's behavior changes:
 - Module ordering shifts based on A/B test results (e.g., if API-first wins for engineer-heavy audiences, the assembly drill adjusts ordering by attendee profile)
 - Integration code templates are updated when new integrations prove more compelling
 - Security review depth is calibrated per industry segment based on conversion data
@@ -171,4 +170,4 @@ Re-enter active optimization if: the product ships a major new capability, a new
 ## Drills Referenced
 - `autonomous-optimization` — the core Durable drill that creates the always-on monitor-diagnose-experiment-evaluate-implement loop, finding the local maximum of demo effectiveness and maintaining it as conditions change
 - `demo-performance-monitor` — continuous monitoring of the discovery-to-demo-to-deal funnel, providing the data backbone for autonomous optimization decisions
-- `technical-demo-content-assembly` — generates prospect-customized demo materials; at Durable level, its configuration evolves automatically as experiments produce winners
+- the technical demo content assembly workflow (see instructions below) — generates prospect-customized demo materials; at Durable level, its configuration evolves automatically as experiments produce winners

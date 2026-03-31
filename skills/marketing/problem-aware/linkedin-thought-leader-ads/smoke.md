@@ -14,7 +14,6 @@ kpis: ["Impressions", "Engagement rate", "CPC", "Profile visits from ICP titles"
 slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
 drills:
-  - tla-post-selection
   - threshold-engine
 ---
 
@@ -57,7 +56,7 @@ This is a one-time setup step. Once permission is granted, it persists for all f
 
 ### 3. Run Post Selection
 
-Run the `tla-post-selection` drill for the founder's profile:
+Run the the tla post selection workflow (see instructions below) drill for the founder's profile:
 
 1. Pull the founder's post analytics for the last 90 days (via Taplio, Shield, or LinkedIn native analytics)
 2. Filter for TLA-eligible posts (remove polls, reshares, articles, celebrations)
@@ -140,5 +139,5 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `tla-post-selection` — identify and score organic LinkedIn posts for TLA promotion based on engagement signals and ICP pain-point alignment
+- the tla post selection workflow (see instructions below) — identify and score organic LinkedIn posts for TLA promotion based on engagement signals and ICP pain-point alignment
 - `threshold-engine` — evaluate Smoke test results against the pass threshold and recommend next action (advance, iterate, or pivot)

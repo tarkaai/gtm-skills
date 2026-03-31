@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimi
 drills:
   - technical-seo-crawl-audit
   - technical-seo-fix-pipeline
-  - technical-seo-regression-monitor
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -134,6 +133,5 @@ If FAIL: diagnose — is traffic increasing but not fast enough (stay at Baselin
 
 - `technical-seo-crawl-audit` — weekly automated crawl producing issue reports
 - `technical-seo-fix-pipeline` — automated fix implementation with human approval for high-severity issues
-- `technical-seo-regression-monitor` — always-on monitoring for robots.txt, indexation, CWV, sitemap health
 - `posthog-gtm-events` — SEO event taxonomy and dashboard setup
 - `threshold-engine` — 8-week evaluation against organic traffic and ranking targets

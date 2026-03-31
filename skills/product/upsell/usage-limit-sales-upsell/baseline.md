@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - usage-threshold-detection
   - expansion-signal-qualification
-  - expansion-outreach-sequence
   - posthog-gtm-events
 ---
 
@@ -68,7 +67,7 @@ Run the `expansion-signal-qualification` drill with automation:
 
 ### 3. Deploy the outreach sequence
 
-Run the `expansion-outreach-sequence` drill in full automated mode:
+Run the the expansion outreach sequence workflow (see instructions below) drill in full automated mode:
 
 1. Create the 4 email templates in Loops with personalization variables: account name, resource name, current count, plan limit, pct used, projected hit date, next tier name, account owner name
 2. Build the n8n orchestration workflow: Touch 1 on Day 0, Touch 2 on Day 3 (skip if reply), Touch 3 on Day 7 (skip if reply or meeting), Touch 4 on Day 14 (skip if any engagement)
@@ -160,5 +159,5 @@ If PASS, proceed to Scalable. If FAIL, diagnose the funnel: detection working bu
 
 - `usage-threshold-detection` — daily pipeline identifying accounts approaching limits, classifying urgency tiers, storing data in Attio
 - `expansion-signal-qualification` — automated qualification scoring to filter detected accounts into sales-ready opportunities
-- `expansion-outreach-sequence` — 4-touch personalized outreach cadence with stop conditions and CRM logging
+- the expansion outreach sequence workflow (see instructions below) — 4-touch personalized outreach cadence with stop conditions and CRM logging
 - `posthog-gtm-events` — configures the event tracking and funnel measuring the full expansion pipeline

@@ -14,8 +14,7 @@ kpis: ["Cumulative lift % per metric", "Experiment velocity (experiments/month)"
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
-  - holdout-lift-measurement
-  - holdout-integrity-monitor
+  - dashboard-builder
   - ab-test-orchestrator
   - cohort-retention-extraction
 ---
@@ -40,7 +39,7 @@ Holdout measurement covers 3+ primary metrics simultaneously (retention, engagem
 
 ### 1. Expand lift measurement to multiple metrics
 
-Run the `holdout-lift-measurement` drill with an expanded metric set. Add to the existing primary metric:
+Run the the holdout lift measurement workflow (see instructions below) drill with an expanded metric set. Add to the existing primary metric:
 - **Retention:** Week 1, Week 4, and Week 8 retention rates
 - **Engagement:** Weekly active days per user, feature breadth (distinct features used)
 - **Revenue:** Revenue per user, upgrade conversion rate, expansion revenue
@@ -73,7 +72,7 @@ Confirm that the experiment's feature flag includes:
 
 ### 4. Run continuous integrity monitoring
 
-The `holdout-integrity-monitor` drill continues running weekly. At Scalable level, add automated remediation:
+The `dashboard-builder` drill continues running weekly. At Scalable level, add automated remediation:
 - If contamination is detected, automatically disable the offending experiment's feature flag and send an alert
 - If group size drifts, trigger a re-evaluation of the holdout flag's rollout percentage
 - Track the integrity streak (consecutive weeks with all checks passing) as a KPI
@@ -122,7 +121,7 @@ If PASS, proceed to Durable. If FAIL:
 
 ## Drills Referenced
 
-- `holdout-lift-measurement` — multi-metric, segment-level lift computation with statistical significance
-- `holdout-integrity-monitor` — weekly validation with automated remediation at Scalable level
+- the holdout lift measurement workflow (see instructions below) — multi-metric, segment-level lift computation with statistical significance
+- `dashboard-builder` — weekly validation with automated remediation at Scalable level
 - `ab-test-orchestrator` — systematic experiment execution with holdout exclusion enforcement
 - `cohort-retention-extraction` — segment-level holdout vs treatment breakdown

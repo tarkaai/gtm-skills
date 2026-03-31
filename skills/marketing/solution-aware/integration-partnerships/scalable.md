@@ -14,8 +14,7 @@ slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
 drills:
   - partner-pipeline-automation
-  - integration-pipeline-health-monitor
-  - integration-launch-campaign
+  - dashboard-builder
 ---
 
 # Integration Partnerships — Scalable Automation
@@ -41,7 +40,7 @@ Ten or more active product integrations with co-marketing in place, generating 6
 Run the `partner-pipeline-automation` drill to build n8n workflows that manage the integration partner lifecycle:
 
 - **Partner outreach automation**: When a new partner is added to the "Integration Partners" list in Attio with status "Prospect," auto-send a personalized outreach email via Instantly. Reference the specific integration opportunity identified during discovery. Follow up once after 5 days. Update Attio status on reply.
-- **Launch coordination workflow**: When a partner moves to "Building" status in Attio, trigger a checklist: generate co-marketing assets (run `integration-launch-campaign` drill), set launch date reminder, confirm partner distribution commitment, send partner their tracked URLs.
+- **Launch coordination workflow**: When a partner moves to "Building" status in Attio, trigger a checklist: generate co-marketing assets (run the integration launch campaign workflow (see instructions below) drill), set launch date reminder, confirm partner distribution commitment, send partner their tracked URLs.
 - **Lead attribution workflow**: When PostHog fires an `integration_lead_captured` event with a partner UTM source, auto-create a lead in Attio linked to the partner deal, increment the partner's lead counter, and notify the team.
 - **Partner nurture sequence**: After each integration launch, auto-send the partner a 7-day performance report, a 14-day full retrospective, and a 30-day partnership summary with a proposal for the next co-marketing push.
 
@@ -57,7 +56,7 @@ Use overlap data to prioritize which integrations to build next. An integration 
 
 ### 3. Launch integrations at cadence
 
-Run the `integration-launch-campaign` drill for each new integration. Target 2-3 new integration launches per month. Standardize the process:
+Run the the integration launch campaign workflow (see instructions below) drill for each new integration. Target 2-3 new integration launches per month. Standardize the process:
 
 1. Week 1: Build the integration (use existing patterns from Baseline — most integrations should be Light or Medium complexity by now)
 2. Week 2: Generate co-marketing assets and coordinate with partner
@@ -68,7 +67,7 @@ Create integration templates for common patterns (webhook sync, API pull, n8n co
 
 ### 4. Monitor portfolio health
 
-Run the `integration-pipeline-health-monitor` drill to build dashboards and weekly briefs covering:
+Run the `dashboard-builder` drill to build dashboards and weekly briefs covering:
 
 - Per-partner lead attribution and conversion rates
 - Integration activation and usage retention
@@ -104,5 +103,5 @@ Measure against: ≥10 active integrations with co-marketing AND ≥60 qualified
 ## Drills Referenced
 
 - `partner-pipeline-automation` — automate partner outreach, launch coordination, lead attribution, and nurture sequences via n8n
-- `integration-pipeline-health-monitor` — dashboards, weekly briefs, per-partner ROI, and performance alerts
-- `integration-launch-campaign` — execute co-marketing launch for each new integration
+- `dashboard-builder` — dashboards, weekly briefs, per-partner ROI, and performance alerts
+- the integration launch campaign workflow (see instructions below) — execute co-marketing launch for each new integration

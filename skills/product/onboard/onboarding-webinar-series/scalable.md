@@ -15,7 +15,7 @@ slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
 drills:
   - webinar-series-automation
-  - webinar-performance-monitor
+  - dashboard-builder
 ---
 
 # Live Onboarding Webinars — Scalable Automation
@@ -82,7 +82,7 @@ This ensures the webinar audience grows with each event rather than shrinking as
 
 ### 3. Build cross-event analytics and monitoring
 
-Run the `webinar-performance-monitor` drill to build always-on monitoring across the series:
+Run the `dashboard-builder` drill to build always-on monitoring across the series:
 
 **Per-event post-mortems.** The drill generates a structured post-mortem 14 days after each event, comparing every metric against targets and rolling averages. Store in Attio and post to Slack.
 
@@ -183,4 +183,4 @@ Total: ~40 hours spread over 2 months.
 ## Drills Referenced
 
 - `webinar-series-automation` — automates the full recurring webinar lifecycle: topic scheduling, multi-wave promotion, registration ops, Clay prospect enrichment, speaker coordination, and cross-event analytics
-- `webinar-performance-monitor` — builds always-on monitoring with per-event post-mortems, series health dashboards, and anomaly alerting that feeds data to Durable-level optimization
+- `dashboard-builder` — builds always-on monitoring with per-event post-mortems, series health dashboards, and anomaly alerting that feeds data to Durable-level optimization

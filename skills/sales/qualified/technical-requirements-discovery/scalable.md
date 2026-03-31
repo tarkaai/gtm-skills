@@ -15,8 +15,6 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - tool-sync-workflow
-  - technical-fit-scoring
-  - technical-collateral-matching
   - dashboard-builder
   - threshold-engine
 ---
@@ -93,7 +91,7 @@ Run the `dashboard-builder` drill to create a PostHog dashboard called "Technica
 
 ### 3. Implement technical routing intelligence
 
-Using the `technical-fit-scoring` drill at scale, refine the scoring model:
+Using the the technical fit scoring workflow (see instructions below) drill at scale, refine the scoring model:
 
 - After 30+ scored deals with outcomes, analyze which scoring weights best predict wins. If security is more predictive than infrastructure for your market, adjust the weights.
 - Build a "technical complexity tier" system: Simple (composite >80, 0 blockers), Standard (60-80, <=1 blocker), Complex (40-59 or 2+ blockers), Enterprise (<40 or critical blockers). Each tier gets a different SLA for response time.
@@ -142,7 +140,7 @@ If PASS after 2 months, proceed to Durable. If FAIL, identify the bottleneck: au
 ## Drills Referenced
 
 - `tool-sync-workflow` — build n8n workflows connecting Attio, Fireflies, Clay, and PostHog into an automated pipeline
-- `technical-fit-scoring` — apply and refine the 5-category scoring rubric at scale
-- `technical-collateral-matching` — auto-match requirements to documentation and generate follow-ups
+- the technical fit scoring workflow (see instructions below) — apply and refine the 5-category scoring rubric at scale
+- the technical collateral matching workflow (see instructions below) — auto-match requirements to documentation and generate follow-ups
 - `dashboard-builder` — create PostHog dashboard for technical intelligence visibility
 - `threshold-engine` — evaluate metrics against pass thresholds and guardrails

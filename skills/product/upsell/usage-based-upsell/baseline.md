@@ -17,7 +17,6 @@ drills:
   - posthog-gtm-events
   - auto-upgrade-execution
   - usage-alert-delivery
-  - usage-alert-health-monitor
 ---
 
 # Automatic Usage Upsell — Baseline Run
@@ -132,4 +131,3 @@ After 2 weeks of always-on operation, measure:
 - `posthog-gtm-events` — formalizes the event schema and ensures all auto-upgrade lifecycle events are tracked consistently
 - `auto-upgrade-execution` — the core workflow: grace period, opt-out handling, Stripe subscription change, and rollback
 - `usage-alert-delivery` — adds email sequences and high-value account routing to complement in-app messages
-- `usage-alert-health-monitor` — builds the weekly health report tracking detection accuracy, conversion, and revenue impact

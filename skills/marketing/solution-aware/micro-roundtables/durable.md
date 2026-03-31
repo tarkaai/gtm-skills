@@ -16,7 +16,6 @@ slug: "micro-roundtables"
 install: "npx gtm-skills add marketing/solution-aware/micro-roundtables"
 drills:
   - autonomous-optimization
-  - roundtable-performance-monitor
 ---
 
 # Micro-Roundtable — Durable Intelligence
@@ -41,7 +40,7 @@ Convergence: When 3 consecutive experiments produce less than 2% improvement, th
 
 ### 1. Deploy the roundtable performance monitor
 
-Run the `roundtable-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 **Dashboard**: Create a "Roundtable Series Health" dashboard in PostHog with:
 - Top row: next event confirmed count, trailing 4-event show rate, trailing 4-event meeting booking rate
@@ -158,4 +157,4 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for the roundtable series
-- `roundtable-performance-monitor` — continuous monitoring, anomaly detection, post-mortems, and monthly reports that feed data into the autonomous optimization loop
+- `autonomous-optimization` — continuous monitoring, anomaly detection, post-mortems, and monthly reports that feed data into the autonomous optimization loop

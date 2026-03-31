@@ -15,7 +15,6 @@ kpis: ["Re-engagement rate (target ≥ 5%)", "Signal lift (signal-detected rate 
 slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
 drills:
-  - breakup-email-copy
   - cold-email-sequence
   - posthog-gtm-events
 ---
@@ -53,7 +52,7 @@ Export to a Clay table. Target 200+ prospects (over-build by 30% because signal 
 
 ### 2. Run signal detection via Clay
 
-Using the `breakup-email-copy` drill's segmentation step, configure Clay to check each prospect for signals that occurred after they went silent:
+Using the the breakup email copy workflow (see instructions below) drill's segmentation step, configure Clay to check each prospect for signals that occurred after they went silent:
 
 - **Job change detection:** Use Clay's People Data Labs integration to check if the prospect changed roles. A new role = fresh context, higher breakup reply probability.
 - **Company funding:** Use Crunchbase enrichment to check for funding events at the prospect's company.
@@ -66,7 +65,7 @@ Target: 20-30% of prospects should have a detectable signal.
 
 ### 3. Write and load the breakup sequence
 
-Run the `breakup-email-copy` drill to produce the full sequence. At Baseline, you have two campaigns:
+Run the the breakup email copy workflow (see instructions below) drill to produce the full sequence. At Baseline, you have two campaigns:
 
 **Campaign 1: Signal-detected breakup (3-step)**
 - Email 1: Signal-referenced close (Day 0)
@@ -151,6 +150,6 @@ Pull PostHog funnel data. Compute:
 
 ## Drills Referenced
 
-- `breakup-email-copy` — write the 2-3 step breakup sequence with signal vs. no-signal variants and conditional step logic
+- the breakup email copy workflow (see instructions below) — write the 2-3 step breakup sequence with signal vs. no-signal variants and conditional step logic
 - `cold-email-sequence` — Instantly campaign setup, sending configuration, and merge field mapping
 - `posthog-gtm-events` — configure breakup-specific event tracking and funnel measurement

@@ -14,7 +14,6 @@ kpis: ["Referral sessions from reddit.com (per AMA and cumulative)", "Signups at
 slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
 drills:
-  - ama-session-planning
   - community-monitoring-automation
   - content-repurposing
   - threshold-engine
@@ -80,7 +79,7 @@ All links in AMA answers must include UTM parameters:
 
 ### 2. Plan and schedule the 3-AMA series
 
-Run the `ama-session-planning` drill three times, once per session, spaced 2 weeks apart:
+Run the the ama session planning workflow (see instructions below) drill three times, once per session, spaced 2 weeks apart:
 
 **Session 1 (Week 1):** Return to the subreddit from the Smoke test (proven ground). Choose a new topic building on what worked — if the Smoke AMA's top questions were about [X], go deeper on [X].
 
@@ -113,7 +112,7 @@ Route alerts to Slack. Between AMAs, respond to any threads that reference your 
 
 ### 4. Host each live AMA session
 
-For each of the 3 sessions, follow the live execution protocol from `ama-session-planning`:
+For each of the 3 sessions, follow the live execution protocol from the ama session planning workflow (see instructions below):
 
 1. Post the AMA at the optimal time (based on subreddit peak activity hours from your engagement profile)
 2. Agent monitors incoming questions in real-time (polling every 2 minutes)
@@ -197,7 +196,7 @@ Run the `threshold-engine` drill at the end of 6 weeks:
 
 ## Drills Referenced
 
-- `ama-session-planning` — end-to-end AMA preparation, live support, and follow-up for each session
+- the ama session planning workflow (see instructions below) — end-to-end AMA preparation, live support, and follow-up for each session
 - `community-monitoring-automation` — catch engagement and references between AMA sessions
 - `content-repurposing` — transform top AMA Q&A pairs into blog, social, and newsletter content
 - `threshold-engine` — pass/fail evaluation across the 3-session series

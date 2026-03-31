@@ -15,7 +15,6 @@ kpis: ["Registration-to-attendance rate", "Attendee-to-lead conversion rate", "C
 slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
 drills:
-  - co-hosted-event-orchestration
   - posthog-gtm-events
   - partner-relationship-scoring
 ---
@@ -55,11 +54,11 @@ Build a PostHog funnel: registered → attended → follow-up replied → meetin
 
 If the Smoke test partner is willing to co-host again, keep them. Add 1-2 new partners using the `partner-prospect-research` drill from Smoke level (already run — pull next-best candidates from the ranked list in Attio). The goal is to test whether the model works across different partners, not just one.
 
-For each new partner, run the alignment process from the `co-hosted-event-orchestration` drill: draft proposal, confirm event brief, assign speakers and promotion responsibilities.
+For each new partner, run the alignment process from the the co hosted event orchestration workflow (see instructions below) drill: draft proposal, confirm event brief, assign speakers and promotion responsibilities.
 
 ### 3. Run 3 events over 8 weeks
 
-Execute the `co-hosted-event-orchestration` drill for each event. At Baseline, add these process improvements:
+Execute the the co hosted event orchestration workflow (see instructions below) drill for each event. At Baseline, add these process improvements:
 
 **Standardize the event template:**
 - Create a reusable Luma event template with your standard registration fields, co-branded description structure, and PostHog tracking code
@@ -130,6 +129,6 @@ Aggregate across all 3 events: ≥80 total attendees and ≥15 qualified leads. 
 
 ## Drills Referenced
 
-- `co-hosted-event-orchestration` — run the full event lifecycle for each of 3 events with co-promotion and attendee processing
+- the co hosted event orchestration workflow (see instructions below) — run the full event lifecycle for each of 3 events with co-promotion and attendee processing
 - `posthog-gtm-events` — configure PostHog tracking for the co-hosted event funnel
 - `partner-relationship-scoring` — score partners on registration contribution, attendee quality, and collaboration quality

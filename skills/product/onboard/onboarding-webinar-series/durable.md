@@ -16,7 +16,6 @@ slug: "onboarding-webinar-series"
 install: "npx gtm-skills add product/onboard/onboarding-webinar-series"
 drills:
   - autonomous-optimization
-  - webinar-performance-monitor
 ---
 
 # Live Onboarding Webinars — Durable Intelligence
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-The webinar series runs as a self-optimizing system. The `autonomous-optimization` drill creates the always-on loop: monitor webinar metrics -> detect anomalies -> generate hypotheses -> design and run experiments -> evaluate results -> auto-implement winners. The `webinar-performance-monitor` drill feeds the anomaly signals. The agent finds the local maximum — the best possible performance given current audience, content, and market conditions — and maintains it as conditions change. Pass threshold: sustained attendee activation >=50% and show rate >=35% over 6 months, with the optimization loop producing measurable improvements until convergence (<2% improvement for 3 consecutive experiments).
+The webinar series runs as a self-optimizing system. The `autonomous-optimization` drill creates the always-on loop: monitor webinar metrics -> detect anomalies -> generate hypotheses -> design and run experiments -> evaluate results -> auto-implement winners. The `autonomous-optimization` drill feeds the anomaly signals. The agent finds the local maximum — the best possible performance given current audience, content, and market conditions — and maintains it as conditions change. Pass threshold: sustained attendee activation >=50% and show rate >=35% over 6 months, with the optimization loop producing measurable improvements until convergence (<2% improvement for 3 consecutive experiments).
 
 ## Leading Indicators
 
@@ -43,7 +42,7 @@ Run the `autonomous-optimization` drill with the webinar series as the target pl
 
 **Monitoring configuration (Phase 1 — runs daily via n8n cron):**
 
-The `webinar-performance-monitor` drill (already running from Scalable) provides the anomaly detection signals. Connect its output to the optimization loop:
+The `autonomous-optimization` drill (already running from Scalable) provides the anomaly detection signals. Connect its output to the optimization loop:
 
 | Metric | Normal Range | Anomaly Trigger |
 |--------|-------------|-----------------|
@@ -140,7 +139,7 @@ Post to Slack and store in Attio.
 
 ### 2. Configure webinar-specific monitoring at Durable level
 
-The `webinar-performance-monitor` drill should already be running from Scalable. At Durable level, extend it:
+The `autonomous-optimization` drill should already be running from Scalable. At Durable level, extend it:
 
 **Add series health metrics:**
 - Optimization loop health: is the daily monitor running? Are experiments being created and evaluated on schedule?
@@ -231,4 +230,4 @@ Total setup: ~6 hours. Ongoing: ~5-6 hours/month human time.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core Durable-level drill: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs until convergence at the local maximum
-- `webinar-performance-monitor` — feeds anomaly signals to the optimization loop; generates per-event post-mortems, series health dashboards, and convergence detection
+- `autonomous-optimization` — feeds anomaly signals to the optimization loop; generates per-event post-mortems, series health dashboards, and convergence detection

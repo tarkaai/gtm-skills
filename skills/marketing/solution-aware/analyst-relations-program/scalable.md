@@ -16,7 +16,7 @@ install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
 drills:
   - analyst-target-research
   - analyst-relationship-nurture
-  - analyst-briefing-monitor
+  - dashboard-builder
   - briefing-deck-preparation
 ---
 
@@ -63,7 +63,7 @@ Run the `analyst-relationship-nurture` drill with full automation:
 
 ### 3. Deploy Analyst Monitoring
 
-Run the `analyst-briefing-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog analyst relations dashboard:
    - Briefing pipeline: requests sent, scheduled, completed, outcomes
@@ -103,7 +103,7 @@ Ensure analyst influence is captured in every deal:
 
 Monthly review cycle:
 
-1. Pull weekly reports from the `analyst-briefing-monitor` drill
+1. Pull weekly reports from the `dashboard-builder` drill
 2. Analyze:
    - Which analyst tiers produce the most pipeline influence?
    - Which nurture tactics generate the most engagement (quarterly updates, content shares, milestone notes)?
@@ -143,5 +143,5 @@ Monthly review cycle:
 
 - `analyst-target-research` — quarterly analyst list refresh with 25+ analysts, Clay enrichment, and scoring
 - `analyst-relationship-nurture` — automated quarterly updates, milestone notifications, content sharing, and re-briefing triggers
-- `analyst-briefing-monitor` — continuous monitoring of briefing pipeline, report mentions, pipeline influence, and relationship health
+- `dashboard-builder` — continuous monitoring of briefing pipeline, report mentions, pipeline influence, and relationship health
 - `briefing-deck-preparation` — tailored briefing materials for each analyst, updated with latest metrics

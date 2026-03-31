@@ -16,7 +16,6 @@ slug: "joint-content-campaigns"
 install: "npx gtm-skills add PartnershipsWarmIntros/Marketing/ProblemAware/joint-content-campaigns"
 drills:
   - partner-pipeline-automation
-  - joint-content-production
   - dashboard-builder
   - threshold-engine
 ---
@@ -65,7 +64,7 @@ Run the `partner-pipeline-automation` drill to build n8n workflows that manage t
 - Day 30: monthly partnership summary (total leads, pipeline value generated for both sides)
 
 ### 2. Scale content production
-Run the `joint-content-production` drill continuously, targeting 2 new assets per month. Use templates and processes proven at Baseline:
+Run the the joint content production workflow (see instructions below) drill continuously, targeting 2 new assets per month. Use templates and processes proven at Baseline:
 
 **Standardize the production process:**
 - Create an n8n workflow that auto-generates the content outline from Crossbeam overlap data + Clay ICP research when a new partner deal reaches "Topic Selection" stage
@@ -126,6 +125,6 @@ If FAIL: analyze:
 
 ## Drills Referenced
 - `partner-pipeline-automation` -- n8n workflows for partner outreach, scheduling, attribution, and nurture
-- `joint-content-production` -- per-asset co-creation workflow, now templatized
+- the joint content production workflow (see instructions below) -- per-asset co-creation workflow, now templatized
 - `dashboard-builder` -- PostHog dashboard for program-level visibility
 - `threshold-engine` -- evaluate pass/fail against the 80-lead threshold

@@ -14,8 +14,6 @@ kpis: ["Segment stability (week-over-week consistency)", "Personalization engage
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
 drills:
-  - behavior-segmentation-pipeline
-  - segment-personalization-routing
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -53,7 +51,7 @@ Build a PostHog funnel: `segment_message_shown` -> `segment_message_clicked` -> 
 
 ### 2. Automate the weekly segmentation pipeline
 
-Run the `behavior-segmentation-pipeline` drill's step 9 (build the recurring pipeline). Set up the n8n workflow:
+Run the the behavior segmentation pipeline workflow (see instructions below) drill's step 9 (build the recurring pipeline). Set up the n8n workflow:
 
 - **Weekly cron (Sunday 06:00 UTC):** Extract fresh behavior vectors, assign all active users to current cluster definitions, detect segment changes, update PostHog and Attio
 - **Monthly cron (1st of month):** Re-run cluster discovery to check if segment definitions need updating
@@ -72,7 +70,7 @@ This control group is critical for measuring personalization lift. Without it, y
 
 ### 4. Build personalized experiences per segment
 
-Run the `segment-personalization-routing` drill:
+Run the the segment personalization routing workflow (see instructions below) drill:
 
 1. Define the personalization matrix (step 1) using the cluster definitions from your Smoke test. Each segment gets a distinct in-app message, feature highlight, and email sequence.
 
@@ -127,7 +125,7 @@ If FAIL on engagement lift: Review the personalization content. Is it genuinely 
 
 ## Drills Referenced
 
-- `behavior-segmentation-pipeline` -- Automated weekly extraction, clustering, and assignment
-- `segment-personalization-routing` -- Routes personalized experiences to each segment via Intercom and Loops
+- the behavior segmentation pipeline workflow (see instructions below) -- Automated weekly extraction, clustering, and assignment
+- the segment personalization routing workflow (see instructions below) -- Routes personalized experiences to each segment via Intercom and Loops
 - `posthog-gtm-events` -- Standard event taxonomy for segmentation tracking
 - `threshold-engine` -- Evaluates stability and engagement lift against pass thresholds

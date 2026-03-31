@@ -60,7 +60,7 @@ Build the PostHog funnel: `cross_sell_impression` -> `cross_sell_clicked` -> `cr
 
 Run the `addon-discovery-surface-build` drill for 1-2 validated products (the Smoke winner plus the next highest-scoring product from the catalog mapping). This time, complete ALL steps:
 
-- Step 1: Use the trigger map from `cross-sell-catalog-mapping` (already validated at Smoke)
+- Step 1: Use the trigger map from the cross sell catalog mapping workflow (see instructions below) (already validated at Smoke)
 - Step 2: Events are configured from Step 1 above
 - Step 3: Build both a tooltip AND a banner surface per product to test which performs better
 - Step 4: Build the n8n trigger detection workflow — daily cron identifies users who crossed trigger thresholds, activates PostHog feature flags to show the appropriate surface, and enqueues email fallback for users who do not engage in-app within 48 hours
@@ -82,7 +82,7 @@ Run 2-3 targeted improvements at the biggest drop-off point. Measure each change
 Measure after 3 weeks of always-on operation: >=10% of triggered users activated the cross-sell product within 30 days of trigger. If PASS, proceed to Scalable. If FAIL, diagnose:
 
 - Activation rate 5-9%: Directionally positive. Extend the Baseline for 2 more weeks while optimizing the biggest funnel drop-off.
-- Activation rate below 5%: Trigger accuracy or product-market fit issue. Re-run `cross-sell-catalog-mapping` with updated data. The trigger may be firing for users who are not genuinely ready.
+- Activation rate below 5%: Trigger accuracy or product-market fit issue. Re-run the cross sell catalog mapping workflow (see instructions below) with updated data. The trigger may be firing for users who are not genuinely ready.
 
 ## Time Estimate
 

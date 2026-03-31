@@ -14,7 +14,6 @@ kpis: ["Offer conversion rate", "Committed ARR", "Retention lift vs. monthly", "
 slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
 drills:
-  - multiyear-offer-engine
   - posthog-gtm-events
   - churn-risk-scoring
 ---
@@ -55,7 +54,7 @@ Build a PostHog funnel: `qualified` → `shown` → `clicked` → `started` → 
 
 ### 2. Activate the automated offer engine
 
-Run the `multiyear-offer-engine` drill — all steps. This sets up:
+Run the the multiyear offer engine workflow (see instructions below) drill — all steps. This sets up:
 
 1. **Daily readiness scoring** (n8n cron): queries PostHog for account signals, computes `commitment_readiness_score`, classifies into Ready/Warming/Not Ready tiers, updates Attio records
 2. **In-app offer delivery** (Intercom): when a Ready-tier admin visits billing or settings, show a contextual banner with their personalized savings amount and a Stripe Checkout link
@@ -116,6 +115,6 @@ Fix the biggest drop-off and re-run for another 2 weeks.
 
 ## Drills Referenced
 
-- `multiyear-offer-engine` — the core automation: readiness scoring, offer delivery, conversion pipeline
+- the multiyear offer engine workflow (see instructions below) — the core automation: readiness scoring, offer delivery, conversion pipeline
 - `posthog-gtm-events` — event tracking configuration for the commitment funnel
 - `churn-risk-scoring` — behavioral churn model that gates commitment offers to healthy accounts only

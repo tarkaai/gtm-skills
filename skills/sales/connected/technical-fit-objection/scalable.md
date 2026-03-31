@@ -17,7 +17,6 @@ install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
   - objection-detection-automation
   - tech-stack-discovery
-  - technical-proof-library
   - competitive-battlecard-assembly
 ---
 
@@ -58,9 +57,9 @@ Run the `tech-stack-discovery` drill for every new deal entering the "Connected"
 }
 ```
 
-**Step 3:** Run `technical-gap-assessment` against the predicted objections (not just stated ones).
+**Step 3:** Run the technical gap assessment workflow (see instructions below) against the predicted objections (not just stated ones).
 
-**Step 4:** Query the `technical-proof-library` for assets matching each predicted gap.
+**Step 4:** Query the the technical proof library workflow (see instructions below) for assets matching each predicted gap.
 
 **Step 5:** Generate a proactive call brief stored as an Attio note:
 
@@ -96,7 +95,7 @@ Run the `objection-detection-automation` drill adapted for technical objections.
 
 ### 3. Scale the Proof Library
 
-Expand the `technical-proof-library` to cover the full range of technical objections being encountered:
+Expand the the technical proof library workflow (see instructions below) to cover the full range of technical objections being encountered:
 
 - Analyze 2 months of objection data to identify the top 10 gap types by frequency
 - For each gap type, ensure at least 2 proof assets exist (benchmark, case study, architecture diagram, or customer reference)
@@ -173,5 +172,5 @@ After 2 months, evaluate:
 
 - `objection-detection-automation` — auto-detect technical objections in call transcripts and CRM activity, classify severity, trigger response workflows
 - `tech-stack-discovery` — discover prospect tech stack, integration landscape, and technical constraints before the technical call
-- `technical-proof-library` — maintain and retrieve proof assets matched to gap types, track effectiveness
+- the technical proof library workflow (see instructions below) — maintain and retrieve proof assets matched to gap types, track effectiveness
 - `competitive-battlecard-assembly` — build technical competitive positioning from deal data and market intelligence

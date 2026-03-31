@@ -14,8 +14,6 @@ kpis: ["Push CTR", "Opt-in rate", "DAU lift"]
 slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
 drills:
-  - push-notification-campaign
-  - push-notification-segmentation
   - posthog-gtm-events
 ---
 
@@ -43,7 +41,7 @@ Run the `posthog-gtm-events` drill to set up the full push event taxonomy. Beyon
 - Build PostHog funnels: `push_sent` -> `push_delivered` -> `push_clicked` -> `push_downstream_action` per campaign type
 
 ### 2. Build behavioral segments
-Run the `push-notification-segmentation` drill. Create at least 4 segments based on engagement level:
+Run the the push notification segmentation workflow (see instructions below) drill. Create at least 4 segments based on engagement level:
 - **Regular users** (2-4 sessions/week): habit reinforcement pushes
 - **Casual users** (1 session/week or less): value highlight pushes
 - **At-risk users** (was regular, no session in 7+ days): re-engagement pushes
@@ -52,7 +50,7 @@ Run the `push-notification-segmentation` drill. Create at least 4 segments based
 Set up the n8n sync workflow to update OneSignal tags from PostHog cohorts every 4 hours.
 
 ### 3. Launch 4 always-on campaigns
-Run the `push-notification-campaign` drill to configure and launch one campaign per segment:
+Run the the push notification campaign workflow (see instructions below) drill to configure and launch one campaign per segment:
 
 **Campaign 1 — Session Reminder (Regular users):**
 Trigger: User has not opened the app today AND it is their peak-activity hour. Copy: personalized with their most-used feature or pending items. Frequency: max 1/day.
@@ -93,6 +91,6 @@ If overall CTR is below 35%, analyze per-campaign performance. Kill campaigns wi
 | n8n | Campaign automation, segment sync, frequency caps | Standard stack — excluded |
 
 ## Drills Referenced
-- `push-notification-campaign` — design and launch 4 always-on campaigns with behavioral triggers
-- `push-notification-segmentation` — build engagement-level segments and sync to OneSignal
+- the push notification campaign workflow (see instructions below) — design and launch 4 always-on campaigns with behavioral triggers
+- the push notification segmentation workflow (see instructions below) — build engagement-level segments and sync to OneSignal
 - `posthog-gtm-events` — implement the full push event taxonomy and funnels

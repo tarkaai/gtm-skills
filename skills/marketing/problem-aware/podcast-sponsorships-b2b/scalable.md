@@ -16,7 +16,7 @@ install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
 drills:
   - podcast-sponsor-research
   - podcast-sponsor-booking
-  - podcast-sponsor-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
 ---
 
@@ -78,7 +78,7 @@ Optimization variables to test systematically:
 
 ### 4. Deploy automated performance monitoring
 
-Run the `podcast-sponsor-performance-monitor` drill to set up always-on monitoring:
+Run the `dashboard-builder` drill to set up always-on monitoring:
 
 - PostHog dashboard: all placements, all signals, updated in real-time
 - Automated 14-day post-placement performance collection via n8n
@@ -137,5 +137,5 @@ Total: ~60 hours over 3 months (20 hours/month)
 
 - `podcast-sponsor-research` — quarterly pipeline refresh, 50+ candidates evaluated
 - `podcast-sponsor-booking` — systematized booking at 8-15 placements/month
-- `podcast-sponsor-performance-monitor` — always-on monitoring, biweekly reports, podcast scoring model
+- `dashboard-builder` — always-on monitoring, biweekly reports, podcast scoring model
 - `ab-test-orchestrator` — systematic ad script optimization across placements

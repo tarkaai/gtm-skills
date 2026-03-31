@@ -16,7 +16,6 @@ slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
 drills:
   - autonomous-optimization
-  - mvt-experiment-health-monitor
   - dashboard-builder
 ---
 
@@ -59,9 +58,9 @@ Run the `autonomous-optimization` drill configured for multivariate experiments.
 - If top hypothesis is high risk, alert for human review and stop. Otherwise, proceed
 
 **Experiment (triggered by hypothesis acceptance):**
-- Design the MVT matrix using the `mvt-experiment-design` drill (agent executes this autonomously)
+- Design the MVT matrix using the the mvt experiment design workflow (see instructions below) drill (agent executes this autonomously)
 - Configure PostHog feature flags and launch the experiment
-- The `mvt-experiment-health-monitor` drill handles ongoing monitoring
+- The `autonomous-optimization` drill handles ongoing monitoring
 
 **Evaluate (triggered by experiment completion):**
 - Analyze results using the MVT-specific analysis from the learning database: per-cell conversion, main effects, interaction effects
@@ -84,7 +83,7 @@ Run the `autonomous-optimization` drill configured for multivariate experiments.
 
 ### 2. Deploy the MVT-specific monitoring layer
 
-Run the `mvt-experiment-health-monitor` drill in always-on mode. At Durable level, the monitor handles:
+Run the `autonomous-optimization` drill in always-on mode. At Durable level, the monitor handles:
 
 - All agent-generated experiments (no human setup required)
 - Automatic cell-level pausing when guardrails trigger
@@ -159,5 +158,5 @@ If metrics decay, the agent diagnoses the cause (user behavior shift, product ch
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metric anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, produce weekly briefs
-- `mvt-experiment-health-monitor` — continuous health monitoring for all agent-generated experiments with automatic guardrail enforcement
+- `autonomous-optimization` — continuous health monitoring for all agent-generated experiments with automatic guardrail enforcement
 - `dashboard-builder` — builds the program-level and per-surface dashboards that track optimization progress and convergence

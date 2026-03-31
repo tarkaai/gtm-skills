@@ -16,8 +16,6 @@ slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
   - autonomous-optimization
-  - meddic-deal-health-monitor
-  - meddic-qualification-reporting
 ---
 
 # MEDDIC Qualification System — Durable Intelligence
@@ -126,7 +124,7 @@ Estimated time for setup: 15 hours. Then always-on.
 
 ### 2. Maintain deal health monitoring at scale
 
-Continue running the `meddic-deal-health-monitor` drill from Scalable. At Durable level, enhance it:
+Continue running the the meddic deal health monitor workflow (see instructions below) drill from Scalable. At Durable level, enhance it:
 
 - **Cross-deal pattern detection:** When 3+ deals show the same element degradation (e.g., Champion scores dropping across the pipeline), flag it as a systemic issue rather than individual deal problems. Feed this into the autonomous optimization loop as a high-priority anomaly.
 - **Predictive risk scoring:** Use historical data to predict which deals are likely to stall or lose based on their MEDDIC element trajectory. Alert the founder before problems manifest, not after.
@@ -136,7 +134,7 @@ Estimated time: 10 hours enhancement, then always-on.
 
 ### 3. Continuous qualification reporting and calibration
 
-Continue running the `meddic-qualification-reporting` drill from Scalable. At Durable level, enhance it:
+Continue running the `autonomous-optimization` drill from Scalable. At Durable level, enhance it:
 
 - **Monthly scoring weight recalibration:** Automatically run the calibration analysis using won/lost deal data. If data suggests weight changes, generate an experiment (Phase 3 of autonomous optimization) rather than changing weights directly.
 - **Per-element predictive power tracking:** Continuously compute the correlation between each element score and deal outcome. If an element's predictive power drops below 0.1 (near zero correlation), flag it for review — that element may not matter for your specific deal motion.
@@ -212,5 +210,5 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `meddic-deal-health-monitor` — enhanced at Durable with cross-deal pattern detection, predictive risk scoring, and win/loss forensics
-- `meddic-qualification-reporting` — enhanced at Durable with automatic weight recalibration, predictive power tracking, and market adaptation detection
+- the meddic deal health monitor workflow (see instructions below) — enhanced at Durable with cross-deal pattern detection, predictive risk scoring, and win/loss forensics
+- `autonomous-optimization` — enhanced at Durable with automatic weight recalibration, predictive power tracking, and market adaptation detection

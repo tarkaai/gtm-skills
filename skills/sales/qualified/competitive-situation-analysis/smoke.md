@@ -14,7 +14,6 @@ kpis: ["Competitive discovery completion rate", "Competitor identification rate"
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - competitive-discovery-call
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -48,10 +47,10 @@ Run the `posthog-gtm-events` drill to define competitive-specific events. Create
 
 ### 2. Run competitive discovery on 10+ qualification calls
 
-For each qualification call with a Fireflies transcript, run the `competitive-discovery-call` drill manually:
+For each qualification call with a Fireflies transcript, run the the competitive discovery call workflow (see instructions below) drill manually:
 
 1. Retrieve the transcript from Fireflies
-2. Run `call-transcript-competitor-extraction` to extract: competitors evaluated, decision criteria, evaluation method, status quo analysis, and competitive risk level
+2. Run the call transcript competitor extraction workflow (see instructions below) to extract: competitors evaluated, decision criteria, evaluation method, status quo analysis, and competitive risk level
 3. Update the Attio deal record with competitive situation data
 4. Create a structured competitive note on the deal
 5. Fire the PostHog events
@@ -92,7 +91,7 @@ If PASS: competitive discovery is producing signal. The extraction pipeline work
 
 If FAIL: diagnose the bottleneck:
 - If < 10 calls available: volume problem. Need more qualification conversations.
-- If extraction accuracy < 80%: prompt problem. Refine the `call-transcript-competitor-extraction` prompt.
+- If extraction accuracy < 80%: prompt problem. Refine the the call transcript competitor extraction workflow (see instructions below) prompt.
 - If < 60% have competitors: either prospects are status-quo-biased (adjust discovery questions to probe harder) or the market has low competitive density (which is actually positive intel).
 
 ## Time Estimate
@@ -115,6 +114,6 @@ If FAIL: diagnose the bottleneck:
 
 ## Drills Referenced
 
-- `competitive-discovery-call` — extracts competitive intelligence from each qualification call transcript and updates CRM
+- the competitive discovery call workflow (see instructions below) — extracts competitive intelligence from each qualification call transcript and updates CRM
 - `posthog-gtm-events` — sets up the event taxonomy for competitive tracking
 - `threshold-engine` — evaluates results against pass/fail threshold

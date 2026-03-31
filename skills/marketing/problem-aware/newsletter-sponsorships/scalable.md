@@ -16,7 +16,7 @@ install: "npx gtm-skills add marketing/problem-aware/newsletter-sponsorships"
 drills:
   - newsletter-sponsor-research
   - newsletter-sponsor-booking
-  - newsletter-sponsor-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
   - threshold-engine
 ---
@@ -82,7 +82,7 @@ The goal is to find the blurb formula that maximizes CTR per newsletter. Each ne
 
 ### 4. Implement data-driven budget allocation
 
-Using the performance data from the `newsletter-sponsor-performance-monitor` drill:
+Using the performance data from the `dashboard-builder` drill:
 
 - Calculate ROI per newsletter: `(leads * estimated_lead_value) / placement_cost`
 - Apply the 70/20/10 framework:
@@ -144,6 +144,6 @@ Total: ~20 hours of active work over 2 months (~10 hours/month)
 
 - `newsletter-sponsor-research` — quarterly pipeline refresh to discover new sponsorship opportunities
 - `newsletter-sponsor-booking` — scaled booking with automated creative pipeline
-- `newsletter-sponsor-performance-monitor` — dashboard, tier assignments, and weekly reporting
+- `dashboard-builder` — dashboard, tier assignments, and weekly reporting
 - `ab-test-orchestrator` — systematic blurb variant testing across newsletters
 - `threshold-engine` — monthly and cumulative threshold evaluation

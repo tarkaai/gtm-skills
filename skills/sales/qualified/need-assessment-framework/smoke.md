@@ -17,7 +17,6 @@ drills:
   - icp-definition
   - build-prospect-list
   - need-scorecard-setup
-  - need-discovery-call
   - threshold-engine
 ---
 
@@ -54,11 +53,11 @@ Run the `build-prospect-list` drill to source 15-20 contacts matching your ICP. 
 
 ### 3. Run need discovery calls
 
-**Human action required:** Book and conduct 10-15 discovery calls over the week. Use the `need-discovery-call` drill for each call:
+**Human action required:** Book and conduct 10-15 discovery calls over the week. Use the the need discovery call workflow (see instructions below) drill for each call:
 
 1. Before each call: review the prospect's public data and generate a need hypothesis — which of your 5-7 need categories are likely relevant, and what questions will probe each one?
 2. During the call: work through need categories naturally. For each area, ask about current pain severity, business impact, prior solution attempts, and urgency. Do not interrogate — frame questions around understanding their challenges.
-3. After each call: use the Fireflies transcript and `call-transcript-need-extraction` fundamental to extract structured need scores. Update all fields in Attio.
+3. After each call: use the Fireflies transcript and the call transcript need extraction workflow (see instructions below) fundamental to extract structured need scores. Update all fields in Attio.
 4. Score each need on the 3-point scale: Critical (3) = severe pain with urgency, Moderate (2) = acknowledged problem with some impact, Low (1) = mentioned but not a priority.
 
 ### 4. Track and compare results
@@ -111,5 +110,5 @@ If FAIL, diagnose:
 - `icp-definition` — define ICP and identify which business problems your product solves
 - `build-prospect-list` — source and enrich 15-20 prospects from Clay/Apollo
 - `need-scorecard-setup` — create need assessment scoring infrastructure in Attio with categories, severity scales, and thresholds
-- `need-discovery-call` — structured need discovery call with transcript extraction and per-category scoring
+- the need discovery call workflow (see instructions below) — structured need discovery call with transcript extraction and per-category scoring
 - `threshold-engine` — evaluate results against the pass threshold

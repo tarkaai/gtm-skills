@@ -14,7 +14,6 @@ kpis: ["Pain quantification rate", "Pain-to-price ratio", "AI extraction accurac
 slug: "pain-discovery-framework"
 install: "npx gtm-skills add sales/connected/pain-discovery-framework"
 drills:
-  - pain-pattern-analysis
   - pain-based-business-case
   - ab-test-orchestrator
 ---
@@ -41,7 +40,7 @@ Target: >= 70% of prospects with quantified pains >= 10x product cost, and >= 30
 
 ### 1. Run cross-prospect pain pattern analysis
 
-With 10+ calls of pain data accumulated from Baseline, run the `pain-pattern-analysis` drill. This drill:
+With 10+ calls of pain data accumulated from Baseline, run the the pain pattern analysis workflow (see instructions below) drill. This drill:
 
 - Extracts all pain data from Attio across completed discovery calls
 - Builds a pain frequency matrix (which pains appear most, by category and segment)
@@ -170,6 +169,6 @@ If **FAIL**: Focus on the weakest metric:
 
 ## Drills Referenced
 
-- `pain-pattern-analysis` — Aggregate pain data across prospects; identify patterns, question effectiveness, ICP refinements
+- the pain pattern analysis workflow (see instructions below) — Aggregate pain data across prospects; identify patterns, question effectiveness, ICP refinements
 - `pain-based-business-case` — Auto-generate buyer-ready business cases from quantified discovery data
 - `ab-test-orchestrator` — Design, run, and evaluate A/B tests on discovery question strategies

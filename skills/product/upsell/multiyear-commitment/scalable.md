@@ -39,7 +39,7 @@ Find the 10x multiplier for the commitment program. At Baseline you proved the p
 
 ### 1. A/B test offer tiers
 
-Run the `ab-test-orchestrator` drill to test the 3 offer tiers defined in the `multiyear-offer-engine` drill:
+Run the `ab-test-orchestrator` drill to test the 3 offer tiers defined in the the multiyear offer engine workflow (see instructions below) drill:
 
 - **Control (Standard):** 2 months free (17%), no perks
 - **Variant A (Enhanced):** 3 months free (25%), priority support upgrade

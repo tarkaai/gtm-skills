@@ -16,7 +16,6 @@ kpis: ["Total registrations", "Show rate", "Expansion meetings booked", "Content
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
 drills:
-  - conference-planning-pipeline
   - ab-test-orchestrator
   - content-repurposing
   - follow-up-automation
@@ -46,7 +45,7 @@ drills:
 
 ### 1. Expand the registration funnel
 
-Run the `conference-planning-pipeline` drill with Scalable-level enhancements to the promotion engine:
+Run the the conference planning pipeline workflow (see instructions below) drill with Scalable-level enhancements to the promotion engine:
 
 **Multi-channel promotion at scale:**
 - **Owned channels**: Using Loops, send segmented email invitations to your full customer list AND product-aware prospect list. Segment by: account tier, product usage patterns, industry vertical, and buyer role. Each segment gets a tailored email emphasizing the sessions most relevant to them.
@@ -178,7 +177,7 @@ After the 60-day post-conference window (main event + satellite events + content
 
 ## Drills Referenced
 
-- `conference-planning-pipeline` -- expanded conference operations: multi-channel promotion engine, partner coordination, satellite events, scaled registration
+- the conference planning pipeline workflow (see instructions below) -- expanded conference operations: multi-channel promotion engine, partner coordination, satellite events, scaled registration
 - `ab-test-orchestrator` -- systematically test email subject lines, registration page layouts, promotion timing, registration incentives, and follow-up approaches
 - `content-repurposing` -- transform conference recordings into 20-30 clips, blog posts, LinkedIn posts, email sequences, and newsletter content
 - `follow-up-automation` -- automated engagement-based attendee routing, smart follow-up triggers, and satellite event promotion

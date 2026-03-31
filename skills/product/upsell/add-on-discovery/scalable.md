@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
   - addon-discovery-surface-build
   - ab-test-orchestrator
-  - addon-cross-sell-health-monitor
+  - dashboard-builder
   - upgrade-prompt
 ---
 
@@ -74,7 +74,7 @@ Use PostHog cohorts to define each segment. Assign each segment its best-perform
 
 ### 4. Scale the monitoring layer
 
-Extend the `addon-cross-sell-health-monitor` drill to cover the full catalog:
+Extend the `dashboard-builder` drill to cover the full catalog:
 
 - Expand the PostHog dashboard to show per-add-on funnel metrics
 - Enable weekly and monthly alert checks (these were skipped at Baseline)
@@ -117,5 +117,5 @@ If PASS, proceed to Durable. If FAIL:
 
 - `addon-discovery-surface-build` — repeated for each new add-on in the catalog
 - `ab-test-orchestrator` — systematic testing of surface type, copy, and timing
-- `addon-cross-sell-health-monitor` — full monitoring with per-add-on breakdowns and weekly briefs
+- `dashboard-builder` — full monitoring with per-add-on breakdowns and weekly briefs
 - `upgrade-prompt` — integrates limit-approaching triggers with add-on discovery for compound upsell surfaces

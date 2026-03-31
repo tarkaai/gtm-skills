@@ -15,7 +15,6 @@ kpis: ["Response rate", "Video completion rate", "Video-to-meeting conversion ra
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
 drills:
-  - ai-video-batch-generation
   - posthog-gtm-events
   - video-engagement-follow-up
   - cold-email-sequence
@@ -43,7 +42,7 @@ Transition from manually recording Loom videos (Smoke) to AI-generated personali
 
 ### 1. Set up AI video generation
 
-Run the `ai-video-batch-generation` drill. Choose your AI video platform:
+Run the the ai video batch generation workflow (see instructions below) drill. Choose your AI video platform:
 
 - **Sendspark** ($99/mo): Recommended for Baseline. Record a single 60-90 second template video. Sendspark clones your voice and swaps in each prospect's name. Their website appears as the dynamic background. Fastest and cheapest at this volume.
 - **Tavus** ($199/mo): If deeper personalization needed. Record a 2-minute training clip. Tavus generates fully lip-synced videos from unique per-prospect scripts.
@@ -53,7 +52,7 @@ Run the `ai-video-batch-generation` drill. Choose your AI video platform:
 
 ### 2. Generate video batch 1 (Week 1: 50 prospects)
 
-Using the `ai-video-batch-generation` drill:
+Using the the ai video batch generation workflow (see instructions below) drill:
 
 1. Source 50 prospects from Clay matching the ICP validated in Smoke. Ensure each has at least one enrichment signal.
 2. Generate personalized video scripts via Clay AI formula column (one sentence per prospect referencing their signal).
@@ -141,7 +140,7 @@ If FAIL: Diagnose:
 
 ## Drills Referenced
 
-- `ai-video-batch-generation` — generate personalized AI videos for 100 prospects from a single template recording
+- the ai video batch generation workflow (see instructions below) — generate personalized AI videos for 100 prospects from a single template recording
 - `posthog-gtm-events` — set up video prospecting event taxonomy in PostHog
 - `video-engagement-follow-up` — automated follow-up routing based on video watch behavior
 - `cold-email-sequence` — text-only control group for measuring AI video lift

@@ -16,7 +16,6 @@ slug: "support-issue-tracking"
 install: "npx gtm-skills add product/retain/support-issue-tracking"
 drills:
   - autonomous-optimization
-  - support-health-monitor
 ---
 
 # Support Ticket Churn Signals — Durable Intelligence
@@ -76,7 +75,7 @@ For each experiment, the agent uses PostHog feature flags to split accounts betw
 
 ### 2. Deploy the support health monitor
 
-Run the `support-health-monitor` drill. This creates the observability layer the optimization loop depends on:
+Run the `autonomous-optimization` drill. This creates the observability layer the optimization loop depends on:
 
 - Real-time PostHog dashboard tracking all support-retention KPIs
 - Anomaly alerts that feed into Phase 1 of the optimization loop
@@ -171,4 +170,4 @@ This level runs continuously. The 6-month mark is a review point, not an endpoin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop that monitors metrics, diagnoses anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners
-- `support-health-monitor` — continuous observability of support ticket trends, churn prediction accuracy, intervention effectiveness, and product feedback signals
+- `autonomous-optimization` — continuous observability of support ticket trends, churn prediction accuracy, intervention effectiveness, and product feedback signals

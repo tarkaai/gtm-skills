@@ -14,8 +14,6 @@ kpis: ["CTA CTR lift (variant vs control)", "Statistical significance", "Convers
 slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
 drills:
-  - cta-variant-pipeline
-  - cta-conversion-monitor
   - threshold-engine
 ---
 
@@ -37,7 +35,7 @@ One CTA surface has been optimized through a rigorous A/B test. The winning vari
 
 ### 1. Generate and deploy the first CTA variant
 
-Run the `cta-variant-pipeline` drill targeting the weakest CTA surface identified in Smoke. The drill will:
+Run the the cta variant pipeline workflow (see instructions below) drill targeting the weakest CTA surface identified in Smoke. The drill will:
 
 1. Audit the target surface's current performance (CTR, conversion rate, device breakdown)
 2. Generate 3-5 variant hypotheses ranked by expected impact / risk
@@ -99,6 +97,5 @@ Re-run Baseline with a different variant or different target surface.
 
 ## Drills Referenced
 
-- `cta-variant-pipeline` -- generates variant hypotheses, deploys them behind feature flags, and provides the decision framework for shipping or reverting
-- `cta-conversion-monitor` -- monitors the experiment in real time with daily per-variant tracking and guardrail alerts
+- the cta variant pipeline workflow (see instructions below) -- generates variant hypotheses, deploys them behind feature flags, and provides the decision framework for shipping or reverting
 - `threshold-engine` -- evaluates whether the >= 15% CTR lift threshold is met and recommends next action

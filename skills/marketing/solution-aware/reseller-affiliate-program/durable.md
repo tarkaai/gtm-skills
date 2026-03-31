@@ -16,7 +16,6 @@ slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
   - autonomous-optimization
-  - affiliate-performance-reporting
 ---
 
 # Reseller & Affiliate Program — Durable Intelligence
@@ -91,7 +90,7 @@ Run the `autonomous-optimization` drill configured for this play's specific metr
 
 ### 2. Deploy play-specific monitoring and reporting
 
-Run the `affiliate-performance-reporting` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Affiliate program dashboard in PostHog:**
 - Referrals by partner (bar chart, last 30 days)
@@ -207,4 +206,4 @@ Total: ~180 hours over 12 months (heavily front-loaded; agent handles most ongoi
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `affiliate-performance-reporting` — per-partner dashboards, weekly briefs, ROI tracking, and alerts specific to this play
+- `autonomous-optimization` — per-partner dashboards, weekly briefs, ROI tracking, and alerts specific to this play

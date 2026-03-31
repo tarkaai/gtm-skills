@@ -16,7 +16,6 @@ slug: "breakup-email-sequences"
 install: "npx gtm-skills add marketing/solution-aware/breakup-email-sequences"
 drills:
   - icp-definition
-  - breakup-email-copy
 ---
 
 # Breakup Email Sequences — Smoke Test
@@ -64,7 +63,7 @@ For each prospect, note: `has_signal: yes/no` and `signal_detail: [what changed]
 
 ### 3. Write the breakup emails
 
-Run the `breakup-email-copy` drill to write the sequence. At Smoke level, you are sending manually, so the output is a text file or Google Doc with:
+Run the the breakup email copy workflow (see instructions below) drill to write the sequence. At Smoke level, you are sending manually, so the output is a text file or Google Doc with:
 
 **For no-signal prospects (Email 1 only — the Honest Close):**
 
@@ -125,7 +124,7 @@ Count: total breakup emails sent, positive replies (categories 1-3 above), meeti
 ## Time Estimate
 
 - Prospect identification and signal checking: 1.5 hours
-- Breakup email writing with `breakup-email-copy` drill: 30 minutes
+- Breakup email writing with the breakup email copy workflow (see instructions below) drill: 30 minutes
 - Sending over 3 days: 45 minutes total
 - Reply handling over 7 days: 45 minutes total
 - Results evaluation: 30 minutes
@@ -145,4 +144,4 @@ Count: total breakup emails sent, positive replies (categories 1-3 above), meeti
 ## Drills Referenced
 
 - `icp-definition` — confirm the silent prospect pool still matches your current ICP before sending breakups
-- `breakup-email-copy` — write the "closing your file" sequence with loss-aversion framing and signal-based personalization
+- the breakup email copy workflow (see instructions below) — write the "closing your file" sequence with loss-aversion framing and signal-based personalization

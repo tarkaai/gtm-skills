@@ -16,7 +16,6 @@ slug: "social-sharing-features"
 install: "npx gtm-skills add product/referrals/social-sharing-features"
 drills:
   - ab-test-orchestrator
-  - share-content-generator
   - referral-program
 ---
 
@@ -88,7 +87,7 @@ Implement winners immediately after each test. Log results in Attio with hypothe
 
 ### 2. Optimize share content generation
 
-Run the `share-content-generator` drill with enhanced optimization:
+Run the the share content generator workflow (see instructions below) drill with enhanced optimization:
 
 - Use the Baseline period's channel CTR data to weight content generation toward higher-performing channels
 - For each channel, maintain 3 active content variants and rotate based on performance
@@ -173,5 +172,5 @@ If FAIL on viral signups: traffic volume is too low. Consider adding more share 
 ## Drills Referenced
 
 - `ab-test-orchestrator` — systematic A/B testing of share button placement, prompt timing, content variants, OG cards, and landing pages
-- `share-content-generator` — optimized AI-generated share content with variant tracking and performance-based rotation
+- the share content generator workflow (see instructions below) — optimized AI-generated share content with variant tracking and performance-based rotation
 - `referral-program` — referral reward mechanism integrated with the share viral loop

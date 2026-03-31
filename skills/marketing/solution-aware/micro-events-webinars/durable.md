@@ -18,7 +18,6 @@ slug: "micro-events-webinars"
 install: "npx gtm-skills add marketing/solution-aware/micro-events-webinars"
 drills:
   - autonomous-optimization
-  - webinar-performance-monitor
 ---
 
 # Micro-Event or Webinar — Durable Intelligence
@@ -46,7 +45,7 @@ drills:
 
 ### 1. Deploy continuous webinar funnel monitoring
 
-Run the `webinar-performance-monitor` drill to build the always-on monitoring layer:
+Run the `autonomous-optimization` drill to build the always-on monitoring layer:
 
 - **Post-event automated checks**: After each event, the agent runs immediate health checks — show rate vs target, engagement rate vs target, and nurture launch verification. Alerts fire if any metric falls below critical thresholds (show rate <20%, engagement <10%).
 - **Rolling trend analysis**: Weekly n8n cron compares the last event's metrics against the 4-event rolling average. If any metric declines >15%, it flags for investigation and triggers the optimization loop.
@@ -178,4 +177,4 @@ The play is durable when the agent can maintain meetings-per-event above the Sca
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `webinar-performance-monitor` — continuous monitoring, post-event post-mortems, and monthly series health reports that feed data into the optimization loop
+- `autonomous-optimization` — continuous monitoring, post-event post-mortems, and monthly series health reports that feed data into the optimization loop

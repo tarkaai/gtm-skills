@@ -55,7 +55,7 @@ Combine intent-sourced prospects with Apollo-sourced lists to maintain 1,000+ co
 
 ### 2. Automate AI research at scale
 
-Build an n8n workflow that runs the `ai-prospect-research` drill automatically:
+Build an n8n workflow that runs the the ai prospect research workflow (see instructions below) drill automatically:
 
 1. **Trigger**: new contact added to the "Research Queue" Attio list (via intent signals or batch import)
 2. **Clay HTTP POST**: send contact data to Clay table for Claygent research (research_brief, personalization_hook, pain_hypothesis, outreach_angle)

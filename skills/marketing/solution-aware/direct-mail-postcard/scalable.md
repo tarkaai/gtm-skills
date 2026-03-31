@@ -15,7 +15,6 @@ slug: "direct-mail-postcard"
 install: "npx gtm-skills add marketing/solution-aware/direct-mail-postcard"
 drills:
   - postcard-campaign-send
-  - postcard-ab-testing
   - signal-detection
   - enrich-and-score
 ---
@@ -69,7 +68,7 @@ This workflow should handle 100-250 postcards per weekly batch without manual in
 
 ### 3. Run structured A/B tests
 
-Run the `postcard-ab-testing` drill. At Scalable volume (500+/month), you can run meaningful A/B tests:
+Run the the postcard ab testing workflow (see instructions below) drill. At Scalable volume (500+/month), you can run meaningful A/B tests:
 
 **Month 1 — Test headline personalization:**
 - Control: Generic industry-level headline
@@ -144,6 +143,6 @@ If FAIL: Diagnose — are you sending to lower-quality prospects at scale (scori
 ## Drills Referenced
 
 - `postcard-campaign-send` — Automated weekly batch sends via Lob API
-- `postcard-ab-testing` — Structured A/B tests on copy, design, size, and targeting
+- the postcard ab testing workflow (see instructions below) — Structured A/B tests on copy, design, size, and targeting
 - `signal-detection` — Automated buying signal detection for priority targeting
 - `enrich-and-score` — Score and prioritize prospects for direct mail outreach

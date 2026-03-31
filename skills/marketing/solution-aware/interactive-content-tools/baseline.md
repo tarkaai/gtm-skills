@@ -17,7 +17,6 @@ drills:
   - interactive-tool-build
   - posthog-gtm-events
   - lead-capture-surface-setup
-  - interactive-tool-nurture-pipeline
   - threshold-engine
 ---
 
@@ -67,7 +66,7 @@ Run the `lead-capture-surface-setup` drill for each tool's landing page. Configu
 
 ### 4. Deploy result-based nurture automation
 
-Run the `interactive-tool-nurture-pipeline` drill to build three Loops sequences (fast-track, education, long-nurture) that personalize follow-up based on each user's tool results and score tier.
+Run the the interactive tool nurture pipeline workflow (see instructions below) drill to build three Loops sequences (fast-track, education, long-nurture) that personalize follow-up based on each user's tool results and score tier.
 
 This is the key Baseline upgrade: instead of manually following up with tool leads, the n8n workflow scores each lead by their result tier (high/medium/low value), routes them to the appropriate Loops sequence, and the sequence references their specific tool results in every email.
 
@@ -135,5 +134,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 - `interactive-tool-build` — build each additional interactive tool with tracking and CRM routing
 - `posthog-gtm-events` — standardize event taxonomy across all tools for consistent measurement
 - `lead-capture-surface-setup` — optimize email gate, CRM routing, and mobile UX per tool
-- `interactive-tool-nurture-pipeline` — deploy result-personalized nurture sequences with n8n routing
+- the interactive tool nurture pipeline workflow (see instructions below) — deploy result-personalized nurture sequences with n8n routing
 - `threshold-engine` — evaluate total completions and qualified leads against the pass threshold

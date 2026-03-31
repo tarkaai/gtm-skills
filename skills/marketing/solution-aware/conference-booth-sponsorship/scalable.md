@@ -17,8 +17,6 @@ slug: "conference-booth-sponsorship"
 install: "npx gtm-skills add marketing/solution-aware/conference-booth-sponsorship"
 drills:
   - conference-sponsorship-pipeline
-  - booth-lead-capture
-  - booth-follow-up-nurture
   - ab-test-orchestrator
 ---
 
@@ -85,7 +83,7 @@ For each test, define the hypothesis, success metric, and minimum sample size be
 
 ### 4. Optimize follow-up nurture sequences
 
-Upgrade the `booth-follow-up-nurture` drill sequences based on Baseline data:
+Upgrade the the booth follow up nurture workflow (see instructions below) drill sequences based on Baseline data:
 
 - **Tier 1**: If Loom videos tested well, include them by default. Personalize the video script with conference-specific content. Reduce time-to-first-email to the winning timing from your test.
 - **Tier 2**: Extend or shorten the sequence based on which step produces the most replies. If Email 2 (Day 4) outperforms Email 3 (Day 8), drop Email 3 and redirect effort to a different channel (LinkedIn connection request on Day 6).
@@ -145,6 +143,6 @@ After 6 months (4-6 conferences), evaluate:
 ## Drills Referenced
 
 - `conference-sponsorship-pipeline` — quarterly conference program planning, scoring, and pre-event automation
-- `booth-lead-capture` — standardized booth execution with real-time lead qualification
-- `booth-follow-up-nurture` — automated tier-segmented follow-up sequences with optimization
+- the booth lead capture workflow (see instructions below) — standardized booth execution with real-time lead qualification
+- the booth follow up nurture workflow (see instructions below) — automated tier-segmented follow-up sequences with optimization
 - `ab-test-orchestrator` — systematic testing of booth tactics, follow-up format, timing, and demo approach

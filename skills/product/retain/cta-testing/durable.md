@@ -16,7 +16,6 @@ slug: "cta-testing"
 install: "npx gtm-skills add product/retain/cta-testing"
 drills:
   - autonomous-optimization
-  - cta-variant-pipeline
 ---
 
 # CTA Optimization -- Durable Intelligence
@@ -66,7 +65,7 @@ Run the `autonomous-optimization` drill to add CTA-specific health tracking on t
 
 ### 3. Configure the variant generation pipeline for autonomous use
 
-Run the `cta-variant-pipeline` drill in autonomous mode. At Scalable level, a human reviewed and prioritized variant hypotheses. At Durable level, the agent:
+Run the the cta variant pipeline workflow (see instructions below) drill in autonomous mode. At Scalable level, a human reviewed and prioritized variant hypotheses. At Durable level, the agent:
 
 1. Pulls the surface's current CTA configuration, its full test history, and the latest session recording insights
 2. Uses `hypothesis-generation` to produce variant ideas that avoid re-testing previously failed approaches
@@ -121,4 +120,4 @@ If CTR lift is sustained or improving over 6 months with zero manual experiment 
 
 - `autonomous-optimization` -- the core always-on loop that detects anomalies, generates hypotheses, runs experiments, evaluates results, and auto-implements winners. This is what makes Durable fundamentally different from Scalable.
 - `autonomous-optimization` -- CTA-specific monitoring layer that tracks experiment velocity, surface coverage, diminishing returns, and cumulative impact across all surfaces
-- `cta-variant-pipeline` -- generates and deploys CTA variants. At Durable level, runs autonomously with the agent selecting and deploying variants without human intervention (except for new variant categories)
+- the cta variant pipeline workflow (see instructions below) -- generates and deploys CTA variants. At Durable level, runs autonomously with the agent selecting and deploying variants without human intervention (except for new variant categories)

@@ -14,7 +14,6 @@ kpis: ["Net dollar retention", "Gross retention rate", "Revenue churn rate", "Ex
 slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
 drills:
-  - ndr-baseline-measurement
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -54,7 +53,7 @@ If your billing system is Stripe or Paddle, set up an n8n webhook workflow to re
 
 ### 2. Compute your NDR baseline
 
-Run the `ndr-baseline-measurement` drill in manual mode. This computes:
+Run the the ndr baseline measurement workflow (see instructions below) drill in manual mode. This computes:
 
 - Trailing 3-month NDR with full decomposition (churned MRR, contraction MRR, expansion MRR)
 - Gross retention rate (GRR) — NDR without expansion, showing pure revenue retention
@@ -112,6 +111,6 @@ Record:
 
 ## Drills Referenced
 
-- `ndr-baseline-measurement` — computes NDR from billing events, decomposes into churn/contraction/expansion, establishes per-cohort baselines
+- the ndr baseline measurement workflow (see instructions below) — computes NDR from billing events, decomposes into churn/contraction/expansion, establishes per-cohort baselines
 - `posthog-gtm-events` — establishes the standard event taxonomy in PostHog for billing and product events
 - `threshold-engine` — validates that the NDR measurement matches the billing system within the 5% accuracy threshold

@@ -15,7 +15,6 @@ slug: "advocacy-program"
 install: "npx gtm-skills add product/referrals/advocacy-program"
 drills:
   - autonomous-optimization
-  - advocacy-health-monitor
 ---
 
 # Formal Advocacy Program — Durable Intelligence
@@ -98,7 +97,7 @@ Post the brief to Slack and store in Attio.
 
 ### 2. Layer in play-specific health monitoring
 
-Run the `advocacy-health-monitor` drill alongside the autonomous optimization loop. The health monitor provides the advocacy-specific diagnostic layer that the generic optimization loop needs:
+Run the `autonomous-optimization` drill alongside the autonomous optimization loop. The health monitor provides the advocacy-specific diagnostic layer that the generic optimization loop needs:
 
 **Daily health check (8 metrics):**
 The health monitor classifies each advocacy metric as healthy/warning/critical using the thresholds defined at Scalable level. When a metric enters warning or critical, the health monitor runs targeted diagnostics:
@@ -178,4 +177,4 @@ This level runs continuously. Monthly review checkpoints:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners, produce weekly optimization briefs
-- `advocacy-health-monitor` — play-specific monitoring of 8 advocacy metrics with diagnostic triggers, automated interventions, and escalation rules that feed context into the optimization loop
+- `autonomous-optimization` — play-specific monitoring of 8 advocacy metrics with diagnostic triggers, automated interventions, and escalation rules that feed context into the optimization loop

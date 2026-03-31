@@ -18,7 +18,6 @@ drills:
   - icp-definition
   - build-prospect-list
   - timing-scorecard-setup
-  - timing-discovery-call
   - threshold-engine
 ---
 
@@ -65,7 +64,7 @@ Run the `build-prospect-list` drill to source 15-20 contacts matching your ICP. 
 
 ### 4. Run timing-focused discovery calls
 
-**Human action required:** Book and conduct 10-15 discovery calls over the week. Use the `timing-discovery-call` drill for each call:
+**Human action required:** Book and conduct 10-15 discovery calls over the week. Use the the timing discovery call workflow (see instructions below) drill for each call:
 
 1. Before each call: the agent reviews pre-enrichment data and generates a customized timing question guide targeting the biggest unknowns
 2. During the call: weave timing questions naturally into the conversation. Focus on the [MUST ASK] questions: "What's driving you to solve this now?", "When do you need this in place?", "What happens if you don't solve this by then?"
@@ -112,5 +111,5 @@ If PASS, proceed to Baseline. If FAIL, diagnose: wrong ICP (no one has urgency),
 - `icp-definition` — define ICP and extend with timing-specific qualification criteria
 - `build-prospect-list` — source and enrich 15-20 prospects from Clay/Apollo
 - `timing-scorecard-setup` — create timeline scoring infrastructure in Attio
-- `timing-discovery-call` — structured discovery call with transcript timing extraction
+- the timing discovery call workflow (see instructions below) — structured discovery call with transcript timing extraction
 - `threshold-engine` — evaluate results against the pass threshold

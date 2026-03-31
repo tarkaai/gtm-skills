@@ -16,12 +16,10 @@ kpis: ["Booth conversations per show", "Qualified lead rate", "Meetings booked p
 slug: "trade-show-presence"
 install: "npx gtm-skills add marketing/solution-aware/trade-show-presence"
 drills:
-  - trade-show-booth-operations
-  - trade-show-lead-nurture
   - ab-test-orchestrator
   - follow-up-automation
   - content-repurposing
-  - trade-show-performance-monitor
+  - dashboard-builder
 ---
 
 # Trade Show Presence — Scalable Automation
@@ -57,7 +55,7 @@ Using data from Baseline, build a scored calendar of shows for the next 6-12 mon
 
 ### 2. Automate pre-show operations
 
-Upgrade the `trade-show-booth-operations` drill to run with minimal manual intervention:
+Upgrade the the trade show booth operations workflow (see instructions below) drill to run with minimal manual intervention:
 
 - **Automated attendee pipeline**: Build an n8n workflow triggered when a new show is added to the Attio calendar. The workflow: extracts the attendee list (via event API or web scrape), runs Clay enrichment, scores against ICP criteria, segments into priority tiers, and pushes to an Attio list. This should take the agent 2 hours per show vs 4+ hours manually.
 - **Pre-show outreach sequences**: Move from manual personal emails to a structured Loops sequence for pre-show outreach. Segment by priority:
@@ -82,7 +80,7 @@ For each test, log the hypothesis, the variants, and the result in Attio. After 
 
 ### 4. Scale post-show follow-up
 
-Upgrade the `trade-show-lead-nurture` drill and add `follow-up-automation` for multi-channel coverage:
+Upgrade the the trade show lead nurture workflow (see instructions below) drill and add `follow-up-automation` for multi-channel coverage:
 
 - **Tier 1 at scale**: For shows with 10+ Tier 1 leads, the Loom approach becomes a bottleneck. Introduce a hybrid: the top 5 Tier 1s get personal Loom videos; the remaining get a high-quality templated email with show-specific personalization (their pain point, booth notes) auto-pulled from Attio by the agent.
 - **Multi-channel nurture**: Add LinkedIn touches to the Tier 2 sequence using `follow-up-automation`. After email 1 (day 1), send a LinkedIn connection request (day 2). After email 2 (day 4), engage with their recent LinkedIn post if they have one. This doubles the touchpoints without doubling the email volume.
@@ -103,7 +101,7 @@ Schedule derivatives to publish over the 4-6 weeks between shows. Link each piec
 
 ### 6. Monitor and optimize the trade show motion
 
-Run the `trade-show-performance-monitor` drill to build always-on reporting:
+Run the `dashboard-builder` drill to build always-on reporting:
 
 - Per-show ROI dashboard in PostHog: booth visits, demos, meetings, pipeline, cost, ROI for each show
 - Cross-show comparison: identify winning show characteristics, booth approaches, and nurture sequences
@@ -160,9 +158,9 @@ Note: Show-specific costs at this level typically $4,000-10,000 per show (better
 
 ## Drills Referenced
 
-- `trade-show-booth-operations` — automated pre-show targeting, enrichment pipelines, and scalable lead capture
-- `trade-show-lead-nurture` — tiered multi-channel nurture with escalation triggers and cross-show re-engagement
+- the trade show booth operations workflow (see instructions below) — automated pre-show targeting, enrichment pipelines, and scalable lead capture
+- the trade show lead nurture workflow (see instructions below) — tiered multi-channel nurture with escalation triggers and cross-show re-engagement
 - `ab-test-orchestrator` — systematically test booth hooks, demo paths, outreach copy, nurture angles, and follow-up timing
 - `follow-up-automation` — multi-channel follow-up combining email and LinkedIn touches
 - `content-repurposing` — transform each show into derivative content that drives future pipeline
-- `trade-show-performance-monitor` — per-show ROI dashboards, cross-show comparison, and quarterly motion review
+- `dashboard-builder` — per-show ROI dashboards, cross-show comparison, and quarterly motion review

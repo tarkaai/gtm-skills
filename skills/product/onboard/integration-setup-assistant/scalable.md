@@ -17,7 +17,7 @@ install: "npx gtm-skills add product/onboard/integration-setup-assistant"
 drills:
   - ab-test-orchestrator
   - onboarding-persona-scaling
-  - integration-health-monitor
+  - dashboard-builder
 ---
 
 # Integration Setup Assistant -- Scalable Automation
@@ -95,7 +95,7 @@ After each experiment, implement the winner permanently. Document the result (va
 
 ### 3. Deploy continuous integration health monitoring
 
-Run the `integration-health-monitor` drill to set up always-on monitoring:
+Run the `dashboard-builder` drill to set up always-on monitoring:
 
 1. Build the PostHog "Integration Setup Health" dashboard with panels for: overall completion rate trend, per-integration success rates, time to connect distributions, failure rate by error type, rescue effectiveness, and wizard abandonment funnel
 
@@ -155,4 +155,4 @@ If FAIL: If overall rate is close but one persona drags it down, focus all optim
 
 - `ab-test-orchestrator` -- designs, runs, and analyzes A/B tests on wizard timing, length, rescue channel, and bot guidance depth
 - `onboarding-persona-scaling` -- creates differentiated wizard variants for each user persona
-- `integration-health-monitor` -- continuous monitoring with anomaly alerts, weekly reports, and third-party change detection
+- `dashboard-builder` -- continuous monitoring with anomaly alerts, weekly reports, and third-party change detection

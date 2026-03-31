@@ -15,7 +15,6 @@ slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
 drills:
   - push-notification-setup
-  - push-notification-campaign
   - threshold-engine
 ---
 
@@ -44,7 +43,7 @@ Run the `push-notification-setup` drill. For Smoke, use OneSignal's free tier. C
 Identify 20-50 active users to test with. Choose users who have been active in the last 7 days and log in at least 2-3 times per week. These users are most likely to grant permission and engage with push, giving you the strongest signal for the Smoke test.
 
 ### 3. Send one targeted push campaign
-Run the `push-notification-campaign` drill. Pick one campaign type to test — the strongest candidate is usually **value delivery** (e.g., "Your weekly report is ready") because it provides immediate utility rather than asking the user to do something. Write the push copy following the drill's guidelines: 5-8 word title, 15-25 word body, deep link to the specific content.
+Run the the push notification campaign workflow (see instructions below) drill. Pick one campaign type to test — the strongest candidate is usually **value delivery** (e.g., "Your weekly report is ready") because it provides immediate utility rather than asking the user to do something. Write the push copy following the drill's guidelines: 5-8 word title, 15-25 word body, deep link to the specific content.
 
 Send the push at the user's local timezone peak-activity time (default: 9-10 AM if you lack per-user timing data). Use OneSignal's timezone delivery feature.
 
@@ -77,5 +76,5 @@ Iterate on copy and timing, then re-send to the same cohort.
 
 ## Drills Referenced
 - `push-notification-setup` — configure push SDK, opt-in prompt, and PostHog event tracking
-- `push-notification-campaign` — design and send the targeted push campaign
+- the push notification campaign workflow (see instructions below) — design and send the targeted push campaign
 - `threshold-engine` — evaluate CTR and DAU lift against pass criteria

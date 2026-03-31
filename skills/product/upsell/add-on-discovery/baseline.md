@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
   - addon-discovery-surface-build
   - posthog-gtm-events
-  - addon-cross-sell-health-monitor
 ---
 
 # Module Cross-Sell — Baseline Run
@@ -97,4 +96,3 @@ If PASS (≥10% activation rate), proceed to Scalable. If FAIL:
 
 - `addon-discovery-surface-build` — full build of trigger detection, in-app surfaces, email nudges, and fatigue controls
 - `posthog-gtm-events` — ensures all cross-sell funnel events are instrumented and flowing
-- `addon-cross-sell-health-monitor` — dashboard, funnel, and daily alerts for the cross-sell pipeline

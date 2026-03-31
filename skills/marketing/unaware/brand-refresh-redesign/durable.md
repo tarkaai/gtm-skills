@@ -16,7 +16,6 @@ slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
 drills:
   - autonomous-optimization
-  - brand-conversion-monitor
   - dashboard-builder
 ---
 
@@ -139,7 +138,7 @@ Post to Slack and store in Attio.
 
 ### 3. Configure always-on brand monitoring
 
-Run the `brand-conversion-monitor` drill at Durable intensity:
+Run the `autonomous-optimization` drill at Durable intensity:
 - Daily monitoring of every marketing page
 - Regression detection within 48 hours
 - Weekly brand health reports with page-level breakdowns
@@ -188,5 +187,5 @@ If metrics decay despite optimization, the agent diagnoses strategic causes: mar
 ## Drills Referenced
 
 - `autonomous-optimization` — The core Durable loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and generate weekly optimization briefs
-- `brand-conversion-monitor` — Daily monitoring of page-level conversion metrics with regression detection, weekly health reports, and competitive monitoring
+- `autonomous-optimization` — Daily monitoring of page-level conversion metrics with regression detection, weekly health reports, and competitive monitoring
 - `dashboard-builder` — Creates the PostHog intelligence dashboard with conversion, experimentation, and brand health layers

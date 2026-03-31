@@ -16,7 +16,6 @@ slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add OutboundFounderLed/Marketing/SolutionAware/outbound-gift-campaigns"
 drills:
   - autonomous-optimization
-  - gift-ab-testing
   - dashboard-builder
 ---
 
@@ -26,7 +25,7 @@ drills:
 
 ## Outcomes
 
-The gift campaign channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs gift experiments via the `gift-ab-testing` drill, evaluates results, and auto-implements winners. The `autonomous-optimization` drill provides the daily anomaly detection and weekly reporting that feeds the optimization loop. The system converges when successive experiments produce less than 2% improvement — the play has reached its optimal performance given current market conditions.
+The gift campaign channel runs on autopilot with AI agents continuously finding the local maximum. The `autonomous-optimization` drill monitors response rates, cost per meeting, and pipeline generated; when metrics plateau or drop, it generates hypotheses, designs gift experiments via the the gift ab testing workflow (see instructions below) drill, evaluates results, and auto-implements winners. The `autonomous-optimization` drill provides the daily anomaly detection and weekly reporting that feeds the optimization loop. The system converges when successive experiments produce less than 2% improvement — the play has reached its optimal performance given current market conditions.
 
 ## Leading Indicators
 
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for gift campaigns. This is t
 
 7. **Gift selection model variables:** AI confidence threshold for auto-sending (0.6 vs. 0.7 vs. 0.8). Prompt engineering for gift selection (different prompt structures may produce better matches).
 
-**Experiment execution:** When the optimization loop selects a hypothesis, it runs the `gift-ab-testing` drill:
+**Experiment execution:** When the optimization loop selects a hypothesis, it runs the the gift ab testing workflow (see instructions below) drill:
 1. Designs the experiment with control and treatment variants
 2. Creates the PostHog experiment and feature flag
 3. Splits the next 4 weeks of sends between control and treatment
@@ -223,6 +222,6 @@ Even after convergence, the agent should:
 ## Drills Referenced
 
 - `autonomous-optimization` — The core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, and report weekly
-- `gift-ab-testing` — Execute the A/B experiments proposed by the optimization loop on gift type, value, timing, and personalization
+- the gift ab testing workflow (see instructions below) — Execute the A/B experiments proposed by the optimization loop on gift type, value, timing, and personalization
 - `autonomous-optimization` — Daily anomaly detection and weekly performance reports specific to gift campaigns
 - `dashboard-builder` — Build the PostHog dashboard for real-time gift campaign performance monitoring

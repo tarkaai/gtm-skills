@@ -15,7 +15,6 @@ kpis: ["GitHub stars", "README CTA click-through rate", "Inbound inquiries from 
 slug: "open-source-content-release"
 install: "npx gtm-skills add marketing/solution-aware/open-source-content-release"
 drills:
-  - oss-content-selection
   - github-repo-setup
   - threshold-engine
 ---
@@ -40,7 +39,7 @@ The agent selects one internal asset to open-source, publishes it as a fully opt
 
 ### 1. Select the asset to open-source
 
-Run the `oss-content-selection` drill to identify and score candidate internal assets. The drill produces a ranked list -- take the top-scoring candidate that passes legal/IP review.
+Run the the oss content selection workflow (see instructions below) drill to identify and score candidate internal assets. The drill produces a ranked list -- take the top-scoring candidate that passes legal/IP review.
 
 Key criteria: the asset must deliver standalone value without requiring your paid product, it must be extractable in under 40 hours of work, and it must connect to a pain point your ICP actively searches for.
 
@@ -97,7 +96,7 @@ Run the `threshold-engine` drill to measure results against: >=50 GitHub stars A
 
 - **PASS:** Proceed to Baseline. Document which channels drove the most stars and inquiries.
 - **MARGINAL PASS (30-49 stars or 1-2 inquiries):** Stay at Smoke. Improve README CTA copy, re-promote on channels that showed promise, and re-evaluate in 2 more weeks.
-- **FAIL (<30 stars and 0 inquiries):** Re-run `oss-content-selection` -- the asset may not match ICP demand. Try the second-ranked candidate.
+- **FAIL (<30 stars and 0 inquiries):** Re-run the oss content selection workflow (see instructions below) -- the asset may not match ICP demand. Try the second-ranked candidate.
 
 ## Time Estimate
 
@@ -120,6 +119,6 @@ _Your CRM, PostHog, and automation platform are not included -- standard stack p
 
 ## Drills Referenced
 
-- `oss-content-selection` -- research, score, and select the internal asset to open-source
+- the oss content selection workflow (see instructions below) -- research, score, and select the internal asset to open-source
 - `github-repo-setup` -- scaffold the public repo with README CTA, analytics, topics SEO, and social preview
 - `threshold-engine` -- evaluate pass/fail and decide whether to advance to Baseline

@@ -16,7 +16,6 @@ slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
   - autonomous-optimization
-  - addon-cross-sell-health-monitor
 ---
 
 # Module Cross-Sell — Durable Intelligence
@@ -90,7 +89,7 @@ Post to Slack and store in Attio.
 
 ### 2. Extend health monitoring for autonomous mode
 
-Run the `addon-cross-sell-health-monitor` drill with additional Durable-level panels:
+Run the `autonomous-optimization` drill with additional Durable-level panels:
 
 Add to the existing dashboard:
 - **Experiment timeline**: visual timeline showing all experiments, their duration, and outcome (adopt/revert/iterate)
@@ -161,4 +160,4 @@ If cross-sell revenue declines for 2 consecutive months despite active optimizat
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor, diagnose, experiment, evaluate, report. This makes Durable fundamentally different from Scalable.
-- `addon-cross-sell-health-monitor` — extended with experiment timeline, convergence tracking, and agent activity logging for autonomous oversight
+- `autonomous-optimization` — extended with experiment timeline, convergence tracking, and agent activity logging for autonomous oversight

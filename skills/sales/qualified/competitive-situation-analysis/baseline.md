@@ -14,7 +14,6 @@ kpis: ["Competitive discovery rate", "Win rate by competitor", "Battlecard cover
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - competitive-discovery-call
   - competitive-battlecard-assembly
   - posthog-gtm-events
   - threshold-engine
@@ -40,11 +39,11 @@ Competitive discovery runs automatically on every qualification call. Top 5 comp
 
 ### 1. Automate the competitive discovery pipeline
 
-Build an n8n workflow that triggers the `competitive-discovery-call` drill automatically:
+Build an n8n workflow that triggers the the competitive discovery call workflow (see instructions below) drill automatically:
 
 1. **Trigger:** Fireflies webhook fires when a new transcript is available
 2. **Filter:** Check if the meeting is associated with a deal in Attio's Qualified pipeline stage. Skip internal meetings, customer success calls, etc.
-3. **Extract:** Run `call-transcript-competitor-extraction` on the transcript
+3. **Extract:** Run the call transcript competitor extraction workflow (see instructions below) on the transcript
 4. **Store:** Update the Attio deal record with competitive situation data
 5. **Route:** If a known competitor is identified, retrieve their battlecard and generate positioning via `competitive-positioning-generation`. Deliver to deal owner via Slack DM.
 6. **Log:** Fire PostHog events for every extraction
@@ -124,7 +123,7 @@ If FAIL: diagnose:
 
 ## Drills Referenced
 
-- `competitive-discovery-call` — automated competitive extraction from every qualification call
+- the competitive discovery call workflow (see instructions below) — automated competitive extraction from every qualification call
 - `competitive-battlecard-assembly` — builds and maintains per-competitor battlecards from deal data
 - `posthog-gtm-events` — event taxonomy for competitive tracking
 - `threshold-engine` — evaluates pass/fail threshold

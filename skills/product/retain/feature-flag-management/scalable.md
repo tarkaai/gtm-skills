@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/retain/feature-flag-management"
 drills:
   - ab-test-orchestrator
   - feature-readiness-gating
-  - flag-rollout-health-monitor
+  - dashboard-builder
 ---
 # Feature Flag System -- Scalable Automation
 
@@ -57,7 +57,7 @@ Run the `feature-readiness-gating` drill to build progressive feature disclosure
 Each segment strategy uses PostHog cohorts as the targeting mechanism within the flag's filter configuration.
 
 ### 3. Build flag health monitoring at scale
-Run the `flag-rollout-health-monitor` drill to maintain system health as flag volume grows:
+Run the `dashboard-builder` drill to maintain system health as flag volume grows:
 
 - Deploy the flag health dashboard tracking: rollout success rate, active flag count, stale flag count, flag debt ratio, per-flag product impact
 - Configure weekly health check workflow computing all KPIs
@@ -98,4 +98,4 @@ Measure against: >=85% rollout success rate across 500+ concurrent flags with 10
 ## Drills Referenced
 - `ab-test-orchestrator` -- runs rigorous A/B experiments using feature flags as the randomization mechanism
 - `feature-readiness-gating` -- implements progressive feature disclosure gated by user behavior cohorts
-- `flag-rollout-health-monitor` -- monitors system-wide flag health, rollback rates, and flag debt at scale
+- `dashboard-builder` -- monitors system-wide flag health, rollback rates, and flag debt at scale

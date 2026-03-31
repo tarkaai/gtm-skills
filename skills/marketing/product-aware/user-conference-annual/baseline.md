@@ -15,7 +15,6 @@ kpis: ["Total registrations", "Show rate", "Sessions per attendee", "Expansion m
 slug: "user-conference-annual"
 install: "npx gtm-skills add marketing/product-aware/user-conference-annual"
 drills:
-  - conference-planning-pipeline
   - posthog-gtm-events
   - webinar-attendee-nurture
 ---
@@ -62,7 +61,7 @@ Build a PostHog funnel: `conference_page_viewed` -> `conference_registered` -> `
 
 ### 2. Build full-production conference operations
 
-Run the `conference-planning-pipeline` drill with these Baseline-level enhancements:
+Run the the conference planning pipeline workflow (see instructions below) drill with these Baseline-level enhancements:
 
 **Registration upgrades:**
 - Move to Riverside ($19/mo Standard) or Zoom Pro ($13.33/mo) for recording. Every session gets recorded for replay distribution and content repurposing.
@@ -70,7 +69,7 @@ Run the `conference-planning-pipeline` drill with these Baseline-level enhanceme
 - Configure registration segmentation in Attio: tag registrants as `customer` or `prospect` based on CRM match. Track which customer tier they are on.
 
 **Promotion upgrades:**
-- Build the full 10-week automated promotion engine from `conference-planning-pipeline`: announcement wave (week -10), speaker spotlight wave (week -6), urgency wave (week -3), final push (week -1).
+- Build the full 10-week automated promotion engine from the conference planning pipeline workflow (see instructions below): announcement wave (week -10), speaker spotlight wave (week -6), urgency wave (week -3), final push (week -1).
 - Use Clay to find and invite 200-500 product-aware prospects: people who have visited your pricing page, signed up for a trial, or downloaded a resource but have not yet converted. These are your best non-customer conference targets.
 - Build automated reminder sequences in Loops: 1 week before, 3 days before, 1 day before, 1 hour before. Each reminder re-sells a specific session's value.
 
@@ -121,7 +120,7 @@ Configure n8n triggers: when any Tier 1 or Tier 2 contact replies, auto-create a
 
 ### 4. Collect and analyze feedback
 
-Using a Tally form (configured in `conference-planning-pipeline`), send a feedback survey to all attendees 24 hours after the event:
+Using a Tally form (configured in the conference planning pipeline workflow (see instructions below)), send a feedback survey to all attendees 24 hours after the event:
 
 - Overall satisfaction (1-10 NPS)
 - Rate each session attended (1-5 stars)
@@ -186,6 +185,6 @@ After the 30-day post-conference window closes, evaluate:
 
 ## Drills Referenced
 
-- `conference-planning-pipeline` -- full-production conference operations: registration, promotion engine, speaker coordination, day-of logistics, follow-up
+- the conference planning pipeline workflow (see instructions below) -- full-production conference operations: registration, promotion engine, speaker coordination, day-of logistics, follow-up
 - `posthog-gtm-events` -- implement standard conference event taxonomy for measurement and attribution
 - `webinar-attendee-nurture` -- automated post-conference segmented nurture sequences adapted for conference engagement tiers

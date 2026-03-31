@@ -17,7 +17,6 @@ slug: "demo-storytelling-framework"
 install: "npx gtm-skills add sales/connected/demo-storytelling-framework"
 drills:
   - autonomous-optimization
-  - story-intelligence-reporting
 ---
 
 # Demo Storytelling Framework — Durable Intelligence
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for the storytelling demo pro
 
 ### 2. Maintain Story Intelligence Reporting
 
-Continue running the `story-intelligence-reporting` drill from Scalable. The reporting layer provides the data substrate that the optimization loop reads. Enhancements for Durable:
+Continue running the `autonomous-optimization` drill from Scalable. The reporting layer provides the data substrate that the optimization loop reads. Enhancements for Durable:
 
 - Add a "Story Lifecycle" panel to the dashboard: time since creation, usage trend, effectiveness trend per story. Detect when stories enter decline phase automatically.
 - Add a "Narrative Pattern" panel: which narrative structures (4-phase, backward, quote-first) are currently winning, and what the optimizer is testing.
@@ -206,4 +205,4 @@ When external conditions change (new product launch, new market entry, competiti
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in storytelling KPIs, generate hypotheses, run A/B experiments, evaluate results, and auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `story-intelligence-reporting` — track story effectiveness, build performance dashboards, generate intelligence briefs, and provide the data substrate the optimization loop reads from.
+- `autonomous-optimization` — track story effectiveness, build performance dashboards, generate intelligence briefs, and provide the data substrate the optimization loop reads from.

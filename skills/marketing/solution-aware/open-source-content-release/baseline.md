@@ -101,7 +101,7 @@ After 8 weeks, measure against: >=200 total GitHub stars AND >=15 qualified lead
 
 - **PASS:** Proceed to Scalable. Document: top referral sources, CTA conversion rate, lead quality scores.
 - **MARGINAL PASS (150-199 stars or 10-14 leads):** Stay at Baseline for 4 more weeks. Improve the blog post, optimize README CTA copy, and promote the next release more aggressively.
-- **FAIL:** Review whether the asset matches ICP demand. Consider running `oss-content-selection` again or pivoting promotion channels.
+- **FAIL:** Review whether the asset matches ICP demand. Consider running the oss content selection workflow (see instructions below) again or pivoting promotion channels.
 
 ## Time Estimate
 

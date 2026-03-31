@@ -16,7 +16,6 @@ slug: "micro-influencer-b2b-creators"
 install: "npx gtm-skills add marketing/problem-aware/micro-influencer-b2b-creators"
 drills:
   - autonomous-optimization
-  - creator-performance-reporting
   - dashboard-builder
 ---
 
@@ -118,7 +117,7 @@ Run the `autonomous-optimization` drill with creator-specific configuration:
 
 ### 3. Run creator-specific monitoring
 
-Run the `creator-performance-reporting` drill in always-on mode:
+Run the `autonomous-optimization` drill in always-on mode:
 
 **Creator Health Checks (weekly):**
 - For each Tier 1 creator: is CPL still within 20% of their personal best? If not, flag for rotation.
@@ -179,5 +178,5 @@ When the last 3 consecutive experiments each produce <2% improvement:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `creator-performance-reporting` — always-on dashboards, weekly reports, creator health checks
+- `autonomous-optimization` — always-on dashboards, weekly reports, creator health checks
 - `dashboard-builder` — build the comprehensive Durable monitoring dashboard in PostHog

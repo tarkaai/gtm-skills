@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/onboard/setup-wizard"
 drills:
   - onboarding-persona-scaling
   - ab-test-orchestrator
-  - wizard-completion-monitor
+  - dashboard-builder
 ---
 
 # Guided Setup Wizard — Scalable
@@ -53,7 +53,7 @@ Run the `onboarding-persona-scaling` drill to:
 
 4. Use PostHog multi-variant feature flag `setup-wizard-variant` to route each persona to their wizard. Flag assignment is based on the `persona_type` property set by the classification workflow.
 
-5. Build per-persona funnels in PostHog (from `wizard-completion-monitor`) so each variant's performance is tracked independently.
+5. Build per-persona funnels in PostHog (from `dashboard-builder`) so each variant's performance is tracked independently.
 
 ### 2. Run systematic A/B tests
 
@@ -75,7 +75,7 @@ Rules:
 
 ### 3. Scale monitoring to per-persona
 
-Run the `wizard-completion-monitor` drill to expand monitoring:
+Run the `dashboard-builder` drill to expand monitoring:
 - Per-persona dashboards showing each variant's health independently
 - Persona-level anomaly detection: alert if any persona's completion drops >15% from its rolling average
 - Weekly report now includes per-persona breakdown and experiment results
@@ -117,4 +117,4 @@ If FAIL: If overall rate is below 70% but trending up, extend Scalable for 2 mor
 
 - `onboarding-persona-scaling` -- builds persona classification, per-persona wizard variants, and per-persona tracking
 - `ab-test-orchestrator` -- runs systematic A/B tests on wizard steps, ordering, tours, and nudge timing
-- `wizard-completion-monitor` -- per-persona monitoring, anomaly detection, and weekly reports
+- `dashboard-builder` -- per-persona monitoring, anomaly detection, and weekly reports

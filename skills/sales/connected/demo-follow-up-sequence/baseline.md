@@ -14,7 +14,6 @@ kpis: ["Sequence completion rate", "Response rate by touch number", "Next step c
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
-  - demo-recap-assembly
   - posthog-gtm-events
 ---
 
@@ -56,7 +55,7 @@ Connect PostHog to Attio via webhook so deal properties update automatically whe
 
 ### 2. Run Demo Recap Assembly for Every Demo
 
-Run the `demo-recap-assembly` drill after each demo, same as Smoke. The difference at Baseline: the agent now also prepares the full 5-touch cadence content (not just the recap) based on the demo extraction.
+Run the the demo recap assembly workflow (see instructions below) drill after each demo, same as Smoke. The difference at Baseline: the agent now also prepares the full 5-touch cadence content (not just the recap) based on the demo extraction.
 
 For each demo, the agent produces:
 - Touch 0: Personalized recap email (same as Smoke)
@@ -142,6 +141,6 @@ If FAIL: Diagnose by touch — which touch has the lowest response rate? Is the 
 
 ## Drills Referenced
 
-- `demo-recap-assembly` — extract demo signals from transcript and generate personalized recap + full cadence content
+- the demo recap assembly workflow (see instructions below) — extract demo signals from transcript and generate personalized recap + full cadence content
 - the demo follow up cadence workflow (see instructions below) — execute the structured multi-touch follow-up sequence with engagement-based branching
 - `posthog-gtm-events` — set up the event taxonomy for tracking every follow-up touch and outcome

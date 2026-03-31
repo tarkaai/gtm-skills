@@ -16,7 +16,6 @@ slug: "pr-earned"
 install: "npx gtm-skills add marketing/unaware/pr-earned"
 drills:
   - autonomous-optimization
-  - pr-performance-monitor
 ---
 
 # PR & Earned Placements — Durable Intelligence
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-The earned media engine runs autonomously with AI agents continuously monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill creates the always-on loop that detects metric anomalies, generates improvement hypotheses, runs A/B experiments, evaluates results, and auto-implements winners. The `pr-performance-monitor` drill provides the play-specific monitoring, placement-to-pipeline attribution, and reporting that feeds the optimization loop. Together, they find and maintain the local maximum -- the best possible PR performance given the current media landscape, story angles, and competitive environment.
+The earned media engine runs autonomously with AI agents continuously monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill creates the always-on loop that detects metric anomalies, generates improvement hypotheses, runs A/B experiments, evaluates results, and auto-implements winners. The `autonomous-optimization` drill provides the play-specific monitoring, placement-to-pipeline attribution, and reporting that feeds the optimization loop. Together, they find and maintain the local maximum -- the best possible PR performance given the current media landscape, story angles, and competitive environment.
 
 Success = placements and referral clicks sustained at or above Scalable baseline for 6 months, with the optimization loop converging (successive experiments producing <2% improvement) indicating the local maximum is reached.
 
@@ -44,7 +43,7 @@ Success = placements and referral clicks sustained at or above Scalable baseline
 
 ### 1. Deploy the PR performance monitor
 
-Run the `pr-performance-monitor` drill to build the always-on monitoring system:
+Run the `autonomous-optimization` drill to build the always-on monitoring system:
 
 **Build the PostHog dashboard** with 5 panels:
 1. Outreach Pipeline -- pitches sent per week by outlet type, pitch-to-reply-to-placement funnel, conversion rates, outstanding pitches by status
@@ -209,4 +208,4 @@ When a landscape shift is detected, the agent should propose strategic intervent
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run A/B experiments -> evaluate results -> auto-implement winners -> weekly optimization briefs
-- `pr-performance-monitor` — play-specific dashboard, anomaly detection, PR event taxonomy, placement-to-pipeline attribution, and weekly/monthly reporting
+- `autonomous-optimization` — play-specific dashboard, anomaly detection, PR event taxonomy, placement-to-pipeline attribution, and weekly/monthly reporting

@@ -14,7 +14,6 @@ kpis: ["Impressions", "Clicks", "CTR", "CPC", "Landing page conversion rate", "Q
 slug: "quora-ads-targeting"
 install: "npx gtm-skills add Marketing/ProblemAware/quora-ads-targeting"
 drills:
-  - quora-ads-campaign-build
   - threshold-engine
 ---
 
@@ -41,7 +40,7 @@ Prove that Quora Ads can reach problem-aware prospects at a cost-effective CPC b
 
 ### 1. Research Target Questions and Topics
 
-Run the `quora-ads-campaign-build` drill, starting with the research phase:
+Run the the quora ads campaign build workflow (see instructions below) drill, starting with the research phase:
 
 1. List 5 pain points your ICP has that your product addresses
 2. Search Quora for each pain point. Identify:
@@ -56,7 +55,7 @@ For the Smoke test, the agent performs the Quora search and question scoring. Ma
 
 ### 2. Build the Landing Page
 
-Continue the `quora-ads-campaign-build` drill — landing page phase:
+Continue the the quora ads campaign build workflow (see instructions below) drill — landing page phase:
 
 1. Create a dedicated landing page for this Quora campaign
 2. Headline matches the ad promise (e.g., "The 5-Step Framework for [Solving ICP Problem]")
@@ -71,7 +70,7 @@ Continue the `quora-ads-campaign-build` drill — landing page phase:
 
 ### 3. Create Campaign and Ads
 
-Continue the `quora-ads-campaign-build` drill — campaign creation phase:
+Continue the the quora ads campaign build workflow (see instructions below) drill — campaign creation phase:
 
 1. The agent generates a campaign brief with:
    - Campaign: objective `Conversions`, daily budget $30-75/day, 7-day run
@@ -86,7 +85,7 @@ Continue the `quora-ads-campaign-build` drill — campaign creation phase:
 
 ### 4. Configure Conversion Tracking
 
-Complete the `quora-ads-campaign-build` drill — tracking phase:
+Complete the the quora ads campaign build workflow (see instructions below) drill — tracking phase:
 
 1. Verify Quora Pixel fires on landing page (use Quora Pixel Helper extension)
 2. Verify qclid capture stores the click ID on landing page load
@@ -155,5 +154,5 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `quora-ads-campaign-build` — complete campaign construction from question/topic research through targeting, creative, landing page, conversion tracking, and launch spec for Quora Ads Manager
+- the quora ads campaign build workflow (see instructions below) — complete campaign construction from question/topic research through targeting, creative, landing page, conversion tracking, and launch spec for Quora Ads Manager
 - `threshold-engine` — evaluate Smoke test results against the pass threshold and recommend next action (advance, iterate, or pivot)

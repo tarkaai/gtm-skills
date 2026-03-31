@@ -15,7 +15,6 @@ slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
   - icp-definition
-  - partner-marketplace-listing-setup
   - threshold-engine
 ---
 
@@ -57,7 +56,7 @@ Select 1-2 marketplaces to start. Recommended priority order based on typical B2
 
 ### 2. Create keyword-optimized listings
 
-Run the `partner-marketplace-listing-setup` drill. For each target marketplace:
+Run the the partner marketplace listing setup workflow (see instructions below) drill. For each target marketplace:
 
 1. Research marketplace-specific search terms using Clay Claygent
 2. Write keyword-optimized title, tagline, and description
@@ -116,5 +115,5 @@ Run the `threshold-engine` drill after 4 weeks of the listing being live:
 ## Drills Referenced
 
 - `icp-definition` -- identifies which partner platforms your ICP uses as core infrastructure
-- `partner-marketplace-listing-setup` -- creates keyword-optimized listings with UTM tracking and CRM logging
+- the partner marketplace listing setup workflow (see instructions below) -- creates keyword-optimized listings with UTM tracking and CRM logging
 - `threshold-engine` -- evaluates pass/fail against the 5-signup threshold

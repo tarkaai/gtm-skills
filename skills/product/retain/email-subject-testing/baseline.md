@@ -13,9 +13,7 @@ kpis: ["Open rate lift (relative %)", "Click rate", "Unsubscribe rate", "Tests c
 slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
 drills:
-  - email-subject-test-pipeline
   - posthog-gtm-events
-  - email-subject-performance-monitor
   - threshold-engine
 ---
 
@@ -49,7 +47,7 @@ Build PostHog funnels: sent -> opened -> clicked, filtered by test_id and varian
 
 ### 2. Run weekly subject-line tests
 
-Run the `email-subject-test-pipeline` drill once per week on a different retention email each time. Prioritize emails with:
+Run the the email subject test pipeline workflow (see instructions below) drill once per week on a different retention email each time. Prioritize emails with:
 - Highest send volume (tests need 200+ sends per variant for reliable data)
 - Below-average open rate (most room for improvement)
 - Direct retention impact (re-engagement, renewal, feature adoption)
@@ -91,7 +89,6 @@ Run the `threshold-engine` drill at the end of 2 weeks. Pass criteria: emails th
 
 ## Drills Referenced
 
-- `email-subject-test-pipeline` — runs each individual subject-line A/B test end-to-end
+- the email subject test pipeline workflow (see instructions below) — runs each individual subject-line A/B test end-to-end
 - `posthog-gtm-events` — configures the event taxonomy for email tracking in PostHog
-- `email-subject-performance-monitor` — builds the dashboard, anomaly alerts, and weekly performance briefs
 - `threshold-engine` — evaluates pass/fail against the 20% relative open-rate lift threshold

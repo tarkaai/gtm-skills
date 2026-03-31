@@ -16,7 +16,6 @@ slug: "multi-threaded-account-outreach"
 install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-outreach"
 drills:
   - autonomous-optimization
-  - outbound-performance-monitor
 ---
 
 # Multi-threaded Outreach — Durable Intelligence
@@ -94,7 +93,7 @@ Configure the loop specifically for multi-threaded outreach:
 
 ### 2. Build the multi-threaded outreach performance monitor
 
-Run the `outbound-performance-monitor` drill configured specifically for multi-threaded outreach. Build a PostHog dashboard named "Multi-threaded Outreach — Durable Monitor" with:
+Run the `autonomous-optimization` drill configured specifically for multi-threaded outreach. Build a PostHog dashboard named "Multi-threaded Outreach — Durable Monitor" with:
 
 **Row 1 — Primary KPIs (weekly trend):**
 - Account-to-meeting rate (the number that matters)
@@ -224,4 +223,4 @@ When converged:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core Monitor → Diagnose → Experiment → Evaluate → Implement loop that finds the local maximum for multi-threaded outreach conversion
-- `outbound-performance-monitor` — always-on dashboards, anomaly alerts, and weekly/monthly reporting specific to multi-channel outbound metrics
+- `autonomous-optimization` — always-on dashboards, anomaly alerts, and weekly/monthly reporting specific to multi-channel outbound metrics

@@ -16,7 +16,6 @@ slug: "technical-requirements-discovery"
 install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - autonomous-optimization
-  - technical-fit-scoring
 ---
 
 # Technical Requirements Discovery — Durable Intelligence
@@ -112,7 +111,7 @@ The technical intelligence monitor answers strategic questions:
 
 ### 3. Build adaptive scoring model
 
-Using the `technical-fit-scoring` drill in continuous refinement mode:
+Using the the technical fit scoring workflow (see instructions below) drill in continuous refinement mode:
 
 - Every time a deal closes (won or lost), the agent compares the technical score at time of scoring against the actual outcome
 - If accuracy drifts below 85% for 2 consecutive weeks, the autonomous optimization loop auto-triggers a scoring model experiment
@@ -195,4 +194,4 @@ If all metrics sustain, this play is durable. If metrics decay, the autonomous o
 
 - `autonomous-optimization` — the core optimization loop: monitor metrics, generate hypotheses, run experiments, evaluate results, auto-implement winners. This is what makes Durable fundamentally different.
 - `autonomous-optimization` — always-on monitoring of technical requirement patterns, demand shifts, and strategic intelligence
-- `technical-fit-scoring` — continuous refinement of the scoring model based on closed deal accuracy data
+- the technical fit scoring workflow (see instructions below) — continuous refinement of the scoring model based on closed deal accuracy data

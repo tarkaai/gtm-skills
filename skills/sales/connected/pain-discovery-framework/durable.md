@@ -127,7 +127,7 @@ Aggregate pain data across all prospects over 6 months to produce strategic inte
 The question bank evolves continuously at Durable:
 
 **Monthly cycle:**
-1. Agent reviews question performance data from `pain-pattern-analysis`
+1. Agent reviews question performance data from the pain pattern analysis workflow (see instructions below)
 2. Questions with surface_rate < 0.1 for 3 consecutive weeks are retired
 3. Experimental questions with surface_rate > 0.3 are promoted to standard
 4. 2-3 new experimental questions are generated targeting detected gaps

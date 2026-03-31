@@ -14,7 +14,6 @@ kpis: ["Registration count per summit", "Show rate", "Multi-session attendance r
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
 drills:
-  - summit-pipeline
   - summit-attendee-nurture
   - posthog-gtm-events
   - threshold-engine
@@ -59,11 +58,11 @@ Build a PostHog funnel: `summit_page_viewed` → `summit_registered` → `summit
 
 ### 2. Run summit 1 using the full pipeline
 
-Run the `summit-pipeline` drill for the first summit. This is the same pipeline used in Smoke, but now with full PostHog tracking instrumented. Focus on:
+Run the the summit pipeline workflow (see instructions below) drill for the first summit. This is the same pipeline used in Smoke, but now with full PostHog tracking instrumented. Focus on:
 
 - **Theme selection**: Choose a theme that performed well at Smoke or a new theme that addresses a different ICP pain point. Document the theme hypothesis in Attio.
-- **Speaker recruitment**: Use the `summit-pipeline` drill's speaker recruitment process. For this summit, track every step: outreach count, acceptance rate, and speaker-driven registrations. This data builds the speaker pipeline for automation.
-- **Promotion**: Execute the full 8-week promotion cadence from `summit-pipeline`. Track registrations per channel per week in PostHog.
+- **Speaker recruitment**: Use the the summit pipeline workflow (see instructions below) drill's speaker recruitment process. For this summit, track every step: outreach count, acceptance rate, and speaker-driven registrations. This data builds the speaker pipeline for automation.
+- **Promotion**: Execute the full 8-week promotion cadence from the summit pipeline workflow (see instructions below). Track registrations per channel per week in PostHog.
 - **Production and execution**: Run the summit with full session-level tracking. Log all engagement events.
 
 **Human action required:** Moderate the summit live. Deliver any internal sessions.
@@ -96,7 +95,7 @@ Document findings in Attio. Use them to adjust summit 2:
 
 ### 5. Run summit 2 (and optionally summit 3) with adjustments
 
-Run the `summit-pipeline` drill again with the adjustments identified in step 4. Change one major variable per summit to isolate what works:
+Run the the summit pipeline workflow (see instructions below) drill again with the adjustments identified in step 4. Change one major variable per summit to isolate what works:
 
 - Summit 2: Change theme OR speaker lineup OR promotion channels (not all three)
 - Summit 3 (if needed): Change the next variable
@@ -142,7 +141,7 @@ Run the `threshold-engine` drill after the final summit's 14-day nurture window 
 
 ## Drills Referenced
 
-- `summit-pipeline` — full summit lifecycle: speaker recruitment, registration, promotion, production, follow-up. Run once per summit.
+- the summit pipeline workflow (see instructions below) — full summit lifecycle: speaker recruitment, registration, promotion, production, follow-up. Run once per summit.
 - `summit-attendee-nurture` — post-summit 5-tier segmentation and differentiated nurture sequences. Converts attendees into pipeline.
 - `posthog-gtm-events` — establishes the full summit event taxonomy in PostHog for consistent measurement across all summits.
 - `threshold-engine` — evaluates aggregate metrics across all summits and recommends advance, iterate, or pivot.

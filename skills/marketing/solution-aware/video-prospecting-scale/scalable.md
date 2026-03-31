@@ -15,7 +15,6 @@ kpis: ["Monthly video volume", "Response rate", "Cost per meeting", "Video-to-me
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
 drills:
-  - ai-video-batch-generation
   - follow-up-automation
   - tool-sync-workflow
   - ab-test-orchestrator
@@ -45,7 +44,7 @@ Scale AI-generated video outreach from 100 (Baseline) to 400+ videos per month. 
 
 ### 1. Build the automated video generation pipeline
 
-Extend the `ai-video-batch-generation` drill into a fully automated weekly pipeline via n8n:
+Extend the the ai video batch generation workflow (see instructions below) drill into a fully automated weekly pipeline via n8n:
 
 **Pipeline stages:**
 1. **Monday 6am — Prospect sourcing:** n8n triggers Clay to pull 100 new prospects matching ICP criteria. Clay enriches each with signals and generates per-prospect video scripts via AI formula.
@@ -158,7 +157,7 @@ If FAIL: Diagnose:
 
 ## Drills Referenced
 
-- `ai-video-batch-generation` — automated weekly pipeline: enrich prospects, generate AI videos, launch campaigns
+- the ai video batch generation workflow (see instructions below) — automated weekly pipeline: enrich prospects, generate AI videos, launch campaigns
 - `follow-up-automation` — n8n workflows for engagement-based follow-up routing at scale
 - `tool-sync-workflow` — connect Instantly, video platform, Attio, PostHog, and LinkedIn into a unified data layer
 - `ab-test-orchestrator` — systematic experiments on video length, scripts, subjects, timing, and personalization depth

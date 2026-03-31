@@ -14,7 +14,6 @@ kpis: ["Answer volume", "Cumulative answer views", "Average upvote score", "Acce
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
-  - so-answer-crafting
   - posthog-gtm-events
 ---
 # Stack Overflow Presence — Baseline Run
@@ -65,7 +64,7 @@ https://yoursite.com/docs/PAGE?utm_source=stackoverflow&utm_medium=community&utm
 
 ### 3. Execute a 6-week answering cadence
 
-Using the `so-answer-crafting` drill, answer 5+ questions per week:
+Using the the so answer crafting workflow (see instructions below) drill, answer 5+ questions per week:
 
 **Week 1-2:** Focus exclusively on primary tags. Answer the highest-opportunity questions surfaced by the monitoring pipeline. Establish quality patterns.
 

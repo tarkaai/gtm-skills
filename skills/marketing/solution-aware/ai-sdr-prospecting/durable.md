@@ -19,7 +19,6 @@ slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
 drills:
   - autonomous-optimization
-  - outbound-performance-monitor
   - signal-detection
 ---
 
@@ -48,7 +47,7 @@ Durable is autonomous optimization. AI agents run the entire AI SDR pipeline con
 
 ### 1. Deploy the outbound performance monitoring system
 
-Run the `outbound-performance-monitor` drill. Build the monitoring layer specific to AI SDR:
+Run the `autonomous-optimization` drill. Build the monitoring layer specific to AI SDR:
 
 1. **PostHog dashboard** — "AI SDR Prospecting — Performance" with panels for:
    - Weekly send volume by channel (email, LinkedIn) and by source (intent, cold)
@@ -208,5 +207,5 @@ Total: ~180 hours over 12 months.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for meeting rate, cost per meeting, and AI research quality
-- `outbound-performance-monitor` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection across email, LinkedIn, research quality, and intent signals
+- `autonomous-optimization` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection across email, LinkedIn, research quality, and intent signals
 - `signal-detection` — continuous buying signal monitoring to keep the prospect pipeline fresh, high-quality, and converting at a premium versus cold-sourced prospects

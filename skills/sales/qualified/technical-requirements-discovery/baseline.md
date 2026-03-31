@@ -16,8 +16,6 @@ install: "npx gtm-skills add sales/qualified/technical-requirements-discovery"
 drills:
   - tech-stack-discovery
   - technical-discovery-call
-  - technical-fit-scoring
-  - technical-collateral-matching
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -69,11 +67,11 @@ The agent:
 2. Conduct the call with the prospect's technical stakeholder.
 3. After the call: the agent extracts requirements from the Fireflies transcript, scores technical fit across 5 categories, and routes the deal.
 
-Run the `technical-fit-scoring` drill after each call to apply scores and determine routing.
+Run the the technical fit scoring workflow (see instructions below) drill after each call to apply scores and determine routing.
 
 ### 4. Send matched technical collateral
 
-After each technical discovery call, run the `technical-collateral-matching` drill:
+After each technical discovery call, run the the technical collateral matching workflow (see instructions below) drill:
 - The agent matches the prospect's specific requirements to your technical collateral catalog
 - It generates a personalized follow-up email with relevant docs (API guides, security certs, integration docs, case studies)
 - It flags collateral gaps where you lack documentation for a stated requirement
@@ -129,7 +127,7 @@ If PASS, document the process as your standard technical discovery playbook and 
 
 - `tech-stack-discovery` — pre-call tech stack research from public signals
 - `technical-discovery-call` — structured discovery call with transcript extraction
-- `technical-fit-scoring` — apply 5-category scoring rubric and route deals
-- `technical-collateral-matching` — match requirements to documentation and generate follow-up
+- the technical fit scoring workflow (see instructions below) — apply 5-category scoring rubric and route deals
+- the technical collateral matching workflow (see instructions below) — match requirements to documentation and generate follow-up
 - `posthog-gtm-events` — define and implement the technical discovery event taxonomy
 - `threshold-engine` — evaluate results against pass threshold

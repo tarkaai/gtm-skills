@@ -15,7 +15,6 @@ install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
   - ab-test-orchestrator
   - tool-sync-workflow
-  - reddit-ads-subreddit-targeting
 ---
 
 # Paid Reddit Ads — Scalable Automation
@@ -54,7 +53,7 @@ Target: 3-5 new variants per ad group per week. Over 60 days, test 30-60 creativ
 
 ### 2. Expand subreddit targeting
 
-Re-run the `reddit-ads-subreddit-targeting` drill to find new subreddit clusters:
+Re-run the the reddit ads subreddit targeting workflow (see instructions below) drill to find new subreddit clusters:
 
 - Add a 3rd cluster (experimental, 20% budget) targeting adjacent communities
 - Test keyword targeting on top of subreddit targeting in a new ad group (keywords matching your problem domain + subreddit intersection)
@@ -158,4 +157,4 @@ Document the Scalable report:
 
 - `ab-test-orchestrator` — automated creative testing pipeline with statistical rigor
 - `tool-sync-workflow` — CRM sync, audience exclusions, and CAPI optimization
-- `reddit-ads-subreddit-targeting` — ongoing subreddit research and rotation
+- the reddit ads subreddit targeting workflow (see instructions below) — ongoing subreddit research and rotation

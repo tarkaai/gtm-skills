@@ -14,7 +14,6 @@ kpis: ["Author reply rate", "DM-to-reply conversion", "Comment-to-meeting rate",
 slug: "comment-to-dm-play"
 install: "npx gtm-skills add marketing/problem-aware/comment-to-dm-play"
 drills:
-  - comment-to-dm-cadence
   - posthog-gtm-events
   - linkedin-lead-capture
 ---
@@ -39,7 +38,7 @@ Run the comment-to-DM motion continuously for 4 weeks with structured cadence tr
 
 ### 1. Set up the comment-to-DM cadence system
 
-Run the `comment-to-dm-cadence` drill to establish the full tracking system in Attio:
+Run the the comment to dm cadence workflow (see instructions below) drill to establish the full tracking system in Attio:
 
 1. Add the `comment_dm_stage` custom field to Person records (values: cold, warming, warm, dm-ready, dm_sent, conversation, meeting_booked)
 2. Add tracking fields: `comment_touch_count`, `last_comment_date`, `first_comment_date`, `dm_sent_date`
@@ -68,7 +67,7 @@ Each business day:
 **Morning (20-30 min):**
 1. The agent runs `prospect-content-discovery` (Option B -- semi-automated via Taplio) to surface today's commentable posts
 2. The founder reviews the queue and selects 5-8 posts
-3. The agent drafts comments using the `comment-crafting` drill strategies
+3. The agent drafts comments using the the comment crafting workflow (see instructions below) drill strategies
 4. The founder reviews, edits for voice, and posts each comment
 5. The agent logs each comment in Attio (increment touch count, update last_comment_date) and fires `comment_posted` events
 
@@ -79,7 +78,7 @@ Each business day:
 9. Update prospect stages: if a prospect now meets DM-ready criteria, advance them
 
 **DM window (as signals appear):**
-10. When a prospect reaches DM-ready stage, the agent drafts a DM using the `comment-to-dm-cadence` drill templates
+10. When a prospect reaches DM-ready stage, the agent drafts a DM using the the comment to dm cadence workflow (see instructions below) drill templates
 11. The founder reviews and sends the DM
 12. Log the DM in Attio, fire `dm_sent` event
 
@@ -128,6 +127,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose the funnel stage where conversio
 
 ## Drills Referenced
 
-- `comment-to-dm-cadence` — the full warming-to-DM conversion sequence with stage tracking
+- the comment to dm cadence workflow (see instructions below) — the full warming-to-DM conversion sequence with stage tracking
 - `posthog-gtm-events` — set up the event taxonomy for comment-to-DM tracking
 - `linkedin-lead-capture` — enrich and route DM-ready prospects to CRM pipeline

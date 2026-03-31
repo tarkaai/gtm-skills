@@ -15,7 +15,6 @@ slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
   - referral-network-mapping
-  - referral-ask-copywriting
   - warm-intro-request
   - posthog-gtm-events
   - threshold-engine
@@ -77,7 +76,7 @@ Estimated time: 2 hours.
 
 ### 3. Generate ask messages at scale
 
-Run the `referral-ask-copywriting` drill for all 70+ pairs. At Baseline, use Claude to batch-generate:
+Run the the referral ask copywriting workflow (see instructions below) drill for all 70+ pairs. At Baseline, use Claude to batch-generate:
 
 1. Variant A (Direct ask) and Variant B (Warm-up first) for each pair
 2. Forwardable blurb for each pair
@@ -173,7 +172,7 @@ Estimated time: 1.5 hours.
 ## Drills Referenced
 
 - `referral-network-mapping` — maps your network to targets using Clay enrichment, scores every connector-target pair
-- `referral-ask-copywriting` — batch generates personalized ask messages (2 variants) and forwardable blurbs for all 70+ pairs
+- the referral ask copywriting workflow (see instructions below) — batch generates personalized ask messages (2 variants) and forwardable blurbs for all 70+ pairs
 - `warm-intro-request` — execution mechanics for sending asks, handling responses, and managing the intro handoff
 - `posthog-gtm-events` — configures PostHog tracking for the referral funnel events
 - `threshold-engine` — evaluates results against pass/fail threshold and recommends next action

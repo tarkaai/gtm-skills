@@ -14,7 +14,6 @@ kpis: ["Pricing acceptance rate", "Average discount percentage", "Tier match rat
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
-  - pricing-proposal-assembly
   - pricing-outcome-tracking
   - price-objection-response
   - threshold-engine
@@ -53,7 +52,7 @@ This tracking runs continuously from this point forward.
 
 ### 2. Generate pricing proposals for all qualifying deals
 
-Run the `pricing-proposal-assembly` drill for every deal that enters Proposed stage with qualifying pain data (`pain_count >= 2`, `pain_quantification_rate >= 0.5`). At Baseline, this is still agent-assisted — the agent generates the proposal, the seller reviews and presents.
+Run the the pricing proposal assembly workflow (see instructions below) drill for every deal that enters Proposed stage with qualifying pain data (`pain_count >= 2`, `pain_quantification_rate >= 0.5`). At Baseline, this is still agent-assisted — the agent generates the proposal, the seller reviews and presents.
 
 For each deal:
 1. Pull deal context and pain data from Attio
@@ -129,7 +128,7 @@ If FAIL: diagnose using the pricing dashboard:
 
 ## Drills Referenced
 
-- `pricing-proposal-assembly` — generates Good/Better/Best proposals from deal pain data with value anchoring and discount guardrails
+- the pricing proposal assembly workflow (see instructions below) — generates Good/Better/Best proposals from deal pain data with value anchoring and discount guardrails
 - `pricing-outcome-tracking` — instruments the full pricing lifecycle in PostHog and Attio with funnels and dashboards
 - `price-objection-response` — diagnoses objection root cause, selects response framework, generates tailored response, and logs outcome
 - `threshold-engine` — evaluates pass/fail against >=80% coverage / >=65% acceptance / <=12% discount targets

@@ -16,8 +16,6 @@ slug: "push-notification-engagement"
 install: "npx gtm-skills add product/retain/push-notification-engagement"
 drills:
   - autonomous-optimization
-  - push-notification-health-monitor
-  - push-notification-campaign
 ---
 
 # Push Notification Strategy — Durable Intelligence
@@ -104,7 +102,7 @@ The `autonomous-optimization` drill is play-agnostic. Configure it with these pu
 - Never optimize without sufficient data: minimum 200 deliveries per variant
 
 ### 3. Extend push health monitoring for Durable
-Run the `push-notification-health-monitor` drill with expanded scope for the Durable level:
+Run the `autonomous-optimization` drill with expanded scope for the Durable level:
 
 Add these panels to the PostHog dashboard:
 - **Experiment timeline**: visual timeline showing every experiment, its duration, and outcome (adopted/reverted/iterated)
@@ -113,7 +111,7 @@ Add these panels to the PostHog dashboard:
 - **Hypothesis quality**: percentage of hypotheses that led to adopted experiments (track whether the agent's hypotheses are getting better over time)
 
 ### 4. Expand campaign repertoire based on learnings
-Run the `push-notification-campaign` drill periodically to add new campaign types based on what the optimization loop discovers:
+Run the the push notification campaign workflow (see instructions below) drill periodically to add new campaign types based on what the optimization loop discovers:
 
 - If the agent finds that social-proof copy ("your team did X") consistently wins, build a dedicated social-activity notification campaign
 - If send-time optimization shows specific time windows outperform others by >5pp, create time-window-specific campaigns with tailored copy
@@ -149,5 +147,5 @@ If convergence breaks (metrics shift >10% due to external factors), the agent re
 
 ## Drills Referenced
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `push-notification-health-monitor` — extended with experiment timeline, AI lift tracking, and convergence detection
-- `push-notification-campaign` — expand campaign repertoire based on optimization discoveries
+- `autonomous-optimization` — extended with experiment timeline, AI lift tracking, and convergence detection
+- the push notification campaign workflow (see instructions below) — expand campaign repertoire based on optimization discoveries

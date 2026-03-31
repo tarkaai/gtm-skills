@@ -15,8 +15,6 @@ slug: "youtube-channel-seo"
 install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
   - youtube-keyword-research
-  - youtube-video-publish
-  - youtube-channel-analytics
   - content-repurposing
   - posthog-gtm-events
 ---
@@ -50,7 +48,7 @@ Run the `youtube-keyword-research` drill at full depth:
 
 ### 2. Set up always-on analytics
 
-Run the `youtube-channel-analytics` drill to build the automated data pipeline:
+Run the the youtube channel analytics workflow (see instructions below) drill to build the automated data pipeline:
 - Configure PostHog event schema for YouTube metrics
 - Build the n8n daily sync workflow: channel metrics, per-video metrics, traffic sources, search terms
 - Build the PostHog dashboard with 6 panels: channel overview, video leaderboard, SEO performance, traffic source mix, content effectiveness, conversion tracking
@@ -68,7 +66,7 @@ Add UTM parameters to all YouTube description links: `?utm_source=youtube&utm_me
 
 ### 4. Produce videos at cadence
 
-Run the `youtube-video-publish` drill 1-2 times per week for 8 weeks.
+Run the the youtube video publish workflow (see instructions below) drill 1-2 times per week for 8 weeks.
 
 At Baseline, refine the production workflow:
 - Batch script writing: write 2-4 scripts in one session
@@ -87,7 +85,7 @@ Run the `content-repurposing` drill for each published video:
 
 ### 6. Review and optimize weekly
 
-Each Monday, review the automated weekly report from `youtube-channel-analytics`:
+Each Monday, review the automated weekly report from the youtube channel analytics workflow (see instructions below):
 - Which videos drove the most YT_SEARCH traffic? Schedule follow-up videos on those topics.
 - Which videos had the highest retention? Replicate that format and pacing.
 - Which search terms are driving traffic that you haven't explicitly targeted? Add them to the keyword matrix.
@@ -128,7 +126,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Drills Referenced
 
 - `youtube-keyword-research` — full keyword matrix and 8-week content calendar
-- `youtube-video-publish` — weekly video production and upload pipeline
-- `youtube-channel-analytics` — always-on PostHog dashboard, daily sync, and weekly reports
+- the youtube video publish workflow (see instructions below) — weekly video production and upload pipeline
+- the youtube channel analytics workflow (see instructions below) — always-on PostHog dashboard, daily sync, and weekly reports
 - `content-repurposing` — turn each video into clips, posts, and threads
 - `posthog-gtm-events` — track YouTube-to-website conversion funnel

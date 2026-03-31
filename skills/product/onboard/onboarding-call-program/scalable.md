@@ -15,7 +15,7 @@ slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
 drills:
   - ab-test-orchestrator
-  - onboarding-call-performance-monitor
+  - dashboard-builder
 ---
 # High-Touch Onboarding Calls — Scalable Automation
 
@@ -73,7 +73,7 @@ For each test, use PostHog feature flags to split eligible users. Log experiment
 
 ### 2. Build the performance monitoring system
 
-Run the `onboarding-call-performance-monitor` drill to create always-on monitoring:
+Run the `dashboard-builder` drill to create always-on monitoring:
 
 - Build the PostHog dashboard with 6 panels: full funnel trend, call quality distribution, activation rate call vs no-call, time to activation distribution, booking source breakdown, no-show/cancellation rate
 - Define anomaly thresholds for each metric (booking rate, completion rate, activation rate, call score, activation lift, no-show rate)
@@ -98,7 +98,7 @@ Track per-team-member metrics in PostHog: call score, activation rate, and call 
 Create 2-3 call script variants targeting different user personas:
 
 - Pull persona distribution data from PostHog (by plan type, company size, use case, or signup source)
-- For each persona, adjust the `onboarding-call-script` drill output:
+- For each persona, adjust the the onboarding call script workflow (see instructions below) drill output:
   - Different discovery questions relevant to their use case
   - A walkthrough that follows their specific critical path to activation
   - Follow-up content tailored to their next valuable feature
@@ -141,4 +141,4 @@ Capture the program's ROI: (incremental activations from calls x customer LTV) v
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on invitation channels, call structure, follow-up timing, and qualification criteria
-- `onboarding-call-performance-monitor` — builds the PostHog dashboard, daily anomaly detection, weekly performance reports, and monthly cohort analysis
+- `dashboard-builder` — builds the PostHog dashboard, daily anomaly detection, weekly performance reports, and monthly cohort analysis

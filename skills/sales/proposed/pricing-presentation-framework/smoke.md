@@ -15,7 +15,6 @@ kpis: ["Pricing acceptance rate", "Discount request frequency", "Value recap rat
 slug: "pricing-presentation-framework"
 install: "npx gtm-skills add sales/proposed/pricing-presentation-framework"
 drills:
-  - pricing-proposal-assembly
   - threshold-engine
 ---
 
@@ -55,9 +54,9 @@ For each qualifying deal, pull from Attio:
 - Competitive situation (any competitor mentions from discovery)
 - Budget cycle / fiscal year end if known
 
-### 2. Run the `pricing-proposal-assembly` drill for each deal
+### 2. Run the the pricing proposal assembly workflow (see instructions below) drill for each deal
 
-For each of the 5 deals, execute the `pricing-proposal-assembly` drill:
+For each of the 5 deals, execute the the pricing proposal assembly workflow (see instructions below) drill:
 
 1. Validate pain-to-price ratio (>=5x strong, 3-5x moderate, <3x flag for more discovery)
 2. Generate ROI model via `roi-model-generation` if not already present
@@ -131,5 +130,5 @@ If FAIL: diagnose the failure mode:
 
 ## Drills Referenced
 
-- `pricing-proposal-assembly` — builds a prospect-specific Good/Better/Best pricing proposal from pain data, generates tier structure with value anchoring, and creates the presentation artifact
+- the pricing proposal assembly workflow (see instructions below) — builds a prospect-specific Good/Better/Best pricing proposal from pain data, generates tier structure with value anchoring, and creates the presentation artifact
 - `threshold-engine` — evaluates pass/fail against the >=5 presentations / >=60% acceptance / <=10% discount target at week's end

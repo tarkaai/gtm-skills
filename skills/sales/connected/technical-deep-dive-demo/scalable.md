@@ -44,7 +44,7 @@ Run the `demo-performance-monitor` drill to create an always-on monitoring syste
 - Weekly pain-to-feature effectiveness report: which demo modules and technical proof points drive the highest POC conversion, which ones to stop leading with
 
 ### 2. Scale demo prep with transcript-driven intelligence
-Run the `demo-prep-automation` drill alongside `technical-demo-content-assembly` (already running from Baseline) to add transcript-driven intelligence:
+Run the `demo-prep-automation` drill alongside the technical demo content assembly workflow (see instructions below) (already running from Baseline) to add transcript-driven intelligence:
 
 - After each discovery call, Fireflies transcript is automatically processed
 - Pain points, technical requirements, and BANT scores are extracted
@@ -53,7 +53,7 @@ Run the `demo-prep-automation` drill alongside `technical-demo-content-assembly`
 
 Configure n8n to chain these drills:
 1. Fireflies transcript webhook triggers `demo-prep-automation` (pain extraction + feature mapping)
-2. Output feeds into `technical-demo-content-assembly` (technical script generation)
+2. Output feeds into the technical demo content assembly workflow (see instructions below) (technical script generation)
 3. Combined output stored in Attio as a unified demo prep document
 4. Slack notification to founder with prep summary and recommended emphasis areas
 

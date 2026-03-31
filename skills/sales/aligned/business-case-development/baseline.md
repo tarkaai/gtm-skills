@@ -14,7 +14,6 @@ kpis: ["Business case coverage rate", "Executive approval rate", "Median time-to
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
-  - business-case-assembly
   - roi-calculator-build
   - stakeholder-map-assembly
   - posthog-gtm-events
@@ -80,7 +79,7 @@ For deals where pain data is insufficient, recommend an additional discovery cal
 
 ### 4. Assemble business cases at volume
 
-Run the `business-case-assembly` drill for each qualifying deal. At Baseline level, the agent handles most of the assembly with the seller reviewing before delivery.
+Run the the business case assembly workflow (see instructions below) drill for each qualifying deal. At Baseline level, the agent handles most of the assembly with the seller reviewing before delivery.
 
 Build reusable artifacts:
 - **Industry-specific templates:** After completing 3+ cases in the same industry, extract common sections (industry benchmarks, typical pain categories, regulatory drivers) into reusable templates
@@ -140,7 +139,7 @@ If FAIL: diagnose:
 
 ## Drills Referenced
 
-- `business-case-assembly` — end-to-end business case creation from pain data through document delivery
+- the business case assembly workflow (see instructions below) — end-to-end business case creation from pain data through document delivery
 - `roi-calculator-build` — generates prospect-specific ROI calculators with adjustable inputs
 - `stakeholder-map-assembly` — maps buying committee roles, influence scores, and engagement gaps
 - `posthog-gtm-events` — configures event taxonomy for tracking business case lifecycle metrics

@@ -14,7 +14,7 @@ kpis: ["Registrations per hackathon", "Submission rate", "Qualified leads per ha
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosting"
 drills:
-  - hackathon-performance-monitor
+  - dashboard-builder
 ---
 
 # Hackathon Sponsorship -- Scalable Automation
@@ -77,7 +77,7 @@ Estimated time: 5 hours initial setup, then 2 hours/month maintenance.
 
 ### 3. Execute quarterly hackathons with format experimentation
 
-Run each hackathon using the `hackathon-challenge-pipeline` drill (executed within the hackathon series automation workflow (see instructions below)). At Scalable level, experiment with format variations across hackathons:
+Run each hackathon using the the hackathon challenge pipeline workflow (see instructions below) drill (executed within the hackathon series automation workflow (see instructions below)). At Scalable level, experiment with format variations across hackathons:
 
 - **Duration experiments**: Compare 48-hour intense sprints vs. 1-week asynchronous. Track which format produces higher submission rates and deeper product usage.
 - **Team structure experiments**: Individual-only vs. team-required vs. flexible. Track which produces higher submission quality.
@@ -93,7 +93,7 @@ Estimated time: 6 hours per hackathon (reduced from Baseline due to automation).
 
 ### 4. Deploy always-on performance monitoring
 
-Run the `hackathon-performance-monitor` drill. This builds the monitoring layer that watches the full hackathon funnel:
+Run the `dashboard-builder` drill. This builds the monitoring layer that watches the full hackathon funnel:
 
 - **PostHog dashboard**: Registrations, submission rates, qualified leads, product adoption, and cost per lead -- trended across all hackathons
 - **Anomaly detection**: Alerts when any metric drops below the rolling average
@@ -161,4 +161,4 @@ If PASS, proceed to Durable. If FAIL, diagnose: Is recruitment saturating your d
 ## Drills Referenced
 
 - the hackathon series automation workflow (see instructions below) -- automated quarterly hackathon operations: challenge calendar, recruitment engine, cross-event analytics, and developer community management
-- `hackathon-performance-monitor` -- continuous monitoring and reporting for hackathon series health with anomaly detection and automated post-mortems
+- `dashboard-builder` -- continuous monitoring and reporting for hackathon series health with anomaly detection and automated post-mortems

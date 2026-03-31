@@ -17,7 +17,6 @@ slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
   - autonomous-optimization
-  - success-criteria-reporting
 ---
 
 # Success Criteria Definition — Durable Intelligence
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for the success criteria prog
 
 ### 2. Deploy Success Criteria Program Reporting
 
-Run the `success-criteria-reporting` drill:
+Run the `autonomous-optimization` drill:
 - Build the PostHog "Success Criteria Program" dashboard (6 panels)
 - Build Attio saved views (deals missing criteria, at-risk criteria, lifecycle funnel)
 - Set up weekly digest and monthly ROI report
@@ -188,4 +187,4 @@ When external conditions change (new product launch, new market segment, competi
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `success-criteria-reporting` — comprehensive reporting on the success criteria program: definition rates, achievement rates, close rate correlation, program ROI. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on the success criteria program: definition rates, achievement rates, close rate correlation, program ROI. Provides the data layer the optimization loop reads from.

@@ -15,8 +15,7 @@ slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
 drills:
   - ab-test-orchestrator
-  - brand-conversion-monitor
-  - brand-refresh-implementation
+  - dashboard-builder
 ---
 
 # Brand Refresh & Redesign — Scalable Automation
@@ -39,7 +38,7 @@ Extend the validated brand refresh from the Baseline high-traffic pages to every
 
 ### 1. Expand the brand refresh to all pages
 
-Run the `brand-refresh-implementation` drill for every remaining marketing page that was not updated in Baseline:
+Run the the brand refresh implementation workflow (see instructions below) drill for every remaining marketing page that was not updated in Baseline:
 
 **Phase 1 (weeks 1-2) — High-traffic pages:**
 - All feature/product pages
@@ -92,7 +91,7 @@ Build an n8n workflow that:
 
 ### 3. Deploy always-on conversion monitoring
 
-Run the `brand-conversion-monitor` drill to set up:
+Run the `dashboard-builder` drill to set up:
 
 **Daily monitoring:**
 - n8n workflow checks all page-level metrics against post-refresh baseline
@@ -162,5 +161,5 @@ Decision tree:
 ## Drills Referenced
 
 - `ab-test-orchestrator` — Automates the continuous testing pipeline: experiment queue management, feature flag deployment, winner detection, and variant implementation
-- `brand-conversion-monitor` — Always-on daily monitoring of page-level conversion metrics with regression detection, weekly health reports, and diagnostic analysis
-- `brand-refresh-implementation` — Executes page updates across remaining marketing pages, CMS content, and email templates
+- `dashboard-builder` — Always-on daily monitoring of page-level conversion metrics with regression detection, weekly health reports, and diagnostic analysis
+- the brand refresh implementation workflow (see instructions below) — Executes page updates across remaining marketing pages, CMS content, and email templates

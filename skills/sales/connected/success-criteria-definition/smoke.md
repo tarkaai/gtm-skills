@@ -15,7 +15,6 @@ kpis: ["Success criteria definition rate", "Average criteria count per deal", "A
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
-  - success-criteria-workshop
   - threshold-engine
 ---
 
@@ -50,7 +49,7 @@ Log these as the test cohort in Attio. Identify 5 comparable Connected-stage dea
 
 ### 2. Run the Success Criteria Workshop Drill
 
-Run the `success-criteria-workshop` drill for each test deal:
+Run the the success criteria workshop workflow (see instructions below) drill for each test deal:
 
 **Pre-call (agent executes):**
 - Retrieve the Fireflies transcript for each deal's discovery call(s)
@@ -120,5 +119,5 @@ If FAIL: Diagnose — was the issue transcript quality (not enough discovery dat
 
 ## Drills Referenced
 
-- `success-criteria-workshop` — end-to-end workflow for preparing, conducting, and documenting success criteria conversations with prospects
+- the success criteria workshop workflow (see instructions below) — end-to-end workflow for preparing, conducting, and documenting success criteria conversations with prospects
 - `threshold-engine` — evaluate test results against the pass threshold using Attio and PostHog data

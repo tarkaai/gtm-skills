@@ -16,7 +16,6 @@ slug: "analyst-consultant-briefings"
 install: "npx gtm-skills add sales/qualified/analyst-consultant-briefings"
 drills:
   - autonomous-optimization
-  - analyst-briefing-monitor
 ---
 
 # Analyst & Consultant Briefings — Durable Intelligence
@@ -87,7 +86,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy the analyst briefing monitor
 
-Run the `analyst-briefing-monitor` drill to create the monitoring and reporting layer:
+Run the `autonomous-optimization` drill to create the monitoring and reporting layer:
 
 **PostHog dashboard — "Analyst Briefing Program":**
 - Briefing pipeline funnel (outreach → scheduled → completed → follow-up → referral)
@@ -170,4 +169,4 @@ At convergence:
 ## Drills Referenced
 
 - `autonomous-optimization` — The core Durable engine: monitor → diagnose → experiment → evaluate → implement → report
-- `analyst-briefing-monitor` — Dashboard, alerts, weekly reports, and ROI attribution for the analyst program
+- `autonomous-optimization` — Dashboard, alerts, weekly reports, and ROI attribution for the analyst program

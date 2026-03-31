@@ -15,8 +15,6 @@ kpis: ["Response rate", "Cost per reply", "Cost per meeting", "A/B test win rate
 slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
 drills:
-  - sms-outreach-sequence
-  - sms-copy-generation
   - ab-test-orchestrator
   - follow-up-automation
   - tool-sync-workflow
@@ -56,7 +54,7 @@ Target: 200 fresh, mobile-verified prospects loaded into the SMS sequence every 
 
 ### 2. Deploy AI-generated copy at scale
 
-Run the `sms-copy-generation` drill at volume. For each new batch of 200 prospects:
+Run the the sms copy generation workflow (see instructions below) drill at volume. For each new batch of 200 prospects:
 
 1. Pull enrichment data and buying signals from Clay/Attio
 2. Generate personalized 3-message sequences via Claude for each prospect
@@ -167,8 +165,8 @@ Total: ~60 hours over 3 months.
 
 ## Drills Referenced
 
-- `sms-outreach-sequence` — automated 3-step SMS sequence with volume throttling and reply handling
-- `sms-copy-generation` — AI-generated personalized copy at scale with variant tracking
+- the sms outreach sequence workflow (see instructions below) — automated 3-step SMS sequence with volume throttling and reply handling
+- the sms copy generation workflow (see instructions below) — AI-generated personalized copy at scale with variant tracking
 - `ab-test-orchestrator` — run A/B tests on copy, timing, and segmentation with statistical rigor
 - `follow-up-automation` — cross-channel follow-ups connecting SMS to email and LinkedIn
 - `tool-sync-workflow` — connect Twilio, Attio, PostHog, and n8n into a unified data flow

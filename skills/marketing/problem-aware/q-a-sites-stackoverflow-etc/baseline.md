@@ -14,7 +14,6 @@ slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
 drills:
   - posthog-gtm-events
-  - qa-monitoring-automation
   - qa-answer-crafting
   - threshold-engine
 ---
@@ -119,6 +118,5 @@ Estimated play-specific cost: $0-50/mo (SerpAPI only needed if monitoring Quora;
 ## Drills Referenced
 
 - `posthog-gtm-events` -- set up Q&A-specific event tracking and attribution
-- `qa-monitoring-automation` -- automated monitoring pipeline for new questions across platforms
 - `qa-answer-crafting` -- draft and post authoritative answers
 - `threshold-engine` -- evaluate pass/fail against 80 profile clicks / 3 leads threshold

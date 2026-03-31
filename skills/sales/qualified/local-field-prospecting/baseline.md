@@ -14,7 +14,6 @@ kpis: ["Conversations per session", "Meetings booked per session", "Conversation
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
-  - field-visit-planning
   - field-contact-logging
   - meeting-booking-flow
   - posthog-gtm-events
@@ -92,7 +91,7 @@ All follow-ups must be personalized with conversation details from the Attio not
 
 Plan a repeatable weekly schedule:
 
-- **Monday**: Agent runs `field-visit-planning` drill for the week's sessions. Prepares 2 routes covering different areas.
+- **Monday**: Agent runs the field visit planning workflow (see instructions below) drill for the week's sessions. Prepares 2 routes covering different areas.
 - **Tuesday and Thursday** (or founder's preferred days): Field sessions. 2-3 hours each, visiting 3-5 venues per session.
 - **After each session**: Founder does a voice debrief. Agent runs `field-contact-logging` within 1 hour.
 - **Wednesday and Friday**: Follow-up day. Agent sends all automated follow-ups. Founder handles any that need a personal touch.
@@ -102,7 +101,7 @@ Plan a repeatable weekly schedule:
 **Human action required:** The founder executes 4+ field sessions over 2 weeks, following the planned routes. Between sessions, the agent handles all logging, follow-ups, and booking coordination.
 
 For each session:
-1. Agent prepares venue intel briefs (from `field-visit-planning`)
+1. Agent prepares venue intel briefs (from the field visit planning workflow (see instructions below))
 2. Founder visits venues and has conversations
 3. Founder records voice debrief in the car
 4. Agent logs all contacts (`field-contact-logging`)
@@ -151,7 +150,7 @@ Total: ~10 hours over 2 weeks
 
 ## Drills Referenced
 
-- `field-visit-planning` — weekly venue research, route building, intel briefs
+- the field visit planning workflow (see instructions below) — weekly venue research, route building, intel briefs
 - `field-contact-logging` — structured CRM logging of in-person conversations
 - `meeting-booking-flow` — Cal.com to CRM to prep automation pipeline
 - `posthog-gtm-events` — field-specific event taxonomy for analytics

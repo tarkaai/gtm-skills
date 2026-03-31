@@ -15,8 +15,6 @@ slug: "page-layout-testing"
 install: "npx gtm-skills add product/retain/page-layout-testing"
 drills:
   - autonomous-optimization
-  - ux-experiment-health-monitor
-  - session-recording-friction-analysis
 ---
 
 # UI/UX Experimentation — Durable Intelligence
@@ -73,7 +71,7 @@ The agent generates a weekly optimization brief:
 
 ### 2. Configure UX experiment health monitoring
 
-Run the `ux-experiment-health-monitor` drill to provide the safety layer around autonomous optimization:
+Run the `autonomous-optimization` drill to provide the safety layer around autonomous optimization:
 
 - **Every 6 hours:** Check all AI-initiated experiments for guardrail breaches. Auto-pause experiments if bounce rate increases >15 percentage points or error rate spikes >2x.
 - **Weekly:** Generate the experiment velocity and cumulative lift report. Track win rate of AI-generated hypotheses vs. historical human-generated ones.
@@ -81,7 +79,7 @@ Run the `ux-experiment-health-monitor` drill to provide the safety layer around 
 
 ### 3. Maintain the friction analysis pipeline
 
-Run the `session-recording-friction-analysis` drill monthly to feed fresh signals into the autonomous loop. Even when the optimization loop is running autonomously, qualitative recording data reveals friction patterns that quantitative metrics miss. The agent:
+Run the the session recording friction analysis workflow (see instructions below) drill monthly to feed fresh signals into the autonomous loop. Even when the optimization loop is running autonomously, qualitative recording data reveals friction patterns that quantitative metrics miss. The agent:
 
 1. Queries PostHog for session recordings of users who dropped off at the highest-volume drop-off step on each monitored page
 2. Catalogs friction patterns (confusion, hesitation, rage-clicks, scroll-past)
@@ -134,5 +132,5 @@ After 6 months, the play is Durable if: engagement lift is sustained or improvin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor engagement anomalies, generate layout hypotheses, run A/B experiments, evaluate results, implement winners, report weekly
-- `ux-experiment-health-monitor` — guardrail monitoring, experiment velocity tracking, cumulative lift reporting, convergence detection
-- `session-recording-friction-analysis` — monthly qualitative analysis feeding friction patterns into the hypothesis generator
+- `autonomous-optimization` — guardrail monitoring, experiment velocity tracking, cumulative lift reporting, convergence detection
+- the session recording friction analysis workflow (see instructions below) — monthly qualitative analysis feeding friction patterns into the hypothesis generator

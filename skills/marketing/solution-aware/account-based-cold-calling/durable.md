@@ -18,7 +18,6 @@ slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
 drills:
   - autonomous-optimization
-  - call-performance-reporting
 ---
 
 # Account-Based Cold Calling — Durable Intelligence
@@ -172,7 +171,7 @@ Estimated time: 8 hours setup. Then always-on.
 
 ### 3. Maintain call performance reporting at scale
 
-Continue running the `call-performance-reporting` drill from Scalable. At Durable level, enhance it:
+Continue running the `autonomous-optimization` drill from Scalable. At Durable level, enhance it:
 
 - **Cross-period pattern detection:** When meeting rates drop for 2+ consecutive weeks across all script variants and signals, flag as a systemic issue (market shift, seasonal pattern, competitor action) rather than a script/signal problem. Feed into the autonomous optimization loop as a high-priority external anomaly requiring strategic review.
 - **Predictive call timing:** Use 3+ months of historical data to build a per-prospect-segment model of optimal call windows. Instead of generic "Tuesday 8-10am," predict that "Series B DevTools CTOs" pick up at different times than "Series A FinTech VPs." Route call queue ordering based on predicted connect probability.
@@ -263,4 +262,4 @@ Note: Founder calling time is intentionally excluded from the play hour count. T
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
 - the cold call script optimization workflow (see instructions below) — play-specific transcript analysis, objection pattern tracking, script variant scoring, and data-driven script evolution with founder approval
-- `call-performance-reporting` — enhanced at Durable with cross-period pattern detection, predictive call timing, signal decay tracking, and cost efficiency modeling
+- `autonomous-optimization` — enhanced at Durable with cross-period pattern detection, predictive call timing, signal decay tracking, and cost efficiency modeling

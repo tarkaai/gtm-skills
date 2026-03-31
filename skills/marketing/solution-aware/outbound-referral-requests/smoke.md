@@ -15,7 +15,6 @@ slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
   - referral-network-mapping
-  - referral-ask-copywriting
   - threshold-engine
 ---
 
@@ -63,7 +62,7 @@ Estimated time: 2 hours.
 
 ### 3. Craft personalized referral asks
 
-Run the `referral-ask-copywriting` drill for all 15 pairs. For each connector-target pair, generate:
+Run the the referral ask copywriting workflow (see instructions below) drill for all 15 pairs. For each connector-target pair, generate:
 
 1. **The ask message** (sent to the connector): Maximum 100 words. Reference your specific relationship with the connector. State what value you offer the target (not a pitch). Include an explicit opt-out. Choose email or LinkedIn DM based on where you normally communicate with this connector.
 
@@ -149,5 +148,5 @@ Estimated time: 30 minutes.
 ## Drills Referenced
 
 - `referral-network-mapping` — maps your existing network to target accounts, scores each connector-target pair by intro likelihood and willingness
-- `referral-ask-copywriting` — generates personalized ask messages and forwardable blurbs for each connector-target pair
+- the referral ask copywriting workflow (see instructions below) — generates personalized ask messages and forwardable blurbs for each connector-target pair
 - `threshold-engine` — evaluates results against the pass/fail threshold and recommends next action

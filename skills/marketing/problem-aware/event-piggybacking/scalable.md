@@ -15,7 +15,6 @@ slug: "event-piggybacking"
 install: "npx gtm-skills add marketing/problem-aware/event-piggybacking"
 drills:
   - event-scouting
-  - piggyback-event-promotion
   - follow-up-automation
   - ab-test-orchestrator
 ---
@@ -52,7 +51,7 @@ The agent maintains a rolling 90-day piggyback event calendar. When a conference
 
 ### 2. Automate the promotion pipeline
 
-For each confirmed piggyback event, run the `piggyback-event-promotion` drill automatically:
+For each confirmed piggyback event, run the the piggyback event promotion workflow (see instructions below) drill automatically:
 
 Configure an n8n workflow triggered when an Attio conference record status changes to "Confirmed":
 
@@ -146,6 +145,6 @@ If FAIL: identify the bottleneck:
 ## Drills Referenced
 
 - `event-scouting` — automated monthly conference discovery and scoring for piggyback potential
-- `piggyback-event-promotion` — automated promotion pipeline triggered per confirmed conference
+- the piggyback event promotion workflow (see instructions below) — automated promotion pipeline triggered per confirmed conference
 - `follow-up-automation` — automated post-event follow-up sequences segmented by interest level
 - `ab-test-orchestrator` — systematic testing of promotion copy, event formats, and timing

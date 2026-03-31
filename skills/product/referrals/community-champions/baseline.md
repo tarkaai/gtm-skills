@@ -50,7 +50,7 @@ Run the `posthog-gtm-events` drill to set up comprehensive tracking for the cham
 
 Run the the champion recognition pipeline workflow (see instructions below) drill to deploy the always-on automation:
 
-- Configure the weekly scoring workflow in n8n: run `champion-identification-scoring` every Sunday, then query Attio for score-50+ members not yet enrolled, filter out ineligible (too new, declined, escalated), auto-enroll in Recognized Contributor tier
+- Configure the weekly scoring workflow in n8n: run the champion identification scoring workflow (see instructions below) every Sunday, then query Attio for score-50+ members not yet enrolled, filter out ineligible (too new, declined, escalated), auto-enroll in Recognized Contributor tier
 - Set up event-driven tier promotion: when `champion_score_computed` crosses 75, immediately trigger Champion promotion
 - Deploy tier enrollment automations:
   - Enable PostHog feature flags for tier perks (early feature access, priority support queue)

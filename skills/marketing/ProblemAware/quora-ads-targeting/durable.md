@@ -16,7 +16,6 @@ slug: "quora-ads-targeting"
 install: "npx gtm-skills add Marketing/ProblemAware/quora-ads-targeting"
 drills:
   - autonomous-optimization
-  - quora-ads-performance-monitor
 ---
 
 # Quora Ads — Durable Intelligence
@@ -106,7 +105,7 @@ Run the `autonomous-optimization` drill configured for the Quora Ads program. Th
 
 ### 2. Deploy Quora Ads Performance Reporting
 
-Run the `quora-ads-performance-monitor` drill at full Durable scope:
+Run the `autonomous-optimization` drill at full Durable scope:
 
 1. Build the PostHog dashboard (8 panels: spend/reach trends, click performance by targeting type, conversion funnel, CPA trend with optimization events annotated, creative performance decay curves, targeting type comparison, lead quality trend, full-funnel attribution)
 2. Build Attio saved views (Quora-sourced contacts, Quora pipeline, Quora ROI by targeting type, experiment history log)
@@ -221,4 +220,4 @@ In these cases: the optimizer flags the situation and recommends whether tactica
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in Quora KPIs (CPC spikes, CTR decay, targeting saturation, creative fatigue, lead quality drops), generate hypotheses, run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `quora-ads-performance-monitor` — comprehensive reporting on Quora Ads program: targeting type comparison, creative performance decay curves, question/topic effectiveness tracking, full-funnel attribution dashboards, weekly and monthly reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — comprehensive reporting on Quora Ads program: targeting type comparison, creative performance decay curves, question/topic effectiveness tracking, full-funnel attribution dashboards, weekly and monthly reports, real-time anomaly alerts. Provides the data layer the optimization loop reads from.

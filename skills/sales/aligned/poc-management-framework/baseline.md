@@ -75,7 +75,7 @@ Based on Smoke test learnings, create standardized POC configurations for your m
    - **Quick evaluation** (7 days, 3 criteria): For deals $5K-15K where the prospect needs basic validation
    - **Standard POC** (14 days, 5 criteria): For deals $15K-50K with integration requirements
    - **Enterprise POC** (21 days, 5+ criteria): For deals $50K+ with security review and multiple stakeholders
-3. Store templates in Attio as reference notes. The `poc-scoping-workshop` drill should select the appropriate template based on deal characteristics and customize from there.
+3. Store templates in Attio as reference notes. The the poc scoping workshop workflow (see instructions below) drill should select the appropriate template based on deal characteristics and customize from there.
 
 ### 4. Monitor automation health
 

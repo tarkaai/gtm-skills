@@ -16,8 +16,6 @@ slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
 drills:
   - autonomous-optimization
-  - risk-intelligence-monitor
-  - risk-pattern-analysis
 ---
 
 # Risk & Concern Discovery -- Durable Intelligence
@@ -88,7 +86,7 @@ Run the `autonomous-optimization` drill configured for the risk discovery play. 
 
 ### 2. Maintain the risk intelligence monitor
 
-The `risk-intelligence-monitor` from Scalable continues running. At Durable level, the autonomous optimizer can modify its configuration:
+The `autonomous-optimization` from Scalable continues running. At Durable level, the autonomous optimizer can modify its configuration:
 - Adjust predictive scoring weights based on experiment results
 - Update risk extraction prompts based on pattern analysis
 - Tune alert thresholds based on false positive/negative rates
@@ -97,7 +95,7 @@ The monitor provides the raw data that the optimizer uses to detect anomalies.
 
 ### 3. Evolve pattern analysis with optimization feedback
 
-The `risk-pattern-analysis` drill continues bi-weekly. At Durable level, it feeds directly into the optimization loop:
+The the risk pattern analysis workflow (see instructions below) drill continues bi-weekly. At Durable level, it feeds directly into the optimization loop:
 - Pattern analysis identifies declining mitigation success in a category -> optimizer generates hypothesis -> experiment tests a new mitigation approach
 - Segment analysis reveals a new risk pattern -> optimizer updates prediction prompts -> experiment validates the improvement
 - Question bank analysis shows surface rate dropping for a question -> optimizer generates replacement candidates -> experiment tests new vs. old
@@ -161,5 +159,5 @@ _Your CRM (Attio), PostHog, and automation platform (n8n) are standard stack -- 
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core Durable loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `risk-intelligence-monitor` -- always-on scanning of transcripts, emails, and deal data (from Scalable); configuration now modified by the optimizer
-- `risk-pattern-analysis` -- bi-weekly aggregation feeding into the optimization loop with bidirectional data flow
+- `autonomous-optimization` -- always-on scanning of transcripts, emails, and deal data (from Scalable); configuration now modified by the optimizer
+- the risk pattern analysis workflow (see instructions below) -- bi-weekly aggregation feeding into the optimization loop with bidirectional data flow

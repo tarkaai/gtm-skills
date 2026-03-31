@@ -15,7 +15,6 @@ slug: "email-subject-testing"
 install: "npx gtm-skills add product/retain/email-subject-testing"
 drills:
   - autonomous-optimization
-  - email-subject-performance-monitor
   - dashboard-builder
 ---
 
@@ -95,7 +94,7 @@ Run the `dashboard-builder` drill to create a Durable-level PostHog dashboard:
 
 ### 3. Configure Durable-specific monitoring
 
-Run the `email-subject-performance-monitor` drill at Durable frequency:
+Run the `autonomous-optimization` drill at Durable frequency:
 - Anomaly checks run daily (up from weekly at Baseline)
 - Pattern library is automatically updated by the optimization loop
 - Monthly pattern analysis: the agent reviews the full pattern library and identifies emerging trends (e.g., "curiosity framing is losing effectiveness, social proof is gaining")
@@ -138,5 +137,5 @@ Convergence milestone: when >80% of retention emails have converged (3 consecuti
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor -> diagnose -> experiment -> evaluate -> implement. This is what makes Durable fundamentally different from Scalable.
-- `email-subject-performance-monitor` — daily anomaly checks, pattern library maintenance, and monthly trend analysis at Durable frequency
+- `autonomous-optimization` — daily anomaly checks, pattern library maintenance, and monthly trend analysis at Durable frequency
 - `dashboard-builder` — executive PostHog dashboard with convergence status, experiment log, and segment heatmap

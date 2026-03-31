@@ -16,7 +16,6 @@ slug: "budget-objection-handling"
 install: "npx gtm-skills add sales/proposed/budget-objection-handling"
 drills:
   - budget-objection-response
-  - budget-follow-up-sequence
   - pain-based-business-case
   - posthog-gtm-events
 ---
@@ -57,7 +56,7 @@ The critical funnel step unique to budget objections is `budget_asset_forwarded`
 
 ### 2. Deploy automated follow-up sequences
 
-Run the `budget-follow-up-sequence` drill to build n8n workflows that auto-trigger when a budget objection outcome is logged as `partially_resolved` or `unresolved` in Attio. This creates:
+Run the the budget follow up sequence workflow (see instructions below) drill to build n8n workflows that auto-trigger when a budget objection outcome is logged as `partially_resolved` or `unresolved` in Attio. This creates:
 
 - 5 root-cause-specific sequences (no_allocated_budget, budget_exhausted, wrong_budget_owner, competing_priorities, procurement_friction)
 - Each sequence delivers 3-5 touches over 10-30 days with budget navigation assets matched to the root cause
@@ -134,6 +133,6 @@ If FAIL: diagnose the bottleneck:
 ## Drills Referenced
 
 - `budget-objection-response` — classifies each budget objection, generates navigation response with payment structures, logs outcome
-- `budget-follow-up-sequence` — automated multi-touch follow-up with root-cause-matched budget navigation assets and budget-cycle-aware timing
+- the budget follow up sequence workflow (see instructions below) — automated multi-touch follow-up with root-cause-matched budget navigation assets and budget-cycle-aware timing
 - `pain-based-business-case` — generates champion-ready business case from pain data for budget justification
 - `posthog-gtm-events` — configures the full event tracking pipeline for the play

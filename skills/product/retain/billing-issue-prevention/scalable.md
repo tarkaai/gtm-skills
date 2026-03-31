@@ -15,8 +15,7 @@ slug: "billing-issue-prevention"
 install: "npx gtm-skills add product/retain/billing-issue-prevention"
 drills:
   - ab-test-orchestrator
-  - dunning-sequence-automation
-  - payment-recovery-health-monitor
+  - dashboard-builder
 ---
 
 # Payment Failure Recovery — Scalable Automation
@@ -84,7 +83,7 @@ These customers may have temporary cash flow issues. Use empathetic framing: "We
 **Authentication required (3DS/SCA):**
 These customers need to complete a bank verification step. Send them directly to the Stripe hosted invoice page (not the billing portal). The email should explain: "Your bank requires you to verify this payment. It takes 30 seconds." Recovery target: 70%+.
 
-Modify the `dunning-sequence-automation` drill's n8n workflow to route each failure type to its segment-specific email templates and cadence.
+Modify the the dunning sequence automation workflow (see instructions below) drill's n8n workflow to route each failure type to its segment-specific email templates and cadence.
 
 ### 3. Optimize Stripe Smart Retries
 
@@ -97,7 +96,7 @@ Work with Stripe's recovery settings to maximize automatic recoveries before you
 
 ### 4. Scale the health monitoring
 
-Enhance the `payment-recovery-health-monitor` for scale:
+Enhance the `dashboard-builder` for scale:
 
 Add segments to the weekly health report:
 - Recovery rate by failure type (compare against targets from Step 2)
@@ -144,5 +143,5 @@ If PASS, proceed to Durable. If FAIL:
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on dunning sequence elements using PostHog feature flags
-- `dunning-sequence-automation` — the multi-channel recovery system, now with segment-specific paths for each failure type
-- `payment-recovery-health-monitor` — enhanced with per-segment metrics, revenue impact tracking, and A/B test reporting
+- the dunning sequence automation workflow (see instructions below) — the multi-channel recovery system, now with segment-specific paths for each failure type
+- `dashboard-builder` — enhanced with per-segment metrics, revenue impact tracking, and A/B test reporting

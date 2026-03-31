@@ -15,7 +15,6 @@ slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
 drills:
   - autonomous-optimization
-  - addon-cross-sell-health-monitor
 ---
 
 # Related Product Cross-Sell — Durable Intelligence
@@ -24,7 +23,7 @@ drills:
 
 ## Outcomes
 
-The cross-sell system runs autonomously with AI agents monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill operates the core loop: detect metric anomalies in the cross-sell funnel, generate improvement hypotheses, run A/B experiments via PostHog, evaluate results, and auto-implement winners. The `addon-cross-sell-health-monitor` tracks the full funnel, ARPU impact, and fatigue signals. The system converges when successive experiments produce <2% improvement — meaning you have found the local maximum for cross-sell performance given the current product catalog, user base, and market conditions.
+The cross-sell system runs autonomously with AI agents monitoring, diagnosing, experimenting, and optimizing. The `autonomous-optimization` drill operates the core loop: detect metric anomalies in the cross-sell funnel, generate improvement hypotheses, run A/B experiments via PostHog, evaluate results, and auto-implement winners. The `autonomous-optimization` tracks the full funnel, ARPU impact, and fatigue signals. The system converges when successive experiments produce <2% improvement — meaning you have found the local maximum for cross-sell performance given the current product catalog, user base, and market conditions.
 
 ## Leading Indicators
 
@@ -69,7 +68,7 @@ The loop detects convergence when 3 consecutive experiments produce <2% improvem
 
 ### 2. Deploy the cross-sell health monitor
 
-Run the `addon-cross-sell-health-monitor` drill. This provides the data layer the optimization loop reads from. Configure:
+Run the `autonomous-optimization` drill. This provides the data layer the optimization loop reads from. Configure:
 
 - The cross-sell funnel (impression -> click -> activation start -> activated) broken down by product, surface type, trigger behavior, user plan, and tenure
 - The ARPU tracking panels: base ARPU vs. cross-sell ARPU vs. multi-product ARPU
@@ -108,7 +107,7 @@ This level runs continuously. Monthly check:
 If all four are true, the play is durable. If metrics decay despite optimization, the agent diagnoses the root cause:
 - **User base saturation:** Most eligible users have already been shown surfaces. Expand triggers or wait for new user cohorts.
 - **Product fatigue:** Users are tired of seeing cross-sell prompts. Increase suppression durations and reduce frequency.
-- **Market shift:** External factors changed user needs. Re-run `cross-sell-catalog-mapping` to revalidate triggers.
+- **Market shift:** External factors changed user needs. Re-run the cross sell catalog mapping workflow (see instructions below) to revalidate triggers.
 - **Product quality issue:** Cross-sell products are not retaining adopters. Escalate to product team.
 
 ## Time Estimate
@@ -133,4 +132,4 @@ If all four are true, the play is durable. If metrics decay despite optimization
 ## Drills Referenced
 
 - `autonomous-optimization` — runs the core Durable loop: monitor metrics daily, detect anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly optimization briefs
-- `addon-cross-sell-health-monitor` — monitors the full cross-sell funnel health, tracks ARPU impact, detects fatigue signals, generates daily/weekly/monthly alerts and reports
+- `autonomous-optimization` — monitors the full cross-sell funnel health, tracks ARPU impact, detects fatigue signals, generates daily/weekly/monthly alerts and reports

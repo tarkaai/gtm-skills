@@ -16,7 +16,6 @@ slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
   - autonomous-optimization
-  - support-health-monitor
   - chatbot-resolution-monitor
 ---
 
@@ -79,7 +78,7 @@ Run the `autonomous-optimization` drill configured for the AI support chatbot pl
 
 ### 2. Activate support health monitoring
 
-Run the `support-health-monitor` drill to create the ongoing observability layer:
+Run the `autonomous-optimization` drill to create the ongoing observability layer:
 - Build a PostHog dashboard for support ticket trends, churn score distributions, prediction accuracy, intervention funnel, CSAT trend, repeat issue tracker
 - Configure anomaly alerts for ticket volume spikes, CSAT drops, churn score distribution shifts, and prediction accuracy degradation
 - Generate weekly support health reports posted to Slack
@@ -143,5 +142,5 @@ Measure at 3-month and 6-month checkpoints:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor → diagnose → experiment → evaluate → implement. Detects metric anomalies, generates improvement hypotheses, runs A/B experiments, and auto-implements winners. Converges when successive experiments produce <2% improvement.
-- `support-health-monitor` — ongoing monitoring of support ticket trends, churn prediction accuracy, intervention effectiveness, and model drift
+- `autonomous-optimization` — ongoing monitoring of support ticket trends, churn prediction accuracy, intervention effectiveness, and model drift
 - `chatbot-resolution-monitor` — live chatbot performance dashboard, anomaly alerts, weekly health reports, knowledge gap closure tracking

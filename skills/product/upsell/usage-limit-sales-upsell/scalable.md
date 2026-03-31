@@ -16,7 +16,6 @@ slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
   - ab-test-orchestrator
-  - expansion-outreach-sequence
 ---
 
 # Usage-Based Upsell — Scalable Automation
@@ -172,4 +171,4 @@ If PASS, proceed to Durable. If FAIL, focus on the highest-leverage experiment r
 
 - the play's scoring criteria — automated 4-category scoring combining usage proximity, growth velocity, engagement depth, and firmographic fit to rank expansion opportunities
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on outreach subject lines, timing, content format, and offer structure
-- `expansion-outreach-sequence` — 4-touch personalized outreach cadence, expanded with resource-specific copy and segment-based routing
+- the expansion outreach sequence workflow (see instructions below) — 4-touch personalized outreach cadence, expanded with resource-specific copy and segment-based routing

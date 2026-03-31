@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/referrals/nps-program"
 drills:
   - nps-feedback-loop
   - posthog-gtm-events
-  - nps-response-routing
 ---
 
 # NPS Feedback System — Baseline Run
@@ -69,7 +68,7 @@ Using n8n, build a scheduling workflow that checks these rules before sending ea
 
 ### 3. Configure automated response routing
 
-Run the `nps-response-routing` drill to build the full routing automation:
+Run the the nps response routing workflow (see instructions below) drill to build the full routing automation:
 
 - **Promoter routing (9-10):** Automated thank-you email via Loops within 1 hour. Include a one-click review link (G2 or Capterra) and a referral link. Add to "Promoter Candidates" list in Attio. If user is a power user (top 20% usage), flag for advocacy pipeline.
 - **Passive routing (7-8):** Automated email via Loops within 1 hour. Share a relevant resource based on their open-text feedback. Include a feedback call booking link via Cal.com. Log in Attio with the feedback theme.
@@ -131,4 +130,4 @@ If FAIL on close rate: the routing or alerting is broken. Check n8n execution lo
 
 - `nps-feedback-loop` — survey design, deployment at lifecycle milestones, segment analysis, and follow-up actions
 - `posthog-gtm-events` — NPS event taxonomy setup for tracking the full survey lifecycle
-- `nps-response-routing` — automated enrichment, classification, and routing of every NPS response to segment-specific actions
+- the nps response routing workflow (see instructions below) — automated enrichment, classification, and routing of every NPS response to segment-specific actions

@@ -15,7 +15,6 @@ slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
 drills:
   - autonomous-optimization
-  - stakeholder-intelligence-monitor
 ---
 
 # Stakeholder Mapping Framework — Durable Intelligence
@@ -75,7 +74,7 @@ Run the `autonomous-optimization` drill configured for the stakeholder mapping p
 
 ### 2. Deploy stakeholder intelligence monitoring
 
-Run the `stakeholder-intelligence-monitor` drill to set up:
+Run the `autonomous-optimization` drill to set up:
 
 **Org change detection (weekly):**
 - Refresh all active account org charts via Clay
@@ -188,4 +187,4 @@ If metrics degrade, the autonomous loop should self-diagnose. If it cannot recov
 ## Drills Referenced
 
 - `autonomous-optimization` — The always-on monitor > diagnose > experiment > evaluate > implement loop that finds the local maximum of stakeholder mapping performance
-- `stakeholder-intelligence-monitor` — Continuous monitoring of org changes, sentiment shifts, engagement decay, and stakeholder dynamics with weekly intelligence briefs
+- `autonomous-optimization` — Continuous monitoring of org changes, sentiment shifts, engagement decay, and stakeholder dynamics with weekly intelligence briefs

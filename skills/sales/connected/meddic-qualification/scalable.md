@@ -14,8 +14,7 @@ kpis: ["MEDDIC completeness rate", "Deal health score", "Close rate by MEDDIC qu
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - meddic-deal-health-monitor
-  - meddic-qualification-reporting
+  - dashboard-builder
   - ab-test-orchestrator
   - tool-sync-workflow
   - follow-up-automation
@@ -42,7 +41,7 @@ Scale MEDDIC qualification from a manual process that requires founder attention
 
 ### 1. Deploy always-on deal health monitoring
 
-Run the `meddic-deal-health-monitor` drill. This creates an n8n workflow that runs daily at 7am:
+Run the the meddic deal health monitor workflow (see instructions below) drill. This creates an n8n workflow that runs daily at 7am:
 
 1. Computes a health score for every active deal based on: MEDDIC composite (50%), element progression (20%), activity recency (15%), stage velocity (15%)
 2. Classifies each deal as Healthy (70+), At Risk (40-69), or Critical (<40)
@@ -60,7 +59,7 @@ Estimated time: 6 hours setup, then always-on.
 
 ### 2. Build MEDDIC qualification dashboards and reporting
 
-Run the `meddic-qualification-reporting` drill. This builds:
+Run the `dashboard-builder` drill. This builds:
 
 1. **PostHog dashboard** with 6 panels: qualification volume by verdict, score distribution, element completion heatmap, per-element trend lines, pre-score vs. post-call accuracy, deal health distribution
 2. **Pipeline velocity funnel:** meddic_score_created -> qualification_passed -> champion_identified -> economic_buyer_engaged -> proposal_sent -> deal_closed_won
@@ -171,8 +170,8 @@ If PASS, proceed to Durable. If FAIL, focus on the weakest metric. Common failur
 
 ## Drills Referenced
 
-- `meddic-deal-health-monitor` — daily health scoring with risk alerts and stalled deal detection
-- `meddic-qualification-reporting` — dashboards, funnels, accuracy cohorts, and weekly reports
+- the meddic deal health monitor workflow (see instructions below) — daily health scoring with risk alerts and stalled deal detection
+- `dashboard-builder` — dashboards, funnels, accuracy cohorts, and weekly reports
 - `ab-test-orchestrator` — A/B testing on discovery strategies and follow-up approaches
 - `tool-sync-workflow` — connects all tools so no MEDDIC data is siloed
 - `follow-up-automation` — automated element-gap follow-ups triggered by low MEDDIC scores

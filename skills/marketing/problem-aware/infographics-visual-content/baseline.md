@@ -14,7 +14,6 @@ slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
 drills:
   - posthog-gtm-events
-  - infographic-distribution
 ---
 # Infographics & Visual Content — Baseline Run
 
@@ -58,7 +57,7 @@ Commit to publishing 1 infographic per week for 6 weeks. Build a topic calendar:
 - Week 5: Process or workflow visualization (step diagram)
 - Week 6: Best-of compilation from your top 5 data points
 
-Run the `infographic-creation-pipeline` drill each week. Batch the LLM spec generation and review at the start of each week, then render and export mid-week for Thursday posting.
+Run the the infographic creation pipeline workflow (see instructions below) drill each week. Batch the LLM spec generation and review at the start of each week, then render and export mid-week for Thursday posting.
 
 ### 3. Host infographics on your blog
 For each infographic, create a blog post that:
@@ -69,7 +68,7 @@ For each infographic, create a blog post that:
 - Is indexed and sitemap-included for SEO benefit
 
 ### 4. Run backlink outreach
-Run the `infographic-distribution` drill for each published infographic. For Baseline:
+Run the the infographic distribution workflow (see instructions below) drill for each published infographic. For Baseline:
 - Build a list of 20-30 outreach targets per infographic (bloggers, newsletter authors, resource page owners)
 - Send personalized outreach emails offering the infographic as a resource
 - Track outreach: emails sent, replies, links earned
@@ -128,7 +127,7 @@ If not, iterate on your approach and re-run this level.
 
 ## Drills Referenced
 - `posthog-gtm-events` — set up infographic-specific event tracking in PostHog
-- `infographic-distribution` — distribute across social platforms and run backlink outreach
+- the infographic distribution workflow (see instructions below) — distribute across social platforms and run backlink outreach
 
 ---
 

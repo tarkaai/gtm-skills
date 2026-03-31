@@ -14,7 +14,6 @@ slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
 drills:
   - icp-definition
-  - infographic-creation-pipeline
   - threshold-engine
 ---
 # Infographics & Visual Content — Smoke Test
@@ -54,7 +53,7 @@ Identify one data point or dataset that your ICP would find surprising, useful, 
 The data must be from a credible, citeable source. Do not fabricate statistics.
 
 ### 3. Create 1-2 infographics
-Run the `infographic-creation-pipeline` drill to produce the infographic. For the Smoke Test:
+Run the the infographic creation pipeline workflow (see instructions below) drill to produce the infographic. For the Smoke Test:
 - Generate the infographic spec via LLM (provide raw data + topic angle + ICP description)
 - Render the data visualization using Plotly or Chart.js (free, open source)
 - Compose the final infographic using Satori or Matplotlib (free, open source)
@@ -115,7 +114,7 @@ If not, iterate on your topic selection, data sourcing, or visual design and re-
 
 ## Drills Referenced
 - `icp-definition` — define the target audience for visual content
-- `infographic-creation-pipeline` — source data, generate spec, render, and export the infographic
+- the infographic creation pipeline workflow (see instructions below) — source data, generate spec, render, and export the infographic
 - `threshold-engine` — evaluate results against pass/fail criteria
 
 ---

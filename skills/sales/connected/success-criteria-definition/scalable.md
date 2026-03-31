@@ -17,7 +17,7 @@ slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
   - ab-test-orchestrator
-  - success-criteria-reporting
+  - dashboard-builder
 ---
 
 # Success Criteria Definition — Scalable Automation
@@ -89,7 +89,7 @@ Log all experiments in PostHog using feature flags. Auto-promote winners after s
 
 ### 3. Build Comprehensive Reporting
 
-Run the `success-criteria-reporting` drill:
+Run the `dashboard-builder` drill:
 
 - Build the 6-panel PostHog dashboard: definition rate trend, criteria quality distribution, close rate comparison, achievement rate by category, deal velocity comparison, stakeholder alignment
 - Create 3 Attio saved views: deals missing criteria, at-risk criteria (low achievability), criteria lifecycle funnel
@@ -157,4 +157,4 @@ If achievability calibration is off: the scoring model needs recalibration. Use 
 
 - the success criteria intelligence workflow (see instructions below) — AI-powered recommendation engine that suggests optimal criteria based on historical achievement data and prospect similarity
 - `ab-test-orchestrator` — run controlled experiments on workshop scheduling, criteria framing, and success plan format
-- `success-criteria-reporting` — dashboards, weekly digests, and monthly ROI reports tracking the success criteria program
+- `dashboard-builder` — dashboards, weekly digests, and monthly ROI reports tracking the success criteria program

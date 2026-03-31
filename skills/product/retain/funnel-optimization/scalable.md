@@ -15,7 +15,6 @@ slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
   - ab-test-orchestrator
-  - funnel-optimization-health-monitor
   - dashboard-builder
   - threshold-engine
 ---
@@ -76,7 +75,7 @@ For each experiment:
 1. Form a hypothesis specific to the segment's friction pattern
 2. Calculate required sample size (minimum 200 per variant per segment)
 3. Deploy the experiment via PostHog feature flags
-4. Monitor with the existing `funnel-optimization-health-monitor` system
+4. Monitor with the existing `dashboard-builder` system
 5. Evaluate at the planned end date using proper statistical rigor
 
 Target: 4+ experiments completed in the first month, 8+ by end of month 2.
@@ -97,9 +96,9 @@ This dashboard is the primary visibility surface for the team. Set it as the def
 
 Create a systematic pipeline so experiments flow without manual orchestration:
 
-Using `funnel-optimization-health-monitor` outputs, build an n8n workflow that:
+Using `dashboard-builder` outputs, build an n8n workflow that:
 1. Detects when a funnel step degrades (warning/critical status for 3+ days)
-2. Automatically runs `funnel-drop-off-diagnosis` logic: pulls segment breakdown, identifies the worst-performing segment, generates hypotheses via Claude
+2. Automatically runs the funnel drop off diagnosis workflow (see instructions below) logic: pulls segment breakdown, identifies the worst-performing segment, generates hypotheses via Claude
 3. Proposes the top experiment to the team via Slack: "Signup funnel step 3 degraded 12% this week. Root cause hypothesis: mobile validation errors increased after last deploy. Proposed experiment: inline validation with mobile-optimized error messages. Approve?"
 4. On approval (Slack reaction or button), creates the PostHog experiment and feature flag automatically
 5. Monitors the experiment and posts results when significant
@@ -148,6 +147,6 @@ If FAIL: Diagnose — is the issue insufficient segment coverage (need more vari
 
 - the funnel segment scaling workflow (see instructions below) — Builds per-segment funnel variants with property-based routing and independent tracking
 - `ab-test-orchestrator` — Formalizes hypothesis-driven experimentation with statistical rigor
-- `funnel-optimization-health-monitor` — Always-on monitoring feeding the experimentation pipeline
+- `dashboard-builder` — Always-on monitoring feeding the experimentation pipeline
 - `dashboard-builder` — Comprehensive funnel dashboard for real-time team visibility
 - `threshold-engine` — Evaluates >=15% conversion at 500+ users with segment coverage

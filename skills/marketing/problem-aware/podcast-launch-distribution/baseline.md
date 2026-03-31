@@ -13,7 +13,6 @@ kpis: ["Downloads per episode (7-day)", "Episode-to-lead conversion rate", "Gues
 slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
-  - podcast-guest-booking
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -51,7 +50,7 @@ _Your CRM, PostHog, and automation platform are not included -- standard stack p
 
 ### 1. Build the guest booking pipeline
 
-Run the `podcast-guest-booking` drill to create a repeatable system for sourcing and booking guests:
+Run the the podcast guest booking workflow (see instructions below) drill to create a repeatable system for sourcing and booking guests:
 
 1. Define your ideal guest profile at each tier (Tier 1: big names, Tier 2: domain experts, Tier 3: customers/practitioners)
 2. Use Clay to build a prospect list of 30-50 potential guests
@@ -97,7 +96,7 @@ Settle into a repeatable weekly rhythm:
 - **Wednesday-Tuesday**: Automated promotion runs. Agent monitors engagement and replies to comments.
 - **Friday**: Review this week's episode metrics. Source and invite next batch of guests.
 
-Run the `podcast-episode-production` drill (from Smoke level) for each episode -- but now with more polish: consistent intro/outro, better editing, branded clip templates.
+Run the the podcast episode production workflow (see instructions below) drill (from Smoke level) for each episode -- but now with more polish: consistent intro/outro, better editing, branded clip templates.
 
 ### 5. Prepare repurposed content per episode
 
@@ -152,7 +151,7 @@ Setup: 8 hours. Ongoing: 2.5 hours/week.
 ---
 
 ## Drills Referenced
-- `podcast-guest-booking` -- build and maintain the guest sourcing and booking pipeline
+- the podcast guest booking workflow (see instructions below) -- build and maintain the guest sourcing and booking pipeline
 - the podcast distribution automation workflow (see instructions below) -- automated 7-day cross-platform promotion per episode
 - `posthog-gtm-events` -- configure PostHog event tracking for podcast attribution
 - `threshold-engine` -- evaluate downloads and leads against Baseline threshold

@@ -14,8 +14,6 @@ kpis: ["Objection resolution rate", "Gap assessment coverage (% of objections as
 slug: "technical-fit-objection"
 install: "npx gtm-skills add sales/connected/technical-fit-objection"
 drills:
-  - technical-gap-assessment
-  - technical-proof-library
   - posthog-gtm-events
 ---
 
@@ -55,7 +53,7 @@ Connect PostHog to Attio via n8n webhook so deal stage changes fire events autom
 
 ### 2. Build the Technical Proof Library
 
-Run the `technical-proof-library` drill to create the searchable proof asset catalog:
+Run the the technical proof library workflow (see instructions below) drill to create the searchable proof asset catalog:
 
 - Audit all existing technical documentation, benchmarks, architecture diagrams, and customer references
 - Classify each asset by gap type and objection category
@@ -73,7 +71,7 @@ Build an n8n workflow triggered when a technical objection is logged in Attio:
 
 **Step 1:** Pull all deal context from Attio — company, requirements, prior technical notes, tech stack data.
 
-**Step 2:** Run the `technical-gap-assessment` drill automatically — extract requirements, match against capabilities, classify gaps, generate response plan.
+**Step 2:** Run the the technical gap assessment workflow (see instructions below) drill automatically — extract requirements, match against capabilities, classify gaps, generate response plan.
 
 **Step 3:** Query the proof library for assets matching each identified gap.
 
@@ -130,6 +128,6 @@ Run the `threshold-engine` at the end of 2 weeks:
 
 ## Drills Referenced
 
-- `technical-gap-assessment` — assess prospect technical requirements against product capabilities, classify gaps, generate response strategies
-- `technical-proof-library` — build and maintain the searchable library of proof assets, with retrieval workflow and effectiveness tracking
+- the technical gap assessment workflow (see instructions below) — assess prospect technical requirements against product capabilities, classify gaps, generate response strategies
+- the technical proof library workflow (see instructions below) — build and maintain the searchable library of proof assets, with retrieval workflow and effectiveness tracking
 - `posthog-gtm-events` — define and implement the event taxonomy for tracking technical objections

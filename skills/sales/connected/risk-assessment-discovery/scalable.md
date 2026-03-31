@@ -14,8 +14,7 @@ kpis: ["Risk discovery rate at scale", "Early risk identification rate (before p
 slug: "risk-assessment-discovery"
 install: "npx gtm-skills add sales/connected/risk-assessment-discovery"
 drills:
-  - risk-intelligence-monitor
-  - risk-pattern-analysis
+  - dashboard-builder
   - risk-mitigation-delivery
 ---
 
@@ -40,7 +39,7 @@ Risk monitoring expands from discovery calls only to the entire deal lifecycle. 
 
 ### 1. Deploy the always-on risk intelligence monitor
 
-Run the `risk-intelligence-monitor` drill to create three n8n workflows:
+Run the `dashboard-builder` drill to create three n8n workflows:
 
 **Transcript scanner:** Fireflies webhook triggers risk extraction on ALL sales calls (not just discovery). The scanner compares new risks against existing risk data per deal and detects: new risks, escalated risks, and resolved risks. Alerts fire immediately for new Critical risks and risk escalations.
 
@@ -59,7 +58,7 @@ Deals are classified Green (0-30), Yellow (31-60), Red (61+). Red deals get imme
 
 ### 2. Launch bi-weekly risk pattern analysis
 
-Run the `risk-pattern-analysis` drill on a bi-weekly n8n schedule. This aggregates risk data across all deals and produces:
+Run the the risk pattern analysis workflow (see instructions below) drill on a bi-weekly n8n schedule. This aggregates risk data across all deals and produces:
 
 - **Risk frequency matrix:** Which categories appear most often, by segment
 - **Mitigation effectiveness report:** Which assets resolve risks fastest, which have low success rates
@@ -88,7 +87,7 @@ The `risk-mitigation-delivery` drill uses this expanded library to improve match
 
 ### 4. Build the daily risk digest
 
-Configure the `risk-intelligence-monitor` daily digest:
+Configure the `dashboard-builder` daily digest:
 - Aggregates all risk events from the last 24 hours
 - Groups by deal: new risks, escalations, resolutions
 - Lists all Red deals with predictive scores and top risk factors
@@ -140,6 +139,6 @@ _Your CRM (Attio), PostHog, and automation platform (n8n) are standard stack -- 
 
 ## Drills Referenced
 
-- `risk-intelligence-monitor` -- always-on scanning of transcripts, emails, and deal data for risk signals; predictive scoring; daily digest
-- `risk-pattern-analysis` -- bi-weekly aggregation of risk data across pipeline; identifies patterns, mitigation effectiveness, and content gaps
+- `dashboard-builder` -- always-on scanning of transcripts, emails, and deal data for risk signals; predictive scoring; daily digest
+- the risk pattern analysis workflow (see instructions below) -- bi-weekly aggregation of risk data across pipeline; identifies patterns, mitigation effectiveness, and content gaps
 - `risk-mitigation-delivery` -- automated matching and delivery of mitigation content (now using expanded library)

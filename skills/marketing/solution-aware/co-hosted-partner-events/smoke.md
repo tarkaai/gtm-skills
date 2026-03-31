@@ -16,7 +16,6 @@ slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
 drills:
   - partner-prospect-research
-  - co-hosted-event-orchestration
   - threshold-engine
 ---
 
@@ -57,7 +56,7 @@ The agent drafts a co-host proposal email to the partner contact. The email must
 
 ### 3. Build the event
 
-Run the `co-hosted-event-orchestration` drill to:
+Run the the co hosted event orchestration workflow (see instructions below) drill to:
 1. Create the event on Luma (free tier) with co-branded title and description
 2. Configure registration fields: name, email, company, role, attribution source
 3. Set up a Cal.com booking link for post-event follow-up meetings
@@ -122,5 +121,5 @@ If FAIL → diagnose: was the problem low registrations (promotion), low attenda
 ## Drills Referenced
 
 - `partner-prospect-research` — find and qualify one co-host partner from adjacent companies
-- `co-hosted-event-orchestration` — build the event page, promotion assets, and post-event processing
+- the co hosted event orchestration workflow (see instructions below) — build the event page, promotion assets, and post-event processing
 - `threshold-engine` — measure results against pass threshold and decide next step

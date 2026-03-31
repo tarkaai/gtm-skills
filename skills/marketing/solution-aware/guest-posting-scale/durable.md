@@ -15,8 +15,6 @@ slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
   - autonomous-optimization
-  - guest-post-performance-monitor
-  - guest-post-outreach-automation
 ---
 
 # Guest Posting at Scale — Durable Intelligence
@@ -87,7 +85,7 @@ Post to Slack and store in Attio.
 
 ### 2. Maintain and evolve the outreach automation
 
-The `guest-post-outreach-automation` workflows from Scalable continue running. At Durable, the autonomous optimization loop tunes their parameters:
+The the guest post outreach automation workflow (see instructions below) workflows from Scalable continue running. At Durable, the autonomous optimization loop tunes their parameters:
 
 **Blog discovery tuning:**
 - The optimization loop tests different niche keyword sets and DA thresholds
@@ -107,7 +105,7 @@ The `guest-post-outreach-automation` workflows from Scalable continue running. A
 
 ### 3. Deploy continuous performance monitoring
 
-The `guest-post-performance-monitor` drill runs always-on at Durable level with enhanced alerting:
+The `autonomous-optimization` drill runs always-on at Durable level with enhanced alerting:
 
 - **Backlink health check (daily):** Detect lost backlinks within 24 hours. If a Tier 1 backlink is lost, the agent generates a replacement pitch for the same blog.
 - **Content decay detection (weekly):** Identify guest posts where referral traffic has declined >50% from peak. Propose content refresh pitches to the editor.
@@ -158,5 +156,5 @@ If all metrics sustain or improve for 6 months, the play is durable. If metrics 
 ## Drills Referenced
 
 - `autonomous-optimization` — the always-on Monitor → Diagnose → Experiment → Evaluate → Implement loop that finds and maintains the local maximum
-- `guest-post-performance-monitor` — continuous backlink health, referral traffic, and conversion monitoring with enhanced Durable alerting
-- `guest-post-outreach-automation` — the automated discovery, pitching, and reply routing pipeline whose parameters the optimization loop tunes
+- `autonomous-optimization` — continuous backlink health, referral traffic, and conversion monitoring with enhanced Durable alerting
+- the guest post outreach automation workflow (see instructions below) — the automated discovery, pitching, and reply routing pipeline whose parameters the optimization loop tunes

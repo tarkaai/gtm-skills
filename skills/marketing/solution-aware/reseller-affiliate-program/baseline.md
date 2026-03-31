@@ -14,7 +14,6 @@ kpis: ["Partner activation rate", "Click-to-paid conversion rate", "Revenue per 
 slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
-  - affiliate-recruitment-outreach
 ---
 
 # Reseller & Affiliate Program — Baseline Run
@@ -36,7 +35,7 @@ A systematic recruitment pipeline producing 10+ active affiliates/resellers who 
 
 ### 1. Scale affiliate recruitment beyond your network
 
-Run the `affiliate-recruitment-outreach` drill at full scope:
+Run the the affiliate recruitment outreach workflow (see instructions below) drill at full scope:
 
 - **Source 100 candidates** across 3 channels:
   - 40 complementary SaaS companies (use Clay company search with ICP overlap filters)
@@ -123,5 +122,5 @@ Total: ~18 hours of active work over 4-6 weeks
 
 ## Drills Referenced
 
-- `affiliate-recruitment-outreach` — systematic candidate sourcing, qualification, and cold/warm outreach sequences
+- the affiliate recruitment outreach workflow (see instructions below) — systematic candidate sourcing, qualification, and cold/warm outreach sequences
 - the affiliate onboarding automation workflow (see instructions below) — zero-touch partner onboarding, enablement drip, and activation tracking

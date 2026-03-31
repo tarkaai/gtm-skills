@@ -13,8 +13,6 @@ kpis: ["Monthly impressions", "Backlinks per month", "Shares per infographic", "
 slug: "infographics-visual-content"
 install: "npx gtm-skills add marketing/problem-aware/infographics-visual-content"
 drills:
-  - infographic-creation-pipeline
-  - infographic-distribution
   - ab-test-orchestrator
 ---
 # Infographics & Visual Content — Scalable Automation
@@ -43,7 +41,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Instructions
 
 ### 1. Automate the creation pipeline
-Build an n8n workflow that automates the `infographic-creation-pipeline` drill:
+Build an n8n workflow that automates the the infographic creation pipeline workflow (see instructions below) drill:
 
 **Trigger:** Weekly cron (Monday 9am) or on-demand via webhook.
 
@@ -76,7 +74,7 @@ Run the `ab-test-orchestrator` drill to systematically test:
 Run each test over 6+ infographics (3 per variant) before declaring a winner. Track shares as the primary metric (shares drive both reach and backlinks).
 
 ### 4. Scale backlink outreach
-Expand the `infographic-distribution` drill's outreach:
+Expand the the infographic distribution workflow (see instructions below) drill's outreach:
 - Increase target list to 50-100 per infographic using Clay enrichment
 - Build outreach templates that A/B test subject lines and value propositions
 - Segment outreach targets: tier 1 (DR 50+, highly personalized), tier 2 (DR 30-50, semi-personalized), tier 3 (DR 15-30, templated with name personalization)
@@ -152,8 +150,8 @@ If not, iterate on your approach and re-run this level.
 ---
 
 ## Drills Referenced
-- `infographic-creation-pipeline` — automated infographic production from data to export
-- `infographic-distribution` — social distribution and scaled backlink outreach
+- the infographic creation pipeline workflow (see instructions below) — automated infographic production from data to export
+- the infographic distribution workflow (see instructions below) — social distribution and scaled backlink outreach
 - `ab-test-orchestrator` — systematic testing of topics, formats, and outreach templates
 
 ---

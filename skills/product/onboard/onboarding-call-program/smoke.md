@@ -15,7 +15,6 @@ slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
 drills:
   - meeting-booking-flow
-  - onboarding-call-script
 ---
 # High-Touch Onboarding Calls — Smoke Test
 
@@ -49,7 +48,7 @@ Run the `meeting-booking-flow` drill to configure Cal.com for onboarding calls:
 
 ### 2. Design the call structure
 
-Run the `onboarding-call-script` drill to create the complete call framework:
+Run the the onboarding call script workflow (see instructions below) drill to create the complete call framework:
 
 - Build the 30-minute timed agenda (3 min welcome, 7 min discovery, 12 min guided walkthrough, 5 min Q&A, 3 min close)
 - Write the 5-7 discovery questions with scoring rubrics
@@ -80,7 +79,7 @@ At Smoke level, do not automate qualification. Manually identify 10-20 recent si
 
 For each call:
 
-1. Run the pre-call prep checklist from the `onboarding-call-script` drill (pull usage data from PostHog, CRM record from Attio)
+1. Run the pre-call prep checklist from the the onboarding call script workflow (see instructions below) drill (pull usage data from PostHog, CRM record from Attio)
 2. **Human action required:** Conduct the call following the structured agenda
 3. After the call, retrieve the Fireflies transcript and extract action items
 4. Score the call using the post-call scoring rubric
@@ -127,4 +126,4 @@ Also capture:
 ## Drills Referenced
 
 - `meeting-booking-flow` — sets up Cal.com scheduling, CRM sync, and booking analytics
-- `onboarding-call-script` — designs the call agenda, discovery questions, walkthrough framework, and scoring rubric
+- the onboarding call script workflow (see instructions below) — designs the call agenda, discovery questions, walkthrough framework, and scoring rubric

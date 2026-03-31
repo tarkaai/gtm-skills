@@ -17,7 +17,6 @@ slug: "list-swaps-adjacent-startups"
 install: "npx gtm-skills add marketing/solution-aware/list-swaps-adjacent-startups"
 drills:
   - autonomous-optimization
-  - list-swap-performance-reporting
 ---
 
 # List Swap With Partner — Durable Intelligence
@@ -94,7 +93,7 @@ Run the `autonomous-optimization` drill configured for this play's specific metr
 
 ### 2. Deploy play-specific monitoring and reporting
 
-Run the `list-swap-performance-reporting` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Swap dashboard in PostHog:**
 - Clicks by partner (bar chart, last 30 days)
@@ -213,4 +212,4 @@ Total: ~200 hours over 6 months (heavily front-loaded; agent handles most ongoin
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum
-- `list-swap-performance-reporting` — per-partner dashboards, weekly briefs, ROI tracking, fatigue detection, and alerts specific to this play
+- `autonomous-optimization` — per-partner dashboards, weekly briefs, ROI tracking, fatigue detection, and alerts specific to this play

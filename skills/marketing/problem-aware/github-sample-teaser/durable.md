@@ -17,7 +17,6 @@ slug: "github-sample-teaser"
 install: "npx gtm-skills add marketing/problem-aware/github-sample-teaser"
 drills:
   - autonomous-optimization
-  - github-repo-performance-monitor
 ---
 
 # GitHub Sample Teaser — Durable Intelligence
@@ -40,7 +39,7 @@ The play runs itself. AI agents continuously monitor GitHub repo performance, di
 
 ### 1. Build the GitHub performance monitoring dashboard
 
-Run the `github-repo-performance-monitor` drill, Step 1:
+Run the `autonomous-optimization` drill, Step 1:
 
 Create a PostHog dashboard named "GitHub Sample Teaser - Performance" with:
 
@@ -66,7 +65,7 @@ Create a PostHog dashboard named "GitHub Sample Teaser - Performance" with:
 
 ### 2. Configure anomaly detection alerts
 
-Run the `github-repo-performance-monitor` drill, Step 2:
+Run the `autonomous-optimization` drill, Step 2:
 
 Set PostHog alerts for:
 - **Views drop:** Weekly unique views drops >30% vs 4-week rolling average
@@ -162,4 +161,4 @@ When 3 consecutive experiments produce <2% improvement:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core monitor > diagnose > experiment > evaluate > implement loop that finds the local maximum
-- `github-repo-performance-monitor` -- PostHog dashboard, anomaly alerts, and weekly digest specific to GitHub metrics
+- `autonomous-optimization` -- PostHog dashboard, anomaly alerts, and weekly digest specific to GitHub metrics

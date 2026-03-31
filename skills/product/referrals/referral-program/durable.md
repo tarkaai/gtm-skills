@@ -15,7 +15,6 @@ slug: "referral-program"
 install: "npx gtm-skills add product/referrals/referral-program"
 drills:
   - autonomous-optimization
-  - referral-health-monitor
 ---
 
 # Incentivized Referral Program — Durable Intelligence
@@ -78,7 +77,7 @@ Post to Slack and store in Attio.
 
 ### 2. Deploy referral-specific health monitoring
 
-Run the `referral-health-monitor` drill. This provides the play-specific monitoring layer that feeds into the autonomous optimization loop:
+Run the `autonomous-optimization` drill. This provides the play-specific monitoring layer that feeds into the autonomous optimization loop:
 
 - 8 referral health metrics tracked daily: referral rate, share-to-signup conversion, referee activation, reward fulfillment, referral CAC, referrer retention, viral coefficient, referred user quality
 - Diagnostic triggers for each declining metric (e.g., referral rate declining -> check prompt delivery rate, check if top referrers went quiet, check if new user dilution)
@@ -139,4 +138,4 @@ The optimization loop should detect convergence -- when the referral program has
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `referral-health-monitor` -- referral-specific daily health checks on 8 metrics, diagnostic triggers for each declining metric, automated interventions for common failure modes, weekly health reports with convergence detection
+- `autonomous-optimization` -- referral-specific daily health checks on 8 metrics, diagnostic triggers for each declining metric, automated interventions for common failure modes, weekly health reports with convergence detection

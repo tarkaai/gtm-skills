@@ -65,7 +65,7 @@ Measure scroll depth and CTA clicks. Adopt the configuration that maximizes CTA 
 
 ### 3. Expand the OSS portfolio
 
-Re-run the `oss-content-selection` drill (from Smoke level) to identify the next asset to release. Use the same playbook:
+Re-run the the oss content selection workflow (see instructions below) drill (from Smoke level) to identify the next asset to release. Use the same playbook:
 1. Select and extract the asset
 2. Run `github-repo-setup` to publish
 3. Run the Day 1-3 launch promotion from Smoke level

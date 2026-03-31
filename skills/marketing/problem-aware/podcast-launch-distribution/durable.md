@@ -14,7 +14,6 @@ slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
   - autonomous-optimization
-  - podcast-performance-monitor
   - dashboard-builder
 ---
 # Branded Podcast Launch — Durable Intelligence
@@ -109,7 +108,7 @@ Set up weekly email/Slack delivery of this dashboard to the founder.
 
 ### 3. Run the podcast performance monitor continuously
 
-Run the `podcast-performance-monitor` drill in always-on mode:
+Run the `autonomous-optimization` drill in always-on mode:
 
 1. **Weekly automated report**: Downloads, leads, guest pipeline health, upcoming experiment status, optimization brief
 2. **Monthly deep analysis**: Topic trends, audience growth patterns, long-tail episode value (which old episodes are still generating traffic?), content repurposing ROI
@@ -180,5 +179,5 @@ Setup: 9 hours. Ongoing founder time: ~8 hours/month. Agent runs autonomously.
 
 ## Drills Referenced
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, generate hypotheses, run experiments, evaluate results, auto-implement winners, report weekly
-- `podcast-performance-monitor` -- continuous analytics, weekly reports, monthly deep analysis, quarterly strategic review
+- `autonomous-optimization` -- continuous analytics, weekly reports, monthly deep analysis, quarterly strategic review
 - `dashboard-builder` -- PostHog dashboard with download trends, lead funnels, topic heatmaps, guest ROI, and channel attribution

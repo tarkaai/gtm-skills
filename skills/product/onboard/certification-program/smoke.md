@@ -14,7 +14,6 @@ kpis: ["Enrollment rate", "Completion rate", "Module drop-off points", "Certifie
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
 drills:
-  - certification-curriculum-design
   - lead-capture-surface-setup
   - threshold-engine
 ---
@@ -38,7 +37,7 @@ Prove that a certification program produces signal: users who are prompted will 
 
 ### 1. Design a single-tier certification curriculum
 
-Run the `certification-curriculum-design` drill with these constraints:
+Run the the certification curriculum design workflow (see instructions below) drill with these constraints:
 - Build only Tier 1 (Foundations) — 3-5 modules covering core product workflows
 - Each module must have an action-based assessment: the user performs a real action in the product and PostHog captures the event
 - Define the scoring rubric: all modules must be completed + all assessments passed to earn the badge
@@ -115,6 +114,6 @@ If FAIL: Diagnose — was enrollment low (prompt is not compelling) or completio
 
 ## Drills Referenced
 
-- `certification-curriculum-design` — design the tier structure, modules, assessments, and scoring rubric
+- the certification curriculum design workflow (see instructions below) — design the tier structure, modules, assessments, and scoring rubric
 - `lead-capture-surface-setup` — build and deploy the enrollment prompt with tracking
 - `threshold-engine` — evaluate pass/fail against enrollment and completion thresholds

@@ -14,7 +14,6 @@ slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
   - icp-definition
-  - podcast-episode-production
   - podcast-guest-preparation
   - threshold-engine
 ---
@@ -76,7 +75,7 @@ Before recording, complete the one-time setup:
 
 ### 3. Record 3 episodes
 
-Run the `podcast-episode-production` drill for each episode:
+Run the the podcast episode production workflow (see instructions below) drill for each episode:
 
 **Episode 1 (solo or interview):** Choose your strongest topic -- the one where you have the most contrarian or data-backed perspective. This is your proof-of-concept episode. Target 20-30 minutes.
 
@@ -89,7 +88,7 @@ Run the `podcast-episode-production` drill for each episode:
 ### 4. Publish and distribute manually
 
 For each episode:
-1. Edit using Descript (see `podcast-episode-production` drill, step 4)
+1. Edit using Descript (see the podcast episode production workflow (see instructions below) drill, step 4)
 2. Upload to your hosting platform
 3. After episode 1 publishes, submit the RSS feed to Apple Podcasts, Spotify, YouTube Music, and Amazon Music (one-time setup; subsequent episodes auto-distribute)
 4. Write show notes with timestamps, key takeaways, and your tracking link
@@ -150,6 +149,6 @@ If FAIL: Diagnose. Check: Were the topics relevant to your ICP? Was the audio qu
 
 ## Drills Referenced
 - `icp-definition` -- define the target listener profile and podcast positioning
-- `podcast-episode-production` -- record, edit, and publish each episode
+- the podcast episode production workflow (see instructions below) -- record, edit, and publish each episode
 - `podcast-guest-preparation` -- prepare talking points, tracking links, and guest logistics
 - `threshold-engine` -- evaluate downloads and leads against pass/fail threshold

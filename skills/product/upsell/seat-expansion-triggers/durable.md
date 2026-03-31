@@ -16,7 +16,6 @@ slug: "seat-expansion-triggers"
 install: "npx gtm-skills add product/upsell/seat-expansion-triggers"
 drills:
   - autonomous-optimization
-  - seat-expansion-health-monitor
 ---
 
 # Team Growth Upsell — Durable Intelligence
@@ -88,7 +87,7 @@ Generate a weekly optimization brief:
 
 ### 2. Deploy enhanced health monitoring
 
-Run the `seat-expansion-health-monitor` drill with Durable-level extensions:
+Run the `autonomous-optimization` drill with Durable-level extensions:
 
 1. Add a "Durable Experiments" panel to the PostHog dashboard showing: active experiments, completed experiments this month, cumulative lift from adopted changes, experiment win rate
 2. Add an "Autonomous Agent Activity" panel showing: anomalies detected, hypotheses generated, experiments launched, decisions made — all by week
@@ -163,4 +162,4 @@ After 6 months, assess the Durable level:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on optimization loop: monitor anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `seat-expansion-health-monitor` — monitor expansion funnel health with Durable extensions for experiment tracking and convergence detection
+- `autonomous-optimization` — monitor expansion funnel health with Durable extensions for experiment tracking and convergence detection

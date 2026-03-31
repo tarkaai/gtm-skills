@@ -16,7 +16,6 @@ slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
   - account-research-brief
-  - call-brief-feedback-loop
   - posthog-gtm-events
 ---
 
@@ -70,7 +69,7 @@ Build a second n8n workflow that scores briefs after calls:
 1. Receive Fireflies transcript webhook
 2. Match the transcript to a deal in Attio (by attendee email or meeting title)
 3. Find the meeting brief note for this deal (tagged `meeting-brief`)
-4. Run the `call-brief-feedback-loop` drill: compare brief predictions to actual call, score quality, extract new intelligence
+4. Run the the call brief feedback loop workflow (see instructions below) drill: compare brief predictions to actual call, score quality, extract new intelligence
 5. Store the feedback as an Attio note tagged `brief-feedback`
 6. Update deal properties with new intelligence (pain points, stakeholders, competitive mentions, next steps)
 7. Log `meeting_brief_scored` event to PostHog
@@ -134,5 +133,5 @@ If PASS: proceed to Scalable. If FAIL: diagnose using the brief quality scores. 
 ## Drills Referenced
 
 - `account-research-brief` — assemble account intelligence and generate a structured meeting brief (now triggered automatically 24 hours before every meeting)
-- `call-brief-feedback-loop` — after each call, compare brief predictions to actual outcomes, score quality, extract new intelligence
+- the call brief feedback loop workflow (see instructions below) — after each call, compare brief predictions to actual outcomes, score quality, extract new intelligence
 - `posthog-gtm-events` — set up event tracking for brief generation, quality scoring, and outcome correlation

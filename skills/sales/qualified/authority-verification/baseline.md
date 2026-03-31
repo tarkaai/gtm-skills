@@ -15,7 +15,6 @@ slug: "authority-verification"
 install: "npx gtm-skills add sales/qualified/authority-verification"
 drills:
   - stakeholder-enrichment-automation
-  - authority-discovery-call
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -65,7 +64,7 @@ Build a PostHog funnel: `deal_qualified` -> `authority_deal_enriched` -> `author
 
 ### 3. Run authority discovery calls on enriched deals
 
-For each deal with a pre-built stakeholder map, run the `authority-discovery-call` drill. The key difference from Smoke: you now start with a map instead of building one from scratch.
+For each deal with a pre-built stakeholder map, run the the authority discovery call workflow (see instructions below) drill. The key difference from Smoke: you now start with a map instead of building one from scratch.
 
 1. Review the auto-generated stakeholder map — the agent has already identified likely Economic Buyers
 2. For high-confidence EB classifications (title = CEO, VP with P&L ownership at <50 employees), consider authority verified without a call. Set `authority_verification_status: verified` and `verification_method: enrichment`.
@@ -119,6 +118,6 @@ If PASS, proceed to Scalable. If FAIL, diagnose: is enrichment failing (Clay iss
 ## Drills Referenced
 
 - `stakeholder-enrichment-automation` — n8n workflow that auto-enriches org charts and classifies stakeholders when deals enter Qualified
-- `authority-discovery-call` — structured call focused on confirming authority, now with pre-built stakeholder maps
+- the authority discovery call workflow (see instructions below) — structured call focused on confirming authority, now with pre-built stakeholder maps
 - `posthog-gtm-events` — event taxonomy and tracking setup for authority verification funnel
 - `threshold-engine` — evaluate results and determine pass/fail for level progression

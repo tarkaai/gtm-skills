@@ -17,7 +17,6 @@ slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
   - autonomous-optimization
-  - timing-objection-detection-automation
 ---
 
 # Timing Objection Handling — Durable Intelligence
@@ -116,7 +115,7 @@ Run the `autonomous-optimization` drill to create the play-specific monitoring l
 
 ### 3. Maintain the detection system
 
-The `timing-objection-detection-automation` drill from Scalable continues running at Durable. At this level, additionally:
+The the timing objection detection automation workflow (see instructions below) drill from Scalable continues running at Durable. At this level, additionally:
 
 - Tune the predictive timeline risk model monthly: compare predicted timing objections vs actual to improve scoring weights
 - Update the classification prompt quarterly with confirmed smokescreen-vs-genuine outcomes to improve detection accuracy
@@ -164,4 +163,4 @@ Agent compute is variable based on experiment velocity and monitoring frequency.
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run experiments -> evaluate -> implement winners -> report weekly
 - `autonomous-optimization` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly timing intelligence report, domain-specific hypothesis context for the optimization loop
-- `timing-objection-detection-automation` — continued from Scalable: always-on call and email monitoring, predictive scoring, auto-classification, smokescreen detection
+- the timing objection detection automation workflow (see instructions below) — continued from Scalable: always-on call and email monitoring, predictive scoring, auto-classification, smokescreen detection

@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests
 drills:
   - referral-network-mapping
   - partner-relationship-scoring
-  - referral-ask-copywriting
 ---
 
 # Outbound Referral Requests — Scalable Automation
@@ -115,7 +114,7 @@ Estimated time: 5 hours setup, 1 hour/month maintenance.
 
 ### 5. Scale ask generation
 
-Run the `referral-ask-copywriting` drill in batch mode monthly:
+Run the the referral ask copywriting workflow (see instructions below) drill in batch mode monthly:
 
 1. Pull all new "Ask Ready" pairs from Attio (pairs scored by `referral-network-mapping` but without ask messages yet)
 2. Batch-generate asks using Claude with context from Attio (connector relationship, target company/role, previous interaction history)
@@ -187,4 +186,4 @@ Estimated time: 2 hours/month.
 - `referral-network-mapping` — monthly Clay-enriched network mapping with auto-scoring of connector-target pairs
 - the referral pipeline automation workflow (see instructions below) — n8n workflow suite: ask scheduling, follow-ups, intro tracking, meeting attribution, weekly summaries
 - `partner-relationship-scoring` — monthly connector scoring and tiering to optimize who gets asked for which targets
-- `referral-ask-copywriting` — batch ask generation with A/B variants and quality sampling
+- the referral ask copywriting workflow (see instructions below) — batch ask generation with A/B variants and quality sampling

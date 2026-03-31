@@ -14,7 +14,6 @@ kpis: ["Interview completion rate", "Insights per interview", "Actionable insigh
 slug: "win-loss-analysis"
 install: "npx gtm-skills add product/retain/win-loss-analysis"
 drills:
-  - win-loss-interview-pipeline
   - win-loss-insight-extraction
   - threshold-engine
 ---
@@ -39,7 +38,7 @@ Prove that structured win/loss interviews produce real, actionable insights you 
 
 ### 1. Identify your first interview candidates
 
-Manually query your Attio CRM for deals that closed in the last 30 days. Pull the `win-loss-interview-pipeline` drill's candidate identification logic, but do it by hand: list all Closed Won and Closed Lost deals, grab the primary contact for each, and select 8-10 candidates (mix of wins and losses). Prioritize deals where you had a real evaluation — skip one-call closes and no-shows.
+Manually query your Attio CRM for deals that closed in the last 30 days. Pull the the win loss interview pipeline workflow (see instructions below) drill's candidate identification logic, but do it by hand: list all Closed Won and Closed Lost deals, grab the primary contact for each, and select 8-10 candidates (mix of wins and losses). Prioritize deals where you had a real evaluation — skip one-call closes and no-shows.
 
 **Human action required:** Review the candidate list. Remove anyone with a strained relationship or active support escalation. Aim for a 50/50 mix of won and lost deals.
 
@@ -47,7 +46,7 @@ Manually query your Attio CRM for deals that closed in the last 30 days. Pull th
 
 Do NOT use automated sequences yet. Send personal emails from the founder or sales lead to each candidate. For won deals: "Thanks for choosing us. I'd love 20 minutes to understand what worked and what almost didn't." For lost deals: "No sales pitch, I promise. I genuinely want to understand what drove your decision so we can get better."
 
-Include a Cal.com booking link (create one using the `calcom-booking-links` fundamental with a 20-minute event type). If they decline a call, offer the Typeform survey as a fallback (set up using the `typeform-win-loss-survey` fundamental from the `win-loss-interview-pipeline` drill).
+Include a Cal.com booking link (create one using the `calcom-booking-links` fundamental with a 20-minute event type). If they decline a call, offer the Typeform survey as a fallback (set up using the `typeform-win-loss-survey` fundamental from the the win loss interview pipeline workflow (see instructions below) drill).
 
 ### 3. Conduct the interviews
 
@@ -107,6 +106,6 @@ If FAIL: Diagnose — was the issue low interview acceptance (outreach problem),
 
 ## Drills Referenced
 
-- `win-loss-interview-pipeline` — Identifies candidates, sends outreach, schedules and records interviews
+- the win loss interview pipeline workflow (see instructions below) — Identifies candidates, sends outreach, schedules and records interviews
 - `win-loss-insight-extraction` — Analyzes transcripts and extracts structured, categorized insights
 - `threshold-engine` — Evaluates results against the pass threshold

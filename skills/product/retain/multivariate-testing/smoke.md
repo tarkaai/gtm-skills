@@ -14,7 +14,6 @@ kpis: ["MVT velocity", "Win rate", "Combination insights"]
 slug: "multivariate-testing"
 install: "npx gtm-skills add product/retain/multivariate-testing"
 drills:
-  - mvt-experiment-design
   - threshold-engine
 ---
 
@@ -47,7 +46,7 @@ You need at least 200 users per cell per week. If your product has <800 weekly a
 
 ### 2. Design the experiment matrix
 
-Run the `mvt-experiment-design` drill. For this smoke test, keep it minimal:
+Run the the mvt experiment design workflow (see instructions below) drill. For this smoke test, keep it minimal:
 
 - 2 variables, 2 levels each (4 cells total)
 - Document the exact experience each cell sees
@@ -90,5 +89,5 @@ Run the `threshold-engine` drill to measure against: Run 2 MVTs with documented 
 
 ## Drills Referenced
 
-- `mvt-experiment-design` — designs the test matrix, configures feature flags, and computes sample size requirements
+- the mvt experiment design workflow (see instructions below) — designs the test matrix, configures feature flags, and computes sample size requirements
 - `threshold-engine` — evaluates pass/fail against the smoke test threshold

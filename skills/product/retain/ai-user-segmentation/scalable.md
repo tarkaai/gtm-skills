@@ -14,8 +14,6 @@ kpis: ["Segment stability at scale", "Retention lift vs control", "Personalizati
 slug: "ai-user-segmentation"
 install: "npx gtm-skills add product/retain/ai-user-segmentation"
 drills:
-  - behavior-segmentation-pipeline
-  - segment-personalization-routing
   - ab-test-orchestrator
   - cohort-insight-generation
   - threshold-engine
@@ -43,7 +41,7 @@ Find the 10x multiplier for behavioral segmentation. Expand personalization from
 
 ### 1. Expand personalization to all segments
 
-At Baseline, you personalized for the top 3 segments. Now extend the `segment-personalization-routing` drill to cover all identified segments:
+At Baseline, you personalized for the top 3 segments. Now extend the the segment personalization routing workflow (see instructions below) drill to cover all identified segments:
 
 For each remaining segment:
 1. Create Intercom in-app messages using the segment's personalization strategy from the cluster definitions
@@ -55,11 +53,11 @@ For each remaining segment:
 
 ### 2. Scale the segmentation pipeline
 
-Verify the `behavior-segmentation-pipeline` handles 500+ active users:
+Verify the the behavior segmentation pipeline workflow (see instructions below) handles 500+ active users:
 
 - Test the weekly n8n workflow with the full user base. Measure execution time. If it exceeds 30 minutes, optimize: batch PostHog queries by 200 users, parallelize assignment API calls.
 - Monitor Claude API costs at scale. At 500 users in batches of 30, you need ~17 assignment calls per week. At current Sonnet pricing, this costs ~$0.35/week.
-- Increase the monthly cluster refresh to also include a segment quality validation pass (from `behavior-segmentation-pipeline` step 10).
+- Increase the monthly cluster refresh to also include a segment quality validation pass (from the behavior segmentation pipeline workflow (see instructions below) step 10).
 
 ### 3. Run systematic A/B tests per segment
 
@@ -95,7 +93,7 @@ As A/B test results accumulate, refine the segmentation model:
 - If one segment has very high variance in outcomes (some users retain, some churn), it may contain two sub-populations. Re-run cluster discovery with more behavior dimensions to split it.
 - If the "Unclassified" group grows beyond 15%, the cluster definitions are stale. Trigger an immediate cluster refresh.
 
-Update the cluster definitions in the `behavior-segmentation-pipeline` and propagate to all downstream personalization.
+Update the cluster definitions in the the behavior segmentation pipeline workflow (see instructions below) and propagate to all downstream personalization.
 
 ### 6. Build the scale monitoring dashboard
 
@@ -143,8 +141,8 @@ If FAIL on retention lift: The personalization content is not bold enough. Revie
 
 ## Drills Referenced
 
-- `behavior-segmentation-pipeline` -- Weekly pipeline scaled to 500+ users with quality validation
-- `segment-personalization-routing` -- Expanded personalization for all segments
+- the behavior segmentation pipeline workflow (see instructions below) -- Weekly pipeline scaled to 500+ users with quality validation
+- the segment personalization routing workflow (see instructions below) -- Expanded personalization for all segments
 - `ab-test-orchestrator` -- Systematic A/B testing of personalization variants per segment
 - `cohort-insight-generation` -- Monthly insights driving the experiment roadmap
 - `threshold-engine` -- Evaluates scale metrics against pass thresholds

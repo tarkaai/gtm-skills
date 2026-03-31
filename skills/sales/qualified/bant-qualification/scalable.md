@@ -16,7 +16,7 @@ install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
   - follow-up-automation
   - ab-test-orchestrator
-  - bant-qualification-reporting
+  - dashboard-builder
 ---
 
 # BANT Qualification Framework — Scalable Automation
@@ -95,7 +95,7 @@ All new leads, regardless of source, enter the same BANT auto-scoring pipeline. 
 
 ### 5. Build qualification reporting
 
-Run the `bant-qualification-reporting` drill to create:
+Run the `dashboard-builder` drill to create:
 
 - **PostHog dashboard:** Qualification volume by week, score distribution, dimension breakdown, pre-score vs post-call accuracy
 - **Pipeline velocity funnel:** Outreach > Reply > Discovery > Qualified > Proposal > Won
@@ -147,4 +147,4 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 - the play's scoring criteria — automated pre-qualification pipeline: CRM trigger > Clay enrichment > BANT scoring > Attio routing
 - `follow-up-automation` — n8n workflows for score-based outreach, nurture, and re-scoring alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, thresholds, and outreach personalization
-- `bant-qualification-reporting` — dashboards, funnel analytics, accuracy cohorts, and weekly reports
+- `dashboard-builder` — dashboards, funnel analytics, accuracy cohorts, and weekly reports

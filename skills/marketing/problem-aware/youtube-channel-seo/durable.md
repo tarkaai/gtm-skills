@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/problem-aware/youtube-channel-seo"
 drills:
   - autonomous-optimization
   - youtube-channel-analytics
-  - youtube-seo-optimization
 ---
 
 # YouTube Channel SEO — Durable Intelligence
@@ -73,7 +72,7 @@ The agent gathers context and generates improvement hypotheses:
 The agent implements the experiment:
 1. Take the top-ranked hypothesis
 2. Design the experiment with a control and variant:
-   - For metadata changes: use `youtube-seo-optimization` to update the variant group of videos, leave control group unchanged
+   - For metadata changes: use the youtube seo optimization workflow (see instructions below) to update the variant group of videos, leave control group unchanged
    - For content format tests: produce the next 2 videos in the new format, compare against the prior 2 videos of similar topic
    - For thumbnail tests: use TubeBuddy A/B test on the target videos
 3. Set experiment duration: minimum 14 days or until each variant has >=500 impressions
@@ -115,7 +114,7 @@ This replaces manual content calendar management. The agent picks topics based o
 
 ### 3. Run ongoing SEO maintenance
 
-Run `youtube-seo-optimization` monthly as part of the optimization loop:
+Run the youtube seo optimization workflow (see instructions below) monthly as part of the optimization loop:
 - Re-score all videos' SEO health
 - Identify videos whose search traffic has declined (keyword competition may have increased)
 - Update metadata for declining videos: refresh titles with current year, update descriptions, add new tags
@@ -164,4 +163,4 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 - `autonomous-optimization` — the core monitor > diagnose > experiment > evaluate > implement loop that makes Durable fundamentally different from Scalable
 - `youtube-channel-analytics` — daily data sync, dashboards, and anomaly alerts feeding the optimization loop
-- `youtube-seo-optimization` — monthly metadata and caption maintenance run as part of the optimization cycle
+- the youtube seo optimization workflow (see instructions below) — monthly metadata and caption maintenance run as part of the optimization cycle

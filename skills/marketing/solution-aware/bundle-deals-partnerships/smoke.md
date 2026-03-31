@@ -15,7 +15,6 @@ slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
 drills:
   - partner-prospect-research
-  - bundle-deal-structuring
   - threshold-engine
 ---
 
@@ -52,7 +51,7 @@ Select the single best candidate. Prioritize partners where you have an existing
 
 ### 2. Structure the bundle deal
 
-Run the `bundle-deal-structuring` drill to:
+Run the the bundle deal structuring workflow (see instructions below) drill to:
 
 - Research the partner's pricing and identify which plan combinations make sense
 - Generate a 3-tier bundle pricing model (Starter, Growth, Scale) with 15-25% discount off combined list price
@@ -130,5 +129,5 @@ Total: ~8 hours of active work over 2 weeks setup + 4 weeks evaluation
 ## Drills Referenced
 
 - `partner-prospect-research` — find and score complementary partners whose products and audiences overlap your ICP
-- `bundle-deal-structuring` — design pricing tiers, build the co-branded landing page, and configure deal tracking
+- the bundle deal structuring workflow (see instructions below) — design pricing tiers, build the co-branded landing page, and configure deal tracking
 - `threshold-engine` — evaluate bundle deals closed against the pass threshold

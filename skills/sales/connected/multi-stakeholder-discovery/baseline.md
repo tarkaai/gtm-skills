@@ -15,7 +15,6 @@ slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
   - stakeholder-discovery-call
-  - stakeholder-consensus-tracker
   - threshold-engine
 ---
 
@@ -59,7 +58,7 @@ Run the `stakeholder-discovery-call` drill in always-on mode:
 
 ### 2. Deploy Consensus Tracking
 
-Run the `stakeholder-consensus-tracker` drill:
+Run the the stakeholder consensus tracker workflow (see instructions below) drill:
 
 **Set up automated consensus computation:**
 1. Create an n8n workflow triggered when any stakeholder attribute changes in Attio (via Attio webhook)
@@ -129,5 +128,5 @@ If FAIL: Diagnose — is the issue transcript quality (Fireflies missing speaker
 ## Drills Referenced
 
 - `stakeholder-discovery-call` — automated post-call workflow: transcript retrieval, per-stakeholder sentiment extraction, concern mapping, CRM updates, and follow-up routing
-- `stakeholder-consensus-tracker` — continuous consensus score computation, degradation detection, intervention recommendations, and pre-proposal gate checking
+- the stakeholder consensus tracker workflow (see instructions below) — continuous consensus score computation, degradation detection, intervention recommendations, and pre-proposal gate checking
 - `threshold-engine` — evaluate automation effectiveness against the pass threshold

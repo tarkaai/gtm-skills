@@ -17,8 +17,6 @@ slug: "youtube-preroll-ads"
 install: "npx gtm-skills add marketing/problem-aware/youtube-preroll-ads"
 drills:
   - autonomous-optimization
-  - youtube-preroll-performance-monitor
-  - youtube-preroll-creative-pipeline
   - youtube-preroll-audience-builder
   - dashboard-builder
   - budget-allocation
@@ -114,9 +112,9 @@ Run the `autonomous-optimization` drill configured for YouTube pre-roll. This is
 
 ### 3. Build the autonomous creative management agent
 
-Extend the `youtube-preroll-creative-pipeline` for autonomous operation:
+Extend the the youtube preroll creative pipeline workflow (see instructions below) for autonomous operation:
 
-**Creative fatigue detection (from `youtube-preroll-performance-monitor`, runs daily):**
+**Creative fatigue detection (from `autonomous-optimization`, runs daily):**
 1. For each active variant, compare last 7-day VTR to first-week VTR
 2. If VTR declined 30%+ and variant has been running 14+ days: flag as fatigued, pause via API
 
@@ -180,7 +178,7 @@ Create an n8n workflow that runs daily:
 
 ### 6. Generate weekly performance report
 
-Extend the `youtube-preroll-performance-monitor` weekly report for Durable:
+Extend the `autonomous-optimization` weekly report for Durable:
 
 ```
 YOUTUBE PRE-ROLL WEEKLY REPORT — Week of [date]
@@ -307,8 +305,8 @@ Total: ~180 hours over 12 months
 ## Drills Referenced
 
 - `autonomous-optimization` — the core detect, diagnose, experiment, evaluate, implement loop that finds and maintains the local maximum
-- `youtube-preroll-performance-monitor` — daily health checks, fatigue detection, saturation alerts, weekly reports
-- `youtube-preroll-creative-pipeline` — autonomous creative brief generation on a bi-weekly cadence
+- `autonomous-optimization` — daily health checks, fatigue detection, saturation alerts, weekly reports
+- the youtube preroll creative pipeline workflow (see instructions below) — autonomous creative brief generation on a bi-weekly cadence
 - `youtube-preroll-audience-builder` — automated placement discovery and audience refresh
 - `dashboard-builder` — build the YouTube pre-roll performance dashboard with alerts
 - `budget-allocation` — automated daily budget adjustments with CPqL guardrails

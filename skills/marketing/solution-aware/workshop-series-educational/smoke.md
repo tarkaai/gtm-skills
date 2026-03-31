@@ -17,7 +17,6 @@ slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
 drills:
   - icp-definition
-  - workshop-pipeline
   - threshold-engine
 ---
 
@@ -51,7 +50,7 @@ Choose a difficulty level (beginner, intermediate, or advanced) based on your IC
 
 ### 2. Design the workshop curriculum
 
-Run the `workshop-pipeline` drill to structure the session. Build a 60-90 minute workshop:
+Run the the workshop pipeline workflow (see instructions below) drill to structure the session. Build a 60-90 minute workshop:
 
 - **Introduction (10 min)**: Context on why this skill matters. Hook with a stat or problem statement relevant to the ICP.
 - **Teaching block 1 (15 min)**: Core concept explanation with examples.
@@ -64,7 +63,7 @@ Prepare all materials in advance: slides, a workbook or cheat sheet attendees ca
 
 ### 3. Set up the workshop infrastructure
 
-Using the `workshop-pipeline` drill:
+Using the the workshop pipeline workflow (see instructions below) drill:
 
 - Create a registration page with: outcome-focused headline ("Build [deliverable] in 60 minutes"), what attendees will learn (3 bullets), prerequisites (what to install or prepare), speaker bio, date/time with timezone, and a form collecting name, email, company, role, and skill level (beginner/intermediate/advanced).
 - Set up a video platform: use Zoom free tier (100 participants, 40-min limit -- schedule as two consecutive meetings if needed) or Google Meet (no limit with Workspace). For recording, use Riverside ($19/mo Standard).
@@ -147,5 +146,5 @@ Run the `threshold-engine` drill to measure:
 ## Drills Referenced
 
 - `icp-definition` -- define who should attend and what skills to teach
-- `workshop-pipeline` -- design curriculum, set up registration, deliver the session, and execute follow-up
+- the workshop pipeline workflow (see instructions below) -- design curriculum, set up registration, deliver the session, and execute follow-up
 - `threshold-engine` -- evaluate pass/fail against registration, show rate, exercise completion, and qualified lead targets

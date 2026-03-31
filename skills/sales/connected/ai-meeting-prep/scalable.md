@@ -16,8 +16,7 @@ slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
   - account-research-brief
-  - call-brief-feedback-loop
-  - brief-quality-monitor
+  - dashboard-builder
   - demo-prep-automation
 ---
 
@@ -92,7 +91,7 @@ This context chaining is what makes the second brief dramatically more valuable 
 
 ### 3. Deploy the Brief Quality Monitor
 
-Run the `brief-quality-monitor` drill to create the measurement layer:
+Run the `dashboard-builder` drill to create the measurement layer:
 
 - Build the PostHog dashboard with 6 panels (generation volume, adoption rate, quality scores, data completeness, best/worst sections, outcome correlation)
 - Configure alerts for quality drops, adoption drops, and data source failures
@@ -171,6 +170,6 @@ If PASS: proceed to Durable. If FAIL: diagnose using the brief quality dashboard
 ## Drills Referenced
 
 - `account-research-brief` — now with meeting type-specific prompts and multi-meeting context chains
-- `call-brief-feedback-loop` — continuous quality scoring feeding prompt optimization
-- `brief-quality-monitor` — dashboard, alerts, and weekly reports tracking brief quality and impact at scale
+- the call brief feedback loop workflow (see instructions below) — continuous quality scoring feeding prompt optimization
+- `dashboard-builder` — dashboard, alerts, and weekly reports tracking brief quality and impact at scale
 - `demo-prep-automation` — specialized brief generation for demo meetings: pain-to-feature mapping, custom demo flow, ROI estimates, recap assets

@@ -14,7 +14,6 @@ slug: "annual-upgrade-incentive"
 install: "npx gtm-skills add product/upsell/annual-upgrade-incentive"
 drills:
   - posthog-gtm-events
-  - annual-conversion-health-monitor
   - activation-optimization
 ---
 
@@ -137,5 +136,4 @@ After 3 weeks of always-on operation, run evaluation:
 ## Drills Referenced
 
 - `posthog-gtm-events` — establishes the 6-event taxonomy for annual conversion tracking
-- `annual-conversion-health-monitor` — builds the dashboard, cohorts, and degradation detection layer
 - `activation-optimization` — identifies and fixes the biggest funnel drop-off to maximize conversion rate

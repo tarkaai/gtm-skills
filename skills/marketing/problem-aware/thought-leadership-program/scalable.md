@@ -17,7 +17,7 @@ drills:
   - founder-linkedin-content-batch
   - content-repurposing
   - conference-cfp-pipeline
-  - thought-leadership-performance-monitor
+  - dashboard-builder
 ---
 
 # Thought Leadership Program — Scalable
@@ -88,7 +88,7 @@ Target: 3-4 speaking slots per quarter (12-16 over 6 months, aim for >=8).
 
 ### 4. Deploy Performance Monitoring
 
-Run the `thought-leadership-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 
 1. Build the PostHog dashboard (5 panels: content output, engagement, growth, attribution, speaking)
 2. Implement the thought leadership event taxonomy in PostHog
@@ -109,7 +109,7 @@ Configure n8n alerts for quality maintenance:
 
 Monthly optimization cycle:
 
-1. Pull the monthly deep-dive from the `thought-leadership-performance-monitor` drill
+1. Pull the monthly deep-dive from the `dashboard-builder` drill
 2. Identify:
    - Which pillars and formats produce the most leads (not just engagement)?
    - Which speaking events produced leads vs. which were vanity?
@@ -151,4 +151,4 @@ Monthly optimization cycle:
 - `founder-linkedin-content-batch` — automated weekly content generation, review, and scheduling pipeline
 - `content-repurposing` — transform top-performing posts into derivative content across platforms and formats
 - `conference-cfp-pipeline` — systematic CFP discovery, proposal generation, submission, and acceptance tracking
-- `thought-leadership-performance-monitor` — continuous monitoring, anomaly detection, attribution tracking, and weekly/monthly reporting
+- `dashboard-builder` — continuous monitoring, anomaly detection, attribution tracking, and weekly/monthly reporting

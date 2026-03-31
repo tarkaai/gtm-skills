@@ -14,7 +14,6 @@ slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
   - reddit-ads-campaign-build
-  - reddit-ads-subreddit-targeting
   - threshold-engine
 ---
 
@@ -36,7 +35,7 @@ Prove that Reddit's community-based audiences respond to your offer. A passing S
 
 ### 1. Research and select target subreddits
 
-Run the `reddit-ads-subreddit-targeting` drill. Identify 6-10 subreddits where your ICP is active. Group them into 2 clusters:
+Run the the reddit ads subreddit targeting workflow (see instructions below) drill. Identify 6-10 subreddits where your ICP is active. Group them into 2 clusters:
 
 - **Cluster A (Core):** 3-4 subreddits with the highest ICP density scores
 - **Cluster B (Adjacent):** 3-4 subreddits with related but broader audiences
@@ -110,5 +109,5 @@ Pull the final numbers from PostHog (leads) and your CRM (meetings). Cross-refer
 ## Drills Referenced
 
 - `reddit-ads-campaign-build` — builds the full campaign (subreddit targeting, creative, landing page, tracking)
-- `reddit-ads-subreddit-targeting` — discovers and scores subreddits for ad targeting
+- the reddit ads subreddit targeting workflow (see instructions below) — discovers and scores subreddits for ad targeting
 - `threshold-engine` — evaluates pass/fail against the 2-lead / 1-meeting threshold

@@ -58,7 +58,7 @@ Run the the summit series automation workflow (see instructions below) drill. Th
   - T-6: Full invitation email + net-new prospect sourcing via Clay + speaker promotion activation
   - T-4: Non-opener resend + speaker-specific emails + sponsor/partner cross-promotion
   - T-2: Final push email + reminder sequence activation + production prep
-  - T+1: Post-summit nurture trigger (hands off to `summit-attendee-nurture` drill)
+  - T+1: Post-summit nurture trigger (hands off to the summit attendee nurture workflow (see instructions below) drill)
 - Each promotion step fires PostHog events for attribution tracking.
 
 **Sponsor coordination automation:**

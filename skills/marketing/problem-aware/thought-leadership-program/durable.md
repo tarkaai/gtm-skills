@@ -16,7 +16,6 @@ slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
 drills:
   - autonomous-optimization
-  - thought-leadership-performance-monitor
 ---
 
 # Thought Leadership Program — Durable Intelligence
@@ -102,7 +101,7 @@ Run the `autonomous-optimization` drill configured for the thought leadership pr
 
 ### 2. Deploy Thought Leadership Performance Reporting
 
-Run the `thought-leadership-performance-monitor` drill:
+Run the `autonomous-optimization` drill:
 
 1. Maintain the 5-panel PostHog dashboard (content output, engagement, growth, attribution, speaking)
 2. Keep the thought leadership event taxonomy current as new channels or formats are added
@@ -190,4 +189,4 @@ In these cases: the optimizer flags the situation and recommends whether tactica
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop: detect anomalies in thought leadership KPIs, generate hypotheses (pillar saturation, CTA effectiveness, format mix, posting cadence), run experiments, evaluate results, auto-implement winners. Weekly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `thought-leadership-performance-monitor` — continuous monitoring of content output, engagement, audience growth, content-to-pipeline attribution, and speaking ROI. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — continuous monitoring of content output, engagement, audience growth, content-to-pipeline attribution, and speaking ROI. Provides the data layer the optimization loop reads from.

@@ -18,7 +18,6 @@ slug: "outbound-email-li-calls"
 install: "npx gtm-skills add marketing/solution-aware/outbound-email-li-calls"
 drills:
   - autonomous-optimization
-  - outbound-performance-monitor
   - signal-detection
 ---
 
@@ -45,7 +44,7 @@ Durable is autonomous optimization. AI agents run the play continuously, finding
 
 ### 1. Deploy the outbound performance monitoring system
 
-Run the `outbound-performance-monitor` drill. This builds:
+Run the `autonomous-optimization` drill. This builds:
 
 1. **PostHog dashboard** — "Outbound Email/LI/Calls — Performance" with panels for volume by channel, per-channel conversion funnels, cross-channel attribution, health metrics (deliverability, acceptance rate, connect rate), and pipeline impact.
 2. **Anomaly detection** — alerts for: email reply rate drops below 2% for 5 days, LinkedIn acceptance below 20% for 1 week, call connect rate below 10% for 1 week, meeting volume drops to zero for 5 days, negative reply rate exceeds 5%, email bounce rate exceeds 3%.
@@ -175,5 +174,5 @@ Total: ~200 hours over 6 months.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for meeting rate and cost per meeting
-- `outbound-performance-monitor` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection across email, LinkedIn, and calls
+- `autonomous-optimization` — always-on dashboards, weekly briefs, monthly trend reports, and anomaly detection across email, LinkedIn, and calls
 - `signal-detection` — continuous buying signal monitoring to keep the prospect pipeline fresh and prioritized

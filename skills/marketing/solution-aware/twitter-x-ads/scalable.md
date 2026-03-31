@@ -16,7 +16,7 @@ install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
 drills:
   - ab-test-orchestrator
   - tool-sync-workflow
-  - twitter-x-ads-performance-monitor
+  - dashboard-builder
 ---
 
 # Twitter/X Ads — Scalable Automation
@@ -66,7 +66,7 @@ Run the `tool-sync-workflow` drill to build bidirectional data pipelines:
 
 ### 3. Deploy always-on performance monitoring
 
-Run the `twitter-x-ads-performance-monitor` drill to set up:
+Run the `dashboard-builder` drill to set up:
 - **Daily monitoring**: n8n workflow checks all KPIs against thresholds
 - **Creative fatigue detection**: Flags variants with declining CTR
 - **Audience exhaustion detection**: Flags ad groups with rising frequency or declining impressions
@@ -120,4 +120,4 @@ Decision tree:
 
 - `ab-test-orchestrator` — Automates creative testing: variant production, performance-based pausing, winner detection, and refresh cycles
 - `tool-sync-workflow` — Builds bidirectional data pipelines between X Ads, PostHog, and Attio for full-funnel attribution
-- `twitter-x-ads-performance-monitor` — Always-on daily monitoring with fatigue detection, exhaustion alerts, budget guardrails, and optimization recommendations
+- `dashboard-builder` — Always-on daily monitoring with fatigue detection, exhaustion alerts, budget guardrails, and optimization recommendations

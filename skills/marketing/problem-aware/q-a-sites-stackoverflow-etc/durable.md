@@ -15,7 +15,6 @@ slug: "q-a-sites-stackoverflow-etc"
 install: "npx gtm-skills add marketing/problem-aware/q-a-sites-stackoverflow-etc"
 drills:
   - autonomous-optimization
-  - qa-authority-performance-monitor
   - dashboard-builder
 ---
 
@@ -128,7 +127,7 @@ Run the `dashboard-builder` drill to create the Durable-level PostHog dashboard:
 
 ### 3. Run the Q&A authority performance monitor
 
-Run the `qa-authority-performance-monitor` drill in always-on mode:
+Run the `autonomous-optimization` drill in always-on mode:
 
 1. Daily: track answer performance, reputation growth, profile click metrics.
 2. Weekly: generate comprehensive report with platform breakdown.
@@ -174,5 +173,5 @@ Common Room is optional at Durable level. It aggregates signals across Q&A platf
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `qa-authority-performance-monitor` -- daily answer tracking, reputation growth, and attribution reporting
+- `autonomous-optimization` -- daily answer tracking, reputation growth, and attribution reporting
 - `dashboard-builder` -- Durable-level PostHog dashboards with convergence tracking

@@ -17,7 +17,6 @@ slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
   - autonomous-optimization
-  - warm-intro-performance-reporting
   - partner-relationship-scoring
 ---
 
@@ -136,7 +135,7 @@ Estimated time for setup: 15 hours. Then always-on.
 
 ### 2. Deploy warm intro performance reporting
 
-Run the `warm-intro-performance-reporting` drill to build the monitoring and reporting layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring and reporting layer specific to this play:
 
 1. Build a PostHog dashboard "Warm Intros — Partner Performance" with per-connector intro volume, request-to-intro conversion, intro-to-meeting conversion, and full funnel visualization
 2. Create partner performance cohorts: high-converting connectors, volume connectors, declining connectors, new connectors, dormant connectors
@@ -229,5 +228,5 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor referral metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `warm-intro-performance-reporting` — per-connector dashboards, performance cohorts, weekly briefs, ROI tracking, and alert system feeding the optimization loop
+- `autonomous-optimization` — per-connector dashboards, performance cohorts, weekly briefs, ROI tracking, and alert system feeding the optimization loop
 - `partner-relationship-scoring` — enhanced at Durable with proactive connector recruitment, relationship health tracking, network expansion signals, and seasonal pattern detection

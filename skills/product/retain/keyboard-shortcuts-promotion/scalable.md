@@ -16,7 +16,7 @@ install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
   - ab-test-orchestrator
   - tooltip-targeting-automation
-  - shortcut-adoption-monitor
+  - dashboard-builder
 ---
 
 # Power User Features — Scalable Automation
@@ -101,7 +101,7 @@ This reinforcement loop makes shortcut adoption feel like personal progress, inc
 
 ### 4. Scale the stalled-user intervention system
 
-Using the `shortcut-adoption-monitor` drill's stalled-user detection, expand the interventions for scale:
+Using the `dashboard-builder` drill's stalled-user detection, expand the interventions for scale:
 
 - For **hint-ignored** users at scale: Instead of just a Loops email, build a 3-message drip sequence spaced 7 days apart. Message 1: GIF showing top shortcuts. Message 2: "Users who use shortcuts retain 40% longer" (if you have this data). Message 3: Link to an interactive shortcut tutorial. If all 3 fail, mark as permanently opted-out of shortcut promotion.
 - For **plateaued** users at scale: Build a "shortcut challenge" — a weekly prompt to try one new shortcut. Track completion. Users who complete 4 weekly challenges graduate from the promotion system entirely.
@@ -165,4 +165,4 @@ If FAIL on ratio at 500+ users: The promotion is reaching users but not converti
 
 - `ab-test-orchestrator` — systematic A/B testing of hint copy, timing, and format
 - `tooltip-targeting-automation` — persona-specific tooltip delivery with usage-based targeting
-- `shortcut-adoption-monitor` — adoption funnel tracking, stalled-user interventions at scale, retention correlation analysis
+- `dashboard-builder` — adoption funnel tracking, stalled-user interventions at scale, retention correlation analysis

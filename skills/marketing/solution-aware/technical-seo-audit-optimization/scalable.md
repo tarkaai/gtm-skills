@@ -16,7 +16,7 @@ install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimi
 drills:
   - technical-seo-crawl-audit
   - technical-seo-fix-pipeline
-  - technical-seo-regression-monitor
+  - dashboard-builder
   - seo-performance-monitor
   - threshold-engine
 ---
@@ -49,7 +49,7 @@ Upgrade the `technical-seo-crawl-audit` drill configuration:
 3. Add JavaScript rendering to the crawl config (catch issues with SPAs and dynamically rendered content)
 4. Expand PageSpeed Insights monitoring to test 50 pages per week (rotating through the full page inventory so every page is tested at least once per month)
 
-Upgrade the `technical-seo-regression-monitor` drill:
+Upgrade the `dashboard-builder` drill:
 
 1. Increase indexation monitoring from 50 pages/day to all high-value pages (top 200 by traffic)
 2. Add deployment hook: trigger an immediate crawl of changed pages whenever a deployment completes (n8n webhook listening to the CI/CD pipeline)
@@ -142,6 +142,6 @@ If FAIL: identify the bottleneck. If traffic is growing but not fast enough, the
 
 - `technical-seo-crawl-audit` — full-site automated crawl with JavaScript rendering
 - `technical-seo-fix-pipeline` — fully automated fix implementation with safe rollback
-- `technical-seo-regression-monitor` — deployment-triggered and scheduled regression detection
+- `dashboard-builder` — deployment-triggered and scheduled regression detection
 - `seo-performance-monitor` — comprehensive organic search performance tracking and reporting
 - `threshold-engine` — 6-month evaluation against traffic growth and ranking targets

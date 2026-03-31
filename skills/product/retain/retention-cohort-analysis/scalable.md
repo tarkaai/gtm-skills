@@ -17,7 +17,7 @@ drills:
   - cohort-retention-extraction
   - cohort-insight-generation
   - ab-test-orchestrator
-  - cohort-retention-health-monitor
+  - dashboard-builder
 ---
 
 # Retention Cohort Analytics — Scalable Automation
@@ -92,7 +92,7 @@ For each test: use PostHog feature flags for traffic splitting, measure both pri
 
 ### 4. Scale the health monitor
 
-Enhance the `cohort-retention-health-monitor` drill for Scalable coverage:
+Enhance the `dashboard-builder` drill for Scalable coverage:
 
 - Add panels for each new cohort dimension
 - Add an experiment tracking panel: active experiments, completed experiments, cumulative lift
@@ -161,4 +161,4 @@ If PASS (5+ experiments, net positive lift), proceed to Durable. If FAIL:
 - `cohort-retention-extraction` — weekly extraction across 5+ cohort dimensions
 - `cohort-insight-generation` — cross-dimensional insight generation feeding the experiment pipeline
 - `ab-test-orchestrator` — systematic A/B testing of retention interventions
-- `cohort-retention-health-monitor` — scaled monitoring with experiment tracking and cumulative lift ledger
+- `dashboard-builder` — scaled monitoring with experiment tracking and cumulative lift ledger

@@ -13,7 +13,6 @@ kpis: ["Partner response rate", "Integration activation count", "Partner-sourced
 slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
 drills:
-  - integration-partner-discovery
   - warm-intro-request
   - threshold-engine
 ---
@@ -37,7 +36,7 @@ One signed integration partnership with a complementary product and at least 5 l
 
 ### 1. Discover and qualify integration partner candidates
 
-Run the `integration-partner-discovery` drill to identify 10-15 complementary products whose users overlap your ICP. The drill scores each candidate on audience overlap, technical feasibility, and co-marketing potential. Focus on partners with:
+Run the the integration partner discovery workflow (see instructions below) drill to identify 10-15 complementary products whose users overlap your ICP. The drill scores each candidate on audience overlap, technical feasibility, and co-marketing potential. Focus on partners with:
 - API maturity score ≥ 3 (documented API with at least webhook support)
 - Integration type = "Light" (1-2 days to build)
 - Audience overlap score ≥ 6/10
@@ -92,6 +91,6 @@ Run the `threshold-engine` drill to measure against: ≥1 integration partnershi
 
 ## Drills Referenced
 
-- `integration-partner-discovery` — find and score complementary products as integration candidates
+- the integration partner discovery workflow (see instructions below) — find and score complementary products as integration candidates
 - `warm-intro-request` — map mutual connections and request introductions to partner contacts
 - `threshold-engine` — evaluate pass/fail against the play's outcome targets

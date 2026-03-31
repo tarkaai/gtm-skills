@@ -15,7 +15,6 @@ kpis: ["Champion score distribution", "Top-10 identification accuracy", "Referra
 slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
 drills:
-  - champion-identification-scoring
   - threshold-engine
 ---
 
@@ -38,7 +37,7 @@ Identify the top 10 community contributors by composite champion score (helpfuln
 
 ### 1. Build the community champion scoring model
 
-Run the `champion-identification-scoring` drill to create the composite scoring system:
+Run the the champion identification scoring workflow (see instructions below) drill to create the composite scoring system:
 
 - Extract community data from Slack, Discord, or forum channels for the trailing 30 days: messages sent, threads participated in, questions answered, reactions received, unique users interacted with
 - Weight the 5 scoring dimensions: helpfulness 35%, content creation 25%, consistency 20%, community reach 10%, product expertise 10%
@@ -111,5 +110,5 @@ Run the `threshold-engine` drill to evaluate:
 
 ## Drills Referenced
 
-- `champion-identification-scoring` — builds the composite scoring model from community contribution data (helpfulness, content, consistency, reach, expertise) and syncs scored members to Attio
+- the champion identification scoring workflow (see instructions below) — builds the composite scoring model from community contribution data (helpfulness, content, consistency, reach, expertise) and syncs scored members to Attio
 - `threshold-engine` — evaluates the pass/fail threshold and recommends next action

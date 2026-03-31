@@ -14,8 +14,6 @@ kpis: ["Objection resolution rate", "Timeline acceleration success", "Cost of in
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - timing-objection-response
-  - timing-objection-follow-up-sequence
   - timing-scorecard-setup
   - posthog-gtm-events
 ---
@@ -47,7 +45,7 @@ Run the `timing-scorecard-setup` drill to create timeline scoring fields on Atti
 Run the `posthog-gtm-events` drill to set up comprehensive tracking for the timing objection handling play. Configure these events:
 
 - `timing_objection_received` — fired when any timing objection is logged (manual entry at this level)
-- `timing_objection_handled` — fired after response is delivered (from `timing-objection-response` drill)
+- `timing_objection_handled` — fired after response is delivered (from the timing objection response workflow (see instructions below) drill)
 - `timing_follow_up_sent` — fired for each touch in the follow-up sequence
 - `timing_asset_engaged` — fired when prospect opens an urgency asset
 - `timing_objection_resolved` — fired when outcome changes to `timeline_accelerated` or `bridging_accepted`
@@ -57,7 +55,7 @@ Build a PostHog funnel: `timing_objection_received` -> `timing_objection_handled
 
 ### 3. Deploy automated follow-up sequences
 
-Run the `timing-objection-follow-up-sequence` drill to build n8n workflows that auto-trigger when a timing objection outcome is logged as `partially_resolved`, `unresolved`, or `reengagement_scheduled` in Attio. This creates:
+Run the the timing objection follow up sequence workflow (see instructions below) drill to build n8n workflows that auto-trigger when a timing objection outcome is logged as `partially_resolved`, `unresolved`, or `reengagement_scheduled` in Attio. This creates:
 
 - 7 root-cause-specific follow-up sequences (competing_priority, no_urgency, budget_cycle, organizational_change, risk_aversion, smokescreen variants, genuine_constraint)
 - Each sequence delivers 2-5 touches over 7-60 days with urgency assets matched to the root cause
@@ -68,7 +66,7 @@ Configure Instantly for email delivery (warmed accounts required) or Loops for w
 
 ### 4. Handle each objection through the response drill
 
-Continue running the `timing-objection-response` drill for each new timing objection. At this level, the manual steps are the same as Smoke, but the follow-up is now automated:
+Continue running the the timing objection response workflow (see instructions below) drill for each new timing objection. At this level, the manual steps are the same as Smoke, but the follow-up is now automated:
 
 1. Classify the objection root cause and determine genuine vs smokescreen
 2. If confidence >= 5, generate the response and cost-of-delay analysis (where applicable)
@@ -80,7 +78,7 @@ Target: 15-20 objections handled over 2 weeks.
 
 ### 5. Generate cost-of-delay for high-value deals
 
-For every deal where `total_quantified_pain` exists and root cause is `no_urgency`, `competing_priority`, or `budget_cycle`, ensure a cost-of-delay analysis is generated as part of the `timing-objection-response` drill. The analysis is attached as the primary asset in the follow-up sequence.
+For every deal where `total_quantified_pain` exists and root cause is `no_urgency`, `competing_priority`, or `budget_cycle`, ensure a cost-of-delay analysis is generated as part of the the timing objection response workflow (see instructions below) drill. The analysis is attached as the primary asset in the follow-up sequence.
 
 **Human action required:** Review each cost-of-delay analysis for accuracy before it is sent. Verify that pain figures match discovery data, calculations are defensible, and the document reads like a helpful analysis (not a pressure tactic).
 
@@ -126,7 +124,7 @@ If FAIL: diagnose the bottleneck:
 
 ## Drills Referenced
 
-- `timing-objection-response` — classifies each timing objection, determines genuine vs smokescreen, generates cost-of-delay analysis and strategy-matched response
-- `timing-objection-follow-up-sequence` — automated multi-touch follow-ups with root-cause-matched urgency assets (cost-of-delay, pilot proposals, reengagement scheduling)
+- the timing objection response workflow (see instructions below) — classifies each timing objection, determines genuine vs smokescreen, generates cost-of-delay analysis and strategy-matched response
+- the timing objection follow up sequence workflow (see instructions below) — automated multi-touch follow-ups with root-cause-matched urgency assets (cost-of-delay, pilot proposals, reengagement scheduling)
 - `timing-scorecard-setup` — creates timeline scoring fields, pipeline routing, and PostHog events for timing qualification in Attio
 - `posthog-gtm-events` — configures the full event tracking pipeline for the play

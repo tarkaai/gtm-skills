@@ -15,7 +15,6 @@ slug: "cold-event-hallway-demos"
 install: "npx gtm-skills add marketing/problem-aware/cold-event-hallway-demos"
 drills:
   - event-scouting
-  - hallway-demo-operations
   - posthog-gtm-events
   - meeting-booking-flow
 ---
@@ -66,7 +65,7 @@ Run the `meeting-booking-flow` drill to connect Cal.com bookings to Attio. When 
 
 ### 4. Execute hallway demo operations at each event
 
-For each of the 3-5 events, run the `hallway-demo-operations` drill:
+For each of the 3-5 events, run the the hallway demo operations workflow (see instructions below) drill:
 
 **Pre-event (day before):**
 - Review the target contact list for this event (photos, companies, hooks)
@@ -127,6 +126,6 @@ If FAIL: diagnose per-event. If one event was great and others flopped, the prob
 ## Drills Referenced
 
 - `event-scouting` — discover and rank events, build per-event target lists
-- `hallway-demo-operations` — execute demos, capture conversations, route follow-up
+- the hallway demo operations workflow (see instructions below) — execute demos, capture conversations, route follow-up
 - `posthog-gtm-events` — configure hallway demo funnel tracking in PostHog
 - `meeting-booking-flow` — connect Cal.com bookings to Attio and PostHog

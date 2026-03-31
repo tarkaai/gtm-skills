@@ -14,8 +14,6 @@ kpis: ["Response rate", "Cost per meeting", "Pipeline generated", "A/B test win 
 slug: "outbound-gift-campaigns"
 install: "npx gtm-skills add OutboundFounderLed/Marketing/SolutionAware/outbound-gift-campaigns"
 drills:
-  - gift-campaign-send
-  - gift-ab-testing
   - signal-detection
   - enrich-and-score
 ---
@@ -63,7 +61,7 @@ In n8n, create a workflow that runs weekly:
 
 1. Query Attio for all contacts tagged `ready_for_gift_campaign` that have not yet received a gift
 2. Cap at 12-15 per week (to maintain personalization quality and spread follow-up workload)
-3. For each contact, call the `gift-campaign-send` drill:
+3. For each contact, call the the gift campaign send workflow (see instructions below) drill:
    a. Run AI gift selection with the prospect's enrichment data
    b. Map the selection to the gifting platform catalog
    c. Send the gift
@@ -75,7 +73,7 @@ The AI gift selection at Scalable level should be fully autonomous for contacts 
 
 ### 3. Run structured A/B tests
 
-Run the `gift-ab-testing` drill. At Scalable volume (50/month), plan one test per month:
+Run the the gift ab testing workflow (see instructions below) drill. At Scalable volume (50/month), plan one test per month:
 
 **Month 1 — Test gift type:**
 - Control: $25 eGift card (recipient's choice via Tremendous)
@@ -167,7 +165,7 @@ If FAIL: Diagnose by segment — which signal types are underperforming? Which g
 
 ## Drills Referenced
 
-- `gift-campaign-send` — Automated weekly AI-powered gift selection, sending, and CRM logging
-- `gift-ab-testing` — Structured A/B tests on gift type, value, personalization, and timing
+- the gift campaign send workflow (see instructions below) — Automated weekly AI-powered gift selection, sending, and CRM logging
+- the gift ab testing workflow (see instructions below) — Structured A/B tests on gift type, value, personalization, and timing
 - `signal-detection` — Automated buying signal detection for priority targeting
 - `enrich-and-score` — Score and prioritize prospects for gift outreach

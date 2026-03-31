@@ -17,7 +17,6 @@ slug: "integration-setup-assistant"
 install: "npx gtm-skills add product/onboard/integration-setup-assistant"
 drills:
   - autonomous-optimization
-  - integration-health-monitor
 ---
 
 # Integration Setup Assistant -- Durable Intelligence
@@ -129,7 +128,7 @@ Post the brief to Slack and store in Attio.
 
 ### 2. Deploy continuous integration health monitoring
 
-Run the `integration-health-monitor` drill to maintain the monitoring infrastructure from Scalable level. At Durable, this drill's anomaly output is the primary input to the autonomous-optimization loop:
+Run the `autonomous-optimization` drill to maintain the monitoring infrastructure from Scalable level. At Durable, this drill's anomaly output is the primary input to the autonomous-optimization loop:
 
 - Daily health checks at 08:00 UTC feed anomalies directly to Phase 1 of the optimization loop
 - Weekly health reports provide context for Phase 2 hypothesis generation
@@ -203,4 +202,4 @@ If not sustained (rate drops below 60% for 2+ consecutive months despite active 
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `integration-health-monitor` -- continuous per-integration monitoring with anomaly alerts, weekly reports, and third-party change detection that feeds into the optimization loop
+- `autonomous-optimization` -- continuous per-integration monitoring with anomaly alerts, weekly reports, and third-party change detection that feeds into the optimization loop

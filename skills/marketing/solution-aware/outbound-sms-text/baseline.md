@@ -15,8 +15,6 @@ kpis: ["Response rate", "Delivery rate", "Opt-out rate", "Meetings booked"]
 slug: "outbound-sms-text"
 install: "npx gtm-skills add marketing/solution-aware/outbound-sms-text"
 drills:
-  - sms-outreach-sequence
-  - sms-copy-generation
   - posthog-gtm-events
 ---
 
@@ -41,7 +39,7 @@ The Baseline Run is the first always-on automated SMS outreach. Twilio sends mes
 
 ### 1. Provision SMS infrastructure
 
-Complete A2P 10DLC registration if not done during Smoke. Use the `sms-phone-number-provisioning` fundamental (referenced inside `sms-outreach-sequence` drill):
+Complete A2P 10DLC registration if not done during Smoke. Use the `sms-phone-number-provisioning` fundamental (referenced inside the sms outreach sequence workflow (see instructions below) drill):
 
 1. Purchase a local Twilio phone number with SMS capability in a relevant area code
 2. Register your brand via Twilio Trust Hub (one-time: $4 brand registration + optional $40 vetting)
@@ -65,7 +63,7 @@ Push to Attio with tags `play:outbound-sms-text` and `level:baseline`. Set `sms_
 
 ### 3. Generate personalized SMS copy
 
-Run the `sms-copy-generation` drill. Use the winning variant from Smoke as the base template. For each prospect, generate a personalized 3-message sequence using Claude:
+Run the the sms copy generation workflow (see instructions below) drill. Use the winning variant from Smoke as the base template. For each prospect, generate a personalized 3-message sequence using Claude:
 
 - Message 1: Signal-based opener with prospect's name, company, and specific context. Under 160 characters. Includes "Reply STOP to opt out."
 - Message 2: Proof point referencing a similar company's results. Under 160 characters. CTA: "Reply YES for a 10-min call."
@@ -75,7 +73,7 @@ Validate every generated message is under 160 characters after merge field resol
 
 ### 4. Deploy the automated SMS sequence
 
-Run the `sms-outreach-sequence` drill. Build the n8n workflow:
+Run the the sms outreach sequence workflow (see instructions below) drill. Build the n8n workflow:
 
 1. **Daily cron trigger** at 9am (or segmented by timezone)
 2. **Attio query**: fetch contacts where `sms_campaign_status=active` AND `sms_next_step_date <= today` AND `sms_opted_out != true`
@@ -88,7 +86,7 @@ Daily send limit: 40 messages per day (200 contacts across ~5 days of initial se
 
 ### 5. Configure automated reply handling
 
-Wire up inbound reply routing via the `sms-conversation-routing` fundamental (part of `sms-outreach-sequence` drill):
+Wire up inbound reply routing via the `sms-conversation-routing` fundamental (part of the sms outreach sequence workflow (see instructions below) drill):
 
 1. Twilio inbound webhook posts to n8n
 2. n8n matches sender phone to Attio contact
@@ -167,6 +165,6 @@ Total: ~15 hours over 2 weeks.
 
 ## Drills Referenced
 
-- `sms-outreach-sequence` — build and deploy the automated 3-step SMS sequence via Twilio + n8n
-- `sms-copy-generation` — generate personalized SMS copy for each prospect using Claude
+- the sms outreach sequence workflow (see instructions below) — build and deploy the automated 3-step SMS sequence via Twilio + n8n
+- the sms copy generation workflow (see instructions below) — generate personalized SMS copy for each prospect using Claude
 - `posthog-gtm-events` — set up the SMS event taxonomy for tracking and measurement

@@ -16,7 +16,6 @@ slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
 drills:
   - autonomous-optimization
-  - award-performance-monitor
 ---
 
 # Industry Award Submissions — Durable Intelligence
@@ -100,7 +99,7 @@ Run the `autonomous-optimization` drill configured for the award program. Note: 
 
 ### 2. Deploy Award Performance Reporting
 
-Run the `award-performance-monitor` drill at full scale:
+Run the `autonomous-optimization` drill at full scale:
 
 1. Maintain the 4-panel PostHog dashboard (submission pipeline, win tracking, social proof, attribution)
 2. Keep anomaly detection thresholds calibrated annually
@@ -179,4 +178,4 @@ The optimizer should detect external shifts:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core optimization loop (monthly cadence): detect anomalies in award KPIs, generate hypotheses (category targeting, submission quality, amplification strategy, social proof placement), run experiments, evaluate results, auto-implement winners. Quarterly optimization briefs. Converges when successive experiments produce <2% improvement.
-- `award-performance-monitor` — continuous monitoring of submission pipeline, win rates, social proof impact, and award-to-pipeline attribution. Provides the data layer the optimization loop reads from.
+- `autonomous-optimization` — continuous monitoring of submission pipeline, win rates, social proof impact, and award-to-pipeline attribution. Provides the data layer the optimization loop reads from.

@@ -18,7 +18,6 @@ slug: "executive-demo"
 install: "npx gtm-skills add sales/aligned/executive-demo"
 drills:
   - autonomous-optimization
-  - exec-demo-performance-monitor
 ---
 
 # Executive-Focused Demo — Durable Intelligence
@@ -101,7 +100,7 @@ Run the `autonomous-optimization` drill configured for the executive-demo play. 
 
 ### 2. Maintain the exec demo performance monitoring system
 
-Run the `exec-demo-performance-monitor` drill continuously. At Durable level, enhance monitoring:
+Run the `autonomous-optimization` drill continuously. At Durable level, enhance monitoring:
 
 1. **Persona trend detection**: Beyond anomaly detection, track long-term per-persona trends. Is CFO conversion slowly declining while CEO conversion is improving? This suggests market or competitive shifts affecting financial decision-makers specifically.
 2. **Exec engagement score recalibration**: Monthly, recalculate the correlation between exec engagement score and deal close rate. If the correlation weakens, adjust scoring weights. The optimization loop can experiment with different weight distributions.
@@ -183,4 +182,4 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` -- the always-on monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum of exec demo effectiveness per persona
-- `exec-demo-performance-monitor` -- continuous monitoring of exec demo funnel with per-persona trend detection, exec engagement score recalibration, competitive signal aggregation, and ROI narrative fatigue detection
+- `autonomous-optimization` -- continuous monitoring of exec demo funnel with per-persona trend detection, exec engagement score recalibration, competitive signal aggregation, and ROI narrative fatigue detection

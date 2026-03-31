@@ -14,7 +14,6 @@ kpis: ["Collection rate", "Quality score", "Submission rate"]
 slug: "testimonial-collection"
 install: "npx gtm-skills add product/referrals/testimonial-collection"
 drills:
-  - testimonial-request-pipeline
   - threshold-engine
 ---
 # Systematic Testimonial Collection — Smoke Test
@@ -32,12 +31,12 @@ Collect at least 10 customer testimonials with an average quality score of 3.0 o
 ## Instructions
 
 ### 1. Build the testimonial collection form
-Run the `testimonial-request-pipeline` drill, step 1 only. Create the Typeform with structured fields: role/company, problem before, outcome after, quantified impact, recommendation score, and quote permission. Configure the logic jump so users scoring <7 on the recommendation question are routed away from the testimonial flow. Set the webhook to POST to n8n (or manually export responses for Smoke).
+Run the the testimonial request pipeline workflow (see instructions below) drill, step 1 only. Create the Typeform with structured fields: role/company, problem before, outcome after, quantified impact, recommendation score, and quote permission. Configure the logic jump so users scoring <7 on the recommendation question are routed away from the testimonial flow. Set the webhook to POST to n8n (or manually export responses for Smoke).
 
 **Human action required:** Review the form copy and test it yourself before sending to any customer. Ensure the questions are clear and the form takes under 4 minutes to complete.
 
 ### 2. Identify your first 30 testimonial candidates
-Run the `testimonial-request-pipeline` drill, step 2. Manually pull a list from PostHog and Attio: users with account age ≥60 days, active in the last 14 days, and any positive signal (high NPS, frequent usage, successful support interactions, or verbal praise in support tickets). You do not need automated cohorts for Smoke — a manual query is sufficient.
+Run the the testimonial request pipeline workflow (see instructions below) drill, step 2. Manually pull a list from PostHog and Attio: users with account age ≥60 days, active in the last 14 days, and any positive signal (high NPS, frequent usage, successful support interactions, or verbal praise in support tickets). You do not need automated cohorts for Smoke — a manual query is sufficient.
 
 Sort by likelihood of response: users who have already said something positive (in NPS, support, or email) go first.
 
@@ -49,7 +48,7 @@ Include a direct link to the Typeform. Do not batch-blast — send in waves of 1
 **Human action required:** Write the first 5 request messages personally. After confirming the tone works (≥2 responses from first 5), template the approach for the remaining 25.
 
 ### 4. Process and score responses
-As testimonials come in, run the quality scoring from `testimonial-request-pipeline` drill, step 6. Score each on specificity (1-5), quantification (1-5), attribution (1-5), and authority (1-5). Store the scores and full text in Attio as notes on each contact.
+As testimonials come in, run the quality scoring from the testimonial request pipeline workflow (see instructions below) drill, step 6. Score each on specificity (1-5), quantification (1-5), attribution (1-5), and authority (1-5). Store the scores and full text in Attio as notes on each contact.
 
 For testimonials scoring below 3.0, send a brief follow-up asking one clarifying question: "Could you share a specific number — hours saved, percentage improvement, or revenue impact?"
 
@@ -74,7 +73,7 @@ Run the `threshold-engine` drill to measure against: ≥10 testimonials with ave
 **Play-specific cost:** Free (if under 10 responses) or ~$25/mo for Typeform Basic
 
 ## Drills Referenced
-- `testimonial-request-pipeline` — form setup, candidate identification, request sending, quality scoring
+- the testimonial request pipeline workflow (see instructions below) — form setup, candidate identification, request sending, quality scoring
 - `threshold-engine` — pass/fail evaluation against ≥10 testimonials at ≥3.0 quality
 
 ---

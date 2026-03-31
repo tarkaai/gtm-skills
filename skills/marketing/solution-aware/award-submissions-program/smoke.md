@@ -14,7 +14,6 @@ kpis: ["Awards researched", "Submissions completed", "Win/finalist placements", 
 slug: "award-submissions-program"
 install: "npx gtm-skills add marketing/solution-aware/award-submissions-program"
 drills:
-  - award-submission-pipeline
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ Prove that the company can win industry awards and that the wins produce usable 
 
 ### 1. Research the Award Landscape
 
-Run the `award-submission-pipeline` drill at Smoke scale (10-15 awards):
+Run the the award submission pipeline workflow (see instructions below) drill at Smoke scale (10-15 awards):
 
 1. Use Claygent or web search to find awards in these categories:
    - **Product awards:** G2 Best Software, Product Hunt Golden Kitty, SaaS Awards, Capterra Shortlist
@@ -133,5 +132,5 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `award-submission-pipeline` — discover, score, and prioritize awards; prepare reusable content blocks; write and submit tailored applications
+- the award submission pipeline workflow (see instructions below) — discover, score, and prioritize awards; prepare reusable content blocks; write and submit tailored applications
 - `threshold-engine` — evaluate Smoke test results against the pass threshold and recommend next action

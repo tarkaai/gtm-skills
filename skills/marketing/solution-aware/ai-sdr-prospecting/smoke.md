@@ -17,7 +17,6 @@ install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
 drills:
   - icp-definition
   - build-prospect-list
-  - ai-prospect-research
   - threshold-engine
 ---
 
@@ -53,7 +52,7 @@ Requirements per contact: verified email address, LinkedIn profile URL. Reject a
 
 ### 3. Run AI research on all 50 prospects
 
-Run the `ai-prospect-research` drill. Configure Clay Claygent columns to generate:
+Run the the ai prospect research workflow (see instructions below) drill. Configure Clay Claygent columns to generate:
 
 - A research brief per prospect (company context, recent activity, pain signals, competitive context)
 - A personalization hook (one-sentence opener referencing a specific fact)
@@ -124,5 +123,5 @@ Total: ~6 hours of active work spread over 1 week.
 
 - `icp-definition` — define ideal customer profile with scoring criteria and solution-aware competitive context
 - `build-prospect-list` — source, enrich, and qualify 50 contacts in Clay and push to Attio
-- `ai-prospect-research` — run AI agents to generate per-prospect research briefs, personalization hooks, and outreach angles
+- the ai prospect research workflow (see instructions below) — run AI agents to generate per-prospect research briefs, personalization hooks, and outreach angles
 - `threshold-engine` — evaluate pass/fail against >=2 meetings threshold

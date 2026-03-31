@@ -17,7 +17,6 @@ slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosting"
 drills:
   - autonomous-optimization
-  - hackathon-performance-monitor
 ---
 
 # Hackathon Sponsorship -- Durable Intelligence
@@ -96,7 +95,7 @@ Estimated time for setup: 12 hours. Then always-on.
 
 ### 2. Maintain hackathon performance monitoring
 
-Continue running the `hackathon-performance-monitor` drill from Scalable. At Durable level, enhance it:
+Continue running the `autonomous-optimization` drill from Scalable. At Durable level, enhance it:
 
 - **Cross-event pattern detection:** When 2+ consecutive hackathons show the same metric degradation (e.g., declining submission rate), flag it as a systemic issue rather than a single-event anomaly. Feed this into the autonomous optimization loop as a high-priority signal.
 - **Predictive registration modeling:** Use historical data to predict registration counts and submission rates for upcoming hackathons based on: theme similarity to past events, time of year, promotion budget, and community size. Alert if predictions fall below targets so the team can boost recruitment before the event.
@@ -188,5 +187,5 @@ This level runs continuously. If metrics sustain or improve, the play is durable
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `hackathon-performance-monitor` -- enhanced at Durable with cross-event pattern detection, predictive registration modeling, and developer lifecycle tracking
+- `autonomous-optimization` -- enhanced at Durable with cross-event pattern detection, predictive registration modeling, and developer lifecycle tracking
 - `autonomous-optimization` -- weekly optimization briefs, monthly community health reports, cross-hackathon A/B test synthesis, and product adoption funnel analysis

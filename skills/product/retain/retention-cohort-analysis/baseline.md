@@ -17,7 +17,6 @@ drills:
   - cohort-retention-extraction
   - cohort-insight-generation
   - posthog-gtm-events
-  - cohort-retention-health-monitor
 ---
 
 # Retention Cohort Analytics — Baseline Run
@@ -132,4 +131,3 @@ If PASS, proceed to Scalable. If FAIL:
 - `cohort-retention-extraction` — automated weekly extraction across 3 cohort dimensions
 - `cohort-insight-generation` — cross-dimensional insight generation with convergent evidence scoring
 - `posthog-gtm-events` — instruments the cohort analysis pipeline events for tracking
-- `cohort-retention-health-monitor` — builds the retention dashboard, alerting, and weekly health briefs

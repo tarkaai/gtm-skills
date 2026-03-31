@@ -16,7 +16,6 @@ slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
   - autonomous-optimization
-  - field-territory-optimization
 ---
 
 # Local Field Prospecting — Durable
@@ -123,7 +122,7 @@ These reports feed into the autonomous optimization loop — the monthly report 
 
 ### 3. Run continuous territory optimization
 
-Run the `field-territory-optimization` drill on a monthly cadence:
+Run the the field territory optimization workflow (see instructions below) drill on a monthly cadence:
 
 - Refresh venue scores based on latest data
 - Discover new venues in adjacent or underexplored areas matching top-performer profiles
@@ -182,4 +181,4 @@ The optimization loop tracks convergence — when the play has reached its local
 
 - `autonomous-optimization` — the core detect-hypothesize-experiment-evaluate-implement loop that finds the local maximum
 - `autonomous-optimization` — automated weekly/monthly reports with alert thresholds
-- `field-territory-optimization` — monthly venue scoring, territory expansion, and rotation management
+- the field territory optimization workflow (see instructions below) — monthly venue scoring, territory expansion, and rotation management

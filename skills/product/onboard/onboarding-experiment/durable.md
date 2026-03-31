@@ -17,7 +17,6 @@ install: "npx gtm-skills add product/onboard/onboarding-experiment"
 drills:
   - autonomous-optimization
   - onboarding-health-monitor
-  - onboarding-experiment-orchestration
 ---
 
 # Onboarding A/B Tests — Durable Intelligence
@@ -93,7 +92,7 @@ The health monitor feeds anomaly data directly into the autonomous-optimization 
 
 ### 3. Configure ongoing experiment execution
 
-Use the `onboarding-experiment-orchestration` drill as the execution framework for each experiment the autonomous loop launches. The agent:
+Use the the onboarding experiment orchestration workflow (see instructions below) drill as the execution framework for each experiment the autonomous loop launches. The agent:
 
 - Creates the PostHog experiment with proper flag setup, metrics, and guardrails
 - Implements the variant in the appropriate tool (Intercom, Loops, or product code)
@@ -171,4 +170,4 @@ This level runs continuously for 6 months minimum. Monthly review:
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics for anomalies, diagnose root causes, generate hypotheses, run experiments, evaluate results, implement winners, generate weekly briefs, detect convergence
 - `onboarding-health-monitor` — per-persona onboarding monitoring with anomaly thresholds, daily health checks, weekly reports, and cohort drift detection that feeds anomaly data into the autonomous optimization loop
-- `onboarding-experiment-orchestration` — execution framework for each experiment: PostHog setup, variant implementation, tracking instrumentation, and statistical evaluation
+- the onboarding experiment orchestration workflow (see instructions below) — execution framework for each experiment: PostHog setup, variant implementation, tracking instrumentation, and statistical evaluation

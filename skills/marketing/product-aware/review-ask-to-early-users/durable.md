@@ -15,7 +15,6 @@ slug: "review-ask-to-early-users"
 install: "npx gtm-skills add marketing/product-aware/review-ask-to-early-users"
 drills:
   - autonomous-optimization
-  - review-velocity-monitor
   - directory-performance-monitor
 ---
 
@@ -80,7 +79,7 @@ Run the `autonomous-optimization` drill to set up the continuous improvement cyc
 
 ### 2. Deploy play-specific review velocity monitoring
 
-Run the `review-velocity-monitor` drill to build the monitoring layer specific to this play:
+Run the `autonomous-optimization` drill to build the monitoring layer specific to this play:
 
 **Review velocity dashboard:**
 - Reviews per week by directory (trend)
@@ -191,5 +190,5 @@ When the `autonomous-optimization` drill detects convergence (3 consecutive expe
 ## Drills Referenced
 
 - `autonomous-optimization` — continuous monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for review generation
-- `review-velocity-monitor` — play-specific monitoring of review velocity, ratings, ask effectiveness, and review-to-lead attribution
+- `autonomous-optimization` — play-specific monitoring of review velocity, ratings, ask effectiveness, and review-to-lead attribution
 - `directory-performance-monitor` — cross-directory KPI tracking and competitive intelligence

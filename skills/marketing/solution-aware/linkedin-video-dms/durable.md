@@ -16,7 +16,6 @@ slug: "linkedin-video-dms"
 install: "npx gtm-skills add marketing/solution-aware/linkedin-video-dms"
 drills:
   - autonomous-optimization
-  - video-outreach-performance-monitor
   - dm-performance-monitor
 ---
 
@@ -100,7 +99,7 @@ Run the `autonomous-optimization` drill configured for the LinkedIn video DM pla
 
 ### 2. Deploy the video outreach performance monitor
 
-Run the `video-outreach-performance-monitor` drill to build the monitoring layer that feeds data to the autonomous optimization loop:
+Run the `autonomous-optimization` drill to build the monitoring layer that feeds data to the autonomous optimization loop:
 
 - PostHog dashboard with real-time video DM funnel: DM sent > video watched > watch completed > DM replied > meeting booked > deal created
 - Video-specific panels: watch rate by ICP segment, watch completion by video length, CTA click rate by CTA text variant
@@ -187,5 +186,5 @@ Even after convergence, external conditions change. The monitoring system detect
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: detect metric anomalies, generate hypotheses, run A/B experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `video-outreach-performance-monitor` — PostHog dashboard, anomaly alerts, and weekly video performance briefs feeding the optimization loop
+- `autonomous-optimization` — PostHog dashboard, anomaly alerts, and weekly video performance briefs feeding the optimization loop
 - `dm-performance-monitor` — DM-specific funnel tracking, send-time heatmaps, and monthly channel health reports

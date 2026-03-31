@@ -14,9 +14,7 @@ kpis: ["Meetings booked per month", "Conversation-to-meeting rate", "Pipeline va
 slug: "local-field-prospecting"
 install: "npx gtm-skills add sales/qualified/local-field-prospecting"
 drills:
-  - field-visit-planning
   - field-contact-logging
-  - field-territory-optimization
   - enrich-and-score
   - ab-test-orchestrator
 ---
@@ -43,7 +41,7 @@ Field prospecting becomes a data-driven, optimized machine. The agent identifies
 
 ### 1. Analyze Baseline data and optimize territories
 
-Run the `field-territory-optimization` drill using your 2+ weeks of Baseline data:
+Run the the field territory optimization workflow (see instructions below) drill using your 2+ weeks of Baseline data:
 
 - Build the field performance dashboard in PostHog with venue-level breakdowns
 - Identify high-yield venues (high conversations AND high meeting conversion) — increase frequency
@@ -88,7 +86,7 @@ Track all variants in PostHog using feature flags. Minimum 20 conversations per 
 
 ### 4. Expand territory coverage
 
-Using patterns from `field-territory-optimization`:
+Using patterns from the field territory optimization workflow (see instructions below):
 
 - **Adjacent neighborhoods**: If downtown coworking spaces work, test the ones 2 miles away in emerging neighborhoods
 - **Different venue types**: If coworking spaces work, test business incubators, accelerator offices, industry-specific hubs, and co-located startup campuses
@@ -110,7 +108,7 @@ Field prospecting has a unique advantage over digital outreach: referrals happen
 
 Increase from 2 sessions/week to 3-4 sessions/week, each covering a different territory:
 
-- **Monday**: Agent runs `field-visit-planning` for the week with pre-enriched target lists
+- **Monday**: Agent runs the field visit planning workflow (see instructions below) for the week with pre-enriched target lists
 - **Tuesday/Wednesday/Thursday**: Field sessions (2-3 hours each)
 - **Friday**: Agent runs territory optimization analysis, A/B test evaluation, and plans next week
 - **Ongoing**: Automated follow-ups run continuously via n8n
@@ -154,8 +152,8 @@ Total: ~50 hours over 2 months (~6 hours/week)
 
 ## Drills Referenced
 
-- `field-visit-planning` — weekly venue research with pre-enriched target lists
+- the field visit planning workflow (see instructions below) — weekly venue research with pre-enriched target lists
 - `field-contact-logging` — structured CRM logging with A/B test variant tracking
-- `field-territory-optimization` — data-driven venue/territory/timing optimization
+- the field territory optimization workflow (see instructions below) — data-driven venue/territory/timing optimization
 - `enrich-and-score` — pre-enrich venue businesses so founder has targets before arriving
 - `ab-test-orchestrator` — systematically test pitch variants and follow-up approaches

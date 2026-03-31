@@ -15,7 +15,6 @@ slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
 drills:
   - autonomous-optimization
-  - dm-performance-monitor
   - signal-detection
 ---
 
@@ -127,7 +126,7 @@ Build an n8n workflow triggered at 8am daily:
 
 ### 2. Deploy the DM performance monitor
 
-Run the `dm-performance-monitor` drill. This creates the always-on monitoring layer that feeds the autonomous optimization loop:
+Run the `autonomous-optimization` drill. This creates the always-on monitoring layer that feeds the autonomous optimization loop:
 
 1. Build the PostHog DM performance dashboard with panels:
    - Funnel: dm_sent > dm_replied > dm_meeting_booked > dm_deal_created (by channel)
@@ -212,5 +211,5 @@ These limits protect against automation causing damage:
 ## Drills Referenced
 
 - `autonomous-optimization` -- the core monitor > diagnose > experiment > evaluate > implement loop that finds the local maximum
-- `dm-performance-monitor` -- always-on dashboard, alerts, and reporting for DM outreach across LinkedIn and X
+- `autonomous-optimization` -- always-on dashboard, alerts, and reporting for DM outreach across LinkedIn and X
 - `signal-detection` -- continuous buying signal monitoring feeding the DM pipeline

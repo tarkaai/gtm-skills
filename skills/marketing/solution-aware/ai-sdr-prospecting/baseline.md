@@ -15,7 +15,6 @@ kpis: ["Meeting rate", "Reply rate by outreach angle", "Cost per meeting", "AI r
 slug: "ai-sdr-prospecting"
 install: "npx gtm-skills add marketing/solution-aware/ai-sdr-prospecting"
 drills:
-  - ai-prospect-research
   - cold-email-sequence
   - linkedin-outreach
   - posthog-gtm-events
@@ -44,7 +43,7 @@ Baseline proves that AI SDR prospecting is repeatable at 200+ contacts. AI agent
 
 ### 1. Scale AI research to 200 prospects
 
-Run the `ai-prospect-research` drill at 4x Smoke volume. Build a prospect list of 200 contacts using the same ICP validated in Smoke. Import into Clay and run the Claygent research columns:
+Run the the ai prospect research workflow (see instructions below) drill at 4x Smoke volume. Build a prospect list of 200 contacts using the same ICP validated in Smoke. Import into Clay and run the Claygent research columns:
 
 1. Process in batches of 50. After the first batch, verify 10 research briefs for accuracy.
 2. Track research quality in PostHog: log `ai_research_completed` events with properties `batch_size`, `quality_pass_rate`, `credits_used`.
@@ -150,7 +149,7 @@ Total: ~18 hours over 2 weeks.
 
 ## Drills Referenced
 
-- `ai-prospect-research` — AI-driven per-prospect research generating personalization hooks, pain hypotheses, and outreach angles for all 200 contacts
+- the ai prospect research workflow (see instructions below) — AI-driven per-prospect research generating personalization hooks, pain hypotheses, and outreach angles for all 200 contacts
 - `cold-email-sequence` — build and launch 4 outreach-angle-specific email sequences in Instantly with AI-generated merge variables
 - `linkedin-outreach` — parallel LinkedIn connection and messaging sequence using research brief context
 - `posthog-gtm-events` — configure event taxonomy for tracking AI SDR funnel from research to meeting

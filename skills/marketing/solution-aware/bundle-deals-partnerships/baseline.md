@@ -14,7 +14,6 @@ kpis: ["Bundle deals per partner", "Page-to-deal conversion rate", "Revenue per 
 slug: "bundle-deals-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/bundle-deals-partnerships"
 drills:
-  - bundle-deal-structuring
   - posthog-gtm-events
   - warm-intro-request
 ---
@@ -53,7 +52,7 @@ This taxonomy must be identical across all bundle landing pages so aggregate rep
 
 ### 2. Launch 2-4 additional bundles
 
-Using the validated process from Smoke, run the `bundle-deal-structuring` drill for each new partner. Improvements over Smoke:
+Using the validated process from Smoke, run the the bundle deal structuring workflow (see instructions below) drill for each new partner. Improvements over Smoke:
 
 - **Templatize the landing page**: Clone the Smoke-level landing page and swap partner branding, pricing, and copy. Each new page should take <2 hours to build, not 4+.
 - **Templatize the pricing model**: Start from the Smoke-level pricing structure and adjust per partner. Keep the same tier names (Starter, Growth, Scale) across bundles for consistency.
@@ -132,6 +131,6 @@ Total: ~20 hours of active work over 8 weeks
 
 ## Drills Referenced
 
-- `bundle-deal-structuring` — design pricing, build landing pages, and configure deal tracking for each new bundle partner
+- the bundle deal structuring workflow (see instructions below) — design pricing, build landing pages, and configure deal tracking for each new bundle partner
 - `posthog-gtm-events` — establish the standard bundle event taxonomy across all landing pages
 - `warm-intro-request` — source introductions to partnership leads at target companies to accelerate pitch-to-agreement

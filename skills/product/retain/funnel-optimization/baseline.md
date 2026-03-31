@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
   - signup-friction-reduction
   - activation-optimization
-  - funnel-optimization-health-monitor
   - threshold-engine
 ---
 
@@ -133,5 +132,4 @@ If FAIL: Diagnose — is the issue insufficient experiment volume (need more tes
 
 - `signup-friction-reduction` — Deploys feature-flagged friction fixes with A/B tracking and automated monitoring
 - `activation-optimization` — Finds the activation metric, measures it, and systematically improves it
-- `funnel-optimization-health-monitor` — Always-on daily monitoring with alerting and weekly health reports
 - `threshold-engine` — Evaluates cumulative improvement against the >=20% threshold

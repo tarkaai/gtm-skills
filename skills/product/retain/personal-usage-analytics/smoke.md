@@ -13,7 +13,6 @@ kpis: ["Analytics view rate", "Time on analytics surface", "Return visit within 
 slug: "personal-usage-analytics"
 install: "npx gtm-skills add product/retain/personal-usage-analytics"
 drills:
-  - usage-analytics-surface-build
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -50,7 +49,7 @@ Also verify that the core product usage events you plan to surface (e.g., projec
 
 ### 2. Build the minimal analytics surface
 
-Run the `usage-analytics-surface-build` drill. For the Smoke Test, simplify to the minimum viable version:
+Run the the usage analytics surface build workflow (see instructions below) drill. For the Smoke Test, simplify to the minimum viable version:
 
 - Select 3 metrics that grow with usage and imply value (e.g., total projects created, actions completed this week, time saved)
 - Build a simplified n8n aggregation workflow that runs daily for the test group only
@@ -93,6 +92,6 @@ If FAIL: diagnose via PostHog. If view rate is low, the discovery prompt is the 
 
 ## Drills Referenced
 
-- `usage-analytics-surface-build` — builds the user-facing analytics surface with metrics, aggregation pipeline, and discovery prompts
+- the usage analytics surface build workflow (see instructions below) — builds the user-facing analytics surface with metrics, aggregation pipeline, and discovery prompts
 - `posthog-gtm-events` — instruments the event taxonomy for tracking analytics surface interactions
 - `threshold-engine` — evaluates pass/fail against the 50% view rate threshold

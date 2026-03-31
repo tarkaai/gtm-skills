@@ -17,7 +17,7 @@ drills:
   - podcast-pitch-outreach
   - podcast-guest-preparation
   - content-repurposing
-  - podcast-performance-monitor
+  - dashboard-builder
   - ab-test-orchestrator
 ---
 
@@ -80,7 +80,7 @@ Target: 5-10 derivative pieces per episode. Spread distribution over 2-3 weeks.
 
 ### 5. Build the performance dashboard
 
-Run the `podcast-performance-monitor` drill:
+Run the `dashboard-builder` drill:
 - PostHog dashboard: traffic per podcast, lead funnel per podcast, episode traffic decay curves
 - Attio tracking: per-episode clicks (7d, 30d, lifetime), leads attributed, host-reported downloads
 - Weekly automated report via n8n: new episodes aired, total podcast traffic, leads this week, booking pipeline status
@@ -129,5 +129,5 @@ Measure against: ≥ 8 bookings AND ≥ 10 leads over 2 months. If bookings are 
 - `podcast-pitch-outreach` — scaled pitch campaigns with A/B testing via Instantly
 - `podcast-guest-preparation` — templatized prep with automated tracking link creation
 - `content-repurposing` — turn each episode into 5-10 derivative content pieces
-- `podcast-performance-monitor` — PostHog dashboard, automated weekly reports, ROI tracking
+- `dashboard-builder` — PostHog dashboard, automated weekly reports, ROI tracking
 - `ab-test-orchestrator` — test pitch variables, CTA offers, and targeting criteria

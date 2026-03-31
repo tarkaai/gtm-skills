@@ -94,7 +94,7 @@ Track save rate: percentage of at-risk users who re-engage (new session within 7
 
 Run the the trial intervention orchestration workflow (see instructions below) drill to route every trial user to the right intervention on the right channel:
 
-1. Connect the daily `trial-activation-scoring` output to the intervention routing engine
+1. Connect the daily the trial activation scoring workflow (see instructions below) output to the intervention routing engine
 2. Configure the intervention matrix that maps (segment, trial day, trajectory) to (intervention type, channel, priority)
 3. Wire the three delivery channels:
    - **In-app (Intercom):** milestone coaching, upgrade nudges, urgency prompts

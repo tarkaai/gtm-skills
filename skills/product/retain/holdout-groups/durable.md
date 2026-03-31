@@ -16,8 +16,6 @@ slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
   - autonomous-optimization
-  - holdout-lift-measurement
-  - holdout-integrity-monitor
 ---
 
 # Holdout Group Analysis — Durable Intelligence
@@ -44,7 +42,7 @@ An always-on AI agent manages the holdout analysis system end-to-end. The agent 
 Run the `autonomous-optimization` drill configured specifically for the holdout measurement system. The agent loop operates as follows:
 
 **Monitor (daily via n8n cron):**
-- Use the `holdout-lift-measurement` drill's weekly output as the primary data source
+- Use the the holdout lift measurement workflow (see instructions below) drill's weekly output as the primary data source
 - Run `posthog-anomaly-detection` on the cumulative lift trend: is lift accelerating, flat, or declining?
 - Classify the current state:
   - **Growing:** Lift increased >2% this week. No action needed — current experiments are working.
@@ -86,7 +84,7 @@ Run the `autonomous-optimization` drill configured specifically for the holdout 
 
 ### 2. Maintain holdout integrity at scale
 
-The `holdout-integrity-monitor` drill runs weekly with zero manual intervention. At Durable level, add:
+The `autonomous-optimization` drill runs weekly with zero manual intervention. At Durable level, add:
 - Automated contamination remediation: if a holdout user is exposed to an experiment, the agent automatically disables that experiment's flag for the contaminated users and logs the incident
 - Long-term demographic drift detection: compare holdout vs treatment demographics quarterly (not just weekly) to catch slow-moving shifts
 - Holdout refresh assessment: after 6 months, evaluate whether the holdout should be dissolved and recreated to capture a new user mix
@@ -137,5 +135,5 @@ The play is durable when: cumulative lift is sustained or improving over the 6-m
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners
-- `holdout-lift-measurement` — weekly cumulative lift calculation that feeds the autonomous loop with ground-truth holdout vs treatment data
-- `holdout-integrity-monitor` — continuous validation that the holdout group remains clean, with automated contamination remediation
+- the holdout lift measurement workflow (see instructions below) — weekly cumulative lift calculation that feeds the autonomous loop with ground-truth holdout vs treatment data
+- `autonomous-optimization` — continuous validation that the holdout group remains clean, with automated contamination remediation

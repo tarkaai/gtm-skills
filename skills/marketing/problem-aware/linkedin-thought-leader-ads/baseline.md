@@ -85,7 +85,7 @@ Set up a repeating cycle that keeps fresh content flowing into campaigns:
 - Agent monitors organic performance daily
 
 **Week 2 (end):**
-- Agent runs `tla-post-selection` drill on the new posts
+- Agent runs the tla post selection workflow (see instructions below) drill on the new posts
 - Top performers are added to the TLA campaigns
 - Worst-performing ads (lowest engagement rate or highest CPC) are paused
 - Campaign always has 4-6 active ads

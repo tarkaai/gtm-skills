@@ -14,7 +14,6 @@ kpis: ["Business case completion rate", "Executive review rate", "Time to execut
 slug: "business-case-development"
 install: "npx gtm-skills add sales/aligned/business-case-development"
 drills:
-  - business-case-assembly
   - threshold-engine
 ---
 
@@ -46,7 +45,7 @@ If fewer than 5 deals qualify, run `call-transcript-pain-extraction` on recent d
 
 ### 2. Run the business-case-assembly drill for each deal
 
-For each qualifying deal, run the `business-case-assembly` drill. This orchestrates:
+For each qualifying deal, run the the business case assembly workflow (see instructions below) drill. This orchestrates:
 - Pain extraction and quantification (if not already done)
 - Stakeholder role classification (identify the Economic Buyer and Champion)
 - Strategic alignment mapping (connect your product to their known initiatives)
@@ -117,5 +116,5 @@ If FAIL: diagnose the failure mode:
 
 ## Drills Referenced
 
-- `business-case-assembly` — orchestrates pain extraction, ROI modeling, strategic alignment, and document generation into a single workflow
+- the business case assembly workflow (see instructions below) — orchestrates pain extraction, ROI modeling, strategic alignment, and document generation into a single workflow
 - `threshold-engine` — evaluates business case delivery and approval metrics against pass/fail criteria
