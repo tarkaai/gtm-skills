@@ -1,81 +1,102 @@
 ---
 name: viral-loop-design-smoke
 description: >
-    Built-In Virality — Smoke Test. Built-in virality (invite team, share results, collaborate) to
-  drive organic growth.
+  Built-In Virality — Smoke Test. Design and manually test one product-native viral mechanic
+  (invite, share, or collaborate) with a small user cohort to prove the loop produces any signups.
 stage: "Product > Referrals"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Viral coeff ≥0.3"
-kpis: ["Viral coefficient", "Invite rate", "Invite conversion"]
+outcome: "Viral coefficient ≥0.3 measured across ≥50 active users"
+kpis: ["Viral coefficient (K)", "Invites sent per active user", "Invite-to-signup conversion rate"]
 slug: "viral-loop-design"
 install: "npx gtm-skills add product/referrals/viral-loop-design"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - viral-mechanic-design
   - threshold-engine
 ---
+
 # Built-In Virality — Smoke Test
 
-> **Stage:** Product → Referrals | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product → Referrals | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Built-In Virality — Smoke Test. Built-in virality (invite team, share results, collaborate) to drive organic growth.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Viral coeff ≥0.3
+One viral mechanic designed, prototyped, and tested with a small user cohort. The mechanic produces measurable signups from non-users who were exposed to the product through existing users' actions. Viral coefficient K >= 0.3.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Users perform the viral trigger action (invite, share, or collaborate) without being prompted
+- Non-users click through shared artifacts or invite links
+- At least some non-users who land on the conversion surface sign up
+- Signed-up referees activate (reach the product's activation metric)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Design the viral mechanic
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `viral-mechanic-design` drill. The drill analyzes existing PostHog data to identify which product actions naturally expose the product to non-users, selects the highest-potential viral mechanic type (invite-to-collaborate, share-to-show, or use-to-expose), and produces a mechanic specification document.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+The specification includes: the trigger action, the shareable artifact, the conversion surface for non-users, the expected viral coefficient, and the PostHog event schema.
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Build a minimal prototype
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Viral coeff ≥0.3. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+**Human action required:** Implement the viral mechanic in the product. The mechanic needs three components:
 
----
+1. A trigger surface — the UI element that lets users perform the viral action (invite button, share link generator, or collaborative feature). Place it at the moment of highest user motivation (immediately after the user creates value).
+2. A shareable artifact — what the non-user receives or sees (invite email, shared link with preview, embedded widget). Must carry a referral identifier (unique link or code per user).
+3. A conversion surface — the landing page or signup gate the non-user hits. Must show enough product value to motivate signup while requiring an account to interact fully.
 
-## KPIs to track
-- Viral coefficient
-- Invite rate
-- Invite conversion
+Keep the prototype minimal. One sharing channel (email or link copy). One landing page variant. No reward system yet.
 
----
+### 3. Instrument basic tracking
 
-## Pass threshold
-**Viral coeff ≥0.3**
+Add PostHog events manually for the prototype:
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+- `viral_trigger_action` — user clicks the share/invite button
+- `viral_share_initiated` — user actually sends the invite or copies the link (with `share_channel` and `recipients_count` properties)
+- `viral_landing_viewed` — non-user lands on the conversion surface (with `referral_code` property)
+- `viral_signup_completed` — non-user creates an account via the viral path (with `referral_code` property)
 
----
+Use `posthog-custom-events` fundamental for implementation details.
 
-## How to run this skill
+### 4. Test with a small cohort
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Human action required:** Select 50-100 active users. Roll out the viral mechanic to this cohort only (use a PostHog feature flag if available, or target by user segment). Let it run for 5-7 days. Do not prompt users to share — the mechanic should work through natural product usage.
 
-_Install this skill: `npx gtm-skills add product/referrals/viral-loop-design`_
+### 5. Measure viral coefficient
+
+Run the `threshold-engine` drill to evaluate:
+
+```
+K = (total invites sent by cohort / cohort size) * (signups from invites / total invite recipients)
+```
+
+Pull from PostHog: count of `viral_share_initiated` (sum of `recipients_count`), count of `viral_signup_completed` where `referral_code` is present.
+
+**Pass threshold:** K >= 0.3.
+
+If K < 0.1, the mechanic type is wrong — the trigger action is too infrequent or the conversion surface is too weak. Return to step 1 and select a different mechanic.
+
+If 0.1 <= K < 0.3, the mechanic has potential but needs friction reduction. Check: Are users finding the share button? Are non-users clicking through? Where in the funnel is the biggest drop-off? Fix the weakest step and re-test for another 5 days.
+
+If K >= 0.3, proceed to Baseline.
+
+## Time Estimate
+
+- 2 hours: viral mechanic design (drill + specification)
+- 1 hour: prototype implementation guidance and tracking setup
+- 0.5 hours: cohort selection and feature flag configuration
+- 1.5 hours: measurement, analysis, and threshold evaluation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, feature flags, funnel analysis | Free tier: 1M events/mo, 1M feature flag requests/mo. Paid: usage-based starting at $0.00005/event. https://posthog.com/pricing |
+
+## Drills Referenced
+
+- `viral-mechanic-design` — designs the viral mechanic type, trigger, and loop specification
+- `threshold-engine` — evaluates K against the pass threshold and recommends next action
