@@ -1,81 +1,108 @@
 ---
 name: integration-partnerships-scalable
 description: >
-    Integration Partnerships — Scalable Automation. Build product integrations with complementary
-  tools and co-market to drive awareness and leads from solution-aware users of partner products.
-stage: "Marketing > Solution Aware"
-motion: "Partnerships & Warm Intros"
+  Integration Partnerships — Scalable Automation. Automate partner pipeline management, build 10+
+  integrations with co-marketing, and use Crossbeam for account-level overlap targeting.
+stage: "Marketing > SolutionAware"
+motion: "PartnershipsWarmIntros"
 channels: "Product, Content, Email"
 level: "Scalable Automation"
 time: "75 hours over 3 months"
 outcome: "≥10 active integrations and ≥60 qualified leads/quarter over 6 months"
-kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
+kpis: ["Active integration count", "Partner-sourced leads per quarter", "Integration activation rate", "Cost per partner-sourced lead", "Partner pipeline velocity"]
 slug: "integration-partnerships"
 install: "npx gtm-skills add marketing/solution-aware/integration-partnerships"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
+  - partner-pipeline-automation
+  - integration-pipeline-health-monitor
+  - integration-launch-campaign
 ---
+
 # Integration Partnerships — Scalable Automation
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Partnerships & Warm Intros | **Channels:** Product, Content, Email
+> **Stage:** Marketing → SolutionAware | **Motion:** PartnershipsWarmIntros | **Channels:** Product, Content, Email
 
-## Overview
-Integration Partnerships — Scalable Automation. Build product integrations with complementary tools and co-market to drive awareness and leads from solution-aware users of partner products.
+## Outcomes
 
-**Time commitment:** 75 hours over 3 months
-**Pass threshold:** ≥10 active integrations and ≥60 qualified leads/quarter over 6 months
+Ten or more active product integrations with co-marketing in place, generating 60+ qualified leads per quarter sustained over 6 months. Partner pipeline management is automated: outreach sequences, launch coordination, lead attribution, and health monitoring run without manual intervention.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Partner pipeline always has ≥5 prospects, ≥3 in conversation, and ≥2 building at any time
+- Integration activation rate stays within 20% of Baseline benchmark (≥15%)
+- Crossbeam overlap data shows ≥500 shared accounts across active partners
+- Partner-sourced leads convert to meetings at ≥ the rate of other marketing channels
+- Monthly partner-sourced lead volume is growing or stable (not declining)
 
 ## Instructions
 
-### 1. Automate partner workflows
-Run the `follow-up-automation` drill to build n8n workflows: auto-track partner referrals via UTM parameters, auto-create Attio deals from partner-sourced leads, and auto-send partner performance reports monthly.
+### 1. Automate the partner pipeline
 
-### 2. Build partner ecosystem
-Run the `tool-sync-workflow` drill to connect: partner referral tracking to Attio deals, PostHog events to partner attribution, and Loops emails for partner nurture sequences.
+Run the `partner-pipeline-automation` drill to build n8n workflows that manage the integration partner lifecycle:
 
-### 3. Scale partnerships
-Expand to 20+ active partnerships. Systematize the collaboration formats that worked. Create templates and playbooks for common partnership types.
+- **Partner outreach automation**: When a new partner is added to the "Integration Partners" list in Attio with status "Prospect," auto-send a personalized outreach email via Instantly. Reference the specific integration opportunity identified during discovery. Follow up once after 5 days. Update Attio status on reply.
+- **Launch coordination workflow**: When a partner moves to "Building" status in Attio, trigger a checklist: generate co-marketing assets (run `integration-launch-campaign` drill), set launch date reminder, confirm partner distribution commitment, send partner their tracked URLs.
+- **Lead attribution workflow**: When PostHog fires an `integration_lead_captured` event with a partner UTM source, auto-create a lead in Attio linked to the partner deal, increment the partner's lead counter, and notify the team.
+- **Partner nurture sequence**: After each integration launch, auto-send the partner a 7-day performance report, a 14-day full retrospective, and a 30-day partnership summary with a proposal for the next co-marketing push.
 
-### 4. Evaluate against threshold
-Measure against: ≥10 active integrations and ≥60 qualified leads/quarter over 6 months. If PASS, proceed to Durable. If FAIL, consolidate to the top 5 highest-performing partnerships.
+### 2. Scale with Crossbeam account mapping
 
----
+If not already configured, set up Crossbeam and connect your Attio CRM data. For each active and prospective integration partner, run account overlap reports. Prioritize:
 
-## KPIs to track
-- Weekly volume
-- Conversion rate
-- Cost per result
-- Automation efficiency
-- Quality score
+- Partners with ≥100 overlapping target accounts (their customers are your prospects)
+- Partners where overlap accounts are in active deal stages (warm leads who already use the partner product)
+- Partners whose overlap is growing (their user base is expanding into your ICP)
 
----
+Use overlap data to prioritize which integrations to build next. An integration with a partner who shares 500 target accounts is more valuable than one with 50.
 
-## Pass threshold
-**≥10 active integrations and ≥60 qualified leads/quarter over 6 months**
+### 3. Launch integrations at cadence
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+Run the `integration-launch-campaign` drill for each new integration. Target 2-3 new integration launches per month. Standardize the process:
 
----
+1. Week 1: Build the integration (use existing patterns from Baseline — most integrations should be Light or Medium complexity by now)
+2. Week 2: Generate co-marketing assets and coordinate with partner
+3. Week 3: Launch (your email + partner email + both blogs + social)
+4. Weeks 4-5: Monitor 14-day performance, send partner the retrospective
 
-## How to run this skill
+Create integration templates for common patterns (webhook sync, API pull, n8n connector) to reduce build time from days to hours.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Monitor portfolio health
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/integration-partnerships`_
+Run the `integration-pipeline-health-monitor` drill to build dashboards and weekly briefs covering:
+
+- Per-partner lead attribution and conversion rates
+- Integration activation and usage retention
+- Partner distribution effectiveness (which partners actually send to their audience)
+- Dormant integrations (built but generating zero leads — investigate or sunset)
+- Pipeline forecast (based on partner pipeline velocity, how many leads will partners generate next quarter)
+
+Set guardrails: if total partner-sourced leads drop >20% below the Baseline benchmark for 2 consecutive weeks, investigate root causes before continuing to add new partners.
+
+### 5. Evaluate against threshold
+
+Measure against: ≥10 active integrations with co-marketing AND ≥60 qualified leads/quarter sustained over 6 months. If PASS, proceed to Durable. If FAIL, consolidate: focus on the top 5 highest-performing partners, deepen co-marketing with them, and sunset integrations with zero lead generation.
+
+## Time Estimate
+
+- Partner pipeline automation setup: 8 hours (one-time)
+- Crossbeam configuration: 4 hours (one-time)
+- Integration builds (2-3/month x 3 months): 30 hours
+- Co-marketing launches (2-3/month x 3 months): 15 hours
+- Monitoring, reporting, optimization: 18 hours (6/month x 3 months)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Crossbeam | Partner account overlap mapping | Free tier available; Growth: $0-200/mo (https://www.crossbeam.com/pricing) |
+| n8n | Partner pipeline automation workflows | Free (self-hosted); Cloud: $24/mo (https://n8n.io/pricing) |
+| Attio | CRM for partner pipeline and lead attribution | Plus: $29/user/mo (https://attio.com/pricing) |
+| PostHog | Integration tracking, dashboards, alerts | Free tier: 1M events/mo (https://posthog.com/pricing) |
+| Loops | Partner co-marketing email sends | Starter: $49/mo (https://loops.so/pricing) |
+| Instantly | Partner outreach automation | Growth: $30/mo (https://instantly.ai/pricing) |
+
+## Drills Referenced
+
+- `partner-pipeline-automation` — automate partner outreach, launch coordination, lead attribution, and nurture sequences via n8n
+- `integration-pipeline-health-monitor` — dashboards, weekly briefs, per-partner ROI, and performance alerts
+- `integration-launch-campaign` — execute co-marketing launch for each new integration
