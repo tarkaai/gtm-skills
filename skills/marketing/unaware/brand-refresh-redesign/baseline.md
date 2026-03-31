@@ -1,81 +1,129 @@
 ---
 name: brand-refresh-redesign-baseline
 description: >
-    Brand Refresh & Redesign — Baseline Run. Update brand identity, messaging, and website to better
-  position for target market and improve conversion across all awareness stages.
+  Brand Refresh & Redesign — Baseline Run. Implement the winning positioning
+  concept across key website pages behind feature flags, A/B test against
+  the current brand, and measure conversion impact over 8 weeks.
 stage: "Marketing > Unaware"
 motion: "Lead Capture Surface"
 channels: "Website, Content"
 level: "Baseline Run"
 time: "18 hours over 2 weeks"
-outcome: "Launch refreshed brand identity with ≥20% improvement in key conversion metrics over 8 weeks"
-kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
+outcome: ">=20% improvement in homepage-to-conversion rate with new brand positioning vs. control over 8 weeks"
+kpis: ["Homepage bounce rate (new vs. old)", "Homepage-to-pricing click rate", "Overall conversion rate (new vs. old)", "Avg session duration (new vs. old)", "Statistical significance reached (yes/no)"]
 slug: "brand-refresh-redesign"
 install: "npx gtm-skills add marketing/unaware/brand-refresh-redesign"
 drills:
+  - brand-refresh-implementation
   - posthog-gtm-events
-  - feature-announcement
-  - activation-optimization
+  - lead-capture-surface-setup
+  - threshold-engine
 ---
+
 # Brand Refresh & Redesign — Baseline Run
 
-> **Stage:** Marketing → Unaware | **Motion:** Lead Capture Surface | **Channels:** Website, Content
+> **Stage:** Marketing > Unaware | **Motion:** Lead Capture Surface | **Channels:** Website, Content
 
-## Overview
-Brand Refresh & Redesign — Baseline Run. Update brand identity, messaging, and website to better position for target market and improve conversion across all awareness stages.
+## Outcomes
 
-**Time commitment:** 18 hours over 2 weeks
-**Pass threshold:** Launch refreshed brand identity with ≥20% improvement in key conversion metrics over 8 weeks
+Take the winning positioning concept from the Smoke audit and implement it on the highest-traffic website pages. Deploy behind PostHog feature flags so 50% of visitors see the new brand and 50% see the old. Run for 8 weeks and measure whether the new positioning improves conversion. Pass threshold: >=20% improvement in homepage-to-conversion rate.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Feature flags deployed and both variants (old and new) receiving traffic within 48 hours
+- New brand pages loading correctly with no broken links, forms, or CTAs (verify via automated checks)
+- Bounce rate delta visible within 2 weeks (early signal of messaging resonance)
+- At least 500 visitors per variant by week 2 (enough data for initial trend)
+- Form submission rate trending up for the new variant by week 4
 
 ## Instructions
 
-### 1. Configure event tracking
-Run the `posthog-gtm-events` drill to set up detailed tracking: `brand-refresh-redesign_impression`, `brand-refresh-redesign_engaged`, `brand-refresh-redesign_converted`, `brand-refresh-redesign_retained`. Build PostHog funnels showing the complete user journey through this experience.
+### 1. Snapshot pre-refresh baseline
 
-### 2. Set up feature announcements
-Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
+Using `posthog-gtm-events`, record a baseline snapshot before any changes:
+- Homepage bounce rate
+- Homepage > pricing page click rate
+- Pricing > signup conversion rate
+- Overall visitor-to-lead conversion rate
+- Average session duration
+- Form submission rate across all lead capture surfaces
 
-### 3. Optimize activation
-Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
+Store as a PostHog custom event `brand_refresh_baseline_snapshot` with all metrics as properties. Also log in Attio.
 
-### 4. Evaluate against threshold
-Measure against: Launch refreshed brand identity with ≥20% improvement in key conversion metrics over 8 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
+### 2. Set up lead capture surfaces
 
----
+Run the `lead-capture-surface-setup` drill to ensure conversion infrastructure is ready:
+- Primary form on homepage (newsletter, demo request, or free trial)
+- Secondary forms on key landing pages
+- All forms tracked in PostHog with `brand_refresh_form_submit` event
+- Form submissions route to Attio via n8n webhook
+- Ensure forms work identically on both old and new brand variants
 
-## KPIs to track
-- Conversion rate
-- Cost per result
-- Response quality
-- Cycle time
+### 3. Implement the brand refresh
 
----
+Run the `brand-refresh-implementation` drill with the winning positioning concept from Smoke:
 
-## Pass threshold
-**Launch refreshed brand identity with ≥20% improvement in key conversion metrics over 8 weeks**
+**Pages to update (in priority order):**
+1. **Homepage**: New H1, H2, primary CTA, social proof section
+2. **Pricing page**: Updated feature descriptions using new messaging framework
+3. **Top 3 landing pages**: Headline and CTA alignment with new positioning
+4. **About page**: Mission/vision aligned with new positioning
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+**Deployment strategy:**
+- All changes deployed behind PostHog feature flags: `brand-refresh-homepage`, `brand-refresh-pricing`, etc.
+- 50/50 traffic split: half see original, half see new brand
+- Feature flags are persistent (same visitor always sees the same variant across sessions)
 
----
+The drill handles: Webflow page updates, feature flag configuration, conversion tracking, and email sequence updates.
 
-## How to run this skill
+**Human action required:** Review the new brand copy before enabling feature flags. Check that visual elements (images, colors, layout) still look correct with new headlines. Approve feature flag activation.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Monitor the A/B test
 
-_Install this skill: `npx gtm-skills add marketing/unaware/brand-refresh-redesign`_
+Track weekly using PostHog:
+
+**Week 1-2**: Are both variants delivering? Check for implementation bugs. Verify event tracking works on both variants. Look at bounce rate — the fastest signal of brand resonance.
+
+**Week 3-4**: Bounce rate and engagement trends. Is the new brand reducing bounce rate? Is session duration increasing? Are more visitors reaching the pricing page?
+
+**Week 5-6**: Conversion data accumulating. Is the new brand driving more form submissions? What's the delta?
+
+**Week 7-8**: Statistical significance check. Is there enough data to declare a winner?
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill:
+- **Homepage-to-conversion rate improvement >= 20%**: Compare the new variant's conversion rate against the old variant's rate.
+- **Statistical significance**: p-value < 0.05 (PostHog experiments calculate this automatically).
+
+Decision tree:
+- **PASS (>=20% improvement, statistically significant)**: Roll out new brand to 100% of visitors. Proceed to Scalable for systematic multi-page optimization.
+- **PARTIAL (5-19% improvement or not yet significant)**: Extend the test for 4 more weeks. If still not significant, the new brand is marginally better — consider implementing with continued monitoring.
+- **FAIL (new brand performs worse)**: Revert to old brand. Return to Smoke to test a different positioning concept.
+
+## Time Estimate
+
+- 2 hours: Baseline snapshot and lead capture setup
+- 6 hours: Brand refresh implementation (copy updates, feature flag deployment, email sequence updates)
+- 2 hours: Implementation QA and launch verification
+- 4 hours: Weekly monitoring (30 minutes/week for 8 weeks)
+- 4 hours: Final evaluation, statistical analysis, and decision documentation
+
+**Total: ~18 hours over 8 weeks (front-loaded: 10 hours in week 1, then monitoring)**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Feature flags, A/B testing, web analytics | Free tier (1M events/mo) |
+| Webflow | Website page updates | ~$15-40/mo |
+| Tally | Lead capture forms (if not using Webflow forms) | Free tier |
+| Loops | Email sequence updates | ~$30/mo Starter |
+| n8n | Form submission routing to Attio | Free self-hosted or $20/mo cloud |
+
+## Drills Referenced
+
+- `brand-refresh-implementation` — Executes all website copy and visual updates behind feature flags with A/B test configuration and conversion tracking
+- `posthog-gtm-events` — Configures the baseline snapshot and all brand-refresh-specific tracking events
+- `lead-capture-surface-setup` — Ensures all conversion forms are working, tracked, and routing leads to CRM
+- `threshold-engine` — Evaluates the A/B test results against the >=20% conversion improvement threshold with statistical significance check
