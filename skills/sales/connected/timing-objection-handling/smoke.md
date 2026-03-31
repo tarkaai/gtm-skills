@@ -1,85 +1,117 @@
 ---
 name: timing-objection-handling-smoke
 description: >
-    Timing Objection Handling — Smoke Test. Address 'not the right time' objections by uncovering
-  true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate
-  deal timeline.
+  Timing Objection Handling — Smoke Test. Manually diagnose and respond to 5 timing
+  objections using structured root-cause classification, smokescreen detection, and
+  strategy-matched responses. Validate that a systematic approach accelerates more
+  timelines than ad-hoc handling.
 stage: "Sales > Connected"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Timing objections handled on ≥5 opportunities in 1 week"
-kpis: ["Timing objection resolution rate", "Timeline acceleration rate", "Cost of inaction presentation impact", "Eventually close rate"]
+outcome: ">=3 out of 5 timing objections result in timeline acceleration or bridging solution acceptance within 1 week"
+kpis: ["Timing objection resolution rate", "Timeline acceleration rate", "Cost of inaction presentation impact", "Smokescreen detection accuracy"]
 slug: "timing-objection-handling"
 install: "npx gtm-skills add sales/connected/timing-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - timing-objection-response
   - threshold-engine
 ---
+
 # Timing Objection Handling — Smoke Test
 
-> **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales > Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
-## Overview
-Timing Objection Handling — Smoke Test. Address 'not the right time' objections by uncovering true urgency drivers, quantifying cost of inaction, and creating legitimate urgency to accelerate deal timeline.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Timing objections handled on ≥5 opportunities in 1 week
+Prove that classifying timing objections by root cause — and distinguishing genuine constraints from smokescreens — produces a measurably higher timeline acceleration rate than ad-hoc responses. Target: >=3 out of 5 timing objections result in timeline acceleration or bridging solution acceptance (prospect agrees to move forward sooner, accepts a pilot, or commits to a concrete reengagement date).
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Root cause classification completed within 24 hours of objection for all 5 objections
+- Smokescreen vs genuine constraint determination made for all 5 objections
+- Diagnostic questions asked (not just reactions given) in at least 4 out of 5 conversations
+- Cost-of-delay analysis generated and presented for at least 3 out of 5 deals where pain data exists
+- Follow-up with urgency asset sent within 48 hours for all unresolved objections
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for timing-objection-handling. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Identify 5 active deals with timing objections
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your timing-objection-handling materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Query Attio for deals in the Connected stage where the prospect has raised a timing objection ("not the right time", "maybe next quarter", "we're focused on other things", "let's circle back later"). If fewer than 5 exist today, include deals expected to have next calls this week.
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+For each deal, pull from Attio:
+- Deal value
+- Total quantified pain (from discovery)
+- Pain-to-price ratio
+- Timeline category (Immediate, Near-term, Medium-term, Long-term)
+- Urgency drivers identified (if any)
+- Champion name and role
+- Economic buyer engagement status
+- Competitor evaluation status
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Run the `timing-objection-response` drill for each objection
+
+For each of the 5 deals, execute the `timing-objection-response` drill:
+
+1. Classify the timing objection root cause (competing_priority, no_urgency, budget_cycle, organizational_change, risk_aversion, smokescreen_budget, smokescreen_authority, smokescreen_fit, or genuine_constraint)
+2. Determine whether the objection is a genuine constraint or a smokescreen masking a deeper concern (budget, authority, or fit)
+3. If classification confidence is below 5, prepare the diagnostic questions and ask them on the next call before proceeding
+4. If root cause is `no_urgency`, `competing_priority`, or `budget_cycle` and pain data exists, generate a cost-of-delay analysis showing monthly and cumulative cost of waiting
+5. Generate a strategy-matched response (urgency_creation, cost_of_delay, bridging_solution, phased_approach, deferred_start, executive_alignment, reframe_to_pain, or strategic_patience)
+6. **Human action required:** Review the generated response and cost-of-delay analysis. Adjust for your voice and relationship context. Deliver on the next call or via follow-up email.
+7. Log the outcome in Attio: `timeline_accelerated`, `bridging_accepted`, `reengagement_scheduled`, `partially_resolved`, `unresolved`, or `deal_lost`
+
+Do NOT accept "not the right time" at face value on any deal. Always run diagnostic questions to confirm whether timing is the real blocker. If the objection is a smokescreen, address the underlying concern directly.
+
+### 3. Track results in Attio and PostHog
+
+For each objection handled, create an Attio note with:
+- Objection quote (prospect's exact words)
+- Root cause classification
+- Real constraint vs smokescreen determination
+- Strategy used
+- Cost-of-delay figures presented (if applicable)
+- Response delivered (what you actually said or sent)
+- Outcome
+- Days from objection to resolution (or current status if still open)
+
+Fire PostHog events: `timing_objection_handled` with root_cause, is_real_constraint, strategy_used, cost_of_delay_presented, and outcome properties.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: Timing objections handled on ≥5 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Run the `threshold-engine` drill at the end of 1 week. The threshold engine queries PostHog for `timing_objection_handled` events and checks:
+- Total objections handled: must be >= 5
+- Objections with outcome `timeline_accelerated` or `bridging_accepted`: must be >= 3
+- Smokescreen detection: how many smokescreen classifications were confirmed by the eventual outcome
 
----
+If PASS (>=3 accelerated or bridging accepted): document which strategies won per root cause, which diagnostic questions surfaced the best information, and whether cost-of-delay presentations correlated with acceleration. Proceed to Baseline.
 
-## KPIs to track
-- Timing objection resolution rate
-- Timeline acceleration rate
-- Cost of inaction presentation impact
-- Eventually close rate
+If FAIL (<3 resolved): analyze why. Common failure modes:
+- Weak discovery upstream (no quantified pain, so cost-of-delay analysis has no teeth) -> fix discovery before re-running
+- Wrong root cause classification (strategy didn't address actual concern) -> improve diagnostic questions
+- No champion to reinforce urgency internally -> focus on champion development
+- Genuine constraints where strategic patience was the right answer -> these don't count as failures if reengagement dates are set
 
----
+## Time Estimate
 
-## Pass threshold
-**Timing objections handled on ≥5 opportunities in 1 week**
+- 1 hour: identifying deals and pulling CRM data
+- 2.5 hours: running the timing-objection-response drill 5 times (classify, generate cost-of-delay, review, deliver)
+- 0.5 hours: logging outcomes and tracking
+- 1 hour: threshold evaluation and analysis
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Tools & Pricing
 
----
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | Deal records, objection logging, timeline fields, notes | Standard stack (excluded from play budget) |
+| PostHog | Event tracking for objection outcomes | Standard stack (excluded from play budget) |
+| Anthropic Claude API | Objection classification + cost-of-delay generation + response strategy | ~$0.50-2 for 5 objections at Sonnet 4.6 rates ($3/$15 per M tokens) — [pricing](https://platform.claude.com/docs/en/about-claude/pricing) |
 
-## How to run this skill
+**Play-specific cost:** Free (Claude API cost negligible at this volume)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add sales/connected/timing-objection-handling`_
+- `timing-objection-response` — classifies each timing objection by root cause, determines genuine vs smokescreen, generates cost-of-delay analysis, produces a strategy-matched response, and logs outcomes
+- `threshold-engine` — evaluates pass/fail against the >=3/5 acceleration target at week's end
