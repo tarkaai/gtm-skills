@@ -14,7 +14,7 @@ difficulty: Intermediate
 
 ## Steps
 
-1. **Create a new sequence.** Go to Engage > Sequences > New Sequence. Name it with campaign context (e.g., "Q1 DevTools VP Eng - Pain Point"). Select your sending mailbox and set the sequence to run on weekdays only, between 8am-11am in the recipient's timezone.
+1. **Create a new sequence via API.** Use the Apollo API to create a sequence. Name it with campaign context (e.g., "Q1 DevTools VP Eng - Pain Point"). Select your sending mailbox and set the sequence to run on weekdays only, between 8am-11am in the recipient's timezone.
 
 2. **Build your email steps.** Add 3-4 email steps for a standard outbound sequence. Step 1: personalized cold email (day 0). Step 2: value-add follow-up (day 3). Step 3: social proof or case study (day 7). Step 4: breakup email (day 14). Keep each email under 150 words.
 

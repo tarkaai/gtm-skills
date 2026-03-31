@@ -13,7 +13,7 @@ difficulty: Intermediate
 
 ## Steps
 
-1. **Set up Attio credentials in n8n.** Go to n8n Settings > Credentials > New Credential. Select "Attio" (or use HTTP Header Auth with your Attio API key if the native node is not available). Test the connection by making a simple API call to list your workspace objects.
+1. **Set up Attio credentials in n8n.** Use the n8n MCP or API to configure Attio credentials. If using the native Attio node, set your API key. If the native node is not available, use HTTP Header Auth with your Attio API key. Test the connection by making a simple API call to list your workspace objects.
 
 2. **Create contacts from enriched leads.** Build a workflow: Trigger (webhook from Clay or CSV upload) > Set node (map fields to Attio schema) > Attio node (Create/Update Contact). Map fields: email_address, first_name, last_name, company, title, source. Use "Update if exists" to prevent duplicates.
 

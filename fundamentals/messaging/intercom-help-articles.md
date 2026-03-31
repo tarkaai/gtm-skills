@@ -21,6 +21,6 @@ difficulty: Beginner
 
 4. **Add articles to the Messenger.** Enable Help Center in Intercom Messenger settings so users can search articles without leaving your app. Intercom surfaces relevant articles based on the page the user is on and their search query.
 
-5. **Use articles in automated responses.** Configure Intercom's bot to suggest relevant articles when users ask common questions in chat. Go to Operator > Resolution Bot and map common question keywords to specific articles. This deflects simple questions from your support queue.
+5. **Use articles in automated responses.** Configure Intercom's Resolution Bot via the API to suggest relevant articles when users ask common questions in chat. Map common question keywords to specific article IDs. This deflects simple questions from your support queue.
 
 6. **Maintain and improve.** Review article metrics monthly: views, helpfulness ratings (thumbs up/down), and search queries with no results. Update outdated articles, add new articles for frequent "no results" searches, and archive articles for deprecated features.

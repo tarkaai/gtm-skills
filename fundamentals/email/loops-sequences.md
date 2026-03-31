@@ -15,7 +15,7 @@ difficulty: Intermediate
 
 1. **Plan your sequence map.** Before building, map out which sequences each user type receives. Core sequences: Welcome/Onboarding (all signups), Trial-to-Paid (trial users), Feature Adoption (new users), Re-engagement (inactive users), Upgrade Prompt (free users hitting limits). No user should receive more than one sequence at a time.
 
-2. **Create a welcome sequence.** Go to Loops > Loops (sequences) > New Loop. Trigger: "Contact created" event. Build 4-5 emails over 14 days. Email 1 (day 0): Welcome + quickstart. Email 2 (day 1): Key feature highlight. Email 3 (day 3): Use case example. Email 4 (day 7): Social proof. Email 5 (day 14): Check-in + help offer.
+2. **Create a welcome sequence via API.** Use the Loops API to create a new sequence triggered by the "Contact created" event. Build 4-5 emails over 14 days. Email 1 (day 0): Welcome + quickstart. Email 2 (day 1): Key feature highlight. Email 3 (day 3): Use case example. Email 4 (day 7): Social proof. Email 5 (day 14): Check-in + help offer.
 
 3. **Add conditional branches.** Use Loops' branching logic to personalize sequences. After Email 2, check if "onboarding_complete" is true. If yes, skip to feature adoption content. If no, send a help email with setup guide. This prevents sending irrelevant emails.
 

@@ -23,4 +23,4 @@ difficulty: Setup
 
 5. **Configure your Experience section.** For your current role, write 2-3 bullets about outcomes, not responsibilities. "Grew from 0 to 500 customers in 12 months" beats "Responsible for sales and marketing." Add your company's LinkedIn page so it shows the logo.
 
-6. **Turn on Creator Mode.** Go to Settings > Creator Mode and enable it. Add 5 topic hashtags relevant to your expertise. Creator Mode changes your "Connect" button to "Follow", shows your content first on your profile, and gives you access to LinkedIn newsletters and audio features.
+6. **Turn on Creator Mode.** Enable Creator Mode in your LinkedIn profile settings. Add 5 topic hashtags relevant to your expertise. Creator Mode changes your "Connect" button to "Follow", shows your content first on your profile, and gives you access to LinkedIn newsletters and audio features.

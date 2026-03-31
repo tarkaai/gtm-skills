@@ -14,7 +14,7 @@ difficulty: Setup
 
 ## Steps
 
-1. **Get your API key.** In Attio, go to Settings > Developers > API Keys. Create a new key with full read/write access. Copy the key — you won't see it again.
+1. **Get your API key.** In the Attio dashboard, access Settings > Developers > API Keys. Create a new key with full read/write access. Copy the key -- you will not see it again. This is a one-time manual setup step required before the MCP can be used programmatically.
 
 2. **Install the MCP server.** Add the Attio MCP server to your Claude Code configuration. In your `.claude/settings.json` or MCP config, add:
 

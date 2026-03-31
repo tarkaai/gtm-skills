@@ -15,7 +15,7 @@ difficulty: Beginner
 
 1. **Understand Clay's credit model.** Each enrichment action (find email, verify email, enrich company, find people) costs credits. Costs vary by provider -- basic lookups cost 1 credit, premium providers like Clearbit cost 2-5 credits per row. Waterfall enrichment charges only for the provider that returns data.
 
-2. **Check your credit balance.** Go to Clay Settings > Billing to see your remaining credits and monthly allocation. Set up a low-balance alert at 20% remaining to avoid mid-campaign interruption.
+2. **Check your credit balance.** Use the Clay API to check remaining credits and monthly allocation. Set up a low-balance alert at 20% remaining to avoid mid-campaign interruption.
 
 3. **Budget credits per campaign.** Before running enrichment, calculate expected cost: (Number of rows) x (Credits per enrichment column) x (Number of enrichment columns). A typical enrichment workflow (company + person + email + verify) costs 5-8 credits per row.
 
