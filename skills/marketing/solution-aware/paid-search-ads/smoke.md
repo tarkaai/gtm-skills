@@ -1,7 +1,8 @@
 ---
 name: paid-search-ads-smoke
 description: >
-  Paid Search Ads — Smoke Test. Run a small exact-match search campaign to test if paid search drives leads or a meeting before refining terms and landing page.
+    Paid Search Ads — Smoke Test. Run a small exact-match search campaign to test if paid search
+  drives leads or a meeting before refining terms and landing page.
 stage: "Marketing > Solution Aware"
 motion: "Lightweight Paid"
 channels: "Paid"
@@ -13,6 +14,7 @@ slug: "paid-search-ads"
 install: "npx gtm-skills add marketing/solution-aware/paid-search-ads"
 drills:
   - ad-campaign-setup
+  - landing-page-pipeline
   - threshold-engine
 ---
 # Paid Search Ads — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lightweight Paid | **Channels:** Paid
 
 ## Overview
-Run a small exact-match search campaign to test if paid search drives leads or a meeting before refining terms and landing page.
+Paid Search Ads — Smoke Test. Run a small exact-match search campaign to test if paid search drives leads or a meeting before refining terms and landing page.
 
 **Time commitment:** 3 hours over 1 week
 **Pass threshold:** ≥ 2 leads or ≥ 1 meeting in 1 week
@@ -29,41 +31,27 @@ Run a small exact-match search campaign to test if paid search drives leads or a
 
 ## Budget
 
-**Play-specific tools & costs**
-- **Ad spend (LinkedIn, Google, or Meta):** $300–1,000 test budget
-
-_Total play-specific: $300–1,000 ad spend_
+**Play-specific cost:** Free
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-_No specialized tools required at this level._
-
----
-
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 2 leads or ≥ 1 meeting in 1 week).
+### 1. Set up ad campaign
+Run the `ad-campaign-setup` drill to configure your ad platform (Google Ads, LinkedIn Ads, or Meta Ads depending on the play). Set up conversion tracking pixels. Define your target audience using the ICP from your Smoke hypothesis.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Build a landing page
+Run the `landing-page-pipeline` drill to create a dedicated landing page in Webflow for this campaign. Include: clear headline matching the ad copy, social proof, single CTA, and PostHog tracking. Keep the page simple -- one message, one action.
 
-3. Set up PostHog or your CRM with properties for Click-through rate, Landing page visits so you can compare results to your threshold.
+**Human action required:** Set a small test budget ($200-500). Launch the campaign and monitor for 1 week. Do not optimize mid-flight -- let the data accumulate.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 3. Track results
+Monitor: impressions, clicks, CTR, landing page conversion rate, cost per lead, lead quality (are they ICP matches?).
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
-
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥ 2 leads or ≥ 1 meeting in 1 week. If PASS, proceed to Baseline. If FAIL, diagnose whether the issue is targeting (wrong audience), creative (low CTR), or landing page (low conversion).
 
 ---
 
@@ -76,8 +64,8 @@ _No specialized tools required at this level._
 ## Pass threshold
 **≥ 2 leads or ≥ 1 meeting in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

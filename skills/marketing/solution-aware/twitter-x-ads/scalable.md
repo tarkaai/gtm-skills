@@ -1,7 +1,8 @@
 ---
 name: twitter-x-ads-scalable
 description: >
-  Twitter/X Ads — Scalable Automation. Run promoted tweets and accounts targeting specific audiences, keywords, and interests to build awareness and drive traffic from solution-aware users.
+    Twitter/X Ads — Scalable Automation. Run promoted tweets and accounts targeting specific
+  audiences, keywords, and interests to build awareness and drive traffic from solution-aware users.
 stage: "Marketing > Solution Aware"
 motion: "Lightweight Paid"
 channels: "Paid, Social"
@@ -12,19 +13,15 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "twitter-x-ads"
 install: "npx gtm-skills add marketing/solution-aware/twitter-x-ads"
 drills:
-  - ad-campaign-setup
-  - landing-page-pipeline
-  - budget-allocation
-  - retargeting-setup
-  - posthog-gtm-events
   - ab-test-orchestrator
+  - tool-sync-workflow
 ---
 # Twitter/X Ads — Scalable Automation
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Social
 
 ## Overview
-Run promoted tweets and accounts targeting specific audiences, keywords, and interests to build awareness and drive traffic from solution-aware users.
+Twitter/X Ads — Scalable Automation. Run promoted tweets and accounts targeting specific audiences, keywords, and interests to build awareness and drive traffic from solution-aware users.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥750,000 impressions and ≥65 qualified leads from $8,000/month over 4 months
@@ -34,45 +31,25 @@ Run promoted tweets and accounts targeting specific audiences, keywords, and int
 ## Budget
 
 **Play-specific tools & costs**
-- **Ad spend:** $3,000–10,000/mo
-- **Landing page tool:** ~$15–40/mo
-- **LinkedIn Campaign Manager (included with ad spend — no extra fee):** Free
-
-_Total play-specific: ~$15–10000/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Automate campaign management
+Run the `ab-test-orchestrator` drill to set up systematic creative testing: test 3-5 ad variants per audience, automatically pause underperformers, promote winners, and launch new variants weekly.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for twitter/x ads execution.
+### 2. Build tool sync workflows
+Run the `tool-sync-workflow` drill to connect: ad platform conversions to Attio deals, PostHog events to ad platform audiences (for lookalike targeting), and CRM data back to ad platforms for exclusion lists (don't target existing customers).
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Scale budget with guardrails
+Increase budget 20-30% monthly as long as CPA stays within target. Set automated alerts for CPA increases above 20%. Build n8n workflows to pause campaigns automatically if daily spend exceeds budget by 10%.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥750,000 impressions and ≥65 qualified leads from $8,000/month over 4 months. If PASS, proceed to Durable. If FAIL, consolidate to best-performing audiences and creatives before scaling further.
 
 ---
 
@@ -88,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥750,000 impressions and ≥65 qualified leads from $8,000/month over 4 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

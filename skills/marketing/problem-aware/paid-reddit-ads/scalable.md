@@ -1,7 +1,8 @@
 ---
 name: paid-reddit-ads-scalable
 description: >
-  Paid Reddit Ads — Scalable Automation. Run a small Reddit ad budget across a couple of sets and one LP to test if paid community placement drives leads or a meeting.
+    Paid Reddit Ads — Scalable Automation. Run a small Reddit ad budget across a couple of sets and
+  one LP to test if paid community placement drives leads or a meeting.
 stage: "Marketing > Problem Aware"
 motion: "Lightweight Paid"
 channels: "Paid, Social"
@@ -12,19 +13,15 @@ kpis: ["Click-through rate", "Landing page visits"]
 slug: "paid-reddit-ads"
 install: "npx gtm-skills add marketing/problem-aware/paid-reddit-ads"
 drills:
-  - ad-campaign-setup
-  - landing-page-pipeline
-  - budget-allocation
-  - retargeting-setup
-  - posthog-gtm-events
   - ab-test-orchestrator
+  - tool-sync-workflow
 ---
 # Paid Reddit Ads — Scalable Automation
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Social
 
 ## Overview
-Run a small Reddit ad budget across a couple of sets and one LP to test if paid community placement drives leads or a meeting.
+Paid Reddit Ads — Scalable Automation. Run a small Reddit ad budget across a couple of sets and one LP to test if paid community placement drives leads or a meeting.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥ 30 leads or ≥ 16 meetings over 2 months
@@ -34,46 +31,25 @@ Run a small Reddit ad budget across a couple of sets and one LP to test if paid 
 ## Budget
 
 **Play-specific tools & costs**
-- **Ad spend:** $3,000–10,000/mo
-- **Landing page tool:** ~$15–40/mo
-- **LinkedIn Campaign Manager (included with ad spend — no extra fee):** Free
-
-_Total play-specific: ~$15–10000/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Google Ads** (Channel)
-- **LinkedIn Ads** (Channel)
-- **LinkedIn Sales Navigator** (Channel)
-
----
-
 ## Instructions
 
-1. Set your Scalable volume target (e.g. 5–10x Baseline) and confirm the outcome you are aiming for: ≥ 30 leads or ≥ 16 meetings over 2 months.
+### 1. Automate campaign management
+Run the `ab-test-orchestrator` drill to set up systematic creative testing: test 3-5 ad variants per audience, automatically pause underperformers, promote winners, and launch new variants weekly.
 
-2. Ensure all tools (email, CRM, ads, etc.) send events to PostHog so you have a single view of sent, opened, replied, and converted.
+### 2. Build tool sync workflows
+Run the `tool-sync-workflow` drill to connect: ad platform conversions to Attio deals, PostHog events to ad platform audiences (for lookalike targeting), and CRM data back to ad platforms for exclusion lists (don't target existing customers).
 
-3. In n8n (or similar), build workflows triggered by PostHog events: e.g. when a lead replies or books a meeting, trigger a notification or follow-up so no lead sits unattended.
+### 3. Scale budget with guardrails
+Increase budget 20-30% monthly as long as CPA stays within target. Set automated alerts for CPA increases above 20%. Build n8n workflows to pause campaigns automatically if daily spend exceeds budget by 10%.
 
-4. Run list-building and execution at the new volume; keep message and offer consistent with Baseline so you can compare fairly.
-
-5. Each week, record Click-through rate, Landing page visits in PostHog and compute running totals; compare to your Scalable target.
-
-6. Keep conversion or meeting rate within 20% of Baseline; if it drops, pause scaling and refine targeting or copy before adding more volume.
-
-7. Use n8n to automate follow-ups and logging so outcomes flow back to PostHog and CRM without manual entry where possible.
-
-8. At the end of 2 months, confirm you hit or approached the Scalable outcome and that all key events are tracked.
-
-9. If metrics hold, document the workflow and hand off to Durable for agent-driven optimization; if not, iterate before Durable.
-
-10. Prepare a short summary of tools, event flow, and guardrails for the next team or agent to run Durable.
+### 4. Evaluate against threshold
+Measure against: ≥ 30 leads or ≥ 16 meetings over 2 months. If PASS, proceed to Durable. If FAIL, consolidate to best-performing audiences and creatives before scaling further.
 
 ---
 
@@ -86,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 30 leads or ≥ 16 meetings over 2 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

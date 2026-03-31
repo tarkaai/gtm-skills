@@ -1,7 +1,8 @@
 ---
 name: podcast-sponsorships-b2b-baseline
 description: >
-  B2B Podcast Sponsorships — Baseline Run. Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
+    B2B Podcast Sponsorships — Baseline Run. Sponsor relevant B2B podcasts for brand awareness and
+  lead generation with problem-aware and solution-aware listeners in target industries.
 stage: "Marketing > Problem Aware"
 motion: "Lightweight Paid"
 channels: "Paid, Content"
@@ -12,17 +13,16 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
 drills:
-  - ad-campaign-setup
-  - landing-page-pipeline
   - budget-allocation
-  - threshold-engine
+  - posthog-gtm-events
+  - retargeting-setup
 ---
 # B2B Podcast Sponsorships — Baseline Run
 
 > **Stage:** Marketing → Problem Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Content
 
 ## Overview
-Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
+B2B Podcast Sponsorships — Baseline Run. Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥30,000 impressions and ≥12 qualified leads across 3 podcast sponsorships in 6 weeks
@@ -32,43 +32,28 @@ Sponsor relevant B2B podcasts for brand awareness and lead generation with probl
 ## Budget
 
 **Play-specific tools & costs**
-- **Ad spend:** $1,000–3,000/mo
-- **Landing page tool (Webflow or Carrd, if needed):** ~$15–40/mo
-
-_Total play-specific: ~$15–3000/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week b2b podcast sponsorships experiment; define detailed ICP criteria.
+### 1. Optimize budget allocation
+Run the `budget-allocation` drill to analyze your Smoke test data and allocate budget across ad sets, audiences, and platforms. Shift budget toward the highest-performing segments. Set daily budget caps to prevent overspend.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Set up retargeting
+Run the `retargeting-setup` drill to configure retargeting audiences: website visitors who didn't convert, landing page visitors, and engaged social followers. Create retargeting ad variants with stronger CTAs.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Configure tracking pipeline
+Run the `posthog-gtm-events` drill to set up end-to-end tracking: `podcast-sponsorships-b2b_ad_click`, `podcast-sponsorships-b2b_landing_page_view`, `podcast-sponsorships-b2b_form_submit`, `podcast-sponsorships-b2b_lead_qualified`. Connect ad platform data to PostHog via webhooks for unified reporting.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
+### 4. Run for 2 weeks at increased budget
+Scale budget to $1,000-3,000 for the test period. Monitor daily: CPA trends, quality of leads entering CRM, ad fatigue indicators (declining CTR). Make weekly adjustments to targeting and creative.
 
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 5. Evaluate against threshold
+Measure against: ≥30,000 impressions and ≥12 qualified leads across 3 podcast sponsorships in 6 weeks. If PASS, proceed to Scalable. If FAIL, test different audiences, creatives, or platforms.
 
 ---
 
@@ -83,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥30,000 impressions and ≥12 qualified leads across 3 podcast sponsorships in 6 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

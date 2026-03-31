@@ -1,7 +1,8 @@
 ---
 name: podcast-sponsorships-b2b-smoke
 description: >
-  B2B Podcast Sponsorships — Smoke Test. Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
+    B2B Podcast Sponsorships — Smoke Test. Sponsor relevant B2B podcasts for brand awareness and
+  lead generation with problem-aware and solution-aware listeners in target industries.
 stage: "Marketing > Problem Aware"
 motion: "Lightweight Paid"
 channels: "Paid, Content"
@@ -13,6 +14,7 @@ slug: "podcast-sponsorships-b2b"
 install: "npx gtm-skills add marketing/problem-aware/podcast-sponsorships-b2b"
 drills:
   - ad-campaign-setup
+  - landing-page-pipeline
   - threshold-engine
 ---
 # B2B Podcast Sponsorships — Smoke Test
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Lightweight Paid | **Channels:** Paid, Content
 
 ## Overview
-Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
+B2B Podcast Sponsorships — Smoke Test. Sponsor relevant B2B podcasts for brand awareness and lead generation with problem-aware and solution-aware listeners in target industries.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥5,000 listener impressions and ≥3 qualified leads from first sponsorship
@@ -29,41 +31,27 @@ Sponsor relevant B2B podcasts for brand awareness and lead generation with probl
 
 ## Budget
 
-**Play-specific tools & costs**
-- **Ad spend (LinkedIn, Google, or Meta):** $300–1,000 test budget
-
-_Total play-specific: $300–1,000 ad spend_
+**Play-specific cost:** Free
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this b2b podcast sponsorships play; document hypothesis and success criteria.
+### 1. Set up ad campaign
+Run the `ad-campaign-setup` drill to configure your ad platform (Google Ads, LinkedIn Ads, or Meta Ads depending on the play). Set up conversion tracking pixels. Define your target audience using the ICP from your Smoke hypothesis.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Build a landing page
+Run the `landing-page-pipeline` drill to create a dedicated landing page in Webflow for this campaign. Include: clear headline matching the ad copy, social proof, single CTA, and PostHog tracking. Keep the page simple -- one message, one action.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Set a small test budget ($200-500). Launch the campaign and monitor for 1 week. Do not optimize mid-flight -- let the data accumulate.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track results
+Monitor: impressions, clicks, CTR, landing page conversion rate, cost per lead, lead quality (are they ICP matches?).
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥5,000 listener impressions and ≥3 qualified leads from first sponsorship. If PASS, proceed to Baseline. If FAIL, diagnose whether the issue is targeting (wrong audience), creative (low CTR), or landing page (low conversion).
 
 ---
 
@@ -77,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥5,000 listener impressions and ≥3 qualified leads from first sponsorship**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
