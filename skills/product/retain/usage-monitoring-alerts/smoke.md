@@ -1,81 +1,116 @@
 ---
 name: usage-monitoring-alerts-smoke
 description: >
-    Usage Drop Alerting — Smoke Test. Alert when usage drops below thresholds to trigger proactive
-  support or re-engagement.
+  Usage Drop Alerting — Smoke Test. Run a one-time engagement drop scan on your existing user
+  base, identify the top at-risk accounts, and manually intervene to test whether early
+  detection produces re-engagement.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email"
 level: "Smoke Test"
-time: "5 hours over 1 week"
-outcome: "Alert on top 20%"
-kpis: ["Alert accuracy", "Intervention rate", "Recovery rate"]
+time: "6 hours over 1 week"
+outcome: "Identify 10+ accounts with engagement drops and re-engage at least 3 through manual outreach"
+kpis: ["Accounts flagged with engagement drop", "Manual intervention count", "Re-engagement rate within 14 days"]
 slug: "usage-monitoring-alerts"
 install: "npx gtm-skills add product/retain/usage-monitoring-alerts"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - usage-drop-detection
   - threshold-engine
 ---
+
 # Usage Drop Alerting — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product, Email
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product, Email
 
-## Overview
-Usage Drop Alerting — Smoke Test. Alert when usage drops below thresholds to trigger proactive support or re-engagement.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Alert on top 20%
+Prove that you can detect meaningful engagement drops from your product data and that reaching out to flagged accounts produces re-engagement. This is a one-time manual run — no automation, no always-on monitoring. You are testing whether the signal is real.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- PostHog query returns a non-trivial number of accounts with 30%+ engagement drops
+- At least some flagged accounts are genuinely at risk (not on vacation, not seasonal)
+- Manual outreach to flagged accounts gets responses or produces re-engagement within 14 days
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Define your core engagement signal
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Before running any queries, decide what "engagement" means for your product. Pick 2-3 events that represent real value delivery — not page views or passive logins.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Examples by product type:
+- **SaaS tool:** `document_created`, `workflow_completed`, `data_exported`
+- **Platform:** `api_call_made`, `integration_used`, `query_executed`
+- **Collaboration:** `message_sent`, `comment_posted`, `file_shared`
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Write these down. They become the events in every query going forward.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: Alert on top 20%. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Run the initial drop detection scan
 
----
+Run the `usage-drop-detection` drill — but only the manual query steps (Steps 1 and 2). Do not set up the n8n automation yet. Execute the HogQL queries directly against PostHog via the API or MCP:
 
-## KPIs to track
-- Alert accuracy
-- Intervention rate
-- Recovery rate
+- Compute each account's 30-day weekly engagement baseline
+- Compare their last 7 days against that baseline
+- Filter for accounts with 30%+ drops
 
----
+Export the results as a list: account name, email, baseline weekly activity, current weekly activity, percentage drop.
 
-## Pass threshold
-**Alert on top 20%**
+### 3. Classify and prioritize the flagged accounts
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Review the list manually. For each flagged account:
+- Check if the drop is real (not a vacation, holiday, or known product outage)
+- Note their plan tier and MRR from Attio
+- Sort by: highest-value accounts with the steepest drops first
 
----
+Pick the top 10 accounts for manual intervention.
 
-## How to run this skill
+### 4. Manually intervene with the top 10
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+For each of the 10 accounts, send a personal email from the account owner (or founder if no account owner exists). The email should:
+- Reference their specific usage pattern ("You were using [feature] regularly until recently")
+- Ask a direct question ("Is something blocking you?" or "Did something change on your end?")
+- Offer concrete help (a call, a walkthrough, a specific resource)
+- Include a calendar booking link
 
-_Install this skill: `npx gtm-skills add product/retain/usage-monitoring-alerts`_
+**Human action required:** Write and send each email personally. Do not use a template blast. The goal is to learn what is actually happening with these accounts.
+
+### 5. Track responses and re-engagement
+
+For each of the 10 accounts, track over 14 days:
+- Did they respond to the email? What did they say?
+- Did they return to the product? (Check PostHog for activity after intervention)
+- If they re-engaged, did their usage stabilize or drop again?
+
+Log outcomes in a simple table: account, drop %, intervention date, response (Y/N), re-engaged (Y/N), feedback notes.
+
+### 6. Evaluate against threshold
+
+Run the `threshold-engine` drill to measure against the pass threshold: **re-engage at least 3 of the 10 flagged accounts within 14 days.**
+
+If PASS: The signal is real — engagement drops predict churn risk and early intervention works. Move to Baseline.
+
+If FAIL: Investigate why. Possible causes:
+- The engagement signal was wrong (tracking vanity metrics, not real engagement)
+- The drop thresholds were too sensitive (flagging normal variation)
+- The intervention was too late (accounts had already mentally churned)
+
+Adjust and re-run before moving to Baseline.
+
+## Time Estimate
+
+- 1 hour: Define engagement signals, write PostHog queries
+- 1 hour: Run detection scan, export and review results
+- 2 hours: Write and send 10 personal intervention emails
+- 2 hours: Monitor responses and re-engagement over 14 days, compile results
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Query engagement data, identify drops | Free up to 1M events/mo; https://posthog.com/pricing |
+| Attio | Look up account value and owner | Free for small teams; https://attio.com/pricing |
+
+## Drills Referenced
+
+- `usage-drop-detection` — Run the manual query portion to identify accounts with engagement drops
+- `threshold-engine` — Evaluate pass/fail against the re-engagement threshold
