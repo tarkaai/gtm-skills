@@ -1,80 +1,135 @@
 ---
 name: co-hosted-partner-events-baseline
 description: >
-    Co-hosted Partner Events — Baseline Run. Partner on field events, dinners, or conferences to
-  share costs, combine audiences, and generate qualified leads from solution-aware attendees.
-stage: "Marketing > Solution Aware"
-motion: "Micro Events"
+  Co-hosted Partner Events — Baseline Run. Run a repeatable series of co-hosted
+  events with 2-3 partners over 8 weeks. Agent automates registration tracking,
+  attendee enrichment, follow-up sequences, and per-event analytics.
+  First always-on automation.
+stage: "Marketing > SolutionAware"
+motion: "PartnershipsWarmIntros"
 channels: "Events"
 level: "Baseline Run"
-time: "18 hours over 2 weeks"
-outcome: "≥80 attendees and ≥15 qualified leads across 2 events in 8 weeks"
-kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
+time: "20 hours over 8 weeks"
+outcome: "≥80 attendees and ≥15 qualified leads across 3 co-hosted events in 8 weeks"
+kpis: ["Registration-to-attendance rate", "Attendee-to-lead conversion rate", "Cost per qualified lead", "Partner contribution ratio"]
 slug: "co-hosted-partner-events"
 install: "npx gtm-skills add marketing/solution-aware/co-hosted-partner-events"
 drills:
-  - meetup-pipeline
+  - co-hosted-event-orchestration
   - posthog-gtm-events
+  - partner-relationship-scoring
 ---
+
 # Co-hosted Partner Events — Baseline Run
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Micro Events | **Channels:** Events
+> **Stage:** Marketing → SolutionAware | **Motion:** PartnershipsWarmIntros | **Channels:** Events
 
-## Overview
-Co-hosted Partner Events — Baseline Run. Partner on field events, dinners, or conferences to share costs, combine audiences, and generate qualified leads from solution-aware attendees.
+## Outcomes
 
-**Time commitment:** 18 hours over 2 weeks
-**Pass threshold:** ≥80 attendees and ≥15 qualified leads across 2 events in 8 weeks
+Run 3 co-hosted events with 2-3 different partners over 8 weeks. Prove the model is repeatable — not a one-off success with one partner. Track the full funnel from registration through pipeline. The pass threshold is ≥80 total attendees and ≥15 qualified leads across all 3 events.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- 2-3 partners confirmed and events scheduled within the first 2 weeks
+- Each event achieves ≥25 registrations with both partners contributing
+- Attendance rate stays ≥55% across all events
+- Follow-up reply rate ≥15% for attendee emails
+- ≥2 meetings booked per event within 14 days
+- Partner satisfaction high enough that they agree to a second event
 
 ## Instructions
 
-### 1. Build event operations
-Run the `meetup-pipeline` drill to create a repeatable event process: registration page, automated email reminders (1 week, 1 day, 1 hour before), attendee tracking in Attio, and post-event follow-up sequence.
+### 1. Build event analytics infrastructure
 
-### 2. Configure event analytics
-Run the `posthog-gtm-events` drill to track: `co-hosted-partner-events_registered`, `co-hosted-partner-events_attended`, `co-hosted-partner-events_engaged`, `co-hosted-partner-events_follow_up_replied`, `co-hosted-partner-events_meeting_booked`. Build a funnel from registration to pipeline.
+Run the `posthog-gtm-events` drill to configure tracking for the full co-hosted event funnel. Create these custom events in PostHog:
 
-### 3. Run 2-3 events over 2-4 weeks
-Execute a small series to validate repeatable demand. Test different topics, times, and promotion channels. Track what drives the highest registration-to-attendance and attendance-to-pipeline rates.
+- `cohosted_event_registered` — properties: `event_name`, `source_partner`, `registrant_company`, `registrant_role`
+- `cohosted_event_attended` — properties: `event_name`, `engagement_level` (hot/warm/cool), `source_partner`, `duration_minutes`
+- `cohosted_event_follow_up_sent` — properties: `event_name`, `follow_up_type` (attendee/no-show/personal)
+- `cohosted_event_follow_up_replied` — properties: `event_name`, `reply_sentiment` (positive/neutral/negative)
+- `cohosted_event_meeting_booked` — properties: `event_name`, `source_partner`, `attendee_company`
 
-### 4. Evaluate against threshold
-Measure against: ≥80 attendees and ≥15 qualified leads across 2 events in 8 weeks. If PASS, proceed to Scalable. If FAIL, diagnose: is the problem awareness (low registrations), commitment (low attendance), or conversion (attendees don't convert).
+Build a PostHog funnel: registered → attended → follow-up replied → meeting booked. Set up a dashboard showing these funnels per event and per partner.
 
----
+### 2. Expand to 2-3 partners
 
-## KPIs to track
-- Conversion rate
-- Cost per result
-- Response quality
-- Cycle time
+If the Smoke test partner is willing to co-host again, keep them. Add 1-2 new partners using the `partner-prospect-research` drill from Smoke level (already run — pull next-best candidates from the ranked list in Attio). The goal is to test whether the model works across different partners, not just one.
 
----
+For each new partner, run the alignment process from the `co-hosted-event-orchestration` drill: draft proposal, confirm event brief, assign speakers and promotion responsibilities.
 
-## Pass threshold
-**≥80 attendees and ≥15 qualified leads across 2 events in 8 weeks**
+### 3. Run 3 events over 8 weeks
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Execute the `co-hosted-event-orchestration` drill for each event. At Baseline, add these process improvements:
 
----
+**Standardize the event template:**
+- Create a reusable Luma event template with your standard registration fields, co-branded description structure, and PostHog tracking code
+- Create reusable email templates in Loops for announcement, reminder (1-day, 1-hour), and follow-up (attendee, no-show)
+- Create a standard run-of-show document that can be customized per event
 
-## How to run this skill
+**Automate registration monitoring:**
+- Set up a daily n8n workflow (or manual daily check) that pulls new registrants from the Luma API, adds them to the Attio event list, and fires `cohosted_event_registered` to PostHog
+- Share registration counts with the partner weekly so both sides can boost promotion if needed
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Systematize post-event processing:**
+- Within 24 hours of each event, export attendees, tag engagement levels in Attio, send both follow-up emails, and draft personal messages for hot attendees
+- Track every follow-up action in PostHog
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/co-hosted-partner-events`_
+**Vary event formats across the 3 events:**
+- Event 1: Webinar (proven in Smoke)
+- Event 2: Workshop or AMA (test a different format)
+- Event 3: Use whichever format performed best in events 1-2
+
+### 4. Score partner performance
+
+After all 3 events, run the `partner-relationship-scoring` drill adapted for event partners. Score each partner on:
+
+- **Registration contribution**: What percentage of registrants came from their audience?
+- **Attendee quality**: What percentage of their registrants converted to qualified leads?
+- **Collaboration quality**: Were they responsive, did they deliver promotion on time, did they provide speakers?
+- **Repeat willingness**: Did they agree to co-host again?
+
+Store partner scores in Attio. Partners scoring in the top tier become priority partners for Scalable level.
+
+### 5. Analyze cross-event patterns
+
+After 3 events, analyze in PostHog:
+- Which event format had the highest attendance rate?
+- Which event topic had the highest attendee-to-meeting conversion?
+- Which partner's audience produced the most qualified leads?
+- What promotion timing drove the most registrations (how far before the event did most people register)?
+- What follow-up approach had the highest reply rate?
+
+Document findings in Attio as notes on the co-hosted events campaign record.
+
+### 6. Evaluate against threshold
+
+Aggregate across all 3 events: ≥80 total attendees and ≥15 qualified leads. If PASS → proceed to Scalable with the winning event format, top partners, and proven promotion cadence. If FAIL → identify the weakest link (partner quality, topic selection, promotion reach, or follow-up conversion) and re-run 2-3 more events with adjustments.
+
+## Time Estimate
+
+- Analytics setup: 3 hours
+- Partner expansion and alignment: 3 hours
+- Per-event execution (x3): 3 hours each = 9 hours
+- Partner scoring and cross-event analysis: 3 hours
+- Threshold evaluation: 2 hours
+- Total: 20 hours over 8 weeks
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Luma | Event pages and registration for 3 events | Free; Plus $59/mo for API + Zapier |
+| PostHog | Event funnel tracking and dashboards | Free up to 1M events/mo |
+| Attio | Partner records, attendee lists, event CRM | Free up to 3 users |
+| Loops | Promotion emails, reminders, follow-ups | Free up to 1,000 contacts; Starter $25/mo |
+| Clay | Partner research and attendee enrichment | Launch $185/mo |
+| Cal.com | Post-event meeting booking | Free (basic) |
+| Riverside | Event recording (if webinar) | Free (2 hrs); Standard $19/mo |
+
+**Play-specific cost at Baseline:** ~$25-80/mo (Loops Starter + optional Riverside Standard)
+
+## Drills Referenced
+
+- `co-hosted-event-orchestration` — run the full event lifecycle for each of 3 events with co-promotion and attendee processing
+- `posthog-gtm-events` — configure PostHog tracking for the co-hosted event funnel
+- `partner-relationship-scoring` — score partners on registration contribution, attendee quality, and collaboration quality

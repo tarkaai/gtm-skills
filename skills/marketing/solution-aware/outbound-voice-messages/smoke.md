@@ -1,83 +1,141 @@
 ---
 name: outbound-voice-messages-smoke
 description: >
-    Outbound Voice Messages — Smoke Test. Leave personalized voice messages via LinkedIn or phone to
-  increase response rates and stand out in outbound campaigns targeting solution-aware prospects.
+  Outbound Voice Messages -- Smoke Test. Manually record and send 40 personalized
+  voice messages via LinkedIn voice notes and phone voicemail to solution-aware
+  prospects. Validate whether voice outreach generates higher response rates than
+  text-only channels.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Direct, Social"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: "≥5% response rate from 40 voice messages in 1 week"
-kpis: ["Response rate", "Engagement quality", "Time to response"]
+outcome: ">=5% response rate from 40 voice messages in 1 week"
+kpis: ["Response rate", "Callback/reply rate by channel", "Time to first response"]
 slug: "outbound-voice-messages"
 install: "npx gtm-skills add marketing/solution-aware/outbound-voice-messages"
 drills:
   - icp-definition
   - build-prospect-list
+  - voice-message-recording
   - threshold-engine
 ---
-# Outbound Voice Messages — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Direct, Social
+# Outbound Voice Messages -- Smoke Test
 
-## Overview
-Outbound Voice Messages — Smoke Test. Leave personalized voice messages via LinkedIn or phone to increase response rates and stand out in outbound campaigns targeting solution-aware prospects.
+> **Stage:** Marketing > Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Direct, Social
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** ≥5% response rate from 40 voice messages in 1 week
+## Outcomes
 
----
+Prove that personalized voice messages generate responses from solution-aware prospects. Success means at least 2 responses (callbacks, LinkedIn replies, or email replies referencing the voice message) from 40 messages sent across phone voicemail and LinkedIn voice notes within 1 week. No automation, no paid tools beyond free tiers -- the founder records and sends every message manually.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Voicemail delivery rate above 70% (not all carriers accept ringless VM)
+- LinkedIn voice note listen rate above 40% (visible in lemlist or LinkedIn read receipts)
+- At least 1 callback or reply within 48 hours of first batch
+- Prospects mention the voice message in their reply ("got your voicemail", "heard your voice note")
+- Follow-up email open rate above 50% (the voice message creates curiosity)
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for outbound-voice-messages. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Define ICP and build a target list of 40 prospects
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your outbound-voice-messages materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Run the `icp-definition` drill. Document firmographic criteria (company size, industry, funding stage), buyer persona (title, seniority, department), top 3 pain points, and 3 trigger signals that make voice outreach timely (new funding, job change, competitor churn).
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+Run the `build-prospect-list` drill. Source 50-60 contacts from Apollo matching your ICP. Import into Clay. Run enrichment to fill: email, phone number, LinkedIn URL. Score and filter to the top 40. Ensure at least 25 have phone numbers and at least 30 have LinkedIn URLs.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+Push to Attio with tags `play:outbound-voice-messages` and `level:smoke`.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: ≥5% response rate from 40 voice messages in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+### 2. Write voice message scripts
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Write 2-3 script variants targeting different pain points identified in your ICP. Each script follows this structure (50-80 words, 20-35 seconds):
 
----
+1. Greeting with prospect's first name (3 sec)
+2. Signal reference -- why you are reaching out now (5 sec)
+3. Value hook -- one sentence connecting their signal to your solution (8 sec)
+4. CTA -- reference a follow-up email with your calendar link (5 sec)
+5. Sign-off (3 sec)
 
-## KPIs to track
-- Response rate
-- Engagement quality
-- Time to response
+Create a Clay column that maps each prospect to a script variant based on their trigger signal. Add merge fields for first name, company name, and signal.
 
----
+### 3. Record voice messages manually
 
-## Pass threshold
-**≥5% response rate from 40 voice messages in 1 week**
+Run the `voice-message-recording` drill using the manual recording path (Step 2a). Record each message yourself using your phone's voice memo app or laptop microphone. Target pace: 2-3 minutes per message. The full batch of 40 takes approximately 90 minutes.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+**Human action required:** You must record these yourself. This is a Smoke Test -- the point is to validate the channel with authentic founder voice before investing in AI voice cloning. Save files as `vm-{company}-{firstname}.mp3`.
 
----
+### 4. Deliver voice messages across both channels
 
-## How to run this skill
+Split your 40 prospects across channels based on available contact data:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Phone voicemail (prospects with phone numbers):**
+- Use your personal phone or Google Voice
+- Call during 9am-11am in the prospect's timezone
+- When it goes to voicemail (most will), leave your pre-written message naturally
+- If someone answers live, use the script as a conversation opener
+- Log every attempt in Attio immediately: delivered, answered, no-answer, wrong-number
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/outbound-voice-messages`_
+**LinkedIn voice notes (prospects with LinkedIn connections or open profiles):**
+- Send a connection request first if not connected (keep note under 200 characters, reference a signal)
+- For connected prospects: open LinkedIn messaging, hold the microphone icon, and record your message
+- Send a text follow-up message 1 day later with your Cal.com booking link
+- Log in Attio: voice_note_sent, connection_pending, message_sent
+
+**Follow-up email (all prospects, same day):**
+- Send a brief email within 1-4 hours of the voice message: "Just left you a quick voicemail / sent you a voice note on LinkedIn. Short version: {one_line_value_prop}. Calendar here if it's easier: {booking_link}"
+- Send manually from your email client. No sequences needed at Smoke level.
+
+### 5. Track responses for 7 days
+
+Monitor daily:
+- Phone callbacks (check missed calls, voicemails, and Attio)
+- LinkedIn message replies (check LinkedIn inbox)
+- Email replies referencing the voice message
+- Meeting bookings via Cal.com
+
+Log every response in Attio with: response channel, response sentiment (positive/neutral/negative), time from delivery to response, and whether a meeting was booked.
+
+### 6. Evaluate against threshold
+
+Run the `threshold-engine` drill. Pull logged data from Attio. Count total responses (callbacks + LinkedIn replies + email replies that reference the voice message). Compare against pass threshold: **>=5% response rate from 40 voice messages in 1 week** (that is, at least 2 responses).
+
+Also record:
+- Response rate by channel (phone vs LinkedIn vs email)
+- Which script variant generated the most responses
+- Average time from delivery to response
+- Qualitative notes: what did responders say? Did they mention the voice message?
+
+- **PASS**: Proceed to Baseline. Document which channel and script variant performed best.
+- **FAIL**: Diagnose -- was it targeting (wrong ICP), scripting (message didn't resonate), delivery (low phone delivery rate), or timing? Adjust and re-run Smoke.
+
+## Time Estimate
+
+- ICP definition and list building: 1.5 hours
+- Script writing: 30 minutes
+- Manual voice recording (40 messages): 1.5 hours
+- Delivery and follow-up emails: 1.5 hours (spread across 3-4 days)
+- Daily monitoring and logging: 30 minutes (5 min/day for 7 days)
+- Evaluation: 30 minutes
+
+Total: ~6 hours of active work spread over 1 week.
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Clay | Prospect enrichment and list building | Free tier: 100 credits/mo (https://www.clay.com/pricing) |
+| Apollo | Contact sourcing with phone numbers | Free tier: 50 emails/mo; Basic: $49/mo (https://www.apollo.io/pricing) |
+| Attio | CRM for logging all outreach activity | Free tier: 3 users (https://attio.com/pricing) |
+| Cal.com | Booking link in follow-up emails | Free tier available (https://cal.com/pricing) |
+| PostHog | Event tracking | Free tier: 1M events/mo (https://posthog.com/pricing) |
+| Google Voice | Phone calls and voicemails | Free (https://voice.google.com) |
+
+**Estimated play-specific cost: $0** (free tiers sufficient for Smoke volume of 40 messages)
+
+## Drills Referenced
+
+- `icp-definition` -- define ideal customer profile with trigger signals for voice outreach
+- `build-prospect-list` -- source and enrich 40+ contacts with phone numbers and LinkedIn URLs
+- `voice-message-recording` -- record personalized voice messages (manual path at Smoke)
+- `threshold-engine` -- evaluate pass/fail against >=5% response rate threshold
