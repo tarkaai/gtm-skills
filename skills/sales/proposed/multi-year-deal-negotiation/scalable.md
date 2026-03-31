@@ -1,85 +1,140 @@
 ---
 name: multi-year-deal-negotiation-scalable
 description: >
-    Multi-Year Deal Structuring — Scalable Automation. Structure and price multi-year commitments to
-  increase deal value and customer lifetime value, from manual contract terms to AI-driven contract
-  optimization that maximizes ACVand retention while maintaining competitive pricing.
+  Multi-Year Deal Negotiation — Scalable Automation. Find the 10x multiplier:
+  proactively identify multi-year candidates via readiness scoring and intent
+  signals, run segment-specific campaigns, and A/B test deal structures to
+  optimize close rate and TCV without proportional effort.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
 level: "Scalable Automation"
-time: "75 hours over 2 months"
-outcome: ">=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months"
-kpis: ["Multi-year close rate", "Average contract length", "LTV (multi-year vs annual)", "Discount optimization"]
+time: "60 hours over 2 months"
+outcome: ">=30% close rate on multi-year proposals, average TCV >=2x annual ACV, and 3x proposal volume vs Baseline over 2 months"
+kpis: ["Multi-year close rate", "Average TCV", "Proposal volume (total and proactive vs reactive)", "Experiment win rate", "Average discount efficiency"]
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - follow-up-automation
-  - tool-sync-workflow
-  - ab-test-orchestrator
----
-# Multi-Year Deal Structuring — Scalable Automation
-
-> **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
-
-## Overview
-Multi-Year Deal Structuring — Scalable Automation. Structure and price multi-year commitments to increase deal value and customer lifetime value, from manual contract terms to AI-driven contract optimization that maximizes ACVand retention while maintaining competitive pricing.
-
-**Time commitment:** 75 hours over 2 months
-**Pass threshold:** >=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months
-
+  - multi-year-pipeline-scaling
+  - deal-term-ab-testing
 ---
 
-## Budget
+# Multi-Year Deal Negotiation — Scalable Automation
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
+> **Stage:** Sales > Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+## Outcomes
 
----
+Scale multi-year deal volume without proportional effort. Instead of waiting for deals to reach Proposed stage, proactively identify candidates via readiness scoring and intent signals. A/B test deal structures to find the optimal discount, term, and presentation combination. Target: >=30% close rate on multi-year proposals, average TCV at least 2x annual ACV, and 3x the proposal volume achieved at Baseline — all within 2 months.
+
+## Leading Indicators
+
+- Readiness scoring model running weekly on all active deals
+- At least 30% of multi-year proposals triggered proactively (from scoring) vs reactively (from stage change)
+- Intent signals from Clay feeding into readiness scores
+- At least 1 A/B experiment running at all times
+- Segment-specific deal structures deployed (different templates for high/mid/growth ACV)
+- Experiment history tracking populated with at least 2 completed experiments
+- Multi-year pipeline coverage: >50% of eligible deals scored
 
 ## Instructions
 
-### 1. Build automated follow-up workflows
-Run the `follow-up-automation` drill to create n8n workflows that: (a) detect when a prospect opens an email but doesn't reply, and trigger a follow-up sequence, (b) detect when a LinkedIn connection is accepted, and trigger a personalized message, (c) route positive replies to Attio and notify the founder via Slack.
+### 1. Build the proactive pipeline engine
 
-### 2. Connect your tool stack
-Run the `tool-sync-workflow` drill to build n8n sync workflows connecting Instantly replies to Attio deals, LinkedIn activity to Attio contact records, and PostHog events to Attio properties. Ensure no data is siloed.
+Run the `multi-year-pipeline-scaling` drill to create the system that identifies multi-year candidates before they reach the Proposed stage:
 
-### 3. Launch A/B testing
-Run the `ab-test-orchestrator` drill. Set up experiments on: email subject lines, email body copy, LinkedIn message templates, send timing (day of week, time of day). Use PostHog feature flags to randomly assign variants. Run each test for a minimum of 100 sends per variant before declaring a winner.
+1. Analyze historical multi-year wins in Attio to build the multi-year ICP profile
+2. Create the readiness scoring model in Clay with 8 weighted signals (ICP match, ACV, pain ratio, stage, fiscal timing, champion, competitive, commitment history)
+3. Deploy the weekly scoring workflow in n8n that evaluates all active deals
+4. Store `multiyear_readiness_score` and `multiyear_readiness_tier` on each deal in Attio
+5. Build segment-specific deal structure templates (high-ACV, mid-ACV, growth)
+6. Configure the proactive campaign: when a deal hits High readiness (score >= 80), auto-trigger the proposal automation from Baseline
+7. Set up Clay intent signal monitoring: funding rounds, budget-cycle indicators, competitive switching signals
 
-### 4. Scale volume
-Increase prospect volume to 200-500 per month. Use the automated workflows to handle follow-ups without manual intervention. Monitor the n8n execution logs for errors.
+Verify the scoring model against Baseline data:
+- Score all deals from Baseline retroactively
+- Check: would the scoring model have identified the deals that closed as multi-year?
+- If false negative rate > 30% (scoring misses deals that actually closed), adjust weights
+- If false positive rate > 50% (scoring flags deals that never close multi-year), tighten criteria
+
+### 2. Launch A/B testing on deal structures
+
+Run the `deal-term-ab-testing` drill to start optimizing deal terms:
+
+**First experiment (weeks 1-4): Discount level**
+- Control: Current discount rates (from Baseline)
+- Variant: 5 percentage points tighter discount
+- Hypothesis: Tighter discounts will reduce close rate by <5% but increase average TCV by >8%
+- Minimum: 20 proposals per variant before evaluating
+
+**Second experiment (weeks 5-8): Number of options presented**
+- Control: 3 options (anchor, target, concession)
+- Variant: 2 options (target and premium only — remove the low-end concession)
+- Hypothesis: Fewer options reduce decision fatigue and increase average TCV by anchoring between two higher-value options
+
+For each experiment:
+1. Create the PostHog feature flag
+2. Modify the proposal automation workflow to check the flag
+3. Apply the correct variant to each deal
+4. Tag all proposals with `experiment_variant` for tracking
+5. Evaluate after reaching minimum volume: adopt, iterate, or revert
+
+### 3. Scale proposal volume
+
+With readiness scoring and proactive triggers running:
+- Target 30-50 multi-year proposals per month (3x Baseline volume)
+- Monitor the proposal automation workflow for errors or bottlenecks
+- Watch email deliverability — if sending volume increases, ensure Instantly warmup and domain health are maintained
+- If proposal volume exceeds what the founder can negotiate alone, document the negotiation playbook and delegate to a team member
+
+### 4. Optimize the negotiation playbook
+
+Using data from the `deal-negotiation-tracking` events (from Baseline), identify patterns:
+- Which concession sequence closes fastest? (e.g., offer rate lock first, then payment flexibility, then small discount)
+- Which delivery method has the highest engagement? (live walkthrough vs email)
+- Which champion seniority closes best? (VP vs Director vs Manager)
+- What's the optimal time to propose multi-year? (days before fiscal year end)
+
+Update the deal-term-modeling parameters and proposal automation workflow based on findings. This manual optimization at Scalable sets the baseline for autonomous optimization at Durable.
 
 ### 5. Evaluate against threshold
-Measure against: >=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months. Review A/B test results to identify winning variants. If PASS, proceed to Durable. If FAIL, focus on the lowest-performing stage in the funnel and run targeted experiments.
 
----
+At the end of 2 months, review:
+- Total proposals sent (must be >= 3x Baseline volume)
+- Close rate on multi-year proposals (target: >= 30%)
+- Average TCV of closed multi-year deals (target: >= 2x annual ACV)
+- Proactive vs reactive proposal split (target: >= 30% proactive)
+- Experiment results: at least 1 experiment completed with a clear outcome
 
-## KPIs to track
-- Multi-year close rate
-- Average contract length
-- LTV (multi-year vs annual)
-- Discount optimization
+If PASS: document all optimizations made, winning deal structures, and scoring model performance. Proceed to Durable.
+If FAIL:
+- If volume is below 3x: scoring model is too conservative or pipeline is too small. Loosen readiness thresholds or increase top-of-funnel.
+- If close rate dropped vs Baseline: proactive proposals may be targeting the wrong accounts. Tighten scoring criteria.
+- If TCV ratio dropped: experiments may have pushed discounts too high. Revert losing experiments.
+- If experiments are inconclusive: need more volume. Extend the Scalable period by 2 weeks.
 
----
+## Time Estimate
 
-## Pass threshold
-**>=35% close rate on multi-year proposals and LTV for multi-year customers >=2.5x annual customers over 2 months**
+- 15 hours: building readiness scoring model and proactive pipeline (Clay, n8n, Attio)
+- 10 hours: setting up A/B testing framework (PostHog feature flags, workflow modifications)
+- 10 hours: running and evaluating experiments (2 experiments over 8 weeks)
+- 15 hours: monitoring pipeline, handling negotiations at higher volume
+- 10 hours: pattern analysis, playbook optimization, threshold evaluation
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+## Tools & Pricing
 
----
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | Deal pipeline, readiness scores, negotiation data | Standard stack (excluded) |
+| PostHog | Experiments, feature flags, funnels, cohort analysis | Standard stack (excluded) |
+| n8n | Scoring workflows, proposal automation, experiment routing | Standard stack (excluded) |
+| Clay | Readiness scoring, intent signals, account enrichment | Launch: $185/mo — [pricing](https://www.clay.com/pricing) |
+| Instantly | Email delivery at higher volume | Hypergrowth: $97/mo — [pricing](https://instantly.ai/pricing) |
+| Anthropic Claude API | Deal term generation at scale (30-50 proposals/mo) | ~$30-60/mo — [pricing](https://docs.anthropic.com/en/docs/about-claude/pricing) |
 
-## How to run this skill
+**Play-specific cost:** ~$310-340/mo (Clay + Instantly + Claude API)
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+## Drills Referenced
 
-_Install this skill: `npx gtm-skills add sales/proposed/multi-year-deal-negotiation`_
+- `multi-year-pipeline-scaling` — readiness scoring model, proactive identification workflow, segment-specific deal templates, intent signal monitoring
+- `deal-term-ab-testing` — experiment framework for testing discount levels, option count, payment terms, presentation formats; with PostHog feature flags and evaluation protocol
