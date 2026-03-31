@@ -1,85 +1,147 @@
 ---
 name: video-prospecting-scale-baseline
 description: >
-    Video Prospecting at Scale — Baseline Run. Create personalized video messages for prospects
-  using AI tools to increase engagement and response rates in outbound campaigns targeting
-  solution-aware audiences.
+  Video Prospecting at Scale — Baseline Run. Transition from founder-recorded
+  Loom videos to AI-generated personalized videos (Sendspark/Tavus) for 100
+  prospects. Add always-on PostHog tracking, engagement-based follow-up routing,
+  and validate that AI video outreach sustains response rates over 2 weeks.
 stage: "Marketing > Solution Aware"
 motion: "Outbound Founder-Led"
 channels: "Email, Social"
 level: "Baseline Run"
-time: "18 hours over 2 weeks"
-outcome: "≥6% response rate from 100 video messages over 2 weeks"
-kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
+time: "14 hours over 2 weeks"
+outcome: ">=6% response rate from 100 AI-generated video messages over 2 weeks"
+kpis: ["Response rate", "Video completion rate", "Video-to-meeting conversion rate", "Cost per response"]
 slug: "video-prospecting-scale"
 install: "npx gtm-skills add marketing/solution-aware/video-prospecting-scale"
 drills:
-  - cold-email-sequence
-  - linkedin-outreach
+  - ai-video-batch-generation
   - posthog-gtm-events
+  - video-engagement-follow-up
+  - cold-email-sequence
 ---
+
 # Video Prospecting at Scale — Baseline Run
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social
+> **Stage:** Marketing -> Solution Aware | **Motion:** Outbound Founder-Led | **Channels:** Email, Social
 
-## Overview
-Video Prospecting at Scale — Baseline Run. Create personalized video messages for prospects using AI tools to increase engagement and response rates in outbound campaigns targeting solution-aware audiences.
+## Outcomes
 
-**Time commitment:** 18 hours over 2 weeks
-**Pass threshold:** ≥6% response rate from 100 video messages over 2 weeks
+Transition from manually recording Loom videos (Smoke) to AI-generated personalized videos using Sendspark, Tavus, or HeyGen. Scale from 30 to 100 prospects over 2 weeks. The founder records a single template video or training clip once; the AI platform generates unique personalized videos for each prospect with their name, company, and website as background. Add always-on PostHog event tracking and engagement-based follow-up routing via n8n.
 
----
+**Pass threshold:** >=6% response rate (replies with positive or neutral sentiment) from 100 AI-generated video messages over 2 weeks.
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- AI-generated video quality is indistinguishable from manually recorded (no prospect comments about it feeling "fake")
+- Video completion rate sustains >=10% across multiple batches
+- Engagement-based follow-up (high-watch branch) converts to replies at 2x+ the rate of standard sequence
+- Response rate from AI videos is within 2 percentage points of the Smoke-level Loom response rate
+- PostHog funnel shows clear video_sent -> video_viewed -> reply -> meeting_booked conversion path
 
 ## Instructions
 
-### 1. Set up cold outreach tooling
-Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
+### 1. Set up AI video generation
 
-### 2. Launch LinkedIn outreach in parallel
-Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
+Run the `ai-video-batch-generation` drill. Choose your AI video platform:
 
-### 3. Configure tracking
-Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `video-prospecting-scale_email_sent`, `video-prospecting-scale_email_replied`, `video-prospecting-scale_meeting_booked`, `video-prospecting-scale_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
+- **Sendspark** ($99/mo): Recommended for Baseline. Record a single 60-90 second template video. Sendspark clones your voice and swaps in each prospect's name. Their website appears as the dynamic background. Fastest and cheapest at this volume.
+- **Tavus** ($199/mo): If deeper personalization needed. Record a 2-minute training clip. Tavus generates fully lip-synced videos from unique per-prospect scripts.
+- **HeyGen** ($330/mo): If multilingual prospects or fully custom scripts per video.
 
-### 4. Execute and monitor for 2 weeks
-Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
+**Human action required:** The founder records one template/training video (10-15 minutes). This is the only recording needed -- all 100+ videos are generated by AI from this single recording.
 
-### 5. Evaluate against threshold
-Review PostHog funnel data and Attio deal pipeline. Measure against: ≥6% response rate from 100 video messages over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
+### 2. Generate video batch 1 (Week 1: 50 prospects)
 
----
+Using the `ai-video-batch-generation` drill:
 
-## KPIs to track
-- Conversion rate
-- Cost per result
-- Response quality
-- Cycle time
+1. Source 50 prospects from Clay matching the ICP validated in Smoke. Ensure each has at least one enrichment signal.
+2. Generate personalized video scripts via Clay AI formula column (one sentence per prospect referencing their signal).
+3. Submit the batch to your AI video platform via n8n workflow. Generation takes 2-5 hours for 50 videos.
+4. Once generated, map each prospect to their video share URL and GIF thumbnail URL.
+5. Launch the Instantly email campaign with embedded video thumbnails.
 
----
+### 3. Set up event tracking
 
-## Pass threshold
-**≥6% response rate from 100 video messages over 2 weeks**
+Run the `posthog-gtm-events` drill to configure the video prospecting event taxonomy in PostHog:
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+- `video_email_sent` — properties: campaign_id, prospect_tier, video_platform, personalization_type (ai_generated)
+- `video_email_opened` — properties: campaign_id, open_count
+- `video_thumbnail_clicked` — properties: campaign_id, prospect_email
+- `video_viewed` — properties: campaign_id, prospect_email, watch_percentage, cta_clicked
+- `video_email_replied` — properties: campaign_id, sentiment, sequence_step
+- `video_meeting_booked` — properties: campaign_id, source (cta_click/email_reply)
 
----
+Connect Instantly webhooks to PostHog via n8n for email events. Set up a polling workflow (every 4 hours) to pull video view data from Sendspark/Tavus/HeyGen analytics API and fire `video_viewed` events.
 
-## How to run this skill
+### 4. Deploy engagement-based follow-up routing
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `video-engagement-follow-up` drill to build n8n workflows that react to video watch data:
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/video-prospecting-scale`_
+- **High engagement (>75% watched):** Pause the Instantly sequence. Send a personal follow-up from the founder's inbox within 24 hours: "Saw you caught my video -- want to walk through it live?"
+- **Medium engagement (25-75% watched):** Accelerate Email 2 to send within 24 hours instead of the default 3-day delay.
+- **Low engagement (<25% watched):** Let the standard sequence continue.
+- **Never watched (5+ days):** Send a text-only follow-up with a different angle, no video reference.
+
+### 5. Generate video batch 2 (Week 2: 50 prospects)
+
+Repeat for another 50 prospects. Apply learnings from Week 1:
+
+- If completion rate was low: shorten the template video to 45-60 seconds
+- If thumbnail click rate was low: test a different email subject line
+- If AI quality got negative feedback: switch video platform or adjust training video
+
+### 6. Run a text-only control group
+
+Using the `cold-email-sequence` drill, send text-only cold emails to a separate batch of 20-30 prospects from the same ICP. Same value proposition, no video. This control group measures the incremental lift of AI-generated video over text-only outreach. Compare: reply rate, meeting rate, and time-to-meeting.
+
+### 7. Evaluate against threshold
+
+Review PostHog funnel data and Attio deal pipeline after 2 weeks:
+
+- **Response rate:** >=6% of 100 AI-generated video emails received positive/neutral replies
+- **AI quality validation:** No more than 1 prospect flagged the video as "AI-generated" or "weird"
+
+Also evaluate:
+- Video vs text-only comparison: Does AI video produce measurably better results?
+- Which engagement branch produced the most replies/meetings?
+- Which ICP segments had the highest video watch rates?
+
+If PASS: Proceed to Scalable. Document winning template video structure, best ICP segments, and optimal video length.
+
+If FAIL: Diagnose:
+- Completion rate OK but no replies: CTA or follow-up sequence needs work
+- Completion rate low: AI video quality insufficient -- test a different platform or re-record the template
+- Text-only outperforms AI video: Prospects may detect AI generation -- switch to Tavus for more natural output or revert to manual Loom for this audience
+
+## Time Estimate
+
+- Template/training video recording: 30 minutes (one-time)
+- AI video batch generation (2 batches of 50): 1 hour setup + automated generation
+- PostHog event setup and n8n workflows: 3 hours
+- Campaign setup in Instantly (2 batches + control): 2 hours
+- Daily monitoring and follow-up routing: 3 hours total over 2 weeks
+- Control group setup: 1 hour
+- Evaluation and documentation: 1.5 hours
+- **Total: ~14 hours over 2 weeks**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Sendspark | AI-personalized video generation at scale | $99/mo (Growth: API access, 20K videos) — [sendspark.com](https://www.sendspark.com) |
+| Instantly | Cold email sequences with video embeds | $37/mo (Growth: 5,000 emails) — [instantly.ai/pricing](https://instantly.ai/pricing) |
+| Clay | Prospect enrichment + AI script generation | $185/mo (Launch: 2,500 credits) — [clay.com/pricing](https://www.clay.com/pricing) |
+| PostHog | Event tracking and funnel analysis | Free (1M events/mo) or $0.00031/event — [posthog.com/pricing](https://posthog.com/pricing) |
+| n8n | Automation: video generation, follow-up routing | Free (self-hosted) or $24/mo (cloud) — [n8n.io/pricing](https://n8n.io/pricing) |
+| Attio | CRM for deal tracking | Free (up to 3 users) — [attio.com/pricing](https://attio.com/pricing) |
+| Cal.com | Booking links for video CTAs | Free or $12/mo — [cal.com/pricing](https://cal.com/pricing) |
+
+**Estimated Baseline cost:** ~$150-350/mo (Sendspark Growth + Instantly Growth + Clay Launch if not already subscribed)
+
+## Drills Referenced
+
+- `ai-video-batch-generation` — generate personalized AI videos for 100 prospects from a single template recording
+- `posthog-gtm-events` — set up video prospecting event taxonomy in PostHog
+- `video-engagement-follow-up` — automated follow-up routing based on video watch behavior
+- `cold-email-sequence` — text-only control group for measuring AI video lift
