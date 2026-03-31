@@ -1,81 +1,109 @@
 ---
 name: proactive-support-outreach-smoke
 description: >
-    Proactive Success Check-ins — Smoke Test. Check in with users before they have problems to
-  ensure success and identify issues early.
+  Proactive Support Outreach — Smoke Test. Detect users showing signs of struggle
+  and reach out with contextual help before they file a ticket or churn.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Email, Direct"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥40% respond"
-kpis: ["Response rate", "Issue identification", "Retention lift"]
+outcome: "≥40% of outreached users engage with the help"
+kpis: ["Outreach engagement rate", "Struggle detection count", "Resolution rate"]
 slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - struggle-signal-detection
   - threshold-engine
 ---
-# Proactive Success Check-ins — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Email, Direct
+# Proactive Support Outreach — Smoke Test
 
-## Overview
-Proactive Success Check-ins — Smoke Test. Check in with users before they have problems to ensure success and identify issues early.
+> **Stage:** Product → Retain | **Motion:** LeadCaptureSurface | **Channels:** Email, Direct
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥40% respond
+## Outcomes
 
----
+Prove that you can detect users struggling with your product and send help that they actually find useful. At this level, the agent identifies struggling users from PostHog data, you manually send contextual help, and you measure whether the help lands.
 
-## Budget
+Success = at least 40% of users you reach out to engage with the help (click the link, reply, watch the video, or take the suggested action).
 
-**Play-specific cost:** Free
+## Leading Indicators
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Struggle signals appearing in PostHog data (errors, rage clicks, abandoned flows)
+- Users responding positively to outreach ("thanks, that fixed it")
+- Struggle scores dropping after outreach (user got unstuck)
+- No negative reactions (users not marking outreach as spam or complaining about surveillance)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Instrument struggle signals in PostHog
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `struggle-signal-detection` drill Steps 1-2 only. You are not building the full automated pipeline yet. Instead, manually run the struggle scoring query against your PostHog instance to get a list of users with struggle scores.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Minimum events you need tracked before proceeding:
+- `error_displayed` (or your equivalent user-facing error event)
+- `$rageclick` (PostHog auto-captures this with session recording enabled)
+- `action_abandoned` (or equivalent flow abandonment event)
+- `help_docs_visited` (or equivalent help-seeking event)
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+If any of these events are not tracked, instrument them first. This is the prerequisite for the entire play.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥40% respond. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Manually identify 10-20 struggling users
 
----
+Run the struggle scoring query from `struggle-signal-detection` Step 2. Pick 10-20 users with scores above 25 (moderate tier or above). For each user:
 
-## KPIs to track
-- Response rate
-- Issue identification
-- Retention lift
+1. Review their PostHog session recordings to understand what they were trying to do
+2. Identify the specific workflow they are stuck on
+3. Note the error messages or failure patterns they encountered
+4. Check whether they have an open Intercom support ticket (if yes, skip them — help through the existing ticket instead)
 
----
+Document each user's struggle context in a simple table: person_id, stuck workflow, failure mode, suggested fix.
 
-## Pass threshold
-**≥40% respond**
+### 3. Send contextual help manually
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+For each identified user, send a brief, specific message through Intercom or email. The message MUST:
 
----
+- Reference what they were trying to accomplish (not that you saw them struggle)
+- Provide the specific fix or next step for their situation
+- Include a direct link to the relevant help article or product area
+- Be framed as a proactive tip, not a support response
 
-## How to run this skill
+Example: "Quick tip for CSV imports: dates need to be in YYYY-MM-DD format. Here's the full guide: [link]. If you hit any other issues, reply here and I'll help."
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Do NOT send: "Hi! We noticed you might be having some trouble. Let us know if we can help!" This is useless.
 
-_Install this skill: `npx gtm-skills add product/retain/proactive-support-outreach`_
+**Human action required:** Review each message before sending. Ensure the tone is helpful and specific, not creepy or surveillance-like. Send each message manually through Intercom or as a direct email.
+
+### 4. Track responses and resolution
+
+Log each outreach and its outcome:
+- Did the user engage? (clicked link, replied, took action)
+- Did their struggle resolve? (check PostHog — did the error/abandonment pattern stop?)
+- Did they respond positively, neutrally, or negatively?
+- How long after outreach did they re-engage with the product?
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill to measure against: ≥40% of outreached users engage with the help. Count as engaged: clicked help link, replied to message, watched video, completed the previously-stuck workflow within 48 hours of outreach.
+
+If PASS: The signal is real — struggling users respond to contextual help. Proceed to Baseline.
+If FAIL: Either the struggle detection is picking up false positives, or the help content is not specific enough. Review session recordings of non-responders to understand why.
+
+## Time Estimate
+
+- 1 hour: Verify PostHog events are tracked, run struggle scoring query
+- 1.5 hours: Review session recordings for 10-20 users, document struggle context
+- 1 hour: Write and send contextual help messages
+- 0.5 hours: Track responses over 3-5 days
+- 1 hour: Evaluate results and document findings
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Session recordings + event queries for struggle detection | Free tier: 5K sessions/mo; Paid: $0.005/session — https://posthog.com/pricing |
+
+## Drills Referenced
+
+- `struggle-signal-detection` — Detect and score users showing signs of product struggle (Steps 1-2 only at this level)
+- `threshold-engine` — Evaluate pass/fail against the 40% engagement threshold
