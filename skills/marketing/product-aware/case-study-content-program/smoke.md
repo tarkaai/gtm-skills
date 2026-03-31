@@ -1,7 +1,9 @@
 ---
 name: case-study-content-program-smoke
 description: >
-  Case Study Content Program — Smoke Test. Create in-depth customer success stories with metrics and storytelling to build credibility and drive conversions, from manual interviews to systematic production and AI-driven story optimization.
+    Case Study Content Program — Smoke Test. Create in-depth customer success stories with metrics
+  and storytelling to build credibility and drive conversions, from manual interviews to systematic
+  production and AI-driven story optimization.
 stage: "Marketing > Product Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,6 +14,7 @@ kpis: ["Page views", "Time on page", "Conversion rate", "Social shares"]
 slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Product Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Create in-depth customer success stories with metrics and storytelling to build credibility and drive conversions, from manual interviews to systematic production and AI-driven story optimization.
+Case Study Content Program — Smoke Test. Create in-depth customer success stories with metrics and storytelling to build credibility and drive conversions, from manual interviews to systematic production and AI-driven story optimization.
 
 **Time commitment:** 10 hours over 4 weeks
 **Pass threshold:** ≥300 page views and ≥5 conversions in 4 weeks
@@ -35,33 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Analytics)
-- **Loom** (Video)
-
----
-
 ## Instructions
 
-1. Identify 3 happy customers with strong results; reach out asking if they'd be willing to share their story; offer small incentive (gift card, feature on website, co-marketing opportunity).
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create case study interview template with 10-15 questions covering: pre-solution challenges, evaluation process, implementation, results achieved, specific metrics, unexpected benefits.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Conduct 30-45 minute interviews with each customer via Zoom; record with permission using Fireflies or Otter.ai for transcription.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Write 3 case studies (1,000-1,500 words each) following story structure: challenge, solution, results; include specific metrics ("increased X by 40%"), quotes, and customer logo/headshot.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Get customer approval on final draft; address any concerns about confidentiality or competitive information; secure written permission to publish.
-
-6. Publish case studies on dedicated website pages; optimize for SEO with keywords like "[your category] case study", "[industry] success story"; include clear CTAs.
-
-7. Set up PostHog to track page views, time on page, CTA clicks, and conversions (demo requests, signups) from case study pages.
-
-8. Set pass threshold: ≥300 total page views and ≥5 conversions from the 3 case studies within 4 weeks.
-
-9. Promote case studies via LinkedIn (tag the customer), sales outreach (include in sequences), and website (feature on homepage and product pages).
-
-10. After 4 weeks, analyze PostHog: if you hit the threshold, document your interview template and production process and proceed to Baseline; if not, improve story quality or choose customers with stronger results.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥300 page views and ≥5 conversions in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -76,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥300 page views and ≥5 conversions in 4 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

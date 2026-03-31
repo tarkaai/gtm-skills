@@ -1,7 +1,9 @@
 ---
 name: programmatic-seo-pages-smoke
 description: >
-  Programmatic SEO Pages — Smoke Test. Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
+    Programmatic SEO Pages — Smoke Test. Generate hundreds of long-tail keyword-optimized landing
+  pages to capture organic search traffic, from manual template creation through automated page
+  generation to AI-driven continuous content optimization.
 stage: "Marketing > Problem Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,6 +14,7 @@ kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position"
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
+Programmatic SEO Pages — Smoke Test. Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
 
 **Time commitment:** 8 hours over 4 weeks
 **Pass threshold:** ≥100 organic visits and ≥1 conversion in 4 weeks
@@ -35,33 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Analytics)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Research 20-30 long-tail keywords in your category using free tools like Google Keyword Planner or AnswerThePublic; prioritize keywords with 100-500 monthly searches and low competition.
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create a simple HTML or Markdown template for one page type (e.g., "[Tool] vs [Competitor]" or "Best [Tool] for [Use Case]") with placeholders for dynamic content.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Manually create 10 pages using the template, filling in unique content for title, H1, description, and body (200-300 words each); ensure each page provides genuine value and answers the search intent.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Add structured data markup (Schema.org) to each page for better search visibility; include breadcrumbs and internal links to other pages.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Set up PostHog to track page views, time on page, and conversions (signup, demo request) for each programmatic page; create a dashboard to monitor performance.
-
-6. Set pass threshold: ≥100 organic visits to the 10 pages within 4 weeks, with ≥1 conversion (signup or demo).
-
-7. Submit the 10 pages to Google Search Console for indexing; monitor indexing status and Core Web Vitals.
-
-8. After 4 weeks, check PostHog and Google Search Console: count total organic visits, conversions, average position for target keywords.
-
-9. Identify the top 3 performing pages by traffic and conversions; analyze what made them successful (keyword difficulty, content quality, search intent match).
-
-10. If you hit the threshold, document the template and keyword research process and proceed to Baseline; if not, refine keyword selection or content quality and retest with a new batch.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥100 organic visits and ≥1 conversion in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -76,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥100 organic visits and ≥1 conversion in 4 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

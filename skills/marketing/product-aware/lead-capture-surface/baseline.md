@@ -1,7 +1,7 @@
 ---
 name: lead-capture-surface-baseline
 description: >
-  Single CTA Lead Capture — Baseline Run. Use one clear CTA (e.
+    Single CTA Lead Capture — Baseline Run. Use one clear CTA (e.
 stage: "Marketing > Product Aware"
 motion: "Lead Capture Surface"
 channels: "Direct"
@@ -12,17 +12,16 @@ kpis: ["Click-through rate", "Form starts"]
 slug: "lead-capture-surface"
 install: "npx gtm-skills add marketing/product-aware/lead-capture-surface"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Single CTA Lead Capture — Baseline Run
 
 > **Stage:** Marketing → Product Aware | **Motion:** Lead Capture Surface | **Channels:** Direct
 
 ## Overview
-Use one clear CTA (e.g. "Book 15 min" LP or chat) to check conversion from warm traffic and whether to add chat or shorten the form.
+Single CTA Lead Capture — Baseline Run. Use one clear CTA (e.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** ≥ 4% conversion rate over 2 weeks
@@ -32,40 +31,25 @@ Use one clear CTA (e.g. "Book 15 min" LP or chat) to check conversion from warm 
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally or Typeform (lead capture forms):** Free–$25/mo
-
-_Total play-specific: Free–$25/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. ≥ 4% conversion rate over 2 weeks).
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `lead-capture-surface_impression`, `lead-capture-surface_engaged`, `lead-capture-surface_converted`, `lead-capture-surface_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Click-through rate, Form starts so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: ≥ 4% conversion rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -78,8 +62,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥ 4% conversion rate over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

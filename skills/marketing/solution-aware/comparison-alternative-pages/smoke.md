@@ -1,7 +1,9 @@
 ---
 name: comparison-alternative-pages-smoke
 description: >
-  Comparison and Alternative Pages — Smoke Test. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+    Comparison and Alternative Pages — Smoke Test. Create comparison and alternative pages targeting
+  competitor keywords to capture high-intent search traffic, from manual competitor research to
+  automated page generation and AI-driven competitive intelligence.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,6 +14,7 @@ kpis: ["Organic traffic", "Conversion rate", "Average position for competitor ke
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+Comparison and Alternative Pages — Smoke Test. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
 
 **Time commitment:** 8 hours over 4 weeks
 **Pass threshold:** ≥200 page views and ≥3 conversions in 4 weeks
@@ -35,34 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Analytics)
-- **Ahrefs** (Analytics)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Identify your top 5 direct competitors; research their brand + "alternatives" and "vs [your product]" keywords using Ahrefs or Google Keyword Planner.
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create 5 comparison pages: 3 "[Competitor] vs [Your Product]" pages and 2 "Best [Competitor] Alternatives" pages.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. For each page, research competitor's features, pricing, strengths, and weaknesses using their website, G2 reviews, and user feedback on Reddit or forums.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Write honest, balanced comparisons (800-1,200 words): feature-by-feature tables, use case recommendations, pros/cons for each solution; include your differentiation without being overly promotional.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Optimize pages for SEO: target keyword in title, H1, meta description, and throughout body; add structured data (comparison schema) for rich snippets.
-
-6. Include clear CTAs ("Try [Your Product]", "Compare Features") with links to signup or demo; add trust signals (customer logos, testimonials, G2 badges).
-
-7. Set up PostHog to track page views, time on page, CTA clicks, and conversions for each comparison page.
-
-8. Set pass threshold: ≥200 total page views and ≥3 conversions from the 5 pages within 4 weeks.
-
-9. Submit pages to Google Search Console; monitor indexing and rankings for target competitor keywords.
-
-10. After 4 weeks, analyze PostHog and Search Console: if you hit the threshold, document your comparison page template and research process and proceed to Baseline; if not, refine content depth or target different competitors.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥200 page views and ≥3 conversions in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -77,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥200 page views and ≥3 conversions in 4 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

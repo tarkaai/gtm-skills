@@ -1,7 +1,9 @@
 ---
 name: documentation-as-marketing-scalable
 description: >
-  Documentation as Marketing — Scalable Automation. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+    Documentation as Marketing — Scalable Automation. Build public, SEO-optimized developer
+  documentation that attracts organic search traffic and converts technical audiences from
+  solution-aware to product-aware.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,11 +14,8 @@ kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation effici
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
+  - ab-test-orchestrator
+  - churn-prevention
   - upgrade-prompt
 ---
 # Documentation as Marketing — Scalable Automation
@@ -24,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+Documentation as Marketing — Scalable Automation. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
 
 **Time commitment:** 75 hours over 3 months
 **Pass threshold:** ≥5,000 organic visits/month and ≥100 signups from docs over 6 months
@@ -34,44 +33,25 @@ Build public, SEO-optimized developer documentation that attracts organic search
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow (landing page optimization):** ~$15–40/mo
-- **Hotjar (session recording + heatmaps):** ~$30/mo
-
-_Total play-specific: ~$15–40/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Set volume target to scale 5-10x from Baseline while maintaining quality; confirm your systems and list sources can support this volume.
+### 1. Launch systematic testing
+Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
 
-2. Implement automation via n8n workflows to reduce manual effort and increase throughput for documentation as marketing execution.
+### 2. Build churn prevention
+Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
 
-3. Connect all tools via PostHog CDP and n8n: sync events from email tool, CRM, and other platforms for unified tracking.
+### 3. Set up expansion prompts
+Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
 
-4. Set up guardrails: conversion rate must stay within 20% of Baseline benchmark; create alerts in n8n when metrics deviate.
-
-5. Build sustainable pipeline for list building, content creation, or outreach that supports target volume week over week.
-
-6. Create standardized templates, sequences, and processes that team members or automation can execute consistently.
-
-7. Monitor key metrics daily in PostHog dashboards; use n8n workflows to alert team when performance exceeds or falls below thresholds.
-
-8. Optimize based on data: identify high-performing segments, messages, or formats; double down on winners and deprioritize losers.
-
-9. Track ROI at scale over 2-3 months: cost per qualified result, time efficiency gains from automation, pipeline impact, and conversion quality.
-
-10. Decide: proceed to Durable if metrics are stable and repeatable at volume, or refine automation and targeting if quality drops or efficiency plateaus.
+### 4. Evaluate against threshold
+Measure against: ≥5,000 organic visits/month and ≥100 signups from docs over 6 months. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
 ---
 
@@ -87,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥5,000 organic visits/month and ≥100 signups from docs over 6 months**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

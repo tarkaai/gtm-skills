@@ -1,7 +1,9 @@
 ---
 name: content-cluster-strategy-smoke
 description: >
-  Content Cluster Strategy — Smoke Test. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+    Content Cluster Strategy — Smoke Test. Build topical authority with interconnected pillar pages
+  and cluster content to dominate search rankings, from manual topic mapping through automated
+  content production to AI-driven cluster optimization.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,6 +14,7 @@ kpis: ["Organic traffic to cluster", "Internal link CTR", "Conversion rate", "Av
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+Content Cluster Strategy — Smoke Test. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
 
 **Time commitment:** 12 hours over 4 weeks
 **Pass threshold:** ≥400 page views and ≥3 conversions in 4 weeks
@@ -35,34 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Analytics)
-- **Ghost** (Content)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Choose one broad topic your ICP cares about (e.g., "customer onboarding", "data pipelines"); research 10-15 related subtopics using AnswerThePublic or Ahrefs.
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create a simple content map in a spreadsheet: 1 pillar page (comprehensive 2,000+ word guide) connected to 5-8 cluster pages (focused 800-1,200 word articles on subtopics).
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Write the pillar page first: cover the topic comprehensively with sections for each subtopic; include table of contents, examples, and CTAs.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Write 3 cluster pages that dive deep into specific subtopics; in each cluster page, link back to the pillar page and to 1-2 related cluster pages.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. In the pillar page, add contextual links to each cluster page; ensure all pages are internally linked in a logical hierarchy.
-
-6. Set up PostHog to track page views, time on page, scroll depth, and conversions for the pillar and cluster pages.
-
-7. Set pass threshold: ≥400 combined page views and ≥3 conversions from the 4 pages within 4 weeks.
-
-8. Submit all pages to Google Search Console; monitor indexing and keyword rankings for pillar and cluster keywords.
-
-9. After 4 weeks, analyze PostHog and Search Console: measure total organic traffic, internal link click-through rate, and conversion rate.
-
-10. If you hit the threshold, document your cluster topic, structure, and linking strategy and proceed to Baseline; if not, refine topics or improve content depth.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥400 page views and ≥3 conversions in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -77,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥400 page views and ≥3 conversions in 4 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

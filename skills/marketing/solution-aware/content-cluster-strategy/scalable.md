@@ -1,7 +1,9 @@
 ---
 name: content-cluster-strategy-scalable
 description: >
-  Content Cluster Strategy — Scalable Automation. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+    Content Cluster Strategy — Scalable Automation. Build topical authority with interconnected
+  pillar pages and cluster content to dominate search rankings, from manual topic mapping through
+  automated content production to AI-driven cluster optimization.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,11 +14,8 @@ kpis: ["Organic traffic to clusters", "Internal link CTR", "Conversion rate", "A
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
+  - ab-test-orchestrator
+  - churn-prevention
   - upgrade-prompt
 ---
 # Content Cluster Strategy — Scalable Automation
@@ -24,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+Content Cluster Strategy — Scalable Automation. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
 
 **Time commitment:** 70 hours over 2 months
 **Pass threshold:** ≥12,000 page views/month and conversion rate ≥1.0%
@@ -34,46 +33,25 @@ Build topical authority with interconnected pillar pages and cluster content to 
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow (landing page optimization):** ~$15–40/mo
-- **Hotjar (session recording + heatmaps):** ~$30/mo
-
-_Total play-specific: ~$15–40/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Ghost** (Content)
-- **Anthropic** (AI/LLM)
-- **Ahrefs** (Analytics)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Scale to 10-12 content clusters covering your core topic areas; build automated cluster production pipeline in n8n.
+### 1. Launch systematic testing
+Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
 
-2. Create n8n workflow that: fetches keyword clusters from Ahrefs API, generates content briefs using AI, produces drafts via Anthropic API, and publishes to Ghost CMS.
+### 2. Build churn prevention
+Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
 
-3. Build automatic internal linking system in n8n: analyze semantic similarity between pages, automatically insert contextual internal links, and update existing pages with links to new cluster content.
+### 3. Set up expansion prompts
+Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
 
-4. Generate 80-100 total pages (10-12 pillars + 70-90 clusters) over 2 months; ensure consistent quality through AI editing and human review of pillar pages.
-
-5. Implement cluster performance tracking: PostHog dashboard showing traffic, conversions, and internal navigation patterns for each cluster.
-
-6. Connect Google Search Console to n8n: automatically track keyword rankings for all pillar and cluster keywords; alert when rankings drop >5 positions.
-
-7. Set guardrails: conversion rate must stay within 20% of Baseline rate; if internal link CTR drops below 30%, review and enhance link anchor text and placement.
-
-8. Use PostHog to identify highest-performing clusters by conversion rate; allocate more cluster pages to top-performing topics in subsequent iterations.
-
-9. After 2 months, evaluate total organic traffic, ranking improvements, and ROI; create prioritization model for new cluster topics based on search volume and conversion potential.
-
-10. If metrics hold, document automated cluster pipeline and prepare for Durable agent-driven cluster optimization; if metrics decline, refine AI content quality or reduce production velocity.
+### 4. Evaluate against threshold
+Measure against: ≥12,000 page views/month and conversion rate ≥1.0%. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
 ---
 
@@ -90,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥12,000 page views/month and conversion rate ≥1.0%**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

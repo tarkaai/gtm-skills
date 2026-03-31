@@ -1,7 +1,8 @@
 ---
 name: onboarding-email-sequence-baseline
 description: >
-  Onboarding email sequence — Baseline Run. Automated email sequence for new signups to activate and retain users.
+    Onboarding email sequence — Baseline Run. Automated email sequence for new signups to activate
+  and retain users.
 stage: "Product > Onboard"
 motion: "Lead Capture Surface"
 channels: "Email"
@@ -12,17 +13,16 @@ kpis: ["Open rate", "Click rate", "Time to first key action"]
 slug: "onboarding-email-sequence"
 install: "npx gtm-skills add product/onboard/onboarding-email-sequence"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Onboarding email sequence — Baseline Run
 
 > **Stage:** Product → Onboard | **Motion:** Lead Capture Surface | **Channels:** Email
 
 ## Overview
-Automated email sequence for new signups to activate and retain users.
+Onboarding email sequence — Baseline Run. Automated email sequence for new signups to activate and retain users.
 
 **Time commitment:** 12 hours over 2 weeks
 **Pass threshold:** Early retention ≥ 40% at day 7 over 2 weeks
@@ -32,44 +32,25 @@ Automated email sequence for new signups to activate and retain users.
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally or Typeform (surveys + forms):** Free–$25/mo
-- **Loom (async video for onboarding/CSM):** Free–$15/mo
-
-_Total play-specific: ~$15–25/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (Product analytics)
-- **Resend** (Email)
-- **N8N** (Automation)
-- **Intercom** (Communication)
-
----
-
 ## Instructions
 
-1. Define your 2-week experiment scope: list size, channels, and success criteria aligned with your pass threshold (e.g. Early retention ≥ 40% at day 7 over 2 weeks).
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `onboarding-email-sequence_impression`, `onboarding-email-sequence_engaged`, `onboarding-email-sequence_converted`, `onboarding-email-sequence_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Choose where you will log every outcome: PostHog and optionally your CRM; create or use events for each key action.
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Build your list and run enrichment (e.g. Clay, Apollo) so you have enough qualified contacts for the 2-week window.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. Execute the campaign: send sequences, make calls, or run touchpoints according to your plan; cap time and budget as defined for Baseline.
-
-5. Log every outcome in PostHog: track Open rate, Click rate, Time to first key action so you can compute rates and compare to threshold.
-
-6. At the end of week 1, review mid-point metrics; adjust cadence or targeting for week 2 if needed.
-
-7. At the end of 2 weeks, compute final metrics (e.g. meeting rate, reply rate, signups) and compare to your pass threshold.
-
-8. Document what worked (list source, message, channel mix) so you can repeat or scale.
-
-9. If metrics hold, proceed to Scalable; if not, iterate on list, offer, or channel and re-run Baseline.
-
-10. Record qualitative notes (who responded, objections) in PostHog or CRM for future optimization.
+### 4. Evaluate against threshold
+Measure against: Early retention ≥ 40% at day 7 over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -83,8 +64,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Early retention ≥ 40% at day 7 over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

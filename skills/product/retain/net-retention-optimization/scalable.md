@@ -1,7 +1,8 @@
 ---
 name: net-retention-optimization-scalable
 description: >
-  Net Retention Focus — Scalable Automation. Focus on reducing churn and increasing expansion to optimize net dollar retention (NDR).
+    Net Retention Focus — Scalable Automation. Focus on reducing churn and increasing expansion to
+  optimize net dollar retention (NDR).
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
@@ -12,11 +13,8 @@ kpis: ["Net dollar retention", "Churn rate", "Expansion rate", "Segment metrics"
 slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
+  - ab-test-orchestrator
+  - churn-prevention
   - upgrade-prompt
 ---
 # Net Retention Focus — Scalable Automation
@@ -24,7 +22,7 @@ drills:
 > **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
 ## Overview
-Focus on reducing churn and increasing expansion to optimize net dollar retention (NDR).
+Net Retention Focus — Scalable Automation. Focus on reducing churn and increasing expansion to optimize net dollar retention (NDR).
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** NDR ≥115% at 500+
@@ -34,45 +32,25 @@ Focus on reducing churn and increasing expansion to optimize net dollar retentio
 ## Budget
 
 **Play-specific tools & costs**
-- **Intercom (in-app messaging + email sequences):** ~$75–300/mo
-- **Loom or Descript (video content at scale):** ~$15–30/mo
-- **Typeform (in-app surveys + NPS):** ~$25/mo
-
-_Total play-specific: ~$15–300/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (Product Analytics)
-- **n8n** (Automation)
-- **Loops** (Email)
-- **Intercom** (Communication)
-
----
-
 ## Instructions
 
-1. Roll out to 100%; personalize via PostHog cohorts.
+### 1. Launch systematic testing
+Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
 
-2. Build 2-3 persona variants; assign via properties.
+### 2. Build churn prevention
+Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
 
-3. Target: ≥500 users/2mo; efficiency: NDR ≥115% at 500+.
+### 3. Set up expansion prompts
+Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
 
-4. Automate workflows with n8n + PostHog triggers.
-
-5. Use recordings to fix friction continuously.
-
-6. A/B test via PostHog experiments.
-
-7. Track feature discovery in PostHog.
-
-8. Monitor weekly; alert if below threshold.
-
-9. After 2mo, verify at scale; prep Durable.
-
-10. Document playbook for AI handoff.
+### 4. Evaluate against threshold
+Measure against: NDR ≥115% at 500+. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
 ---
 
@@ -87,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **NDR ≥115% at 500+**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

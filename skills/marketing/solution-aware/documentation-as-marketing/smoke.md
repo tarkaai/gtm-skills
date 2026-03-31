@@ -1,7 +1,9 @@
 ---
 name: documentation-as-marketing-smoke
 description: >
-  Documentation as Marketing — Smoke Test. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+    Documentation as Marketing — Smoke Test. Build public, SEO-optimized developer documentation
+  that attracts organic search traffic and converts technical audiences from solution-aware to
+  product-aware.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,6 +14,7 @@ kpis: ["Response rate", "Engagement quality", "Time to response"]
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+Documentation as Marketing — Smoke Test. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
 
 **Time commitment:** 6 hours over 1 week
 **Pass threshold:** ≥100 organic visits to docs in 4 weeks
@@ -35,32 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Define your ICP and target audience for this documentation as marketing play; document hypothesis and success criteria.
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create minimal viable version manually with small test size (10-50 contacts, pieces, or interactions).
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Set pass threshold upfront (e.g., ≥2 qualified responses, ≥3% engagement, ≥50 interactions) and choose where to log results.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Execute play within time cap (hours to 1 week) using free or existing tools; keep it scrappy and manual.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Track all activities and outcomes in spreadsheet or basic CRM (Attio); log dates, responses, and key metrics.
-
-6. Monitor engagement and response quality; note any unexpected positive or negative signals.
-
-7. Measure final results against your pass threshold after test period ends.
-
-8. Document key learnings: what messaging resonated, what channels worked, what timing was optimal.
-
-9. Calculate rough ROI: time invested vs. qualified responses or meetings generated.
-
-10. Decide next step: proceed to Baseline if passed threshold, iterate if close but needs refinement, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥100 organic visits to docs in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -74,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥100 organic visits to docs in 4 weeks**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

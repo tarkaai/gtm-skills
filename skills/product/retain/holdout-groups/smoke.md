@@ -1,7 +1,8 @@
 ---
 name: holdout-groups-smoke
 description: >
-  Holdout Group Analysis — Smoke Test. Maintain control groups to measure cumulative impact of experiments over time.
+    Holdout Group Analysis — Smoke Test. Maintain control groups to measure cumulative impact of
+  experiments over time.
 stage: "Product > Retain"
 motion: "Lead Capture Surface"
 channels: "Product"
@@ -12,6 +13,7 @@ kpis: ["Holdout performance", "Cumulative lift", "Long-term impact"]
 slug: "holdout-groups"
 install: "npx gtm-skills add product/retain/holdout-groups"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
 
 ## Overview
-Maintain control groups to measure cumulative impact of experiments over time.
+Holdout Group Analysis — Smoke Test. Maintain control groups to measure cumulative impact of experiments over time.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** Set up holdout
@@ -35,32 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Product Analytics)
-
----
-
 ## Instructions
 
-1. Define success metric and pass threshold (Set up holdout).
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. In PostHog, create events for key actions; ensure app tracks all interactions.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Instrument critical path with clear PostHog event names.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Build minimum viable version with simple UI.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Launch to 10-20 users via PostHog feature flag.
-
-6. Track progression in PostHog; create funnels for drop-off analysis.
-
-7. After 7 days, compute metrics vs. threshold.
-
-8. Review PostHog data for patterns and friction.
-
-9. If passed, document and proceed to Baseline; if not, iterate.
-
-10. Record observations for optimization.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: Set up holdout. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -74,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Set up holdout**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

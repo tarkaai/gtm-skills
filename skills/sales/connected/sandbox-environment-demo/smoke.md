@@ -1,7 +1,9 @@
 ---
 name: sandbox-environment-demo-smoke
 description: >
-  Sandbox Environment Demo — Smoke Test. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+    Sandbox Environment Demo — Smoke Test. Provide hands-on sandbox environment during sales process
+  so prospects can test product with their own data and use cases to validate fit and build
+  confidence.
 stage: "Sales > Connected"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
@@ -12,6 +14,7 @@ kpis: ["Sandbox provisioning rate", "Active usage rate", "Feature exploration de
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Sales → Connected | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
 ## Overview
-Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+Sandbox Environment Demo — Smoke Test. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
 
 **Time commitment:** 7 hours over 1 week
 **Pass threshold:** Sandboxes provided to ≥5 opportunities in 1 week
@@ -35,33 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Set up 5-8 sandbox environments for qualified prospects after discovery; provision with sample data relevant to their industry and use case.
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Create sandbox kickoff guide: step-by-step instructions for getting started, key workflows to test, sample data available, how to add their own data if applicable.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Send sandbox access with personalized onboarding: 'Here's your hands-on environment to test [specific use cases discussed]. I've pre-loaded [relevant sample data]. Start with [suggested workflow]'.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Schedule 30-minute sandbox walkthrough call: demonstrate key features, show how to accomplish their specific use cases, answer questions, encourage experimentation.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Track sandbox usage in PostHog: logins, features accessed, time spent, workflows completed, data uploaded, errors encountered.
-
-6. Implement proactive check-ins: reach out when sandbox shows low usage, offer help when errors occur, celebrate when key milestones are achieved.
-
-7. Create sandbox success checklist: 3-5 key workflows or outcomes for prospect to validate; track completion in PostHog.
-
-8. Set pass threshold: Provision sandboxes for ≥5 opportunities in 1 week with ≥60% showing active usage (3+ sessions, 30+ minutes total).
-
-9. Measure sandbox effectiveness: track correlation between sandbox usage and demo-to-proposal conversion, deal velocity, close rate.
-
-10. Document which sandbox approaches and check-in strategies drive highest engagement; proceed to Baseline if threshold met.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: Sandboxes provided to ≥5 opportunities in 1 week. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -76,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Sandboxes provided to ≥5 opportunities in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

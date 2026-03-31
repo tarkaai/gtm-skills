@@ -1,7 +1,9 @@
 ---
 name: sandbox-environment-demo-baseline
 description: >
-  Sandbox Environment Demo — Baseline Run. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+    Sandbox Environment Demo — Baseline Run. Provide hands-on sandbox environment during sales
+  process so prospects can test product with their own data and use cases to validate fit and build
+  confidence.
 stage: "Sales > Connected"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
@@ -12,17 +14,16 @@ kpis: ["Sandbox provisioning rate", "Active usage rate", "Success checklist comp
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Sandbox Environment Demo — Baseline Run
 
 > **Stage:** Sales → Connected | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
 ## Overview
-Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+Sandbox Environment Demo — Baseline Run. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** Sandboxes on ≥80% of qualified opportunities over 2 weeks
@@ -32,42 +33,25 @@ Provide hands-on sandbox environment during sales process so prospects can test 
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally or Typeform (surveys + forms):** Free–$25/mo
-- **Loom (async video for onboarding/CSM):** Free–$15/mo
-
-_Total play-specific: ~$15–25/mo_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-
----
-
 ## Instructions
 
-1. Expand sandbox program to 20-30 opportunities over 2 weeks.
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `sandbox-environment-demo_impression`, `sandbox-environment-demo_engaged`, `sandbox-environment-demo_converted`, `sandbox-environment-demo_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Create sandbox environment tiers: Basic (standard sample data), Custom (prospect-specific data), Enterprise (full integration setup for complex evaluation).
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Build sandbox playbook: qualification criteria for sandbox access, provisioning process, kickoff templates, usage monitoring dashboards, intervention triggers.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. Set up PostHog event tracking: sandbox_provisioned, first_login, feature_used, workflow_completed, data_uploaded, help_requested, milestone_achieved.
-
-5. Implement usage-based interventions: low usage triggers check-in email, specific feature usage triggers relevant content, completed workflows trigger congratulations and next steps.
-
-6. Track sandbox to outcome metrics: measure usage patterns that predict proposal acceptance and close; identify which workflows drive highest conviction.
-
-7. Create sandbox content library: video tutorials, workflow guides, use case templates, troubleshooting docs organized by persona and use case.
-
-8. Set pass threshold: Sandboxes on ≥80% of qualified opportunities over 2 weeks with ≥65% active usage and ≥50% completing success checklist.
-
-9. Analyze sandbox patterns: which features drive most engagement, which workflows validate fit, which usage levels predict closes.
-
-10. If threshold met, document sandbox program and proceed to Scalable; if not, refine sandbox experience or support model.
+### 4. Evaluate against threshold
+Measure against: Sandboxes on ≥80% of qualified opportunities over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -82,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Sandboxes on ≥80% of qualified opportunities over 2 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

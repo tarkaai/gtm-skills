@@ -1,7 +1,8 @@
 ---
 name: technical-seo-audit-optimization-baseline
 description: >
-  Technical SEO Audit & Fix — Baseline Run. Systematically audit and fix technical SEO issues to improve search rankings, organic traffic, and lead generation from solution-aware searchers.
+    Technical SEO Audit & Fix — Baseline Run. Systematically audit and fix technical SEO issues to
+  improve search rankings, organic traffic, and lead generation from solution-aware searchers.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Website, Content"
@@ -12,17 +13,16 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "technical-seo-audit-optimization"
 install: "npx gtm-skills add marketing/solution-aware/technical-seo-audit-optimization"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Technical SEO Audit & Fix — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Website, Content
 
 ## Overview
-Systematically audit and fix technical SEO issues to improve search rankings, organic traffic, and lead generation from solution-aware searchers.
+Technical SEO Audit & Fix — Baseline Run. Systematically audit and fix technical SEO issues to improve search rankings, organic traffic, and lead generation from solution-aware searchers.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** Increase organic traffic by 20% and improve average position by 5 ranks in 8 weeks
@@ -32,42 +32,25 @@ Systematically audit and fix technical SEO issues to improve search rankings, or
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally (free form builder):** Free
-
-_Total play-specific: Free_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week technical seo audit & fix experiment; define detailed ICP criteria.
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `technical-seo-audit-optimization_impression`, `technical-seo-audit-optimization_engaged`, `technical-seo-audit-optimization_converted`, `technical-seo-audit-optimization_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: Increase organic traffic by 20% and improve average position by 5 ranks in 8 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -82,8 +65,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **Increase organic traffic by 20% and improve average position by 5 ranks in 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

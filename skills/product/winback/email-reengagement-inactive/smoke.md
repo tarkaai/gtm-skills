@@ -1,7 +1,8 @@
 ---
 name: email-reengagement-inactive-smoke
 description: >
-  Inactive User Re-engagement — Smoke Test. Automated email sequences to win back users who haven't logged in recently with personalized messaging and incentives.
+    Inactive User Re-engagement — Smoke Test. Automated email sequences to win back users who
+  haven't logged in recently with personalized messaging and incentives.
 stage: "Product > Winback"
 motion: "Lead Capture Surface"
 channels: "Email, Product"
@@ -12,6 +13,7 @@ kpis: ["Email open rate", "Return rate", "Reactivation rate"]
 slug: "email-reengagement-inactive"
 install: "npx gtm-skills add product/winback/email-reengagement-inactive"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +22,7 @@ drills:
 > **Stage:** Product → Winback | **Motion:** Lead Capture Surface | **Channels:** Email, Product
 
 ## Overview
-Automated email sequences to win back users who haven't logged in recently with personalized messaging and incentives.
+Inactive User Re-engagement — Smoke Test. Automated email sequences to win back users who haven't logged in recently with personalized messaging and incentives.
 
 **Time commitment:** 5 hours over 1 week
 **Pass threshold:** ≥15% return in 7d
@@ -35,38 +37,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-- **PostHog** (Product Analytics)
-
----
-
 ## Instructions
 
-### 1. Define inactive users in PostHog
-Use the `posthog-cohorts` fundamental to create an "Inactive Users" cohort: users who were active 14+ days ago but have not logged in during the last 7 days. Use HogQL:
-```sql
-SELECT distinct_id FROM persons WHERE last_seen < now() - interval 7 day AND last_seen > now() - interval 90 day
-```
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-### 2. Set up re-engagement tracking
-Use the `posthog-custom-events` fundamental to define events: `reengagement_email_sent`, `user_returned`, `reactivation_completed`. These measure whether the email brought them back and whether they performed a meaningful action.
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-### 3. Write a 3-email re-engagement sequence
-Use the `loops-sequences` fundamental to create the sequence:
-- **Email 1 (Day 0):** "We noticed you haven't been in -- here's what's new" + link to the product
-- **Email 2 (Day 3):** Value-focused: highlight a feature they used before or a new capability
-- **Email 3 (Day 7):** Personal note from founder asking if they need help + offer a call
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-### 4. Send to a small test group
-Export 20 inactive users from the PostHog cohort. Send the sequence via Loops. Use the `onboarding-flow` drill patterns for re-onboarding messaging.
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-### 5. Measure against threshold
-Run the `threshold-engine` drill after 7 days:
-- **Pass:** ≥ 15% of the 20 users return and log in within 7 days
-- Track open rate, return rate, and reactivation rate (performed meaningful action)
-
-### 6. Iterate or proceed
-If pass, document the winning sequence and proceed to Baseline with larger cohort. If fail, test different subject lines, different value hooks, or different timing.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥15% return in 7d. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -80,8 +65,8 @@ If pass, document the winning sequence and proceed to Baseline with larger cohor
 ## Pass threshold
 **≥15% return in 7d**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

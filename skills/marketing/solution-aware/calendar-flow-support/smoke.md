@@ -1,7 +1,9 @@
 ---
 name: calendar-flow-support-smoke
 description: >
-  Inline Calendar in CTAs — Smoke Test. Add an inline calendar to every CTA so interested prospects can book quickly; you learn if speed-to-meeting improves and whether to double down on this flow.
+    Inline Calendar in CTAs — Smoke Test. Add an inline calendar to every CTA so interested
+  prospects can book quickly; you learn if speed-to-meeting improves and whether to double down on
+  this flow.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Direct"
@@ -12,6 +14,7 @@ kpis: ["CTA clicks", "Calendar page views"]
 slug: "calendar-flow-support"
 install: "npx gtm-skills add marketing/solution-aware/calendar-flow-support"
 drills:
+  - icp-definition
   - onboarding-flow
   - threshold-engine
 ---
@@ -20,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Direct
 
 ## Overview
-Add an inline calendar to every CTA so interested prospects can book quickly; you learn if speed-to-meeting improves and whether to double down on this flow.
+Inline Calendar in CTAs — Smoke Test. Add an inline calendar to every CTA so interested prospects can book quickly; you learn if speed-to-meeting improves and whether to double down on this flow.
 
 **Time commitment:** 3 hours over 1 week
 **Pass threshold:** ≥ 50% of interested prospects book within 48h in 1 week
@@ -35,32 +38,21 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ---
 
-## Recommended tools
-_No specialized tools required at this level._
-
----
-
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 50% of interested prospects book within 48h in 1 week).
+### 1. Define your product ICP
+Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Set up the experience
+Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
 
-3. Set up PostHog or your CRM with properties for CTA clicks, Calendar page views so you can compare results to your threshold.
+**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 3. Track user behavior
+Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
-
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+### 4. Evaluate against threshold
+Run the `threshold-engine` drill to measure against: ≥ 50% of interested prospects book within 48h in 1 week. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
 ---
 
@@ -73,8 +65,8 @@ _No specialized tools required at this level._
 ## Pass threshold
 **≥ 50% of interested prospects book within 48h in 1 week**
 
-If you hit this threshold → move to the **Baseline Run** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Baseline Run** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

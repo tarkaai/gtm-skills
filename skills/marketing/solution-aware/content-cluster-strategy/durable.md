@@ -1,7 +1,9 @@
 ---
 name: content-cluster-strategy-durable
 description: >
-  Content Cluster Strategy — Durable Intelligence. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+    Content Cluster Strategy — Durable Intelligence. Build topical authority with interconnected
+  pillar pages and cluster content to dominate search rankings, from manual topic mapping through
+  automated content production to AI-driven cluster optimization.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,21 +14,15 @@ kpis: ["Organic traffic trend", "Keyword ranking distribution", "Topical authori
 slug: "content-cluster-strategy"
 install: "npx gtm-skills add marketing/solution-aware/content-cluster-strategy"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
-  - upgrade-prompt
-  - churn-prevention
   - dashboard-builder
+  - nps-feedback-loop
 ---
 # Content Cluster Strategy — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
+Content Cluster Strategy — Durable Intelligence. Build topical authority with interconnected pillar pages and cluster content to dominate search rankings, from manual topic mapping through automated content production to AI-driven cluster optimization.
 
 **Time commitment:** 110 hours over 6 months
 **Pass threshold:** Sustained or improving organic traffic and topical authority over 6 months via continuous AI-driven cluster optimization and market-responsive content expansion
@@ -36,46 +32,26 @@ Build topical authority with interconnected pillar pages and cluster content to 
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow:** ~$15–40/mo
-- **Hotjar or FullStory:** ~$30–100/mo
-
-_Total play-specific: ~$15–100/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Ghost** (Content)
-- **Anthropic** (AI/LLM)
-- **Ahrefs** (Analytics)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Set up PostHog event streams that trigger n8n AI agents when: new topic opportunities emerge, cluster performance degrades, or competitor clusters are detected.
+### 1. Build product dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
 
-2. Build n8n AI cluster strategist agent that analyzes Search Console and PostHog data weekly: identifies underperforming clusters, content gaps within clusters, and new cluster opportunities.
+### 2. Launch feedback loops
+Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
 
-3. Implement continuous cluster experimentation: AI agent tests different cluster structures (hub-and-spoke, matrix, hierarchical), automatically promotes winning patterns.
+### 3. Autonomous product optimization
+Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
 
-4. Create automatic cluster expansion: when a pillar page ranks in top 10, AI agent identifies related long-tail keywords and generates additional cluster pages to strengthen topical authority.
-
-5. Deploy AI internal linking optimizer: analyzes PostHog navigation data to identify underutilized links, suggests new link placements, and automatically updates pages with high-value links.
-
-6. Build cluster refresh system: AI agent monitors content freshness, identifies stale statistics or examples, and generates updated sections for pillar and cluster pages quarterly.
-
-7. Implement competitor cluster tracking: n8n monitors competitor pillar pages via Ahrefs API; AI agent identifies their cluster structure and suggests counter-clusters or gap-filling content.
-
-8. Create learning loop: PostHog tracks user journey through clusters to conversion; AI agent analyzes successful paths monthly and adjusts cluster linking and CTA placement to optimize conversion funnels.
-
-9. Set guardrails: if organic traffic drops >20% for any cluster for 2+ weeks, n8n alerts team and the agent suggests content refresh or structure optimization.
-
-10. Establish monthly review cycle: analyze which cluster experiments succeeded, which topics to expand, which structures to replicate; refine AI agent prompts and cluster strategy based on ranking and conversion data.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving organic traffic and topical authority over 6 months via continuous AI-driven cluster optimization and market-responsive content expansion. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
 
 ---
 

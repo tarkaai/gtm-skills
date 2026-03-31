@@ -1,7 +1,9 @@
 ---
 name: interactive-content-tools-durable
 description: >
-  Interactive Content Tools — Durable Intelligence. Create calculators, assessments, and ROI tools that capture leads and provide immediate value, from manual spreadsheet-based tools to embedded widgets and AI-driven personalized recommendations.
+    Interactive Content Tools — Durable Intelligence. Create calculators, assessments, and ROI tools
+  that capture leads and provide immediate value, from manual spreadsheet-based tools to embedded
+  widgets and AI-driven personalized recommendations.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Website, Content"
@@ -12,21 +14,15 @@ kpis: ["Tool completion rate trend", "SQL conversion rate", "Revenue per tool le
 slug: "interactive-content-tools"
 install: "npx gtm-skills add marketing/solution-aware/interactive-content-tools"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
-  - upgrade-prompt
-  - churn-prevention
   - dashboard-builder
+  - nps-feedback-loop
 ---
 # Interactive Content Tools — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Website, Content
 
 ## Overview
-Create calculators, assessments, and ROI tools that capture leads and provide immediate value, from manual spreadsheet-based tools to embedded widgets and AI-driven personalized recommendations.
+Interactive Content Tools — Durable Intelligence. Create calculators, assessments, and ROI tools that capture leads and provide immediate value, from manual spreadsheet-based tools to embedded widgets and AI-driven personalized recommendations.
 
 **Time commitment:** 85 hours over 6 months
 **Pass threshold:** Sustained or improving lead generation and SQL conversion rate over 6 months via continuous AI-driven tool optimization and personalization
@@ -36,44 +32,26 @@ Create calculators, assessments, and ROI tools that capture leads and provide im
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow:** ~$15–40/mo
-- **Hotjar or FullStory:** ~$30–100/mo
-
-_Total play-specific: ~$15–100/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-- **Attio** (CRM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams that trigger n8n AI agents when: tool usage patterns shift, completion rates decline, or high-intent leads are identified.
+### 1. Build product dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
 
-2. Build n8n AI tool optimization agent that analyzes PostHog data weekly: identifies which tool questions predict conversion, which answer patterns indicate high intent, which drop-off points need improvement.
+### 2. Launch feedback loops
+Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
 
-3. Implement continuous tool experimentation: AI agent tests different question sequences, visual designs, result formats, and CTA placements; automatically promotes winning variants.
+### 3. Autonomous product optimization
+Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
 
-4. Create dynamic personalization system: AI agent analyzes user behavior (pages visited, content consumed, tool responses) and generates real-time personalized tool questions and results.
-
-5. Build learning loop: PostHog tracks complete journey from tool use to closed revenue; AI agent identifies which tool types and result profiles correlate with highest win rates; adjusts tool strategy accordingly.
-
-6. Deploy AI result generation: instead of static formulas, AI agent generates personalized recommendations, benchmarks, and next steps based on user inputs and industry data; continuously improves recommendations based on user feedback.
-
-7. Implement automatic tool discovery: AI agent monitors customer conversations, support tickets, and sales calls for common questions or calculations; suggests new tool ideas; generates tool prototypes for testing.
-
-8. Create competitive tool intelligence: n8n monitors competitor interactive content; AI agent identifies gaps and opportunities; generates differentiated tool concepts.
-
-9. Set guardrails: if tool completion rate drops >15% or SQL conversion rate falls below Scalable threshold for 2+ weeks, n8n alerts team and agent suggests UX improvements.
-
-10. Establish monthly review cycle: analyze which tool experiments succeeded, which tools drive most revenue, which new tool concepts to develop; refine AI agent prompts and tool strategy based on conversion and revenue data.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving lead generation and SQL conversion rate over 6 months via continuous AI-driven tool optimization and personalization. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
 
 ---
 

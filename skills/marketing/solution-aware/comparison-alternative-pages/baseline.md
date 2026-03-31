@@ -1,7 +1,9 @@
 ---
 name: comparison-alternative-pages-baseline
 description: >
-  Comparison and Alternative Pages — Baseline Run. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+    Comparison and Alternative Pages — Baseline Run. Create comparison and alternative pages
+  targeting competitor keywords to capture high-intent search traffic, from manual competitor
+  research to automated page generation and AI-driven competitive intelligence.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,17 +14,16 @@ kpis: ["Organic traffic", "Conversion rate", "Average position for competitor ke
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Comparison and Alternative Pages — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+Comparison and Alternative Pages — Baseline Run. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
 
 **Time commitment:** 25 hours over 8 weeks
 **Pass threshold:** ≥1,500 page views and ≥20 conversions over 8 weeks
@@ -32,43 +33,25 @@ Create comparison and alternative pages targeting competitor keywords to capture
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally (free form builder):** Free
-
-_Total play-specific: Free_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Expand to 15-20 comparison pages covering your top 10 competitors plus category alternatives (e.g., "Salesforce alternatives", "Open source CRM vs [Your Product]").
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `comparison-alternative-pages_impression`, `comparison-alternative-pages_engaged`, `comparison-alternative-pages_converted`, `comparison-alternative-pages_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Research competitor keywords using Ahrefs: identify high-volume "X vs Y" and "X alternatives" searches; prioritize keywords with difficulty <40 and commercial intent.
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Create detailed comparison page template: intro, feature comparison table, pricing comparison, use case recommendations, customer testimonials, FAQs, and CTA sections.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. For each page, gather comprehensive competitive intelligence: feature lists, pricing tiers, integration capabilities, customer reviews (G2, Capterra, TrustRadius), and positioning.
-
-5. Write or use AI to generate first drafts of all 15-20 pages; human editor ensures accuracy, balance, and differentiation without being overly biased.
-
-6. Implement cross-linking strategy: link between related comparison pages (e.g., "X vs Y" links to "Best X alternatives"); link to relevant blog posts and product pages.
-
-7. Set up PostHog events for comparison_page_view, feature_table_interaction, cta_click, and conversion; create funnels to track visitor behavior.
-
-8. Set pass threshold: ≥1,500 total page views and ≥20 conversions over 8 weeks, with conversion rate ≥1.3%.
-
-9. Monitor Google Search Console for keyword rankings; track impressions, clicks, and CTR for competitor keywords weekly.
-
-10. After 8 weeks, analyze which comparison pages drive most traffic and conversions; if you hit the threshold, document templates and research process and proceed to Scalable; if not, improve content accuracy or target higher-volume competitors.
+### 4. Evaluate against threshold
+Measure against: ≥1,500 page views and ≥20 conversions over 8 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -84,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥1,500 page views and ≥20 conversions over 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: sandbox-environment-demo-durable
 description: >
-  Sandbox Environment Demo — Durable Intelligence. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+    Sandbox Environment Demo — Durable Intelligence. Provide hands-on sandbox environment during
+  sales process so prospects can test product with their own data and use cases to validate fit and
+  build confidence.
 stage: "Sales > Connected"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
@@ -12,21 +14,15 @@ kpis: ["Sandbox-to-close conversion", "Usage prediction accuracy", "Personalizat
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
-  - upgrade-prompt
-  - churn-prevention
   - dashboard-builder
+  - nps-feedback-loop
 ---
 # Sandbox Environment Demo — Durable Intelligence
 
 > **Stage:** Sales → Connected | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
 ## Overview
-Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
+Sandbox Environment Demo — Durable Intelligence. Provide hands-on sandbox environment during sales process so prospects can test product with their own data and use cases to validate fit and build confidence.
 
 **Time commitment:** 152 hours over 6 months
 **Pass threshold:** Sustained or improving sandbox-to-close conversion over 6 months via continuous AI-driven usage intelligence and personalization
@@ -36,45 +32,26 @@ Provide hands-on sandbox environment during sales process so prospects can test 
 ## Budget
 
 **Play-specific tools & costs**
-- **Intercom (agent-triggered messaging, health-based):** ~$150–500/mo
-- **Typeform (automated NPS + CSAT loops):** ~$25/mo
-- **Descript (AI-powered video repurposing):** ~$30/mo
-
-_Total play-specific: ~$25–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **Attio** (CRM)
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Anthropic** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams triggering n8n AI agents when: sandbox is provisioned, usage patterns indicate risk or high intent, or milestones are achieved.
+### 1. Build product dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
 
-2. Build n8n AI sandbox intelligence agent analyzing historical usage data: identifies which usage patterns predict closes, which features drive conviction, which workflows validate fit.
+### 2. Launch feedback loops
+Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
 
-3. Implement AI-powered sandbox personalization: AI agent analyzes prospect's needs and automatically generates customized sandbox with most relevant data, features, and suggested workflows.
+### 3. Autonomous product optimization
+Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
 
-4. Create learning loop: PostHog tracks sandbox usage patterns and correlates with deal outcomes; AI agent learns which engagement signals predict success and recommends optimal intervention timing.
-
-5. Build adaptive sandbox guidance: AI agent monitors usage in real-time; provides contextual help, suggests next workflows, celebrates achievements based on individual exploration patterns.
-
-6. Deploy predictive sandbox scoring: AI agent predicts close probability based on early usage signals; helps sales team prioritize high-intent prospects.
-
-7. Implement automatic success path optimization: AI agent identifies most effective workflow sequences that lead to proposal acceptance; guides prospects along optimal evaluation path.
-
-8. Create intelligent re-engagement: when sandbox usage drops, AI agent generates personalized re-engagement content addressing specific features or use cases prospect showed interest in.
-
-9. Set guardrails: if sandbox-to-close conversion drops >10% or active usage rate falls below Scalable benchmark for 2+ weeks, alert team and suggest experience refinements.
-
-10. Establish monthly review cycle: analyze usage patterns, conversion predictors, intervention effectiveness; refine AI agent intelligence based on sandbox outcomes and close rates.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving sandbox-to-close conversion over 6 months via continuous AI-driven usage intelligence and personalization. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
 
 ---
 

@@ -1,7 +1,9 @@
 ---
 name: comparison-alternative-pages-durable
 description: >
-  Comparison and Alternative Pages — Durable Intelligence. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+    Comparison and Alternative Pages — Durable Intelligence. Create comparison and alternative pages
+  targeting competitor keywords to capture high-intent search traffic, from manual competitor
+  research to automated page generation and AI-driven competitive intelligence.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,21 +14,15 @@ kpis: ["Organic traffic trend", "Conversion rate", "Competitor keyword coverage"
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
-  - upgrade-prompt
-  - churn-prevention
   - dashboard-builder
+  - nps-feedback-loop
 ---
 # Comparison and Alternative Pages — Durable Intelligence
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+Comparison and Alternative Pages — Durable Intelligence. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
 
 **Time commitment:** 95 hours over 6 months
 **Pass threshold:** Sustained or improving organic traffic and conversion rate over 6 months via continuous AI-driven competitive intelligence and comparison page optimization
@@ -36,45 +32,26 @@ Create comparison and alternative pages targeting competitor keywords to capture
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow:** ~$15–40/mo
-- **Hotjar or FullStory:** ~$30–100/mo
-
-_Total play-specific: ~$15–100/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Deploy PostHog event streams that trigger n8n AI agents when: competitor keyword rankings shift, new competitors emerge, or comparison page performance changes.
+### 1. Build product dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
 
-2. Build n8n AI competitive intelligence agent that monitors competitor websites, product updates, pricing changes, and positioning shifts daily; automatically updates comparison pages with new information.
+### 2. Launch feedback loops
+Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
 
-3. Implement continuous content experimentation: AI agent tests different comparison formats (tables vs. prose, feature-by-feature vs. use-case-based), CTA placements, and messaging angles; promotes winning variants.
+### 3. Autonomous product optimization
+Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
 
-4. Create automatic competitor discovery system: n8n monitors G2, ProductHunt, Crunchbase for new competitors in your category; AI agent generates comparison pages for emerging threats within 48 hours.
-
-5. Build learning loop: PostHog tracks visitor journeys from comparison pages to conversion; AI agent analyzes which competitor positioning and differentiation messages drive highest conversion rates; updates pages accordingly.
-
-6. Deploy AI content refresh agent: identifies comparison pages with declining traffic or outdated information; generates updated feature tables, pricing comparisons, and customer testimonials quarterly.
-
-7. Implement A/B testing for comparison page elements: AI agent tests different feature table designs, pricing presentation formats, and CTA copy; automatically implements winners.
-
-8. Create competitor content monitoring: n8n tracks when competitors publish counter-comparison pages ("[Your Product] vs [Competitor]"); AI agent analyzes their claims and suggests defensive updates to your pages.
-
-9. Set guardrails: if organic traffic to comparison pages drops >20% for 2+ weeks or conversion rate falls below Scalable threshold, n8n alerts team and pauses automatic changes pending review.
-
-10. Establish monthly review cycle: analyze which competitive positioning worked, which competitors to prioritize, which comparison formats to expand; refine AI agent prompts and competitive strategy based on conversion data.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving organic traffic and conversion rate over 6 months via continuous AI-driven competitive intelligence and comparison page optimization. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
 
 ---
 

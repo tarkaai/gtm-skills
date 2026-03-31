@@ -1,7 +1,9 @@
 ---
 name: comparison-alternative-pages-scalable
 description: >
-  Comparison and Alternative Pages — Scalable Automation. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+    Comparison and Alternative Pages — Scalable Automation. Create comparison and alternative pages
+  targeting competitor keywords to capture high-intent search traffic, from manual competitor
+  research to automated page generation and AI-driven competitive intelligence.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,11 +14,8 @@ kpis: ["Organic traffic to comparison pages", "Conversion rate", "Keyword rankin
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
+  - ab-test-orchestrator
+  - churn-prevention
   - upgrade-prompt
 ---
 # Comparison and Alternative Pages — Scalable Automation
@@ -24,7 +23,7 @@ drills:
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+Comparison and Alternative Pages — Scalable Automation. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥5,000 page views/month and conversion rate ≥1.0%
@@ -34,45 +33,25 @@ Create comparison and alternative pages targeting competitor keywords to capture
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow (landing page optimization):** ~$15–40/mo
-- **Hotjar (session recording + heatmaps):** ~$30/mo
-
-_Total play-specific: ~$15–40/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Ahrefs** (Analytics)
-- **Anthropic** (AI/LLM)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Scale to 50-80 comparison pages covering all significant competitors, adjacent categories, and long-tail variations (e.g., "Best X for [vertical/use case]").
+### 1. Launch systematic testing
+Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
 
-2. Build automated competitor intelligence pipeline in n8n: fetch competitor data from G2 API, Crunchbase, and web scraping; maintain up-to-date competitive database.
+### 2. Build churn prevention
+Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
 
-3. Create n8n workflow to generate comparison pages: fetch competitor data, use AI to generate page content (feature tables, pros/cons, recommendations), format for CMS, and publish to staging.
+### 3. Set up expansion prompts
+Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
 
-4. Implement automatic feature comparison updates: n8n monitors competitor product pages and changelogs; when features change, AI agent updates comparison tables and notifies team.
-
-5. Build SEO optimization automation: n8n extracts target keywords from Ahrefs, ensures keyword placement in titles/descriptions, and suggests internal link opportunities.
-
-6. Connect PostHog to n8n: when a comparison page reaches ≥300 views, trigger workflow to create supporting content (LinkedIn posts, email sequences) to amplify traffic.
-
-7. Set guardrails: conversion rate must stay within 20% of Baseline rate; if organic traffic to comparison pages drops >15% week-over-week for 2+ weeks, alert team.
-
-8. Use PostHog to track user journeys from comparison pages to signup; identify which competitor pages and CTAs drive highest conversion rates.
-
-9. After 2 months, evaluate total organic traffic to comparison pages, keyword rankings, and conversion volume; calculate ROI vs. paid competitor campaigns.
-
-10. If metrics hold, document the automated pipeline and prepare for Durable agent-driven competitive intelligence; if metrics decline, refine content quality or update competitive data more frequently.
+### 4. Evaluate against threshold
+Measure against: ≥5,000 page views/month and conversion rate ≥1.0%. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
 ---
 
@@ -88,8 +67,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥5,000 page views/month and conversion rate ≥1.0%**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

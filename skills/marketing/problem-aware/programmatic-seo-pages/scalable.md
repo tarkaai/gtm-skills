@@ -1,7 +1,9 @@
 ---
 name: programmatic-seo-pages-scalable
 description: >
-  Programmatic SEO Pages — Scalable Automation. Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
+    Programmatic SEO Pages — Scalable Automation. Generate hundreds of long-tail keyword-optimized
+  landing pages to capture organic search traffic, from manual template creation through automated
+  page generation to AI-driven continuous content optimization.
 stage: "Marketing > Problem Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,11 +14,8 @@ kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position"
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
+  - ab-test-orchestrator
+  - churn-prevention
   - upgrade-prompt
 ---
 # Programmatic SEO Pages — Scalable Automation
@@ -24,7 +23,7 @@ drills:
 > **Stage:** Marketing → Problem Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
+Programmatic SEO Pages — Scalable Automation. Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
 
 **Time commitment:** 60 hours over 2 months
 **Pass threshold:** ≥5,000 organic visits/month and conversion rate ≥1.2%
@@ -34,46 +33,25 @@ Generate hundreds of long-tail keyword-optimized landing pages to capture organi
 ## Budget
 
 **Play-specific tools & costs**
-- **Webflow (landing page optimization):** ~$15–40/mo
-- **Hotjar (session recording + heatmaps):** ~$30/mo
-
-_Total play-specific: ~$15–40/mo_
+- **Tool and automation costs:** ~$100-500/mo at scale
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **n8n** (Automation)
-- **Webflow** (Content)
-- **Ahrefs** (Analytics)
-- **OpenAI** (AI/LLM)
-- **Google Search Console** (Analytics)
-
----
-
 ## Instructions
 
-1. Scale keyword research to 1,000-2,000 keywords using Ahrefs or SEMrush; organize into clusters by topic and search intent.
+### 1. Launch systematic testing
+Run the `ab-test-orchestrator` drill to test variations of your product experience: messaging copy, timing of prompts, CTA placement, and user segments. Use PostHog feature flags to run experiments. Run each test for statistical significance.
 
-2. Build automated page generation pipeline: use n8n workflow to fetch keywords from Ahrefs API, generate pages from templates, and publish to CMS automatically on a weekly schedule.
+### 2. Build churn prevention
+Run the `churn-prevention` drill to configure automated interventions: detect at-risk users via PostHog cohorts (declining usage, missed milestones), trigger Intercom messages or Loops emails to re-engage them.
 
-3. Integrate AI content generation (OpenAI or Anthropic API) in n8n to create unique body content for each page; include human review/editing for top-priority keywords.
+### 3. Set up expansion prompts
+Run the `upgrade-prompt` drill to configure upgrade and expansion triggers: usage threshold notifications, feature gate messages, and team invitation prompts. Time these based on user engagement data from PostHog.
 
-4. Generate 500-1,000 pages over 2 months; set up staging environment to review pages before publishing; ensure all pages pass Core Web Vitals thresholds.
-
-5. Implement advanced internal linking: n8n workflow automatically adds contextual internal links based on keyword similarity and page relationships.
-
-6. Connect Google Search Console and PostHog to n8n; create automated reporting workflow that sends weekly summaries of new pages indexed, traffic, and conversions.
-
-7. Set guardrails: conversion rate must stay within 20% of Baseline rate (e.g., if Baseline was 1.5%, Scalable must maintain ≥1.2%); if performance drops, pause page generation and diagnose.
-
-8. Use PostHog to track user journeys from programmatic pages to signup; identify which page templates and topics drive highest conversion rates.
-
-9. After 2 months, evaluate: total pages indexed, organic traffic growth, conversion volume; create a prioritization model to focus on high-performing page types.
-
-10. If metrics hold, document the automated pipeline and prepare for Durable agent-driven optimization; if metrics decline, refine content quality or reduce page generation velocity.
+### 4. Evaluate against threshold
+Measure against: ≥5,000 organic visits/month and conversion rate ≥1.2%. If PASS, proceed to Durable. If FAIL, focus on the highest-impact experiment and iterate.
 
 ---
 
@@ -90,8 +68,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥5,000 organic visits/month and conversion rate ≥1.2%**
 
-If you hit this threshold → move to the **Durable Intelligence** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Durable Intelligence** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 

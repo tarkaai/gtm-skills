@@ -1,7 +1,8 @@
 ---
 name: case-study-recruitment-durable
 description: >
-  Customer Story Pipeline — Durable Intelligence. Identify and recruit case study participants from happy customers to generate marketing content.
+    Customer Story Pipeline — Durable Intelligence. Identify and recruit case study participants
+  from happy customers to generate marketing content.
 stage: "Product > Referrals"
 motion: "Lead Capture Surface"
 channels: "Product, Email, Direct"
@@ -12,21 +13,15 @@ kpis: ["Recruitment rate", "Case study completion", "Content quality", "Experime
 slug: "case-study-recruitment"
 install: "npx gtm-skills add product/referrals/case-study-recruitment"
 drills:
-  - onboarding-flow
-  - posthog-gtm-events
-  - crm-pipeline-setup
-  - activation-optimization
-  - feature-announcement
-  - upgrade-prompt
-  - churn-prevention
   - dashboard-builder
+  - nps-feedback-loop
 ---
 # Customer Story Pipeline — Durable Intelligence
 
 > **Stage:** Product → Referrals | **Motion:** Lead Capture Surface | **Channels:** Product, Email, Direct
 
 ## Overview
-Identify and recruit case study participants from happy customers to generate marketing content.
+Customer Story Pipeline — Durable Intelligence. Identify and recruit case study participants from happy customers to generate marketing content.
 
 **Time commitment:** 150 hours over 6 months
 **Pass threshold:** Sustained or improving case studies growing over 6 months via AI
@@ -36,46 +31,26 @@ Identify and recruit case study participants from happy customers to generate ma
 ## Budget
 
 **Play-specific tools & costs**
-- **Intercom (agent-triggered messaging, health-based):** ~$150–500/mo
-- **Typeform (automated NPS + CSAT loops):** ~$25/mo
-- **Descript (AI-powered video repurposing):** ~$30/mo
-
-_Total play-specific: ~$25–500/mo_
+- **Ongoing tool costs:** ~$100-500/mo
+- **Agent compute costs:** Variable based on monitoring frequency
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (Product Analytics)
-- **n8n** (Automation)
-- **Loops** (Email)
-- **Intercom** (Communication)
-- **OpenAI** (AI/LLM)
-
----
-
 ## Instructions
 
-1. Stream PostHog to n8n; build AI behavior agent.
+### 1. Build product dashboards
+Run the `dashboard-builder` drill to create a PostHog dashboard: activation rate trend, conversion funnel by cohort, churn rate trend, expansion revenue, NPS score trend, feature adoption rates. Set alerts for activation or retention drops.
 
-2. AI runs weekly A/B tests via PostHog flags.
+### 2. Launch feedback loops
+Run the `nps-feedback-loop` drill to collect and act on user feedback: deploy NPS surveys at key milestones, route feedback to the product team, trigger follow-ups based on score (promoters get referral asks, detractors get personal outreach).
 
-3. AI monitors, compares, rolls out winners.
+### 3. Autonomous product optimization
+Configure the agent to: monitor all product metrics, detect trends (positive or negative), suggest experiments based on data, and generate weekly product health reports. The agent should flag when any metric deviates from baseline by more than 15%.
 
-4. AI personalizes based on properties/patterns.
-
-5. AI identifies at-risk; triggers n8n interventions.
-
-6. Loop: AI proposes → PostHog tracks → AI applies.
-
-7. AI analyzes recordings; suggests UX improvements.
-
-8. Guardrail: >20% drop for 2wks = alert.
-
-9. Monthly: AI report on experiments and wins.
-
-10. Sustain/improve over 6mo via AI optimization.
+### 4. Evaluate sustainability
+Measure against: Sustained or improving case studies growing over 6 months via AI. This level runs continuously. If product metrics sustain or improve, the play is durable. If metrics decay, the agent diagnoses the cause and recommends interventions.
 
 ---
 

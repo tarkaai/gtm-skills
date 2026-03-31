@@ -1,7 +1,9 @@
 ---
 name: documentation-as-marketing-baseline
 description: >
-  Documentation as Marketing — Baseline Run. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+    Documentation as Marketing — Baseline Run. Build public, SEO-optimized developer documentation
+  that attracts organic search traffic and converts technical audiences from solution-aware to
+  product-aware.
 stage: "Marketing > Solution Aware"
 motion: "Lead Capture Surface"
 channels: "Content, Website"
@@ -12,17 +14,16 @@ kpis: ["Conversion rate", "Cost per result", "Response quality", "Cycle time"]
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
-  - onboarding-flow
   - posthog-gtm-events
-  - crm-pipeline-setup
-  - threshold-engine
+  - feature-announcement
+  - activation-optimization
 ---
 # Documentation as Marketing — Baseline Run
 
 > **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
 
 ## Overview
-Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
+Documentation as Marketing — Baseline Run. Build public, SEO-optimized developer documentation that attracts organic search traffic and converts technical audiences from solution-aware to product-aware.
 
 **Time commitment:** 18 hours over 2 weeks
 **Pass threshold:** ≥1,000 organic visits and ≥20 signups from docs in 8 weeks
@@ -32,42 +33,25 @@ Build public, SEO-optimized developer documentation that attracts organic search
 ## Budget
 
 **Play-specific tools & costs**
-- **Tally (free form builder):** Free
-
-_Total play-specific: Free_
+- **Tool-specific costs:** ~$50-200/mo depending on tools required
 
 _Your CRM, PostHog, and automation platform are not included — standard stack paid once._
 
 ---
 
-## Recommended tools
-- **PostHog** (CDP)
-- **Attio** (CRM)
-- **Clay** (Enrichment)
-
----
-
 ## Instructions
 
-1. Expand scope to 100-500 targets for repeatable 2-week documentation as marketing experiment; define detailed ICP criteria.
+### 1. Configure event tracking
+Run the `posthog-gtm-events` drill to set up detailed tracking: `documentation-as-marketing_impression`, `documentation-as-marketing_engaged`, `documentation-as-marketing_converted`, `documentation-as-marketing_retained`. Build PostHog funnels showing the complete user journey through this experience.
 
-2. Build structured targeting list or content plan using Clay or Apollo; ensure quality and relevance to ICP.
+### 2. Set up feature announcements
+Run the `feature-announcement` drill to configure Intercom in-app messages and Loops emails that guide users through the experience. Create targeted messages for different user segments based on PostHog cohorts.
 
-3. Set up proper tracking in PostHog and Attio CRM to measure all activities, responses, and outcomes consistently.
+### 3. Optimize activation
+Run the `activation-optimization` drill to identify and improve the key activation metric. Analyze PostHog funnels to find the biggest drop-off point. Test 2-3 variations of the experience at that point.
 
-4. Define pass threshold for Baseline (e.g., ≥2% conversion, ≥10 qualified results) with clear measurement criteria.
-
-5. Create multi-touch or multi-format approach (3-5 touchpoints or content pieces) to test repeatability and engagement.
-
-6. Execute play systematically; log every activity, response, and outcome in PostHog and CRM for complete dataset.
-
-7. Monitor performance weekly; adjust tactics within same play framework (e.g., refine messaging, timing, targeting).
-
-8. Track key metrics: response rate, conversion rate, cycle time from first touch to qualified outcome, and cost per result.
-
-9. After 2 weeks, analyze results against pass threshold; identify what drove success (specific messages, channels, timing).
-
-10. Decide: proceed to Scalable if passed threshold, iterate on targeting or approach if close, or pivot to different play if fundamentally not working.
+### 4. Evaluate against threshold
+Measure against: ≥1,000 organic visits and ≥20 signups from docs in 8 weeks. If PASS, proceed to Scalable. If FAIL, diagnose where users are dropping off and test fixes at that specific point.
 
 ---
 
@@ -82,8 +66,8 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 ## Pass threshold
 **≥1,000 organic visits and ≥20 signups from docs in 8 weeks**
 
-If you hit this threshold → move to the **Scalable Automation** skill.
-If not → iterate on ICP, offer, or channel and re-run this level.
+If you hit this threshold, move to the **Scalable Automation** level.
+If not, iterate on your approach and re-run this level.
 
 ---
 
