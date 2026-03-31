@@ -1,81 +1,130 @@
 ---
 name: keyboard-shortcuts-promotion-smoke
 description: >
-    Power User Features — Smoke Test. Promote keyboard shortcuts, advanced features, and power-user
-  workflows to increase efficiency and stickiness.
+  Power User Features — Smoke Test. Instrument shortcut tracking, build contextual
+  hints for top 3 shortcuts, launch to 10-20 users, and measure whether any shortcut
+  adoption signal emerges within 7 days.
 stage: "Product > Retain"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product"
 level: "Smoke Test"
-time: "5 hours over 1 week"
-outcome: "≥20% use"
-kpis: ["Shortcut usage", "Power user growth", "Efficiency metrics"]
+time: "6 hours over 1 week"
+outcome: ">=20% of test users try at least 1 promoted shortcut within 7 days"
+kpis: ["Shortcut hint-to-trial conversion rate", "Shortcut ratio (shortcut actions / total actions)", "Number of unique shortcuts tried per user"]
 slug: "keyboard-shortcuts-promotion"
 install: "npx gtm-skills add product/retain/keyboard-shortcuts-promotion"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - shortcut-discovery-promotion
   - threshold-engine
 ---
+
 # Power User Features — Smoke Test
 
-> **Stage:** Product → Retain | **Motion:** Lead Capture Surface | **Channels:** Product
+> **Stage:** Product > Retain | **Motion:** LeadCaptureSurface | **Channels:** Product
 
-## Overview
-Power User Features — Smoke Test. Promote keyboard shortcuts, advanced features, and power-user workflows to increase efficiency and stickiness.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥20% use
+At least 20% of the 10-20 test users try a promoted keyboard shortcut within 7 days of seeing their first contextual hint. This proves that contextual in-product shortcut hints produce measurable adoption signal before investing in always-on automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Users are seeing shortcut hints (hint impression events firing in PostHog)
+- At least some users click or perform the suggested shortcut within the same session
+- Shortcut reference page gets organic traffic from hint CTAs
+- No complaints or support tickets about intrusive hints
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Map your top 3 shortcuts
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the first step of the `shortcut-discovery-promotion` drill: build the shortcut action map. For the Smoke test, identify only the **top 3 highest-impact shortcuts** — the ones that correspond to the most frequently performed mouse actions. Rank by `frequency_of_mouse_action * estimated_seconds_saved`.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Example output:
+| Shortcut | Keys | Mouse equivalent | Est. daily uses per active user |
+|----------|------|------------------|---------------------------------|
+| Quick search | Cmd+K | Click search bar | 8-12 |
+| Submit form | Cmd+Enter | Click submit button | 5-8 |
+| Navigate back | Cmd+[ | Click back arrow | 4-6 |
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+**Human action required:** Confirm the shortcut map is accurate. Verify each shortcut works on both Mac and Windows (Cmd vs Ctrl). Test each shortcut manually.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥20% use. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Instrument shortcut tracking
 
----
+Run step 2 of the `shortcut-discovery-promotion` drill: add PostHog events for the 3 selected shortcuts. Implement these events in your product code:
 
-## KPIs to track
-- Shortcut usage
-- Power user growth
-- Efficiency metrics
+- `action_via_mouse` with properties: `action_id`, `shortcut_equivalent`, `page`
+- `action_via_shortcut` with properties: `action_id`, `shortcut_key`, `page`
+- `shortcut_hint_shown` with properties: `shortcut_id`, `trigger_type`, `page`
+- `shortcut_hint_converted` with properties: `shortcut_id`, `time_since_hint_seconds`
 
----
+**Human action required:** Deploy the tracking code to your staging environment. Trigger each event manually and verify it appears in PostHog Live Events. Fix any property mismatches before proceeding.
 
-## Pass threshold
-**≥20% use**
+### 3. Build contextual hints for 3 shortcuts
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Run step 4 of the `shortcut-discovery-promotion` drill to create Intercom tooltip messages for each of the 3 shortcuts. For Smoke, use simple rules:
 
----
+- **Trigger:** User performs `action_via_mouse` for a shortcut-eligible action
+- **Message:** "Pro tip: Press `{keys}` to do this instantly."
+- **Display:** Tooltip near the element they clicked. Auto-dismiss after 5 seconds.
+- **Frequency cap:** Maximum 1 hint per session. Same hint never shown twice if dismissed.
 
-## How to run this skill
+Gate the entire hint system behind a PostHog feature flag (`shortcut-hints-v1`) set to target only the test group.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Launch to test group
 
-_Install this skill: `npx gtm-skills add product/retain/keyboard-shortcuts-promotion`_
+Using PostHog feature flags, enable `shortcut-hints-v1` for 10-20 users. Select users who:
+- Have been active for 14+ days (know the product)
+- Use the product at least 3 times per week (enough sessions to encounter hints)
+- Have not used any keyboard shortcuts yet (room to improve)
+
+Do NOT select power users who already use shortcuts — they will inflate your signal.
+
+### 5. Measure against threshold
+
+Run the `threshold-engine` drill after 7 days. Query PostHog for:
+
+```
+shortcut_trial_rate = count(distinct users with at least 1 shortcut_hint_converted event)
+                      / count(distinct users in test group with at least 1 shortcut_hint_shown event)
+```
+
+**Pass threshold: >= 20% shortcut trial rate.**
+
+Also capture:
+- Which of the 3 shortcuts got the most trials
+- Average time from hint shown to shortcut used
+- Whether any users tried shortcuts they were NOT prompted about (organic discovery)
+- Hint dismissal rate (if > 70%, the hints feel intrusive)
+
+### 6. Decide next step
+
+If PASS (>= 20% trial rate): Document which shortcuts converted best, what hint copy worked, and proceed to Baseline to automate and expand.
+
+If FAIL (< 20% trial rate): Diagnose. Check:
+- Were hints actually shown? (impression count > 0 for each user)
+- Were hints shown at the right moment? (immediately after the mouse action, not delayed)
+- Was the hint copy clear? (test "Press Cmd+K to search instantly" vs "Try the keyboard shortcut")
+- Were the selected shortcuts valuable enough? (try different shortcuts)
+
+Iterate and re-run Smoke. Do not proceed to Baseline until signal is proven.
+
+## Time Estimate
+
+- 2 hours: shortcut mapping, event instrumentation, deployment
+- 1 hour: Intercom hint setup and PostHog feature flag configuration
+- 1 hour: launch to test group, verify events are firing
+- 2 hours: 7-day analysis, threshold evaluation, documentation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Event tracking, feature flags, cohort targeting | Free tier: 1M events/mo, 1M flag requests/mo ([posthog.com/pricing](https://posthog.com/pricing)) |
+| Intercom | Tooltip-style in-app hint messages | Essential: $29/seat/mo ([intercom.com/pricing](https://www.intercom.com/pricing)) |
+
+**Estimated play-specific cost at this level:** Free (within PostHog free tier + existing Intercom seat)
+
+## Drills Referenced
+
+- `shortcut-discovery-promotion` — builds the shortcut map, tracking events, contextual hints, and progressive education system
+- `threshold-engine` — evaluates the 20% trial rate pass/fail threshold and recommends next action
