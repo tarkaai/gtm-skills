@@ -17,7 +17,6 @@ install: "npx gtm-skills add product/upsell/usage-based-pricing"
 drills:
   - autonomous-optimization
   - pricing-health-monitor
-  - usage-revenue-optimization-report
 ---
 
 # Consumption-Based Pricing — Durable Intelligence
@@ -105,7 +104,7 @@ Run the `pricing-health-monitor` drill. This builds the always-on observation la
 
 ### 3. Deploy usage-revenue optimization reporting
 
-Run the `usage-revenue-optimization-report` drill. This is the play-specific intelligence layer that feeds hypotheses into the autonomous optimization loop:
+Run the the usage revenue optimization report workflow (see instructions below) drill. This is the play-specific intelligence layer that feeds hypotheses into the autonomous optimization loop:
 
 1. **Compute usage-to-revenue efficiency metrics weekly:** Usage per dollar (UPD), revenue per usage unit (RPU), overage revenue ratio. Track trends: rising UPD across cohorts indicates pricing value leakage.
 
@@ -154,4 +153,4 @@ The play reaches its **local maximum** when 3 consecutive experiments produce le
 
 - `autonomous-optimization` — The core always-on loop: detect metric anomalies, generate improvement hypotheses, run A/B experiments, evaluate results, auto-implement winners, report weekly
 - `pricing-health-monitor` — Continuous monitoring of ARPU, NRR, churn by plan, usage-to-revenue ratio with daily anomaly detection and weekly digests
-- `usage-revenue-optimization-report` — Weekly usage-to-revenue efficiency analysis, tier migration tracking, pricing model drift detection, and bill shock early warning
+- the usage revenue optimization report workflow (see instructions below) — Weekly usage-to-revenue efficiency analysis, tier migration tracking, pricing model drift detection, and bill shock early warning

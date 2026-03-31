@@ -14,7 +14,6 @@ kpis: ["Registrations per hackathon", "Submission rate", "Qualified leads per ha
 slug: "hackathon-sponsorship-hosting"
 install: "npx gtm-skills add Marketing/SolutionAware/hackathon-sponsorship-hosting"
 drills:
-  - hackathon-series-automation
   - hackathon-performance-monitor
 ---
 
@@ -40,7 +39,7 @@ Scale from 2 hackathons to a quarterly series running with minimal manual overhe
 
 ### 1. Deploy the hackathon series automation
 
-Run the `hackathon-series-automation` drill to build the automated quarterly cadence. This is the core automation that makes Scalable fundamentally different from Baseline:
+Run the the hackathon series automation workflow (see instructions below) drill to build the automated quarterly cadence. This is the core automation that makes Scalable fundamentally different from Baseline:
 
 **Challenge calendar (Step 1 of the drill):**
 Plan 4 hackathons for the next 6 months. Each hackathon should:
@@ -64,7 +63,7 @@ Estimated time: 12 hours (one-time setup, then runs automatically).
 
 ### 2. Build the developer community
 
-Hackathons at scale create a developer community that becomes a self-sustaining lead source. Follow `hackathon-series-automation` drill, Step 4:
+Hackathons at scale create a developer community that becomes a self-sustaining lead source. Follow the hackathon series automation workflow (see instructions below) drill, Step 4:
 
 - Create a dedicated Discord server or Slack workspace for hackathon alumni
 - Auto-invite every hackathon participant to the community
@@ -78,7 +77,7 @@ Estimated time: 5 hours initial setup, then 2 hours/month maintenance.
 
 ### 3. Execute quarterly hackathons with format experimentation
 
-Run each hackathon using the `hackathon-challenge-pipeline` drill (executed within `hackathon-series-automation`). At Scalable level, experiment with format variations across hackathons:
+Run each hackathon using the `hackathon-challenge-pipeline` drill (executed within the hackathon series automation workflow (see instructions below)). At Scalable level, experiment with format variations across hackathons:
 
 - **Duration experiments**: Compare 48-hour intense sprints vs. 1-week asynchronous. Track which format produces higher submission rates and deeper product usage.
 - **Team structure experiments**: Individual-only vs. team-required vs. flexible. Track which produces higher submission quality.
@@ -161,5 +160,5 @@ If PASS, proceed to Durable. If FAIL, diagnose: Is recruitment saturating your d
 
 ## Drills Referenced
 
-- `hackathon-series-automation` -- automated quarterly hackathon operations: challenge calendar, recruitment engine, cross-event analytics, and developer community management
+- the hackathon series automation workflow (see instructions below) -- automated quarterly hackathon operations: challenge calendar, recruitment engine, cross-event analytics, and developer community management
 - `hackathon-performance-monitor` -- continuous monitoring and reporting for hackathon series health with anomaly detection and automated post-mortems

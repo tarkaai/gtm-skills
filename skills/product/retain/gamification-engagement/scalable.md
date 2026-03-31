@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/gamification-engagement"
 drills:
   - gamification-personalization
   - ab-test-orchestrator
-  - gamification-leaderboard-pipeline
 ---
 
 # Gamified Product Experience — Scalable Automation
@@ -70,7 +69,7 @@ Run each test for minimum 2 weeks or until 500+ users per variant, whichever is 
 
 ### 3. Launch leaderboards
 
-Run the `gamification-leaderboard-pipeline` drill to add competitive engagement:
+Run the the gamification leaderboard pipeline workflow (see instructions below) drill to add competitive engagement:
 
 - Build the n8n computation pipeline: runs every 4 hours, queries PostHog for points earned, computes rankings, writes to product API
 - Start with Weekly Global leaderboard only (resets every Monday)
@@ -135,4 +134,4 @@ If FAIL: identify the bottleneck. If participation is high but retention lift is
 
 - `gamification-personalization` — segments users and calibrates gamification difficulty per segment
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on gamification mechanics
-- `gamification-leaderboard-pipeline` — builds, computes, and serves leaderboards with weekly resets
+- the gamification leaderboard pipeline workflow (see instructions below) — builds, computes, and serves leaderboards with weekly resets

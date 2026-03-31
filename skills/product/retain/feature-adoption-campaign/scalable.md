@@ -13,7 +13,6 @@ kpis: ["Overall adoption rate", "Per-segment adoption rate", "Experiment win rat
 slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
 drills:
-  - adoption-campaign-segment-scaling
   - ab-test-orchestrator
   - usage-milestone-rewards
 ---
@@ -38,7 +37,7 @@ drills:
 
 ### 1. Scale across segments
 
-Run the `adoption-campaign-segment-scaling` drill to expand from the single Baseline segment to 5+ segments:
+Run the the adoption campaign segment scaling workflow (see instructions below) drill to expand from the single Baseline segment to 5+ segments:
 
 - **Power users who never tried the feature** — highest likelihood, message emphasizes efficiency gain
 - **Active users who tried once** — re-engagement angle, message shows advanced use cases
@@ -127,6 +126,6 @@ At the end of 2 months, calculate:
 
 ## Drills Referenced
 
-- `adoption-campaign-segment-scaling` — expand from one segment to 5+ with per-segment targeting and orchestration
+- the adoption campaign segment scaling workflow (see instructions below) — expand from one segment to 5+ with per-segment targeting and orchestration
 - `ab-test-orchestrator` — run systematic experiments on messaging, channels, and timing
 - `usage-milestone-rewards` — reinforce adoption with celebrations and progressive engagement

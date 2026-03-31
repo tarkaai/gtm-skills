@@ -15,7 +15,6 @@ kpis: ["Monthly approved UGC pieces (target >=40)", "Monthly unique creators (ta
 slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
-  - ugc-incentive-scaling
   - ab-test-orchestrator
   - ugc-health-monitor
 ---
@@ -44,7 +43,7 @@ Fail: UGC volume does not scale beyond Baseline levels despite incentives, or re
 
 ### 1. Launch the creator incentive system
 
-Run the `ugc-incentive-scaling` drill. This deploys the full incentive framework:
+Run the the ugc incentive scaling workflow (see instructions below) drill. This deploys the full incentive framework:
 
 **Creator tier system:**
 Set up 3 tiers in Attio with automated promotion:
@@ -151,6 +150,6 @@ Review the `ugc-health-monitor` weekly reports and PostHog dashboards for the fu
 
 ## Drills Referenced
 
-- `ugc-incentive-scaling` — design and automate the 3-tier creator program, monthly contest framework, social proof loops, and reward delivery system that multiply UGC production
+- the ugc incentive scaling workflow (see instructions below) — design and automate the 3-tier creator program, monthly contest framework, social proof loops, and reward delivery system that multiply UGC production
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on prompt copy, form length, trigger timing, incentive structures, and social proof elements using PostHog feature flags
 - `ugc-health-monitor` — monitor 8 UGC health metrics daily with diagnostics, automated interventions for prompt fatigue and repeat rate stalls, and weekly health reports

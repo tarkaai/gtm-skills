@@ -15,7 +15,6 @@ slug: "nps-program"
 install: "npx gtm-skills add product/referrals/nps-program"
 drills:
   - ab-test-orchestrator
-  - nps-segment-scaling
   - advocacy-activation-pipeline
 ---
 
@@ -39,7 +38,7 @@ A multi-segment NPS program that surveys 500+ users per month across 6 distinct 
 
 ### 1. Launch multi-segment survey scheduling
 
-Run the `nps-segment-scaling` drill to deploy differentiated surveys across 6 segments:
+Run the the nps segment scaling workflow (see instructions below) drill to deploy differentiated surveys across 6 segments:
 
 | Segment | Criteria | Timing | Channel |
 |---------|----------|--------|---------|
@@ -144,5 +143,5 @@ If FAIL on advocacy conversion: the ask may be too heavy. Test lighter advocacy 
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on survey timing, channel, format, and follow-up effectiveness
-- `nps-segment-scaling` — builds the multi-segment scheduling engine with priority ordering, volume caps, and anti-fatigue guardrails
+- the nps segment scaling workflow (see instructions below) — builds the multi-segment scheduling engine with priority ordering, volume caps, and anti-fatigue guardrails
 - `advocacy-activation-pipeline` — converts high-scoring promoters into active advocates through automated enrollment, asks, and reward delivery

@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/billing-issue-prevention"
 drills:
   - payment-failure-detection
   - dunning-sequence-automation
-  - proactive-card-expiry-detection
   - payment-recovery-health-monitor
 ---
 
@@ -68,7 +67,7 @@ Generate Stripe Billing Portal links at send time (not in advance) using the `pa
 
 ### 3. Deploy proactive card expiry detection
 
-Run the `proactive-card-expiry-detection` drill. This builds:
+Run the the proactive card expiry detection workflow (see instructions below) drill. This builds:
 
 - Daily scan of all active subscriptions for cards expiring within 30 days
 - 3-tier proactive email sequence: gentle at 30 days, direct at 14 days, urgent at 7 days
@@ -126,5 +125,5 @@ If PASS, proceed to Scalable. If FAIL, diagnose using the recovery funnel — fi
 
 - `payment-failure-detection` — real-time detection, classification, and scoring of payment failures from Stripe webhooks
 - `dunning-sequence-automation` — multi-channel recovery sequence: in-app banners, 4-email ladder, human routing
-- `proactive-card-expiry-detection` — daily scan for expiring cards with pre-failure update prompts
+- the proactive card expiry detection workflow (see instructions below) — daily scan for expiring cards with pre-failure update prompts
 - `payment-recovery-health-monitor` — dashboard, funnel tracking, alerts, and weekly health reports

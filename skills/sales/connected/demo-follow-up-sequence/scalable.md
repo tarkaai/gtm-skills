@@ -14,8 +14,6 @@ kpis: ["Automation coverage rate", "Response rate", "Next step conversion rate",
 slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
-  - demo-follow-up-automation
-  - follow-up-ab-testing
 ---
 
 # Demo Follow-Up Sequence — Scalable Automation
@@ -40,7 +38,7 @@ Remove the founder from the critical path. When a demo ends, n8n workflows detec
 
 ### 1. Build the Automated Demo-to-Follow-Up Pipeline
 
-Run the `demo-follow-up-automation` drill to create the n8n workflow layer:
+Run the the demo follow up automation workflow (see instructions below) drill to create the n8n workflow layer:
 
 **Trigger workflow:** Configure n8n to detect demo completion via one of:
 - Fireflies webhook (transcript ready for a meeting tagged "demo")
@@ -86,7 +84,7 @@ Log which sequences were auto-approved vs reviewed. Compare outcomes to validate
 
 ### 3. Launch A/B Testing Program
 
-Run the `follow-up-ab-testing` drill to systematically optimize the follow-up sequence:
+Run the the follow up ab testing workflow (see instructions below) drill to systematically optimize the follow-up sequence:
 
 **Month 1 experiments (pick 2):**
 - Recap timing: send within 1 hour vs within 4 hours of demo
@@ -170,5 +168,5 @@ If FAIL: Identify the weakest metric. If coverage is low, fix workflow reliabili
 
 ## Drills Referenced
 
-- `demo-follow-up-automation` — n8n workflows that auto-trigger recap generation, execute the follow-up cadence, detect replies, and react to behavioral signals
-- `follow-up-ab-testing` — structured A/B experiments on follow-up timing, content, subject lines, and CTAs using PostHog experiments
+- the demo follow up automation workflow (see instructions below) — n8n workflows that auto-trigger recap generation, execute the follow-up cadence, detect replies, and react to behavioral signals
+- the follow up ab testing workflow (see instructions below) — structured A/B experiments on follow-up timing, content, subject lines, and CTAs using PostHog experiments

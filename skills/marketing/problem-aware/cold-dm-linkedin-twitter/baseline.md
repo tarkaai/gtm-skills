@@ -15,7 +15,6 @@ slug: "cold-dm-linkedin-twitter"
 install: "npx gtm-skills add marketing/problem-aware/cold-dm-linkedin-twitter"
 drills:
   - linkedin-outreach
-  - twitter-dm-outreach
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -57,7 +56,7 @@ Target: 100+ LinkedIn DMs sent over the 2-week period.
 
 ### 2. Set up X DM outreach system
 
-Run the `twitter-dm-outreach` drill. Configure a structured engagement-to-DM sequence:
+Run the the twitter dm outreach workflow (see instructions below) drill. Configure a structured engagement-to-DM sequence:
 
 1. Import 100+ prospects with valid X handles from Clay into Attio.
 2. Filter for active X users (posted within last 14 days).
@@ -149,6 +148,6 @@ If FAIL: diagnose by channel.
 ## Drills Referenced
 
 - `linkedin-outreach` -- structured LinkedIn connection and messaging sequence
-- `twitter-dm-outreach` -- structured X engagement-to-DM sequence
+- the twitter dm outreach workflow (see instructions below) -- structured X engagement-to-DM sequence
 - `posthog-gtm-events` -- event taxonomy and tracking setup for DM funnel
 - `threshold-engine` -- evaluate pass/fail against 2% meeting rate threshold

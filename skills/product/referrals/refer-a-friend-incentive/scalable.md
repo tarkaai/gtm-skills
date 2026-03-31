@@ -14,7 +14,6 @@ kpis: ["Referral rate by segment", "Viral coefficient", "Referred user activatio
 slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
 drills:
-  - referral-segment-scaling
   - ab-test-orchestrator
 ---
 
@@ -39,7 +38,7 @@ Expand the referral program from a single incentive for all users to segment-spe
 
 ### 1. Build referral segments and personalized variants
 
-Run the `referral-segment-scaling` drill to:
+Run the the referral segment scaling workflow (see instructions below) drill to:
 
 - Create 5 PostHog cohorts based on referral propensity signals: Power Users (top 20% by usage), Price Sensitive (free plan or downgraded), Team Leads (invited 2+ members), New Enthusiasts (first 30 days, fast activators), Long-tenured Quiet (6+ months, moderate usage, never referred)
 - Design segment-specific incentive copy and reward framing for each cohort
@@ -74,7 +73,7 @@ After all segments have been tested, calculate the blended referral rate across 
 
 ### 4. Scale monitoring and viral coefficient tracking
 
-Using the `referral-segment-scaling` drill's weekly report workflow:
+Using the the referral segment scaling workflow (see instructions below) drill's weekly report workflow:
 
 - Track referral rate, conversion rate, reward cost, and viral coefficient per segment weekly
 - Calculate overall viral coefficient: (average referrals per eligible user) * (share-to-activation conversion rate). Target: >=0.2.
@@ -113,5 +112,5 @@ After 2 months:
 
 ## Drills Referenced
 
-- `referral-segment-scaling` — builds the 5 referral segments, designs personalized variants, implements feature flag routing, runs segment experiments, and generates weekly cross-segment reports
+- the referral segment scaling workflow (see instructions below) — builds the 5 referral segments, designs personalized variants, implements feature flag routing, runs segment experiments, and generates weekly cross-segment reports
 - `ab-test-orchestrator` — structures hypotheses, calculates sample sizes, manages experiment lifecycle, and evaluates results with statistical rigor

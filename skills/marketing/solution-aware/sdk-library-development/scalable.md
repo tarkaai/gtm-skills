@@ -14,7 +14,6 @@ kpis: ["Total downloads/month (all registries)", "Downloads per language", "Deve
 slug: "sdk-library-development"
 install: "npx gtm-skills add marketing/solution-aware/sdk-library-development"
 drills:
-  - sdk-multi-language-scaling
   - ab-test-orchestrator
 ---
 # SDK & Library Development — Scalable Automation
@@ -34,7 +33,7 @@ SDKs published across 4+ package registries covering the major developer ecosyst
 ## Instructions
 
 ### 1. Scale to 4+ languages via code generation
-Run the `sdk-multi-language-scaling` drill to:
+Run the the sdk multi language scaling workflow (see instructions below) drill to:
 - Prioritize target languages based on demand signals (docs traffic, support tickets, competitor coverage, registry search volume)
 - Generate SDK code from your API specification using OpenAPI Generator or equivalent
 - Manually improve each generated SDK: add retry logic, pagination helpers, idiomatic error handling, and usage examples
@@ -69,7 +68,7 @@ Run the `ab-test-orchestrator` drill to systematically test SDK conversion varia
 Run one test at a time. Apply winners across all SDKs. Each test requires minimum 200 CTA impressions per variant (use the highest-traffic SDKs for testing).
 
 ### 3. Automate synchronized releases
-Using the release infrastructure from `sdk-multi-language-scaling`:
+Using the release infrastructure from the sdk multi language scaling workflow (see instructions below):
 - When your API changes, regenerate SDKs from the updated spec
 - Run shared test suites against all SDKs in CI
 - Tag and publish all SDKs simultaneously
@@ -117,5 +116,5 @@ If FAIL: Focus resources on the 2-3 highest-converting SDKs. Retire or reduce in
 | Attio | Lead tracking across SDKs | Free for small teams (https://attio.com/pricing) |
 
 ## Drills Referenced
-- `sdk-multi-language-scaling` -- scales SDK coverage to 4+ languages using code generation, shared test suites, and automated cross-registry publishing
+- the sdk multi language scaling workflow (see instructions below) -- scales SDK coverage to 4+ languages using code generation, shared test suites, and automated cross-registry publishing
 - `ab-test-orchestrator` -- designs, runs, and analyzes A/B tests on README CTAs and SDK documentation

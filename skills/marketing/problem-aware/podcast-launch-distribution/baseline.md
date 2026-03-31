@@ -14,7 +14,6 @@ slug: "podcast-launch-distribution"
 install: "npx gtm-skills add marketing/problem-aware/podcast-launch-distribution"
 drills:
   - podcast-guest-booking
-  - podcast-distribution-automation
   - posthog-gtm-events
   - threshold-engine
 ---
@@ -64,7 +63,7 @@ Target: maintain at least 3 booked guests at all times, with the next 3-4 weeks 
 
 ### 2. Set up automated episode distribution
 
-Run the `podcast-distribution-automation` drill to build the always-on promotion system:
+Run the the podcast distribution automation workflow (see instructions below) drill to build the always-on promotion system:
 
 1. Configure an n8n workflow that triggers when your RSS feed updates with a new episode
 2. The workflow executes a 7-day promotion sequence per episode:
@@ -154,6 +153,6 @@ Setup: 8 hours. Ongoing: 2.5 hours/week.
 
 ## Drills Referenced
 - `podcast-guest-booking` -- build and maintain the guest sourcing and booking pipeline
-- `podcast-distribution-automation` -- automated 7-day cross-platform promotion per episode
+- the podcast distribution automation workflow (see instructions below) -- automated 7-day cross-platform promotion per episode
 - `posthog-gtm-events` -- configure PostHog event tracking for podcast attribution
 - `threshold-engine` -- evaluate downloads and leads against Baseline threshold

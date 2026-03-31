@@ -16,7 +16,6 @@ kpis: ["Timeline qualification rate at scale", "Auto-score prediction accuracy (
 slug: "timing-qualification"
 install: "npx gtm-skills add sales/qualified/timing-qualification"
 drills:
-  - timing-auto-scoring
   - follow-up-automation
   - ab-test-orchestrator
   - timing-qualification-reporting
@@ -43,7 +42,7 @@ Scale timing qualification from manual discovery-call-based scoring to an automa
 
 ### 1. Deploy automated timeline pre-scoring
 
-Run the `timing-auto-scoring` drill to build the automated pipeline:
+Run the the play's scoring criteria drill to build the automated pipeline:
 
 1. **Trigger:** n8n workflow fires when a new deal is created in Attio (from any source: outbound list, inbound form, referral)
 2. **Enrich:** Push the lead to Clay for timing-relevant signals: last funding round, open job postings, technology stack changes, competitor contract renewal estimates, fiscal year end, recent news, company growth rate
@@ -149,7 +148,7 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `timing-auto-scoring` — automated pre-qualification pipeline: CRM trigger > Clay enrichment > Claude scoring > Attio routing
+- the play's scoring criteria — automated pre-qualification pipeline: CRM trigger > Clay enrichment > Claude scoring > Attio routing
 - `follow-up-automation` — n8n workflows for score-based outreach, cadence management, and re-scoring alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, cadence timing, and urgency messaging
 - `timing-qualification-reporting` — dashboards with prediction accuracy, experiment tracking, and cost analysis

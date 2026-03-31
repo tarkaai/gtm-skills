@@ -14,7 +14,6 @@ slug: "proactive-support-outreach"
 install: "npx gtm-skills add product/retain/proactive-support-outreach"
 drills:
   - struggle-signal-detection
-  - proactive-outreach-pipeline
   - posthog-gtm-events
 ---
 
@@ -65,7 +64,7 @@ Validate that the pipeline runs cleanly for 48 hours before enabling outreach. C
 
 ### 3. Deploy automated outreach
 
-Run the full `proactive-outreach-pipeline` drill (all 8 steps). This builds:
+Run the full the proactive outreach pipeline workflow (see instructions below) drill (all 8 steps). This builds:
 
 - Routing logic that matches outreach intensity to struggle tier
 - In-app message templates in Intercom (contextual tip for moderate, detailed help for severe, urgent help for critical)
@@ -122,5 +121,5 @@ If FAIL on retention: The outreach engages users but does not retain them. The u
 ## Drills Referenced
 
 - `struggle-signal-detection` — Full automated pipeline detecting users struggling with the product every 6 hours
-- `proactive-outreach-pipeline` — Automated contextual help delivery matched to struggle tier and stuck workflow
+- the proactive outreach pipeline workflow (see instructions below) — Automated contextual help delivery matched to struggle tier and stuck workflow
 - `posthog-gtm-events` — Set up play-specific event tracking and funnels

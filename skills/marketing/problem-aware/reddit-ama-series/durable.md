@@ -16,7 +16,6 @@ slug: "reddit-ama-series"
 install: "npx gtm-skills add marketing/problem-aware/reddit-ama-series"
 drills:
   - autonomous-optimization
-  - ama-performance-monitoring
   - community-health-scoring
 ---
 
@@ -43,7 +42,7 @@ Make the AMA series self-sustaining through autonomous optimization. The agent m
 
 ### 1. Build the AMA series performance dashboard
 
-Run the `ama-performance-monitoring` drill to create a PostHog dashboard with:
+Run the the ama performance monitoring workflow (see instructions below) drill to create a PostHog dashboard with:
 
 **Panel 1 -- Session-over-session engagement (bar chart):**
 - X-axis: AMA session number (chronological)
@@ -270,5 +269,5 @@ RECOMMENDATION FOR NEXT MONTH:
 ## Drills Referenced
 
 - `autonomous-optimization` — the core detect-diagnose-experiment-evaluate-implement loop that finds the local maximum
-- `ama-performance-monitoring` — AMA-specific dashboard, trend alerts, and per-session analysis
+- the ama performance monitoring workflow (see instructions below) — AMA-specific dashboard, trend alerts, and per-session analysis
 - `community-health-scoring` — weekly subreddit health tracking driving rotation decisions

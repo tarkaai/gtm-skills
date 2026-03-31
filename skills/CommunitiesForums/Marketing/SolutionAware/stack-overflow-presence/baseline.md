@@ -14,7 +14,6 @@ kpis: ["Answer volume", "Cumulative answer views", "Average upvote score", "Acce
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
-  - so-question-monitoring-automation
   - so-answer-crafting
   - posthog-gtm-events
 ---
@@ -44,7 +43,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ### 1. Set up automated question monitoring
 
-Run the `so-question-monitoring-automation` drill to build the n8n pipeline that:
+Run the the so question monitoring automation workflow (see instructions below) drill to build the n8n pipeline that:
 - Polls Stack Exchange API every 30 minutes for new questions in your primary tags
 - Scores each question by opportunity (unanswered, high views, community-validated)
 - Routes high-priority questions to Slack for immediate action

@@ -15,7 +15,6 @@ slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
   - crm-data-quality-rules
-  - crm-enrichment-sync
   - threshold-engine
 ---
 
@@ -53,7 +52,7 @@ Test the stage-gate enforcement by attempting to advance a test deal with missin
 
 ### 2. Set Up Enrichment Sync
 
-Run the `crm-enrichment-sync` drill to automatically fill missing data:
+Run the the crm enrichment sync workflow (see instructions below) drill to automatically fill missing data:
 
 1. Build an n8n workflow that detects new records in Attio with 3+ empty required fields
 2. Route those records to Clay for enrichment (company size, industry, revenue, job title, LinkedIn URL, phone)
@@ -122,5 +121,5 @@ If FAIL: Diagnose — are reps bypassing quality rules? Is enrichment coverage t
 ## Drills Referenced
 
 - `crm-data-quality-rules` — define and enforce data quality rules as CRM configuration and stage-gate automation
-- `crm-enrichment-sync` — automatically enrich CRM records with missing data from Clay and sync updates back to Attio
+- the crm enrichment sync workflow (see instructions below) — automatically enrich CRM records with missing data from Clay and sync updates back to Attio
 - `threshold-engine` — evaluate weekly audit results against pass thresholds

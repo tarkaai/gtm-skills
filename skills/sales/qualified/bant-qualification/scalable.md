@@ -14,7 +14,6 @@ kpis: ["Qualification rate at scale", "Pre-score accuracy vs post-call", "Time s
 slug: "bant-qualification"
 install: "npx gtm-skills add sales/qualified/bant-qualification"
 drills:
-  - bant-auto-scoring
   - follow-up-automation
   - ab-test-orchestrator
   - bant-qualification-reporting
@@ -40,7 +39,7 @@ Scale BANT qualification from manual discovery calls to an automated pre-scoring
 
 ### 1. Deploy automated BANT pre-scoring
 
-Run the `bant-auto-scoring` drill to build the automated pipeline:
+Run the the play's scoring criteria drill to build the automated pipeline:
 
 1. **Trigger:** n8n workflow fires when a new deal is created in Attio (from any source: outbound list, inbound form, referral)
 2. **Enrich:** Push the lead to Clay for BANT-specific enrichment — funding data, org chart, tech stack, job postings, news mentions (see `clay-bant-enrichment` fundamental)
@@ -145,7 +144,7 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `bant-auto-scoring` — automated pre-qualification pipeline: CRM trigger > Clay enrichment > BANT scoring > Attio routing
+- the play's scoring criteria — automated pre-qualification pipeline: CRM trigger > Clay enrichment > BANT scoring > Attio routing
 - `follow-up-automation` — n8n workflows for score-based outreach, nurture, and re-scoring alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, thresholds, and outreach personalization
 - `bant-qualification-reporting` — dashboards, funnel analytics, accuracy cohorts, and weekly reports

@@ -14,7 +14,6 @@ kpis: ["Subscriber growth rate", "Open rate at scale", "Click-to-lead conversion
 slug: "developer-newsletter-program"
 install: "npx gtm-skills add marketing/problem-aware/developer-newsletter-program"
 drills:
-  - newsletter-subscriber-growth
   - ab-test-orchestrator
 ---
 
@@ -38,7 +37,7 @@ Scale the newsletter from ~500 to >=2,500 subscribers via automated acquisition 
 
 ### 1. Deploy automated subscriber acquisition funnels
 
-Run the `newsletter-subscriber-growth` drill to build and activate these automated growth channels:
+Run the the newsletter subscriber growth workflow (see instructions below) drill to build and activate these automated growth channels:
 
 **Website signup optimization:**
 - Add newsletter signup forms to every blog post (inline after paragraph 3 and at the bottom)
@@ -111,7 +110,7 @@ Run the `ab-test-orchestrator` drill to test every controllable variable systema
 
 Enrich subscribers and score them for lead qualification:
 
-Using Clay (via the `newsletter-subscriber-growth` drill):
+Using Clay (via the the newsletter subscriber growth workflow (see instructions below) drill):
 1. Auto-enrich every new subscriber: company, title, company size, funding stage, tech stack
 2. Score each subscriber against the ICP definition from Smoke level
 3. Create Loops segments based on score: "ICP-match" (score >=70), "partial-match" (score 40-69), "non-ICP" (score <40)
@@ -173,5 +172,5 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Drills Referenced
 
-- `newsletter-subscriber-growth` — automated multi-channel acquisition funnels, lead magnets, referral program, social cross-promotion
+- the newsletter subscriber growth workflow (see instructions below) — automated multi-channel acquisition funnels, lead magnets, referral program, social cross-promotion
 - `ab-test-orchestrator` — systematic A/B testing on subject lines, send times, content format, CTAs, and length

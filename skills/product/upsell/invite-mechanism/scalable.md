@@ -16,7 +16,6 @@ slug: "invite-mechanism"
 install: "npx gtm-skills add product/upsell/invite-mechanism"
 drills:
   - ab-test-orchestrator
-  - invite-viral-loop
   - seat-growth-signal-detection
 ---
 
@@ -73,7 +72,7 @@ Implement winning variants permanently before starting the next test. Log all re
 
 ### 2. Build the viral loop
 
-Run the `invite-viral-loop` drill to transform the invite mechanism from a feature into a compounding growth engine.
+Run the the invite viral loop workflow (see instructions below) drill to transform the invite mechanism from a feature into a compounding growth engine.
 
 Key actions at Scalable level:
 - Measure the viral coefficient (k) weekly and by segment
@@ -149,5 +148,5 @@ If FAIL on acceptance rate: Volume is exposing deliverability issues or the invi
 ## Drills Referenced
 
 - `ab-test-orchestrator` — runs rigorous A/B tests on invite copy, timing, placement, and landing experience
-- `invite-viral-loop` — transforms the invite mechanism into a compounding growth loop with viral coefficient tracking
+- the invite viral loop workflow (see instructions below) — transforms the invite mechanism into a compounding growth loop with viral coefficient tracking
 - `seat-growth-signal-detection` — detects team growth signals and scores accounts for seat expansion readiness

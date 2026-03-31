@@ -14,7 +14,6 @@ slug: "self-serve-signup-optimization"
 install: "npx gtm-skills add product/onboard/self-serve-signup-optimization"
 drills:
   - ab-test-orchestrator
-  - signup-flow-personalization
 ---
 
 # Signup Funnel Optimization — Scalable Automation
@@ -48,7 +47,7 @@ Rules from `ab-test-orchestrator`: run one test at a time, require 200+ samples 
 
 ### 2. Personalize by segment
 
-Run the `signup-flow-personalization` drill. Analyze PostHog cohorts to find segments where conversion diverges significantly from the mean:
+Run the the signup flow personalization workflow (see instructions below) drill. Analyze PostHog cohorts to find segments where conversion diverges significantly from the mean:
 
 - **Mobile visitors**: if mobile CVR < 60% of desktop, deploy the mobile-optimized variant (single-column, OAuth-first, minimal fields)
 - **Paid traffic**: if paid CVR < organic CVR, deploy message-matched landing pages with simplified forms
@@ -59,7 +58,7 @@ Each personalized variant runs as a PostHog experiment. After 14+ days with 200+
 
 ### 3. Build abandoned signup recovery
 
-Using the partial-signup nurture from `signup-flow-personalization`:
+Using the partial-signup nurture from the signup flow personalization workflow (see instructions below):
 
 - Configure n8n to detect users who focused the signup form but did not complete within 24 hours
 - If the user entered an email (captured via partial form data or PostHog person properties), enroll them in a segment-specific Loops recovery sequence:
@@ -100,4 +99,4 @@ If CVR is below 50% at 500+ volume, focus testing on the segment with the lowest
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests with statistical rigor on signup flow elements
-- `signup-flow-personalization` — builds segment-specific signup variants, deploys via feature flags, and recovers abandoned signups
+- the signup flow personalization workflow (see instructions below) — builds segment-specific signup variants, deploys via feature flags, and recovers abandoned signups

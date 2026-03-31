@@ -14,7 +14,6 @@ kpis: ["Asset link click rate", "Reply rate", "Asset-referencing reply rate", "M
 slug: "outbound-with-value-asset"
 install: "npx gtm-skills add marketing/problem-aware/outbound-with-value-asset"
 drills:
-  - value-asset-outreach-sequence
   - posthog-gtm-events
   - cold-email-sequence
 ---
@@ -41,7 +40,7 @@ Baseline validates that the asset-led outbound works consistently with automatio
 
 ### 1. Set up the automated outreach sequence
 
-Run the `value-asset-outreach-sequence` drill. This creates a 3-step email sequence in Instantly:
+Run the the value asset outreach sequence workflow (see instructions below) drill. This creates a 3-step email sequence in Instantly:
 
 - **Email 1 (Day 0):** Gift the asset. No pitch, no meeting ask. Just the asset link with a personalized intro.
 - **Email 2 (Day 4-5):** Follow up with a specific insight from the asset relevant to the prospect's situation.
@@ -124,6 +123,6 @@ Run the `threshold-engine` evaluation: >=5 positive replies referencing the asse
 
 ## Drills Referenced
 
-- `value-asset-outreach-sequence` — build and configure the 3-step asset-led email sequence
+- the value asset outreach sequence workflow (see instructions below) — build and configure the 3-step asset-led email sequence
 - `posthog-gtm-events` — set up event tracking for the full outreach funnel
 - `cold-email-sequence` — sending infrastructure setup and warmup verification

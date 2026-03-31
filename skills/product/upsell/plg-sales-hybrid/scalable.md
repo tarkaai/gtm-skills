@@ -15,7 +15,6 @@ slug: "plg-sales-hybrid"
 install: "npx gtm-skills add product/upsell/plg-sales-hybrid"
 drills:
   - ab-test-orchestrator
-  - plg-sales-routing
   - seat-expansion-prompt-delivery
 ---
 
@@ -70,7 +69,7 @@ Run each test for statistical significance (minimum 200 accounts per variant or 
 
 ### 2. Deploy the automated PQL scoring and routing engine
 
-Run the `plg-sales-routing` drill to build the full automated pipeline:
+Run the the plg sales routing workflow (see instructions below) drill to build the full automated pipeline:
 
 1. **PQL signal detection:** Configure all Tier 1 and Tier 2 signals from the drill. At Baseline you used 2-3 signals; now expand to the full set: plan limits, feature gates, team growth, usage volume, integration count, pricing page visits, and engagement score thresholds.
 
@@ -137,5 +136,5 @@ After 2 months, measure against the threshold with 500+ accounts in the pipeline
 ## Drills Referenced
 
 - `ab-test-orchestrator` -- design, run, and analyze 4 sequential A/B tests on the PLG conversion funnel
-- `plg-sales-routing` -- build the automated PQL scoring engine and three-path routing system
+- the plg sales routing workflow (see instructions below) -- build the automated PQL scoring engine and three-path routing system
 - `seat-expansion-prompt-delivery` -- detect seat growth signals and deliver contextual expansion prompts

@@ -18,7 +18,6 @@ slug: "account-based-cold-calling"
 install: "npx gtm-skills add marketing/solution-aware/account-based-cold-calling"
 drills:
   - autonomous-optimization
-  - cold-call-script-optimization
   - call-performance-reporting
 ---
 
@@ -28,7 +27,7 @@ drills:
 
 ## Outcomes
 
-The cold calling system runs autonomously. AI agents continuously monitor call performance, analyze transcripts for objection patterns, detect when scripts or signals decay, generate improvement hypotheses, run A/B experiments, and auto-implement winners. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in call performance -> generate improvement hypotheses -> run A/B experiments -> evaluate results -> auto-implement winners. The `cold-call-script-optimization` drill adds the play-specific layer: transcript analysis, objection pattern extraction, script variant scoring, and data-driven script evolution. Weekly optimization briefs report what changed and why. The system converges when successive experiments produce <2% improvement, indicating the cold calling process has reached its local maximum for your market and ICP.
+The cold calling system runs autonomously. AI agents continuously monitor call performance, analyze transcripts for objection patterns, detect when scripts or signals decay, generate improvement hypotheses, run A/B experiments, and auto-implement winners. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in call performance -> generate improvement hypotheses -> run A/B experiments -> evaluate results -> auto-implement winners. The the cold call script optimization workflow (see instructions below) drill adds the play-specific layer: transcript analysis, objection pattern extraction, script variant scoring, and data-driven script evolution. Weekly optimization briefs report what changed and why. The system converges when successive experiments produce <2% improvement, indicating the cold calling process has reached its local maximum for your market and ICP.
 
 ## Leading Indicators
 
@@ -138,7 +137,7 @@ Estimated time: 15 hours for setup. Then always-on.
 
 ### 2. Deploy cold-call-specific transcript optimization
 
-Run the `cold-call-script-optimization` drill. This is the play-specific intelligence layer that the generic `autonomous-optimization` drill cannot provide:
+Run the the cold call script optimization workflow (see instructions below) drill. This is the play-specific intelligence layer that the generic `autonomous-optimization` drill cannot provide:
 
 **Daily transcript analysis:**
 - Ingest all new call transcripts from Fireflies
@@ -263,5 +262,5 @@ Note: Founder calling time is intentionally excluded from the play hour count. T
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners, generate weekly briefs
-- `cold-call-script-optimization` — play-specific transcript analysis, objection pattern tracking, script variant scoring, and data-driven script evolution with founder approval
+- the cold call script optimization workflow (see instructions below) — play-specific transcript analysis, objection pattern tracking, script variant scoring, and data-driven script evolution with founder approval
 - `call-performance-reporting` — enhanced at Durable with cross-period pattern detection, predictive call timing, signal decay tracking, and cost efficiency modeling

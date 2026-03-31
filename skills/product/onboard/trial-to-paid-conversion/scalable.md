@@ -17,7 +17,6 @@ install: "npx gtm-skills add product/onboard/trial-to-paid-conversion"
 drills:
   - upgrade-prompt
   - churn-prevention
-  - trial-intervention-orchestration
 ---
 
 # Trial-to-Paid Conversion — Scalable Automation
@@ -93,7 +92,7 @@ Track save rate: percentage of at-risk users who re-engage (new session within 7
 
 ### 3. Deploy multi-channel intervention orchestration
 
-Run the `trial-intervention-orchestration` drill to route every trial user to the right intervention on the right channel:
+Run the the trial intervention orchestration workflow (see instructions below) drill to route every trial user to the right intervention on the right channel:
 
 1. Connect the daily `trial-activation-scoring` output to the intervention routing engine
 2. Configure the intervention matrix that maps (segment, trial day, trajectory) to (intervention type, channel, priority)
@@ -166,4 +165,4 @@ If FAIL: identify the weakest segment, lowest-performing intervention, or lowest
 
 - `upgrade-prompt` — deploys contextual upgrade triggers based on usage limits, feature gates, value milestones, and trial expiry countdown
 - `churn-prevention` — detects at-risk trial users via churn signals, scores risk severity, and triggers tiered interventions to re-engage before the trial expires
-- `trial-intervention-orchestration` — routes each trial user to the right intervention at the right time on the right channel, with anti-fatigue rules and effectiveness tracking
+- the trial intervention orchestration workflow (see instructions below) — routes each trial user to the right intervention at the right time on the right channel, with anti-fatigue rules and effectiveness tracking

@@ -15,7 +15,6 @@ slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
 drills:
   - posthog-gtm-events
-  - best-practices-delivery-automation
   - feature-adoption-monitor
 ---
 
@@ -59,7 +58,7 @@ Set up a PostHog A/B split using feature flags: 50% treatment (receives automate
 
 ### 2. Deploy always-on delivery automation
 
-Run the `best-practices-delivery-automation` drill to build the automated delivery system:
+Run the the best practices delivery automation workflow (see instructions below) drill to build the automated delivery system:
 
 1. Create PostHog eligibility cohorts for each content card based on `trigger_event` and `exclude_event` criteria
 2. Configure Intercom in-app messages for each card: tooltip or banner format, contextual placement on the relevant product screen, deep link CTA
@@ -113,5 +112,5 @@ At the end of 2 weeks, compare treatment vs. control:
 ## Drills Referenced
 
 - `posthog-gtm-events` — instrument the full best-practices event taxonomy with treatment/control split
-- `best-practices-delivery-automation` — always-on contextual delivery via Intercom and Loops with behavioral triggers and frequency caps
+- the best practices delivery automation workflow (see instructions below) — always-on contextual delivery via Intercom and Loops with behavioral triggers and frequency caps
 - `feature-adoption-monitor` — dashboard, stalled-user detection, and automated alerts for delivery health

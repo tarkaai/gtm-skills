@@ -14,7 +14,6 @@ kpis: ["Net dollar retention", "Gross retention rate", "Churn save rate", "Expan
 slug: "net-retention-optimization"
 install: "npx gtm-skills add product/retain/net-retention-optimization"
 drills:
-  - ndr-cohort-tracking
   - health-score-model-design
   - health-score-alerting
   - ab-test-orchestrator
@@ -42,7 +41,7 @@ The pass threshold is NDR >=110% sustained for 4+ consecutive weeks. This proves
 
 ### 1. Deploy segment-level NDR tracking
 
-Run the `ndr-cohort-tracking` drill to build always-on NDR monitoring. This creates:
+Run the the ndr cohort tracking workflow (see instructions below) drill to build always-on NDR monitoring. This creates:
 
 1. A PostHog dashboard with 6 panels: NDR trend, NDR decomposition, NDR by signup cohort (heatmap), NDR by plan tier, expansion funnel, and churn reason distribution
 2. A weekly n8n workflow that detects NDR anomalies: churn spikes (weekly churned MRR >150% of 4-week average), contraction surges (>200%), and expansion stalls (<50%)
@@ -110,7 +109,7 @@ Run each test for minimum 2 weeks or until 200+ samples per variant, whichever i
 
 ### 5. Evaluate against threshold
 
-At the 2-month mark, compute trailing 4-week NDR from the `ndr-cohort-tracking` dashboard.
+At the 2-month mark, compute trailing 4-week NDR from the the ndr cohort tracking workflow (see instructions below) dashboard.
 
 If PASS (NDR >=110% for 4+ consecutive weeks): the system is working at scale. Document: which interventions have the highest save rates, which expansion triggers convert best, which A/B test winners were implemented, and which customer segments still lag. Proceed to Durable.
 If FAIL: identify the weakest NDR component (churn, contraction, expansion) from the dashboard decomposition. Focus A/B testing on that component. Re-evaluate in 4 weeks.
@@ -135,7 +134,7 @@ If FAIL: identify the weakest NDR component (churn, contraction, expansion) from
 
 ## Drills Referenced
 
-- `ndr-cohort-tracking` — builds always-on NDR dashboards, anomaly detection, segment-level early warning, and monthly executive reports
+- the ndr cohort tracking workflow (see instructions below) — builds always-on NDR dashboards, anomaly detection, segment-level early warning, and monthly executive reports
 - `health-score-model-design` — creates a composite 4-dimension account health score computed daily
 - `health-score-alerting` — routes health score transitions to tiered interventions with rate limiting and effectiveness tracking
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on retention and expansion tactics

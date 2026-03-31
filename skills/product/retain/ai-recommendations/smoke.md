@@ -14,7 +14,6 @@ kpis: ["Recommendation adoption rate", "Recommendation CTR", "Dismissal rate", "
 slug: "ai-recommendations"
 install: "npx gtm-skills add product/retain/ai-recommendations"
 drills:
-  - recommendation-engine-prototype
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ Prove that AI-generated feature recommendations drive measurable engagement. A s
 
 ### 1. Build the recommendation engine prototype
 
-Run the `recommendation-engine-prototype` drill:
+Run the the recommendation engine prototype workflow (see instructions below) drill:
 
 1. Create a feature catalog documenting 10-20 product features the AI can recommend, including the PostHog event that proves usage, the prerequisite behavior, and the quantified benefit.
 2. For 10-20 active users, pull their behavior data from PostHog: last 50 events, feature usage counts, and any repeated action patterns.
@@ -48,7 +47,7 @@ Run the `recommendation-engine-prototype` drill:
 
 ### 2. Deliver recommendations
 
-From the `recommendation-engine-prototype` drill output, deliver the top-ranked approved suggestion to each user via Intercom in-app message:
+From the the recommendation engine prototype workflow (see instructions below) drill output, deliver the top-ranked approved suggestion to each user via Intercom in-app message:
 
 - Format: non-blocking banner or tooltip, not a modal
 - Content: feature name, one-sentence benefit, quantified impact based on their actual usage
@@ -93,5 +92,5 @@ If FAIL: analyze dismissals and non-adopters. Common failure modes: recommendati
 
 ## Drills Referenced
 
-- `recommendation-engine-prototype` — builds the feature catalog, generates AI recommendations from user behavior, and delivers them via Intercom
+- the recommendation engine prototype workflow (see instructions below) — builds the feature catalog, generates AI recommendations from user behavior, and delivers them via Intercom
 - `threshold-engine` — evaluates adoption rate against the >=35% pass threshold and recommends next action

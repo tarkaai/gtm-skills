@@ -14,7 +14,6 @@ kpis: ["Rollout success rate", "Mean time to full rollout", "Rollback rate", "St
 slug: "feature-flag-management"
 install: "npx gtm-skills add product/retain/feature-flag-management"
 drills:
-  - flag-lifecycle-automation
   - threshold-engine
 ---
 # Feature Flag System -- Baseline Run
@@ -34,7 +33,7 @@ Automated feature flag lifecycle running always-on via n8n. Flags are created vi
 ## Instructions
 
 ### 1. Build the automated flag lifecycle
-Run the `flag-lifecycle-automation` drill to set up:
+Run the the flag lifecycle automation workflow (see instructions below) drill to set up:
 - **Flag creation workflow**: n8n webhook endpoint that creates PostHog feature flags with standardized metadata (owner, risk level, rollout schedule). Engineering triggers this when a feature is ready for flagged rollout.
 - **Progressive rollout schedules**: Three risk-level templates (low/medium/high) that define the percentage stages and timing for each rollout.
 - **Daily rollout progression**: n8n cron workflow that checks all active flags against their schedule and advances eligible flags via the PostHog API.
@@ -74,5 +73,5 @@ Run the `threshold-engine` drill. Pass criteria: >=90% rollout success rate (fla
 | n8n | Workflow automation for rollout progression and cleanup | Self-hosted free; Cloud from EUR20/mo. https://n8n.io/pricing |
 
 ## Drills Referenced
-- `flag-lifecycle-automation` -- builds the full automated flag creation, rollout, and cleanup pipeline
+- the flag lifecycle automation workflow (see instructions below) -- builds the full automated flag creation, rollout, and cleanup pipeline
 - `threshold-engine` -- evaluates pass/fail against the 90% rollout success target

@@ -16,7 +16,6 @@ slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
   - autonomous-optimization
-  - so-authority-monitoring
 ---
 # Stack Overflow Presence — Durable Intelligence
 
@@ -90,7 +89,7 @@ Run the `autonomous-optimization` drill configured for this play's metrics. The 
 
 ### 2. Deploy SO authority monitoring
 
-Run the `so-authority-monitoring` drill to maintain a live scorecard of:
+Run the the so authority monitoring workflow (see instructions below) drill to maintain a live scorecard of:
 - Reputation growth trajectory and per-tag ranking
 - Answer performance trends (score distribution, acceptance patterns)
 - Referral attribution from SO to pipeline

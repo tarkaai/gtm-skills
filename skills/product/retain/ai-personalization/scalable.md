@@ -14,7 +14,6 @@ slug: "ai-personalization"
 install: "npx gtm-skills add product/retain/ai-personalization"
 drills:
   - ab-test-orchestrator
-  - personalization-scaling-pipeline
   - churn-prevention
 ---
 
@@ -54,7 +53,7 @@ For each experiment:
 
 ### 2. Build the dynamic personalization engine
 
-Run the `personalization-scaling-pipeline` drill to move from static rules to dynamic per-user adaptation:
+Run the the personalization scaling pipeline workflow (see instructions below) drill to move from static rules to dynamic per-user adaptation:
 
 1. **Compute per-user feature vectors** daily: engagement score, behavior segment, primary workflow, feature breadth, collaboration intensity, session recency, personalization engagement rate, activation status, plan type
 2. **Deploy the dynamic variant selection engine** in n8n: when a session starts, pull the user's feature vector, apply dynamic selection rules, set PostHog feature flag overrides
@@ -64,7 +63,7 @@ Run the `personalization-scaling-pipeline` drill to move from static rules to dy
 
 ### 3. Scale email personalization with LLM generation
 
-From the `personalization-scaling-pipeline` drill, implement the LLM email pipeline:
+From the the personalization scaling pipeline workflow (see instructions below) drill, implement the LLM email pipeline:
 
 1. Build an n8n workflow triggered weekly per user
 2. Pull each user's feature vector and recent product activity from PostHog
@@ -143,5 +142,5 @@ If PASS, proceed to Durable. If FAIL:
 ## Drills Referenced
 
 - `ab-test-orchestrator` — design, run, and analyze 3 personalization experiments
-- `personalization-scaling-pipeline` — build dynamic per-user variant selection and LLM email generation
+- the personalization scaling pipeline workflow (see instructions below) — build dynamic per-user variant selection and LLM email generation
 - `churn-prevention` — detect at-risk users and trigger personalized retention interventions

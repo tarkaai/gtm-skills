@@ -15,7 +15,6 @@ slug: "refer-a-friend-incentive"
 install: "npx gtm-skills add product/referrals/refer-a-friend-incentive"
 drills:
   - posthog-gtm-events
-  - referral-fulfillment-automation
   - threshold-engine
 ---
 
@@ -59,7 +58,7 @@ Create PostHog cohorts:
 
 ### 2. Automate the referral lifecycle
 
-Run the `referral-fulfillment-automation` drill to build the always-on referral pipeline:
+Run the the referral fulfillment automation workflow (see instructions below) drill to build the always-on referral pipeline:
 
 - **Link generation**: n8n workflow generates unique referral codes for all eligible users and stores them in Attio
 - **Prompt delivery**: Intercom in-app messages trigger at moments of delight (successful workflow completion, NPS 9-10 response, usage milestone). Loops 3-email sequence enrolls promoters with their referral link.
@@ -114,5 +113,5 @@ Document: funnel conversion rates at each stage, most effective share channel, a
 ## Drills Referenced
 
 - `posthog-gtm-events` — defines and instruments the referral event taxonomy and PostHog funnels
-- `referral-fulfillment-automation` — automates link generation, prompt delivery, reward fulfillment, fraud prevention, and milestone notifications
+- the referral fulfillment automation workflow (see instructions below) — automates link generation, prompt delivery, reward fulfillment, fraud prevention, and milestone notifications
 - `threshold-engine` — evaluates the pass/fail threshold and recommends next action

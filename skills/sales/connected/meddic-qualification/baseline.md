@@ -14,7 +14,6 @@ kpis: ["MEDDIC completeness rate", "Deal velocity", "Close rate by MEDDIC score"
 slug: "meddic-qualification"
 install: "npx gtm-skills add sales/connected/meddic-qualification"
 drills:
-  - meddic-auto-scoring
   - meddic-discovery-call
   - meddic-scorecard-setup
   - posthog-gtm-events
@@ -40,7 +39,7 @@ Transition from manual MEDDIC scoring (Smoke) to automated pre-qualification. Ev
 
 ### 1. Configure MEDDIC auto-scoring pipeline
 
-Run the `meddic-auto-scoring` drill. This creates an n8n workflow that:
+Run the the play's scoring criteria drill. This creates an n8n workflow that:
 1. Triggers on new deal creation in Attio
 2. Pushes the lead to Clay for enrichment across all 6 MEDDIC elements
 3. Clay enriches: org chart (Economic Buyer), tech stack and compliance (Decision Criteria), company size and procurement signals (Decision Process), job postings and competitor reviews (Identify Pain), LinkedIn engagement and content creation (Champion), revenue and growth data (Metrics)
@@ -133,7 +132,7 @@ Estimated time: 3 hours analysis.
 
 ## Drills Referenced
 
-- `meddic-auto-scoring` — automated pre-qualification pipeline via Clay enrichment for all 6 MEDDIC elements
+- the play's scoring criteria — automated pre-qualification pipeline via Clay enrichment for all 6 MEDDIC elements
 - `meddic-discovery-call` — full discovery call lifecycle with element-targeted questions and transcript extraction
 - `meddic-scorecard-setup` — CRM infrastructure (run at Smoke, verify it is active)
 - `posthog-gtm-events` — event tracking configuration for MEDDIC qualification milestones

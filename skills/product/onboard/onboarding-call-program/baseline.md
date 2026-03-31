@@ -14,7 +14,6 @@ kpis: ["Call booking rate", "Call completion rate", "Post-call 7-day activation 
 slug: "onboarding-call-program"
 install: "npx gtm-skills add product/onboard/onboarding-call-program"
 drills:
-  - onboarding-call-routing
   - onboarding-call-follow-up
   - onboarding-sequence-design
 ---
@@ -40,7 +39,7 @@ Automate the end-to-end onboarding call pipeline: qualification, invitation, boo
 
 ### 1. Automate call routing and invitations
 
-Run the `onboarding-call-routing` drill to build the automated pipeline:
+Run the the onboarding call routing workflow (see instructions below) drill to build the automated pipeline:
 
 - Define qualification criteria in PostHog (plan type, company size, signup source, early engagement)
 - Create the PostHog cohort "Onboarding Call Eligible"
@@ -118,6 +117,6 @@ Also capture:
 
 ## Drills Referenced
 
-- `onboarding-call-routing` — automates qualification, multi-channel invitations, booking flow, and no-show handling
+- the onboarding call routing workflow (see instructions below) — automates qualification, multi-channel invitations, booking flow, and no-show handling
 - `onboarding-call-follow-up` — automates transcript processing, call scoring, CRM logging, follow-up emails, and activation monitoring
 - `onboarding-sequence-design` — builds the email-only onboarding sequence for the no-call control group

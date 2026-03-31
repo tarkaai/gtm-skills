@@ -16,7 +16,6 @@ slug: "champion-identification"
 install: "npx gtm-skills add sales/connected/champion-identification"
 drills:
   - champion-health-monitoring
-  - champion-multi-thread-expansion
   - ab-test-orchestrator
 ---
 
@@ -52,7 +51,7 @@ This creates the always-on monitoring layer. Every champion is scored daily, and
 
 ### 2. Launch Multi-Thread Expansion
 
-Run the `champion-multi-thread-expansion` drill for all deals with active champions (score >= 60):
+Run the the champion multi thread expansion workflow (see instructions below) drill for all deals with active champions (score >= 60):
 
 - Map the buying committee for each deal (Economic Buyer, Technical Evaluator, End Users, Legal/Procurement, Executive Sponsor)
 - Use Clay to find contacts matching each role at the champion's company
@@ -143,5 +142,5 @@ If multi-threading depth is low: champions may not be comfortable making introdu
 ## Drills Referenced
 
 - `champion-health-monitoring` — daily automated health checks with AI engagement scoring, disengagement alerts, and weekly digests
-- `champion-multi-thread-expansion` — leverage champions to map buying committees and create multi-threaded deal engagement
+- the champion multi thread expansion workflow (see instructions below) — leverage champions to map buying committees and create multi-threaded deal engagement
 - `ab-test-orchestrator` — run controlled experiments on recruitment messaging, enablement format, and multi-threading approach

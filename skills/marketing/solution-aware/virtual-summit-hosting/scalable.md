@@ -14,7 +14,6 @@ kpis: ["Registration count per summit", "Qualified leads per summit", "Per-summi
 slug: "virtual-summit-hosting"
 install: "npx gtm-skills add marketing/solution-aware/virtual-summit-hosting"
 drills:
-  - summit-series-automation
   - ab-test-orchestrator
 ---
 
@@ -38,7 +37,7 @@ Automate the quarterly summit cadence so the agent manages speaker pipelines, pr
 
 ### 1. Deploy the summit series automation
 
-Run the `summit-series-automation` drill. This builds the automated infrastructure that transforms manual summit operations into a repeatable quarterly cadence:
+Run the the summit series automation workflow (see instructions below) drill. This builds the automated infrastructure that transforms manual summit operations into a repeatable quarterly cadence:
 
 **Series calendar and theme planning:**
 - Create the 12-month summit calendar in Attio with themes scored by ICP pain alignment, speaker availability, competitive differentiation, and timeliness.
@@ -99,7 +98,7 @@ Target: net-new prospect sourcing should contribute ≥30% of total registration
 
 ### 4. Build the cross-summit intelligence layer
 
-Using the data from the `summit-series-automation` drill's cross-summit analytics, the agent generates insight reports after each summit:
+Using the data from the the summit series automation workflow (see instructions below) drill's cross-summit analytics, the agent generates insight reports after each summit:
 
 - **Theme performance ranking**: Which themes generate the most registrations? The most pipeline?
 - **Speaker ROI ranking**: Which speakers drove the most registrations through their promotion? Which sessions had the highest engagement?
@@ -147,5 +146,5 @@ Measure across the 6-month period:
 
 ## Drills Referenced
 
-- `summit-series-automation` — automates the full quarterly summit cadence: theme planning, speaker pipeline, cascading promotion, sponsor coordination, and cross-summit analytics
+- the summit series automation workflow (see instructions below) — automates the full quarterly summit cadence: theme planning, speaker pipeline, cascading promotion, sponsor coordination, and cross-summit analytics
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on summit variables: theme framing, length, promotion timing, speaker lineup, registration page, and nurture approach

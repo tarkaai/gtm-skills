@@ -15,7 +15,6 @@ kpis: ["Research automation rate", "Research accuracy", "Reply rate by research 
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
-  - account-research-automation
   - ab-test-orchestrator
   - tool-sync-workflow
   - signal-detection
@@ -42,7 +41,7 @@ Deploy an always-on n8n pipeline that automatically researches every account add
 
 ### 1. Deploy the automated research pipeline
 
-Run the `account-research-automation` drill. Build an n8n workflow with:
+Run the the account research automation workflow (see instructions below) drill. Build an n8n workflow with:
 
 **Trigger:** Attio webhook fires when a company is added to the "Target Accounts" list.
 
@@ -172,7 +171,7 @@ After 2 months, measure:
 
 ## Drills Referenced
 
-- `account-research-automation` — n8n pipeline that auto-researches accounts on arrival and generates AI briefs
+- the account research automation workflow (see instructions below) — n8n pipeline that auto-researches accounts on arrival and generates AI briefs
 - `ab-test-orchestrator` — design and run A/B experiments on hook types, research depth, and messaging
 - `tool-sync-workflow` — connect Clay, Instantly, Attio, PostHog, and LinkedIn into zero-silo data flow
 - `signal-detection` — monitor for real-time buying signals and trigger research refreshes

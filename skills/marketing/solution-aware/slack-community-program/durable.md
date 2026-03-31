@@ -16,7 +16,6 @@ slug: "slack-community-program"
 install: "npx gtm-skills add marketing/solution-aware/slack-community-program"
 drills:
   - autonomous-optimization
-  - community-engagement-brief
   - community-health-scoring
 ---
 
@@ -26,7 +25,7 @@ drills:
 
 ## Outcomes
 
-The agent autonomously optimizes community engagement to find and maintain the local maximum. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in community health scores and referral data, generate improvement hypotheses (new content formats, different communities, adjusted posting cadence, new keyword sets), run A/B experiments, evaluate results, and auto-implement winners. Weekly optimization briefs from `community-engagement-brief` drive strategy. Converges when successive experiments produce <2% improvement.
+The agent autonomously optimizes community engagement to find and maintain the local maximum. The `autonomous-optimization` drill runs the core loop: detect metric anomalies in community health scores and referral data, generate improvement hypotheses (new content formats, different communities, adjusted posting cadence, new keyword sets), run A/B experiments, evaluate results, and auto-implement winners. Weekly optimization briefs from the community engagement brief workflow (see instructions below) drive strategy. Converges when successive experiments produce <2% improvement.
 
 Pass threshold: sustained community growth (>=10% QoQ) and >=20 qualified leads/month over 12 months.
 
@@ -92,7 +91,7 @@ Run the `autonomous-optimization` drill configured for this play's specific KPIs
 
 ### 2. Deploy weekly community engagement briefs
 
-Run the `community-engagement-brief` drill. This produces a weekly intelligence report every Monday that synthesizes:
+Run the the community engagement brief workflow (see instructions below) drill. This produces a weekly intelligence report every Monday that synthesizes:
 
 - Community-by-community performance table with health scores, trends, referral sessions, signups
 - Content performance analysis: which content types, topics, and communities drove the most engagement and referrals this week vs. 4-week average
@@ -159,5 +158,5 @@ Quarterly: re-run `slack-discord-reconnaissance` to discover new communities. Th
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics, diagnose anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners
-- `community-engagement-brief` — weekly intelligence brief synthesizing community performance, content strategy recommendations, warm leads, and risk flags
+- the community engagement brief workflow (see instructions below) — weekly intelligence brief synthesizing community performance, content strategy recommendations, warm leads, and risk flags
 - `community-health-scoring` — enhanced weekly scoring with cross-community signals, competitive tracking, and lifecycle stages

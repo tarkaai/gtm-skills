@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/onboard/empty-state-onboarding"
 drills:
   - onboarding-personalization
   - ab-test-orchestrator
-  - empty-state-scaling
 ---
 
 # Empty State Guidance — Scalable Automation
@@ -68,7 +67,7 @@ For each test, use `posthog-experiments` to create the experiment, set the prima
 
 ### 3. Scale empty state coverage and template engine
 
-Run the `empty-state-scaling` drill to:
+Run the the empty state scaling workflow (see instructions below) drill to:
 1. Design and deploy empty states for all P1 and P2 surfaces
 2. Build the n8n template recommendation engine that curates templates per user based on persona, industry, and past behavior
 3. Set up the weekly template performance analysis job
@@ -128,4 +127,4 @@ If FAIL: Identify the drag. If aggregate CTR is <45% but some surfaces are >50%,
 
 - `onboarding-personalization` — define personas, build detection logic, route users to persona-specific tours
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on empty state surfaces
-- `empty-state-scaling` — expand coverage to all surfaces, build template engine, run systematic testing at scale
+- the empty state scaling workflow (see instructions below) — expand coverage to all surfaces, build template engine, run systematic testing at scale

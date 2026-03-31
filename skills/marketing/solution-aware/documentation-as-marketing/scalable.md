@@ -15,7 +15,6 @@ kpis: ["Monthly organic docs traffic", "Monthly docs-sourced leads", "Docs-to-si
 slug: "documentation-as-marketing"
 install: "npx gtm-skills add marketing/solution-aware/documentation-as-marketing"
 drills:
-  - docs-content-scaling-pipeline
   - content-refresh-pipeline
   - cluster-gap-analysis
   - threshold-engine
@@ -42,7 +41,7 @@ The automated docs content pipeline discovers keyword opportunities, generates p
 
 ### 1. Deploy the automated content scaling pipeline
 
-Run the `docs-content-scaling-pipeline` drill to build the automated content engine:
+Run the the docs content scaling pipeline workflow (see instructions below) drill to build the automated content engine:
 
 **Keyword discovery (runs weekly via n8n):**
 - Source 1: GSC query mining — find queries with impressions > 10 but clicks < 3 (content-intent mismatch)
@@ -139,7 +138,7 @@ If PASS, proceed to Durable. If FAIL, diagnose the bottleneck: if traffic is low
 
 ## Drills Referenced
 
-- `docs-content-scaling-pipeline` — automated keyword discovery, page generation, quality gate, and publishing
+- the docs content scaling pipeline workflow (see instructions below) — automated keyword discovery, page generation, quality gate, and publishing
 - `content-refresh-pipeline` — detect declining pages and auto-generate refreshed content
 - `cluster-gap-analysis` — audit keyword coverage, cannibalization, and internal linking
 - `threshold-engine` — evaluate 3-month results against pass threshold

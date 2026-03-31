@@ -14,7 +14,6 @@ kpis: ["Total downloads across portfolio", "Number of active templates", "Cross-
 slug: "template-tool-marketplaces"
 install: "npx gtm-skills add marketing/solution-aware/template-tool-marketplaces"
 drills:
-  - marketplace-portfolio-scaling
   - ab-test-orchestrator
   - tool-sync-workflow
 ---
@@ -43,7 +42,7 @@ Find the 10x multiplier. The Scalable level transforms a single proven template 
 
 ### 1. Scale the template portfolio
 
-Run the `marketplace-portfolio-scaling` drill. This is the core Scalable-level work:
+Run the the marketplace portfolio scaling workflow (see instructions below) drill. This is the core Scalable-level work:
 
 1. **Identify 5-10 template topics** using Clay to research high-demand, low-competition opportunities across marketplaces. Prioritize templates that:
    - Cover different stages of the same workflow (planning -> execution -> review)
@@ -142,6 +141,6 @@ After 2 months, measure against: >= 500 downloads and >= 15 leads.
 
 ## Drills Referenced
 
-- `marketplace-portfolio-scaling` -- systematic expansion from 1 template to a portfolio with cross-promotion, email nurture, and portfolio analytics
+- the marketplace portfolio scaling workflow (see instructions below) -- systematic expansion from 1 template to a portfolio with cross-promotion, email nurture, and portfolio analytics
 - `ab-test-orchestrator` -- designs and runs A/B tests on listing titles, descriptions, cover images, and CTAs
 - `tool-sync-workflow` -- builds n8n workflows to sync marketplace downloads to Attio CRM and Loops nurture sequences

@@ -15,7 +15,6 @@ kpis: ["Expansion close rate by scoring tier", "Expansion ARR growth rate", "Sco
 slug: "usage-limit-sales-upsell"
 install: "npx gtm-skills add product/upsell/usage-limit-sales-upsell"
 drills:
-  - expansion-scoring-pipeline
   - ab-test-orchestrator
   - expansion-outreach-sequence
 ---
@@ -42,7 +41,7 @@ Find the 10x multiplier. Baseline proved the pipeline works for a controlled gro
 
 ### 1. Deploy the automated expansion scoring pipeline
 
-Run the `expansion-scoring-pipeline` drill in full automated mode:
+Run the the play's scoring criteria drill in full automated mode:
 
 1. Configure the four signal categories in the n8n scoring workflow:
    - Usage proximity (40% weight): limit percentage, multi-resource flags, velocity trends
@@ -102,7 +101,7 @@ Use PostHog feature flags to allocate accounts to variants. Run each experiment 
 
 ### 4. Build predictive expansion signals
 
-Move from reactive (account is already at 85%) to predictive (account will be at 85% within 14 days). Add velocity-based triggers to the `expansion-scoring-pipeline`:
+Move from reactive (account is already at 85%) to predictive (account will be at 85% within 14 days). Add velocity-based triggers to the the play's scoring criteria:
 
 - If consumption velocity projects a limit hit within 14 days, add +20 to the score regardless of current percentage
 - If an account's MRR is growing (they added seats or upgraded partially), treat that as a positive expansion signal — they have already demonstrated willingness to pay more
@@ -171,6 +170,6 @@ If PASS, proceed to Durable. If FAIL, focus on the highest-leverage experiment r
 
 ## Drills Referenced
 
-- `expansion-scoring-pipeline` — automated 4-category scoring combining usage proximity, growth velocity, engagement depth, and firmographic fit to rank expansion opportunities
+- the play's scoring criteria — automated 4-category scoring combining usage proximity, growth velocity, engagement depth, and firmographic fit to rank expansion opportunities
 - `ab-test-orchestrator` — designs, runs, and evaluates A/B tests on outreach subject lines, timing, content format, and offer structure
 - `expansion-outreach-sequence` — 4-touch personalized outreach cadence, expanded with resource-specific copy and segment-based routing

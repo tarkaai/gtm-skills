@@ -15,7 +15,6 @@ slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
 drills:
   - autonomous-optimization
-  - best-practices-health-report
   - nps-feedback-loop
 ---
 
@@ -81,7 +80,7 @@ Run the `autonomous-optimization` drill to create the always-on monitor-diagnose
 
 ### 2. Generate weekly health reports
 
-Run the `best-practices-health-report` drill to produce a structured weekly brief every Monday:
+Run the the best practices health report workflow (see instructions below) drill to produce a structured weekly brief every Monday:
 
 The report covers:
 - **Card performance table:** Per-card delivery rate, CTR, completion rate, dismissal rate, and trend vs. 4-week average. Sorted by retention lift contribution.
@@ -153,5 +152,5 @@ If any metric degrades for 2 consecutive months despite optimization, escalate t
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that finds the local maximum for best-practices engagement and retention
-- `best-practices-health-report` — weekly structured report with card performance, stalled user analysis, content freshness, and experiment outcomes
+- the best practices health report workflow (see instructions below) — weekly structured report with card performance, stalled user analysis, content freshness, and experiment outcomes
 - `nps-feedback-loop` — collect and act on feedback from best-practices engagers to validate the system delivers real value and identify content gaps

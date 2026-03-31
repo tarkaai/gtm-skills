@@ -14,7 +14,6 @@ kpis: ["Funnel conversion rate", "Drop-off reduction", "Test velocity", "Segment
 slug: "funnel-optimization"
 install: "npx gtm-skills add product/retain/funnel-optimization"
 drills:
-  - funnel-segment-scaling
   - ab-test-orchestrator
   - funnel-optimization-health-monitor
   - dashboard-builder
@@ -44,7 +43,7 @@ The 10x multiplier for funnel optimization is segmentation. A single funnel vari
 
 ### 1. Build the segment analysis
 
-Before optimizing segments, quantify which segments have the biggest gaps. For each funnel, use the `funnel-segment-scaling` drill's step 1: create PostHog cohorts for each major segment dimension and calculate per-segment funnel conversion rates.
+Before optimizing segments, quantify which segments have the biggest gaps. For each funnel, use the the funnel segment scaling workflow (see instructions below) drill's step 1: create PostHog cohorts for each major segment dimension and calculate per-segment funnel conversion rates.
 
 Dimensions to analyze:
 - Acquisition source (organic, paid, referral, direct)
@@ -57,7 +56,7 @@ Output: a ranked table of segments by optimization opportunity = `(best_segment_
 
 ### 2. Deploy per-segment funnel variants
 
-Run the `funnel-segment-scaling` drill for the top 3 underperforming segments. This produces:
+Run the the funnel segment scaling workflow (see instructions below) drill for the top 3 underperforming segments. This produces:
 
 - PostHog feature flags routing users into segment-specific funnel variants based on their properties
 - Per-segment Intercom messages contextualizing the funnel for each segment's expectations
@@ -147,7 +146,7 @@ If FAIL: Diagnose — is the issue insufficient segment coverage (need more vari
 
 ## Drills Referenced
 
-- `funnel-segment-scaling` — Builds per-segment funnel variants with property-based routing and independent tracking
+- the funnel segment scaling workflow (see instructions below) — Builds per-segment funnel variants with property-based routing and independent tracking
 - `ab-test-orchestrator` — Formalizes hypothesis-driven experimentation with statistical rigor
 - `funnel-optimization-health-monitor` — Always-on monitoring feeding the experimentation pipeline
 - `dashboard-builder` — Comprehensive funnel dashboard for real-time team visibility

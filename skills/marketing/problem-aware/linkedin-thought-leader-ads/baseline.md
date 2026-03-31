@@ -14,7 +14,6 @@ kpis: ["Impressions", "Engagement rate", "CPC", "Cost per qualified lead", "Lead
 slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
 drills:
-  - tla-campaign-build
   - paid-social-audience-builder
   - paid-social-lead-routing
 ---
@@ -42,7 +41,7 @@ First always-on Thought Leader Ad campaigns. The agent builds multi-segment camp
 
 ### 1. Build Multi-Segment Campaigns
 
-Run the `tla-campaign-build` drill:
+Run the the tla campaign build workflow (see instructions below) drill:
 
 1. Create two campaign groups (text/image TLAs and video TLAs if applicable)
 2. Configure 3 audience segments using `paid-social-audience-builder`:
@@ -56,7 +55,7 @@ Run the `tla-campaign-build` drill:
 
 ### 2. Install Full Conversion Tracking
 
-As part of `tla-campaign-build`, set up the tracking layer:
+As part of the tla campaign build workflow (see instructions below), set up the tracking layer:
 
 1. Verify LinkedIn Insight Tag on all website pages
 2. Create conversion actions in Campaign Manager: website visit, form submission, demo request
@@ -150,6 +149,6 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `tla-campaign-build` — build and launch TLA campaigns with targeting, tracking, and CRM integration
+- the tla campaign build workflow (see instructions below) — build and launch TLA campaigns with targeting, tracking, and CRM integration
 - `paid-social-audience-builder` — build and refine audience segments on LinkedIn targeting problem-aware ICP prospects
 - `paid-social-lead-routing` — route TLA-sourced leads through enrichment, scoring, CRM, and email nurture automatically

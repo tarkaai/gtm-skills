@@ -14,7 +14,6 @@ kpis: ["Suggestion acceptance rate by segment", "Median workflow time reduction 
 slug: "workflow-optimization-suggestions"
 install: "npx gtm-skills add product/retain/workflow-optimization-suggestions"
 drills:
-  - workflow-suggestion-personalization
   - ab-test-orchestrator
 ---
 
@@ -38,7 +37,7 @@ Scale from 100 to 500+ users while improving acceptance rates through personaliz
 
 ### 1. Build user segments for personalization
 
-Run the `workflow-suggestion-personalization` drill to create behavior-based segments:
+Run the the workflow suggestion personalization workflow (see instructions below) drill to create behavior-based segments:
 
 **Step 1 — Define maturity segments in PostHog:**
 - **Beginners** (< 30 days, < 50% feature discovery): create a PostHog cohort with properties `account_age_days < 30 AND feature_discovery_pct < 0.5`
@@ -168,5 +167,5 @@ If FAIL on efficiency: Review whether adopted suggestions actually changed behav
 
 ## Drills Referenced
 
-- `workflow-suggestion-personalization` — build behavior-based segments, configure segment-specific prompts, set delivery rules per segment
+- the workflow suggestion personalization workflow (see instructions below) — build behavior-based segments, configure segment-specific prompts, set delivery rules per segment
 - `ab-test-orchestrator` — design, run, and analyze A/B tests on suggestion copy, timing, depth, and channel

@@ -15,7 +15,6 @@ kpis: ["Multi-year close rate", "Average TCV", "Proposal volume (total and proac
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - multi-year-pipeline-scaling
   - deal-term-ab-testing
 ---
 
@@ -41,7 +40,7 @@ Scale multi-year deal volume without proportional effort. Instead of waiting for
 
 ### 1. Build the proactive pipeline engine
 
-Run the `multi-year-pipeline-scaling` drill to create the system that identifies multi-year candidates before they reach the Proposed stage:
+Run the the multi year pipeline scaling workflow (see instructions below) drill to create the system that identifies multi-year candidates before they reach the Proposed stage:
 
 1. Analyze historical multi-year wins in Attio to build the multi-year ICP profile
 2. Create the readiness scoring model in Clay with 8 weighted signals (ICP match, ACV, pain ratio, stage, fiscal timing, champion, competitive, commitment history)
@@ -136,5 +135,5 @@ If FAIL:
 
 ## Drills Referenced
 
-- `multi-year-pipeline-scaling` — readiness scoring model, proactive identification workflow, segment-specific deal templates, intent signal monitoring
+- the multi year pipeline scaling workflow (see instructions below) — readiness scoring model, proactive identification workflow, segment-specific deal templates, intent signal monitoring
 - `deal-term-ab-testing` — experiment framework for testing discount levels, option count, payment terms, presentation formats; with PostHog feature flags and evaluation protocol

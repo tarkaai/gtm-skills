@@ -14,7 +14,6 @@ kpis: ["Overall engagement rate", "Per-persona engagement rate", "Experiment win
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
 drills:
-  - best-practices-personalization
   - ab-test-orchestrator
   - content-repurposing
 ---
@@ -40,7 +39,7 @@ drills:
 
 ### 1. Deploy persona-based personalization
 
-Run the `best-practices-personalization` drill to transform the generic card library into a per-persona system:
+Run the the best practices personalization workflow (see instructions below) drill to transform the generic card library into a per-persona system:
 
 1. **Define behavioral personas from PostHog data.** Create 5 cohorts based on actual usage patterns:
    - **Builders:** Create 5+ items/week, spend 70%+ of time in the editor
@@ -138,6 +137,6 @@ At the end of 2 months, calculate:
 
 ## Drills Referenced
 
-- `best-practices-personalization` — segment users into behavioral personas, generate persona-specific copy variants, layer product maturity tiers
+- the best practices personalization workflow (see instructions below) — segment users into behavioral personas, generate persona-specific copy variants, layer product maturity tiers
 - `ab-test-orchestrator` — run systematic experiments on hooks, timing, format, and frequency
 - `content-repurposing` — expand the card library and repurpose top performers into video, email, and web formats

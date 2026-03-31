@@ -16,7 +16,6 @@ slug: "user-generated-content"
 install: "npx gtm-skills add product/referrals/user-generated-content"
 drills:
   - posthog-gtm-events
-  - ugc-collection-automation
   - ugc-amplification-pipeline
 ---
 
@@ -63,7 +62,7 @@ Build PostHog funnels:
 
 ### 2. Deploy the automated collection pipeline
 
-Run the `ugc-collection-automation` drill. This deploys:
+Run the the ugc collection automation workflow (see instructions below) drill. This deploys:
 
 **Submission webhook:** An n8n workflow that receives content submissions, validates fields, deduplicates, enriches the submitter from Attio CRM, and routes to AI moderation. Replace the manual review from Smoke with this automated pipeline.
 
@@ -136,5 +135,5 @@ Review the PostHog funnels and Attio UGC Library:
 ## Drills Referenced
 
 - `posthog-gtm-events` — establish the UGC event taxonomy with standard event names and properties for submission, moderation, amplification, and referral tracking
-- `ugc-collection-automation` — deploy the always-on pipeline: submission webhook, AI moderation, CRM cataloging, external content detection, and creator engagement sequences
+- the ugc collection automation workflow (see instructions below) — deploy the always-on pipeline: submission webhook, AI moderation, CRM cataloging, external content detection, and creator engagement sequences
 - `ugc-amplification-pipeline` — format approved UGC for LinkedIn, email, and in-product channels; schedule weekly amplification; track per-piece and per-channel performance

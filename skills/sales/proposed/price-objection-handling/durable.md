@@ -17,7 +17,6 @@ slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
   - autonomous-optimization
-  - objection-intelligence-monitor
   - objection-detection-automation
 ---
 
@@ -53,7 +52,7 @@ Run the `autonomous-optimization` drill configured for the price objection handl
 **Phase 2 — Diagnose (triggered by anomaly):**
 - Pull play context from Attio: current framework effectiveness, root cause distribution, active experiments
 - Pull 8-week metric history from PostHog
-- Run hypothesis generation with price-objection-specific context (fed by `objection-intelligence-monitor`)
+- Run hypothesis generation with price-objection-specific context (fed by the objection intelligence monitor workflow (see instructions below))
 - Receive 3 ranked hypotheses. Examples specific to this play:
   - "Overcome rate dropped 18% because `sticker_shock` objections doubled — a new competitor entered at a lower price point. Experiment: add a competitive TCO comparison as the first asset in the sticker_shock follow-up sequence."
   - "Average discount increased from 6% to 11% — reps are defaulting to discounts instead of framework responses. Experiment: remove discount from the first two response attempts and only allow after 2 value-first touches."
@@ -85,7 +84,7 @@ Run the `autonomous-optimization` drill configured for the price objection handl
 
 ### 2. Deploy the objection intelligence monitor
 
-Run the `objection-intelligence-monitor` drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
+Run the the objection intelligence monitor workflow (see instructions below) drill to create the play-specific monitoring layer that feeds the autonomous optimization loop:
 
 **PostHog dashboard (8 panels):**
 - Objection overcome rate (weekly trend line)
@@ -158,5 +157,5 @@ Agent compute is variable based on experiment velocity and monitoring frequency.
 ## Drills Referenced
 
 - `autonomous-optimization` — the core always-on loop: monitor metrics -> detect anomalies -> generate hypotheses -> run experiments -> evaluate -> implement winners -> report weekly
-- `objection-intelligence-monitor` — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly pricing intelligence report, domain-specific hypothesis context for the optimization loop
+- the objection intelligence monitor workflow (see instructions below) — play-specific monitoring: 8-panel dashboard, daily anomaly detection, weekly pricing intelligence report, domain-specific hypothesis context for the optimization loop
 - `objection-detection-automation` — continued from Scalable: always-on call and email monitoring, predictive scoring, auto-classification

@@ -16,7 +16,6 @@ kpis: ["Registrations per workshop", "Show rate", "Exercise completion rate", "Q
 slug: "workshop-series-educational"
 install: "npx gtm-skills add marketing/solution-aware/workshop-series-educational"
 drills:
-  - workshop-series-automation
   - ab-test-orchestrator
   - content-repurposing
 ---
@@ -47,7 +46,7 @@ drills:
 
 ### 1. Launch the automated workshop series
 
-Run the `workshop-series-automation` drill to build the full series engine:
+Run the the workshop series automation workflow (see instructions below) drill to build the full series engine:
 
 - Create a topic backlog scored by ICP pain alignment, competitive differentiation, and funnel position. Queue at least 6 topics across multiple difficulty levels. Map each topic to prerequisites, required materials, and exercise designs.
 - Build the n8n promotion engine that auto-triggers 21 days before each workshop: registration page generation, email invite waves (day -14 and day -7), LinkedIn post scheduling, personal invite lists from Attio, prep sequence activation, and day-of reminders.
@@ -151,6 +150,6 @@ After 3 months (4-8 workshops), evaluate:
 
 ## Drills Referenced
 
-- `workshop-series-automation` -- automate recurring series operations, topic scheduling, prospect sourcing, attendee preparation, and cross-event analytics
+- the workshop series automation workflow (see instructions below) -- automate recurring series operations, topic scheduling, prospect sourcing, attendee preparation, and cross-event analytics
 - `ab-test-orchestrator` -- systematically test topic, difficulty, exercise format, timing, and promotion variables across workshops
 - `content-repurposing` -- transform each workshop recording into derivative content (clips, tutorials, templates) that drives future registrations

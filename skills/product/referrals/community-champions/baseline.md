@@ -16,7 +16,6 @@ slug: "community-champions"
 install: "npx gtm-skills add product/referrals/community-champions"
 drills:
   - posthog-gtm-events
-  - champion-recognition-pipeline
 ---
 
 # Champion Recognition Program — Baseline Run
@@ -49,7 +48,7 @@ Run the `posthog-gtm-events` drill to set up comprehensive tracking for the cham
 
 ### 2. Launch the automated recognition pipeline
 
-Run the `champion-recognition-pipeline` drill to deploy the always-on automation:
+Run the the champion recognition pipeline workflow (see instructions below) drill to deploy the always-on automation:
 
 - Configure the weekly scoring workflow in n8n: run `champion-identification-scoring` every Sunday, then query Attio for score-50+ members not yet enrolled, filter out ineligible (too new, declined, escalated), auto-enroll in Recognized Contributor tier
 - Set up event-driven tier promotion: when `champion_score_computed` crosses 75, immediately trigger Champion promotion
@@ -113,4 +112,4 @@ If HARD FAIL (<20%): the recognition perks may not be compelling enough, or the 
 ## Drills Referenced
 
 - `posthog-gtm-events` — instruments all champion events (scoring, enrollment, referral, promotion) and builds the measurement layer
-- `champion-recognition-pipeline` — automates scoring, enrollment, tier promotion, perk delivery, referral activation nudges, and referral tracking
+- the champion recognition pipeline workflow (see instructions below) — automates scoring, enrollment, tier promotion, perk delivery, referral activation nudges, and referral tracking

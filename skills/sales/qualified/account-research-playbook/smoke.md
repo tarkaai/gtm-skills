@@ -15,7 +15,6 @@ kpis: ["Reply rate (researched vs non-researched)", "Research time per account",
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
-  - account-outreach-research
   - icp-definition
   - build-prospect-list
   - threshold-engine
@@ -50,7 +49,7 @@ Also select 10 comparison accounts matching the same ICP criteria. These will re
 
 ### 3. Research each target account
 
-Run the `account-outreach-research` drill for each of the 10 target accounts. For each account, the drill:
+Run the the account outreach research workflow (see instructions below) drill for each of the 10 target accounts. For each account, the drill:
 
 1. Pulls firmographics from Clay (company size, funding, industry)
 2. Searches for news signals from the last 90 days (funding, hires, launches)
@@ -122,7 +121,7 @@ If FAIL: Diagnose — was the issue research quality (hooks were generic), resea
 
 ## Drills Referenced
 
-- `account-outreach-research` — manual account research producing structured brief with personalization hooks
+- the account outreach research workflow (see instructions below) — manual account research producing structured brief with personalization hooks
 - `icp-definition` — define firmographic criteria, buyer personas, and pain points
 - `build-prospect-list` — source and qualify 10 target accounts from Clay/Apollo
 - `threshold-engine` — evaluate reply rate against >=30% pass threshold

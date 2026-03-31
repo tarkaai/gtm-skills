@@ -14,7 +14,6 @@ kpis: ["Store listing views", "Install rate", "Popup open rate", "Waitlist signu
 slug: "chrome-web-store-teaser"
 install: "npx gtm-skills add marketing/unaware/chrome-web-store-teaser"
 drills:
-  - chrome-store-aso
   - ab-test-orchestrator
   - tool-sync-workflow
   - threshold-engine
@@ -40,7 +39,7 @@ Scale install volume 4x and lead volume 5x over Baseline by systematically optim
 
 ### 1. Run Chrome Web Store ASO
 
-Run the `chrome-store-aso` drill to systematically optimize the listing:
+Run the the chrome store aso workflow (see instructions below) drill to systematically optimize the listing:
 
 **Keyword optimization (Week 1-2):**
 - Research 15+ candidate search terms using the CWS search and Google Trends
@@ -146,7 +145,7 @@ Run the `threshold-engine` drill after 2 months:
 
 ## Drills Referenced
 
-- `chrome-store-aso` — keyword research, listing copy optimization, screenshot testing, review management
+- the chrome store aso workflow (see instructions below) — keyword research, listing copy optimization, screenshot testing, review management
 - `ab-test-orchestrator` — popup A/B tests (copy, form design, CTAs)
 - `tool-sync-workflow` — competitor monitoring, install milestone alerts, lead quality scoring automations
 - `threshold-engine` — evaluates cumulative installs and leads against pass threshold

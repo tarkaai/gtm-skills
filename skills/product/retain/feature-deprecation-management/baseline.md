@@ -15,7 +15,6 @@ slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
   - posthog-gtm-events
-  - deprecation-migration-tracker
   - deprecation-communication-setup
 ---
 
@@ -55,7 +54,7 @@ Build PostHog funnels:
 
 ### 2. Deploy the migration tracker
 
-Run the `deprecation-migration-tracker` drill. This builds the always-on system that:
+Run the the deprecation migration tracker workflow (see instructions below) drill. This builds the always-on system that:
 
 - Scores every affected user's migration progress daily (0-100%)
 - Classifies migration status: not started, aware, in progress, nearly complete, complete
@@ -124,5 +123,5 @@ If FAIL: Identify whether the failure is in communication (users did not know), 
 ## Drills Referenced
 
 - `posthog-gtm-events` — instruments the full deprecation event lifecycle for tracking and funnel analysis
-- `deprecation-migration-tracker` — scores per-user migration progress daily, detects stalls, routes interventions, and generates migration dashboards
+- the deprecation migration tracker workflow (see instructions below) — scores per-user migration progress daily, detects stalls, routes interventions, and generates migration dashboards
 - `deprecation-communication-setup` — deploys tiered in-app and email notifications to all affected users at full scale

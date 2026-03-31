@@ -17,7 +17,6 @@ drills:
   - enrich-and-score
   - follow-up-automation
   - ab-test-orchestrator
-  - value-asset-refresh-pipeline
 ---
 
 # Outbound With Value Asset — Scalable Automation
@@ -48,7 +47,7 @@ Run the `enrich-and-score` drill to score and tier your full prospect pipeline. 
 - Industry vertical
 - Pain point category (derived from Clay enrichment)
 
-For each segment, either adapt the existing asset or create a new one using the `value-asset-refresh-pipeline` drill. Each segment gets the asset version most relevant to their specific pain. In Clay, add an `assigned_asset` column that maps each prospect to their asset variant.
+For each segment, either adapt the existing asset or create a new one using the the value asset refresh pipeline workflow (see instructions below) drill. Each segment gets the asset version most relevant to their specific pain. In Clay, add an `assigned_asset` column that maps each prospect to their asset variant.
 
 ### 2. Launch systematic A/B testing
 
@@ -95,7 +94,7 @@ Track weekly in PostHog:
 - Cost per meeting trending over time
 - Funnel conversion: send -> click -> reply -> meeting -> pipeline
 
-Monthly: Run the `value-asset-refresh-pipeline` drill to assess asset performance, retire underperformers, and generate new asset topics based on reply patterns.
+Monthly: Run the the value asset refresh pipeline workflow (see instructions below) drill to assess asset performance, retire underperformers, and generate new asset topics based on reply patterns.
 
 After 2 months, evaluate against threshold: >=15 asset-referencing replies AND >=5 meetings booked, with reply rate >=3%.
 
@@ -136,4 +135,4 @@ After 2 months, evaluate against threshold: >=15 asset-referencing replies AND >
 - `enrich-and-score` — score and segment prospects for multi-asset routing
 - `follow-up-automation` — build n8n workflows for automated cross-channel follow-ups
 - `ab-test-orchestrator` — design, run, and evaluate experiments on every sequence variable
-- `value-asset-refresh-pipeline` — create new assets, A/B test formats, retire underperformers
+- the value asset refresh pipeline workflow (see instructions below) — create new assets, A/B test formats, retire underperformers

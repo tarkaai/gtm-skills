@@ -15,7 +15,6 @@ slug: "feature-deprecation-management"
 install: "npx gtm-skills add product/retain/feature-deprecation-management"
 drills:
   - ab-test-orchestrator
-  - deprecation-segment-routing
   - churn-prevention
 ---
 
@@ -57,7 +56,7 @@ Use PostHog experiments with a minimum of 200 users per variant. Run each test f
 
 ### 2. Deploy dynamic segment routing
 
-Run the `deprecation-segment-routing` drill. This builds the system that evaluates each user's behavior and assigns them to the optimal migration path:
+Run the the deprecation segment routing workflow (see instructions below) drill. This builds the system that evaluates each user's behavior and assigns them to the optimal migration path:
 
 - **Self-starter users** (clicked CTA, used replacement within 48h) → Self-serve: Intercom checklist only
 - **Needs guidance** (clicked CTA, did NOT use replacement within 7 days) → Guided: product tour + 2-email sequence
@@ -121,5 +120,5 @@ If FAIL: Identify the bottleneck. If migration rate is high but cost is too high
 ## Drills Referenced
 
 - `ab-test-orchestrator` — designs and runs A/B tests on deprecation messaging, CTA placement, and email copy using PostHog experiments
-- `deprecation-segment-routing` — dynamically routes each user to the optimal migration path (self-serve, guided, high-touch, rescue, light-touch) based on behavior
+- the deprecation segment routing workflow (see instructions below) — dynamically routes each user to the optimal migration path (self-serve, guided, high-touch, rescue, light-touch) based on behavior
 - `churn-prevention` — overlays deprecation-specific churn signals on standard churn detection and triggers contextual interventions

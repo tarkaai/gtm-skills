@@ -15,7 +15,6 @@ slug: "ai-support-chatbot"
 install: "npx gtm-skills add product/retain/ai-support-chatbot"
 drills:
   - chatbot-knowledge-pipeline
-  - chatbot-escalation-routing
   - chatbot-resolution-monitor
 ---
 
@@ -54,7 +53,7 @@ Run the `chatbot-knowledge-pipeline` drill to set up the always-on knowledge imp
 
 ### 3. Configure intelligent escalation routing
 
-Run the `chatbot-escalation-routing` drill to replace the generic escalation queue with priority-based routing:
+Run the the chatbot escalation routing workflow (see instructions below) drill to replace the generic escalation queue with priority-based routing:
 - P0 (immediate): security, data loss, billing disputes, cancellation intent → senior support / CS lead
 - P1 (high): enterprise accounts, churn-risk-critical, production blockers → dedicated support / CS owner
 - P2 (standard): general technical issues, how-to questions → general support queue
@@ -102,5 +101,5 @@ If all PASS, proceed to Scalable. If resolution rate is low, check knowledge pip
 ## Drills Referenced
 
 - `chatbot-knowledge-pipeline` — weekly detection of knowledge gaps from escalation data, auto-generates draft articles
-- `chatbot-escalation-routing` — priority-based routing with CRM enrichment and context notes for human agents
+- the chatbot escalation routing workflow (see instructions below) — priority-based routing with CRM enrichment and context notes for human agents
 - `chatbot-resolution-monitor` — PostHog dashboard, anomaly alerts, and weekly health reports

@@ -14,7 +14,6 @@ kpis: ["Weekly answer volume", "Average upvote score", "Acceptance rate", "Refer
 slug: "stack-overflow-presence"
 install: "npx gtm-skills add CommunitiesForums/Marketing/SolutionAware/stack-overflow-presence"
 drills:
-  - so-answer-scaling
   - community-health-scoring
 ---
 # Stack Overflow Presence — Scalable Automation
@@ -43,7 +42,7 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ### 1. Deploy the AI answer generation pipeline
 
-Run the `so-answer-scaling` drill to build the n8n pipeline that:
+Run the the so answer scaling workflow (see instructions below) drill to build the n8n pipeline that:
 - Receives high-opportunity questions from the monitoring pipeline
 - Uses Claude to draft technically accurate answers following SO formatting rules
 - Applies quality gates: code validation, length check, self-promotion filter, uniqueness check

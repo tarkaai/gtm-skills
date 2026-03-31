@@ -17,7 +17,6 @@ drills:
   - posthog-gtm-events
   - docs-content-production
   - seo-performance-monitor
-  - docs-lead-capture-setup
   - threshold-engine
 ---
 
@@ -88,7 +87,7 @@ Run the `seo-performance-monitor` drill to create:
 
 ### 4. Deploy lead capture across docs pages
 
-Run the `docs-lead-capture-setup` drill to:
+Run the the docs lead capture setup workflow (see instructions below) drill to:
 
 - Classify all docs pages into conversion tiers (high/medium/low intent)
 - Deploy appropriate CTAs per tier:
@@ -145,5 +144,5 @@ If PASS, proceed to Scalable. If FAIL, diagnose the weakest point: if traffic is
 - `posthog-gtm-events` — set up standard event taxonomy and funnels for docs tracking
 - `docs-content-production` — generate, quality-check, and publish the next 15-22 docs pages
 - `seo-performance-monitor` — always-on tracking of rankings, traffic, indexation with anomaly alerts
-- `docs-lead-capture-setup` — deploy CTAs, lead routing, nurture sequences, and lead scoring for docs traffic
+- the docs lead capture setup workflow (see instructions below) — deploy CTAs, lead routing, nurture sequences, and lead scoring for docs traffic
 - `threshold-engine` — evaluate 8-week results against pass threshold

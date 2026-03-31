@@ -14,7 +14,6 @@ kpis: ["Total installs across all marketplaces per week", "Marketplace-sourced s
 slug: "partner-marketplace-listings"
 install: "npx gtm-skills add marketing/solution-aware/partner-marketplace-listings"
 drills:
-  - partner-marketplace-scaling
   - partner-marketplace-review-generation
 ---
 
@@ -41,7 +40,7 @@ Find the 10x multiplier. Each new partner marketplace listing is a new discovery
 
 ### 1. Scale to 5+ partner marketplaces
 
-Run the `partner-marketplace-scaling` drill to identify and execute the expansion plan:
+Run the the partner marketplace scaling workflow (see instructions below) drill to identify and execute the expansion plan:
 
 1. Use Clay to research which partner ecosystems have the highest ICP overlap
 2. Prioritize by: ICP concentration x marketplace traffic x inverse competition density x integration effort
@@ -59,7 +58,7 @@ Run the `partner-marketplace-scaling` drill to identify and execute the expansio
 
 ### 2. Build marketplace-specific landing pages
 
-For each marketplace listing, create a dedicated landing page (from the `partner-marketplace-scaling` drill):
+For each marketplace listing, create a dedicated landing page (from the the partner marketplace scaling workflow (see instructions below) drill):
 
 **Page template:**
 1. Hero: "The Best {Category} Integration for {Platform Name}" -- mirror the search terms users typed on the marketplace
@@ -161,5 +160,5 @@ If PASS, proceed to Durable. If FAIL, consolidate to the 3 highest-ROI marketpla
 
 ## Drills Referenced
 
-- `partner-marketplace-scaling` -- expands from 1-2 to 5+ marketplaces with automated management, landing pages, and Zap templates
+- the partner marketplace scaling workflow (see instructions below) -- expands from 1-2 to 5+ marketplaces with automated management, landing pages, and Zap templates
 - `partner-marketplace-review-generation` -- continues the review generation cadence across the expanded marketplace portfolio

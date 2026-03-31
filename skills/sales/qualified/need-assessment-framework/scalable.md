@@ -15,7 +15,6 @@ kpis: ["Need assessment completion rate at scale", "Pre-hypothesis accuracy vs p
 slug: "need-assessment-framework"
 install: "npx gtm-skills add sales/qualified/need-assessment-framework"
 drills:
-  - need-auto-scoring
   - follow-up-automation
   - ab-test-orchestrator
   - need-assessment-reporting
@@ -42,7 +41,7 @@ Scale need assessment from manual discovery calls to an automated pre-scoring pi
 
 ### 1. Deploy automated need hypothesis generation
 
-Run the `need-auto-scoring` drill to build the automated pipeline:
+Run the the play's scoring criteria drill to build the automated pipeline:
 
 1. **Trigger:** n8n workflow fires when a new deal is created in Attio (from any source: outbound list, inbound form, referral)
 2. **Enrich:** Push the lead to Clay for need-relevant enrichment — job postings, tech stack, growth signals, industry context (see `clay-enrichment-waterfall` and `clay-intent-scoring` fundamentals)
@@ -150,7 +149,7 @@ If PASS, proceed to Durable. If FAIL, diagnose:
 
 ## Drills Referenced
 
-- `need-auto-scoring` — automated pre-call need hypothesis pipeline: CRM trigger > Clay enrichment > Claude hypothesis > Attio routing
+- the play's scoring criteria — automated pre-call need hypothesis pipeline: CRM trigger > Clay enrichment > Claude hypothesis > Attio routing
 - `follow-up-automation` — n8n workflows for need-tier-based outreach, nurture, and re-hypothesis alerts
 - `ab-test-orchestrator` — A/B experiments on scoring weights, discovery question sequences, and qualification thresholds
 - `need-assessment-reporting` — dashboards, funnel analytics, accuracy cohorts, need pattern analysis, and weekly reports

@@ -14,7 +14,6 @@ kpis: ["Auto-diagnosis accuracy", "Change objection resolution rate", "Change su
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
-  - change-objection-extraction
   - posthog-gtm-events
 ---
 
@@ -41,7 +40,7 @@ Automate the post-call change resistance extraction pipeline so every sales call
 
 Configure the always-on pipeline that fires after every sales call.
 
-Run the `change-objection-extraction` drill to build the n8n workflow:
+Run the the change objection extraction workflow (see instructions below) drill to build the n8n workflow:
 1. Fireflies transcript completion triggers the webhook
 2. Transcript is matched to a deal in Attio by attendee email
 3. Claude diagnoses change resistance: root causes, readiness score, recommended interventions
@@ -148,5 +147,5 @@ If **FAIL**: Diagnose:
 
 ## Drills Referenced
 
-- `change-objection-extraction` — Always-on pipeline: transcribe calls, extract change resistance, classify root causes, score readiness, update CRM
+- the change objection extraction workflow (see instructions below) — Always-on pipeline: transcribe calls, extract change resistance, classify root causes, score readiness, update CRM
 - `posthog-gtm-events` — Define and implement the event taxonomy for change management tracking

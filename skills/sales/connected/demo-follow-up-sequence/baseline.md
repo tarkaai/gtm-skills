@@ -15,7 +15,6 @@ slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
   - demo-recap-assembly
-  - demo-follow-up-cadence
   - posthog-gtm-events
 ---
 
@@ -70,7 +69,7 @@ All content is stored as Attio deal notes, tagged by touch number.
 
 ### 3. Configure Follow-Up Delivery via Instantly or Loops
 
-Run the `demo-follow-up-cadence` drill to set up sequenced email delivery:
+Run the the demo follow up cadence workflow (see instructions below) drill to set up sequenced email delivery:
 
 **Option A — Loops (recommended for warm contacts):**
 Create a Loops transactional sequence for demo follow-ups. Each touch is a separate transactional email triggered by the agent at the scheduled time. Merge fields pull from Attio deal data. Use Loops for its deliverability advantage with warm contacts.
@@ -144,5 +143,5 @@ If FAIL: Diagnose by touch — which touch has the lowest response rate? Is the 
 ## Drills Referenced
 
 - `demo-recap-assembly` — extract demo signals from transcript and generate personalized recap + full cadence content
-- `demo-follow-up-cadence` — execute the structured multi-touch follow-up sequence with engagement-based branching
+- the demo follow up cadence workflow (see instructions below) — execute the structured multi-touch follow-up sequence with engagement-based branching
 - `posthog-gtm-events` — set up the event taxonomy for tracking every follow-up touch and outcome

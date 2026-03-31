@@ -18,7 +18,6 @@ install: "npx gtm-skills add product/referrals/community-champions"
 drills:
   - ab-test-orchestrator
   - referral-program
-  - champion-co-marketing-pipeline
 ---
 
 # Champion Recognition Program — Scalable Automation
@@ -89,7 +88,7 @@ Run the `referral-program` drill to build a robust referral mechanism integrated
 
 ### 3. Launch co-marketing with top champions
 
-Run the `champion-co-marketing-pipeline` drill to scale co-marketing without proportional effort:
+Run the the champion co marketing pipeline workflow (see instructions below) drill to scale co-marketing without proportional effort:
 
 - Build the opportunity matching engine: match champions to co-marketing activities based on their dimension scores (high content creators get blog invitations, high-reach champions get social amplification kits, high-helpfulness champions get webinar co-host invitations)
 - Configure the monthly co-marketing cadence: automated opportunity matching, invitation emails via Loops, response tracking in Attio, burnout guardrails (max 1 ask per champion per month)
@@ -147,4 +146,4 @@ If FAIL on referral conversion: the referral landing page, onboarding for referr
 
 - `ab-test-orchestrator` — systematic A/B testing of recognition mechanics, referral asks, incentive structures, and celebration formats with PostHog experiments
 - `referral-program` — builds the full referral mechanism with tracking, tier-based rewards, leaderboard, and automated reward delivery
-- `champion-co-marketing-pipeline` — scales co-marketing with opportunity matching, social amplification kits, content tracking, and relationship lifecycle management
+- the champion co marketing pipeline workflow (see instructions below) — scales co-marketing with opportunity matching, social amplification kits, content tracking, and relationship lifecycle management

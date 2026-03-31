@@ -18,7 +18,6 @@ slug: "ab-testing-framework"
 install: "npx gtm-skills add product/retain/ab-testing-framework"
 drills:
   - autonomous-optimization
-  - experiment-learnings-database
 ---
 
 # Product A/B Testing — Durable Intelligence
@@ -54,7 +53,7 @@ Examples of anomalies the agent detects:
 - Cycle time spike: median days from hypothesis to result increased from 14 to 25
 
 **Phase 2 -- Diagnose (triggered by anomaly):**
-The agent gathers context: current experiment pipeline status, backlog composition, recent experiment results, learnings database patterns. It queries the `experiment-learnings-database` for relevant historical context. It runs `hypothesis-generation` to produce 3 ranked hypotheses for what to change. Examples:
+The agent gathers context: current experiment pipeline status, backlog composition, recent experiment results, learnings database patterns. It queries the the experiment learnings database workflow (see instructions below) for relevant historical context. It runs `hypothesis-generation` to produce 3 ranked hypotheses for what to change. Examples:
 
 - "Shift experiments from onboarding (converged at 68% activation, last 3 experiments <1% lift) to feature adoption (untested in 6 weeks, user engagement data shows 40% drop-off at feature X discovery)"
 - "Increase minimum detectable effect threshold from 2pp to 4pp -- the last 5 experiments were underpowered because they targeted small effects. Bolder changes will reach significance faster and restore velocity"
@@ -106,7 +105,7 @@ The health monitor feeds signals directly into the autonomous optimization loop.
 
 ### 3. Maintain the experiment learnings database
 
-Run the `experiment-learnings-database` drill to create and maintain the cumulative knowledge base:
+Run the the experiment learnings database workflow (see instructions below) drill to create and maintain the cumulative knowledge base:
 
 - **After every experiment:** log the structured record (hypothesis, results, decision, key learning, transferable insight, related experiments)
 - **Every 5 experiments:** run pattern extraction to update "what works" and "what doesn't" for each product area
@@ -179,4 +178,4 @@ This level runs continuously. Review monthly: what improved, what converged, wha
 
 - `autonomous-optimization` -- the core always-on monitor -> diagnose -> experiment -> evaluate -> implement loop that finds the local maximum for each product area
 - `autonomous-optimization` -- monitors program health including velocity, win rates, coverage gaps, and convergence signals; feeds anomalies to the optimization loop
-- `experiment-learnings-database` -- cumulative knowledge base of experiment outcomes and patterns; queried before every hypothesis to prevent repeated failures and improve hypothesis quality over time
+- the experiment learnings database workflow (see instructions below) -- cumulative knowledge base of experiment outcomes and patterns; queried before every hypothesis to prevent repeated failures and improve hypothesis quality over time

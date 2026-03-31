@@ -15,7 +15,6 @@ kpis: ["Intent accounts identified per month", "Median signal-to-outreach time",
 slug: "intent-signal-tracking"
 install: "npx gtm-skills add sales/qualified/intent-signal-tracking"
 drills:
-  - intent-orchestration
   - ab-test-orchestrator
   - follow-up-automation
 ---
@@ -40,7 +39,7 @@ Build the 10x multiplier: real-time orchestration that automatically triggers pe
 
 ### 1. Deploy real-time intent orchestration
 
-Run the `intent-orchestration` drill to build the full automation pipeline:
+Run the the intent orchestration workflow (see instructions below) drill to build the full automation pipeline:
 
 - **Hot-tier instant outreach**: n8n workflow triggered by Attio webhook when any account crosses into Hot tier. The workflow retrieves the account's signals, generates personalized copy via Clay Claygent, adds the contact to the Hot-tier Instantly sequence, logs the action in PostHog, and notifies the founder via Slack. Target: signal to email in under 30 minutes.
 
@@ -139,6 +138,6 @@ If PASS, proceed to Durable. If FAIL, identify the bottleneck: insufficient sign
 
 ## Drills Referenced
 
-- `intent-orchestration` — real-time signal-to-outreach pipeline with AI personalization
+- the intent orchestration workflow (see instructions below) — real-time signal-to-outreach pipeline with AI personalization
 - `ab-test-orchestrator` — systematic A/B testing on personalization, timing, and messaging
 - `follow-up-automation` — multi-channel follow-up triggered by engagement signals

@@ -15,7 +15,6 @@ kpis: ["Stakeholder engagement rate (outreach → reply)", "Average roles engage
 slug: "multi-stakeholder-discovery"
 install: "npx gtm-skills add sales/connected/multi-stakeholder-discovery"
 drills:
-  - stakeholder-engagement-orchestration
   - stakeholder-intelligence-reporting
   - stakeholder-consensus-tracker
 ---
@@ -44,7 +43,7 @@ Find the 10x multiplier. At Baseline, the founder ran every discovery call. At S
 
 ### 1. Deploy Stakeholder Engagement Orchestration
 
-Run the `stakeholder-engagement-orchestration` drill:
+Run the the stakeholder engagement orchestration workflow (see instructions below) drill:
 
 **Build the engagement priority queue:**
 1. Create an n8n workflow that triggers whenever `stakeholder-map-assembly` completes (i.e., a new deal is mapped)
@@ -154,6 +153,6 @@ If FAIL: Diagnose the bottleneck — outreach (stakeholders not replying?), disc
 
 ## Drills Referenced
 
-- `stakeholder-engagement-orchestration` — automated role-specific outreach sequencing, engagement tracking, coverage monitoring, and gap alerting across all deals
+- the stakeholder engagement orchestration workflow (see instructions below) — automated role-specific outreach sequencing, engagement tracking, coverage monitoring, and gap alerting across all deals
 - `stakeholder-intelligence-reporting` — PostHog dashboards, Attio saved views, weekly metrics snapshots, and monthly ROI calculations for multi-stakeholder discovery effectiveness
 - `stakeholder-consensus-tracker` — consensus score computation, trajectory monitoring, degradation alerts, intervention plans, and pre-proposal gate enforcement

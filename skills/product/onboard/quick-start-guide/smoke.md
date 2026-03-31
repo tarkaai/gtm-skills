@@ -14,7 +14,6 @@ kpis: ["Guide view rate (target ≥ 40% within 3 days)", "Guide completion rate 
 slug: "quick-start-guide"
 install: "npx gtm-skills add product/onboard/quick-start-guide"
 drills:
-  - quick-start-content-pipeline
   - onboarding-sequence-design
   - threshold-engine
 ---
@@ -52,7 +51,7 @@ Document the milestones. These become the guide's sections.
 
 ### 2. Build and deploy the quick-start guide
 
-Run the `quick-start-content-pipeline` drill. This produces:
+Run the the quick start content pipeline workflow (see instructions below) drill. This produces:
 
 - **Guide content:** 3-5 sections mapping to the milestone ladder. Each section has a clear action verb title, numbered steps referencing specific UI elements, expected time, and a confirmation statement. Total guide time under 5 minutes.
 - **In-app deployment:** Guide published as an Intercom Help Center article in the "Getting Started" collection, pinned to the Messenger home screen. A targeted in-app message surfaces the guide to new users on their first session.
@@ -104,6 +103,6 @@ Run the `threshold-engine` drill to measure against the pass threshold.
 
 ## Drills Referenced
 
-- `quick-start-content-pipeline` -- build the guide content (3-5 sections, under 5 minutes), deploy on 3 surfaces (Intercom, email, web), and instrument PostHog tracking for views, step completions, abandonment, and feedback
+- the quick start content pipeline workflow (see instructions below) -- build the guide content (3-5 sections, under 5 minutes), deploy on 3 surfaces (Intercom, email, web), and instrument PostHog tracking for views, step completions, abandonment, and feedback
 - `onboarding-sequence-design` -- map activation milestones, write the behavioral email sequence, define timing and branching logic (the guide maps to these milestones)
 - `threshold-engine` -- evaluate guide view rate and completion rate against pass thresholds and recommend next action

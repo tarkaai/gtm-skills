@@ -16,7 +16,6 @@ slug: "outbound-referral-requests"
 install: "npx gtm-skills add marketing/solution-aware/outbound-referral-requests"
 drills:
   - referral-network-mapping
-  - referral-pipeline-automation
   - partner-relationship-scoring
   - referral-ask-copywriting
 ---
@@ -43,7 +42,7 @@ Scale outbound referral requests from 70/month to 200+/month via automation whil
 
 ### 1. Deploy referral pipeline automation
 
-Run the `referral-pipeline-automation` drill to build the n8n workflow suite:
+Run the the referral pipeline automation workflow (see instructions below) drill to build the n8n workflow suite:
 
 **Ask Scheduling Workflow:**
 - Daily cron (9am, Tue-Thu) queries Attio for pairs in "Ask Ready" status
@@ -186,6 +185,6 @@ Estimated time: 2 hours/month.
 ## Drills Referenced
 
 - `referral-network-mapping` — monthly Clay-enriched network mapping with auto-scoring of connector-target pairs
-- `referral-pipeline-automation` — n8n workflow suite: ask scheduling, follow-ups, intro tracking, meeting attribution, weekly summaries
+- the referral pipeline automation workflow (see instructions below) — n8n workflow suite: ask scheduling, follow-ups, intro tracking, meeting attribution, weekly summaries
 - `partner-relationship-scoring` — monthly connector scoring and tiering to optimize who gets asked for which targets
 - `referral-ask-copywriting` — batch ask generation with A/B variants and quality sampling

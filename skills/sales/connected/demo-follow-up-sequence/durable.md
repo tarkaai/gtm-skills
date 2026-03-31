@@ -16,7 +16,6 @@ slug: "demo-follow-up-sequence"
 install: "npx gtm-skills add sales/connected/demo-follow-up-sequence"
 drills:
   - autonomous-optimization
-  - demo-follow-up-intelligence
 ---
 
 # Demo Follow-Up Sequence — Durable Intelligence
@@ -25,7 +24,7 @@ drills:
 
 ## Outcomes
 
-The follow-up system finds and maintains its local maximum. The `autonomous-optimization` drill runs the core loop: monitor KPIs daily, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. A separate `demo-follow-up-intelligence` agent predicts the optimal follow-up strategy for each new deal based on transcript analysis and historical outcome patterns. Weekly optimization briefs surface what changed and why. The system converges when successive experiments produce <2% improvement.
+The follow-up system finds and maintains its local maximum. The `autonomous-optimization` drill runs the core loop: monitor KPIs daily, detect anomalies, generate hypotheses, run experiments, evaluate results, auto-implement winners. A separate the demo follow up intelligence workflow (see instructions below) agent predicts the optimal follow-up strategy for each new deal based on transcript analysis and historical outcome patterns. Weekly optimization briefs surface what changed and why. The system converges when successive experiments produce <2% improvement.
 
 **Pass threshold:** Demo-to-proposal conversion sustained or improving over 6 months with autonomous optimization converging (successive experiments produce <2% improvement).
 
@@ -99,7 +98,7 @@ Run the `autonomous-optimization` drill configured for the demo follow-up sequen
 
 ### 2. Deploy the Follow-Up Intelligence Agent
 
-Run the `demo-follow-up-intelligence` drill to create the per-deal prediction layer:
+Run the the demo follow up intelligence workflow (see instructions below) drill to create the per-deal prediction layer:
 
 **Deal-level prediction (runs after every demo transcript is processed):**
 1. Analyze the demo transcript: features shown, questions asked, concerns, interest signals, urgency, stakeholders
@@ -186,4 +185,4 @@ The system generates the data and recommendations; the founder makes strategic d
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate-implement loop that finds the local maximum for any play's KPIs
-- `demo-follow-up-intelligence` — AI agent that predicts optimal follow-up strategy per deal based on demo transcript analysis and historical outcome patterns
+- the demo follow up intelligence workflow (see instructions below) — AI agent that predicts optimal follow-up strategy per deal based on demo transcript analysis and historical outcome patterns

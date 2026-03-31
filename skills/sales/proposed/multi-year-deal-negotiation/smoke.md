@@ -15,7 +15,6 @@ kpis: ["Multi-year close rate", "Average contract term (years)", "TCV vs annual 
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - multi-year-deal-modeling
   - threshold-engine
 ---
 
@@ -47,9 +46,9 @@ Query Attio for deals currently in the Proposed or Connected stage that meet the
 
 If fewer than 3 deals qualify, include deals expected to reach Proposed stage this week. For each deal, pull from Attio: deal value, champion name/role, economic buyer name/role, competitive situation, and budget cycle timing.
 
-### 2. Run the `multi-year-deal-modeling` drill for each deal
+### 2. Run the the multi year deal modeling workflow (see instructions below) drill for each deal
 
-For each of the 3-5 qualified deals, execute the `multi-year-deal-modeling` drill:
+For each of the 3-5 qualified deals, execute the the multi year deal modeling workflow (see instructions below) drill:
 
 1. Pull deal context and pain data from Attio
 2. Generate 3 multi-year term options (high anchor, target, concession floor)
@@ -124,5 +123,5 @@ If FAIL: analyze why. Common failure modes:
 
 ## Drills Referenced
 
-- `multi-year-deal-modeling` — generates 3 deal term options per prospect, buyer-facing comparison document, and seller-side negotiation brief with concession ladder
+- the multi year deal modeling workflow (see instructions below) — generates 3 deal term options per prospect, buyer-facing comparison document, and seller-side negotiation brief with concession ladder
 - `threshold-engine` — evaluates pass/fail against the >=1 multi-year close target at 2-week mark

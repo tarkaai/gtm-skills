@@ -14,7 +14,6 @@ kpis: ["Cross-sell activation rate by product", "ARPU lift (cross-sell adopters 
 slug: "cross-sell-in-product"
 install: "npx gtm-skills add product/upsell/cross-sell-in-product"
 drills:
-  - cross-sell-segment-scaling
   - ab-test-orchestrator
 ---
 
@@ -39,7 +38,7 @@ Cross-sell surfaces deployed for 4+ products across the full catalog. Segment-sp
 
 ### 1. Scale across the product catalog
 
-Run the `cross-sell-segment-scaling` drill. This is the core work of the Scalable level. Specifically:
+Run the the cross sell segment scaling workflow (see instructions below) drill. This is the core work of the Scalable level. Specifically:
 
 - Complete Step 1: Expand discovery surfaces to the next 3-5 products from the prioritized catalog. For each product, build 2 surface variants (contextual tooltip + page banner) with PostHog feature flags for A/B testing.
 - Complete Step 2: Build segment-specific messaging. Write different copy for each combination of plan tier (free/paid/enterprise), usage maturity (new/power), and role (admin/individual). Target via PostHog cohorts.
@@ -100,5 +99,5 @@ Measure after 2 months: >=10% cross-sell activation rate sustained across 4+ pro
 
 ## Drills Referenced
 
-- `cross-sell-segment-scaling` — expands cross-sell across the full product catalog with segment messaging, multi-product coordination, and fatigue management
+- the cross sell segment scaling workflow (see instructions below) — expands cross-sell across the full product catalog with segment messaging, multi-product coordination, and fatigue management
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on surface type, messaging, timing, and email sequences

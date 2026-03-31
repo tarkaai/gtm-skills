@@ -16,7 +16,6 @@ install: "npx gtm-skills add product/retain/ai-recommendations"
 drills:
   - ab-test-orchestrator
   - workflow-behavior-analysis
-  - recommendation-personalization-pipeline
 ---
 
 # AI-Powered Recommendations — Scalable Automation
@@ -48,7 +47,7 @@ Run the `workflow-behavior-analysis` drill to map how different users actually w
 
 ### 2. Build the personalization pipeline
 
-Run the `recommendation-personalization-pipeline` drill:
+Run the the recommendation personalization pipeline workflow (see instructions below) drill:
 
 1. Use `behavior-cluster-computation` to segment users into 4-8 behavioral archetypes. Store cluster assignments as PostHog person properties.
 2. For each cluster, define a recommendation strategy: Power Users get pro tips and integrations; Single-Feature Users get complementary features; Explorers get depth guidance; Declining Users get the feature most correlated with retention.
@@ -101,4 +100,4 @@ If FAIL: identify which segments underperform. If 1-2 segments drag down the ave
 
 - `ab-test-orchestrator` — designs, runs, and analyzes A/B tests on recommendation strategies, timing, and framing per segment
 - `workflow-behavior-analysis` — maps user behavior patterns, builds the power-user benchmark, and identifies optimization opportunities
-- `recommendation-personalization-pipeline` — computes behavioral clusters, generates segment-specific recommendations, and automates delivery at scale
+- the recommendation personalization pipeline workflow (see instructions below) — computes behavioral clusters, generates segment-specific recommendations, and automates delivery at scale

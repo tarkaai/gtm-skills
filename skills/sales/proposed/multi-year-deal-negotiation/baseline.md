@@ -15,7 +15,6 @@ kpis: ["Multi-year close rate", "Average TCV", "TCV-to-ACV ratio", "Average disc
 slug: "multi-year-deal-negotiation"
 install: "npx gtm-skills add sales/proposed/multi-year-deal-negotiation"
 drills:
-  - multi-year-proposal-automation
   - deal-negotiation-tracking
 ---
 
@@ -40,7 +39,7 @@ Prove that automated multi-year proposal generation holds the close rate and TCV
 
 ### 1. Deploy the proposal automation workflow
 
-Run the `multi-year-proposal-automation` drill to build the n8n workflow that triggers when a deal enters the Proposed stage:
+Run the the multi year proposal automation workflow (see instructions below) drill to build the n8n workflow that triggers when a deal enters the Proposed stage:
 
 1. Configure the Attio webhook trigger for deal stage change to "Proposed"
 2. Set qualification filters: ACV >= $10,000, pain-to-price ratio >= 5x, champion identified, no prior multi-year proposal
@@ -129,5 +128,5 @@ If FAIL:
 
 ## Drills Referenced
 
-- `multi-year-proposal-automation` — end-to-end automated flow from deal stage change to proposal delivery with follow-up sequences and response handlers
+- the multi year proposal automation workflow (see instructions below) — end-to-end automated flow from deal stage change to proposal delivery with follow-up sequences and response handlers
 - `deal-negotiation-tracking` — full event instrumentation for the negotiation lifecycle: 7 events, CRM attributes, funnels, and bidirectional sync

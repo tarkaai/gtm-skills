@@ -14,7 +14,6 @@ kpis: ["POC qualification accuracy", "Success criteria achievement rate", "POC-t
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - poc-governance-automation
   - posthog-gtm-events
 ---
 
@@ -55,7 +54,7 @@ Each event must carry `deal_id`, `company_name`, `poc_duration_days`, and event-
 
 ### 2. Deploy POC governance automation
 
-Run the `poc-governance-automation` drill. This builds 5 n8n workflows:
+Run the the poc governance automation workflow (see instructions below) drill. This builds 5 n8n workflows:
 
 **Qualification workflow:** When a deal moves to Aligned in Attio, auto-assess POC eligibility. Check: discovery completed, champion identified, deal value above threshold. Route by priority: high-priority deals get auto-provisioned, medium gets an alert, low gets a self-service trial link.
 
@@ -120,5 +119,5 @@ If FAIL, diagnose: Is the qualification workflow too permissive (running POCs on
 
 ## Drills Referenced
 
-- `poc-governance-automation` — builds the 5 n8n workflows that automate POC qualification, check-ins, escalation, progress tracking, and completion
+- the poc governance automation workflow (see instructions below) — builds the 5 n8n workflows that automate POC qualification, check-ins, escalation, progress tracking, and completion
 - `posthog-gtm-events` — defines and implements the POC event taxonomy in PostHog

@@ -15,7 +15,6 @@ kpis: ["Reply rate by research depth", "Meeting rate (researched vs non-research
 slug: "account-research-playbook"
 install: "npx gtm-skills add sales/qualified/account-research-playbook"
 drills:
-  - account-research-enrichment
   - cold-email-sequence
   - posthog-gtm-events
   - threshold-engine
@@ -54,7 +53,7 @@ Connect PostHog to Attio via n8n webhook so deal stage changes sync automaticall
 
 ### 2. Batch-enrich target accounts
 
-Run the `account-research-enrichment` drill. Import your 40-50 target accounts into a Clay table and configure enrichment columns:
+Run the the account research enrichment workflow (see instructions below) drill. Import your 40-50 target accounts into a Clay table and configure enrichment columns:
 
 1. **Firmographics**: Clearbit > Apollo waterfall for company size, revenue, funding stage
 2. **Funding events**: Crunchbase enrichment for last round amount, date, investors
@@ -161,7 +160,7 @@ Run the `threshold-engine` drill. Measure:
 
 ## Drills Referenced
 
-- `account-research-enrichment` — batch Clay enrichment with automated hook generation
+- the account research enrichment workflow (see instructions below) — batch Clay enrichment with automated hook generation
 - `cold-email-sequence` — Instantly email sequences with research-informed messaging
 - `posthog-gtm-events` — event tracking for research effectiveness measurement
 - `threshold-engine` — evaluate reply rate and time-to-meeting against pass thresholds

@@ -15,7 +15,6 @@ slug: "stakeholder-mapping"
 install: "npx gtm-skills add sales/connected/stakeholder-mapping"
 drills:
   - stakeholder-research
-  - crm-pipeline-setup
   - threshold-engine
 ---
 
@@ -38,7 +37,7 @@ Map at least 3 stakeholders (with role classifications) per deal across 3 active
 
 ### 1. Set up CRM stakeholder tracking
 
-Run the `crm-pipeline-setup` drill if your Attio pipeline is not yet configured. Then create custom attributes on Person records for stakeholder tracking:
+Run the the crm pipeline setup workflow (see instructions below) drill if your Attio pipeline is not yet configured. Then create custom attributes on Person records for stakeholder tracking:
 - `stakeholder_role` (select: Economic Buyer, Champion, Influencer, Blocker, End User, Gatekeeper)
 - `stakeholder_confidence` (select: High, Medium, Low)
 - `stakeholder_sentiment` (select: Supportive, Neutral, Opposed, Unknown)
@@ -115,5 +114,5 @@ If FAIL: Diagnose — was the issue insufficient org chart data (Clay returned f
 ## Drills Referenced
 
 - `stakeholder-research` — Manual research and classification of all stakeholders in each target account
-- `crm-pipeline-setup` — Configure Attio with stakeholder-specific custom attributes and deal fields
+- the crm pipeline setup workflow (see instructions below) — Configure Attio with stakeholder-specific custom attributes and deal fields
 - `threshold-engine` — Evaluate results against pass/fail criteria to determine readiness for Baseline

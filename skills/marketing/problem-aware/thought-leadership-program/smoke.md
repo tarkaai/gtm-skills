@@ -14,7 +14,6 @@ kpis: ["Posts published", "Average engagement rate", "ICP-matching comments", "P
 slug: "thought-leadership-program"
 install: "npx gtm-skills add marketing/problem-aware/thought-leadership-program"
 drills:
-  - thought-leadership-content-audit
   - threshold-engine
 ---
 
@@ -40,7 +39,7 @@ Prove that the founder's content resonates with problem-aware prospects. At this
 
 ### 1. Run the Content Audit
 
-Run the `thought-leadership-content-audit` drill:
+Run the the thought leadership content audit workflow (see instructions below) drill:
 
 1. Pull the founder's last 90 days of LinkedIn posts via LinkedIn Creator Analytics (native, no tools required)
 2. For each post, record: date, text preview, format, impressions, engagement rate, comment count, and ICP-matching comments
@@ -112,5 +111,5 @@ Run the `threshold-engine` drill:
 
 ## Drills Referenced
 
-- `thought-leadership-content-audit` — audit existing content, define pillars, generate voice profile, and map competitive landscape
+- the thought leadership content audit workflow (see instructions below) — audit existing content, define pillars, generate voice profile, and map competitive landscape
 - `threshold-engine` — evaluate Smoke test results against the pass threshold and recommend next action (advance, iterate, or pivot)

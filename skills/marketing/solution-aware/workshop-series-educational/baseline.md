@@ -18,7 +18,6 @@ install: "npx gtm-skills add marketing/solution-aware/workshop-series-educationa
 drills:
   - workshop-pipeline
   - posthog-gtm-events
-  - workshop-attendee-nurture
 ---
 
 # Workshop Series — Baseline Run
@@ -75,7 +74,7 @@ Run the `workshop-pipeline` drill with these Baseline-level enhancements:
 
 ### 3. Build post-workshop nurture automation
 
-Run the `workshop-attendee-nurture` drill to create segmented follow-up:
+Run the the workshop attendee nurture workflow (see instructions below) drill to create segmented follow-up:
 
 - After each workshop, automatically segment registrants into 4 tiers: active participant (attended + completed exercises), observer (attended but did not complete exercises), no-show, and late registrant.
 - Enroll each tier in the appropriate Loops nurture sequence. Active participants get materials + personalized follow-up referencing their exercise output. Observers get the exercise as a standalone resource to try on their own.
@@ -147,4 +146,4 @@ Identify: Which topic drove the most registrations? Which difficulty level had t
 
 - `workshop-pipeline` -- registration, curriculum design, delivery, and follow-up operations
 - `posthog-gtm-events` -- implement standard workshop event taxonomy for measurement
-- `workshop-attendee-nurture` -- automated post-workshop segmented nurture based on participation depth
+- the workshop attendee nurture workflow (see instructions below) -- automated post-workshop segmented nurture based on participation depth

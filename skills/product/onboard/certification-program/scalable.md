@@ -14,7 +14,6 @@ kpis: ["Certifications per month", "Completion rate by persona", "Tier transitio
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
 drills:
-  - certification-scaling-pipeline
   - ab-test-orchestrator
   - feature-adoption-monitor
 ---
@@ -49,7 +48,7 @@ Build Intercom Product Tours for each new module. Create assessments for each. I
 
 ### 2. Launch persona-based certification paths
 
-Run the `certification-scaling-pipeline` drill to:
+Run the the certification scaling pipeline workflow (see instructions below) drill to:
 - Analyze PostHog data from Baseline to identify 3-5 certification personas (by role, use case, plan type)
 - Build PostHog feature flags that route users to persona-specific module orders and content variants
 - Create persona-variant Intercom Product Tours for each module (same skill, different use-case framing)
@@ -57,7 +56,7 @@ Run the `certification-scaling-pipeline` drill to:
 
 ### 3. Switch to cohort-based delivery
 
-From the `certification-scaling-pipeline` drill, activate the cohort system:
+From the the certification scaling pipeline workflow (see instructions below) drill, activate the cohort system:
 - n8n workflow runs bi-weekly, batching eligible users into a cohort with a shared start date
 - Enrollment emails reference the cohort: "Join {N} users starting this Monday"
 - In-app messages show cohort progress: "Your cohort is {X}% through Tier 1"
@@ -143,6 +142,6 @@ If FAIL: Focus on the bottleneck. Low volume → enrollment funnel needs work (t
 
 ## Drills Referenced
 
-- `certification-scaling-pipeline` — persona segmentation, cohort delivery, tier transitions, and content refresh automation
+- the certification scaling pipeline workflow (see instructions below) — persona segmentation, cohort delivery, tier transitions, and content refresh automation
 - `ab-test-orchestrator` — design and run A/B tests on enrollment, completion, and transition stages
 - `feature-adoption-monitor` — track whether certification drives actual feature usage

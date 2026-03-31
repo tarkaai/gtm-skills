@@ -15,7 +15,6 @@ kpis: ["Enrollment rate", "Completion rate", "Certified 30-day retention", "Modu
 slug: "certification-program"
 install: "npx gtm-skills add product/onboard/certification-program"
 drills:
-  - certification-delivery-automation
   - posthog-gtm-events
   - onboarding-sequence-design
 ---
@@ -47,7 +46,7 @@ Run the `posthog-gtm-events` drill to formalize the event naming:
 
 ### 2. Build the always-on delivery system
 
-Run the `certification-delivery-automation` drill to wire the full automation:
+Run the the certification delivery automation workflow (see instructions below) drill to wire the full automation:
 
 **Enrollment automation:**
 - Intercom banner targeting activated users who have not enrolled
@@ -127,6 +126,6 @@ If FAIL: Diagnose by stage:
 
 ## Drills Referenced
 
-- `certification-delivery-automation` — wire the full certification delivery system (enrollment, tours, stall detection, badge issuance)
+- the certification delivery automation workflow (see instructions below) — wire the full certification delivery system (enrollment, tours, stall detection, badge issuance)
 - `posthog-gtm-events` — establish the certification event taxonomy and standard funnels
 - `onboarding-sequence-design` — design the behavioral email sequence for enrolled users

@@ -14,7 +14,6 @@ kpis: ["Card click-through rate", "Card completion rate", "Retention lift signal
 slug: "best-practices-content"
 install: "npx gtm-skills add product/retain/best-practices-content"
 drills:
-  - best-practices-content-pipeline
   - threshold-engine
 ---
 
@@ -37,7 +36,7 @@ drills:
 
 ### 1. Build the initial content card library
 
-Run the `best-practices-content-pipeline` drill to produce 5 best-practices content cards:
+Run the the best practices content pipeline workflow (see instructions below) drill to produce 5 best-practices content cards:
 
 1. Define a "power users" cohort in PostHog: top 10% by session frequency and feature breadth
 2. Watch 20-30 session recordings from power users. Document behavior patterns that average users do not follow: workflow sequences, keyboard shortcuts, configuration choices, non-obvious feature combinations
@@ -91,5 +90,5 @@ Run the `threshold-engine` drill to measure against: 35% of test group clicked a
 
 ## Drills Referenced
 
-- `best-practices-content-pipeline` — mine power-user behavior, produce structured content cards ranked by retention lift
+- the best practices content pipeline workflow (see instructions below) — mine power-user behavior, produce structured content cards ranked by retention lift
 - `threshold-engine` — evaluate 7-day engagement rate against the 35% threshold

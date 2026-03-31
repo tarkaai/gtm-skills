@@ -15,7 +15,6 @@ kpis: ["Admin setup completion rate", "User activation rate", "Team invite rate"
 slug: "admin-onboarding-flow"
 install: "npx gtm-skills add product/onboard/admin-onboarding-flow"
 drills:
-  - admin-user-role-routing
   - workspace-setup-flow
   - onboarding-flow
   - threshold-engine
@@ -41,7 +40,7 @@ Prove that splitting onboarding by role (admin vs user) produces measurably bett
 
 ### 1. Classify signups and build routing
 
-Run the `admin-user-role-routing` drill to set up role classification at the point of signup. Configure:
+Run the the admin user role routing workflow (see instructions below) drill to set up role classification at the point of signup. Configure:
 
 - Classification signals: entry path (workspace creation vs invite link), role selection if your product captures it
 - PostHog event: `user_role_classified` with properties `role`, `classification_method`, `workspace_id`
@@ -114,7 +113,7 @@ If FAIL: identify which path underperformed. If admin setup is low, simplify the
 
 ## Drills Referenced
 
-- `admin-user-role-routing` — classifies signups as admin or user and routes to the correct onboarding path
+- the admin user role routing workflow (see instructions below) — classifies signups as admin or user and routes to the correct onboarding path
 - `workspace-setup-flow` — builds the admin workspace setup checklist, product tours, and email sequence
 - `onboarding-flow` — builds the end-user onboarding path with product tours and email sequence
 - `threshold-engine` — evaluates admin setup completion and user activation against pass thresholds

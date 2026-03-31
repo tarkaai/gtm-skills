@@ -14,8 +14,6 @@ kpis: ["Data quality score", "Automation coverage", "Manual cleanup time reducti
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - crm-data-quality-automation
-  - crm-duplicate-prevention
 ---
 
 # CRM Hygiene & Data Quality — Scalable Automation
@@ -41,7 +39,7 @@ The 10x multiplier for data quality: move from reactive auditing to proactive, a
 
 ### 1. Deploy Full Data Quality Automation
 
-Run the `crm-data-quality-automation` drill to build the always-on automation layer:
+Run the the crm data quality automation workflow (see instructions below) drill to build the always-on automation layer:
 
 **Continuous validation (every 6 hours):**
 1. Build an n8n workflow on a 6-hour cron schedule
@@ -79,7 +77,7 @@ Run the `crm-data-quality-automation` drill to build the always-on automation la
 
 ### 2. Deploy Duplicate Prevention
 
-Run the `crm-duplicate-prevention` drill to catch duplicates at the point of creation:
+Run the the crm duplicate prevention workflow (see instructions below) drill to catch duplicates at the point of creation:
 
 **Real-time interceptor:**
 1. Build an n8n workflow triggered by new record creation
@@ -161,5 +159,5 @@ If not: identify the bottleneck. Low quality score → tighten validation rules.
 
 ## Drills Referenced
 
-- `crm-data-quality-automation` — always-on workflows that validate, enrich, deduplicate, and score CRM records on continuous schedules
-- `crm-duplicate-prevention` — real-time duplicate detection at point of creation with exact and fuzzy matching, plus batch historical deduplication
+- the crm data quality automation workflow (see instructions below) — always-on workflows that validate, enrich, deduplicate, and score CRM records on continuous schedules
+- the crm duplicate prevention workflow (see instructions below) — real-time duplicate detection at point of creation with exact and fuzzy matching, plus batch historical deduplication

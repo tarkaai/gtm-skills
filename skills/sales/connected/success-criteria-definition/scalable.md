@@ -16,7 +16,6 @@ kpis: ["Success criteria definition rate at scale", "Close rate lift (criteria v
 slug: "success-criteria-definition"
 install: "npx gtm-skills add sales/connected/success-criteria-definition"
 drills:
-  - success-criteria-intelligence
   - ab-test-orchestrator
   - success-criteria-reporting
 ---
@@ -43,7 +42,7 @@ Find the 10x multiplier. At Baseline, the agent extracts criteria from transcrip
 
 ### 1. Deploy Success Criteria Intelligence
 
-Run the `success-criteria-intelligence` drill:
+Run the the success criteria intelligence workflow (see instructions below) drill:
 
 **Build the historical dataset:**
 - Export all deals from Attio where `success_criteria_status` = "defined" or "agreed"
@@ -129,7 +128,7 @@ After 2 months, measure:
 If all pass: proceed to Durable for autonomous optimization.
 If definition rate fails: the scheduling or extraction pipeline has gaps. Check n8n workflow execution logs.
 If close rate lift is not significant: the criteria may not be influencing deals. Run qualitative analysis — are prospects actually using the success plans in their decision process?
-If achievability calibration is off: the scoring model needs recalibration. Use the `success-criteria-intelligence` monthly calibration workflow.
+If achievability calibration is off: the scoring model needs recalibration. Use the the success criteria intelligence workflow (see instructions below) monthly calibration workflow.
 
 ## Time Estimate
 
@@ -156,6 +155,6 @@ If achievability calibration is off: the scoring model needs recalibration. Use 
 
 ## Drills Referenced
 
-- `success-criteria-intelligence` — AI-powered recommendation engine that suggests optimal criteria based on historical achievement data and prospect similarity
+- the success criteria intelligence workflow (see instructions below) — AI-powered recommendation engine that suggests optimal criteria based on historical achievement data and prospect similarity
 - `ab-test-orchestrator` — run controlled experiments on workshop scheduling, criteria framing, and success plan format
 - `success-criteria-reporting` — dashboards, weekly digests, and monthly ROI reports tracking the success criteria program

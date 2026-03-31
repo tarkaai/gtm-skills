@@ -15,7 +15,6 @@ slug: "feature-adoption-campaign"
 install: "npx gtm-skills add product/retain/feature-adoption-campaign"
 drills:
   - autonomous-optimization
-  - adoption-campaign-health-report
   - nps-feedback-loop
 ---
 
@@ -79,7 +78,7 @@ Run the `autonomous-optimization` drill to create the always-on monitor-diagnose
 
 ### 2. Generate weekly health reports
 
-Run the `adoption-campaign-health-report` drill to produce a structured weekly brief every Monday:
+Run the the adoption campaign health report workflow (see instructions below) drill to produce a structured weekly brief every Monday:
 
 The report covers:
 - **Per-segment performance table:** reach, engagement, conversion, retention, and trend vs. 4-week average for each active segment
@@ -144,5 +143,5 @@ If any metric degrades for 2 consecutive months despite optimization, escalate t
 ## Drills Referenced
 
 - `autonomous-optimization` — the core monitor-diagnose-experiment-evaluate loop that finds the local maximum
-- `adoption-campaign-health-report` — weekly structured report with per-segment performance, experiment outcomes, and signal detection
+- the adoption campaign health report workflow (see instructions below) — weekly structured report with per-segment performance, experiment outcomes, and signal detection
 - `nps-feedback-loop` — collect and act on feedback from feature adopters to validate the campaign is driving real value

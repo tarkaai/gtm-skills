@@ -14,7 +14,6 @@ kpis: ["Monthly impressions", "Monthly qualified leads", "Cost per qualified lea
 slug: "linkedin-thought-leader-ads"
 install: "npx gtm-skills add marketing/problem-aware/linkedin-thought-leader-ads"
 drills:
-  - tla-content-scaling
   - budget-allocation
 ---
 
@@ -42,7 +41,7 @@ Find the 10x multiplier. The content-to-ads pipeline is automated: the agent gen
 
 ### 1. Scale Content Production
 
-Run the `tla-content-scaling` drill:
+Run the the tla content scaling workflow (see instructions below) drill:
 
 1. **Build the content playbook** from Baseline data:
    - Analyze all promoted posts from Baseline: tag by hook type, pain point, format, and post length
@@ -56,7 +55,7 @@ Run the `tla-content-scaling` drill:
    - Schedule 3-4 posts/week via Taplio or Buffer
 
 3. **Automate the organic-to-paid pipeline:**
-   - Build the n8n workflow from `tla-content-scaling` that runs every Monday:
+   - Build the n8n workflow from the tla content scaling workflow (see instructions below) that runs every Monday:
      - Pulls last week's organic post performance via Taplio/Shield API
      - Scores each post against TLA selection criteria
      - Auto-recommends posts scoring above threshold for promotion
@@ -182,5 +181,5 @@ At the end of each month:
 
 ## Drills Referenced
 
-- `tla-content-scaling` — automated content-to-ads pipeline with AI-assisted batch production, multi-thought-leader support, creative rotation, and fatigue detection
+- the tla content scaling workflow (see instructions below) — automated content-to-ads pipeline with AI-assisted batch production, multi-thought-leader support, creative rotation, and fatigue detection
 - `budget-allocation` — data-driven weekly budget rebalancing across audience segments and thought leaders using the 70/20/10 framework

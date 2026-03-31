@@ -14,8 +14,6 @@ kpis: ["Change objection resolution rate", "Time to resolution", "Readiness scor
 slug: "change-management-objection"
 install: "npx gtm-skills add sales/connected/change-management-objection"
 drills:
-  - change-readiness-scoring
-  - change-objection-response-automation
   - ab-test-orchestrator
 ---
 
@@ -43,7 +41,7 @@ Target: >= 70% resolution rate across all change objections, with >= 30% faster 
 
 ### 1. Deploy predictive change readiness scoring
 
-Run the `change-readiness-scoring` drill to build the daily scoring pipeline:
+Run the the play's scoring criteria drill to build the daily scoring pipeline:
 
 **Configure the scoring model** with initial weights based on Baseline data:
 - Organizational factors (company size, industry, tenure on current solution, past failures)
@@ -63,7 +61,7 @@ The drill creates an n8n workflow that:
 
 ### 2. Automate change support response sequences
 
-Run the `change-objection-response-automation` drill to build automated delivery of change support assets:
+Run the the change objection response automation workflow (see instructions below) drill to build automated delivery of change support assets:
 
 The drill creates n8n workflows that:
 1. Trigger when `change_risk_level` is set on a deal (resistance has been diagnosed)
@@ -174,6 +172,6 @@ If **FAIL**: Focus on the weakest metric:
 
 ## Drills Referenced
 
-- `change-readiness-scoring` — Predictive scoring of change readiness on every deal; proactive alerts and auto-triggered prep
-- `change-objection-response-automation` — Automated delivery of root-cause-specific change support assets via email sequences
+- the play's scoring criteria — Predictive scoring of change readiness on every deal; proactive alerts and auto-triggered prep
+- the change objection response automation workflow (see instructions below) — Automated delivery of root-cause-specific change support assets via email sequences
 - `ab-test-orchestrator` — Design, run, and evaluate A/B tests on intervention strategies, cost framing, and asset formats

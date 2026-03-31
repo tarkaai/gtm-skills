@@ -16,7 +16,6 @@ slug: "case-study-content-program"
 install: "npx gtm-skills add marketing/product-aware/case-study-content-program"
 drills:
   - case-study-content-scaling
-  - case-study-deal-matching
 ---
 
 # Case Study Content Program — Scalable Automation
@@ -67,7 +66,7 @@ The drill creates an n8n workflow triggered by the `case_study_completed` PostHo
 
 ### 2. Deploy the deal matching engine
 
-Run the `case-study-deal-matching` drill. This builds the always-on system that connects case studies to active deals:
+Run the the case study deal matching workflow (see instructions below) drill. This builds the always-on system that connects case studies to active deals:
 
 **New-deal matching:** When a deal is created in Attio, the engine computes a match score for every published case study using four dimensions: industry match (40% weight), company size match (25%), use case match (25%), and metric relevance (10%). The top 2-3 matches (score ≥ 50) are attached to the deal as Attio notes, and the deal owner receives a Loops email with the case study summary, one-page PDF, and email snippet to forward.
 
@@ -157,4 +156,4 @@ Compute:
 ## Drills Referenced
 
 - `case-study-content-scaling` — automated pipeline that produces 8-12 derivative assets from each completed case study (pull quotes, PDFs, blog posts, social posts, email snippets, in-app banners) and distributes them through sales, email, in-app, and content channels with full PostHog tracking
-- `case-study-deal-matching` — always-on engine that matches published case studies to active deals by industry, company size, use case, and metric relevance, routes assets to deal owners at each sales stage, and generates weekly coverage gap reports
+- the case study deal matching workflow (see instructions below) — always-on engine that matches published case studies to active deals by industry, company size, use case, and metric relevance, routes assets to deal owners at each sales stage, and generates weekly coverage gap reports

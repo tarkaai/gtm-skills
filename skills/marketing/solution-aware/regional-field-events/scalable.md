@@ -16,9 +16,7 @@ kpis: ["Attendees per event", "Show rate", "Meetings booked", "Cost per meeting"
 slug: "regional-field-events"
 install: "npx gtm-skills add marketing/solution-aware/regional-field-events"
 drills:
-  - field-event-series-automation
   - ab-test-orchestrator
-  - field-event-content-capture
 ---
 
 # Regional Field Events — Scalable Automation
@@ -47,7 +45,7 @@ drills:
 
 ### 1. Launch the automated multi-city series
 
-Run the `field-event-series-automation` drill to build the full operations engine:
+Run the the field event series automation workflow (see instructions below) drill to build the full operations engine:
 
 - **City rotation calendar:** Rank target markets by ICP density, active pipeline, and existing customer presence. Build a 3-month calendar with each city getting an event every 6-8 weeks. Target 8-12 total events over 3 months.
 - **Automated prospect sourcing:** For each event, n8n triggers Clay to find 200-500 ICP-matching prospects in the target metro at T-28. Enrichment waterfall verifies emails. Deduplication prevents re-inviting recent attendees too soon.
@@ -74,7 +72,7 @@ For each test: define the hypothesis, success metric, and comparison baseline be
 
 ### 3. Build the content repurposing flywheel
 
-Run the `field-event-content-capture` drill after each event to multiply value:
+Run the the field event content capture workflow (see instructions below) drill after each event to multiply value:
 
 - **Host debrief → structured insights:** Record a 5-10 minute voice debrief within 2 hours. Extract top themes, notable quotes, pain points, and market intelligence.
 - **Theme → LinkedIn post:** Take the most resonant discussion topic and publish a LinkedIn post from the host's perspective: "Hosted a dinner with [N] [title]s in [city] last week. The conversation that dominated the night: [theme]." CTA drives RSVPs to the next event.
@@ -145,6 +143,6 @@ After 3 months (8-12 events), evaluate:
 
 ## Drills Referenced
 
-- `field-event-series-automation` — multi-city rotation calendar, automated prospect sourcing, parameterized invitation engine, venue database, and post-event automation cascade
+- the field event series automation workflow (see instructions below) — multi-city rotation calendar, automated prospect sourcing, parameterized invitation engine, venue database, and post-event automation cascade
 - `ab-test-orchestrator` — systematically test format, topic, timing, channel, and invitation variables across successive events
-- `field-event-content-capture` — capture host debriefs, extract structured insights, and produce derivative content that promotes future events
+- the field event content capture workflow (see instructions below) — capture host debriefs, extract structured insights, and produce derivative content that promotes future events

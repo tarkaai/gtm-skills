@@ -14,7 +14,6 @@ kpis: ["Sandbox provisioning rate", "Active usage rate", "Success checklist comp
 slug: "sandbox-environment-demo"
 install: "npx gtm-skills add sales/connected/sandbox-environment-demo"
 drills:
-  - sandbox-usage-monitoring
   - posthog-gtm-events
 ---
 
@@ -48,7 +47,7 @@ Attach standard properties to every event: `sandbox_id`, `deal_id`, `industry`, 
 
 ### 2. Deploy the sandbox usage monitoring system
 
-Run the `sandbox-usage-monitoring` drill to build the always-on monitoring infrastructure:
+Run the the sandbox usage monitoring workflow (see instructions below) drill to build the always-on monitoring infrastructure:
 
 1. **Engagement scoring pipeline**: n8n workflow that runs every 6 hours, queries PostHog for sandbox events, computes engagement scores, and writes them to Attio on each deal record.
 2. **Usage-based interventions**: n8n workflows triggered by specific usage patterns:
@@ -125,5 +124,5 @@ _CRM (Attio), analytics (PostHog), and automation (n8n) are standard stack — n
 
 ## Drills Referenced
 
-- `sandbox-usage-monitoring` — builds the engagement scoring pipeline, usage-based interventions, error handling, and analytics dashboard
+- the sandbox usage monitoring workflow (see instructions below) — builds the engagement scoring pipeline, usage-based interventions, error handling, and analytics dashboard
 - `posthog-gtm-events` — establishes the sandbox event taxonomy in PostHog with consistent naming, properties, and funnels

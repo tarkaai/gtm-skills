@@ -14,7 +14,6 @@ kpis: ["Response rate", "Video watch rate", "Watch-to-response ratio", "Meeting 
 slug: "linkedin-video-dms"
 install: "npx gtm-skills add marketing/solution-aware/linkedin-video-dms"
 drills:
-  - linkedin-video-dm-outreach
   - posthog-gtm-events
   - video-engagement-follow-up
 ---
@@ -39,7 +38,7 @@ Prove that LinkedIn video DMs produce repeatable results at steady-state volume.
 
 ### 1. Configure the LinkedIn video DM outreach workflow
 
-Run the `linkedin-video-dm-outreach` drill to set up the structured daily workflow. This drill covers:
+Run the the linkedin video dm outreach workflow (see instructions below) drill to set up the structured daily workflow. This drill covers:
 
 - Prospect enrichment preparation in Clay with video hook generation
 - 3-5 day pre-DM engagement warm-up sequence on LinkedIn
@@ -141,6 +140,6 @@ Pull PostHog data and Attio records:
 
 ## Drills Referenced
 
-- `linkedin-video-dm-outreach` — structured daily workflow for recording and sending video DMs via LinkedIn
+- the linkedin video dm outreach workflow (see instructions below) — structured daily workflow for recording and sending video DMs via LinkedIn
 - `posthog-gtm-events` — define and implement event taxonomy for video DM tracking in PostHog
 - `video-engagement-follow-up` — route follow-ups based on Loom video watch behavior

@@ -15,7 +15,6 @@ slug: "reseller-affiliate-program"
 install: "npx gtm-skills add marketing/solution-aware/reseller-affiliate-program"
 drills:
   - affiliate-recruitment-outreach
-  - affiliate-onboarding-automation
 ---
 
 # Reseller & Affiliate Program — Baseline Run
@@ -49,7 +48,7 @@ Run the `affiliate-recruitment-outreach` drill at full scope:
 
 ### 2. Automate partner onboarding
 
-Run the `affiliate-onboarding-automation` drill to eliminate manual onboarding:
+Run the the affiliate onboarding automation workflow (see instructions below) drill to eliminate manual onboarding:
 
 - Build the n8n workflow: when Attio status changes to "Onboarding," auto-create affiliate account in Rewardful, generate tracking link, send welcome email with onboarding kit via Loops.
 - Deploy the 21-day enablement drip: Day 0 (welcome + link), Day 2 (marketing toolkit), Day 5 (how top partners promote), Day 10 (activation nudge), Day 21 (check-in).
@@ -125,4 +124,4 @@ Total: ~18 hours of active work over 4-6 weeks
 ## Drills Referenced
 
 - `affiliate-recruitment-outreach` — systematic candidate sourcing, qualification, and cold/warm outreach sequences
-- `affiliate-onboarding-automation` — zero-touch partner onboarding, enablement drip, and activation tracking
+- the affiliate onboarding automation workflow (see instructions below) — zero-touch partner onboarding, enablement drip, and activation tracking

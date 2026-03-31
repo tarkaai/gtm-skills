@@ -16,7 +16,6 @@ install: "npx gtm-skills add marketing/solution-aware/multi-threaded-account-out
 drills:
   - icp-definition
   - stakeholder-research
-  - account-thread-mapping
 ---
 
 # Multi-threaded Outreach — Smoke Test
@@ -59,7 +58,7 @@ Use Clay to find contacts by company + title. Classify each using the role taxon
 
 ### 3. Design per-account thread maps
 
-For each account, run the `account-thread-mapping` drill. This produces:
+For each account, run the the account thread mapping workflow (see instructions below) drill. This produces:
 - A message angle for each stakeholder based on their role
 - A primary channel assignment (email or LinkedIn) based on their activity
 - A timing sequence: Champion on Day 0, End Users/Influencers on Day 2-4, Economic Buyer on Day 7
@@ -128,4 +127,4 @@ After 2 weeks, count:
 
 - `icp-definition` — define the Ideal Customer Profile and account selection criteria
 - `stakeholder-research` — research and classify stakeholders at each target account
-- `account-thread-mapping` — design per-account multi-threaded outreach plans with role-specific messaging and timing
+- the account thread mapping workflow (see instructions below) — design per-account multi-threaded outreach plans with role-specific messaging and timing

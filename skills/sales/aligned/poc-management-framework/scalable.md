@@ -14,7 +14,6 @@ kpis: ["POC completion rate", "Success criteria achievement rate", "POC-to-close
 slug: "poc-management-framework"
 install: "npx gtm-skills add sales/aligned/poc-management-framework"
 drills:
-  - poc-health-monitoring
   - sandbox-auto-provisioning
 ---
 
@@ -55,7 +54,7 @@ Verify the auto-provisioning success rate exceeds 95% by checking the n8n execut
 
 ### 2. Deploy POC health monitoring
 
-Run the `poc-health-monitoring` drill. This builds the real-time monitoring layer:
+Run the the poc health monitoring workflow (see instructions below) drill. This builds the real-time monitoring layer:
 
 **Portfolio dashboard:** A single PostHog dashboard showing all active POCs by health status, criteria progress matrix, engagement trends, conversion funnel, and intervention effectiveness.
 
@@ -133,5 +132,5 @@ If PASS, proceed to Durable. If FAIL, focus on the weakest metric: if close rate
 
 ## Drills Referenced
 
-- `poc-health-monitoring` — real-time portfolio monitoring with predictive risk scoring, automated interventions, and weekly briefs
+- the poc health monitoring workflow (see instructions below) — real-time portfolio monitoring with predictive risk scoring, automated interventions, and weekly briefs
 - `sandbox-auto-provisioning` — fully automated sandbox provisioning triggered by CRM stage changes with AI-personalized configuration
