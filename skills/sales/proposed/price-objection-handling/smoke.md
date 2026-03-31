@@ -1,84 +1,106 @@
 ---
 name: price-objection-handling-smoke
 description: >
-    Price Objection Handling — Smoke Test. Address "too expensive" objections by reframing value,
-  demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven
-  dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+  Price Objection Handling — Smoke Test. Manually diagnose and respond to 5 price
+  objections using structured root-cause classification and response frameworks.
+  Validate that a systematic approach outperforms ad-hoc responses.
 stage: "Sales > Proposed"
 motion: "Outbound Founder-Led"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "6 hours over 1 week"
 outcome: "Overcome >=3 out of 5 price objections within 1 week"
-kpis: ["Objection overcome rate", "Response framework effectiveness", "Time to overcome objection"]
+kpis: ["Objection overcome rate", "Response framework effectiveness by root cause", "Time from objection to resolution"]
 slug: "price-objection-handling"
 install: "npx gtm-skills add sales/proposed/price-objection-handling"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - price-objection-response
   - threshold-engine
 ---
+
 # Price Objection Handling — Smoke Test
 
-> **Stage:** Sales → Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales > Proposed | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
 
-## Overview
-Price Objection Handling — Smoke Test. Address "too expensive" objections by reframing value, demonstrating ROI, and offering flexible options, from manual objection responses to AI-driven dynamic pricing conversations that adapt based on prospect signals and maximize deal value.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** Overcome >=3 out of 5 price objections within 1 week
+Prove that classifying price objections by root cause and applying framework-matched responses produces a measurably higher overcome rate than ad-hoc responses. Target: overcome >=3 out of 5 price objections (prospect advances to next deal stage after objection).
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Root cause classification completed within 24 hours of objection for all 5 objections
+- Diagnostic questions asked (not just reactions given) in at least 4 out of 5 objection conversations
+- Pain-to-price ratio retrieved from CRM for at least 4 out of 5 deals
+- Follow-up with value asset sent within 48 hours for all unresolved objections
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for price-objection-handling. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Identify 5 active deals with price objections
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your price-objection-handling materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Query Attio for deals in the Proposed or Negotiation stage that have received price pushback. If fewer than 5 exist today, include deals expected to reach proposal stage this week.
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+For each deal, pull from Attio:
+- Deal value
+- Total quantified pain (from discovery)
+- Pain-to-price ratio
+- Champion name and role
+- Economic buyer name and role (if known)
+- Competitor evaluation status
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Run the `price-objection-response` drill for each objection
+
+For each of the 5 deals, execute the `price-objection-response` drill:
+1. Classify the objection root cause (no_budget, value_gap, competitor_comparison, sticker_shock, authority_gap, or timing)
+2. Validate the pain-to-price ratio — if below 3x, flag this deal as needing deeper discovery before responding
+3. Generate a tailored response using the framework mapped to that root cause
+4. **Human action required:** Review the generated response, adjust for your voice, and deliver it on the next call or via follow-up email
+5. Log the outcome (resolved, partially_resolved, unresolved, escalated, lost) in Attio
+
+Do NOT offer a discount as the first move on any deal. Lead with value reframing, ROI proof, or pain anchoring first.
+
+### 3. Track results in Attio and PostHog
+
+For each objection handled, create an Attio note with:
+- Objection quote (prospect's exact words)
+- Root cause classification
+- Response framework used
+- Response delivered (what you actually said/sent)
+- Outcome
+- Days from objection to resolution (or current status if still open)
+
+Fire PostHog events using the `price-objection-response` drill's event schema: `price_objection_handled` with root_cause, framework_used, outcome, severity, and discount_percentage properties.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: Overcome >=3 out of 5 price objections within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Run the `threshold-engine` drill at the end of 1 week. The threshold engine queries PostHog for `price_objection_handled` events and checks:
+- Total objections handled: must be >= 5
+- Objections with outcome = "resolved": must be >= 3
+- Average days_to_resolution for resolved objections
 
----
+If PASS (>=3 resolved): document which frameworks won and which root causes are most common. Proceed to Baseline.
+If FAIL (<3 resolved): analyze why. Common failure modes:
+- Weak discovery (pain-to-price ratio < 5x on most deals) -> fix discovery before re-running
+- Wrong root cause classification (response didn't address actual concern) -> improve diagnostic questions
+- No champion to reinforce value internally -> focus on champion development
 
-## KPIs to track
-- Objection overcome rate
-- Response framework effectiveness
-- Time to overcome objection
+## Time Estimate
 
----
+- 1 hour: identifying deals and pulling CRM data
+- 3 hours: running the price-objection-response drill 5 times (classify, generate, review, deliver)
+- 1 hour: logging outcomes and tracking
+- 1 hour: threshold evaluation and analysis
 
-## Pass threshold
-**Overcome >=3 out of 5 price objections within 1 week**
+## Tools & Pricing
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | Deal records, objection logging, notes | Standard stack (excluded from play budget) |
+| PostHog | Event tracking for objection outcomes | Standard stack (excluded from play budget) |
+| Anthropic Claude API | Objection classification + response generation | ~$0.50-2 for 5 objections at Sonnet 4.6 rates ($3/$15 per M tokens) — [pricing](https://platform.claude.com/docs/en/about-claude/pricing) |
 
----
+**Play-specific cost:** Free (Claude API cost negligible at this volume)
 
-## How to run this skill
+## Drills Referenced
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
-
-_Install this skill: `npx gtm-skills add sales/proposed/price-objection-handling`_
+- `price-objection-response` — classifies each objection by root cause, generates a framework-matched response, handles delivery and outcome logging
+- `threshold-engine` — evaluates pass/fail against the >=3/5 overcome target at week's end
