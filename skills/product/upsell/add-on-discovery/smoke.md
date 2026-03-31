@@ -1,81 +1,87 @@
 ---
 name: add-on-discovery-smoke
 description: >
-    Module Cross-Sell — Smoke Test. Showcase add-ons and modules in-product to drive cross-sell and
-  increase ARPU.
+  Module Cross-Sell — Smoke Test. Build one contextual add-on discovery surface for your
+  highest-value module and validate that users engage when shown the right add-on at the
+  right moment.
 stage: "Product > Upsell"
 motion: "Lead Capture Surface"
 channels: "Product, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "≥15% adopt add-on"
-kpis: ["Add-on adoption", "Cross-sell rate", "ARPU lift"]
+outcome: "≥15% click-through on add-on discovery surface shown to triggered users"
+kpis: ["Add-on discovery CTR", "Add-on activation rate", "Trigger accuracy"]
 slug: "add-on-discovery"
 install: "npx gtm-skills add product/upsell/add-on-discovery"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - addon-discovery-surface-build
   - threshold-engine
 ---
+
 # Module Cross-Sell — Smoke Test
 
 > **Stage:** Product → Upsell | **Motion:** Lead Capture Surface | **Channels:** Product, Email
 
-## Overview
-Module Cross-Sell — Smoke Test. Showcase add-ons and modules in-product to drive cross-sell and increase ARPU.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥15% adopt add-on
+One in-product add-on discovery surface is live, targeted at users whose behavior indicates readiness. At least 15% of users who see the surface click through to learn more about the add-on. This validates that contextual, behavior-triggered discovery works better than static upsell banners.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Users who trigger the behavior threshold receive the discovery surface within 24 hours
+- Dismissal rate stays below 40% (the surface feels relevant, not spammy)
+- At least 1 user who clicked through completes add-on activation during the test window
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Choose your highest-value add-on
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Pick the single add-on with the highest revenue potential and the clearest usage trigger. You need an add-on where you can identify — from PostHog data — what behavior signals that a user would benefit from it. If you have multiple candidates, choose the one with the most historical adoption data to validate your trigger hypothesis.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+### 2. Build the discovery surface
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+Run the `addon-discovery-surface-build` drill, but scope it to ONE add-on and ONE surface type (tooltip or banner). Specifically:
+
+- Complete Step 1 (map the trigger behavior for this one add-on)
+- Complete Step 2 (instrument the four PostHog events: `addon_discovery_impression`, `addon_discovery_clicked`, `addon_activation_started`, `addon_activated`)
+- Complete Step 3 (build one contextual surface — use a tooltip if the trigger happens in a specific UI location, or a banner if the trigger is a cumulative behavior)
+- Skip Steps 4-5 (no n8n automation or sales routing at Smoke level)
+- Complete Step 6 (implement basic fatigue controls: suppress after 2 dismissals)
+
+**Human action required:** Review the surface copy and placement before enabling. Verify the tooltip or banner appears at the right moment by triggering the behavior yourself. Confirm PostHog events fire correctly in Live Events. Enable the surface for a test group of 20-50 users who match the trigger criteria.
+
+### 3. Observe for 5-7 days
+
+Monitor PostHog daily:
+- How many users saw the surface (impressions)?
+- How many clicked through (CTR)?
+- How many dismissed it?
+- Did any user complete add-on activation?
+
+Do not change the surface during the observation window. If the surface is completely broken (zero impressions, events not firing), fix the technical issue and restart the clock.
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥15% adopt add-on. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
----
+Run the `threshold-engine` drill to measure: ≥15% click-through rate on the add-on discovery surface among triggered users (impressions that resulted in clicks). If PASS, proceed to Baseline. If FAIL, diagnose:
+- CTR below 5%: the surface copy or placement is wrong — users see it but ignore it. Rewrite the copy to be more specific to their behavior.
+- CTR 5-14%: the concept works but needs refinement. Test a different surface type or adjust the trigger threshold (maybe you are showing it too early or too late).
+- Dismissal rate above 60%: the trigger is inaccurate — you are showing the add-on to users who do not need it. Tighten the cohort criteria.
 
-## KPIs to track
-- Add-on adoption
-- Cross-sell rate
-- ARPU lift
+## Time Estimate
 
----
+- 2 hours: Analyze PostHog data to identify trigger behavior and build cohort
+- 1.5 hours: Build the discovery surface (Intercom in-app message or product tour)
+- 0.5 hours: Instrument PostHog events and verify they fire
+- 1 hour: Monitor results over the week and compile evaluation
 
-## Pass threshold
-**≥15% adopt add-on**
+## Tools & Pricing
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Usage tracking, cohorts, event capture | Free up to 1M events/mo — https://posthog.com/pricing |
+| Intercom | In-app message or product tour surface | Included in existing plan — https://www.intercom.com/pricing |
 
----
+## Drills Referenced
 
-## How to run this skill
-
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
-
-_Install this skill: `npx gtm-skills add product/upsell/add-on-discovery`_
+- `addon-discovery-surface-build` — builds the in-product surface that shows users the add-on at the trigger moment
+- `threshold-engine` — evaluates whether CTR hit the 15% pass threshold
