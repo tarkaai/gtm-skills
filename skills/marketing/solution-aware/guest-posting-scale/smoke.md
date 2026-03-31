@@ -1,83 +1,103 @@
 ---
 name: guest-posting-scale-smoke
 description: >
-    Guest Posting at Scale — Smoke Test. Publish guest posts on relevant industry blogs to build
-  backlinks and awareness, from manual pitching to automated outreach and AI-driven content
-  placement optimization.
+  Guest Posting at Scale — Smoke Test. Manually discover 15 target blogs, pitch 10 editors, and
+  publish 2+ guest articles to validate that guest posting drives referral traffic to your site.
 stage: "Marketing > Solution Aware"
 motion: "PR & Earned Mentions"
 channels: "Content, Email"
 level: "Smoke Test"
 time: "8 hours over 2 weeks"
-outcome: "≥2 accepted pitches and ≥50 referral visits"
-kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic", "Backlinks acquired"]
+outcome: "≥2 accepted pitches and ≥50 referral visits from published guest posts"
+kpis: ["Pitch acceptance rate", "Articles published", "Referral traffic from guest posts", "Backlinks acquired (dofollow)"]
 slug: "guest-posting-scale"
 install: "npx gtm-skills add marketing/solution-aware/guest-posting-scale"
 drills:
-  - icp-definition
-  - blog-seo-pipeline
+  - guest-post-blog-discovery
+  - guest-post-pitch-outreach
+  - guest-post-article-pipeline
   - threshold-engine
 ---
+
 # Guest Posting at Scale — Smoke Test
 
 > **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Content, Email
 
-## Overview
-Guest Posting at Scale — Smoke Test. Publish guest posts on relevant industry blogs to build backlinks and awareness, from manual pitching to automated outreach and AI-driven content placement optimization.
+## Outcomes
 
-**Time commitment:** 8 hours over 2 weeks
-**Pass threshold:** ≥2 accepted pitches and ≥50 referral visits
+Validate that guest posting can generate referral traffic and backlinks for your site. Prove that your expertise and content can earn placement on relevant industry blogs before investing in automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Editor reply rate ≥20% (your pitches resonate)
+- At least 1 pitch accepted within the first week (topic-market fit)
+- Published articles generate measurable referral sessions within 7 days of publication
 
 ## Instructions
 
-### 1. Define your PR angle
-Run the `icp-definition` drill to define your target media audience: which publications your ICP reads, which journalists cover your space, what story angles would resonate. List 10-20 target publications and journalists.
+### 1. Discover target blogs
 
-### 2. Create foundational content
-Run the `blog-seo-pipeline` drill to create 2-3 high-quality content pieces that can serve as PR assets: data-driven blog posts, original research, or expert commentary. These give journalists something to reference and link to.
+Run the `guest-post-blog-discovery` drill at Smoke scale (target: 15 blogs). Focus on:
+- Blogs with Domain Authority 30+ that your ICP reads
+- Blogs with explicit "write for us" or "contribute" pages
+- Blogs where competitors have published guest posts
 
-**Human action required:** Pitch journalists and publications directly. Personalize each pitch with why this is relevant to their beat. Offer exclusive data or quotes. Log all outreach in Attio.
+At Smoke level, execute this manually: search Ahrefs Content Explorer for 5-10 niche keywords combined with guest post signals ("write for us", "guest post", "contribute"). Score and tier the results by hand. Store in Attio.
 
-### 3. Track media outreach
-Log every pitch: publication, journalist, angle, status (pitched, responded, published, linked). Track resulting coverage: mentions, backlinks, referral traffic.
+### 2. Pitch 10 target blogs
+
+Run the `guest-post-pitch-outreach` drill at Smoke scale. For each of the top 10 blogs from your discovery list:
+
+1. Read 2-3 recent articles on the blog to understand their editorial voice and audience
+2. Generate 2 pitch angles per blog using the Anthropic API pitch generation prompt from `ai-guest-post-drafting`
+3. Select the strongest angle and write a fully personalized pitch email referencing a specific recent article
+4. Send from the founder's personal email account
+5. Log every pitch in Attio with: blog name, editor, topic pitched, date sent, status
+
+**Human action required:** Send all pitches manually from the founder's email. This is a Smoke test — no automation. Hand-personalize every pitch. Follow up once after 7 days if no response.
+
+### 3. Write and submit accepted articles
+
+For each accepted pitch, run the `guest-post-article-pipeline` drill:
+
+1. Analyze the target blog's style (tone, structure, formatting, typical length)
+2. Generate a draft via Anthropic API with 1-2 strategic backlinks to high-value pages on your site
+3. Run the AI editorial review check for style match, backlink naturalness, and content quality
+4. **Human action required:** Author reviews and edits the draft, adding personal insights and verifying accuracy
+5. Submit the article to the editor and handle any revision requests
+6. Set up PostHog referrer-based tracking for the publishing blog's domain once the article goes live
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥2 accepted pitches and ≥50 referral visits. If PASS, proceed to Baseline. If FAIL, refine your angles or target different publications.
 
----
+Run the `threshold-engine` drill to measure:
+- ≥2 pitches accepted (out of 10 sent)
+- ≥50 referral visits from published guest posts within 2 weeks of publication
 
-## KPIs to track
-- Pitch acceptance rate
-- Articles published
-- Referral traffic
-- Backlinks acquired
+Pull acceptance data from Attio pitch pipeline. Pull referral traffic from PostHog filtered by guest post source blogs.
 
----
+If PASS: Document which pitch angles and blog types worked. Save your pitch templates, blog target list, and editorial style notes. Proceed to Baseline.
 
-## Pass threshold
-**≥2 accepted pitches and ≥50 referral visits**
+If FAIL: Diagnose — was it low reply rates (pitch quality issue), low acceptance after reply (topic mismatch), or low traffic from published posts (blog audience mismatch)? Adjust and re-run.
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+## Time Estimate
 
----
+- Blog discovery and scoring: 2 hours
+- Pitch writing and sending (10 pitches): 3 hours
+- Article writing and submission (2 articles): 2.5 hours
+- Tracking setup and evaluation: 0.5 hours
 
-## How to run this skill
+## Tools & Pricing
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Ahrefs | Blog discovery, DA scoring, backlink tracking | Standard $199/mo (https://ahrefs.com/pricing) |
+| PostHog | Referral traffic tracking | Free up to 1M events/mo (https://posthog.com/pricing) |
+| Attio | Pitch pipeline tracking | Free for small teams (https://attio.com/pricing) |
+| Anthropic API | Pitch angle + article draft generation | ~$0.05/article (https://anthropic.com/pricing) |
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/guest-posting-scale`_
+## Drills Referenced
+
+- `guest-post-blog-discovery` — find and score 15 blogs that accept guest posts in your niche
+- `guest-post-pitch-outreach` — craft and send 10 personalized guest post pitches
+- `guest-post-article-pipeline` — write, review, and submit guest articles for accepted pitches
+- `threshold-engine` — evaluate pitch acceptance rate and referral traffic against pass threshold
