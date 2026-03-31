@@ -1,11 +1,12 @@
 ---
 name: ai-meeting-prep-smoke
 description: >
-    AI-Powered Meeting Preparation — Smoke Test. Use AI to research accounts and prepare for sales
-  calls automatically, from manual research checklists to AI agents that generate comprehensive call
-  briefs with account intelligence, talk tracks, and objection responses in real-time.
+  AI-Powered Meeting Preparation — Smoke Test. Agent researches a target account, assembles intelligence
+  from CRM and enrichment sources, and generates a structured meeting brief with talking points,
+  tailored questions, objection preparation, and a recommended agenda. Founder uses the brief in 3-5
+  real calls and scores whether it reduced prep time and improved call quality.
 stage: "Sales > Connected"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct"
 level: "Smoke Test"
 time: "5 hours over 1 week"
@@ -14,72 +15,106 @@ kpis: ["Prep time reduction", "Insights per call", "AI brief quality score", "Ca
 slug: "ai-meeting-prep"
 install: "npx gtm-skills add sales/connected/ai-meeting-prep"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - account-research-brief
   - threshold-engine
 ---
+
 # AI-Powered Meeting Preparation — Smoke Test
 
 > **Stage:** Sales → Connected | **Motion:** Outbound Founder-Led | **Channels:** Direct
 
-## Overview
-AI-Powered Meeting Preparation — Smoke Test. Use AI to research accounts and prepare for sales calls automatically, from manual research checklists to AI agents that generate comprehensive call briefs with account intelligence, talk tracks, and objection responses in real-time.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** >=50% reduction in prep time and >=3 actionable insights per call within 1 week
+Prove that an AI-generated meeting brief produces materially better call preparation than the founder's current manual process. At this level the agent does the research and generates the brief; the founder reviews it, uses it in real calls, and manually scores the quality. No automation, no always-on workflows. Just agent-assisted prep for 3-5 upcoming meetings.
 
----
+**Pass threshold:** >=50% reduction in prep time and >=3 actionable insights per call within 1 week.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Brief generated in under 10 minutes vs founder's manual prep taking 30+ minutes
+- Brief surfaces at least 1 insight the founder did not already know per meeting
+- Founder uses at least 3 of the brief's tailored questions during the call
+- Call conversations go deeper (prospect shares more detail) than non-prepped calls
+- The opening line from the brief gets a positive reaction ("You did your homework")
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for ai-meeting-prep. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Select 3-5 Upcoming Meetings as the Test Cohort
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your ai-meeting-prep materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Query Attio for deals at the "Connected" stage that have meetings scheduled in the next 7 days. Select 3-5 meetings that represent a mix:
+- At least 1 discovery call
+- At least 1 demo or follow-up call
+- Different company sizes or industries if possible
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+For each selected meeting, record the founder's estimated prep time for their normal manual process. This is the baseline to measure reduction against.
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Run the Account Research Brief Drill
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: >=50% reduction in prep time and >=3 actionable insights per call within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+For each selected meeting, run the `account-research-brief` drill:
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+1. Pull the deal context from Attio (company, contacts, prior notes, pain points documented)
+2. Enrich the account in Clay: firmographics, recent news, job openings, tech stack
+3. Research each meeting attendee via Claygent: LinkedIn activity, career history, shared connections
+4. Check for competitive intelligence in the deal record
+5. Feed the assembled intelligence into Claude to generate the structured meeting brief
+6. Store the brief as an Attio note on the deal tagged `meeting-brief`
 
----
+Review the brief before each call. Note how long the entire process took (agent research + founder review) vs the founder's normal prep time.
 
-## KPIs to track
-- Prep time reduction
-- Insights per call
-- AI brief quality score
-- Call outcome improvement
+### 3. Use the Brief in Real Meetings
 
----
+**Human action required:** The founder uses the AI-generated brief in the actual meeting. During and after each call, take quick notes:
 
-## Pass threshold
-**>=50% reduction in prep time and >=3 actionable insights per call within 1 week**
+- Which brief sections were most useful? (questions, talk tracks, objection prep, stakeholder map)
+- Which sections were inaccurate or irrelevant?
+- Did the personalized opening land well?
+- Were there topics the prospect raised that the brief did NOT prepare for?
+- How many actionable insights from the brief were actually used in the conversation?
+- What was the meeting outcome? (next step committed, follow-up needed, stalled, lost)
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Log these notes in Attio as a note on the deal tagged `brief-feedback`.
 
----
+### 4. Score Brief Quality
 
-## How to run this skill
+After all 3-5 meetings, score each brief:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+| Metric | How to Measure |
+|--------|---------------|
+| Prep time reduction | (manual_prep_minutes - ai_prep_minutes) / manual_prep_minutes |
+| Actionable insights | Count of brief items the founder actually used in the call |
+| Accuracy | Did the brief's predictions (objections, stakeholder roles, pain priorities) match reality? (1-5) |
+| Usefulness | Would the founder use this brief format again? (1-5) |
+| Outcome impact | Did the call achieve a better outcome than typical? (yes/no/same) |
 
-_Install this skill: `npx gtm-skills add sales/connected/ai-meeting-prep`_
+### 5. Evaluate Against Threshold
+
+Run the `threshold-engine` drill to aggregate results:
+
+- Average prep time reduction across all test meetings. Target: >=50%.
+- Average actionable insights per call. Target: >=3.
+- If both thresholds are met: PASS. Proceed to Baseline.
+- If only one threshold is met: iterate. Which data sources were weak? Which brief sections need prompt improvement? Adjust and re-run on 3 more meetings.
+- If neither threshold is met: the meeting type may not benefit from AI prep, or the intelligence sources need significant improvement. Diagnose root cause before re-running.
+
+## Time Estimate
+
+- 0.5 hours: Select test meetings and record baseline prep times
+- 3 hours: Run account-research-brief drill for 3-5 meetings (~30-40 min each including review)
+- 1 hour: Post-meeting scoring and notes (15-20 min per meeting)
+- 0.5 hours: Threshold evaluation and analysis
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — deal context, brief storage, feedback notes | Free plan (up to 3 users) or $29/user/mo (Plus) — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — company research, contact research, news signals | $185/mo (Launch, 15K actions) — [clay.com/pricing](https://www.clay.com/pricing) |
+| Anthropic API | AI — brief generation from intelligence profile | Usage-based, ~$0.05 per brief — [anthropic.com/pricing](https://www.anthropic.com/pricing) |
+| PostHog | Analytics — event tracking for threshold evaluation | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+
+**Estimated play-specific cost this level:** ~$0-5 incremental. Clay and Attio likely already in stack. Anthropic API cost for 5 briefs is under $0.50.
+
+## Drills Referenced
+
+- `account-research-brief` — assemble account intelligence from CRM and enrichment sources, then generate a structured meeting brief with talking points, questions, objection prep, and agenda
+- `threshold-engine` — evaluate test results against the pass threshold using Attio and PostHog data
