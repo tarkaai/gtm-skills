@@ -1,81 +1,147 @@
 ---
 name: analyst-relations-program-scalable
 description: >
-    Analyst Relations Program — Scalable Automation. Engage with Gartner, Forrester, and G2 analysts
-  for mentions, placement, and credibility to influence solution-aware buyers in research phase.
-stage: "Marketing > Solution Aware"
-motion: "PR & Earned Mentions"
+  Analyst Relations Program — Scalable. Automate analyst monitoring, nurture cadences, and
+  report tracking via n8n. Scale to 25+ analyst relationships, track analyst-influenced
+  pipeline systematically, and hit 30+ influenced deals over 6 months.
+stage: "Marketing > SolutionAware"
+motion: "PartnershipsWarmIntros"
 channels: "Other"
-level: "Scalable Automation"
-time: "75 hours over 3 months"
-outcome: "≥20 analyst interactions and ≥5 report mentions with ≥30 influenced deals over 6 months"
-kpis: ["Weekly volume", "Conversion rate", "Cost per result", "Automation efficiency", "Quality score"]
+level: "Scalable"
+time: "75 hours over 6 months"
+outcome: ">=20 analyst interactions, >=5 report mentions or inclusions, and >=30 analyst-influenced deals over 6 months"
+kpis: ["Analyst interactions/quarter", "Report mentions", "Analyst-influenced pipeline value", "Relationship score improvement", "Briefing-to-mention conversion rate", "Nurture email engagement rate"]
 slug: "analyst-relations-program"
 install: "npx gtm-skills add marketing/solution-aware/analyst-relations-program"
 drills:
-  - content-repurposing
-  - ab-test-orchestrator
----
-# Analyst Relations Program — Scalable Automation
-
-> **Stage:** Marketing → Solution Aware | **Motion:** PR & Earned Mentions | **Channels:** Other
-
-## Overview
-Analyst Relations Program — Scalable Automation. Engage with Gartner, Forrester, and G2 analysts for mentions, placement, and credibility to influence solution-aware buyers in research phase.
-
-**Time commitment:** 75 hours over 3 months
-**Pass threshold:** ≥20 analyst interactions and ≥5 report mentions with ≥30 influenced deals over 6 months
-
+  - analyst-target-research
+  - analyst-relationship-nurture
+  - analyst-briefing-monitor
+  - briefing-deck-preparation
 ---
 
-## Budget
+# Analyst Relations Program — Scalable
 
-**Play-specific tools & costs**
-- **Tool and automation costs:** ~$100-500/mo at scale
+> **Stage:** Marketing > SolutionAware | **Motion:** PartnershipsWarmIntros | **Channels:** Other
 
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
+## Outcomes
 
----
+Scale analyst relations from reactive briefing requests to a proactive, monitored program. Nurture cadences run automatically. Analyst publication monitoring detects when your category is being researched. Analyst-influenced pipeline is tracked systematically. The program expands to 25+ analysts across all four tiers.
+
+**Pass threshold:** >=20 analyst interactions, >=5 report mentions or inclusions, and >=30 analyst-influenced deals over 6 months.
+
+## Leading Indicators
+
+- 25+ analysts tracked in Attio with regular engagement
+- Quarterly nurture emails achieve >50% open rate and >10% reply rate
+- At least 2 analysts proactively reach out to you (for briefings, data requests, or client referrals)
+- Report inclusion pipeline has 3+ active opportunities at any time
+- Analyst-influenced deals represent >10% of total pipeline value
+- Relationship scores are improving: 10+ analysts at score >= 3
 
 ## Instructions
 
-### 1. Repurpose PR content
-Run the `content-repurposing` drill to turn every media mention into multiple assets: social posts, email newsletter content, website social proof, and sales enablement materials.
+### 1. Scale the Analyst Portfolio
 
-### 2. Test PR approaches
-Run the `ab-test-orchestrator` drill to test: pitch angles (data-driven vs story-driven), outreach timing, follow-up cadence, and content types (guest post vs quote vs exclusive data). Track which approaches yield the highest coverage rates.
+Run the `analyst-target-research` drill at Scalable volume (25+ analysts):
 
-### 3. Scale media relationships
-Move from one-off pitches to ongoing relationships. Offer journalists regular access to data, experts, and customer stories. Build a media list in Attio and nurture it.
+1. Expand to all four tiers comprehensively: every analyst who covers or could influence your category
+2. Add G2 reviewers and Capterra category leaders as a fifth influencer category (peer review platforms that solution-aware buyers consult)
+3. Run quarterly refresh cycles: re-score all analysts, add new ones, remove those who changed coverage areas
+4. Use Clay automation for enrichment refreshes: detect job changes, coverage area shifts, new publications
+5. Maintain the Attio list "Analyst Briefing Targets" with current scores and relationship statuses
 
-### 4. Evaluate against threshold
-Measure against: ≥20 analyst interactions and ≥5 report mentions with ≥30 influenced deals over 6 months. If PASS, proceed to Durable. If FAIL, focus on the media relationships that are generating the most value.
+### 2. Deploy Automated Nurture at Scale
 
----
+Run the `analyst-relationship-nurture` drill with full automation:
 
-## KPIs to track
-- Weekly volume
-- Conversion rate
-- Cost per result
-- Automation efficiency
-- Quality score
+1. **Quarterly update automation:** n8n workflow sends personalized updates to all "Briefed" analysts every quarter. Claude API generates each email referencing the analyst's specific coverage area and recent publications.
+2. **Milestone notifications:** When a major event occurs (logged in PostHog), n8n auto-drafts notes for all relevant analysts and routes to Slack for approval.
+3. **Content sharing pipeline:** When the company publishes substantive content (research reports, data analyses, product launches), n8n identifies which analysts cover that topic and queues personalized share emails.
+4. **Re-briefing triggers:** When an analyst has not engaged in 2 quarters, auto-generate a re-briefing pitch with new data.
+5. **Relationship health dashboard:** Attio list view showing: Healthy (engaged this quarter), Cooling (1-2 quarters silence), Cold (3+ quarters), Active (in conversation).
 
----
+### 3. Deploy Analyst Monitoring
 
-## Pass threshold
-**≥20 analyst interactions and ≥5 report mentions with ≥30 influenced deals over 6 months**
+Run the `analyst-briefing-monitor` drill:
 
-If you hit this threshold, move to the **Durable Intelligence** level.
-If not, iterate on your approach and re-run this level.
+1. Build the PostHog analyst relations dashboard:
+   - Briefing pipeline: requests sent, scheduled, completed, outcomes
+   - Report tracking: publications where you are mentioned, pending inclusions
+   - Pipeline influence: analyst-influenced deals by stage, total value
+   - Relationship health: analysts by relationship score tier
+2. Implement the analyst event taxonomy in PostHog:
+   - `analyst_briefing_requested`, `analyst_briefing_completed`
+   - `analyst_mention_detected`, `analyst_report_published`
+   - `analyst_referral_received`, `deal_analyst_influenced`
+   - `analyst_update_sent`, `analyst_update_opened`
+3. Configure anomaly detection:
+   - Briefing acceptance rate drops >30% -> trigger investigation
+   - Zero report mentions in 3 months -> trigger review
+   - Analyst-influenced deals drop >50% -> trigger sales process audit
+4. Weekly automated reports via n8n
 
----
+### 4. Track Report Cycles Proactively
 
-## How to run this skill
+Build a report calendar in Attio:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+1. For each major analyst firm, track their publication cycles: when Magic Quadrants, Waves, MarketScapes refresh
+2. Set reminders 6 months before expected refresh dates: initiate re-briefing with updated data
+3. For each active report inclusion opportunity, maintain a checklist: submission package sent, customer references provided, follow-up calls scheduled
+4. When a report publishes: log the result (included/not included, positioning, rating), share internally, amplify on social media, update your website
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/analyst-relations-program`_
+### 5. Systematize Sales Integration
+
+Ensure analyst influence is captured in every deal:
+
+1. Add "Analyst Research Consulted" as a required field in Attio deal records
+2. In the sales process: discovery call template includes the question "What research or reports have you reviewed while evaluating solutions like ours?"
+3. Build an n8n workflow: when a deal with the "Analyst Influenced" tag closes, attribute it to the specific analyst and report
+4. Quarterly report to leadership: analyst-influenced pipeline value, influenced win rate vs non-influenced, ROI of analyst program
+
+### 6. Monthly Optimization
+
+Monthly review cycle:
+
+1. Pull weekly reports from the `analyst-briefing-monitor` drill
+2. Analyze:
+   - Which analyst tiers produce the most pipeline influence?
+   - Which nurture tactics generate the most engagement (quarterly updates, content shares, milestone notes)?
+   - Which report types (Magic Quadrant, Wave, market guide, blog mention) produce the most prospect awareness?
+3. Adjust:
+   - Increase effort on high-influence analyst tiers
+   - Refresh briefing materials with new customer data and metrics
+   - Target upcoming report cycles with proactive outreach
+   - Add new analysts identified from prospect feedback (who else are buyers consulting?)
+
+## Time Estimate
+
+- 4 hours: Quarterly analyst list expansion and refresh (x2 = 8 hours)
+- 3 hours/quarter: Briefing outreach and preparation (x2 = 6 hours)
+- 10 hours: Conducting briefings over 6 months (20+ interactions at ~30 min each)
+- 6 hours: Analyst nurture automation setup and maintenance
+- 6 hours: Analyst monitoring setup (dashboard, events, anomaly detection)
+- 12 hours: Report inclusion tracking and submission preparation
+- 12 hours: Sales integration, pipeline tracking, and reporting
+- 15 hours: Monthly optimization reviews (2.5 hours/month x 6 months)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — analyst contacts, relationship tracking, pipeline attribution | $29/user/mo — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — analyst research, quarterly refreshes | $149/mo (Starter) — [clay.com/pricing](https://www.clay.com/pricing) |
+| Loops | Email — quarterly nurture sequences | $49/mo — [loops.so/pricing](https://loops.so/pricing) |
+| Cal.com | Scheduling — briefing booking | Free plan — [cal.com/pricing](https://cal.com/pricing) |
+| n8n | Automation — nurture cadences, monitoring, reporting | $60/mo (Pro) — [n8n.io/pricing](https://n8n.io/pricing) |
+| PostHog | Analytics — analyst dashboards, pipeline attribution | Free up to 1M events — [posthog.com/pricing](https://posthog.com/pricing) |
+| Claude API | Briefing docs, nurture emails, report analysis | ~$30-50/mo — [anthropic.com/pricing](https://www.anthropic.com/pricing) |
+
+**Estimated play-specific cost this level:** Loops ~$49/mo for analyst nurture. Other tools are standard stack.
+
+## Drills Referenced
+
+- `analyst-target-research` — quarterly analyst list refresh with 25+ analysts, Clay enrichment, and scoring
+- `analyst-relationship-nurture` — automated quarterly updates, milestone notifications, content sharing, and re-briefing triggers
+- `analyst-briefing-monitor` — continuous monitoring of briefing pipeline, report mentions, pipeline influence, and relationship health
+- `briefing-deck-preparation` — tailored briefing materials for each analyst, updated with latest metrics
