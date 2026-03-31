@@ -1,81 +1,114 @@
 ---
 name: multiyear-commitment-smoke
 description: >
-    Multi-Year Deal Incentives — Smoke Test. Offer discounts for multi-year commitments to increase
-  LTV and reduce churn risk.
+  Multi-Year Deal Incentives — Smoke Test. Manually identify 10-20 commitment-ready accounts,
+  build one annual price in Stripe, deliver a single offer via email, and measure whether
+  any convert. Validates that customers will trade upfront payment for a discount.
 stage: "Product > Upsell"
-motion: "Lead Capture Surface"
+motion: "LeadCaptureSurface"
 channels: "Product, Email, Direct"
 level: "Smoke Test"
-time: "5 hours over 1 week"
-outcome: "≥10% commit"
-kpis: ["Multi-year rate", "LTV increase", "Churn reduction"]
+time: "6 hours over 1 week"
+outcome: "≥2 of 20 accounts convert to annual commitment"
+kpis: ["Offer-to-conversion rate", "Average discount accepted", "ARR locked"]
 slug: "multiyear-commitment"
 install: "npx gtm-skills add product/upsell/multiyear-commitment"
 drills:
-  - icp-definition
-  - onboarding-flow
-  - threshold-engine
+  - lead-capture-surface-setup
+  - multiyear-offer-engine
 ---
+
 # Multi-Year Deal Incentives — Smoke Test
 
-> **Stage:** Product → Upsell | **Motion:** Lead Capture Surface | **Channels:** Product, Email, Direct
+> **Stage:** Product → Upsell | **Motion:** LeadCaptureSurface | **Channels:** Product, Email, Direct
 
-## Overview
-Multi-Year Deal Incentives — Smoke Test. Offer discounts for multi-year commitments to increase LTV and reduce churn risk.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** ≥10% commit
+Prove that existing monthly customers will switch to annual billing when offered a meaningful discount. The test is binary: do any of the 20 targeted accounts convert? If yes, the commitment motion has signal and deserves automation.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Email open rate on the offer email (target: >40% — these are existing customers, not cold)
+- Click rate on the upgrade link (target: >15%)
+- Stripe Checkout session started (any non-zero count confirms intent)
+- Accounts that reply asking questions about the offer (signal even if they do not convert)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Build the offer capture surface
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `lead-capture-surface-setup` drill to create a single landing page (or billing page section) with an annual plan CTA. The surface is a Stripe Checkout embed or link that converts a monthly subscriber to an annual price.
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+Configure:
+- Surface type: Stripe Checkout link (self-serve)
+- CTA: "Switch to annual — save [X]%"
+- PostHog events: `cta_impression`, `cta_clicked`, `lead_captured` (maps to `multiyear_offer_clicked`, `multiyear_offer_started`, `multiyear_offer_converted`)
+- Route conversion webhook to Attio to create an expansion deal
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+### 2. Build the first annual offer
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥10% commit. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+Run the `multiyear-offer-engine` drill — but only Steps 1 and 2 (readiness scoring and Stripe price creation). Skip the automation workflows for this level. Execute manually:
 
----
+1. Query PostHog for accounts with tenure > 6 months, no churn risk signals, and positive usage trend. Select 20 accounts manually.
+2. Create ONE annual price in Stripe: 2 months free (17% discount). Tag with `metadata[commitment_type]=annual` and `metadata[experiment]=smoke_v1`.
+3. Generate a Stripe Checkout link for each of the 20 accounts using their existing customer ID.
 
-## KPIs to track
-- Multi-year rate
-- LTV increase
-- Churn reduction
+### 3. Send the offer via email
 
----
+**Human action required:** Compose and send a personal email to the billing contact at each of the 20 accounts. Use Loops or your personal email. Do not use a mass email tool — this is a personal outreach test.
 
-## Pass threshold
-**≥10% commit**
+Email structure:
+- Subject: "Save $[amount] — switch to annual billing"
+- Body paragraph 1: "You have been using [product] for [X months]. Your team has [usage stat, e.g., 'created 340 projects']."
+- Body paragraph 2: "We are offering annual billing at [discount]. Instead of $[monthly x 12], you would pay $[annual price] — saving $[amount]."
+- Body paragraph 3: "Switch here: [Stripe Checkout link]. Takes 30 seconds."
+- Sign-off: from the founder or account owner, not a marketing address
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+### 4. Track responses and conversions
 
----
+Log every response manually in Attio:
+- Email opened (if tracking available)
+- Link clicked (Stripe Checkout session created)
+- Converted (subscription updated to annual)
+- Replied with questions (capture the question — this is research data)
+- No response after 5 days
 
-## How to run this skill
+After 7 days, compute:
+- Conversion rate: accounts converted / 20
+- Revenue locked: sum of annual commitments
+- Average discount given
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add product/upsell/multiyear-commitment`_
+Pass threshold: **2 or more of 20 accounts convert to annual billing** (10% rate).
+
+If PASS: The commitment motion works. Proceed to Baseline to automate scoring and delivery.
+
+If FAIL: Analyze the non-converters. Did they open the email? Did they click? Did they start checkout but not complete? The drop-off point determines the fix:
+- Low open rate → subject line or sender trust issue
+- Opens but no clicks → offer is not compelling enough (test higher discount)
+- Clicks but no conversion → checkout friction or price anxiety (test with a money-back guarantee)
+
+Iterate and re-run before moving to Baseline.
+
+## Time Estimate
+
+- 1 hour: query PostHog, select 20 accounts, review their health
+- 1 hour: create annual price in Stripe, generate checkout links
+- 1 hour: set up the landing page/checkout surface with tracking
+- 2 hours: write and send 20 personalized emails
+- 1 hour: log responses, compute results, document learnings
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| PostHog | Account usage data + event tracking | Free tier covers this volume |
+| Stripe | Annual price + Checkout sessions | 2.9% + $0.30 per transaction (standard Stripe fees) |
+| Loops | Email delivery (or use personal email) | Free tier covers 20 emails |
+| Attio | Deal tracking + response logging | Included in existing CRM subscription |
+
+## Drills Referenced
+
+- `lead-capture-surface-setup` — builds the Stripe Checkout surface with PostHog tracking and Attio routing
+- `multiyear-offer-engine` — Steps 1-2 only: readiness signal identification and Stripe price creation
