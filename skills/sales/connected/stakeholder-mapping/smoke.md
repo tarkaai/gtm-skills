@@ -55,7 +55,7 @@ Choose 3 deals currently at Connected stage or later. Prioritize deals where you
 Run the `stakeholder-research` drill for each of the 3 deals. For each deal:
 
 1. List all known contacts from prior calls and emails.
-2. Research the org chart using Clay — find 15-20 Director+ people at the company.
+2. Research the org chart. If you have Clay, use the `org-chart-research` fundamental to find 15-20 Director+ people at the company. If not, use LinkedIn search (free or Sales Navigator) to manually find contacts by filtering for the company + Director/VP/C-Suite titles.
 3. Classify each person into a buying committee role (Economic Buyer, Champion, Influencer, Blocker, End User, Gatekeeper) using title-based rules first, then AI classification for ambiguous cases.
 4. Rate confidence (High/Medium/Low) for each classification.
 5. Set sentiment to "Unknown" for contacts you have not interacted with.
