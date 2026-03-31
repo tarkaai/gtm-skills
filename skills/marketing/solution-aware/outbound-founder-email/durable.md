@@ -59,25 +59,40 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Instructions
 
-1. Ensure PostHog is receiving events from Instantly, Attio, and n8n for every email sent, replied, and meeting booked; create a single dashboard for reply rate and meeting rate.
+### 1. Build the unified dashboard
+Run the `dashboard-builder` drill to create a comprehensive PostHog dashboard:
+- Reply rate, meeting rate, and pipeline value trending weekly
+- Breakdown by campaign, ICP segment, and sequence variant
+- Comparison to Scalable baseline metrics
+- Use the `posthog-dashboards` fundamental to create via API
 
-2. In n8n, add AI-powered workflows that are triggered by PostHog: e.g. when reply rate drops below a threshold, trigger an analysis workflow that suggests sequence or send-time changes.
+### 2. Set up A/B testing infrastructure
+Run the `ab-test-orchestrator` drill to enable continuous experimentation:
+- Use the `posthog-experiments` fundamental to create experiments
+- Test one variable at a time: subject line, send time, sequence length, CTA
+- Agent analyzes results via PostHog MCP and applies winning variant to Instantly
 
-3. Configure an AI agent (in n8n or external) to review weekly performance: compare current week to prior weeks and to Baseline; output recommendations (e.g. change subject line, shift send window, tighten list criteria).
+### 3. Build agent-driven optimization workflows
+Use n8n to create AI-powered monitoring and optimization:
+- **Weekly review:** Scheduled n8n workflow queries PostHog via API, compares current week to baseline, outputs recommendations
+- **Auto-adjustment:** When a variant wins with 95% significance, the agent updates the Instantly campaign via API
+- **Alert on degradation:** If meeting rate drops 20%+ below baseline for 2 consecutive weeks, trigger Slack alert with suggested corrective actions
 
-4. Implement A/B tests for one variable at a time: e.g. subject line A vs B, or send time 9am vs 2pm; use PostHog to segment events by variant and compute conversion per variant.
+### 4. Automate the full prospecting pipeline
+Run the `multi-channel-cadence` drill to add LinkedIn and call touches alongside email:
+- n8n orchestrates the cadence: email Day 0, LinkedIn Day 1, follow-up email Day 3, call Day 5
+- Each touch logged to Attio and PostHog automatically
+- Reply classification uses AI to route positive responses
 
-5. Have the agent recommend which variant won and apply the change to the live sequence (e.g. update copy in Instantly or n8n); document the change and the date.
+### 5. Monitor deliverability and scaling health
+Use n8n scheduled workflows to:
+- Pull `instantly-warmup` health scores daily
+- Alert when any account drops below 80% warmup score
+- Suggest inbox rotation changes using the `smartlead-inbox-rotation` pattern
+- Monitor Clay enrichment hit rates and credit usage
 
-6. Run continuous experiments on sequence length, follow-up cadence, and targeting (e.g. industry or role); log each experiment and outcome in PostHog.
-
-7. Set a guardrail: if meeting rate falls more than 20% below the Scalable baseline for two consecutive weeks, trigger an alert and have the agent suggest rollback or corrective actions.
-
-8. Use the agent to monitor deliverability and inbox health across domains; suggest rotation or warm-up changes when needed.
-
-9. Monthly: review which experiments improved or maintained meeting rate; double down on winning patterns and retire underperformers.
-
-10. Sustain or improve meeting rate over 6 months by repeating the cycle: measure, recommend, A/B test, apply, and adapt to seasonal or market changes.
+### 6. Continuous improvement cycle
+Monthly review: which experiments improved meeting rate, which to retire, what new hypotheses to test. Agent runs the `threshold-engine` drill monthly to verify the play still passes. Adapt to seasonal and market changes by refreshing ICP criteria quarterly.
 
 ---
 

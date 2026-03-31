@@ -57,25 +57,35 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Instructions
 
-1. Set volume target: 1,000 emails per week across all founder/sender profiles; confirm list source (Clay, Apollo) can supply enough qualified contacts.
+### 1. Scale list building
+Run the `build-prospect-list` drill on a weekly cadence to source 1,000+ contacts per week. Use the `enrich-and-score` drill to run Clay enrichment waterfalls and score leads automatically. Use the `clay-scoring` fundamental to set up Tier 1/2/3 prioritization.
 
-2. In Instantly (or similar), create sequences that mirror your Baseline 3-step flow; configure send limits and warm-up per inbox.
+### 2. Set up automated email sequences
+Run the `cold-email-sequence` drill at scale:
+- Use `instantly-campaign` to create campaigns via API with 1,000 contacts/week
+- Configure `instantly-warmup` across 6+ sending accounts for volume
+- Use `smartlead-inbox-rotation` if using Smartlead for inbox rotation across domains
 
-3. Connect Instantly to Attio (or CRM) so every sent, opened, replied, and meeting is synced; add custom properties for reply rate and meeting rate.
+### 3. Build the automation layer
+Run the `follow-up-automation` drill to connect everything via n8n:
+- **Reply routing:** Instantly webhook -> n8n -> classify reply -> create Attio deal for positive replies
+- **Lead sync:** Clay webhook -> n8n -> push enriched leads to Instantly campaign
+- **Activity sync:** Instantly events -> n8n -> PostHog custom events + Attio activity logging
 
-4. In PostHog, create events or use existing ones for email_sent, email_replied, meeting_booked; ensure Instantly and CRM send these events via webhooks or integration.
+### 4. Set up GTM event tracking
+Run the `posthog-gtm-events` drill to create a standard event taxonomy:
+- `email_sent`, `email_replied`, `meeting_booked` events flowing from Instantly via n8n
+- Properties: campaign_id, lead_source, lead_score, sequence_step
+- Build a weekly outbound dashboard in PostHog using the `posthog-dashboards` fundamental
 
-5. In n8n, build a workflow that is triggered by PostHog events (e.g. email_replied): send a notification, update CRM, or trigger a follow-up action; log outcome back to PostHog.
+### 5. Launch and monitor
+Start with 500 contacts in week 1, scale to 1,000 by week 3. Monitor weekly:
+- Reply rate (target: maintain within 20% of Baseline)
+- Meeting rate (target: ≥ 1.6%)
+- Deliverability (open rate > 40%, bounce rate < 3%)
 
-6. Run list-building and enrichment in Clay or Apollo on a weekly cadence so you have a steady pipeline of 1,000+ contacts per week.
-
-7. Launch sequences to the first batch of 500 contacts; monitor deliverability, open rate, and reply rate in the first 2 weeks.
-
-8. Scale to 1,000 emails per week by adding more senders or more sequences; keep message and offer consistent with Baseline.
-
-9. Each week, compute meeting rate and reply rate; ensure meeting rate stays within 20% of your Baseline rate (e.g. if Baseline was 2%, keep Scalable at or above 1.6%).
-
-10. If metrics hold for 2 months, plan Durable: document current workflows and hand off to agent-driven optimization; if metrics drop, reduce volume or refine targeting before moving to Durable.
+### 6. Iterate and prepare for Durable
+If metrics hold for 2 months, document all workflows and prepare for agent-driven optimization. If metrics drop, reduce volume or refine targeting before scaling further.
 
 ---
 

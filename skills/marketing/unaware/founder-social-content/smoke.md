@@ -42,25 +42,29 @@ _No specialized tools required at this level._
 
 ## Instructions
 
-1. Define the scope of your smoke test: what you will run, for how long (within the 1-week cap), and what success looks like (e.g. ≥ 3 leads or ≥ 2 meetings in 1 week).
+### 1. Optimize your LinkedIn profile
+Use the `linkedin-organic-profile` fundamental to set up your profile as a GTM channel: value-prop headline, About section with clear positioning, Featured section with your best content and product link.
 
-2. Before you start, set your pass threshold and where you will log every outcome (PostHog or CRM).
+### 2. Plan your content
+Run the `social-content-pipeline` drill to set up a content plan. For Smoke, plan 3 posts for the week:
+- **Post 1:** Story post about a customer problem you solve (use `linkedin-organic-hooks` fundamental for the hook)
+- **Post 2:** Framework or list post sharing your approach (use `linkedin-organic-formats` fundamental)
+- **Post 3:** Contrarian opinion about your industry to drive comments
 
-3. Set up PostHog or your CRM with properties for Impressions, Engagement rate, Profile visits so you can compare results to your threshold.
+### 3. Write and publish
+Use the `linkedin-organic-hooks` fundamental to write scroll-stopping hooks. Keep posts between 150-300 words. End each with a clear CTA: "DM me [keyword] if you want to learn more" or link to your booking page.
 
-4. Prepare your list, asset, or touchpoints so you can execute within the time cap (e.g. a few hours over 1 week).
+### 4. Engage actively
+Use the `linkedin-organic-engagement` fundamental: spend 15 minutes before each post commenting on 5-10 posts from people in your ICP. Reply to every comment on your posts within 2 hours.
 
-5. Execute the smoke test: send emails, publish posts, make calls, or run the planned touchpoints according to your plan.
+### 5. Track results
+Log every lead (DM, comment expressing interest, profile visit that converts) in Attio using the `attio-contacts` fundamental. Tag source as "LinkedIn." Track impressions and engagement manually or via LinkedIn's native analytics.
 
-6. As outcomes occur (replies, clicks, meetings, signups), log each one in PostHog or your CRM with date and source.
-
-7. At the end of the test window, stop and count: total touches, positive outcomes, and any meetings or signups.
-
-8. Compute the key metrics (e.g. reply rate, meeting rate) and compare to your pass threshold.
-
-9. If you met or exceeded the threshold, document what you did and proceed to Baseline; if not, iterate on list, offer, or channel and re-test.
-
-10. Record qualitative notes (who responded, objections, what worked) so you can repeat or refine in Baseline.
+### 6. Measure against threshold
+Run the `threshold-engine` drill after 7 days:
+- **Pass:** ≥ 3 leads or ≥ 2 meetings from social content
+- **If pass:** Document which post types and hooks worked, proceed to Baseline
+- **If fail:** Test different content angles, post times, or audience targeting
 
 ---
 

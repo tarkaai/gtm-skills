@@ -51,25 +51,30 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Instructions
 
-1. Expand your ICP brief with firmographic and role criteria; define list size target of 100 contacts for this 2-week run.
+### 1. Refine your ICP
+Run the `icp-definition` drill to expand your ICP with firmographic and role criteria. Define a list size target of 100 contacts for this 2-week run.
 
-2. Build a list of 100 contacts using Apollo, Clay, or LinkedIn Sales Nav; enrich with verified email and role; export to a spreadsheet or CRM (Attio).
+### 2. Build your prospect list
+Run the `build-prospect-list` drill to source 100 contacts. This uses the `apollo-search` and `clay-table-setup` fundamentals to source contacts, then `clay-enrichment-waterfall` to enrich with verified emails, titles, and company data. Push qualified contacts to Attio using the `attio-contacts` fundamental.
 
-3. Create a 3-step email sequence in Instantly (or similar) or send manually: intro, follow-up at day 4, final follow-up with Calendly at day 8; use the same structure that passed Smoke.
+### 3. Set up your email sequence
+Run the `cold-email-sequence` drill to create a 3-step sequence in Instantly using the same structure that passed Smoke:
+- Use the `instantly-campaign` fundamental to create the campaign via API
+- Upload your enriched lead list from Clay
+- Configure sending schedule (weekdays, 8-11am recipient timezone)
+- Set daily limits to 20 sends and ramp after 3 days
 
-4. Add one LinkedIn touch (connection request or InMail) and one call attempt per lead where possible; log each touch in the CRM.
+### 4. Execute the campaign
+Launch the Instantly campaign. In parallel, add one LinkedIn touch per lead where possible (connection request referencing your email). Log each touch in Attio.
 
-5. Set pass threshold for Baseline: e.g. ≥ 1.5–2.5% meeting rate over 2 weeks; define where you will log every outcome (PostHog and CRM).
+### 5. Handle replies and route to CRM
+Use the `instantly-reply-detection` fundamental to monitor Unibox. For positive replies, create deals in Attio at "Meeting Requested" stage. Send Cal.com booking link within 1 hour.
 
-6. Sync leads and activity from your email tool and CRM to PostHog so you have a single view of sent, opened, replied, meeting booked.
-
-7. Send the sequence to all 100 contacts over the first 3–5 days; execute LinkedIn and call touches according to your cadence.
-
-8. Log every reply, meeting booked, and no-response in PostHog and the CRM; tag positive replies and meetings for follow-up.
-
-9. At the end of 2 weeks, compute meeting rate, reply rate, and cycle time (first touch to meeting).
-
-10. Compare to pass threshold. If pass, document volume and conversion rates and proceed to Scalable; if fail, switch pillar, refine list quality, or adjust offer and re-run Baseline.
+### 6. Measure against threshold
+Run the `threshold-engine` drill after 2 weeks:
+- **Pass:** ≥ 2% meeting rate from 100 contacts
+- **If pass:** Document volume, conversion rates, and sequence. Proceed to Scalable.
+- **If fail:** Refine list quality, adjust messaging, or switch ICP segment and re-run Baseline.
 
 ---
 

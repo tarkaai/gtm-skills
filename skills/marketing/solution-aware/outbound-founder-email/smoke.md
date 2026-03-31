@@ -44,25 +44,31 @@ _Your CRM, PostHog, and automation platform are not included — standard stack 
 
 ## Instructions
 
-1. Define your ICP (industry, role, company size) and document it in a short brief.
+### 1. Define your ICP
+Run the `icp-definition` drill to define your Ideal Customer Profile. Document industry, role, company size, and pain points. At Smoke level this is manual -- write a short brief.
 
-2. Find 10 on-target prospects by manually searching LinkedIn, Apollo, or Clay; add each to a spreadsheet with email, name, role, and company.
+### 2. Source 10 prospects manually
+Search Apollo or LinkedIn for 10 contacts matching your ICP. For each, collect: email, first name, last name, company, title, and one personalization hook (recent news, tech stack, hiring signal). Log them in Attio using the `attio-contacts` fundamental.
 
-3. In the spreadsheet, add a column for outcome (no reply, positive reply, meeting booked) and a column for date sent.
+### 3. Write a 3-step email sequence
+Write your emails manually at Smoke level (no automation tool needed):
+- **Step 1 (Day 0):** Personalized opener referencing the hook, clear value prop, soft CTA
+- **Step 2 (Day 3):** Different angle, lead with value
+- **Step 3 (Day 7):** Include Cal.com booking link as the CTA
 
-4. Write a 3-step email sequence: intro email (personalized first line, clear value, soft CTA); one follow-up 3–4 days later; final follow-up with Calendly link 4–5 days after that. Send from the founder's primary email; cap at 100 contacts total.
+Send from the founder's primary email. Keep each email under 100 words.
 
-5. Before sending, set your pass threshold (e.g. ≥ 3% positive replies or ≥ 2 meetings in 7–10 days) and choose where you will log outcomes (PostHog or CRM such as Attio).
+### 4. Send manually and track
+Send all 10 intro emails. Schedule follow-ups in your calendar. Log each send in Attio with status: Sent, Replied, Meeting Booked, No Response.
 
-6. Configure PostHog or your CRM with properties for reply rate, meetings booked, and time to first reply so you can compare to threshold.
+### 5. Handle replies
+Respond to positive replies within 1 hour. Use the `attio-deals` fundamental to create a deal at "Meeting Requested" stage for every positive reply.
 
-7. Send the intro email to all 10 contacts; schedule follow-ups in your calendar or a simple tool so you send on time.
-
-8. As replies arrive, log each outcome in PostHog or the CRM and respond to positive replies within 24 hours.
-
-9. After 7–10 days from the first send, stop the sequence and count: total emails sent, positive replies, meetings booked. Compute reply rate and meeting rate.
-
-10. Compare results to your pass threshold. If you met or exceeded it, document the ICP and sequence and proceed to Baseline; if not, revisit ICP definition, list source, or offer and iterate before retesting.
+### 6. Measure against threshold
+Run the `threshold-engine` drill to evaluate results after 7 days:
+- **Pass:** ≥ 2 meetings from 10 emails
+- **If pass:** Document the winning ICP and sequence, proceed to Baseline
+- **If fail:** Adjust ICP, messaging, or list source and re-run Smoke
 
 ---
 
