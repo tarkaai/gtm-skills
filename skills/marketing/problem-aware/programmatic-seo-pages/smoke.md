@@ -1,11 +1,10 @@
 ---
 name: programmatic-seo-pages-smoke
 description: >
-    Programmatic SEO Pages — Smoke Test. Generate hundreds of long-tail keyword-optimized landing
-  pages to capture organic search traffic, from manual template creation through automated page
-  generation to AI-driven continuous content optimization.
-stage: "Marketing > Problem Aware"
-motion: "Lead Capture Surface"
+  Programmatic SEO Pages — Smoke Test. Manually research 10-20 long-tail keywords, create a page
+  template, and publish 10 pages to prove organic search traffic can be captured at scale.
+stage: "Marketing > ProblemAware"
+motion: "LeadCaptureSurface"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "8 hours over 4 weeks"
@@ -14,70 +13,104 @@ kpis: ["Organic traffic", "Pages indexed", "Conversion rate", "Average position"
 slug: "programmatic-seo-pages"
 install: "npx gtm-skills add marketing/problem-aware/programmatic-seo-pages"
 drills:
-  - icp-definition
-  - onboarding-flow
+  - keyword-matrix-builder
+  - programmatic-page-generator
   - threshold-engine
 ---
+
 # Programmatic SEO Pages — Smoke Test
 
-> **Stage:** Marketing → Problem Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
+> **Stage:** Marketing → ProblemAware | **Motion:** LeadCaptureSurface | **Channels:** Content, Website
 
-## Overview
-Programmatic SEO Pages — Smoke Test. Generate hundreds of long-tail keyword-optimized landing pages to capture organic search traffic, from manual template creation through automated page generation to AI-driven continuous content optimization.
+## Outcomes
 
-**Time commitment:** 8 hours over 4 weeks
-**Pass threshold:** ≥100 organic visits and ≥1 conversion in 4 weeks
+Prove that template-based SEO pages targeting long-tail keywords can attract organic search traffic and generate at least one conversion. This is a manual, small-batch test — no automation, no always-on systems. Just evidence of signal.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Google Search Console shows pages being crawled within 7 days of publishing
+- At least 5 of 10 pages indexed within 14 days
+- Organic impressions appearing for target keywords within 21 days
+- At least one page ranking in positions 1-30 for its target keyword
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Build a small keyword matrix
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `keyword-matrix-builder` drill manually with a narrow scope:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+- Pick ONE pattern (e.g., "best {product} for {industry}" or "{competitor} alternative")
+- Identify 10-20 modifiers with validated search demand (volume >30/month, KD <40)
+- Use Ahrefs keyword research or a free alternative (Ubersuggest, Google Keyword Planner) if Ahrefs is not yet available
+- Build a simple spreadsheet: target_keyword, slug, search_volume, keyword_difficulty, modifier
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+No Clay table needed at this stage. A CSV or Google Sheet is sufficient.
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥100 organic visits and ≥1 conversion in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
+### 2. Create a page template
 
----
+**Human action required:** Design a single Webflow CMS collection template page. This is a one-time visual design task. The template should include:
 
-## KPIs to track
-- Organic traffic
-- Pages indexed
-- Conversion rate
-- Average position
+- H1 heading (bound to CMS field)
+- Body content area (rich text, bound to CMS field)
+- A lead capture CTA: demo booking widget (Cal.com embed) or email capture form (Loops)
+- Internal links section (bound to CMS field)
+- SEO metadata fields (meta title, meta description, OG image)
 
----
+Keep the design simple and fast-loading. Focus on content readability over visual polish.
 
-## Pass threshold
-**≥100 organic visits and ≥1 conversion in 4 weeks**
+### 3. Generate and publish 10 pages
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+Run the `programmatic-page-generator` drill manually for the first 10 keywords:
 
----
+- Generate content for each page using Claude. Provide the target keyword, modifier, and ICP context. Each page must be unique — not just the modifier swapped in a template.
+- Manually create each CMS item in Webflow via the API or the Webflow editor
+- Set meta titles and descriptions for each page
+- Add 2-3 internal links between related pages
+- Publish all pages
 
-## How to run this skill
+After publishing, verify the pages are included in the sitemap. Submit the sitemap to Google Search Console.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Wait and observe (3-4 weeks)
 
-_Install this skill: `npx gtm-skills add marketing/problem-aware/programmatic-seo-pages`_
+Google takes time to crawl, index, and rank new pages. During the waiting period:
+
+- Check GSC daily for indexation progress (URL Inspection tool)
+- After 7 days, check if any pages have impressions
+- After 14 days, check ranking positions for target keywords
+- Monitor PostHog for any organic traffic arriving
+
+Do not make changes to published pages during this period. The goal is a clean read on whether the template and keywords work.
+
+### 5. Evaluate against threshold
+
+Run the `threshold-engine` drill to measure results after 4 weeks:
+
+- **Pass:** ≥100 organic visits across all pages AND ≥1 conversion (form submit, demo booking, or signup)
+- **Marginal pass:** 50-99 organic visits and impressions trending up. Stay at Smoke, add 10 more pages, measure for 2 more weeks.
+- **Fail:** <50 organic visits. Diagnose: Are pages indexed? Are keywords too competitive? Is the content thin? Fix the root cause and re-run.
+
+## Time Estimate
+
+- Keyword research and matrix: 2 hours
+- Template design (human): 2 hours
+- Content generation and publishing: 3 hours
+- Monitoring and evaluation: 1 hour
+- **Total: 8 hours over 4 weeks**
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Webflow | CMS hosting and page template | CMS plan $23/mo ([pricing](https://webflow.com/pricing)) |
+| Google Search Console | Indexation tracking and search analytics | Free ([pricing](https://developers.google.com/webmaster-tools/pricing)) |
+| PostHog | On-site traffic and conversion tracking | Free tier up to 1M events/mo ([pricing](https://posthog.com/pricing)) |
+| Anthropic Claude | Content generation per page | API usage ~$0.50-2.00 for 10 pages ([pricing](https://www.anthropic.com/pricing)) |
+| Ahrefs (optional) | Keyword research and difficulty scoring | Lite $99/mo ([pricing](https://ahrefs.com/pricing)); free alternatives available |
+
+**Estimated play-specific cost at Smoke:** Free to $23/mo (Webflow CMS plan if not already active). Ahrefs optional — use free keyword tools if needed.
+
+## Drills Referenced
+
+- `keyword-matrix-builder` — research and validate 10-20 long-tail keyword targets
+- `programmatic-page-generator` — generate unique content and publish pages via Webflow CMS
+- `threshold-engine` — evaluate organic traffic and conversions against pass/fail threshold
