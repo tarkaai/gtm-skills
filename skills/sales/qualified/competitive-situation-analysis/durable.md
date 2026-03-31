@@ -1,85 +1,170 @@
 ---
 name: competitive-situation-analysis-durable
 description: >
-    Competitive Situation Assessment — Durable Intelligence. Discover which competitors prospects
-  are evaluating to position differentiation effectively and develop winning strategies against
-  specific alternatives.
+  Competitive Situation Assessment — Durable Intelligence. Always-on AI agents running the
+  autonomous optimization loop on competitive intelligence: detecting win rate anomalies,
+  generating positioning hypotheses, running A/B experiments on competitive frameworks,
+  and auto-implementing winners. Converges at the local maximum of competitive win rates.
 stage: "Sales > Qualified"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Durable Intelligence"
 time: "135 hours over 6 months"
-outcome: "Sustained or improving win rates against competitors over 6 months via continuous AI-driven competitive intelligence and adaptive positioning"
-kpis: ["Win rate by competitor", "Competitive intelligence freshness", "Positioning effectiveness", "Competitive discovery accuracy", "AI-driven win rate improvement"]
+outcome: "Sustained or improving win rates against all tracked competitors over 6 months via autonomous competitive optimization"
+kpis: ["Win rate by competitor (sustained or improving)", "Autonomous experiment win rate", "Competitive intelligence freshness (<7 days)", "Positioning framework convergence rate", "Optimization cycle throughput (experiments/month)"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - dashboard-builder
-  - signal-detection
+  - autonomous-optimization
+  - competitive-intelligence-automation
+  - competitive-win-loss-reporting
 ---
+
 # Competitive Situation Assessment — Durable Intelligence
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales → Qualified | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-## Overview
-Competitive Situation Assessment — Durable Intelligence. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+## Outcomes
 
-**Time commitment:** 135 hours over 6 months
-**Pass threshold:** Sustained or improving win rates against competitors over 6 months via continuous AI-driven competitive intelligence and adaptive positioning
+An always-on AI agent continuously optimizes competitive win rates. The agent monitors win rate trends per competitor, detects when positioning effectiveness degrades, generates hypotheses for what to change (new frameworks, different trap questions, updated battlecard emphasis), runs controlled experiments, evaluates results, and auto-implements winners. Weekly optimization briefs summarize what changed and why. The system converges when successive experiments produce <2% improvement — at that point, the play has reached its local maximum against each competitor.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific tools & costs**
-- **Ongoing tool costs:** ~$100-500/mo
-- **Agent compute costs:** Variable based on monitoring frequency
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Optimization loop executing on schedule (daily monitor, weekly experiments)
+- Hypotheses grounded in data (referencing specific competitor win rate changes or deal pattern shifts)
+- Experiments completing with sufficient sample size before decisions are made
+- Win rate against each competitor either stable or improving month-over-month
+- Convergence signals appearing for mature competitors (diminishing returns from experiments)
+- Competitor change detection feeding new hypotheses (external changes drive internal adaptation)
 
 ## Instructions
 
-### 1. Build monitoring dashboards
-Run the `dashboard-builder` drill to create a PostHog dashboard for competitive-situation-analysis with panels: weekly send volume, reply rate trend, meeting conversion rate, pipeline value from this play, cost per meeting. Set up alerts for when any metric drops below the Scalable-level baseline by more than 20%.
+### 1. Deploy the autonomous optimization loop
 
-### 2. Deploy signal-based targeting
-Run the `signal-detection` drill to configure Clay to monitor for buying signals: job changes at target accounts, funding announcements, tech stack changes, competitor mentions. Feed these signals into your prospect list automatically via n8n. Prioritize outreach to signal-detected accounts.
+Run the `autonomous-optimization` drill configured for competitive situation analysis. The loop operates in 5 phases:
 
-### 3. Set up autonomous optimization
-Configure n8n workflows to: (a) automatically pause underperforming sequences when reply rates drop below 1% for 3 consecutive days, (b) promote winning A/B test variants and start new experiments, (c) alert the founder when a high-value deal enters the pipeline.
+**Phase 1 — Monitor (daily via n8n cron):**
+1. Use `posthog-anomaly-detection` to check competitive KPIs:
+   - Win rate by competitor (rolling 4-week window)
+   - Competitive discovery rate
+   - Battlecard delivery rate and latency
+   - Positioning framework effectiveness (win rate per framework per competitor)
+2. Compare last 2 weeks against 4-week rolling average
+3. Classify: **normal** (within ±10%), **plateau** (±2% for 3+ weeks), **drop** (>20% decline), **spike** (>50% increase)
+4. If anomaly detected → trigger Phase 2
+5. If normal → log to Attio, no action needed
 
-### 4. Run continuous improvement cycles
-Monthly: review dashboard trends, retire messaging that has decayed below threshold, test new ICP segments based on won-deal patterns. The agent should generate a monthly report summarizing: what changed, what was tested, what was retired, and recommended next experiments.
+**Phase 2 — Diagnose (triggered by anomaly):**
+1. Gather context from Attio: current positioning frameworks per competitor, recent battlecard versions, latest competitor changes detected, deal patterns in affected segment
+2. Pull 8-week competitive metric history from PostHog
+3. Run `hypothesis-generation` with the anomaly data + competitive context
+4. Receive 3 ranked hypotheses. Examples of competitive hypotheses the agent might generate:
+   - "Win rate against Competitor X dropped 15% because their recent pricing change (detected by competitor monitoring) undercuts our TCO argument. Hypothesis: switch from `tco_comparison` to `pain_alignment` framework."
+   - "Plateau against Competitor Y: current trap questions no longer surface gaps because they shipped Feature Z last month. Hypothesis: update trap questions to target their integration limitations instead."
+   - "Discovery rate dropped: new reps are not asking competitive questions. Hypothesis: add automated competitive discovery question prompts to pre-call prep."
+5. Store hypotheses in Attio as notes on the Competitive Intelligence campaign record
+6. If risk = "high" → send Slack alert for human review and STOP
+7. If risk = "low" or "medium" → proceed to Phase 3
 
-### 5. Evaluate sustainability
-Measure against: Sustained or improving win rates against competitors over 6 months via continuous AI-driven competitive intelligence and adaptive positioning. This level runs continuously. If metrics sustain or improve, the play is durable. If metrics decay, diagnose whether the issue is market saturation, message fatigue, or ICP drift.
+**Phase 3 — Experiment (triggered by hypothesis acceptance):**
+1. Take the top-ranked hypothesis
+2. Design the experiment using `posthog-experiments`: create a feature flag that splits competitive deals between control (current positioning/framework) and variant (hypothesis change)
+3. Implement the variant:
+   - If the hypothesis is about positioning framework → update the `competitive-positioning-generation` call to use the new framework for variant deals
+   - If the hypothesis is about trap questions → update the battlecard's trap question set for variant deals
+   - If the hypothesis is about battlecard emphasis → modify which sections are highlighted in delivery for variant deals
+   - If the hypothesis is about discovery process → update pre-call prep content for variant deals
+4. Set experiment duration: minimum 14 days or 50+ competitive deals per variant, whichever is longer
+5. Log experiment start in Attio: hypothesis, start date, expected duration, success criteria, competitor affected
 
----
+**Phase 4 — Evaluate (triggered by experiment completion):**
+1. Pull experiment results from PostHog: win rate control vs variant, sample size, confidence interval
+2. Run `experiment-evaluation` with the data
+3. Decision:
+   - **Adopt:** Win rate improved ≥5% with ≥90% confidence. Update the default positioning framework / trap questions / battlecard for this competitor. Log the change. Move to Phase 5.
+   - **Iterate:** Results directionally positive but not significant. Generate a refined hypothesis building on this result. Return to Phase 2.
+   - **Revert:** Variant performed worse or no different. Restore control. Log the failure reason. Return to Phase 1 monitoring.
+   - **Extend:** Sample size insufficient after minimum duration. Keep running for another period.
+4. Store full evaluation in Attio: decision, confidence, reasoning, competitor impact
 
-## KPIs to track
-- Win rate by competitor
-- Competitive intelligence freshness
-- Positioning effectiveness
-- Competitive discovery accuracy
-- AI-driven win rate improvement
+**Phase 5 — Report (weekly via n8n cron):**
+1. Aggregate all optimization activity for the week: anomalies detected, hypotheses generated, experiments running, decisions made
+2. Calculate: net win rate change from all adopted changes this week, per competitor
+3. Generate a weekly competitive optimization brief:
+   - What changed and why (per competitor)
+   - Net impact on win rates
+   - Active experiments and their interim results
+   - Competitor changes detected this week and their implications
+   - Current distance from estimated local maximum per competitor
+   - Recommended focus for next week
+4. Post the brief to Slack and store in Attio
 
----
+### 2. Keep competitive intelligence fresh
 
-## Pass threshold
-**Sustained or improving win rates against competitors over 6 months via continuous AI-driven competitive intelligence and adaptive positioning**
+Continue running the `competitive-intelligence-automation` drill (from Scalable) with these Durable-level enhancements:
 
-This level runs continuously. Review monthly: what improved, what to retire, what new experiments to run.
+- **Increase competitor monitoring frequency** from weekly to twice-weekly for top 3 competitors
+- **Feed competitor changes into the optimization loop:** When a competitor ships a product change with `competitive_impact` ≥ 3, automatically trigger Phase 2 (Diagnose) for that competitor's positioning strategy
+- **Auto-refresh battlecards** when new deal data accumulates: if 5+ new deals mention a competitor since last battlecard refresh, trigger `competitive-battlecard-assembly` to rebuild
+- **Track battlecard version effectiveness:** does the newest battlecard version produce higher win rates than the previous version? If not, the refresh may have degraded quality — revert and investigate.
 
----
+### 3. Generate monthly deep-dive competitive reports
 
-## How to run this skill
+Continue running the `competitive-win-loss-reporting` drill (from Scalable) with Durable-level additions:
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+- **Include optimization experiment results:** which experiments were run, which were adopted, and their measured impact
+- **Convergence tracking per competitor:** for each competitor, are experiments still producing meaningful improvement or has the play reached its local maximum?
+- **Predictive competitive analytics:** use Claude to analyze deal patterns and predict which open deals are at highest risk of competitive loss. Prioritize those for human strategy intervention.
+- **Quarterly strategic review:** every 3 months, generate a comprehensive report that looks beyond tactical positioning to strategic competitive questions: Is the competitive landscape shifting? Are new entrants emerging? Should we invest in new capabilities to address persistent competitive gaps?
 
-_Install this skill: `npx gtm-skills add sales/qualified/competitive-situation-analysis`_
+### 4. Apply guardrails
+
+The `autonomous-optimization` drill enforces these guardrails. Verify they are active:
+
+- **Rate limit:** Maximum 1 active experiment per competitor at a time. Never stack experiments on the same competitor.
+- **Revert threshold:** If win rate against any competitor drops >30% during an experiment, auto-revert immediately.
+- **Human approval required for:**
+  - Positioning changes that affect the core brand narrative (not just framework selection)
+  - Battlecard changes that alter how we describe our own capabilities
+  - Any experiment the hypothesis generator flags as "high risk"
+- **Cooldown:** After a failed experiment, wait 14 days before testing a new hypothesis on the same competitor.
+- **Maximum experiments per month:** 4 across all competitors. If all 4 fail in a month, pause optimization and flag for human strategic review.
+- **Never optimize without measurement:** If a competitive KPI lacks PostHog tracking, fix tracking first.
+
+### 5. Detect convergence and maintain
+
+The optimization loop runs indefinitely. However, it detects **convergence** per competitor — when successive experiments produce diminishing returns (<2% improvement for 3 consecutive experiments against the same competitor):
+
+1. Declare that competitor matchup "optimized at local maximum"
+2. Reduce monitoring frequency for that competitor from daily to weekly
+3. Reduce experiment frequency — only re-engage when competitor monitoring detects a significant change (impact ≥ 3) or when win rate drops >10% from the established maximum
+4. Report: "Win rate against {Competitor} has converged at {rate}%. Further improvement requires strategic changes (new capabilities, new proof points, pricing changes) rather than tactical positioning optimization."
+5. Shift optimization resources to competitors where experiments are still producing gains
+
+## Time Estimate
+
+- 20 hours: Configure autonomous optimization loop (Phases 1-5) and connect to competitive data sources
+- 10 hours: Enhance competitive intelligence automation for Durable-level frequency and feedback loops
+- 10 hours: Configure guardrails, convergence detection, and human escalation paths
+- 80 hours: Ongoing monitoring, experiment management, and iteration over 6 months (~3.5 hours/week)
+- 15 hours: Monthly deep-dive reports and quarterly strategic reviews (6 monthly + 2 quarterly)
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Fireflies | Call transcription (always-on) | Pro $10/user/mo annual — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| Anthropic Claude API | Extraction + positioning + hypothesis generation + evaluation | ~$100-200/mo at Durable scale — [anthropic.com/pricing](https://www.anthropic.com/pricing) |
+| Attio | CRM: deals + Competitors + campaign records + automation | Included in standard stack — [attio.com/pricing](https://attio.com/pricing) |
+| PostHog | Events + experiments + anomaly detection + dashboards | Growth plan ~$0.00045/event — [posthog.com/pricing](https://posthog.com/pricing) |
+| Clay | Competitor enrichment + changelog monitoring (2x/week) | Growth $495/mo — [clay.com/pricing](https://www.clay.com/pricing) |
+| n8n | Orchestration: optimization loop + all automations | Self-hosted free or Cloud from $24/mo — [n8n.io/pricing](https://n8n.io/pricing) |
+| Gong (optional) | Deal intelligence for richer competitive extraction | ~$100-250/user/mo (annual contract) — [gong.io/pricing](https://www.gong.io/pricing) |
+
+**Estimated play-specific cost:** ~$300-700/mo without Gong, ~$500-1000/mo with Gong (Clay Growth + Claude API at scale are the main drivers)
+
+## Drills Referenced
+
+- `autonomous-optimization` — the core monitor → diagnose → experiment → evaluate → implement loop that finds the local maximum of competitive win rates
+- `competitive-intelligence-automation` — competitor change monitoring, battlecard delivery, and web behavior triggers (enhanced for Durable frequency)
+- `competitive-win-loss-reporting` — monthly deep-dive competitive reports with optimization experiment results and convergence tracking

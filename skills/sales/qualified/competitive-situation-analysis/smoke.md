@@ -1,85 +1,120 @@
 ---
 name: competitive-situation-analysis-smoke
 description: >
-    Competitive Situation Assessment — Smoke Test. Discover which competitors prospects are
-  evaluating to position differentiation effectively and develop winning strategies against specific
-  alternatives.
+  Competitive Situation Assessment — Smoke Test. Run structured competitive discovery on 10+
+  qualification calls to identify which competitors prospects evaluate, map decision criteria,
+  and validate that competitive intelligence can be systematically extracted from conversations.
 stage: "Sales > Qualified"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Direct, Email"
 level: "Smoke Test"
 time: "5 hours over 1 week"
-outcome: "Competitive situation identified in ≥8 opportunities in 1 week"
-kpis: ["Competitive discovery completion rate", "Competitor identification rate", "Decision criteria clarity", "Competitive intelligence quality"]
+outcome: "Competitive situation identified in ≥8 opportunities in 1 week with ≥60% having active competitor evaluation"
+kpis: ["Competitive discovery completion rate", "Competitor identification rate", "Decision criteria clarity score", "Competitive intelligence extraction accuracy"]
 slug: "competitive-situation-analysis"
 install: "npx gtm-skills add sales/qualified/competitive-situation-analysis"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - competitive-discovery-call
+  - posthog-gtm-events
   - threshold-engine
 ---
+
 # Competitive Situation Assessment — Smoke Test
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Direct, Email
+> **Stage:** Sales → Qualified | **Motion:** OutboundFounderLed | **Channels:** Direct, Email
 
-## Overview
-Competitive Situation Assessment — Smoke Test. Discover which competitors prospects are evaluating to position differentiation effectively and develop winning strategies against specific alternatives.
+## Outcomes
 
-**Time commitment:** 5 hours over 1 week
-**Pass threshold:** Competitive situation identified in ≥8 opportunities in 1 week
+Competitive intelligence systematically extracted from at least 8 qualification calls in one week. For each call: competitors identified by name and type, evaluation stage mapped, decision criteria ranked, and status quo risk assessed. At least 60% of analyzed opportunities have an active competitor evaluation (not just status quo).
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Fireflies transcripts available for all qualification calls (transcription pipeline working)
+- Claude extraction producing valid structured JSON (extraction prompt working)
+- Competitor names matching across multiple deals (real competitors, not noise)
+- Decision criteria showing consistent themes (market is evaluable)
+- Attio deal records updating with competitive fields (CRM pipeline working)
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for competitive-situation-analysis. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Configure competitive event tracking
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your competitive-situation-analysis materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Run the `posthog-gtm-events` drill to define competitive-specific events. Create these events in PostHog:
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+- `competitive_situation_extracted` — fired after each call analysis
+- `competitor_named` — fired for each competitor identified, with `competitor_name`, `competitor_type`, `evaluation_stage`, and `prospect_sentiment` properties
+- `status_quo_bias_detected` — fired when no competitors are found and prospect defaults to current solution
+- `competitive_discovery_quality` — fired with `seller_score` (strong/adequate/weak) to track discovery skill
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+### 2. Run competitive discovery on 10+ qualification calls
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: Competitive situation identified in ≥8 opportunities in 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+For each qualification call with a Fireflies transcript, run the `competitive-discovery-call` drill manually:
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+1. Retrieve the transcript from Fireflies
+2. Run `call-transcript-competitor-extraction` to extract: competitors evaluated, decision criteria, evaluation method, status quo analysis, and competitive risk level
+3. Update the Attio deal record with competitive situation data
+4. Create a structured competitive note on the deal
+5. Fire the PostHog events
 
----
+**Human action required:** During the actual qualification calls, ask these competitive discovery questions (the extraction fundamental evaluates whether you asked them):
+- "What other solutions are you currently evaluating?"
+- "How are you comparing alternatives — is there a formal process or informal?"
+- "What's most important to you in selecting a solution?" (decision criteria)
+- "How far along are you with [named competitor]?" (evaluation stage)
+- "What do you wish [competitor/current solution] could do that it can't?" (gaps)
 
-## KPIs to track
-- Competitive discovery completion rate
-- Competitor identification rate
-- Decision criteria clarity
-- Competitive intelligence quality
+### 3. Analyze extraction results across all calls
 
----
+After processing 10+ calls, query Attio for all deals with `competitive_situation_date` in the past week. Calculate:
 
-## Pass threshold
-**Competitive situation identified in ≥8 opportunities in 1 week**
+- **Discovery completion rate:** Calls with competitive extraction / Total qualification calls
+- **Competitor identification rate:** Calls with ≥1 named competitor / Calls analyzed
+- **Decision criteria clarity:** Calls with ≥2 ranked criteria / Calls analyzed
+- **Extraction accuracy:** Manually spot-check 3 extractions against raw transcripts — are competitor names correct? Are quotes actually in the transcript? Are evaluation stages plausible?
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+### 4. Map the competitive landscape
 
----
+Aggregate competitor mentions across all analyzed calls:
+- Which competitors appear most frequently?
+- What competitor types dominate (direct, indirect, status quo, build in house)?
+- Are there competitors appearing in 3+ deals already? (candidates for battlecard investment)
+- What decision criteria recur across deals? (these become your positioning anchors)
 
-## How to run this skill
+Log this landscape summary as an Attio note on a "Competitive Intelligence" campaign record.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 5. Evaluate against threshold
 
-_Install this skill: `npx gtm-skills add sales/qualified/competitive-situation-analysis`_
+Run the `threshold-engine` drill to evaluate:
+- **Primary threshold:** Competitive situation identified in ≥8 opportunities in 1 week
+- **Secondary threshold:** ≥60% of analyzed opportunities have active competitor evaluation
+
+If PASS: competitive discovery is producing signal. The extraction pipeline works, competitors are identifiable, and decision criteria are extractable. Proceed to Baseline.
+
+If FAIL: diagnose the bottleneck:
+- If < 10 calls available: volume problem. Need more qualification conversations.
+- If extraction accuracy < 80%: prompt problem. Refine the `call-transcript-competitor-extraction` prompt.
+- If < 60% have competitors: either prospects are status-quo-biased (adjust discovery questions to probe harder) or the market has low competitive density (which is actually positive intel).
+
+## Time Estimate
+
+- 1 hour: Configure PostHog events and verify Fireflies integration
+- 2.5 hours: Run competitive discovery drill on 10+ calls (15 min per call)
+- 1 hour: Analyze results, build competitive landscape map
+- 0.5 hours: Threshold evaluation and decision
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Fireflies | Call transcription | Free (800 min/mo) or Pro $10/user/mo annual — [fireflies.ai/pricing](https://fireflies.ai/pricing) |
+| Anthropic Claude API | Competitive extraction from transcripts | ~$0.02-0.05 per call extraction — [anthropic.com/pricing](https://www.anthropic.com/pricing) |
+| Attio | Deal records + competitive situation storage | Included in standard stack — [attio.com/pricing](https://attio.com/pricing) |
+| PostHog | Event tracking | Free tier (1M events/mo) — [posthog.com/pricing](https://posthog.com/pricing) |
+
+**Estimated play-specific cost:** Free (within free tiers) to ~$15/mo (Fireflies Pro + Claude API usage)
+
+## Drills Referenced
+
+- `competitive-discovery-call` — extracts competitive intelligence from each qualification call transcript and updates CRM
+- `posthog-gtm-events` — sets up the event taxonomy for competitive tracking
+- `threshold-engine` — evaluates results against pass/fail threshold
