@@ -1,83 +1,103 @@
 ---
 name: comparison-alternative-pages-smoke
 description: >
-    Comparison and Alternative Pages — Smoke Test. Create comparison and alternative pages targeting
-  competitor keywords to capture high-intent search traffic, from manual competitor research to
-  automated page generation and AI-driven competitive intelligence.
-stage: "Marketing > Solution Aware"
-motion: "Lead Capture Surface"
+  Comparison and Alternative Pages — Smoke Test. Research competitor keywords, build 3-5
+  comparison pages manually, deploy lead capture CTAs, and validate that competitor-keyword
+  organic traffic converts to leads.
+stage: "Marketing > SolutionAware"
+motion: "LeadCaptureSurface"
 channels: "Content, Website"
 level: "Smoke Test"
 time: "8 hours over 4 weeks"
-outcome: "≥200 page views and ≥3 conversions in 4 weeks"
-kpis: ["Organic traffic", "Conversion rate", "Average position for competitor keywords", "CTA click rate"]
+outcome: "≥200 page views and ≥3 conversions from comparison pages in 4 weeks"
+kpis: ["Organic traffic to comparison pages", "Conversion rate (CTA clicks / views)", "Average ranking position for target competitor keywords", "CTA click rate"]
 slug: "comparison-alternative-pages"
 install: "npx gtm-skills add marketing/solution-aware/comparison-alternative-pages"
 drills:
-  - icp-definition
-  - onboarding-flow
-  - threshold-engine
+  - competitor-keyword-research
+  - comparison-page-creation
 ---
+
 # Comparison and Alternative Pages — Smoke Test
 
-> **Stage:** Marketing → Solution Aware | **Motion:** Lead Capture Surface | **Channels:** Content, Website
+> **Stage:** Marketing → SolutionAware | **Motion:** LeadCaptureSurface | **Channels:** Content, Website
 
-## Overview
-Comparison and Alternative Pages — Smoke Test. Create comparison and alternative pages targeting competitor keywords to capture high-intent search traffic, from manual competitor research to automated page generation and AI-driven competitive intelligence.
+## Outcomes
 
-**Time commitment:** 8 hours over 4 weeks
-**Pass threshold:** ≥200 page views and ≥3 conversions in 4 weeks
+Prove that comparison pages targeting competitor keywords generate organic traffic and convert solution-aware visitors into leads. Pass threshold: ≥200 page views and ≥3 conversions (CTA clicks leading to demo bookings, signups, or form submissions) within 4 weeks.
 
----
+## Leading Indicators
 
-## Budget
-
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Google Search Console shows impressions for target competitor keywords within 7-14 days of publishing
+- At least 1 comparison page gets indexed within 7 days
+- Feature comparison table scroll rate >40% (visitors engage with the table, not just bounce)
+- Time on page >90 seconds on comparison pages (indicates reading, not skimming)
 
 ## Instructions
 
-### 1. Define your product ICP
-Run the `icp-definition` drill to define who this product experience targets: user persona, what they are trying to accomplish, what success looks like, and what would make them convert or expand.
+### 1. Research competitor keywords
 
-### 2. Set up the experience
-Run the `onboarding-flow` drill to configure the in-product experience: Intercom product tours, in-app messages, or Loops email sequences. Focus on the single most important user action that correlates with conversion or retention.
+Run the `competitor-keyword-research` drill:
 
-**Human action required:** Review the experience flows before launching. Ensure the copy is clear and the CTAs are specific. Launch to a small test group (10-50 users) and observe behavior.
+- Start with your 5-10 known direct competitors
+- Map keyword patterns: "{competitor} alternative", "{competitor} vs {your brand}", "best {category} for {use case}"
+- Pull search volume, keyword difficulty, and CPC from Ahrefs
+- Prioritize: pick the top 3-5 keywords with the best combination of volume, low difficulty, and high commercial intent (CPC >$2)
 
-### 3. Track user behavior
-Log all interactions in PostHog: tour started, tour completed, CTA clicked, action taken. Note drop-off points and user feedback.
+The output is a prioritized list of 3-5 comparison page targets for this Smoke test.
+
+### 2. Build comparison pages
+
+Run the `comparison-page-creation` drill for each of your 3-5 target keywords:
+
+- Scrape competitor pricing and feature data (or gather manually from their public website)
+- Generate page content with Claude: introduction, feature comparison table, strengths/weaknesses, pricing comparison, FAQ
+- Build the HTML feature comparison table with your product vs the competitor
+- Add SEO metadata: title tag with target keyword, meta description, FAQ schema markup
+- Add one CTA per page: inline calendar embed, free trial button, or demo request form
+
+**Human action required:** Verify all competitor data (pricing, features, claims) for accuracy before publishing. Never publish unverified competitor information.
+
+### 3. Publish and configure tracking
+
+- Publish pages at `/compare/{competitor}-vs-{your-brand}` or `/compare/{competitor}-alternatives`
+- Configure PostHog events on each page:
+  - `comparison_page_viewed`: on page load (properties: `competitor`, `page_type`, `target_keyword`)
+  - `comparison_table_scrolled`: when feature table enters viewport
+  - `comparison_cta_clicked`: when CTA is clicked
+- Update your sitemap and submit to Google Search Console
+- Add internal links: link from your homepage, pricing page, or blog to the new comparison pages
 
 ### 4. Evaluate against threshold
-Run the `threshold-engine` drill to measure against: ≥200 page views and ≥3 conversions in 4 weeks. If PASS, proceed to Baseline. If FAIL, simplify the experience or target a different user action.
 
----
+After 4 weeks, measure:
 
-## KPIs to track
-- Organic traffic
-- Conversion rate
-- Average position for competitor keywords
-- CTA click rate
+- Total page views across all comparison pages (target: ≥200)
+- Total conversions — CTA clicks that led to a demo booking, signup, or form submission (target: ≥3)
+- Which competitor keywords are generating impressions in GSC
+- Which comparison page has the highest engagement (table scroll rate, time on page)
 
----
+If PASS: proceed to Baseline. Document which competitor pages convert best and why.
+If FAIL: diagnose — are pages getting indexed? If not, check technical SEO. Are pages getting traffic but not converting? Revise CTAs. Are pages not getting traffic at all? Target lower-difficulty keywords.
 
-## Pass threshold
-**≥200 page views and ≥3 conversions in 4 weeks**
+## Time Estimate
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+- 3 hours: competitor keyword research and prioritization
+- 4 hours: writing and publishing 3-5 comparison pages (including competitor data gathering)
+- 1 hour: PostHog tracking setup, sitemap submission, internal linking
 
----
+## Tools & Pricing
 
-## How to run this skill
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Ahrefs | Competitor keyword research, search volume, difficulty | Lite $99/mo (API access) — https://ahrefs.com/pricing |
+| Google Search Console | Index monitoring, impression/click tracking | Free — https://search.google.com/search-console |
+| PostHog | Page view, engagement, and conversion tracking | Free up to 1M events/mo — https://posthog.com/pricing |
+| Anthropic (Claude) | Comparison page content generation | Pay-per-use ~$0.50-2/page — https://anthropic.com/pricing |
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+**Smoke budget: Free** (assumes Ahrefs and PostHog are already in the standard stack or free tiers cover usage)
 
-_Install this skill: `npx gtm-skills add marketing/solution-aware/comparison-alternative-pages`_
+## Drills Referenced
+
+- `competitor-keyword-research` — identify and prioritize competitor keywords to target with comparison pages
+- `comparison-page-creation` — write, optimize, and publish each comparison page with feature tables and CTAs

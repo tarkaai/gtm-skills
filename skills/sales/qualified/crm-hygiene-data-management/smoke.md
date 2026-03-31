@@ -1,85 +1,143 @@
 ---
 name: crm-hygiene-data-management-smoke
 description: >
-    CRM Hygiene & Data Quality — Smoke Test. Maintain clean, accurate CRM data to enable reliable
-  forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data
-  quality that detects and fixes errors in real-time and prevents data degradation.
+  CRM Hygiene & Data Quality — Smoke Test. Audit 50 CRM records against data quality rules,
+  score completeness and accuracy, fix critical errors manually, and prove that systematic
+  data hygiene produces measurable improvement in record quality.
 stage: "Sales > Qualified"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Product"
 level: "Smoke Test"
 time: "6 hours over 1 week"
-outcome: ">=80% data quality score and >=50% reduction in critical errors within 1 week"
+outcome: ">=80% data quality score across 50 audited records and >=50% reduction in critical errors within 1 week"
 kpis: ["Data quality score", "Critical error rate", "Duplicate rate", "Stale record rate"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - icp-definition
-  - build-prospect-list
+  - crm-data-audit
   - threshold-engine
 ---
+
 # CRM Hygiene & Data Quality — Smoke Test
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product
+> **Stage:** Sales → Qualified | **Motion:** OutboundFounderLed | **Channels:** Product
 
-## Overview
-CRM Hygiene & Data Quality — Smoke Test. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+## Outcomes
 
-**Time commitment:** 6 hours over 1 week
-**Pass threshold:** >=80% data quality score and >=50% reduction in critical errors within 1 week
+Prove that auditing CRM records against explicit quality rules produces a measurable baseline and that manual remediation moves the needle. At this level, the agent runs the audit and scores records — the human fixes issues manually. No automation, no always-on workflows. Just proof that data quality is measurable and improvable.
 
----
+**Pass threshold:** >=80% data quality score across 50 audited records and >=50% reduction in critical errors within 1 week.
 
-## Budget
+## Leading Indicators
 
-**Play-specific cost:** Free
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Data quality rules defined and documented (5-7 rules covering required fields, valid values, freshness, duplicates)
+- 50 records scored with per-record quality scores written back to Attio
+- At least 3 issue types identified (missing fields, stale records, duplicates, invalid values)
+- Remediation of critical errors shows measurable score improvement on re-audit
 
 ## Instructions
 
-### 1. Define your ICP and build a target list
-Run the `icp-definition` drill to document your Ideal Customer Profile for crm-hygiene-data-management. Define company size, industry, job titles, and pain points. Then run the `build-prospect-list` drill to source 20-50 contacts matching this ICP from Clay. Export the list to Attio CRM.
+### 1. Define Data Quality Rules
 
-### 2. Prepare outreach materials
-Using the ICP output, draft your crm-hygiene-data-management materials manually. Write 2-3 variants of your core message targeting the specific pain points identified. Keep it scrappy -- this is a Smoke test to validate the channel, not to optimize.
+Before auditing, define what "quality" means. Create custom attributes in Attio using the `attio-custom-attributes` fundamental (called by the `crm-data-audit` drill):
 
-**Human action required:** Execute the outreach manually. Send messages, make calls, or run the micro-campaign by hand. Log every touchpoint in Attio with status and response.
+- `data_quality_score` (number, 0-100) on People, Companies, and Deals objects
+- `stale_flag` (checkbox) on Deals
+- `last_audit_date` (date) on all objects
 
-### 3. Track results
-For each interaction, log the outcome in Attio (replied, meeting booked, ignored, bounced). Note which message variant and which ICP segment performed best.
+Define 5-7 rules in a structured format the agent can evaluate programmatically:
 
-### 4. Evaluate against threshold
-Run the `threshold-engine` drill to evaluate results against your pass threshold: >=80% data quality score and >=50% reduction in critical errors within 1 week. The threshold engine will pull your logged data from Attio and PostHog, compare against the target, and return PASS or FAIL.
+| Rule | Object | Check | Severity |
+|------|--------|-------|----------|
+| Required contact fields | People | full_name, email, company, job_title, source populated | Critical |
+| Required deal fields | Deals | company, contact, deal_value, stage, owner populated | Critical |
+| Valid email format | People | email matches `^[^@]+@[^@]+\.[^@]+$` | High |
+| Valid stage values | Deals | stage is in defined pipeline stages | High |
+| Freshness | Deals | last_contacted within 30 days for open deals | Medium |
+| No duplicates | People | no other contact shares same email | Medium |
+| Close date validity | Deals | expected_close_date not in past for open deals | Low |
 
-If PASS, proceed to the Baseline level. If FAIL, adjust your ICP, messaging, or targeting and re-run this Smoke test.
+Store these rules as an Attio note on a "Data Quality Standards" record for future reference.
 
----
+### 2. Run the Initial Audit
 
-## KPIs to track
-- Data quality score
-- Critical error rate
+Run the `crm-data-audit` drill with scope = 50 records:
+
+1. Query Attio for 50 active deal records and their associated contacts and companies
+2. For each record, evaluate every rule and compute the quality score
+3. Write `data_quality_score` back to each record in Attio
+4. Flag duplicates and add them to a "Potential Duplicates" list
+5. Flag stale records (no activity 30+ days) with `stale_flag = true`
+6. Log `data_quality_audit_completed` event to PostHog with aggregate metrics
+
+Record the baseline metrics:
+- Average data quality score across 50 records
+- Critical error rate (% missing required fields)
 - Duplicate rate
 - Stale record rate
 
----
+### 3. Fix Critical Errors
 
-## Pass threshold
-**>=80% data quality score and >=50% reduction in critical errors within 1 week**
+**Human action required:** Review the audit results and manually fix the highest-impact issues:
 
-If you hit this threshold, move to the **Baseline Run** level.
-If not, iterate on your approach and re-run this level.
+1. Open the "Records Needing Attention" view in Attio (sorted by quality score ascending)
+2. For each record with score < 70:
+   - Fill missing required fields (look up company info, verify email, add job title)
+   - Correct invalid values (fix stages, update close dates)
+   - Update `last_contacted` if activity happened but was not logged
+3. For each pair in the "Potential Duplicates" list:
+   - Verify whether they are true duplicates
+   - Merge confirmed duplicates, keeping the record with more complete data
+   - Remove false positives from the list
 
----
+Log time spent on each fix type. This baseline establishes the manual effort that automation will later replace.
 
-## How to run this skill
+### 4. Re-Audit and Measure Improvement
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+Run the `crm-data-audit` drill again on the same 50 records:
 
-_Install this skill: `npx gtm-skills add sales/qualified/crm-hygiene-data-management`_
+1. Recalculate all quality scores
+2. Compare against baseline metrics from Step 2
+3. Calculate improvement: `(new_score - baseline_score) / baseline_score * 100`
+
+### 5. Evaluate Against Threshold
+
+Run the `threshold-engine` drill:
+
+- Pull the two audit results from PostHog (`data_quality_audit_completed` events)
+- Compare: is the current average quality score >= 80%?
+- Compare: did critical error rate drop by >= 50% from baseline?
+- Verdict: PASS or FAIL
+
+If PASS: Data quality is measurable and improvable. Document the rules, the baseline, and the improvement. Proceed to Baseline.
+If FAIL: Diagnose — were the rules too strict? Were there not enough fixable errors? Were the 50 records unrepresentative? Adjust rules or sample and re-run.
+
+### 6. Document the ROI Case
+
+Calculate the value of this cleanup:
+- Time spent on manual fixes (from Step 3 logs)
+- Estimate: how many of the 50 audited records are associated with active deals?
+- Estimate: if clean data prevents 1 duplicate outreach or catches 1 stale deal, what is that worth?
+- If estimated value exceeds time investment by >= 3x, the ROI case supports continued investment
+
+## Time Estimate
+
+- 1 hour: Define data quality rules and create custom attributes
+- 1.5 hours: Run initial audit (agent executes, human reviews output)
+- 2 hours: Manual remediation of critical errors
+- 0.5 hours: Re-audit and threshold evaluation
+- 1 hour: Documentation and ROI calculation
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — record storage, quality scores, lists, views | Free (up to 3 users) or $29/user/mo (Plus) — [attio.com/pricing](https://attio.com/pricing) |
+| PostHog | Analytics — audit event tracking, trend comparison | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+
+**Estimated play-specific cost this level:** $0 incremental. Attio and PostHog are default stack tools.
+
+## Drills Referenced
+
+- `crm-data-audit` — audit CRM records against data quality rules, score completeness and accuracy, produce a prioritized remediation report
+- `threshold-engine` — evaluate audit results against the pass threshold using PostHog event comparison

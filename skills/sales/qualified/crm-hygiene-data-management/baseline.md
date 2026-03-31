@@ -1,85 +1,126 @@
 ---
 name: crm-hygiene-data-management-baseline
 description: >
-    CRM Hygiene & Data Quality — Baseline Run. Maintain clean, accurate CRM data to enable reliable
-  forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data
-  quality that detects and fixes errors in real-time and prevents data degradation.
+  CRM Hygiene & Data Quality — Baseline Run. Expand quality rules to all active records,
+  enforce stage-gate field requirements via automation, set up enrichment sync to auto-fill
+  missing fields, and run weekly audits to maintain >=85% quality score.
 stage: "Sales > Qualified"
-motion: "Outbound Founder-Led"
+motion: "OutboundFounderLed"
 channels: "Product"
 level: "Baseline Run"
 time: "16 hours over 2 weeks"
-outcome: ">=85% data quality score and <3% duplicate rate over 2 weeks"
+outcome: ">=85% data quality score across all active records and <3% duplicate rate sustained over 2 weeks"
 kpis: ["Data quality score", "Duplicate rate", "Stale record rate", "Compliance rate by rep"]
 slug: "crm-hygiene-data-management"
 install: "npx gtm-skills add sales/qualified/crm-hygiene-data-management"
 drills:
-  - cold-email-sequence
-  - linkedin-outreach
-  - posthog-gtm-events
+  - crm-data-quality-rules
+  - crm-enrichment-sync
+  - threshold-engine
 ---
+
 # CRM Hygiene & Data Quality — Baseline Run
 
-> **Stage:** Sales → Qualified | **Motion:** Outbound Founder-Led | **Channels:** Product
+> **Stage:** Sales → Qualified | **Motion:** OutboundFounderLed | **Channels:** Product
 
-## Overview
-CRM Hygiene & Data Quality — Baseline Run. Maintain clean, accurate CRM data to enable reliable forecasting, reporting, and sales execution, from manual data cleanup to AI-driven automated data quality that detects and fixes errors in real-time and prevents data degradation.
+## Outcomes
 
-**Time commitment:** 16 hours over 2 weeks
-**Pass threshold:** >=85% data quality score and <3% duplicate rate over 2 weeks
+First always-on data quality enforcement. The agent configures stage-gate validation rules that block bad data from propagating, sets up Clay enrichment to auto-fill missing fields on record creation, and runs weekly audits across all active records. The system catches and remediates issues continuously instead of waiting for periodic manual cleanup.
 
----
+**Pass threshold:** >=85% data quality score across all active records and <3% duplicate rate sustained over 2 weeks.
 
-## Budget
+## Leading Indicators
 
-**Play-specific tools & costs**
-- **Tool-specific costs:** ~$50-200/mo depending on tools required
-
-_Your CRM, PostHog, and automation platform are not included — standard stack paid once._
-
----
+- Stage-gate validation rules firing on every deal stage change
+- New records auto-enriched within 1 hour of creation
+- Weekly audit reports showing quality score trend (should be rising)
+- Per-rep compliance scores visible in Attio dashboard
+- Duplicate detection catching at least 1 duplicate per week (if none found, the rules may be too loose or the data is already clean)
 
 ## Instructions
 
-### 1. Set up cold outreach tooling
-Run the `cold-email-sequence` drill to configure Instantly with warmed-up sending accounts. Import your prospect list from Attio (built during Smoke). Create 3-5 email variants using the ICP pain points validated in Smoke. Set up A/B subject line testing.
+### 1. Deploy Data Quality Rules
 
-### 2. Launch LinkedIn outreach in parallel
-Run the `linkedin-outreach` drill to set up a connection request + follow-up message sequence targeting the same prospect list. Coordinate timing so LinkedIn and email touches don't overlap for the same prospect.
+Run the `crm-data-quality-rules` drill to encode your quality standards as automation:
 
-### 3. Configure tracking
-Run the `posthog-gtm-events` drill to set up event tracking for this play. Configure events: `crm-hygiene-data-management_email_sent`, `crm-hygiene-data-management_email_replied`, `crm-hygiene-data-management_meeting_booked`, `crm-hygiene-data-management_linkedin_connected`. Connect PostHog to Attio via webhook so deal stage changes are tracked automatically.
+1. Create custom attributes for all required fields across pipeline stages (the drill defines the full field matrix)
+2. Build the stage-gate enforcement n8n workflow: when a deal stage changes, validate required fields for the target stage. If fields are missing, revert the stage change, create an Attio note listing the gaps, and notify the deal owner
+3. Build freshness rules: flag deals with no activity in 7+ days, escalate at 14+ days
+4. Build duplicate prevention: intercept new contact/company creation, check for existing matches by email or domain
+5. Document all rules on the "Data Quality Standards" record in Attio
 
-### 4. Execute and monitor for 2 weeks
-Let the sequences run. Monitor daily: check reply rates, positive vs negative sentiment, bounce rates. Adjust messaging mid-flight if reply rates are below 2% after the first 50 sends.
+Test the stage-gate enforcement by attempting to advance a test deal with missing fields. Verify the workflow blocks it and creates the correct notification.
 
-### 5. Evaluate against threshold
-Review PostHog funnel data and Attio deal pipeline. Measure against: >=85% data quality score and <3% duplicate rate over 2 weeks. If PASS, proceed to Scalable. If FAIL, diagnose whether the issue is targeting (wrong ICP), messaging (low reply rate), or conversion (replies but no meetings).
+### 2. Set Up Enrichment Sync
 
----
+Run the `crm-enrichment-sync` drill to automatically fill missing data:
 
-## KPIs to track
-- Data quality score
-- Duplicate rate
-- Stale record rate
-- Compliance rate by rep
+1. Build an n8n workflow that detects new records in Attio with 3+ empty required fields
+2. Route those records to Clay for enrichment (company size, industry, revenue, job title, LinkedIn URL, phone)
+3. Deduplicate enriched results before syncing back to prevent creating duplicates
+4. Sync enriched fields to Attio — only fill empty fields, never overwrite existing data
+5. Write enrichment metadata (`enrichment_date`, `enrichment_source`) on each touched record
+6. Set up a weekly scheduled enrichment run for records that were created manually without triggering the auto-enrich
 
----
+Test by creating a new contact with only name and email. Verify that within 1 hour, Clay enriches the missing fields and they appear in Attio.
 
-## Pass threshold
-**>=85% data quality score and <3% duplicate rate over 2 weeks**
+### 3. Expand Audit Scope to All Active Records
 
-If you hit this threshold, move to the **Scalable Automation** level.
-If not, iterate on your approach and re-run this level.
+Modify the `crm-data-audit` drill configuration to audit all active records (not just 50):
 
----
+1. Query Attio for all records where deal stage is not Closed Lost or Archived
+2. Run the full audit: completeness, validity, freshness, duplicates
+3. Write quality scores to every record
+4. Generate aggregate metrics and log to PostHog
+5. Build an Attio saved view: "Compliance by Owner" grouping deals by owner with average quality score
 
-## How to run this skill
+Schedule this audit to run weekly via n8n cron.
 
-1. Ensure your stack is configured: `cat ~/.gtm-config.json` (or run `npx gtm-skills init`)
-2. Your CRM (`{{crm}}`) and automation platform (`{{automation}}`) will be substituted throughout
-3. Follow the instructions above step by step
-4. Log all outcomes in PostHog and your CRM
-5. Evaluate against the pass threshold at the end of the time window
+### 4. Monitor for 2 Weeks
 
-_Install this skill: `npx gtm-skills add sales/qualified/crm-hygiene-data-management`_
+Let the system run. Each week:
+
+1. Review the weekly audit report (auto-generated by the audit workflow)
+2. Check stage-gate enforcement logs: how many stage changes were blocked? Which fields were most commonly missing?
+3. Check enrichment success rate: what % of auto-enrichment attempts filled at least 1 field?
+4. Review per-rep compliance: which reps have the lowest quality scores? Are they improving?
+
+**Human action required:** Review the "Potential Duplicates" list weekly. Merge confirmed duplicates, dismiss false positives. The automation flags them; human judgment decides.
+
+### 5. Evaluate Against Threshold
+
+Run the `threshold-engine` drill after 2 weeks:
+
+- Pull weekly audit summaries from PostHog
+- Check: is average quality score >= 85% across all active records?
+- Check: is duplicate rate < 3%?
+- Check: have both metrics held steady or improved for 2 consecutive weekly audits?
+- Verdict: PASS or FAIL
+
+If PASS: Stage-gate enforcement and enrichment sync are working. Move to Scalable.
+If FAIL: Diagnose — are reps bypassing quality rules? Is enrichment coverage too low? Are duplicate detection thresholds too loose? Tighten rules, improve enrichment sources, or add rep training.
+
+## Time Estimate
+
+- 4 hours: Deploy data quality rules (custom attributes, stage-gate workflow, freshness rules)
+- 3 hours: Set up enrichment sync (n8n workflow, Clay table, dedup logic)
+- 2 hours: Expand audit scope and schedule weekly runs
+- 5 hours: Monitoring over 2 weeks (30 min/day reviewing reports and handling duplicates)
+- 2 hours: Threshold evaluation and per-rep coaching
+
+## Tools & Pricing
+
+| Tool | Purpose | Pricing |
+|------|---------|---------|
+| Attio | CRM — record storage, stage-gate validation, quality scores | $29/user/mo (Plus) — [attio.com/pricing](https://attio.com/pricing) |
+| Clay | Enrichment — auto-fill missing fields on new records | $185/mo (Launch, 2,500 data credits) — [clay.com/pricing](https://www.clay.com/pricing) |
+| n8n | Automation — stage-gate enforcement, enrichment triggers, scheduled audits | €24/mo (Starter, 2,500 executions) — [n8n.io/pricing](https://n8n.io/pricing) |
+| PostHog | Analytics — audit event tracking, quality trend dashboards | Free up to 1M events/mo — [posthog.com/pricing](https://posthog.com/pricing) |
+
+**Estimated play-specific cost this level:** ~$75-150/mo. Primary driver is Clay enrichment credits ($185/mo if new to stack; likely shared across plays).
+
+## Drills Referenced
+
+- `crm-data-quality-rules` — define and enforce data quality rules as CRM configuration and stage-gate automation
+- `crm-enrichment-sync` — automatically enrich CRM records with missing data from Clay and sync updates back to Attio
+- `threshold-engine` — evaluate weekly audit results against pass thresholds
