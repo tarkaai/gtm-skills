@@ -12,21 +12,21 @@ The 240 plays in the Tarka GTM Playbook are **high-level playbooks**, not **exec
 
 Each of these is a complex workflow the agent can't reliably figure out on its own. The plays say *what* to do, not *how* to do it.
 
-## The Solution: Skill Tree Architecture
+## The Solution: Plays, Drills & Fundamentals
 
 ```
                     ┌─────────────────────┐
-                    │   PLAY SKILLS       │  ← 240 plays (leaves)
+                    │       PLAYS         │  ← 240 plays (what to run)
                     │   (what to do)      │     e.g., "Cold Email Outreach - Smoke"
                     └────────┬────────────┘
                              │ references
                     ┌────────┴────────────┐
-                    │   WORKFLOW SKILLS   │  ← ~40 composites (branches)
-                    │   (how to combine)  │     e.g., "Outbound Sequence Setup"
+                    │       DRILLS        │  ← ~40 practiced routines
+                    │  (how to combine)   │     e.g., "Outbound Sequence Setup"
                     └────────┬────────────┘
                              │ references
                     ┌────────┴────────────┐
-                    │   TOOL SKILLS       │  ← ~25 atomics (trunk)
+                    │   FUNDAMENTALS      │  ← ~25 core tool skills
                     │   (how to use X)    │     e.g., "Clay: Enrich Leads"
                     └─────────────────────┘
                              │ uses
@@ -36,29 +36,31 @@ Each of these is a complex workflow the agent can't reliably figure out on its o
                     └─────────────────────┘
 ```
 
-**Leaf skills** (plays) reference **branch skills** (workflows) which reference **trunk skills** (tool-specific). Users only pull what their config requires.
+**Plays** (240) reference **Drills** (~40 practiced routines) which reference **Fundamentals** (~25 tool-specific core skills). Users only pull what their config requires.
 
 ---
 
 ## Research Findings
 
-### What Already Exists (Don't Rebuild)
+### What Already Exists (Internalized)
 
-| Layer | Source | Skills | Quality | Action |
-|-------|--------|--------|---------|--------|
-| **Clay** | ColdIQ GTM Skills | 9 sub-skills (enrichment, waterfalls, scoring, debugging) | HIGH | Fork + adapt |
-| **Cold Email** | ColdIQ GTM Skills | 7 sub-skills (exec/IC messaging, personalization, follow-ups) | HIGH | Fork + adapt |
-| **LinkedIn Ads** | ColdIQ GTM Skills + Claude Ads | 8+25 sub-skills | HIGH | Fork + adapt |
-| **LinkedIn Content** | ColdIQ GTM Skills | 7 sub-skills (hooks, storytelling, scheduling) | HIGH | Fork + adapt |
-| **n8n** | ColdIQ GTM Skills + n8n-skills repo | 6 sub-skills + dedicated repo | HIGH | Fork + adapt |
-| **List Building** | ColdIQ GTM Skills | 6 sub-skills (ICP, sourcing, verification) | HIGH | Fork + adapt |
-| **Signal Detection** | ColdIQ GTM Skills | 9 sub-skills (job changes, funding, hiring) | HIGH | Fork + adapt |
-| **Google/Meta Ads** | Claude Ads (AgriciDaniel) | 74+46 audit checks | HIGH | Reference |
-| **CRO** | Corey Haines Marketing Skills | 6 skills (page, signup, onboarding, forms) | HIGH | Reference |
-| **SEO** | Corey Haines Marketing Skills | 6 skills (audit, AI SEO, programmatic) | HIGH | Reference |
-| **PostHog** | Official MCP + docs | Full HogQL, flags, experiments | HIGH | Use MCP directly |
-| **Attio** | Official MCP + community server | Deals, contacts, lists, tasks | HIGH | Use MCP directly |
-| **Apollo** | Official Claude Connector | Search, enrich, sequence | HIGH | Use connector |
+We've internalized battle-tested patterns from the community into our own self-contained skill definitions. No external skill repos are required — everything lives in this repo.
+
+| Layer | Coverage | Skills | Status |
+|-------|----------|--------|--------|
+| **Clay** | Enrichment, waterfalls, scoring, debugging | 9 sub-skills | Internalized from community best practices |
+| **Cold Email** | Exec/IC messaging, personalization, follow-ups | 7 sub-skills | Internalized from community best practices |
+| **LinkedIn Ads** | Campaign setup, targeting, optimization | 33 sub-skills | Internalized from community best practices |
+| **LinkedIn Content** | Hooks, storytelling, scheduling | 7 sub-skills | Internalized from community best practices |
+| **n8n** | Workflow patterns, triggers, error handling | 6 sub-skills | Internalized from community best practices |
+| **List Building** | ICP, sourcing, verification | 6 sub-skills | Internalized from community best practices |
+| **Signal Detection** | Job changes, funding, hiring signals | 9 sub-skills | Internalized from community best practices |
+| **Google/Meta Ads** | Audit checks, campaign structure | 120 checks | Internalized from community best practices |
+| **CRO** | Page, signup, onboarding, forms | 6 skills | Internalized from community best practices |
+| **SEO** | Audit, AI SEO, programmatic | 6 skills | Internalized from community best practices |
+| **PostHog** | Full HogQL, flags, experiments | Full coverage | Use MCP directly |
+| **Attio** | Deals, contacts, lists, tasks | Full coverage | Use MCP directly |
+| **Apollo** | Search, enrich, sequence | Full coverage | Use connector |
 
 ### What Needs to Be Built
 
@@ -91,25 +93,25 @@ Each of these is a complex workflow the agent can't reliably figure out on its o
 
 ## Detailed Architecture
 
-### Layer 1: Trunk Skills (Tool-Specific, ~25 skills)
+### Layer 1: Fundamentals (Tool-Specific Core Skills, ~25 skills)
 
 These teach the agent *how to use a specific tool*. Each is a standalone SKILL.md that can be installed independently.
 
 ```
 skills/
-  trunk/
+  fundamentals/
     crm/
       attio/SKILL.md              ← Pipeline, deals, contacts, tasks, lists
       attio-mcp-setup/SKILL.md    ← Install + configure Attio MCP server
     enrichment/
-      clay/SKILL.md               ← Fork of ColdIQ's 9 Clay sub-skills
+      clay/SKILL.md               ← 9 Clay sub-skills (enrichment, waterfalls, scoring, debugging)
       apollo/SKILL.md             ← Enrichment + sequence via official connector
     email/
       instantly/SKILL.md          ← Campaign setup, warmup, sequences
       smartlead/SKILL.md          ← Via MCP server
       loops/SKILL.md              ← NEW: Lifecycle emails, transactional, broadcasts
     automation/
-      n8n/SKILL.md                ← Fork of ColdIQ's 6 n8n sub-skills
+      n8n/SKILL.md                ← 6 n8n sub-skills (workflow patterns, triggers, error handling)
       n8n-mcp-setup/SKILL.md     ← Install + configure n8n MCP server
     analytics/
       posthog/SKILL.md            ← NEW: GTM event schema, funnels, cohorts
@@ -117,11 +119,11 @@ skills/
     messaging/
       intercom/SKILL.md           ← NEW: In-app messages, tours, bots, articles
     social/
-      linkedin-organic/SKILL.md   ← Fork of ColdIQ LinkedIn Creator
-      linkedin-ads/SKILL.md       ← Fork of ColdIQ + Claude Ads
+      linkedin-organic/SKILL.md   ← LinkedIn content creation (hooks, storytelling, scheduling)
+      linkedin-ads/SKILL.md       ← LinkedIn ad campaigns (targeting, optimization)
     ads/
-      google-ads/SKILL.md         ← Reference Claude Ads (74 checks)
-      meta-ads/SKILL.md           ← Reference Claude Ads (46 checks)
+      google-ads/SKILL.md         ← Google Ads audit & campaign management (74 checks)
+      meta-ads/SKILL.md           ← Meta Ads audit & campaign management (46 checks)
     video/
       loom/SKILL.md               ← Recording, sharing, tracking views
       descript/SKILL.md           ← Editing, transcription, clips
@@ -138,20 +140,20 @@ skills/
       openai/SKILL.md             ← OpenAI API patterns for GTM agents
 ```
 
-### Layer 2: Branch Skills (Workflow Composites, ~40 skills)
+### Layer 2: Drills (Practiced Routines, ~40 skills)
 
-These combine trunk skills into reusable workflows. They reference trunk skills by path.
+These combine fundamentals into reusable workflows. They reference fundamentals by path.
 
 ```
 skills/
-  branch/
+  drills/
     prospecting/
-      build-prospect-list/SKILL.md     ← Clay + Apollo → Attio (uses trunk/enrichment/clay, trunk/crm/attio)
+      build-prospect-list/SKILL.md     ← Clay + Apollo → Attio (uses fundamentals/enrichment/clay, fundamentals/crm/attio)
       enrich-and-score/SKILL.md        ← Clay waterfall + scoring
-      signal-detection/SKILL.md        ← Fork of ColdIQ Signal Sourcer
-      icp-definition/SKILL.md          ← Fork of ColdIQ List Architect ICP
+      signal-detection/SKILL.md        ← Signal sourcing (job changes, funding, hiring)
+      icp-definition/SKILL.md          ← ICP definition and validation
     outreach/
-      cold-email-sequence/SKILL.md     ← Instantly/Smartlead setup + copy (uses trunk/email/instantly)
+      cold-email-sequence/SKILL.md     ← Instantly/Smartlead setup + copy (uses fundamentals/email/instantly)
       linkedin-outreach/SKILL.md       ← Connection + message sequence
       warm-intro-request/SKILL.md      ← Partner mapping + intro ask
       follow-up-automation/SKILL.md    ← n8n workflow for multi-touch
@@ -186,9 +188,9 @@ skills/
       tool-sync-workflow/SKILL.md      ← n8n patterns for connecting tools
 ```
 
-### Layer 3: Leaf Skills (Plays, 240 existing skills — rewritten)
+### Layer 3: Plays (240 existing plays — rewritten)
 
-Each play SKILL.md is rewritten to **reference** branch and trunk skills instead of giving vague instructions. Example transformation:
+Each play SKILL.md is rewritten to **reference** drills and fundamentals instead of giving vague instructions. Example transformation:
 
 **Before (current Smoke level):**
 ```markdown
@@ -199,7 +201,7 @@ Each play SKILL.md is rewritten to **reference** branch and trunk skills instead
 4. Log results in your CRM. Compare to threshold.
 ```
 
-**After (referencing building blocks):**
+**After (referencing drills):**
 ```markdown
 ## Instructions
 
@@ -224,30 +226,30 @@ Run `/threshold-engine check` against your Smoke threshold:
 
 ### Config-Driven Skill Resolution
 
-The `.gtm-config.json` determines which trunk skills are pulled:
+The `.gtm-config.json` determines which fundamentals are pulled:
 
 ```json
 {
-  "crm": "attio",           // → trunk/crm/attio
-  "automation": "n8n",       // → trunk/automation/n8n
-  "email_cold": "instantly",  // → trunk/email/instantly (alt: smartlead)
-  "email_lifecycle": "loops", // → trunk/email/loops
-  "enrichment": "clay",      // → trunk/enrichment/clay (alt: apollo)
-  "analytics": "posthog",    // → trunk/analytics/posthog
-  "messaging": "intercom",   // → trunk/messaging/intercom
-  "video": "loom",           // → trunk/video/loom (alt: descript)
-  "social": "linkedin",      // → trunk/social/linkedin-organic
-  "scheduling": "calcom",    // → trunk/scheduling/calcom
-  "ads": ["google", "linkedin"] // → trunk/ads/google-ads, trunk/ads/linkedin-ads
+  "crm": "attio",           // → fundamentals/crm/attio
+  "automation": "n8n",       // → fundamentals/automation/n8n
+  "email_cold": "instantly",  // → fundamentals/email/instantly (alt: smartlead)
+  "email_lifecycle": "loops", // → fundamentals/email/loops
+  "enrichment": "clay",      // → fundamentals/enrichment/clay (alt: apollo)
+  "analytics": "posthog",    // → fundamentals/analytics/posthog
+  "messaging": "intercom",   // → fundamentals/messaging/intercom
+  "video": "loom",           // → fundamentals/video/loom (alt: descript)
+  "social": "linkedin",      // → fundamentals/social/linkedin-organic
+  "scheduling": "calcom",    // → fundamentals/scheduling/calcom
+  "ads": ["google", "linkedin"] // → fundamentals/ads/google-ads, fundamentals/ads/linkedin-ads
 }
 ```
 
 **Resolution logic in `bin/gtm-skills.js`:**
 1. Read `.gtm-config.json`
-2. For each play being installed, resolve its branch skill references
-3. For each branch skill, resolve its trunk skill references
-4. Only copy trunk skills that match the user's config
-5. If a play references `email_cold` and user has `"email_cold": "smartlead"`, pull `trunk/email/smartlead` instead of `trunk/email/instantly`
+2. For each play being installed, resolve its drill references
+3. For each drill, resolve its fundamental references
+4. Only copy fundamentals that match the user's config
+5. If a play references `email_cold` and user has `"email_cold": "smartlead"`, pull `fundamentals/email/smartlead` instead of `fundamentals/email/instantly`
 
 **The `init` command walks the user through this:**
 ```
@@ -269,20 +271,20 @@ Cold email tool?
 
 ## The Two Stacks
 
-The research revealed two distinct tool stacks that map cleanly to the tree:
+The research revealed two distinct tool stacks that map cleanly to the three layers:
 
 ### Stack A: Outbound/Sales/Marketing (131 plays, 8 motions)
 ```
-Trunk:  Attio + Clay + Instantly + PostHog + n8n
-Branch: prospecting/* + outreach/* + content/* + events/* + paid/*
-Leaf:   Marketing + Sales stage plays
+Fundamentals:  Attio + Clay + Instantly + PostHog + n8n
+Drills:        prospecting/* + outreach/* + content/* + events/* + paid/*
+Plays:         Marketing + Sales stage plays
 ```
 
 ### Stack B: Product/Retention (109 plays, LeadCaptureSurface motion)
 ```
-Trunk:  Intercom + Loops + OpenAI + PostHog + n8n
-Branch: product/* + measurement/*
-Leaf:   Product stage plays (Onboard, Retain, Upsell, Referrals, Winback)
+Fundamentals:  Intercom + Loops + OpenAI + PostHog + n8n
+Drills:        product/* + measurement/*
+Plays:         Product stage plays (Onboard, Retain, Upsell, Referrals, Winback)
 ```
 
 Both share `PostHog + n8n + measurement/*` as the common data/automation layer.
@@ -293,48 +295,22 @@ Both share `PostHog + n8n + measurement/*` as the common data/automation layer.
 
 The level system maps perfectly to which layers of the tree are active:
 
-| Level | Trunk Skills Used | Branch Skills Used | Agent Autonomy |
-|-------|-------------------|--------------------|----------------|
+| Level | Fundamentals Used | Drills Used | Agent Autonomy |
+|-------|-------------------|-------------|----------------|
 | **Smoke** | PostHog (54%), Attio (41%) | threshold-engine, icp-definition | Manual execution, agent assists |
 | **Baseline** | +Clay, +email tool, +Loops | +build-prospect-list, +cold-email-sequence | Agent sets up tools, human executes |
 | **Scalable** | +n8n (100%), +Intercom | +follow-up-automation, +tool-sync-workflow, +ab-test | Agent builds workflows, runs them |
-| **Durable** | +Anthropic, +OpenAI, +Gong | +dashboard-builder, all monitoring branches | Agent runs autonomously with guardrails |
+| **Durable** | +Anthropic, +OpenAI, +Gong | +dashboard-builder, all monitoring drills | Agent runs autonomously with guardrails |
 
-**Key insight:** The skill tree naturally prunes at lower levels. Smoke only needs 2-3 trunk skills. Durable needs the full tree. The `--level` flag on install should control this:
+**Key insight:** The skill tree naturally prunes at lower levels. Smoke only needs 2-3 fundamentals. Durable needs the full tree. The `--level` flag on install should control this:
 
 ```bash
 npx gtm-skills add marketing/unaware/cold-email --level smoke
-# Only installs: trunk/analytics/posthog, trunk/crm/attio, branch/measurement/threshold-engine
+# Only installs: fundamentals/analytics/posthog, fundamentals/crm/attio, drills/measurement/threshold-engine
 
 npx gtm-skills add marketing/unaware/cold-email --level scalable
-# Additionally installs: trunk/enrichment/clay, trunk/email/instantly, trunk/automation/n8n,
-# branch/prospecting/*, branch/outreach/*, branch/measurement/ab-test-orchestrator
-```
-
----
-
-## External Skill References
-
-Some trunk skills should reference (not fork) existing high-quality skills:
-
-| Our Skill | References | How |
-|-----------|-----------|-----|
-| `trunk/enrichment/clay` | ColdIQ Clay Expert (9 sub-skills) | Fork into our repo, adapt for our config system |
-| `trunk/social/linkedin-organic` | ColdIQ LinkedIn Creator (7 sub-skills) | Fork + adapt |
-| `trunk/automation/n8n` | ColdIQ n8n Architect (6 sub-skills) + czlonkowski/n8n-skills | Fork + adapt |
-| `trunk/ads/google-ads` | Claude Ads (74 checks) | Reference via `npx skills add AgriciDaniel/claude-ads` |
-| `trunk/ads/meta-ads` | Claude Ads (46 checks) | Same reference |
-| `branch/content/blog-seo-pipeline` | Corey Haines SEO skills (6) | Reference via skills.sh |
-| `branch/product/onboarding-flow` | Corey Haines CRO skills (6) | Reference via skills.sh |
-
-**Reference format in SKILL.md:**
-```markdown
-## Dependencies
-
-This skill requires the following. Install if not present:
-- `npx skills add sachacoldiq/ColdIQ-s-GTM-Skills` (Clay enrichment sub-skills)
-- Attio MCP server: `npx attio-mcp-server init`
-- PostHog MCP server: configured in `.claude/settings.json`
+# Additionally installs: fundamentals/enrichment/clay, fundamentals/email/instantly, fundamentals/automation/n8n,
+# drills/prospecting/*, drills/outreach/*, drills/measurement/ab-test-orchestrator
 ```
 
 ---
@@ -344,17 +320,17 @@ This skill requires the following. Install if not present:
 The playbook website should surface the skill tree:
 
 1. **On each play detail page (`/playbook/[slug]`):**
-   - Show "Building Block Skills" section listing the branch/trunk skills this play uses
+   - Show "Drills & Fundamentals" section listing the drills/fundamentals this play uses
    - Visual tree diagram showing the dependency chain
    - "What you'll need" based on the play's level
 
 2. **New `/playbook/skills` page:**
-   - Browse the full skill tree (trunk → branch → leaf)
+   - Browse the full skill tree (Fundamentals → Drills → Plays)
    - Filter by tool, by motion, by level
    - Each skill shows: description, dependencies, which plays use it, install command
 
 3. **On the intro section:**
-   - Explain the tree concept: "Each play is built on tested building-block skills"
+   - Explain the three layers: "Each play is built on practiced drills and mastered fundamentals"
    - Link to the skills tree page
 
 ---
@@ -362,27 +338,27 @@ The playbook website should surface the skill tree:
 ## Implementation Plan
 
 ### Phase 1: Foundation (Week 1-2)
-**Goal:** Ship the P0 trunk skills and the config resolution system.
+**Goal:** Ship the P0 fundamentals and the config resolution system.
 
-1. **Build the 6 P0 trunk skills:**
-   - `trunk/analytics/posthog` — GTM event schema (track, identify, group events for all play types)
-   - `trunk/crm/attio` — Pipeline setup, deal flow, contact management patterns
-   - `trunk/email/loops` — Lifecycle email setup, transactional templates, broadcasts
-   - `trunk/messaging/intercom` — In-app messages, product tours, help articles
-   - `trunk/email/instantly` — Warmup, campaign creation, sequence management
-   - `trunk/enrichment/clay` — Fork ColdIQ's 9 Clay sub-skills, adapt to our config format
+1. **Build the 6 P0 fundamentals:**
+   - `fundamentals/analytics/posthog` — GTM event schema (track, identify, group events for all play types)
+   - `fundamentals/crm/attio` — Pipeline setup, deal flow, contact management patterns
+   - `fundamentals/email/loops` — Lifecycle email setup, transactional templates, broadcasts
+   - `fundamentals/messaging/intercom` — In-app messages, product tours, help articles
+   - `fundamentals/email/instantly` — Warmup, campaign creation, sequence management
+   - `fundamentals/enrichment/clay` — 9 Clay sub-skills, adapted to our config format
 
 2. **Build config resolution in `bin/gtm-skills.js`:**
    - `init` command with interactive CRM/tool selection
    - `install` resolves skill dependencies based on config
    - `add` with `--level` flag to control tree depth
-   - Dependency graph walker that only pulls needed trunk/branch skills
+   - Dependency graph walker that only pulls needed fundamentals/drills
 
-3. **Build the 4 P0 branch skills:**
-   - `branch/measurement/threshold-engine` — Universal pass/fail + guardrail system
-   - `branch/measurement/posthog-gtm-events` — Standard event taxonomy
-   - `branch/prospecting/build-prospect-list` — Clay + Apollo → Attio flow
-   - `branch/outreach/cold-email-sequence` — Copy generation + Instantly/Smartlead setup
+3. **Build the 4 P0 drills:**
+   - `drills/measurement/threshold-engine` — Universal pass/fail + guardrail system
+   - `drills/measurement/posthog-gtm-events` — Standard event taxonomy
+   - `drills/prospecting/build-prospect-list` — Clay + Apollo → Attio flow
+   - `drills/outreach/cold-email-sequence` — Copy generation + Instantly/Smartlead setup
 
 4. **Test with Claude Code sessions:**
    - Run 3 Smoke-level plays end-to-end with Claude Code
@@ -392,62 +368,62 @@ The playbook website should surface the skill tree:
 ### Phase 2: Outbound Stack (Week 3-4)
 **Goal:** Complete Stack A (131 plays usable with full skill tree).
 
-5. **Fork and adapt ColdIQ skills:**
+5. **Build internalized outbound skills:**
    - Signal detection (9 sub-skills)
-   - LinkedIn Creator (7 sub-skills)
-   - n8n Architect (6 sub-skills)
-   - List Architect (6 sub-skills)
-   - Cold Email Strategist (7 sub-skills)
+   - LinkedIn content creation (7 sub-skills)
+   - n8n workflow patterns (6 sub-skills)
+   - List building (6 sub-skills)
+   - Cold email strategy (7 sub-skills)
 
-6. **Build remaining outbound branch skills:**
-   - `branch/outreach/linkedin-outreach`
-   - `branch/outreach/follow-up-automation`
-   - `branch/outreach/warm-intro-request`
-   - `branch/content/social-content-pipeline`
-   - `branch/events/webinar-pipeline`
-   - `branch/paid/ad-campaign-setup`
-   - `branch/measurement/ab-test-orchestrator`
+6. **Build remaining outbound drills:**
+   - `drills/outreach/linkedin-outreach`
+   - `drills/outreach/follow-up-automation`
+   - `drills/outreach/warm-intro-request`
+   - `drills/content/social-content-pipeline`
+   - `drills/events/webinar-pipeline`
+   - `drills/paid/ad-campaign-setup`
+   - `drills/measurement/ab-test-orchestrator`
 
-7. **Rewrite 20 representative play skills** (leaves) to reference branch skills
+7. **Rewrite 20 representative plays** to reference drills
    - Pick 2-3 plays per motion, cover all 4 levels
    - Test each with Claude Code
 
 ### Phase 3: Product Stack (Week 5-6)
 **Goal:** Complete Stack B (109 plays usable with full skill tree).
 
-8. **Build product branch skills:**
-   - `branch/product/onboarding-flow`
-   - `branch/product/feature-announcement`
-   - `branch/product/churn-prevention`
-   - `branch/product/nps-feedback-loop`
-   - `branch/product/upgrade-prompt`
-   - `branch/product/referral-program`
-   - `branch/product/winback-campaign`
+8. **Build product drills:**
+   - `drills/product/onboarding-flow`
+   - `drills/product/feature-announcement`
+   - `drills/product/churn-prevention`
+   - `drills/product/nps-feedback-loop`
+   - `drills/product/upgrade-prompt`
+   - `drills/product/referral-program`
+   - `drills/product/winback-campaign`
 
-9. **Build remaining trunk skills:**
-   - `trunk/video/loom`, `trunk/video/descript`
-   - `trunk/scheduling/calcom`
-   - `trunk/sales/gong`, `trunk/sales/fireflies`
-   - `trunk/content/ghost`, `trunk/content/webflow`
+9. **Build remaining fundamentals:**
+   - `fundamentals/video/loom`, `fundamentals/video/descript`
+   - `fundamentals/scheduling/calcom`
+   - `fundamentals/sales/gong`, `fundamentals/sales/fireflies`
+   - `fundamentals/content/ghost`, `fundamentals/content/webflow`
 
-10. **Rewrite remaining 220 play skills** to reference building blocks
+10. **Rewrite remaining 220 plays** to reference drills
 
 ### Phase 4: Polish & Ship (Week 7-8)
 **Goal:** Full system tested and documented.
 
 11. **Website integration:**
     - Build `/playbook/skills` tree browser page
-    - Add "Building Block Skills" section to `/playbook/[slug]`
-    - Update intro to explain the skill tree concept
+    - Add "Drills & Fundamentals" section to `/playbook/[slug]`
+    - Update intro to explain the Plays / Drills / Fundamentals concept
 
 12. **Automated testing:**
     - Script that validates all skill references resolve correctly
-    - CI check that every play references existing branch/trunk skills
+    - CI check that every play references existing drills/fundamentals
     - Integration tests: `npx gtm-skills add <play> --level <X>` produces correct file set
 
 13. **Documentation:**
-    - Update AGENTS.md with skill tree architecture
-    - Update CLAUDE.md with how to navigate the tree
+    - Update AGENTS.md with Plays / Drills / Fundamentals architecture
+    - Update CLAUDE.md with how to navigate the three layers
     - Write "Contributing a Skill" guide for community
 
 14. **Release v0.2.0** with the full skill tree
@@ -458,7 +434,7 @@ The playbook website should surface the skill tree:
 
 ### Unit Tests (automated, run in CI)
 - Every SKILL.md has valid frontmatter (name, description)
-- Every play skill's branch/trunk references resolve to existing files
+- Every play's drill/fundamental references resolve to existing files
 - Config resolution produces correct skill sets for all config combinations
 - `--level` flag correctly prunes the dependency tree
 
@@ -478,12 +454,10 @@ The playbook website should surface the skill tree:
 
 ## Open Questions
 
-1. **License for forked skills:** ColdIQ's repo is public but has no explicit license. Need to verify we can fork and adapt. If not, build from scratch using their architecture as inspiration.
+1. **MCP server management:** Should `npx gtm-skills init` also install MCP servers (attio-mcp, posthog-mcp, n8n-mcp)? Or leave that to the user?
 
-2. **MCP server management:** Should `npx gtm-skills init` also install MCP servers (attio-mcp, posthog-mcp, n8n-mcp)? Or leave that to the user?
+2. **Skill versioning:** When we update a fundamental (e.g., improve the Clay enrichment workflow), how do installed copies get updated? VERSIONS.md tracks this but the update mechanism needs design.
 
-3. **Skill versioning:** When we update a trunk skill (e.g., improve the Clay enrichment workflow), how do installed copies get updated? VERSIONS.md tracks this but the update mechanism needs design.
+3. **Community contributions:** Should the skill tree be open for community-contributed drills/fundamentals? If so, what's the review process?
 
-4. **Community contributions:** Should the skill tree be open for community-contributed trunk/branch skills? If so, what's the review process?
-
-5. **Pricing:** Are all skills free (MIT)? Or do some advanced Durable-level skills require a Tarka subscription?
+4. **Pricing:** Are all skills free (MIT)? Or do some advanced Durable-level skills require a Tarka subscription?

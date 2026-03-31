@@ -8,6 +8,29 @@ Each play covers Marketing, Sales, and Product stages — from a quick **Smoke T
 
 ---
 
+## How it works
+
+**240 plays to run. 40 drills to practice. 25 fundamentals to master.**
+
+The GTM Skills repo is organized in three layers:
+
+- **Plays** (240) — The game plan. Each play tells the agent *what* to do for a specific GTM motion at a specific maturity level (Smoke through Durable). Example: "Cold Email Outreach - Smoke" or "Churn Prevention - Scalable".
+
+- **Drills** (~40) — Practiced routines that make plays work. These are composite workflows that combine multiple tools into a repeatable sequence. Example: `/build-prospect-list` chains Clay enrichment into Attio, `/cold-email-sequence` generates copy and sets up Instantly campaigns.
+
+- **Fundamentals** (~25) — Tool-specific core skills the agent must master. Each one teaches the agent how to use a single tool deeply. Example: Clay enrichment waterfalls, Attio pipeline management, PostHog GTM event schemas.
+
+```
+  Plays  →  reference  →  Drills  →  reference  →  Fundamentals
+ (240)                    (~40)                      (~25)
+  what                  how to                    how to use
+  to do                 combine                   each tool
+```
+
+When you install a play, the CLI resolves which drills and fundamentals it needs based on your configured stack. Smoke plays pull 2-3 fundamentals. Durable plays pull the full tree.
+
+---
+
 ## Install
 
 ### Option 1: CLI (Recommended)

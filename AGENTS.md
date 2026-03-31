@@ -14,6 +14,8 @@ This repository contains **GTM play skills** for AI agents — 240 battle-tested
 
 ## Repository Structure
 
+The repo is organized into three skill layers: **Plays** (240 game plans), **Drills** (~40 practiced routines), and **Fundamentals** (~25 tool-specific core skills). Plays reference drills, drills reference fundamentals.
+
 ```
 gtm-skills/
 ├── .claude-plugin/
@@ -22,24 +24,26 @@ gtm-skills/
 │   └── gtm-skills.js      # npx CLI for install and config
 ├── scripts/
 │   └── export.js          # Export plays from canonical data source
-├── skills/                # GTM play skills
-│   ├── marketing/
+├── skills/                # GTM skills (3 layers)
+│   ├── marketing/         # Plays — Marketing stage
 │   │   ├── unaware/
 │   │   ├── problem-aware/
 │   │   ├── solution-aware/
 │   │   └── product-aware/
-│   ├── sales/
+│   ├── sales/             # Plays — Sales stage
 │   │   ├── qualified/
 │   │   ├── connected/
 │   │   ├── aligned/
 │   │   ├── proposed/
 │   │   └── won/
-│   └── product/
-│       ├── onboard/
-│       ├── retain/
-│       ├── upsell/
-│       ├── referrals/
-│       └── winback/
+│   ├── product/           # Plays — Product stage
+│   │   ├── onboard/
+│   │   ├── retain/
+│   │   ├── upsell/
+│   │   ├── referrals/
+│   │   └── winback/
+│   ├── drills/            # Drills — composite workflows
+│   └── fundamentals/      # Fundamentals — tool-specific core skills
 ├── tools/
 │   ├── crm/               # CRM-specific meta-skills
 │   └── automation/        # Automation platform meta-skills

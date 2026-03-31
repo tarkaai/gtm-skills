@@ -24,12 +24,18 @@ Throughout skill instructions, replace references to tool categories with the us
 
 If no config exists, prompt the user: "It looks like you haven't configured your GTM stack yet. Run `npx gtm-skills init` or tell me your CRM and automation platform and I'll proceed with those."
 
-## Skill structure
+## Skill structure — Plays, Drills & Fundamentals
 
-Each skill file at `skills/{stage}/{sub-stage}/{play-slug}/{level}.md` contains:
+Skills are organized in three layers:
+
+- **Plays** (240) at `skills/{stage}/{sub-stage}/{play-slug}/{level}.md` — what to run. Each play references drills and fundamentals instead of giving vague instructions.
+- **Drills** (~40) at `skills/drills/{category}/{drill-name}/SKILL.md` — practiced routines that combine multiple tools into reusable workflows (e.g., `/build-prospect-list`, `/cold-email-sequence`).
+- **Fundamentals** (~25) at `skills/fundamentals/{category}/{tool}/SKILL.md` — tool-specific core skills the agent must master (e.g., Clay enrichment, Attio pipeline management).
+
+Each play file contains:
 - Frontmatter: name, description, stage, motion, level, time, outcome, kpis
 - Play-specific tool costs (not CRM/automation — those are standard)
-- Step-by-step instructions for the agent to execute the play
+- Step-by-step instructions referencing drills and fundamentals
 - Pass/fail threshold
 - KPIs to track
 
@@ -44,9 +50,9 @@ When a skill is invoked:
 6. Track KPIs in PostHog (or the user's analytics tool)
 7. At the end, evaluate against the pass threshold and recommend next steps
 
-## Meta-skills
+## Meta-skills (legacy) and Fundamentals
 
-`tools/crm/` and `tools/automation/` contain meta-skills with tool-specific instructions. When a skill requires CRM work:
+`tools/crm/` and `tools/automation/` contain legacy meta-skills. These are being migrated to `skills/fundamentals/`. When a skill requires CRM work, check for a matching fundamental first, then fall back to the tools/ meta-skills:
 - Attio: read `tools/crm/attio.md`
 - Salesforce: read `tools/crm/salesforce.md`
 - HubSpot: read `tools/crm/hubspot.md`
